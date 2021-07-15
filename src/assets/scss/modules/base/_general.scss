@@ -18,15 +18,16 @@ input[type="number"]::-webkit-outer-spin-button {
 .container {
     @extend %center;
 }
+.containerMin {
+    @extend %centerMin;
+}
 body {
     font: {
         family: "EuclidFlex";
         weight: 400;
     }
     color: $gray;
-    //background: $white;
-    background: #333;
-    overflow: hidden;
+    background: $white;
 }
 .overflowHidden {
     overflow: hidden;
