@@ -1,0 +1,118 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 15px;
+    padding-bottom: 19px;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__left,
+    &__right {
+        display: flex;
+        align-items: flex-end;
+    }
+    &__dolce {
+        position: relative;
+        top: 2px;
+    }
+    &__logo {
+        display: block;
+        svg {
+            display: block;
+        }
+    }
+    &__nav {
+        margin-left: 54px;
+    }
+    &__tel {
+        font-size: 23px;
+        line-height: 29px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: $white;
+        span {
+            color: $greenMedium;
+        }
+        @media (min-width:$xs) {
+            pointer-events: none;
+        }
+    }
+    &__btns {
+        display: flex;
+        position: relative;
+        top: 16px;
+    }
+    &__search {
+        margin-left: 25px;
+    }
+    &__quest {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border: 2px solid $greenLight;
+        border-radius: 32px;
+    }
+    &__signUp {
+        margin-left: 29px;
+        width: 267px;
+    }
+}
+.headerNavTop {
+    &__ul {
+        display: flex;
+    }
+    &__li {
+        &:not(:first-child) {
+            margin-left: 24px;
+        }
+    }
+    &__link {
+        position: relative;
+        font-size: 18px;
+        line-height: 23px;
+        color: $greenLight;
+        &:after {
+            content:'';
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 8px;
+            background: {
+                image: url($imgUrl + "svg/headerNavT-active.svg");
+                repeat: no-repeat;
+                size: 99%;
+            }
+            opacity: 0;
+        }
+        &.active {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+.headerNavBottom {
+    margin-top: 10px;
+    &__ul {
+        display: flex;
+    }
+    &__li {
+        &:not(:first-child) {
+            margin-left: 32px;
+        }
+    }
+    &__link {
+        font-size: 23px;
+        line-height: 29px;
+        color: $white;
+        cursor: pointer;
+    }
+}

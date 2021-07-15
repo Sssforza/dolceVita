@@ -2,9 +2,9 @@
 $imgUrl: '/dist/img/';
 
 // Breakpoints
-// $xl: 1400px;
-// $lg: 1024px;
-// $xs: 540px;
+$xl: 1440px;
+$lg: 1024px;
+$xs: 540px;
 
 // Colors
 $white: #FFFFFF;
@@ -19,9 +19,9 @@ $transition: all .3s;
 
 %center {
 	position:relative;
-	max-width: 1920px;
+	max-width: 1830px;
 	margin: 0 auto;
-	padding: 0px 60px;
+	padding: 0px 15px;
 	// @media (max-width:$lg) {
 	// 	max-width: 990px;
 	// }

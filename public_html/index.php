@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 ?>
 
 <main class="main">
-	<section class="page">dolceVita</section>
+	<section class="page"></section>
 </main>
 
 <?
