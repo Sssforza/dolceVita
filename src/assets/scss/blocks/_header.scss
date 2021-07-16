@@ -3,7 +3,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     padding-top: 15px;
     padding-bottom: 19px;
     &__content {
@@ -23,6 +23,9 @@
         display: block;
         svg {
             display: block;
+            .color {
+                transition: $transition;
+            }
         }
     }
     &__nav {
@@ -57,6 +60,14 @@
         height: 64px;
         border: 2px solid $greenLight;
         border-radius: 32px;
+        transition: $transition;
+        svg {
+            display: block;
+            path,
+            circle {
+                transition: $transition;
+            }
+        }
     }
     &__signUp {
         margin-left: 29px;
@@ -77,6 +88,7 @@
         font-size: 18px;
         line-height: 23px;
         color: $greenLight;
+        transition: $transition;
         &:after {
             content:'';
             position: absolute;
@@ -91,6 +103,7 @@
                 size: 99%;
             }
             opacity: 0;
+            transition: $transition;
         }
         &.active {
             &:after {
@@ -114,5 +127,156 @@
         line-height: 29px;
         color: $white;
         cursor: pointer;
+        transition: $transition;
+    }
+}
+.headerServices {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #EEF5F8;
+    z-index: 95;
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition;
+    overflow-y: scroll;
+    &__content {
+        padding: 147px 23px 40px;
+    }
+    &__close {
+        display: flex;
+        align-items: center;
+    }
+    &__cross {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid $purple;
+        border-radius: 12px;
+        cursor: pointer;
+        svg {
+            display: block;
+        }
+    }
+    &__cover {
+        margin-left: 23px;
+        font-size: 17px;
+        line-height: 24px;
+        font-weight: 500;
+        color: $purple;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    &__box {
+        margin-top: 52px;
+        padding-left: 70px;
+        display: flex;
+    }
+}
+.servicesMain {
+    &__item {
+        &:not(:first-child) {
+            margin-top: 65px;
+        }
+    }
+    &__link {
+        position: relative;
+        font-size: 43px;
+        line-height: 47px;
+        color: $blueDark;
+        font-family: 'Prata';
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+            color: $purple;
+        }
+        &.active {
+            color: $purple;
+            &:after {
+                content:'';
+                position: absolute;
+                right: 0;
+                bottom: 4px;
+                left: 0;
+                height: 2px;
+                background: $purple;
+            }
+        }
+    }
+}
+.servicesMiddle {
+    margin-left: 156px;
+    &__item {
+        display: flex;
+        &:not(:first-child) {
+            margin-top: 46px;
+        }
+    }
+    &__info {
+        flex: none;
+        padding-top: 5px;
+        width: 124px;
+        font-size: 21px;
+        line-height: 27px;
+        font-weight: 500;
+        color: $greenMedium;
+    }
+    &__list {
+        margin-left: 30px;
+    }
+    &__li {
+        &:not(:first-child) {
+            margin-top: 8px;
+        }
+    }
+    &__link {
+        position: relative;
+        font-size: 28px;
+        line-height: 39px;
+        color: $blueDark;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+            color: $purple;
+        }
+        &.active {
+            color: $purple;
+            &:after {
+                content:'';
+                position: absolute;
+                right: 0;
+                bottom: 4px;
+                left: 0;
+                height: 2px;
+                background: $purple;
+            }
+        }
+    }
+}
+.servicesDetail {
+    margin-left: 188px;
+    display: flex;
+    &__list {
+        width: 267px;
+        &:not(:first-child) {
+            margin-left: 40px;
+        }
+    }
+    &__li {
+        padding-right: 20px;
+        margin-bottom: 14px;
+    }
+    &__link {
+        font-size: 18px;
+        line-height: 25px;
+        color: $blueDark;
+        transition: $transition;
+        &:hover {
+            color: $purple;
+        }
     }
 }
