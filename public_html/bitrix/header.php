@@ -13,7 +13,7 @@
 
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header header_js hide">
             <div class="header__content container">
                 <div class="header__left">
                     <div class="header__dolce">

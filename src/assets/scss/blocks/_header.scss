@@ -6,6 +6,10 @@
     z-index: 100;
     padding-top: 15px;
     padding-bottom: 19px;
+    transition: $transition8eio;
+    &.hide {
+        top: -100%;
+    }
     &__content {
         display: flex;
         justify-content: space-between;

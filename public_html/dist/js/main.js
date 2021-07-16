@@ -92,15 +92,20 @@
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 //📁 /node_modules/  jquery 3.5.1
 
-global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /assets/js/blocks  _header.js
+global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /assets/js/blocks  _animPageLoad.js
+
+ //📁 /assets/js/blocks  _header.js
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // header services
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_1__["headerServices"])();
+  // header top 0
+  Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_1__["headerShow"])(); // header services
+
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_2__["headerServices"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1)))
 
@@ -11020,6 +11025,23 @@ return jQuery;
 
 /***/ }),
 /* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerShow", function() { return headerShow; });
+// header services
+function headerShow() {
+  window.onload = function () {
+    if (document.querySelector('.header_js')) {
+      var header = document.querySelector('.header_js');
+      header.classList.remove('hide');
+    }
+  };
+}
+
+/***/ }),
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
