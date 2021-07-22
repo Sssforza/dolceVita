@@ -6,44 +6,55 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 	<section class="page">
 		<section class="sliderMain">
 			<div class="sliderMain__content sliderMain_js">
-				<div class="sliderMain__item first hide">
+				<div class="sliderMain__item first">
 					<div class="sliderMain__bg" style="background-image:url(/dist/img/mainSlierItem1.jpg)"></div>
 					<div class="sliderMain__wrapper">
 						<div class="sliderMain__inner">
-							<div class="sliderMain__title shiftUp">Инновационная косметология</div>
-							<div class="sliderMain__description shiftUp">
+							<div class="sliderMain__title">Инновационная косметология</div>
+							<div class="sliderMain__description">
 								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
 								и&nbsp;красоты: инновационные решения, передовые технологии
 							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn shiftUp">УЗНАТЬ БОЛЬШЕ</a>
+							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
 						</div>
 					</div>
 				</div>
 				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background:gray"></div>
+					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem2.jpg)"></div>
 					<div class="sliderMain__wrapper">
 						<div class="sliderMain__inner">
-							<div class="sliderMain__title shiftUp">косметология</div>
-							<div class="sliderMain__description shiftUp">
-								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
-								и&nbsp;красоты: инновационные решения, передовые технологии
+							<div class="sliderMain__title">Косметика<br> мировых брендов</div>
+							<div class="sliderMain__description">
+								Работаем с профессиональной косметикой премиум-сегментов
 							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn shiftUp">УЗНАТЬ БОЛЬШЕ</a>
+							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
 						</div>
 					</div>
 				</div>
 				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background:blue"></div>
+					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem3.jpg)"></div>
 					<div class="sliderMain__wrapper">
 						<div class="sliderMain__inner">
-							<div class="sliderMain__title shiftUp">Инновационная</div>
-							<div class="sliderMain__description shiftUp">
+							<div class="sliderMain__title">Инновационная</div>
+							<div class="sliderMain__description">
 								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
 								и&nbsp;красоты: инновационные решения, передовые технологии
 							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn shiftUp">УЗНАТЬ БОЛЬШЕ</a>
+							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
 						</div>
-						
+					</div>
+				</div>
+				<div class="sliderMain__item">
+					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem4.jpg)"></div>
+					<div class="sliderMain__wrapper">
+						<div class="sliderMain__inner">
+							<div class="sliderMain__title">косметология</div>
+							<div class="sliderMain__description">
+								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
+								и&nbsp;красоты: инновационные решения, передовые технологии
+							</div>
+							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
+						</div>
 					</div>
 				</div>
 			</div>

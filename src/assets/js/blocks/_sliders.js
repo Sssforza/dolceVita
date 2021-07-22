@@ -8,7 +8,7 @@ export function sliderMain () {
 			infinite: true,
 			autoplay: true,
 			autoplaySpeed: 9500,
-			speed: 500,
+			speed: 900,
 			slidesToShow: 1,
 			cssEase: 'linear',
 			arrows: true,

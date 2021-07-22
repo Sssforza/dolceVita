@@ -15,20 +15,20 @@ export function headerShow () {
             // slideDescription.classList.remove('shiftUp');
             // slideBtn.classList.remove('shiftUp');
             setTimeout(function(){
-                slideFirstItem.classList.remove('hide');
+                slideFirstItem.classList.remove('first');
             }, 800);
-            setTimeout(function(){
-                console.log(slideTitle);
-                slideTitle.classList.remove('shiftUp');
-                setTimeout(function(){
-                    console.log(slideDescription);
-                    slideDescription.classList.remove('shiftUp');
-                    setTimeout(function(){
-                        console.log(slideBtn);
-                        slideBtn.classList.remove('shiftUp');
-                    }, 250);
-                }, 10);
-            }, 1000);
+            // setTimeout(function(){
+            //     console.log(slideTitle);
+            //     slideTitle.classList.remove('shiftUp');
+            //     setTimeout(function(){
+            //         console.log(slideDescription);
+            //         slideDescription.classList.remove('shiftUp');
+            //         setTimeout(function(){
+            //             console.log(slideBtn);
+            //             slideBtn.classList.remove('shiftUp');
+            //         }, 250);
+            //     }, 10);
+            // }, 1000);
         }
     }
 }

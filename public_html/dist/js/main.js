@@ -14072,20 +14072,19 @@ function headerShow() {
       // slideBtn.classList.remove('shiftUp');
 
       setTimeout(function () {
-        slideFirstItem.classList.remove('hide');
-      }, 800);
-      setTimeout(function () {
-        console.log(slideTitle);
-        slideTitle.classList.remove('shiftUp');
-        setTimeout(function () {
-          console.log(slideDescription);
-          slideDescription.classList.remove('shiftUp');
-          setTimeout(function () {
-            console.log(slideBtn);
-            slideBtn.classList.remove('shiftUp');
-          }, 250);
-        }, 10);
-      }, 1000);
+        slideFirstItem.classList.remove('first');
+      }, 800); // setTimeout(function(){
+      //     console.log(slideTitle);
+      //     slideTitle.classList.remove('shiftUp');
+      //     setTimeout(function(){
+      //         console.log(slideDescription);
+      //         slideDescription.classList.remove('shiftUp');
+      //         setTimeout(function(){
+      //             console.log(slideBtn);
+      //             slideBtn.classList.remove('shiftUp');
+      //         }, 250);
+      //     }, 10);
+      // }, 1000);
     }
   };
 }
@@ -14134,7 +14133,7 @@ function sliderMain() {
       infinite: true,
       autoplay: true,
       autoplaySpeed: 9500,
-      speed: 500,
+      speed: 900,
       slidesToShow: 1,
       cssEase: 'linear',
       arrows: true,
