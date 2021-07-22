@@ -28,6 +28,7 @@ body {
     }
     color: $gray;
     background: $white;
+    overflow-x: hidden;
     &.openServicesMenu {
         overflow: hidden;
         .headerServices {
@@ -124,4 +125,23 @@ body {
     color: $white;
     border: 2px solid $greenLight;
     border-radius: 20px;
+}
+//sliders arrows
+.sliderArrow {
+    &__prev,
+    &__next {
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        cursor: pointer;
+        svg {
+            display: block;
+        }
+    }
+    &__prev {
+        left: 60px;
+    }
+    &__next {
+        right: 60px;
+    }
 }

@@ -12,7 +12,7 @@ import {headerShow} from "./blocks/_animPageLoad.js";
 import {headerServices} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
-import {sliderMain} from "./blocks/_sliders.js";
+import {sliderMain, sliderEquipment} from "./blocks/_sliders.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -24,5 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // slider main page
     sliderMain();
+
+    // slider main page equipment
+    sliderEquipment();
 
 });
