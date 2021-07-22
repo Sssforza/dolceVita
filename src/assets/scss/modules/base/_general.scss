@@ -31,8 +31,9 @@ body {
     &.openServicesMenu {
         overflow: hidden;
         .headerServices {
+            transform: translateY(0);
+            border-radius: 0;
             opacity: 1;
-            pointer-events: auto;
         }
         .header {
             &__logo {
@@ -72,6 +73,22 @@ body {
                 &.active {
                     color: $purple;
                 }
+            }
+        }
+        .servicesMain, .servicesMiddle {
+            &__item {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+            &__info {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+        .servicesDetail {
+            &__li {
+                transform: translateY(0px);
+                opacity: 1;
             }
         }
     }
