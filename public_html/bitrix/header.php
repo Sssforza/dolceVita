@@ -38,7 +38,7 @@
                         <div class="headerNavBottom">
                             <ul class="headerNavBottom__ul">
                                 <li class="headerNavBottom__li">
-                                    <span class="headerNavBottom__link headerServices_js">Услуги</span>
+                                    <span class="headerNavBottom__link headerServices_js headerServicesClose_js">Услуги</span>
                                 </li>
                                 <li class="headerNavBottom__li">
                                     <span class="headerNavBottom__link">Магазин</span>
