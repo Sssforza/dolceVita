@@ -94,3 +94,17 @@ body {
     background: $purple;
     border-radius: 20px;
 }
+.btrWhiteBorder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $white;
+    border: 2px solid $greenLight;
+    border-radius: 20px;
+}

@@ -3,10 +3,10 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
     padding-top: 15px;
     padding-bottom: 19px;
-    transition: $transition8eio;
+    transition: .8s cubic-bezier(0.43, 0.17, 0, 0.54);
     &.hide {
         top: -100%;
     }

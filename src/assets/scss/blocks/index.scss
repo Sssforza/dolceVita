@@ -1,0 +1,204 @@
+@import "../modules/utilities/_variables.scss";
+
+.sliderMain {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(50.52% 89.77% at 38.95% 53.7%, #95B2BA 0%, #7E9BA4 63.29%, #64838C 100%);
+    &__content {
+        width: 100%;
+        height: 100vh;
+        @extend %stretch;
+    }
+    &__item {
+        width: 100%;
+        height: 100vh;
+        background: {
+            repeat: no-repeat;
+            size: cover;
+            position: top center;
+        }
+        transition: all .8s ease-in-out;
+        opacity: 1;
+        &.hide {
+            opacity: 0;
+        }
+    }
+    &__bg {
+        @extend %stretch;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 98px;
+        padding-left: 131px;
+        width: 100%;
+        height: 100%;
+    }
+    &__inner {
+        max-width: 502px;
+    }
+    &__title {
+        position: relative;
+        top:0;
+        font-size: 66px;
+        line-height: 62px;
+        color: $white;
+        font-family: 'Prata';
+        letter-spacing: 0.9px;
+        transition: all .6s;
+        &.shiftUp {
+            top: -30px;
+        }
+    }
+    &__description {
+        position: relative;
+        top:0;
+        margin-top: 20px;
+        font-size: 21px;
+        line-height: 30px;
+        color: $greenLight;
+        transition: all .6s;
+        &.shiftUp {
+            top: -45px;
+        }
+    }
+    &__btn {
+        position: relative;
+        top:0;
+        margin-top: 66px;
+        width: 271px;
+        transition: all .8s;
+        &.shiftUp {
+            top: -50px;
+        }
+    }
+    &__nav {
+        position: absolute;
+        top: 0;
+        right: 69px;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__dots {
+        display: flex;
+        li {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            padding: 0;
+            border: none;
+            font-size: 0;
+            cursor: pointer;
+            overflow: hidden;
+            //background: rgba(219,233,239,.2);
+            background: $gray;
+            &:not(:last-child) {
+                margin-right: 13px;
+            }
+            &:after {
+                content:"";
+                @extend %stretch;
+                background: transparent;
+                transition: .3s;
+                z-index: 10;
+                background: $white;
+                margin: 18px;
+                border-radius: 50%;
+                opacity: .5;
+            }
+            .pie {
+                width: 50%;
+                height: 100%;
+                transform-origin: 100% 50%;
+                position: absolute;
+                border: 2px solid $white;
+            }
+            .spinner {
+                border-radius: 100% 0 0 100%/50% 0 0 50%;
+                z-index: 2;
+                border-right: none;
+            }
+            .filler {
+                border-radius: 0 100% 100% 0/0 50% 50% 0;
+                left: 50%;
+                opacity: 0;
+                z-index: 1;
+                border-left: none;
+            }
+            .mask {
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                background: inherit;
+                opacity: 1;
+                z-index: 3;
+            }
+            @keyframes rota {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes fill {
+                0% {
+                    opacity: 0;
+                }
+                50%, 100% {
+                    opacity: 1;
+                }
+            }
+            @keyframes mask {
+                0% {
+                    opacity: 1;
+                }
+                50%, 100% {
+                    opacity: 0;
+                }
+            }
+            &.slick-active {
+                .spinner {
+                    animation: rota 10s linear infinite;
+                }
+                .filler {
+                    animation: fill 10s steps(1, end) infinite;
+                }
+                .mask {
+                    animation: mask 10s steps(1, end) infinite;
+                }
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__arrows {
+        margin-top: 12px;
+    }
+    &__prev,
+    &__next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: rgba(219, 233, 239, .2);
+        border-radius: 50%;
+        svg {
+            display: block;
+        }
+    }
+    &__next {
+        margin-top: 12px;
+    }
+}
+.shiftUp {
+    opacity: 0;
+}
