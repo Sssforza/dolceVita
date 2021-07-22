@@ -14065,26 +14065,9 @@ function headerShow() {
 
     if (document.querySelector('.sliderMain_js')) {
       var slideFirstItem = document.querySelector('.sliderMain__item.first');
-      var slideTitle = slideFirstItem.querySelector('.sliderMain__title');
-      var slideDescription = slideFirstItem.querySelector('.sliderMain__description');
-      var slideBtn = slideFirstItem.querySelector('.sliderMain__btn'); // slideTitle.classList.remove('shiftUp');
-      // slideDescription.classList.remove('shiftUp');
-      // slideBtn.classList.remove('shiftUp');
-
       setTimeout(function () {
         slideFirstItem.classList.remove('first');
-      }, 800); // setTimeout(function(){
-      //     console.log(slideTitle);
-      //     slideTitle.classList.remove('shiftUp');
-      //     setTimeout(function(){
-      //         console.log(slideDescription);
-      //         slideDescription.classList.remove('shiftUp');
-      //         setTimeout(function(){
-      //             console.log(slideBtn);
-      //             slideBtn.classList.remove('shiftUp');
-      //         }, 250);
-      //     }, 10);
-      // }, 1000);
+      }, 800);
     }
   };
 }
