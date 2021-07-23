@@ -164,6 +164,16 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 				</div>
 			</div>
 		</section>
+		<section class="mainLines mainLines_js">
+		<svg class="mainLines__svg" width="1920" height="744" viewBox="0 0 1920 744" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path class="mainLines__path mainLines__path_0" d="M1921.3 608.268C1754.68 504.247 1567.46 707.536 1122.52 459.41C547.257 138.649 391.141 622.615 622.565 631.493C834.787 639.653 846.888 100.538 1 186.893" stroke="#DBE9EF" stroke-miterlimit="10"/>
+			<path class="mainLines__path mainLines__path_1" d="M1921.3 486.85C1766.18 476.986 1562.16 719.821 1088.81 480.304C501.352 183.037 378.739 646.738 608.063 653.911C826.086 660.458 803.383 139.815 1.09976 298.267" stroke="#BBCDD9" stroke-miterlimit="10"/>
+			<path class="mainLines__path mainLines__path_2" d="M1921.3 365.343C1777.58 449.546 1557.46 731.479 1055.11 501.018C456.247 226.259 366.338 670.68 593.462 676.061C817.185 680.993 759.779 178.912 1.19975 409.283" stroke="#9BB1C3" stroke-miterlimit="10"/>
+			<path class="mainLines__path mainLines__path_3" d="M1921.3 243.925C1788.99 422.195 1553.06 742.509 1021.31 521.822C411.442 268.764 353.836 694.802 578.76 698.3C808.284 701.528 715.974 218.009 1.09976 520.477" stroke="#7B96AE" stroke-miterlimit="10"/>
+			<path class="mainLines__path mainLines__path_4" d="M1921.3 122.507C1800.49 394.845 1549.06 752.821 987.603 542.627C367.238 310.463 341.435 718.835 564.158 720.628C799.383 722.242 672.37 257.197 1.09976 631.672" stroke="#5B7A98" stroke-miterlimit="10"/>
+			<path class="mainLines__path mainLines__path_5" d="M1921.3 1C1811.89 367.495 1545.26 762.237 953.899 563.431C323.133 351.354 329.034 742.867 549.557 742.867C790.582 742.867 628.765 296.384 1.09976 742.867" stroke="#3B5E82" stroke-miterlimit="10"/>
+		</svg>
+		</section>
 	</section>
 </main>
 

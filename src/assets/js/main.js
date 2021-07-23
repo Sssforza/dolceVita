@@ -8,6 +8,9 @@ import 'slick-carousel';
 //📁 /assets/js/blocks  _animPageLoad.js
 import {headerShow} from "./blocks/_animPageLoad.js";
 
+//📁 /assets/js/blocks  _animPageScroll.js
+import {animMainLines} from "./blocks/_animPageScroll.js";
+
 //📁 /assets/js/blocks  _header.js
 import {headerServices} from "./blocks/_header.js";
 
@@ -18,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // header top 0
     headerShow();
+
+    // next anim main lines
+    animMainLines();
 
     // header services
     headerServices();

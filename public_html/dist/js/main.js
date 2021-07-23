@@ -95,13 +95,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
 
  //📁 /assets/js/blocks  _animPageLoad.js
+
+ //📁 /assets/js/blocks  _animPageScroll.js
 
  //📁 /assets/js/blocks  _header.js
 
@@ -110,13 +113,15 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
 
 document.addEventListener("DOMContentLoaded", function () {
   // header top 0
-  Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_2__["headerShow"])(); // header services
+  Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_2__["headerShow"])(); // next anim main lines
 
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_3__["headerServices"])(); // slider main page
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animMainLines"])(); // header services
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_4__["sliderMain"])(); // slider main page equipment
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_4__["headerServices"])(); // slider main page
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_4__["sliderEquipment"])();
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_5__["sliderMain"])(); // slider main page equipment
+
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_5__["sliderEquipment"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1)))
 
@@ -14080,6 +14085,28 @@ function headerShow() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animMainLines", function() { return animMainLines; });
+// header services
+function animMainLines() {
+  if (document.querySelector('.mainLines_js')) {
+    var mainLines = document.querySelector('.mainLines__svg');
+    var mainLinesTop = document.querySelector('.mainLines_js').offsetTop;
+    var mainLinesHeight = document.querySelector('.mainLines_js').offsetHeight;
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    window.addEventListener('scroll', function () {
+      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
+        mainLines.classList.add('show');
+      }
+    });
+  }
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerServices", function() { return headerServices; });
 // header services
 function headerServices() {
@@ -14102,7 +14129,7 @@ function headerServices() {
 }
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
