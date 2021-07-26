@@ -3,6 +3,28 @@
 @keyframes mainLinesDraw{
     to {stroke-dashoffset: 0;}
 }
+@keyframes moveGroundLeft {
+    0% {
+        transform: rotate(0deg) translateX(-30px);
+    }
+    50% {
+      transform: rotate(-15deg) translateX(60px);
+    }
+    100% {
+        transform: rotate(0deg) translateX(-30px);
+    }
+}
+@keyframes moveGroundRight {
+    0% {
+        transform: rotate(-15deg) translateX(60px);
+    }
+    50% {
+        transform: rotate(0deg) translateX(-30px);
+    }
+    100% {
+        transform: rotate(-15deg) translateX(60px);
+    }
+}
 
 .sliderMain {
     position: relative;
@@ -410,5 +432,112 @@
                 }
             }
         }
+    }
+}
+.bonusCard {
+    margin-top: 115px;
+    position: relative;
+}
+.bonusSystem {
+    padding: 60px 153px 65px;
+    width: 100%;
+    background: $blueGrayGrad;
+    border-radius: 60px;
+    overflow: hidden;
+    &__box {
+        width: 501px;
+    }
+    &__title {
+        font-size: 48px;
+        line-height: 60px;
+        color: $white;
+        font-family: 'Prata';
+    }
+    &__description {
+        margin-top: 26px;
+        font-size: 20px;
+        line-height: 32px;
+        color: $greenLight;
+    }
+    &__ground {
+        position: absolute;
+        top: 0;
+        &_left {
+            left: 0;
+            animation: moveGroundLeft 4s infinite linear;
+        }
+        &_right {
+            right: 0;
+            animation: moveGroundRight 4s infinite 1s linear;
+        }
+    }
+}
+.typesCards {
+    margin-top: 66px;
+    &__content {
+        display: flex;
+    }
+    &__box {
+        max-width: 572px;
+        &.guest {
+            .typesCards__numbers {
+                margin-top: 36px;
+                .typesCards__description {
+                    margin-top: 8px;
+                }
+            }
+            .typesCards__item {
+                display: flex;
+                &:not(:first-child) {
+                    margin-top: 26px;
+                }
+            }
+            .typesCards__percent {
+                margin-top: -10px;
+            }
+        }
+        &.regular {
+            margin-left: 198px;
+            .typesCards__item {
+                &:not(:first-child) {
+                    margin-left: 34px;
+                }
+            }
+            .typesCards__numbers {
+                margin-top: 47px;
+                display: flex;
+                .typesCards__description {
+                    margin-top: -6px;
+                }
+            }
+        }
+    }
+    &__title {
+        font-size: 34px;
+        line-height: 36px;
+        font-weight: 300;
+        color: $blueDark;
+    }
+    &__description {
+        margin-top: 24px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $gray;
+    }
+    &__li {
+        &:not(:first-child) {
+            margin-top: 6px;
+        }
+    }
+    &__percent {
+        flex: none;
+        width: 162px;
+        font-size: 50px;
+        line-height: 63px;
+        font-weight: 300;
+        color: $blueDark;
+    }
+    &__percentage {
+        font-family: "Roboto";
     }
 }
