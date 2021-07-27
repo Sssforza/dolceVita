@@ -94,6 +94,9 @@ body {
         }
     }
 }
+.page {
+    padding-bottom: 96px;
+}
 .overflowHidden {
     overflow: hidden;
 }
@@ -143,6 +146,11 @@ body {
         line-height: 24px;
         color: $blueDark;
         font-family: 'Roboto';
+        border-bottom: 1px solid #BCC3D6;
+        transition: $transition;
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
     }
 }
 //sliders arrows

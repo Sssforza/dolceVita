@@ -319,10 +319,45 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 					<img src="/dist/img/doctor15.png">
 				</div>
 		</section>
-		<section class="usefulBlog">
-			<div class="usefulBlog__content containerMin section">
-				<div class="section__title">Полезный блог</div>
-				<a href="#" class="usefulBlog__all">Все статьи</a>
+		<section class="usefulBlog usefulBlog_js">
+			<div class="usefulBlog__content containerMin">
+				<div class="section">
+					<div class="section__title">Полезный блог</div>
+					<a href="#" class="section__all">Все статьи</a>
+				</div>
+				<div class="usefulBlog__list top">
+					<div class="usefulBlog__item">
+						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg1.png)"></div>
+						<div class="usefulBlog__date">25 марта 2021</div>
+						<div class="usefulBlog__title">
+							<a class="usefulBlog__link" href="#">
+								Криолиполиз&nbsp;&mdash; что это такое? 
+								Преимущества и&nbsp;недостатки 
+								процедуры
+							</a>
+						</div>
+					</div>
+					<div class="usefulBlog__item">
+						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg2.png)"></div>
+						<div class="usefulBlog__date">18 февраля 2021</div>
+						<div class="usefulBlog__title">
+							<a class="usefulBlog__link" href="#">
+								Технология омоложения Fotona&nbsp;4D
+							</a>
+						</div>
+					</div>
+					<div class="usefulBlog__item">
+						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg3.png)"></div>
+						<div class="usefulBlog__date">3 февраля 2021</div>
+						<div class="usefulBlog__title">
+							<a class="usefulBlog__link" href="#">
+								Аппарат М-22 от&nbsp;Lumenis 
+								является последней новинкой 
+								от&nbsp;компании Lumenis, лидера...
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</section>

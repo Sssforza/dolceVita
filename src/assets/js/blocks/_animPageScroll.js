@@ -27,3 +27,18 @@ export function sectionConsultPractice () {
         });
     }
 }
+
+// useful blog translateY 0
+export function usefulBlog () {
+    if(document.querySelector('.usefulBlog_js')) {
+        const mainLines = document.querySelector('.usefulBlog__list');
+        const mainLinesTop = document.querySelector('.usefulBlog_js').offsetTop;
+        const mainLinesHeight = document.querySelector('.usefulBlog_js').offsetHeight;
+        const headerHeight = document.querySelector('.header_js').offsetHeight;
+        window.addEventListener('scroll', function() {
+            if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
+                mainLines.classList.remove('top')
+            }
+        });
+    }
+}

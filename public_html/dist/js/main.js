@@ -117,7 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animMainLines"])(); // next section consult practice
 
-  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["sectionConsultPractice"])(); // header services
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["sectionConsultPractice"])(); // useful blog translateY 0
+
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["usefulBlog"])(); // header services
 
   Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_4__["headerServices"])(); // slider main page
 
@@ -14089,6 +14091,7 @@ function headerShow() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animMainLines", function() { return animMainLines; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sectionConsultPractice", function() { return sectionConsultPractice; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usefulBlog", function() { return usefulBlog; });
 // header services
 function animMainLines() {
   if (document.querySelector('.mainLines_js')) {
@@ -14113,6 +14116,20 @@ function sectionConsultPractice() {
     window.addEventListener('scroll', function () {
       if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
         mainLines.classList.remove('hide');
+      }
+    });
+  }
+} // useful blog translateY 0
+
+function usefulBlog() {
+  if (document.querySelector('.usefulBlog_js')) {
+    var mainLines = document.querySelector('.usefulBlog__list');
+    var mainLinesTop = document.querySelector('.usefulBlog_js').offsetTop;
+    var mainLinesHeight = document.querySelector('.usefulBlog_js').offsetHeight;
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    window.addEventListener('scroll', function () {
+      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
+        mainLines.classList.remove('top');
       }
     });
   }
