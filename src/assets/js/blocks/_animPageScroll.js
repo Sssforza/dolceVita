@@ -12,3 +12,18 @@ export function animMainLines () {
         });
     }
 }
+
+// section consult practice
+export function sectionConsultPractice () {
+    if(document.querySelector('.sectionConsult_js')) {
+        const mainLines = document.querySelector('.sectionConsult__practice');
+        const mainLinesTop = document.querySelector('.sectionConsult_js').offsetTop;
+        const mainLinesHeight = document.querySelector('.sectionConsult_js').offsetHeight;
+        const headerHeight = document.querySelector('.header_js').offsetHeight;
+        window.addEventListener('scroll', function() {
+            if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
+                mainLines.classList.remove('hide')
+            }
+        });
+    }
+}

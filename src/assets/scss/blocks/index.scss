@@ -5,24 +5,24 @@
 }
 @keyframes moveGroundLeft {
     0% {
-        transform: rotate(0deg) translateX(-30px);
+        transform: rotate(-5deg) translateX(-10px);
     }
     50% {
-      transform: rotate(-15deg) translateX(60px);
+        transform: rotate(5deg) translateX(50px);
     }
     100% {
-        transform: rotate(0deg) translateX(-30px);
+        transform: rotate(-5deg) translateX(-10px);
     }
 }
 @keyframes moveGroundRight {
     0% {
-        transform: rotate(-15deg) translateX(60px);
+        transform: rotate(15deg) translateX(80px);
     }
     50% {
-        transform: rotate(0deg) translateX(-30px);
+        transform: rotate(0deg) translateX(-50px);
     }
     100% {
-        transform: rotate(-15deg) translateX(60px);
+        transform: rotate(15deg) translateX(80px);
     }
 }
 
@@ -461,13 +461,14 @@
     }
     &__ground {
         position: absolute;
-        top: 0;
         &_left {
-            left: 0;
-            animation: moveGroundLeft 4s infinite linear;
+            left: -220px;
+            top: -300px;
+            animation: moveGroundLeft 2.5s infinite linear;
         }
         &_right {
-            right: 0;
+            top: -160px;
+            right: -130px;
             animation: moveGroundRight 4s infinite 1s linear;
         }
     }
@@ -539,5 +540,85 @@
     }
     &__percentage {
         font-family: "Roboto";
+    }
+}
+.sectionConsult {
+    margin-top: 333px;
+    position: relative;
+    &__description {
+        margin-top: 22px;
+    }
+    &__input {
+        margin-top: 42px;
+    }
+    &__send {
+        margin-top: 48px;
+        display: flex;
+        align-items: center;
+    }
+    &__button {
+        width: 196px;
+    }
+    &__privacy {
+        margin-left: 32px;
+    }
+    &__practice {
+        margin-left: 65px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 373px;
+        height: 335px;
+        transition: opacity .7s .7s;
+        &.hide {
+            opacity: 0;
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            margin-top: -42px;
+            font-size: 24px;
+            line-height: 28px;
+            color: $white;
+            font-weight: 500;
+            text-align: center;
+        }
+        &:after {
+            content:'';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: {
+                image: url($imgUrl + "svg/hexagon.svg");
+                size: contain;
+                repeat: no-repeat;
+            }
+        }
+    }
+    &__year {
+        position: relative;
+        top: 14px;
+        left: -5px;
+        font-size: 180px;
+        line-height: 233px;
+        letter-spacing: -0.05em;
+        color: #DBE9EF;
+        font-family: 'Prata';
+    }
+    .envelopeInput {
+        &__field {
+            width: 576px;
+        }
+    }
+    .bonusSystem__ground_left {
+        left: -450px;
+        top: -200px;
+    }
+    .bonusSystem__ground_right {
+        top: -310px;
+        right: -350px;
     }
 }

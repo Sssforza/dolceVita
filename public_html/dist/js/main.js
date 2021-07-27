@@ -115,7 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // header top 0
   Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_2__["headerShow"])(); // next anim main lines
 
-  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animMainLines"])(); // header services
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animMainLines"])(); // next section consult practice
+
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["sectionConsultPractice"])(); // header services
 
   Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_4__["headerServices"])(); // slider main page
 
@@ -14086,6 +14088,7 @@ function headerShow() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animMainLines", function() { return animMainLines; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sectionConsultPractice", function() { return sectionConsultPractice; });
 // header services
 function animMainLines() {
   if (document.querySelector('.mainLines_js')) {
@@ -14096,6 +14099,20 @@ function animMainLines() {
     window.addEventListener('scroll', function () {
       if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
         mainLines.classList.add('show');
+      }
+    });
+  }
+} // section consult practice
+
+function sectionConsultPractice() {
+  if (document.querySelector('.sectionConsult_js')) {
+    var mainLines = document.querySelector('.sectionConsult__practice');
+    var mainLinesTop = document.querySelector('.sectionConsult_js').offsetTop;
+    var mainLinesHeight = document.querySelector('.sectionConsult_js').offsetHeight;
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    window.addEventListener('scroll', function () {
+      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
+        mainLines.classList.remove('hide');
       }
     });
   }

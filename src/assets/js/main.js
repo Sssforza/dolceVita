@@ -9,7 +9,7 @@ import 'slick-carousel';
 import {headerShow} from "./blocks/_animPageLoad.js";
 
 //📁 /assets/js/blocks  _animPageScroll.js
-import {animMainLines} from "./blocks/_animPageScroll.js";
+import {animMainLines, sectionConsultPractice} from "./blocks/_animPageScroll.js";
 
 //📁 /assets/js/blocks  _header.js
 import {headerServices} from "./blocks/_header.js";
@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // next anim main lines
     animMainLines();
+
+    // next section consult practice
+    sectionConsultPractice();
 
     // header services
     headerServices();

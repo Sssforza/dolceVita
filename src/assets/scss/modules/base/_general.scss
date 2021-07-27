@@ -99,6 +99,7 @@ body {
 }
 //buttons
 .btnPurple {
+    flex: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,5 +144,61 @@ body {
     }
     &__next {
         right: 60px;
+    }
+}
+// envelope inputs
+.envelopeInput {
+    &__field {
+        padding: 0 22px;
+        font-size: 24px;
+        line-height: 30px;
+        color: $greenLight;
+        background: transparent;
+        border: 1px solid $white;
+        border-radius: 4px;
+        @include placeholder(24px, $greenLight, EuclidFlex);
+    }
+    input {
+        height: 64px;
+    }
+}
+.sectionConsult {
+    &__content {
+        padding: 60px 152px 72px;
+        width: 100%;
+        background: $blueGrayGrad;
+        border-radius: 80px;
+        display: flex;
+        overflow: hidden;
+    }
+    &__form {
+        width: 576px;
+    }
+    &__title {
+        font-size: 48px;
+        line-height: 62px;
+        color: $white;
+        font-family: 'Prata';
+    }
+    &__description {
+        font-size: 18px;
+        line-height: 26px;
+        color: $greenLight;
+    }
+    &__privacy {
+        font-size: 14px;
+        line-height: 18px;
+        color: $greenLight;
+    }
+    &__policy {
+        border-bottom: 1px solid $greenLight;
+    }
+    &__doctor {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        img {
+            display: block;
+        }
     }
 }

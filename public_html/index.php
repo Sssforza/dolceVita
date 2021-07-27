@@ -166,19 +166,19 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 		</section>
 		<section class="mainLines mainLines_js">
 			<svg class="mainLines__svg" width="1920" height="744" viewBox="0 0 1920 744" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path class="mainLines__path mainLines__path_0" d="M1921.3 608.268C1754.68 504.247 1567.46 707.536 1122.52 459.41C547.257 138.649 391.141 622.615 622.565 631.493C834.787 639.653 846.888 100.538 1 186.893" stroke="#DBE9EF" stroke-miterlimit="10"/>
-				<path class="mainLines__path mainLines__path_1" d="M1921.3 486.85C1766.18 476.986 1562.16 719.821 1088.81 480.304C501.352 183.037 378.739 646.738 608.063 653.911C826.086 660.458 803.383 139.815 1.09976 298.267" stroke="#BBCDD9" stroke-miterlimit="10"/>
-				<path class="mainLines__path mainLines__path_2" d="M1921.3 365.343C1777.58 449.546 1557.46 731.479 1055.11 501.018C456.247 226.259 366.338 670.68 593.462 676.061C817.185 680.993 759.779 178.912 1.19975 409.283" stroke="#9BB1C3" stroke-miterlimit="10"/>
-				<path class="mainLines__path mainLines__path_3" d="M1921.3 243.925C1788.99 422.195 1553.06 742.509 1021.31 521.822C411.442 268.764 353.836 694.802 578.76 698.3C808.284 701.528 715.974 218.009 1.09976 520.477" stroke="#7B96AE" stroke-miterlimit="10"/>
-				<path class="mainLines__path mainLines__path_4" d="M1921.3 122.507C1800.49 394.845 1549.06 752.821 987.603 542.627C367.238 310.463 341.435 718.835 564.158 720.628C799.383 722.242 672.37 257.197 1.09976 631.672" stroke="#5B7A98" stroke-miterlimit="10"/>
-				<path class="mainLines__path mainLines__path_5" d="M1921.3 1C1811.89 367.495 1545.26 762.237 953.899 563.431C323.133 351.354 329.034 742.867 549.557 742.867C790.582 742.867 628.765 296.384 1.09976 742.867" stroke="#3B5E82" stroke-miterlimit="10"/>
+				<path class="mainLines__path mainLines__path_0" d="M1.1,742.9c627.7-446.5,789.5,0,548.5,0c-220.5,0-226.4-391.5,404.3-179.4c591.4,198.8,858-195.9,967.4-562.4" stroke="#DBE9EF" stroke-miterlimit="10"/>
+				<path class="mainLines__path mainLines__path_1" d="M1.1,631.7c671.3-374.5,798.3,90.6,563.1,89c-222.7-1.8-196.9-410.2,423.4-178 c561.5,210.2,812.9-147.8,933.7-420.1" stroke="#BBCDD9" stroke-miterlimit="10"/>
+				<path class="mainLines__path mainLines__path_2" d="M1.1,520.5C716,218,808.3,701.5,578.8,698.3c-224.9-3.5-167.3-429.5,442.5-176.5 c531.8,220.7,767.7-99.6,900-277.9" stroke="#9BB1C3" stroke-miterlimit="10"/>
+				<path class="mainLines__path mainLines__path_3" d="M1.2,409.3c758.6-230.4,816,271.7,592.3,266.8c-227.1-5.4-137.2-449.8,461.6-175 c502.3,230.5,722.5-51.5,866.2-135.7" stroke="#7B96AE" stroke-miterlimit="10"/>
+				<path class="mainLines__path mainLines__path_4" d="M1.1,298.3c802.3-158.5,825,362.2,607,355.6c-229.3-7.2-106.7-470.9,480.7-173.6 c473.3,239.5,677.4-3.3,832.5,6.5" stroke="#5B7A98" stroke-miterlimit="10"/>
+				<path class="mainLines__path mainLines__path_5" d="M1,186.9c845.9-86.4,833.8,452.8,621.6,444.6c-231.4-8.9-75.3-492.8,500-172.1 c444.9,248.1,632.2,44.8,798.8,148.9" stroke="#3B5E82" stroke-miterlimit="10"/>
 			</svg>
 		</section>
 		<section class="bonusCard">
 			<div class="bonusCard__content">
 				<div class="bonusSystem container">
 					<div class="bonusSystem__ground bonusSystem__ground_left">
-						<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/bonusSystemGround-left.svg';?>
+						<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/systemGround-left.svg';?>
 					</div>
 						<div class="bonusSystem__content">
 							<div class="bonusSystem__box">
@@ -192,7 +192,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 							</div>
 						</div>
 					<div class="bonusSystem__ground bonusSystem__ground_right">
-						<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/bonusSystemGround-right.svg';?>
+						<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/systemGround-right.svg';?>
 					</div>
 				</div>
 				<div class="typesCards">
@@ -282,6 +282,42 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 					</div>
 				</div>
 			</div>
+		</section>
+		<section class="sectionConsult sectionConsult_js">
+			<div class="sectionConsult__content container">
+				<div class="bonusSystem__ground bonusSystem__ground_left">
+					<img src="/dist/img/formTrees01.png" alt="">
+				</div>
+				<form class="sectionConsult__form">
+					<div class="sectionConsult__title">Нужна консультация?</div>
+					<div class="sectionConsult__description">
+						Не&nbsp;знаете что выбрать, оставьте свой номер телефона: мы&nbsp;позвоним 
+						и&nbsp;ответим на&nbsp;все интересующие вас вопросы
+					</div>
+					<div class="sectionConsult__input">
+						<div class="envelopeInput">
+							<input class="envelopeInput__field" placeholder="Телефон" type="text">
+						</div>
+					</div>
+					<div class="sectionConsult__send">
+						<button class="sectionConsult__button btnPurple">Записаться</button>
+						<div class="sectionConsult__privacy">
+							Нажимая кнопку &laquo;Записаться&raquo;, вы&nbsp;соглашаетесь 
+							с&nbsp;<a class="sectionConsult__policy" href="#">политикой&nbsp;конфиденциальности</a>
+						</div>
+					</div>
+				</form>
+				<div class="sectionConsult__practice hide">
+					<div class="sectionConsult__year">15</div>
+					<span>лет <br>профессионального <br>опыта</span>
+				</div>
+				<div class="bonusSystem__ground bonusSystem__ground_right">
+					<img src="/dist/img/formTrees02.png" alt="">
+				</div>
+			</div>
+			<div class="sectionConsult__doctor">
+					<img src="/dist/img/doctor15.png">
+				</div>
 		</section>
 	</section>
 </main>
