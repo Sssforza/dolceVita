@@ -127,6 +127,24 @@ body {
     border: 2px solid $greenLight;
     border-radius: 20px;
 }
+//titles
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__title {
+        font-size: 55px;
+        line-height: 71px;
+        color: $blueDark;
+        font-family: 'Prata';
+    }
+    &__all {
+        font-size: 20px;
+        line-height: 24px;
+        color: $blueDark;
+        font-family: 'Roboto';
+    }
+}
 //sliders arrows
 .sliderArrow {
     &__prev,
@@ -164,12 +182,14 @@ body {
 }
 .sectionConsult {
     &__content {
-        padding: 60px 152px 72px;
+        padding-top: 60px;
+        padding-bottom: 72px;
         width: 100%;
         background: $blueGrayGrad;
         border-radius: 80px;
         display: flex;
         overflow: hidden;
+        @extend %centerContainer;
     }
     &__form {
         width: 576px;

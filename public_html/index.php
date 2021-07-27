@@ -319,6 +319,12 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 					<img src="/dist/img/doctor15.png">
 				</div>
 		</section>
+		<section class="usefulBlog">
+			<div class="usefulBlog__content containerMin section">
+				<div class="section__title">Полезный блог</div>
+				<a href="#" class="usefulBlog__all">Все статьи</a>
+			</div>
+		</section>
 	</section>
 </main>
 
