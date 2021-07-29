@@ -283,6 +283,55 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 				</div>
 			</div>
 		</section>
+		<div class="reviews">
+			<div class="reviews__bg"></div>
+			<div class="reviews__svg">
+				<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesHeart.svg';?>
+			</div>
+			<div class="reviews__content containerMin">
+				<div class="section">
+					<div class="section__title">Отзывы клиентов</div>
+				</div>
+				<div class="reviews__list">
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem1.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem3.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem4.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem5.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem6.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem7.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem8.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem9.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem11.png)"></div>
+					</div>
+					<div class="reviews__item">
+						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<section class="sectionConsult sectionConsult_js">
 			<div class="sectionConsult__content container">
 				<div class="bonusSystem__ground bonusSystem__ground_left">
