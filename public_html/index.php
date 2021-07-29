@@ -283,6 +283,20 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 				</div>
 			</div>
 		</section>
+		<section class="videoHistory">
+			<div class="videoHistory__container container">
+				<video autoplay muted loop class="videoHistory__video">
+					<source src="/dist/video/videoHistory.mp4" type="video/mp4">
+				</video>
+				<div class="videoHistory__content">
+					<div class="videoHistory__title">Истории преображений</div>
+					<div class="videoHistory__description">
+						Истории реальных преображений инновационными методиками от ведущих специалистов клиники
+					</div>
+					<a href="#" class="videoHistory__btn btnPurple">Посмотреть</a>
+				</div>
+			</div>
+		</section>
 		<div class="reviews">
 			<div class="reviews__bg"></div>
 			<div class="reviews__svg">
