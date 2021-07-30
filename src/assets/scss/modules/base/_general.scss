@@ -130,6 +130,42 @@ body {
     border: 2px solid $greenLight;
     border-radius: 20px;
 }
+.breadCrumbs {
+    position: relative;
+    z-index: 2;
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+    &__item {
+        &:first-child {
+            &:before {
+                content: url($imgUrl + "svg/breadCrumbsChit-first.svg");
+                position: absolute;
+                left: -19px;
+            }
+            .breadCrumbs__chit {
+                margin-left: 0;
+            }
+        }
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+        &:before {
+            content:'—';
+            color: $greenLight;
+        }
+        a {
+            border-bottom: 1px solid $greenLight;
+        }
+    }
+    &__chit {
+        margin-left: 8px;
+        font-size: 14px;
+        line-height: 18px;
+        color: $greenLight;
+    }
+}
 //titles
 .section {
     display: flex;
@@ -228,5 +264,65 @@ body {
         img {
             display: block;
         }
+    }
+}
+.banerSection {
+    position: relative;
+    padding-top: 163px;
+    padding-left: 367px;
+    width: 100%;
+    min-height: 594px;
+    background: linear-gradient(188.86deg, #A9C2C9 1.18%, #79A5B1 85.9%);
+    overflow: hidden;
+    &:before {
+        content:'';
+        width: 1335px;
+        height: 1335px;
+        position: absolute;
+        top: -48px;
+        left: 388px;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.38) 43.25%, rgba(255, 255, 255, 0) 100%);
+        opacity: 0.75;
+        pointer-events: none;
+    }
+    &__sheet {
+        position: absolute;
+        background: {
+            repeat: no-repeat;
+        }
+        pointer-events: none;
+        &_left {
+            top: 0;
+            left: 0;
+            width: 852px;
+            height: 594px;
+            background-image: url($imgUrl + "banerSectionSheet-left.png");
+        }
+        &_right {
+            top: 0;
+            right: 0;
+            width: 840px;
+            height: 594px;
+            background-image: url($imgUrl + "banerSectionSheet-right.png");
+        }
+    }
+    &__content {
+        position: relative;
+        margin-top: 48px;
+        max-width: 573px;
+        z-index: 2;
+    }
+    &__title {
+        margin-left: -154px;
+        font-size: 72px;
+        line-height: 101px;
+        color: $white;
+        font-family: 'Prata';
+    }
+    &__description {
+        margin-top: 48px;
+        font-size: 24px;
+        line-height: 34px;
+        color: $greenLight;
     }
 }

@@ -1,0 +1,98 @@
+@import "../modules/utilities/_variables.scss";
+.team {
+    margin-top: 97px;
+    &__content {
+
+    }
+}
+.teamList {
+    position: relative;
+    width: 1224px;
+    &:after {
+        content:'';
+        position: absolute;
+        right: 0;
+        bottom: -3px;
+        left: 0;
+        height: 1px;
+        background: $greenMedium;
+        border-radius: 50px;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        position: relative;
+        font-size: 21px;
+        line-height: 27px;
+        color: $greenDark;
+        opacity: 0.6;
+        cursor: pointer;
+        &.active {
+            opacity: 1;
+            cursor: auto;
+            &:after {
+                content:'';
+                position: absolute;
+                right: 0;
+                bottom: -3px;
+                left: 0;
+                height: 2px;
+                background: $purple;
+                border-radius: 50px;
+                z-index: 2;
+            }
+        }
+    }
+}
+.teamPeople {
+    margin-top: 137px;
+    &__item {
+        width: 281px;
+    }
+    &__person {
+        position: relative;
+        width: 100%;
+        height: 323px;
+    }
+    &__bg {
+        svg {
+            display: block;
+            .border {
+                opacity: 0;
+            }
+            .circle {
+                opacity: 0;
+            }
+        }
+    }
+    &__human {
+        position: absolute;
+        bottom: 0;
+        left: 8px;
+        img {
+            display: block;
+        }
+    }
+    &__name {
+        margin-top: 20px;
+        text-align: center;
+    }
+    &__link {
+        font-size: 36px;
+        line-height: 50px;
+        color: $blueDark;
+        font-family: 'Prata';
+    }
+    &__doctor {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 12px;
+        font-size: 18px;
+        line-height: 23px;
+        font-weight: 500;
+        color: $gray;
+        text-align: center;
+    }
+}
