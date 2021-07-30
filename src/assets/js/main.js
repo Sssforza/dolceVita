@@ -17,6 +17,9 @@ import {headerServices} from "./blocks/_header.js";
 //📁 /assets/js/blocks  _sliders.js
 import {sliderMain, sliderEquipment} from "./blocks/_sliders.js";
 
+//📁 /assets/js/blocks  scrollbar.js
+import { specialistsNavScroll } from "./blocks/scrollbar.js";
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // header top 0
@@ -39,5 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // slider main page equipment
     sliderEquipment();
+
+    // specialists nav scroll
+    specialistsNavScroll();
 
 });

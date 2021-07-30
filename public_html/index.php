@@ -174,6 +174,104 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 				<path class="mainLines__path mainLines__path_0" d="M1,186.9c845.9-86.4,833.8,452.8,621.6,444.6c-231.4-8.9-75.3-492.8,500-172.1 c444.9,248.1,632.2,44.8,798.8,148.9" stroke="#3B5E82" stroke-miterlimit="10"/>
 			</svg>
 		</section>
+		<section class="specialists">
+			<div class="specialists__bg"></div>
+			<div class="specialists__content container">
+				<div class="specialists__container">
+					<div class="specialists__header">
+						<div class="specialists__title">Наши специалисты</div>
+						<div class="specialists__link">
+							<a href="#" class="specialists__all">Все специалисты</a>
+						</div>
+						<div class="specialists__state">
+							<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsHexagon.svg';?>
+							<div class="specialists__number">20</div>
+							<div class="specialists__text">
+								профессиональных косметологов в&nbsp;штате компании
+							</div>
+						</div>
+					</div>
+					<div class="specialists__box">
+						<div class="specialists__nav specialistsNav">
+							<div class="specialistsNav__conent specialistsNavScroll_js scrollbar-inner">
+								<div class="specialistsNav__item">
+									<div class="specialistsNav__img" style="background-image:url(/dist/img/specialistsNav1.png)"></div>
+									<div class="specialistsNav__wrapper">
+										<div class="specialistsNav__name">Галина Лагутова</div>
+										<div class="specialistsNav__hakeem">Врач-косметолог, дерматолог</div>
+									</div>
+								</div>
+								<div class="specialistsNav__item">
+									<div class="specialistsNav__img" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
+									<div class="specialistsNav__wrapper">
+										<div class="specialistsNav__name">Светлана Зуева</div>
+										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
+									</div>
+								</div>
+								<div class="specialistsNav__item">
+									<div class="specialistsNav__img" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
+									<div class="specialistsNav__wrapper">
+										<div class="specialistsNav__name">Татьяна Малицкая</div>
+										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
+									</div>
+								</div>
+								<div class="specialistsNav__item">
+									<div class="specialistsNav__img" style="background-image:url(/dist/img/specialistsNav4.png)"></div>
+									<div class="specialistsNav__wrapper">
+										<div class="specialistsNav__name">Елена Пономарева</div>
+										<div class="specialistsNav__hakeem">Специалист по коррекции фигуры и массажу</div>
+									</div>
+								</div>
+								<div class="specialistsNav__item">
+									<div class="specialistsNav__img" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
+									<div class="specialistsNav__wrapper">
+										<div class="specialistsNav__name">Светлана Зуева</div>
+										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
+									</div>
+								</div>
+								<div class="specialistsNav__item">
+									<div class="specialistsNav__img" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
+									<div class="specialistsNav__wrapper">
+										<div class="specialistsNav__name">Татьяна Малицкая</div>
+										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="specialists__for specialistsFor">
+							<div class="specialistsFor__content">
+								<div class="specialistsFor__item">
+									<div class="specialistsFor__description">
+										<div class="specialistsFor__wrapper">
+											<div class="specialistsFor__name">Галина Лагутова</div>
+											<div class="specialistsFor__block">
+												<ul class="specialistsFor__ul">
+													<li class="specialistsFor__specialization">Специализация</li>
+													<li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
+												</ul>
+												<ul class="specialistsFor__ul">
+													<li class="specialistsFor__specialization">Профессиональный опыт</li>
+													<li class="specialistsFor__medic">7 лет</li>
+												</ul>
+											</div>
+										</div>
+										<div class="specialistsFor__link">
+											<a href="#" class="specialistsFor__a">
+												<span>Подробнее</span>
+												<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+											</a>
+										</div>
+									</div>
+									<div class="specialistsFor__img">
+										<img src="/dist/img/specialistsForImg1.png">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="bonusCard">
 			<div class="bonusCard__content">
 				<div class="bonusSystem container">

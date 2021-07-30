@@ -1,4 +1,6 @@
 @import "../modules/utilities/_variables.scss";
+// Scrollbar
+@import "../blocks/_jquery.scrollbar.scss";
 
 @keyframes mainLinesDraw{
     to {stroke-dashoffset: 0;}
@@ -807,5 +809,178 @@
     &__btn {
         margin-top: 39px;
         width: 196px;
+    }
+}
+.specialists {
+    position: relative;
+    &__bg {
+        position: absolute;
+        top: -628px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1920px;
+        background: radial-gradient(50% 50% at 50% 50%, #E7F0FA 54.69%, rgba(255, 255, 255, 0) 100%);
+        opacity: 0.75;
+    }
+    &__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__title {
+        font-size: 48px;
+        line-height: 62px;
+        color: $blueDark;
+        font-family: 'Prata';
+    }
+    &__link {
+        margin-left: 41px;
+    }
+    &__all {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 24px;
+        color: $greenDark;
+        border-bottom: 1px solid $greenDark;
+    }
+    &__state {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-top: 62px;
+        width: 255px;
+        height: 375px;
+        svg {
+            @extend %stretch;
+        }
+    }
+    &__number {
+        font-size: 128px;
+        line-height: 173px;
+        text-align: center;
+        letter-spacing: -0.015em;
+        color: $greenMedium;
+        opacity: 0.75;
+        font-family: 'Prata';
+    }
+    &__text {
+        position: absolute;
+        top:104px;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+        color: $greenDark;
+        text-align: center;
+    }
+    &__container {
+        padding-left: 177px;
+    }
+    &__box {
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+        height: 475px;
+    }
+}
+.specialistsNav {
+    padding: 45px 62px 42px 42px;
+    width: 420px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(40px);
+    border-radius: 40px;
+    overflow: hidden;
+    &__item {
+        display: flex;
+        align-items: center;
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+    &__wrapper {
+        margin-left: 22px;
+        max-width: 212px;
+    }
+    &__img {
+        flex: none;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    &__name {
+        font-size: 21px;
+        line-height: 27px;
+        font-weight: 500;
+        color: $greenDark;
+    }
+    &__hakeem {
+        margin-top: 5px;
+        font-size: 15px;
+        line-height: 20px;
+        color: $greenMedium;
+    }
+}
+.specialistsFor {
+    width: calc(100% - 515px);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(40px);
+    border-radius: 40px;
+    &__content {
+        height: 100%;
+    }
+    &__item {
+        display: flex;
+        position: relative;
+        padding: 61px 63px;
+        height: 100%;
+    }
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__name {
+        font-size: 38px;
+        line-height: 48px;
+        font-weight: 500;
+        color: $blueDark;
+    }
+    &__block {
+        margin-top: 34px;
+    }
+    &__specialization {
+        font-size: 18px;
+        line-height: 24px;
+        color: $greenMedium;
+    }
+    &__medic {
+        margin-top: 6px;
+        font-size: 20px;
+        line-height: 24px;
+        color: $blueDark;
+    }
+    &__a {
+        display: inline-flex;
+        align-items: center;
+        span {
+            font-size: 24px;
+            line-height: 30px;
+            color: $purple;
+            opacity: 0.8;
+        }
+        svg {
+            margin-left: 12px;
+            display: block;
+        }
+    }
+    &__img {
+        position: absolute;
+        right: 138px;
+        bottom: 0;
+        img {
+            display: block;
+        }
     }
 }
