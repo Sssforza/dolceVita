@@ -1,4 +1,4 @@
-// header services
+// anim main lines
 export function animMainLines () {
     if(document.querySelector('.mainLines_js')) {
         const mainLines = document.querySelector('.mainLines__svg');
@@ -7,7 +7,22 @@ export function animMainLines () {
         const headerHeight = document.querySelector('.header_js').offsetHeight;
         window.addEventListener('scroll', function() {
             if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
-                mainLines.classList.add('show')
+                mainLines.classList.add('show');
+            }
+        });
+    }
+}
+
+// anim reviews lines
+export function animReviewsLines () {
+    if(document.querySelector('.reviews_js')) {
+        const mainLines = document.querySelector('.reviews__svg');
+        const mainLinesTop = document.querySelector('.reviews_js').offsetTop;
+        const mainLinesHeight = document.querySelector('.reviews_js').offsetHeight;
+        const headerHeight = document.querySelector('.header_js').offsetHeight;
+        window.addEventListener('scroll', function() {
+            if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
+                mainLines.classList.add('show');
             }
         });
     }

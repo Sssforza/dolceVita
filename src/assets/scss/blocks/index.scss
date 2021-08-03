@@ -821,6 +821,41 @@
         transition: $transition;
         overflow: hidden;
     }
+    &__path {
+        stroke-miterlimit:10;
+        stroke-dasharray: 3601;
+        stroke-dashoffset: 3601;
+    }
+    &__svg {
+        &.show {
+            .reviews__path {
+                &_0 {
+                    stroke:#DBE9EF;
+                    animation: mainLinesDraw 1.5s linear 1.2s forwards;
+                }
+                &_1 {
+                    stroke:#BBCDD9;
+                    animation: mainLinesDraw 1.4s linear 0.9s forwards;
+                }
+                &_2 {
+                    stroke:#9BB1C3;
+                    animation: mainLinesDraw 1.3s linear 0.7s forwards;
+                }
+                &_3 {
+                    stroke:#7B96AE;
+                    animation: mainLinesDraw 1.2s linear 0.5s forwards;
+                }
+                &_4 {
+                    stroke:#5B7A98;
+                    animation: mainLinesDraw 1.1s linear 0.3s forwards;
+                }
+                &_5 {
+                    stroke:#3B5E82;
+                    animation: mainLinesDraw 1s linear forwards;
+                }
+            }
+        }
+    }
 }
 .videoHistory {
     margin-top: 165px;

@@ -11419,7 +11419,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // header top 0
   Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_2__["headerShow"])(); // next anim main lines
 
-  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animMainLines"])(); // next section consult practice
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animMainLines"])(); // next anim reviews lines
+
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animReviewsLines"])(); // next section consult practice
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["sectionConsultPractice"])(); // useful blog translateY 0
 
@@ -14510,14 +14512,29 @@ function headerShow() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animMainLines", function() { return animMainLines; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animReviewsLines", function() { return animReviewsLines; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sectionConsultPractice", function() { return sectionConsultPractice; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usefulBlog", function() { return usefulBlog; });
-// header services
+// anim main lines
 function animMainLines() {
   if (document.querySelector('.mainLines_js')) {
     var mainLines = document.querySelector('.mainLines__svg');
     var mainLinesTop = document.querySelector('.mainLines_js').offsetTop;
     var mainLinesHeight = document.querySelector('.mainLines_js').offsetHeight;
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    window.addEventListener('scroll', function () {
+      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
+        mainLines.classList.add('show');
+      }
+    });
+  }
+} // anim reviews lines
+
+function animReviewsLines() {
+  if (document.querySelector('.reviews_js')) {
+    var mainLines = document.querySelector('.reviews__svg');
+    var mainLinesTop = document.querySelector('.reviews_js').offsetTop;
+    var mainLinesHeight = document.querySelector('.reviews_js').offsetHeight;
     var headerHeight = document.querySelector('.header_js').offsetHeight;
     window.addEventListener('scroll', function () {
       if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
@@ -14663,7 +14680,6 @@ __webpack_require__.r(__webpack_exports__);
 // specialists nav scroll
 function specialistsNavScroll() {
   if (document.querySelector(".specialistsNavScroll_js")) {
-    console.log(11);
     $(".scrollbar-inner").scrollbar();
   }
 }
