@@ -5,6 +5,9 @@
 @keyframes mainLinesDraw{
     to {stroke-dashoffset: 0;}
 }
+@keyframes sliderLinesDraw{
+    to {stroke-dashoffset: 0;}
+}
 @keyframes moveGroundLeft {
     0% {
         transform: rotate(-5deg) translateX(-10px);
@@ -171,8 +174,6 @@
             font-size: 0;
             cursor: pointer;
             overflow: hidden;
-            //background: rgba(219,233,239,.2);
-            background: $gray;
             &:not(:last-child) {
                 margin-right: 13px;
             }
@@ -187,72 +188,21 @@
                 border-radius: 50%;
                 opacity: .5;
             }
-            .pie {
-                width: 50%;
-                height: 100%;
-                transform-origin: 100% 50%;
-                position: absolute;
-                border: 2px solid $white;
-            }
-            .spinner {
-                border-radius: 100% 0 0 100%/50% 0 0 50%;
-                z-index: 2;
-                border-right: none;
-            }
-            .filler {
-                border-radius: 0 100% 100% 0/0 50% 50% 0;
-                left: 50%;
-                opacity: 0;
-                z-index: 1;
-                border-left: none;
-            }
-            .mask {
-                width: 50%;
-                height: 100%;
-                position: absolute;
-                background: inherit;
-                opacity: 1;
-                z-index: 3;
-            }
-            @keyframes rota {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-            @keyframes fill {
-                0% {
-                    opacity: 0;
-                }
-                50%, 100% {
-                    opacity: 1;
-                }
-            }
-            @keyframes mask {
-                0% {
-                    opacity: 1;
-                }
-                50%, 100% {
-                    opacity: 0;
-                }
-            }
             &.slick-active {
-                .spinner {
-                    animation: rota 10s linear infinite;
-                }
-                .filler {
-                    animation: fill 10s steps(1, end) infinite;
-                }
-                .mask {
-                    animation: mask 10s steps(1, end) infinite;
-                }
                 &:after {
                     opacity: 1;
                 }
+                .sliderMain__line {
+                    stroke:#DBE9EF;
+                    animation: sliderLinesDraw 6s linear forwards;
+                }
             }
         }
+    }
+    &__svg {
+        stroke-miterlimit:10;
+        stroke-dasharray: 145;
+        stroke-dashoffset: 145;
     }
     &__arrows {
         margin-top: 12px;

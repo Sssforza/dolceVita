@@ -7,7 +7,7 @@ export function sliderMain () {
 			fade: true,
 			infinite: true,
 			autoplay: true,
-			autoplaySpeed: 9500,
+			autoplaySpeed: 5500,
 			speed: 900,
 			slidesToShow: 1,
 			cssEase: 'ease',
@@ -19,7 +19,7 @@ export function sliderMain () {
 			appendDots: '.sliderMain__dots',
 			// dotsClass: "sliderMain__dots",
 			customPaging : function(slider, i) {
-				return `<div class="pie spinner"></div><div class="pie filler"></div><div class="mask"></div>`;
+				return `<div class="sliderMain__svg"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path class="sliderMain__line" d="M24,1c12.7,0,23,10.3,23,23S36.7,47,24,47S1,36.7,1,24S11.3,1,24,1" fill="none" stroke="#DBE9EF" stroke-width="2" stroke-miterlimit="10"/></svg></div>`;
 			}
 		});
     }

@@ -326,3 +326,21 @@ body {
         color: $greenLight;
     }
 }
+
+
+@keyframes mainLinesDraw{
+    to {stroke-dashoffset: 0;}
+}
+.containerMin {
+    .lines {
+        stroke-miterlimit:10;
+        stroke-dasharray: 3601;
+        stroke-dashoffset: 3601;
+    }
+    &.show {
+        .lines {
+            stroke:#DBE9EF;
+            animation: mainLinesDraw 10s linear forwards;
+        }
+    }
+}
