@@ -15,7 +15,7 @@ import {animMainLines, sectionConsultPractice, usefulBlog} from "./blocks/_animP
 import {headerServices} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
-import {sliderMain, sliderEquipment} from "./blocks/_sliders.js";
+import {sliderMain, sliderEquipment, sliderSpecialists} from "./blocks/_sliders.js";
 
 //📁 /assets/js/blocks  scrollbar.js
 import { specialistsNavScroll } from "./blocks/scrollbar.js";
@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // slider main page equipment
     sliderEquipment();
+
+    // slider main page specialists
+    sliderSpecialists();
 
     // specialists nav scroll
     specialistsNavScroll();

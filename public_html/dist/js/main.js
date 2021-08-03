@@ -11429,7 +11429,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_5__["sliderMain"])(); // slider main page equipment
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_5__["sliderEquipment"])(); // specialists nav scroll
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_5__["sliderEquipment"])(); // slider main page specialists
+
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_5__["sliderSpecialists"])(); // specialists nav scroll
 
   Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_6__["specialistsNavScroll"])();
 });
@@ -14588,6 +14590,7 @@ function headerServices() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderMain", function() { return sliderMain; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderEquipment", function() { return sliderEquipment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderSpecialists", function() { return sliderSpecialists; });
 // SliderMain
 function sliderMain() {
   var slickMain = $(".sliderMain_js");
@@ -14627,6 +14630,22 @@ function sliderEquipment() {
       slidesToShow: 1,
       cssEase: 'linear',
       arrows: true,
+      prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+      nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+    });
+  }
+}
+; // Slider specialists
+
+function sliderSpecialists() {
+  var slickSpecialists = $(".specialistsFor_js");
+
+  if (slickSpecialists.length) {
+    slickSpecialists.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      fade: true,
       prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
       nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
     });

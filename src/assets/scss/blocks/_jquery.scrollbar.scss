@@ -1000,14 +1000,18 @@
   border-radius: 0px;
 }
 .scrollbar-inner > .scroll-element .scroll-element_track {
-  background-color: #c8dad0;
+  width: 2px;
+  left: 50%;
+  margin-left: -1px;
+  background-color: #E9E5E8;
 }
 .scrollbar-inner > .scroll-element .scroll-bar {
-  background-color: #005827;
-  border-radius: 5px;
+  width: 7px;
+  background-color: $purple;
+  border-radius: 12px;
 }
 .scrollbar-inner > .scroll-element.scroll-y {
-  width: 6px;
-  border-radius: 5px;
+  width: 7px;
+  border-radius: 12px;
   overflow: hidden;
 }
