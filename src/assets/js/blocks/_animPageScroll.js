@@ -28,6 +28,21 @@ export function animReviewsLines () {
     }
 }
 
+// anim bonus system
+export function sectionBonusSystem () {
+    if(document.querySelector('.bonusCard_js')) {
+        const bonusCard = document.querySelector('.bonusCard_js');
+        const bonusCardTop = document.querySelector('.bonusCard_js').offsetTop;
+        const bonusCardHeight = document.querySelector('.bonusCard_js').offsetHeight;
+        const headerHeight = document.querySelector('.header_js').offsetHeight;
+        window.addEventListener('scroll', function() {
+            if(pageYOffset > (bonusCardTop - bonusCardHeight - headerHeight)){
+                bonusCard.classList.add('show');
+            }
+        });
+    }
+}
+
 // section consult practice
 export function sectionConsultPractice () {
     if(document.querySelector('.sectionConsult_js')) {
@@ -37,7 +52,7 @@ export function sectionConsultPractice () {
         const headerHeight = document.querySelector('.header_js').offsetHeight;
         window.addEventListener('scroll', function() {
             if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
-                mainLines.classList.remove('hide')
+                mainLines.classList.remove('hide');
             }
         });
     }
@@ -52,7 +67,7 @@ export function usefulBlog () {
         const headerHeight = document.querySelector('.header_js').offsetHeight;
         window.addEventListener('scroll', function() {
             if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
-                mainLines.classList.remove('top')
+                mainLines.classList.remove('top');
             }
         });
     }

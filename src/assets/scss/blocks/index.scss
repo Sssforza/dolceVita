@@ -429,6 +429,35 @@
 .bonusCard {
     margin-top: 272px;
     position: relative;
+    &__card {
+        width: 662px;
+        height: 467px;
+        position: absolute;
+        top: -179px;
+        right: 298px;
+        z-index: 1;
+        transform: translateY(300px) translateX(200px) scale(0.8) rotate(-16deg);
+        transition: $transition8eio;
+        img {
+            display: block;
+            height: 100%;
+        }
+    }
+    &__phone {
+        position: absolute;
+        top: 16px;
+        right: 390px;
+        transform: translateY(110px) scale(0.8);
+        transition: $transition8eio;
+    }
+    &.show {
+        .bonusCard__card {
+            transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+        }
+        .bonusCard__phone{
+            transform: translateY(0px) scale(1);
+        }
+    }
 }
 .bonusSystem {
     padding-top: 60px;
@@ -469,7 +498,10 @@
     }
 }
 .typesCards {
-    margin-top: 66px;
+    padding-top: 66px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
     &__content {
         display: flex;
     }

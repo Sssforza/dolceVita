@@ -11421,7 +11421,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animMainLines"])(); // next anim reviews lines
 
-  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animReviewsLines"])(); // next section consult practice
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["animReviewsLines"])(); // next anim card and phone bonus system
+
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["sectionBonusSystem"])(); // next section consult practice
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_3__["sectionConsultPractice"])(); // useful blog translateY 0
 
@@ -14513,6 +14515,7 @@ function headerShow() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animMainLines", function() { return animMainLines; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animReviewsLines", function() { return animReviewsLines; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sectionBonusSystem", function() { return sectionBonusSystem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sectionConsultPractice", function() { return sectionConsultPractice; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usefulBlog", function() { return usefulBlog; });
 // anim main lines
@@ -14539,6 +14542,20 @@ function animReviewsLines() {
     window.addEventListener('scroll', function () {
       if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
         mainLines.classList.add('show');
+      }
+    });
+  }
+} // anim bonus system
+
+function sectionBonusSystem() {
+  if (document.querySelector('.bonusCard_js')) {
+    var bonusCard = document.querySelector('.bonusCard_js');
+    var bonusCardTop = document.querySelector('.bonusCard_js').offsetTop;
+    var bonusCardHeight = document.querySelector('.bonusCard_js').offsetHeight;
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    window.addEventListener('scroll', function () {
+      if (pageYOffset > bonusCardTop - bonusCardHeight - headerHeight) {
+        bonusCard.classList.add('show');
       }
     });
   }

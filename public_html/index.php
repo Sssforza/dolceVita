@@ -407,7 +407,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 				</div>
 			</div>
 		</section>
-		<section class="bonusCard">
+		<section class="bonusCard bonusCard_js">
 			<div class="bonusCard__content">
 				<div class="bonusSystem container">
 					<div class="bonusSystem__ground bonusSystem__ground_left">
@@ -427,6 +427,12 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 					<div class="bonusSystem__ground bonusSystem__ground_right">
 						<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/systemGround-right.svg';?>
 					</div>
+				</div>
+				<div class="bonusCard__card">
+					<img src="/dist/img/bonusSystemCard.png">
+				</div>
+				<div class="bonusCard__phone">
+					<img src="/dist/img/bonusSystemPhone.png">
 				</div>
 				<div class="typesCards">
 					<div class="typesCards__content containerMin">
