@@ -505,6 +505,7 @@
     }
     &__ground {
         position: absolute;
+        pointer-events: none;
         &_left {
             left: -220px;
             top: -300px;
@@ -741,9 +742,10 @@
     &__content {
         position: relative;
         z-index: 1;
+        padding-right: 200px;
     }
     &__list {
-        margin: 62px -4px 0 -2px;
+        margin: 62px -2px 0 -2px;
         display: flex;
         flex-wrap: wrap;
     }
@@ -816,6 +818,8 @@
             size: cover;
             position: top center;
         }
+        transition: $transition;
+        overflow: hidden;
     }
 }
 .videoHistory {

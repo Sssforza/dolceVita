@@ -420,17 +420,17 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 					<div class="bonusSystem__ground bonusSystem__ground_left">
 						<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/systemGround-left.svg';?>
 					</div>
-						<div class="bonusSystem__content">
-							<div class="bonusSystem__box">
-								<div class="bonusSystem__title">Бонусная система</div>
-								<div class="bonusSystem__description">
-									Мы&nbsp;очень дорожим каждым клиентом и&nbsp;специально 
-									для вас разработали нашу бонусную систему. 
-									Теперь быть клиентом DolceVita не&nbsp;только приятно, 
-									но&nbsp;и&nbsp;очень выгодно
-								</div>
+					<div class="bonusSystem__content">
+						<div class="bonusSystem__box">
+							<div class="bonusSystem__title">Бонусная система</div>
+							<div class="bonusSystem__description">
+								Мы&nbsp;очень дорожим каждым клиентом и&nbsp;специально 
+								для вас разработали нашу бонусную систему. 
+								Теперь быть клиентом DolceVita не&nbsp;только приятно, 
+								но&nbsp;и&nbsp;очень выгодно
 							</div>
 						</div>
+					</div>
 					<div class="bonusSystem__ground bonusSystem__ground_right">
 						<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/systemGround-right.svg';?>
 					</div>
