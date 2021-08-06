@@ -5,6 +5,12 @@ global.jQuery = global.$ = $;
 //📁 /node_modules/  slick 1.8.1
 import 'slick-carousel';
 
+//📁 /node_modules/  magnific-popup 1.1.0
+import 'magnific-popup';
+
+//📁 /assets/js/blocks  _popups.js
+import {moreStage} from "./blocks/_popups.js";
+
 //📁 /assets/js/blocks  _animPageLoad.js
 import {headerShow} from "./blocks/_animPageLoad.js";
 
@@ -18,9 +24,15 @@ import {headerServices} from "./blocks/_header.js";
 import {sliderMain, sliderEquipment, sliderSpecialists} from "./blocks/_sliders.js";
 
 //📁 /assets/js/blocks  scrollbar.js
-import { specialistsNavScroll } from "./blocks/scrollbar.js";
+import {specialistsNavScroll} from "./blocks/scrollbar.js";
+
+//📁 /assets/js/blocks  services.js
+import {popupMoreStageDate} from "./blocks/services.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    // moreStage
+    moreStage();
 
     // header top 0
     headerShow();
@@ -54,5 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // specialists nav scroll
     specialistsNavScroll();
+
+    // moreStage
+    moreStage();
+
+    // popupMoreStageDate
+    popupMoreStageDate();
 
 });
