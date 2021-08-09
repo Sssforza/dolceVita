@@ -1,0 +1,141 @@
+.footer {
+    padding-top: 118px;
+    padding-bottom: 58px;
+    &__content {
+        position: relative;
+        &:before {
+            content:'';
+            position: absolute;
+            top: -119px;
+            left: 29%;
+            width: 558px;
+            height: 429px;
+            background: {
+                image: url($imgUrl + "footerMap.png");
+                repeat: no-repeat;
+            }
+        }
+    }
+    &__top,
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__bottom {
+        margin-top: 37px;
+    }
+    &__right {
+        display: flex;
+    }
+    &__address {
+        font-size: 21px;
+        line-height: 25px;
+        color: $gray;
+    }
+    &__yandex {
+        display: inline-block;
+        margin-top: 7px;
+        font-size: 14px;
+        line-height: 18px;
+        color: $blueDark;
+        border-bottom: 1px solid $blueDark;
+    }
+    &__dolce {
+        position: relative;
+        top: 4px;
+        font-size: 12px;
+        line-height: 14px;
+        color: $gray;
+    }
+    &__policy {
+        font-size: 14px;
+        line-height: 17px;
+        color: $blueDark;
+        opacity: 0.8;
+    }
+    &__development {
+        margin-left: 149px;
+        position: relative;
+        left: 58px;
+        top: -12px;
+    }
+    &__ferma {
+        font-size: 14px;
+        line-height: 35px;
+        font-weight: 500;
+        &:before {
+            content:'';
+            position: absolute;
+            top: 7px;
+            left: -93px;
+            width: 88px;
+            height: 33px;
+            background: {
+                image: url($imgUrl + "svg/fermaLogo.svg");
+                repeat: no-repeat;
+            }
+        }
+        span {
+            font-size: 14px;
+            line-height: 35px;
+            font-weight: 500;
+            color: $gray;
+        }
+    }
+}
+.footerMode {
+    margin-top: 26px;
+    &__item {
+        display: flex;
+        font-size: 18px;
+        line-height: 22px;
+        color: $gray;
+        &:not(:first-child) {
+            margin-top: 4px;
+        }
+    }
+    &__day {
+        display: block;
+        min-width: 88px;
+        flex: none;
+    }
+    &__time {
+        letter-spacing: 0.03em;
+    }
+}
+.footerNav {
+    width: 304px;
+    &__list {
+        display: grid;
+        grid-template-columns: 196px 108px;
+    }
+    &__li {
+        margin-bottom: 20px;
+    }
+    &__link {
+        font-size: 24px;
+        line-height: 29px;
+        color: $blueDark;
+    }
+}
+.footerSocial {
+    margin-left: 114px;
+    &__list {
+        display: flex;
+    }
+    &__item {
+        &:not(:first-child) {
+            margin-left: 12px;
+        }
+    }
+    &__link {
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border: 2px solid rgba(141, 155, 178, .3);
+        border-radius: 50%;
+    }
+}

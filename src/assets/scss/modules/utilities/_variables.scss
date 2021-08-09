@@ -1,0 +1,51 @@
+// Img_url
+$imgUrl: '/dist/img/';
+
+// Breakpoints
+$xl: 1440px;
+$lg: 1024px;
+$xs: 540px;
+
+// Colors
+$white: #FFFFFF;
+$gray: #8D9BB2;
+$greenLight: #DBE9EF;
+$greenMedium: #A9C2C9;
+$greenDark: #7C8F99;
+$blueDark: #3B5E82;
+$purple: #8D5287;
+$blueGrayGrad: linear-gradient(188.86deg, #A9C2C9 1.18%, #79A5B1 85.9%);
+
+$transition: all .3s;
+$transition8eio: all .8s ease-in-out;
+
+%center {
+	position:relative;
+	max-width: 1830px;
+	margin: 0 auto;
+	padding: 0px 15px;
+	// @media (max-width:$lg) {
+	// 	max-width: 990px;
+	// }
+	// @media (max-width:$xs) {
+	// 	padding: 0px 20px;
+	// 	max-width: 580px;
+	// }
+}
+%centerMin {
+	position:relative;
+	max-width: 1920px;
+	margin: 0 auto;
+	padding: 0px 213px;
+}
+%centerContainer {
+	padding: 0px 177px;
+}
+
+%stretch {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
