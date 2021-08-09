@@ -2,7 +2,6 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 ?>
-<link rel='stylesheet' href="/dist/css/blocks/index.css">
 <main class="main">
 	<section class="page">
 		<section class="sliderMain">

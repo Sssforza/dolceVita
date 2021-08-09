@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+$APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
 ?>
-<link rel='stylesheet' href="/dist/css/blocks/team.css">
 <main class="main">
 	<section class="page page_team">
         <section class="banerSection">
