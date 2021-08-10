@@ -11426,9 +11426,7 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // moreStage
-  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // header top 0
-
+  // header top 0
   Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_4__["headerShow"])(); // next anim main lines
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__["animMainLines"])(); // next anim reviews lines
@@ -16370,11 +16368,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moreStage", function() { return moreStage; });
 // popup link more stage in the page services
 function moreStage() {
-  $('.popupMoreStage_js').magnificPopup({
-    type: 'inline',
-    tClose: 'Закрыть (Esc)',
-    tLoading: 'Загрузка...'
-  });
+  if (document.querySelector('.popupMoreStage_js')) {
+    $('.popupMoreStage_js').magnificPopup({
+      type: 'inline',
+      tClose: 'Закрыть (Esc)',
+      tLoading: 'Загрузка...'
+    });
+  }
 }
 
 /***/ }),

@@ -31,9 +31,6 @@ import {popupMoreStageDate} from "./blocks/services.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // moreStage
-    moreStage();
-
     // header top 0
     headerShow();
 
