@@ -409,10 +409,16 @@
         padding: 43px 58px 48px 46px;
     }
     &__img {
+        display: block;
+        width: 478px;
+        height: 486px;
         margin-top: -93px;
         margin-left: -106px;
-        img {
-            display: block;
+        border-radius: 36px;
+        overflow: hidden;
+        background: {
+            size:cover;
+            repeat:no-repeat;
         }
     }
     &__btn {

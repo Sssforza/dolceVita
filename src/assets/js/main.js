@@ -9,7 +9,7 @@ import 'slick-carousel';
 import 'magnific-popup';
 
 //📁 /assets/js/blocks  _popups.js
-import {moreStage} from "./blocks/_popups.js";
+import {moreStage, popupClose} from "./blocks/_popups.js";
 
 //📁 /assets/js/blocks  _animPageLoad.js
 import {headerShow} from "./blocks/_animPageLoad.js";
@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // specialists nav scroll
     specialistsNavScroll();
+
+    // popup close
+    popupClose();
 
     // moreStage
     moreStage();

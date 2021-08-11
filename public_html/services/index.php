@@ -84,7 +84,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                         </div>
                     </div>
                 </div>
-                <div class="services__item servicesCard servicesCard_programm">
+                <div class="services__item servicesCard servicesCard_programm servicesCard_js">
                     <div class="servicesCard__header">
                         <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
                         <div class="servicesCard__wrapper">
@@ -97,21 +97,91 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                     </div>
                     <div class="servicesCard__bottom">
                         <div class="servicesCard__list">
-                            <div class="servicesCard__box">
+                            <div class="servicesCard__box"
+                                data-description="Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах">
                                 <div class="servicesCard__what">1 этап</div>
                                 <div class="servicesCard__how">Криолиполиз</div>
                             </div>
-                            <div class="servicesCard__box">
+                            <div class="servicesCard__box"
+                                data-description="Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение">
                                 <div class="servicesCard__what">2 этап</div>
                                 <div class="servicesCard__how">LPG-массаж</div>
                             </div>
-                            <div class="servicesCard__box">
+                            <div class="servicesCard__box"
+                                data-description="Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.">
                                 <div class="servicesCard__what">3 этап</div>
-                                <div class="servicesCard__how">Лазерный аппарат fotona 4d</div>
+                                <div class="servicesCard__how">Морское утончение</div>
+                            </div>
+                            <div class="servicesCard__box"
+                                data-description="Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
+                                <div class="servicesCard__what">4 этап</div>
+                                <div class="servicesCard__how">Vela Shape II</div>
+                            </div>
+                            <div class="servicesCard__box"
+                                data-description="Лифтинг">
+                                <div class="servicesCard__what">5 этап</div>
+                                <div class="servicesCard__how">Лифтинг</div>
+                            </div>
+                            <div class="servicesCard__box"
+                                data-description="Моделирование">
+                                <div class="servicesCard__what">6 этап</div>
+                                <div class="servicesCard__how">Моделирование фигуры</div>
                             </div>
                         </div>
                         <div class="servicesCard__more">
-                            <a class="servicesCard__details popupMoreStage_js" href="#popupMoreStage">Подробнее об этапах</a>
+                            <a class="servicesCard__details popupMoreStage_js"
+                                href="#popupMoreStage"
+                                data-linkMore="linkMore"
+                                data-linkImg="url(/dist/img/servicesCardImg-1.png)"
+                            >Подробнее об этапах</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item servicesCard servicesCard_programm servicesCard_js">
+                    <div class="servicesCard__header">
+                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
+                        <div class="servicesCard__wrapper">
+                            <div class="servicesCard__title">1Комплексный подход коррекции фигуры</div>
+                            <div class="servicesCard__description">
+                                14-этапная программа восстановления упругости кожи и коррекции фигуры 
+                            </div>
+                        </div>
+                        <div class="servicesCard__programm">программа</div>
+                    </div>
+                    <div class="servicesCard__bottom">
+                        <div class="servicesCard__list">
+                            <div class="servicesCard__box"
+                                data-description="1Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах">
+                                <div class="servicesCard__what">11 этап</div>
+                                <div class="servicesCard__how">1Криолиполиз</div>
+                            </div>
+                            <div class="servicesCard__box"
+                                data-description="2Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение">
+                                <div class="servicesCard__what">22 этап</div>
+                                <div class="servicesCard__how">2LPG-массаж</div>
+                            </div>
+                            <div class="servicesCard__box"
+                                data-description="3Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.">
+                                <div class="servicesCard__what">33 этап</div>
+                                <div class="servicesCard__how">3Морское утончение</div>
+                            </div>
+                            <div class="servicesCard__box"
+                                data-description="4Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
+                                <div class="servicesCard__what">44 этап</div>
+                                <div class="servicesCard__how">4Vela Shape II</div>
+                            </div>
+                            <div class="servicesCard__box"
+                                data-description="5Лифтинг Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
+                                <div class="servicesCard__what">55 этап</div>
+                                <div class="servicesCard__how">5Лифтинг</div>
+                            </div>
+                        </div>
+                        <div class="servicesCard__more">
+                            <a class="servicesCard__details popupMoreStage_js"
+                                href="#popupMoreStage"
+                                data-linkMore="linkMore1"
+                                data-linkImg="url(/dist/img/usefulBlogImg3.png)"
+                            >Подробнее об этапах</a>
                         </div>
                     </div>
                 </div>
@@ -373,19 +443,18 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 	</section>
 </main>
 <div id="popupMoreStage" class="mfp-hide popupBlock serviceMore">
-    <div class="mfp-close popupBlock__close">
+    <div class="mfp-close popupBlock__close popupClose_js">
         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/popupsClose.svg';?>
     </div>
     <div class="serviceMore__content">
         <div class="serviceMore__left">
-            <div class="serviceMore__img">
-                <img src="/dist/img/serviceMoreImg.png">
+            <div class="serviceMore__img" style="background-image:url(/dist/img/servicesCardImg.png)">
             </div>
-            <a class="btrBlueBorder serviceMore__btn" href="#">ПОдробнее о программе</a>
+            <a class="btrBlueBorder serviceMore__btn" href="">Подробнее о программе</a>
         </div>
         <div class="serviceMore__right">
             <div class="serviceMore__header">
-                <div class="serviceMore__title">Комплексный подход моделирования фигуры</div>
+                <div class="serviceMore__title"></div>
                 <div class="serviceMore__programm">программа</div>
             </div>
             <div class="serviceMore__list scrollbar-inner">
