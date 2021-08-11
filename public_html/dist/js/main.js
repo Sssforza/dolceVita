@@ -11404,6 +11404,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
 /* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
 /* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
+/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11423,6 +11424,8 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
  //📁 /assets/js/blocks  scrollbar.js
 
  //📁 /assets/js/blocks  services.js
+
+ //📁 /assets/js/blocks  team.js
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11455,7 +11458,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["popupMoreStageDate"])(); // services attendance all cards
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["servicesAttendance"])();
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["servicesAttendance"])(); // tabs specificity of the doctor
+
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["tabsSpecificityDoctor"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16675,6 +16680,28 @@ function servicesAttendance() {
     var btn = document.querySelector('.servicesCardBtn_js');
     btn.addEventListener("click", function (e) {
       btn.closest(".services_attendance").classList.add('all');
+    });
+  }
+}
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecificityDoctor", function() { return tabsSpecificityDoctor; });
+// tabs specificity of the doctor
+function tabsSpecificityDoctor() {
+  if (document.querySelector('.teamList')) {
+    var container = document.querySelector('.teamList');
+    container.addEventListener('click', function (e) {
+      var tabs = document.querySelectorAll('.teamItem_js');
+      var target = e.target;
+      Array.from(tabs).forEach(function (item) {
+        item.classList.remove('active');
+      });
+      target.classList.add('active');
     });
   }
 }

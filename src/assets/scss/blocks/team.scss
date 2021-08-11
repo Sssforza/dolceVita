@@ -1,9 +1,6 @@
 @import "../modules/utilities/_variables.scss";
 .team {
     margin-top: 97px;
-    &__content {
-
-    }
 }
 .teamList {
     position: relative;
@@ -29,27 +26,51 @@
         color: $greenDark;
         opacity: 0.6;
         cursor: pointer;
+        transition: $transition;
+        &:after {
+            content:'';
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            left: 0;
+            height: 2px;
+            background: transparent;
+            border-radius: 50px;
+            z-index: 2;
+            transition: $transition;
+        }
         &.active {
             opacity: 1;
             cursor: auto;
             &:after {
-                content:'';
-                position: absolute;
-                right: 0;
-                bottom: -3px;
-                left: 0;
-                height: 2px;
                 background: $purple;
-                border-radius: 50px;
-                z-index: 2;
             }
         }
     }
 }
 .teamPeople {
     margin-top: 137px;
+    &__list {
+        margin: 0 -6px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 158px 21px;
+    }
     &__item {
         width: 281px;
+        &.border {
+            .teamPeople__bg {
+                svg {
+                    display: block;
+                    .border {
+                        opacity: 1;
+                    }
+                    .circle {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
     &__person {
         position: relative;
@@ -61,22 +82,23 @@
             display: block;
             .border {
                 opacity: 0;
+                transition: $transition;
             }
             .circle {
                 opacity: 0;
+                transition: $transition;
             }
         }
     }
     &__human {
         position: absolute;
-        bottom: 0;
-        left: 8px;
+        bottom: 7px;
+        left: 7px;
         img {
             display: block;
         }
     }
     &__name {
-        margin-top: 20px;
         text-align: center;
     }
     &__link {

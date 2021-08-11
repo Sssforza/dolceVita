@@ -29,6 +29,9 @@ import {specialistsNavScroll} from "./blocks/scrollbar.js";
 //📁 /assets/js/blocks  services.js
 import {popupMoreStageDate, servicesAttendance} from "./blocks/services.js";
 
+//📁 /assets/js/blocks  team.js
+import {tabsSpecificityDoctor} from "./blocks/team.js";
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // header top 0
@@ -75,5 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // services attendance all cards
     servicesAttendance();
+
+    // tabs specificity of the doctor
+    tabsSpecificityDoctor();
 
 });
