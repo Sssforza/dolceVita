@@ -127,6 +127,7 @@
     }
 }
 .services {
+    position: relative;
     margin-top: 96px;
     &__content {
         display: flex;
@@ -145,6 +146,15 @@
     }
     &_attendance {
         margin-top: 56px;
+        height: 680px;
+        overflow: hidden;
+        transition: $transition;
+        &.all {
+            height: 1040px;
+            .servicesCardBig {
+                opacity: 0;
+            }
+        }
     }
     &_cosmetic {
         .services__container {
@@ -282,9 +292,14 @@
     }
 }
 .servicesCardBig {
-    background: transparent;
+    position: absolute;
+    bottom: 360px;
+    right: 15px;
+    z-index: 1;
+    background: $white;
     border: 2px solid #a9c2c980;
     border-radius: 32px;
+    transition: $transition;
     &:after {
         display: none;
     }

@@ -52,3 +52,12 @@ export function popupMoreStageDate () {
         });
     });
 }
+// services attendance all cards
+export function servicesAttendance () {
+    if(document.querySelector('.servicesCardBtn_js')) {
+        const btn = document.querySelector('.servicesCardBtn_js');
+		btn.addEventListener( "click" , (e) => {
+            btn.closest(".services_attendance").classList.add('all');
+        });
+	}
+}

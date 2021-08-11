@@ -11453,7 +11453,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // popupMoreStageDate
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["popupMoreStageDate"])();
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["popupMoreStageDate"])(); // services attendance all cards
+
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["servicesAttendance"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16611,6 +16613,7 @@ function specialistsNavScroll() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupMoreStageDate", function() { return popupMoreStageDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesAttendance", function() { return servicesAttendance; });
 // popupMoreStageDate
 function popupMoreStageDate() {
   var popupMoreStage = document.querySelectorAll('.popupMoreStage_js');
@@ -16665,6 +16668,15 @@ function popupMoreStageDate() {
       $(".scrollbar-inner").scrollbar();
     });
   });
+} // services attendance all cards
+
+function servicesAttendance() {
+  if (document.querySelector('.servicesCardBtn_js')) {
+    var btn = document.querySelector('.servicesCardBtn_js');
+    btn.addEventListener("click", function (e) {
+      btn.closest(".services_attendance").classList.add('all');
+    });
+  }
 }
 
 /***/ })

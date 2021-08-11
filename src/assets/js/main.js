@@ -27,7 +27,7 @@ import {sliderMain, sliderEquipment, sliderSpecialists} from "./blocks/_sliders.
 import {specialistsNavScroll} from "./blocks/scrollbar.js";
 
 //📁 /assets/js/blocks  services.js
-import {popupMoreStageDate} from "./blocks/services.js";
+import {popupMoreStageDate, servicesAttendance} from "./blocks/services.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -72,5 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // popupMoreStageDate
     popupMoreStageDate();
+
+    // services attendance all cards
+    servicesAttendance();
 
 });
