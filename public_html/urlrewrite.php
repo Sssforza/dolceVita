@@ -8,6 +8,14 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/mobileapp/jn.php',
     'SORT' => 100,
   ),
+  10 => 
+  array (
+    'CONDITION' => '#^/services/cosmetology/#',
+    'RULE' => '',
+    'ID' => 'ferma:news',
+    'PATH' => '/services/cosmetology/index.php',
+    'SORT' => 100,
+  ),
   4 => 
   array (
     'CONDITION' => '#^/e-store/xml_catalog/#',
@@ -62,6 +70,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/content/news/index.php',
+    'SORT' => 100,
+  ),
+  9 => 
+  array (
+    'CONDITION' => '#^/services/#',
+    'RULE' => '',
+    'ID' => 'ferma:news',
+    'PATH' => '/services/index.php',
     'SORT' => 100,
   ),
   1 => 

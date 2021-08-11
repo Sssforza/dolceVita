@@ -65,7 +65,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 			0 => "1",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "Y",
-		"IBLOCK_ID" => "13",
+		"IBLOCK_ID" => "15",
 		"IBLOCK_TYPE" => "services",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
@@ -143,9 +143,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"CATEGORY_THEME_13" => "list",
 		"CATEGORY_THEME_14" => "list",
 		"CATEGORY_THEME_15" => "list",
-		"SEF_FOLDER" => "/services/",
+		"SEF_FOLDER" => "/services/quality-of-life/",
 		"SEF_URL_TEMPLATES" => array(
-			"news" => "#SECTION_CODE_PATH#/",
+			"news" => "/services/quality-of-life/",
 			"section" => "#SECTION_CODE_PATH#/",
 			"detail" => "#SECTION_CODE_PATH#/#ID#",
 		)
