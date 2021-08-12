@@ -55,6 +55,17 @@
         display: flex;
         flex-wrap: wrap;
         gap: 158px 21px;
+        &.show {
+            position: relative;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        &.hide {
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
     }
     &__item {
         width: 281px;

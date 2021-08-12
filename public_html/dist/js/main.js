@@ -16693,18 +16693,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecificityDoctor", function() { return tabsSpecificityDoctor; });
 // tabs specificity of the doctor
 function tabsSpecificityDoctor() {
-  if (document.querySelector('.teamList')) {
-    var container = document.querySelector('.teamList');
-    container.addEventListener('click', function (e) {
-      var tabs = document.querySelectorAll('.teamItem_js');
-      var target = e.target;
-      Array.from(tabs).forEach(function (item) {
-        item.classList.remove('active');
+  if (document.querySelector('.team_js')) {
+    var wrapper = document.querySelector('.team_js');
+    var tabs = wrapper.querySelectorAll('.teamItem_js');
+    var elements = wrapper.querySelectorAll('.teamPeopleList_js');
+    tabs.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShow = item.getAttribute('data-choice');
+        tabs.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        elements.forEach(function (elem) {
+          elem.classList.add('hide');
+          elem.classList.remove('show');
+
+          if (elem.getAttribute('data-specificity') === thisShow) {
+            elem.classList.remove('hide');
+            elem.classList.add('show');
+          }
+        });
       });
-      target.classList.add('active');
     });
   }
 }
+;
 
 /***/ })
 /******/ ]);

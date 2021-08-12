@@ -1,14 +1,25 @@
 // tabs specificity of the doctor
 export function tabsSpecificityDoctor () {
-    if(document.querySelector('.teamList')) {
-        const container = document.querySelector('.teamList');
-        container.addEventListener('click', function(e) {
-            const tabs = document.querySelectorAll('.teamItem_js')
-            const target = e.target
-            Array.from(tabs).forEach(item => {
-                item.classList.remove('active')
-            })
-            target.classList.add('active')
-        })
+	if(document.querySelector('.team_js')) {
+		let wrapper = document.querySelector('.team_js');
+		let tabs = wrapper.querySelectorAll('.teamItem_js');
+		let elements = wrapper.querySelectorAll('.teamPeopleList_js');
+		tabs.forEach((item) => {
+			item.addEventListener( "click" , (e) => {
+				let thisShow = item.getAttribute('data-choice');
+				tabs.forEach((i) => {
+					i.classList.remove('active');
+				});
+				item.classList.add('active');
+				elements.forEach((elem) => {
+					elem.classList.add('hide');
+					elem.classList.remove('show');
+					if (elem.getAttribute('data-specificity') === thisShow) {
+						elem.classList.remove('hide');
+						elem.classList.add('show');
+					}
+				});
+			});
+		});
 	}
-}
+};
