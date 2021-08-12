@@ -26,7 +26,13 @@ $rsSections = CIBlockSection::GetList($arOrder, $arFilter, false, array(
         'NAME',
         'SECTION_PAGE_URL',
         'IBLOCK_SECTION_ID',
+        'DESCRIPTION'
 ));
+$rsElements = CIBlockElement::GetList(array(), array('IBLOCK_ID' => $arParams['IBLOCK_ID']), false, Array(), array('ID', '*', 'PROPERTY_*'));
+$menuElements = array();
+while($arElement = $rsElements->GetNext()){
+	$menuElements[$arElement['IBLOCK_SECTION_ID']][] = $arElement;
+}
 $menuItems = array();
 while($arSection = $rsSections->GetNext()){
     $arSection['IS_SECTION'] = 1;
@@ -34,7 +40,7 @@ while($arSection = $rsSections->GetNext()){
     if ($arSection['IBLOCK_SECTION_ID']){
         $menuItems[$arSection['IBLOCK_SECTION_ID']][] = $arSection;
     } else {
-        $menuItems['ROOT'][] = $arSection;
+        $menuItems['ROOT'][$arSection['ID']] = $arSection;
     }
     $arSectionId[] = $arSection['ID'];
 }
@@ -189,6 +195,7 @@ if($arParams["SEF_MODE"] == "Y")
 		"ALIASES" => $arVariableAliases,
 		"MENU_ITEMS" => $menuItems,
 		"IBLOCK_AR" => $block_type,
+		"ELEMENT_AR" => $menuElements
 	);
 }
 else

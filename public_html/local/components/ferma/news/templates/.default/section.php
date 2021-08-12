@@ -11,10 +11,11 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$section_id = $arResult["VARIABLES"]["SECTION_ID"];
 ?>
 <main class="main">
 	<pre>
-	<? print_r($arResult)?>
+	<? //print_r($arResult)?>
 	</pre>
     <section class="page page_services">
         <section class="banerSection banerServices">
@@ -27,30 +28,41 @@ $this->setFrameMode(true);
             <div class="banerServices__content">
                 <div class="banerServices__header">
                     <div class="banerServices__title"><?= $arResult['IBLOCK_AR']['NAME']?></div>
-                    <? if (array_key_exists($arResult["VARIABLES"]["SECTION_ID"], $arResult['MENU_ITEMS'])) {?>
+                    <? if (array_key_exists($section_id, $arResult['MENU_ITEMS'])) {?>
                     	<div class="banerServices__tabs servicesTabs">
 	                        <div class="servicesTabs__list">
-	                        	<? foreach ($arResult['MENU_ITEMS'][$arResult["VARIABLES"]["SECTION_ID"]] as $key => $value) { ?>
-	                        		<div class="servicesTabs__item active">
+	                        	<? foreach ($arResult['MENU_ITEMS'][$section_id] as $key => $value) { ?>
+	                        		<a href="<?= $value['LINK']?>" class='servicesTabs__item <?= $key == 0 ? "active": ""?>'>
 		                                <span><?= $value['NAME']?></span>
-		                            </div>
+		                            </a>
+
 	                        	<? } ?>
 	                        </div>
 	                    </div>
                     <? } ?>
                 </div>
-                <div class="banerServices__question">Какой результат я хочу получить от приема</div>
-                <div class="banerServices__selected">
-                    <div class="servicesSelected">
-                        <div class="servicesSelected__input">
-                            <input type="text" placeholder="Выберите желаемый результат">
-                        </div>
-                        <div class="servicesSelected__list">
-                            <div class="servicesSelected__item"></div>
-                        </div>
-                    </div>
-                    <div class="btnBlue banerServices__btn">Посмотреть услуги</div>
-                </div>
+                <? if ($arResult['MENU_ITEMS']['ROOT'][$section_id]['DESCRIPTION']) { ?>
+                	<div class="banerServices__question"><?= $arResult['MENU_ITEMS']['ROOT'][$arResult["VARIABLES"]["SECTION_ID"]]['DESCRIPTION']?></div>
+                <? } ?>
+                <? if ($arResult['ELEMENT_AR'][$arResult['MENU_ITEMS'][$section_id][0]['ID']]) { ?>
+                	<div class="banerServices__selected">
+	                    <div class="servicesSelected">
+	                        <div class="servicesSelected__input">
+	                        	<select required>
+								    <option value="">Выберите желаемый результат</option>
+								    <? foreach ($arResult['ELEMENT_AR'][$arResult['MENU_ITEMS'][$section_id][0]['ID']] as $key => $value) { ?>
+								    	<option value="<?= $value['ID']?>"><?= $value['NAME']?></option>
+								    <? } ?>
+								</select>
+	                            <input type="text" placeholder="Выберите желаемый результат">
+	                        </div>
+	                        <div class="servicesSelected__list">
+	                            <div class="servicesSelected__item"></div>
+	                        </div>
+	                    </div>
+	                    <div class="btnBlue banerServices__btn">Посмотреть услуги</div>
+	                </div>
+                <? } ?>
             </div>
         </section>
 		<?$APPLICATION->IncludeComponent(

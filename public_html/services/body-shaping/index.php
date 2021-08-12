@@ -2,11 +2,10 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
-?>
-<?$APPLICATION->IncludeComponent(
-	"ferma:news", 
-	".default", 
-	array(
+?><?$APPLICATION->IncludeComponent(
+	"ferma:news",
+	"",
+	Array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "Y",
@@ -18,30 +17,23 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "3600",
-		"CACHE_TYPE" => "A",
+		"CACHE_TYPE" => "N",
 		"CATEGORY_CODE" => "CATEGORY",
-		"CATEGORY_IBLOCK" => array(
-			0 => "12",
-			1 => "13",
-			2 => "14",
-			3 => "15",
-		),
+		"CATEGORY_IBLOCK" => array("12","13","14","15"),
 		"CATEGORY_ITEMS_COUNT" => "5",
+		"CATEGORY_THEME_12" => "list",
+		"CATEGORY_THEME_13" => "list",
+		"CATEGORY_THEME_14" => "list",
+		"CATEGORY_THEME_15" => "list",
 		"CHECK_DATES" => "Y",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "Y",
-		"DETAIL_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"DETAIL_FIELD_CODE" => array("",""),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"DETAIL_PROPERTY_CODE" => array("",""),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_AS_RATING" => "rating",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -51,32 +43,18 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "Y",
 		"FILE_404" => "",
-		"FILTER_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FILTER_FIELD_CODE" => array(0=>"",1=>"",),
 		"FILTER_NAME" => "",
-		"FILTER_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FILTER_PROPERTY_CODE" => array(0=>"",1=>"",),
 		"FORUM_ID" => "1",
-		"GROUP_PERMISSIONS" => array(
-			0 => "1",
-		),
+		"GROUP_PERMISSIONS" => array("1"),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "Y",
 		"IBLOCK_ID" => "14",
 		"IBLOCK_TYPE" => "services",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"LIST_FIELD_CODE" => array("",""),
+		"LIST_PROPERTY_CODE" => array("",""),
 		"MAX_VOTE" => "5",
 		"MESSAGES_PER_PAGE" => "10",
 		"MESSAGE_404" => "",
@@ -98,16 +76,13 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"POST_FIRST_MESSAGE" => "Y",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"REVIEW_AJAX_POST" => "Y",
+		"SEF_FOLDER" => "/services/body-shaping/",
 		"SEF_MODE" => "Y",
+		"SEF_URL_TEMPLATES" => Array("detail"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#","news"=>"/services/body-shaping/","section"=>"#SECTION_CODE_PATH#/"),
 		"SET_LAST_MODIFIED" => "Y",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
-		"SHARE_HANDLERS" => array(
-			0 => "delicious",
-			1 => "facebook",
-			2 => "lj",
-			3 => "twitter",
-		),
+		"SHARE_HANDLERS" => array("delicious","facebook","lj","twitter"),
 		"SHARE_HIDE" => "Y",
 		"SHARE_SHORTEN_URL_KEY" => "",
 		"SHARE_SHORTEN_URL_LOGIN" => "",
@@ -129,28 +104,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "Y",
-		"VOTE_NAMES" => array(
-			0 => "0",
-			1 => "1",
-			2 => "2",
-			3 => "3",
-			4 => "4",
-			5 => "",
-		),
-		"YANDEX" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
-		"CATEGORY_THEME_12" => "list",
-		"CATEGORY_THEME_13" => "list",
-		"CATEGORY_THEME_14" => "list",
-		"CATEGORY_THEME_15" => "list",
-		"SEF_FOLDER" => "/services/body-shaping/",
-		"SEF_URL_TEMPLATES" => array(
-			"news" => "/services/body-shaping/",
-			"section" => "#SECTION_CODE_PATH#/",
-			"detail" => "#SECTION_CODE_PATH#/#ID#",
-		)
-	),
-	false
+		"VOTE_NAMES" => array(0=>"0",1=>"1",2=>"2",3=>"3",4=>"4",5=>"",),
+		"YANDEX" => "Y"
+	)
 );?><?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>

@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 <main class="main">
 	<pre>
-	<? print_r($arResult)?>
+	<? //print_r($arResult)?>
 	</pre>
     <section class="page page_services">
         <section class="banerSection banerServices">
