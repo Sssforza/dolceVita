@@ -9,7 +9,7 @@ import 'slick-carousel';
 import 'magnific-popup';
 
 //📁 /assets/js/blocks  _popups.js
-import {moreStage} from "./blocks/_popups.js";
+import {moreStage, popupClose} from "./blocks/_popups.js";
 
 //📁 /assets/js/blocks  _animPageLoad.js
 import {headerShow} from "./blocks/_animPageLoad.js";
@@ -27,7 +27,10 @@ import {sliderMain, sliderEquipment, sliderSpecialists} from "./blocks/_sliders.
 import {specialistsNavScroll} from "./blocks/scrollbar.js";
 
 //📁 /assets/js/blocks  services.js
-import {popupMoreStageDate} from "./blocks/services.js";
+import {popupMoreStageDate, servicesAttendance} from "./blocks/services.js";
+
+//📁 /assets/js/blocks  team.js
+import {tabsSpecificityDoctor} from "./blocks/team.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -64,10 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // specialists nav scroll
     specialistsNavScroll();
 
+    // popup close
+    popupClose();
+
     // moreStage
     moreStage();
 
     // popupMoreStageDate
     popupMoreStageDate();
+
+    // services attendance all cards
+    servicesAttendance();
+
+    // tabs specificity of the doctor
+    tabsSpecificityDoctor();
 
 });

@@ -11404,6 +11404,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
 /* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
 /* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
+/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11423,6 +11424,8 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
  //📁 /assets/js/blocks  scrollbar.js
 
  //📁 /assets/js/blocks  services.js
+
+ //📁 /assets/js/blocks  team.js
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11447,11 +11450,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialists"])(); // specialists nav scroll
 
-  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["specialistsNavScroll"])(); // moreStage
+  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["specialistsNavScroll"])(); // popup close
+
+  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupClose"])(); // moreStage
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // popupMoreStageDate
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["popupMoreStageDate"])();
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["popupMoreStageDate"])(); // services attendance all cards
+
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["servicesAttendance"])(); // tabs specificity of the doctor
+
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["tabsSpecificityDoctor"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16365,8 +16374,15 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupClose", function() { return popupClose; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moreStage", function() { return moreStage; });
-// popup link more stage in the page services
+// popup close
+function popupClose() {
+  $('.popupClose_js').on("click", function () {
+    $.magnificPopup.close();
+  });
+} // popup link more stage in the page services
+
 function moreStage() {
   if (document.querySelector('.popupMoreStage_js')) {
     $('.popupMoreStage_js').magnificPopup({
@@ -16602,15 +16618,92 @@ function specialistsNavScroll() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupMoreStageDate", function() { return popupMoreStageDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesAttendance", function() { return servicesAttendance; });
 // popupMoreStageDate
 function popupMoreStageDate() {
   var popupMoreStage = document.querySelectorAll('.popupMoreStage_js');
+  var parent;
+  var title;
+  var stage;
+  var newItem;
+  var newStage;
+  var newDescription;
+  var newName;
+  var newText;
+  var linkimg;
+  var newImg;
+  var list;
+
+  function addElement() {
+    newItem = document.createElement("div");
+    newStage = document.createElement("div");
+    newDescription = document.createElement("div");
+    newName = document.createElement("div");
+    newText = document.createElement("div");
+    newItem.className = "serviceMore__item";
+    newStage.className = "serviceMore__stage";
+    newDescription.className = "serviceMore__description";
+    newName.className = "serviceMore__name";
+    newText.className = "serviceMore__text";
+    list.append(newItem);
+    newItem.append(newStage);
+    newItem.append(newDescription);
+    newDescription.append(newName);
+    newDescription.append(newText);
+  }
+
   popupMoreStage.forEach(function (item) {
     item.addEventListener("click", function (e) {
-      console.log(123);
+      list = document.querySelector(".serviceMore__list");
+      list.innerHTML = '';
+      parent = item.closest(".servicesCard_js");
+      linkimg = parent.querySelector(".popupMoreStage_js").getAttribute('data-linkimg');
+      newImg = document.querySelector('.serviceMore__img');
+      newImg.style.backgroundImage = linkimg;
+      document.querySelector('.serviceMore__btn').setAttribute('href', item.getAttribute('data-linkMore'));
+      title = parent.querySelector('.servicesCard__title').innerHTML;
+      document.querySelector('.serviceMore__title').innerText = title;
+      stage = parent.querySelectorAll('.servicesCard__box');
+      stage.forEach(function (item) {
+        addElement();
+        newStage.innerHTML = item.querySelector('.servicesCard__what').innerHTML;
+        newName.innerHTML = item.querySelector('.servicesCard__how').innerHTML;
+        newText.innerHTML = item.getAttribute('data-description');
+      });
       $(".scrollbar-inner").scrollbar();
     });
   });
+} // services attendance all cards
+
+function servicesAttendance() {
+  if (document.querySelector('.servicesCardBtn_js')) {
+    var btn = document.querySelector('.servicesCardBtn_js');
+    btn.addEventListener("click", function (e) {
+      btn.closest(".services_attendance").classList.add('all');
+    });
+  }
+}
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecificityDoctor", function() { return tabsSpecificityDoctor; });
+// tabs specificity of the doctor
+function tabsSpecificityDoctor() {
+  if (document.querySelector('.teamList')) {
+    var container = document.querySelector('.teamList');
+    container.addEventListener('click', function (e) {
+      var tabs = document.querySelectorAll('.teamItem_js');
+      var target = e.target;
+      Array.from(tabs).forEach(function (item) {
+        item.classList.remove('active');
+      });
+      target.classList.add('active');
+    });
+  }
 }
 
 /***/ })
