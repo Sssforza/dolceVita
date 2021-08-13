@@ -187,7 +187,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<div class="specialists__box">
 						<div class="specialists__nav specialistsNav">
 							<div class="specialistsNav__content specialistsNavScroll_js scrollbar-inner specialistsNav_js">
-								<div class="specialistsNav__item active">
+								<div class="specialistsNav__item active" data-slide="1">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav1.png)"></div>
 									</div>
@@ -196,7 +196,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Врач-косметолог, дерматолог</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="2">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
 									</div>
@@ -205,7 +205,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="3">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
 									</div>
@@ -214,7 +214,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="4">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav4.png)"></div>
 									</div>
@@ -223,21 +223,21 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Специалист по коррекции фигуры и массажу</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="5">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
 									</div>
 									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Светлана Зуева</div>
+										<div class="specialistsNav__name">Кристина Барабина</div>
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="6">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
 									</div>
 									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Татьяна Малицкая</div>
+										<div class="specialistsNav__name">Ангелина Линова</div>
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
@@ -352,7 +352,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								<div class="specialistsFor__item">
 									<div class="specialistsFor__description">
 										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">5Галина Лагутова</div>
+											<div class="specialistsFor__name">Кристина Барабина</div>
 											<div class="specialistsFor__block">
 												<ul class="specialistsFor__ul">
 													<li class="specialistsFor__specialization">Специализация</li>
@@ -378,7 +378,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								<div class="specialistsFor__item">
 									<div class="specialistsFor__description">
 										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">6Галина Лагутова</div>
+											<div class="specialistsFor__name">Ангелина Линова</div>
 											<div class="specialistsFor__block">
 												<ul class="specialistsFor__ul">
 													<li class="specialistsFor__specialization">Специализация</li>

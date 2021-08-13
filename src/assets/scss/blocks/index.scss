@@ -952,15 +952,17 @@
     overflow: hidden;
     &__content {
         padding-right: 35px;
-        height: 400px;
+        height: 405px;
     }
     &__item {
         display: flex;
         align-items: center;
+        cursor: pointer;
         &:not(:first-child) {
             margin-top: 15px;
         }
         &.active {
+            pointer-events: none;
             .specialistsNav__img {
                 &:after {
                     content:'';
