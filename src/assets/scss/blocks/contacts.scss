@@ -1,0 +1,93 @@
+@import "../modules/utilities/_variables.scss";
+.contacts {
+    &__container {
+        padding-top: 166px;
+    }
+    &__content {
+        padding-top: 90px;
+        padding-left: 155px;
+    }
+    &__box {
+        margin-top: 55px;
+    }
+    &__title {
+        font-size: 72px;
+        line-height: 101px;
+        color: $blueDark;
+        font-family: 'Prata';
+    }
+    &__list {
+        margin-top: 48px;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+    &__name {
+        flex: none;
+        width: 154px;
+        font-size: 18px;
+        line-height: 28px;
+        color: $greenMedium;
+    }
+    &__text {
+        font-size: 21px;
+        line-height: 25px;
+        color: $greenDark;
+    }
+    &__work {
+        margin-top: 45px;
+        display: flex;
+    }
+    &__social {
+        margin-top: 38px;
+        display: flex;
+        align-items: center;
+        .contacts__name {
+            line-height: 24px;
+        }
+    }
+    &__working {
+        display: flex;
+        &:not(:first-child) {
+            margin-top: 4px;
+        }
+    }
+    &__day,
+    &__time {
+        font-size: 18px;
+        line-height: 22px;
+        color: $gray;
+    }
+    &__day {
+        flex: none;
+        width: 69px;
+    }
+    &__time {
+        margin-left: 22px;
+    }
+    &__ul {
+        display: flex;
+    }
+    &__li {
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 2px solid rgba(141, 155, 178, .3);
+        border-radius: 50%;
+        &:not(:first-child) {
+            margin-left: 16px;
+        }
+    }
+    &__link {
+        svg {
+            display: block;
+        }
+    }
+}
