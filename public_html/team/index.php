@@ -42,76 +42,6 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                 </div>
                 <div class="teamPeople">
                     <div class="teamPeople__list teamPeopleList_js show" data-specificity="all">
-                        <div class="teamPeople__item border">
-                            <div class="teamPeople__person">
-                                <div class="teamPeople__bg">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
-                                </div>
-                                <div class="teamPeople__human">
-                                    <img src="/dist/img/teamPeople1.png">
-                                </div>
-                            </div>
-                            <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Дарья <br>Денисенко</a>
-                            </div>
-                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
-                        </div>
-                        <div class="teamPeople__item">
-                            <div class="teamPeople__person">
-                                <div class="teamPeople__bg">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
-                                </div>
-                                <div class="teamPeople__human">
-                                    <img src="/dist/img/teamPeople2.png">
-                                </div>
-                            </div>
-                            <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
-                            </div>
-                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
-                        </div>
-                        <div class="teamPeople__item">
-                            <div class="teamPeople__person">
-                                <div class="teamPeople__bg">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
-                                </div>
-                                <div class="teamPeople__human">
-                                    <img src="/dist/img/teamPeople3.png">
-                                </div>
-                            </div>
-                            <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
-                            </div>
-                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
-                        </div>
-                        <div class="teamPeople__item">
-                            <div class="teamPeople__person">
-                                <div class="teamPeople__bg">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
-                                </div>
-                                <div class="teamPeople__human">
-                                    <img src="/dist/img/teamPeople2.png">
-                                </div>
-                            </div>
-                            <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
-                            </div>
-                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
-                        </div>
-                        <div class="teamPeople__item">
-                            <div class="teamPeople__person">
-                                <div class="teamPeople__bg">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
-                                </div>
-                                <div class="teamPeople__human">
-                                    <img src="/dist/img/teamPeople3.png">
-                                </div>
-                            </div>
-                            <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
-                            </div>
-                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
-                        </div>
                         <div class="teamPeople__item">
                             <div class="teamPeople__person">
                                 <div class="teamPeople__bg">
@@ -122,7 +52,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Дарья <br>Денисенко</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Дарья <br>Денисенко</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -136,7 +66,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -150,7 +80,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -164,7 +94,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -178,13 +108,83 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
+                            </div>
+                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
+                        </div>
+                        <div class="teamPeople__item">
+                            <div class="teamPeople__person">
+                                <div class="teamPeople__bg">
+                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
+                                </div>
+                                <div class="teamPeople__human">
+                                    <img src="/dist/img/teamPeople1.png">
+                                </div>
+                            </div>
+                            <div class="teamPeople__name">
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Дарья <br>Денисенко</a>
+                            </div>
+                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
+                        </div>
+                        <div class="teamPeople__item">
+                            <div class="teamPeople__person">
+                                <div class="teamPeople__bg">
+                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
+                                </div>
+                                <div class="teamPeople__human">
+                                    <img src="/dist/img/teamPeople2.png">
+                                </div>
+                            </div>
+                            <div class="teamPeople__name">
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
+                            </div>
+                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
+                        </div>
+                        <div class="teamPeople__item">
+                            <div class="teamPeople__person">
+                                <div class="teamPeople__bg">
+                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
+                                </div>
+                                <div class="teamPeople__human">
+                                    <img src="/dist/img/teamPeople3.png">
+                                </div>
+                            </div>
+                            <div class="teamPeople__name">
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
+                            </div>
+                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
+                        </div>
+                        <div class="teamPeople__item">
+                            <div class="teamPeople__person">
+                                <div class="teamPeople__bg">
+                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
+                                </div>
+                                <div class="teamPeople__human">
+                                    <img src="/dist/img/teamPeople2.png">
+                                </div>
+                            </div>
+                            <div class="teamPeople__name">
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
+                            </div>
+                            <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
+                        </div>
+                        <div class="teamPeople__item">
+                            <div class="teamPeople__person">
+                                <div class="teamPeople__bg">
+                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
+                                </div>
+                                <div class="teamPeople__human">
+                                    <img src="/dist/img/teamPeople3.png">
+                                </div>
+                            </div>
+                            <div class="teamPeople__name">
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
                     </div>
                     <div class="teamPeople__list teamPeopleList_js hide" data-specificity="cosmetologists">
-                        <div class="teamPeople__item border">
+                        <div class="teamPeople__item">
                             <div class="teamPeople__person">
                                 <div class="teamPeople__bg">
                                     <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
@@ -194,7 +194,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -208,13 +208,13 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
                     </div>
                     <div class="teamPeople__list teamPeopleList_js hide" data-specificity="dermatologist">
-                        <div class="teamPeople__item border">
+                        <div class="teamPeople__item">
                             <div class="teamPeople__person">
                                 <div class="teamPeople__bg">
                                     <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
@@ -224,7 +224,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -238,13 +238,13 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
                     </div>
                     <div class="teamPeople__list teamPeopleList_js hide" data-specificity="masseur">
-                        <div class="teamPeople__item border">
+                        <div class="teamPeople__item">
                             <div class="teamPeople__person">
                                 <div class="teamPeople__bg">
                                     <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
@@ -254,7 +254,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -268,13 +268,13 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
                     </div>
                     <div class="teamPeople__list teamPeopleList_js hide" data-specificity="hairdresser">
-                        <div class="teamPeople__item border">
+                        <div class="teamPeople__item">
                             <div class="teamPeople__person">
                                 <div class="teamPeople__bg">
                                     <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
@@ -284,7 +284,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -298,13 +298,13 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
                     </div>
                     <div class="teamPeople__list teamPeopleList_js hide" data-specificity="manicurists">
-                        <div class="teamPeople__item border">
+                        <div class="teamPeople__item">
                             <div class="teamPeople__person">
                                 <div class="teamPeople__bg">
                                     <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/teamPeopleBg.svg';?>
@@ -314,7 +314,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Людмила <br>Буркина</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Людмила <br>Буркина</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>
@@ -328,7 +328,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
                                 </div>
                             </div>
                             <div class="teamPeople__name">
-                                <a href="#" class="teamPeople__link">Галина <br>Лагутова</a>
+                                <a href="#" class="teamPeople__link teamPeopleLink_js">Галина <br>Лагутова</a>
                             </div>
                             <div class="teamPeople__doctor">Врач-косметолог, дерматолог</div>
                         </div>

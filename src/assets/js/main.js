@@ -30,7 +30,7 @@ import {specialistsNavScroll} from "./blocks/scrollbar.js";
 import {popupMoreStageDate, servicesAttendance} from "./blocks/services.js";
 
 //📁 /assets/js/blocks  team.js
-import {tabsSpecificityDoctor} from "./blocks/team.js";
+import {tabsSpecificityDoctor, aimingAtTheDoctor} from "./blocks/team.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -81,5 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // tabs specificity of the doctor
     tabsSpecificityDoctor();
+
+    // aiming at the doctor
+    aimingAtTheDoctor();
 
 });

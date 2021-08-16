@@ -23,3 +23,17 @@ export function tabsSpecificityDoctor () {
 		});
 	}
 };
+// aiming at the doctor
+export function aimingAtTheDoctor () {
+	if(document.querySelector('.teamPeopleLink_js')) {
+		let name = document.querySelectorAll('.teamPeopleLink_js');
+		name.forEach((item) => {
+			item.onmouseover = function(e) {
+				item.closest(".teamPeople__item").classList.add('hover');
+			};
+			item.onmouseout = function(e) {
+				item.closest(".teamPeople__item").classList.remove('hover');
+			}
+		});
+	}
+};

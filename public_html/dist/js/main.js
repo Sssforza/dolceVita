@@ -11460,7 +11460,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["servicesAttendance"])(); // tabs specificity of the doctor
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["tabsSpecificityDoctor"])();
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["tabsSpecificityDoctor"])(); // aiming at the doctor
+
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["aimingAtTheDoctor"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16698,6 +16700,7 @@ function servicesAttendance() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecificityDoctor", function() { return tabsSpecificityDoctor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aimingAtTheDoctor", function() { return aimingAtTheDoctor; });
 // tabs specificity of the doctor
 function tabsSpecificityDoctor() {
   if (document.querySelector('.team_js')) {
@@ -16721,6 +16724,22 @@ function tabsSpecificityDoctor() {
           }
         });
       });
+    });
+  }
+}
+; // aiming at the doctor
+
+function aimingAtTheDoctor() {
+  if (document.querySelector('.teamPeopleLink_js')) {
+    var name = document.querySelectorAll('.teamPeopleLink_js');
+    name.forEach(function (item) {
+      item.onmouseover = function (e) {
+        item.closest(".teamPeople__item").classList.add('hover');
+      };
+
+      item.onmouseout = function (e) {
+        item.closest(".teamPeople__item").classList.remove('hover');
+      };
     });
   }
 }

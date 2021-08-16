@@ -69,7 +69,7 @@
     }
     &__item {
         width: 281px;
-        &.border {
+        &.hover {
             .teamPeople__bg {
                 svg {
                     display: block;
@@ -93,11 +93,11 @@
             display: block;
             .border {
                 opacity: 0;
-                transition: $transition;
+                transition: all .7s;
             }
             .circle {
                 opacity: 0;
-                transition: $transition;
+                transition: all .7s;
             }
         }
     }
