@@ -162,6 +162,7 @@ body {
 //breadCrumbs
 .breadCrumbs {
     position: relative;
+    left: -19px;
     z-index: 2;
     &__list {
         display: flex;
@@ -170,12 +171,7 @@ body {
     &__item {
         &:first-child {
             &:before {
-                content: url($imgUrl + "svg/breadCrumbsChit-first.svg");
-                position: absolute;
-                left: -19px;
-            }
-            .breadCrumbs__chit {
-                margin-left: 0;
+                content:'';
             }
         }
         &:not(:first-child) {
@@ -184,6 +180,9 @@ body {
         &:before {
             content:'—';
             color: $greenLight;
+        }
+        svg {
+            display: inline-block;
         }
         a {
             border-bottom: 1px solid $greenLight;
@@ -194,6 +193,24 @@ body {
         font-size: 14px;
         line-height: 18px;
         color: $greenLight;
+    }
+    &.gray {
+        .breadCrumbs__item {
+            &:before {
+                color: $gray;
+            }
+            a {
+                border-bottom: 1px solid $gray;
+            }
+            svg {
+                .color {
+                    fill: $gray;
+                }
+            }
+        }
+        .breadCrumbs__chit {
+            color: $gray;
+        }
     }
 }
 //titles

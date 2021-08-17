@@ -2,15 +2,17 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
 ?>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8ff686a7-c893-462e-9d60-01bd90ade3ee" type="text/javascript"></script>
 <main class="main">
 	<section class="page page_contacts">
         <section class="contacts">
             <div class="container">
                 <div class="contacts__container">
                     <div class="contacts__content">
-                        <div class="breadCrumbs">
+                        <div class="breadCrumbs gray">
                             <ul class="breadCrumbs__list">
                                 <li class="breadCrumbs__item">
+                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
                                     <a href="" class="breadCrumbs__chit">На главную</a>
                                 </li>
                                 <li class="breadCrumbs__item">
@@ -72,7 +74,12 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
                             </div>
                         </div>
                     </div>
-                    <div class="contacts__map"></div>
+                    <div class="contacts__map" id="map"></div>
+                    <style>
+                        .ymaps-2-1-79-map-copyrights-promo, .ymaps-2-1-79-copyright__wrap {
+                            display:none;
+                        }
+                    </style>
                 </div>
             </div>
         </section>

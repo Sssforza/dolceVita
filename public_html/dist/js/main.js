@@ -11405,6 +11405,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
 /* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
 /* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
+/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(15);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11426,6 +11427,8 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
  //📁 /assets/js/blocks  services.js
 
  //📁 /assets/js/blocks  team.js
+
+ //📁 /assets/js/blocks  map.js
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11462,7 +11465,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["tabsSpecificityDoctor"])(); // aiming at the doctor
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["aimingAtTheDoctor"])();
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["aimingAtTheDoctor"])(); // map
+
+  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_11__["map"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16744,6 +16749,35 @@ function aimingAtTheDoctor() {
   }
 }
 ;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "map", function() { return map; });
+// Map
+var mobileOffsetX = 0.0009987452878874592;
+var mobileOffsetY = 0.00005002167360146359;
+function map() {
+  ymaps.ready(init);
+
+  function init() {
+    var myMap = new ymaps.Map("map", {
+      center: [54.995715, 73.353974],
+      zoom: 14,
+      controls: []
+    });
+    myMap.geoObjects.add(new ymaps.Placemark([54.995715, 73.353974], {
+      balloonContent: 'цвет <strong>носика Гены</strong>',
+      iconCaption: 'Dolce Vita'
+    }, {
+      preset: 'islands#icon',
+      iconColor: '#0095b6'
+    }));
+  }
+}
 
 /***/ })
 /******/ ]);

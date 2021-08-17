@@ -2,6 +2,8 @@
 .contacts {
     &__container {
         padding-top: 166px;
+        display: flex;
+        justify-content: space-between;
     }
     &__content {
         padding-top: 90px;
@@ -89,5 +91,11 @@
         svg {
             display: block;
         }
+    }
+    &__map {
+        width: 933px;
+        height: 716px;
+        border-radius: 80px;
+        overflow: hidden;
     }
 }
