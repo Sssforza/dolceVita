@@ -13,3 +13,11 @@ export function headerShow () {
         }
     }
 }
+// header gray theme
+export function headerGray () {
+        const main = document.querySelector('.main');
+        const header = document.querySelector('.header_js');
+        if(main.classList.contains('whiteBg_js')) {
+            header.classList.add('gray');
+        }
+}

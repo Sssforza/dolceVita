@@ -5,7 +5,9 @@ const mobileOffsetY = 0.00005002167360146359;
 
 export function map() {
 
-    ymaps.ready(init);
+    if(document.querySelector('#map')) {
+        ymaps.ready(init);
+    }
 
     function init() {
         var myMap = new ymaps.Map("map", {

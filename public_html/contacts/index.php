@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
 ?>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8ff686a7-c893-462e-9d60-01bd90ade3ee" type="text/javascript"></script>
-<main class="main">
+<main class="main whiteBg_js">
 	<section class="page page_contacts">
         <section class="contacts">
             <div class="container">

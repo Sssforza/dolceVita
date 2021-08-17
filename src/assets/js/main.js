@@ -11,8 +11,8 @@ import 'magnific-popup';
 //📁 /assets/js/blocks  _popups.js
 import {moreStage, popupClose} from "./blocks/_popups.js";
 
-//📁 /assets/js/blocks  _animPageLoad.js
-import {headerShow} from "./blocks/_animPageLoad.js";
+//📁 /assets/js/blocks  _pageLoad.js
+import {headerShow, headerGray} from "./blocks/_pageLoad.js";
 
 //📁 /assets/js/blocks  _animPageScroll.js
 import {animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPractice, usefulBlog} from "./blocks/_animPageScroll.js";
@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // header top 0
     headerShow();
+
+    // header gray theme
+    headerGray();
 
     // next anim main lines
     animMainLines();

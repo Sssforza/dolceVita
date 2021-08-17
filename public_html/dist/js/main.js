@@ -11398,7 +11398,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
-/* harmony import */ var _blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 /* harmony import */ var _blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
 /* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
 /* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
@@ -11414,7 +11414,7 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
 
  //📁 /assets/js/blocks  _popups.js
 
- //📁 /assets/js/blocks  _animPageLoad.js
+ //📁 /assets/js/blocks  _pageLoad.js
 
  //📁 /assets/js/blocks  _animPageScroll.js
 
@@ -11433,7 +11433,9 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
 
 document.addEventListener("DOMContentLoaded", function () {
   // header top 0
-  Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_4__["headerShow"])(); // next anim main lines
+  Object(_blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__["headerShow"])(); // header gray theme
+
+  Object(_blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__["headerGray"])(); // next anim main lines
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__["animMainLines"])(); // next anim reviews lines
 
@@ -16407,6 +16409,7 @@ function moreStage() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerShow", function() { return headerShow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerGray", function() { return headerGray; });
 // header services
 function headerShow() {
   window.onload = function () {
@@ -16422,6 +16425,15 @@ function headerShow() {
       }, 800);
     }
   };
+} // header gray theme
+
+function headerGray() {
+  var main = document.querySelector('.main');
+  var header = document.querySelector('.header_js');
+
+  if (main.classList.contains('whiteBg_js')) {
+    header.classList.add('gray');
+  }
 }
 
 /***/ }),
@@ -16764,7 +16776,9 @@ __webpack_require__.r(__webpack_exports__);
 var mobileOffsetX = 0.0009987452878874592;
 var mobileOffsetY = 0.00005002167360146359;
 function map() {
-  ymaps.ready(init);
+  if (document.querySelector('#map')) {
+    ymaps.ready(init);
+  }
 
   function init() {
     var myMap = new ymaps.Map("map", {
