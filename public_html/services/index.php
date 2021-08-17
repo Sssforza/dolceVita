@@ -8,6 +8,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
             <div class="breadCrumbs">
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
+                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
                         <a href="" class="breadCrumbs__chit">На главную</a>
                     </li>
                     <li class="breadCrumbs__item">
