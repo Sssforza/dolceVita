@@ -16516,18 +16516,21 @@ __webpack_require__.r(__webpack_exports__);
 // header services
 function headerServices() {
   if (document.querySelector('.headerServices_js')) {
+    var header = document.querySelector('.header_js');
     var headerServicesElem = document.querySelector('.headerServices_js');
     var headerServicesClose = document.querySelectorAll('.headerServicesClose_js');
 
     headerServicesElem.onmouseover = function (e) {
       document.body.classList.add('openServicesMenu');
       headerServicesElem.classList.add('active');
+      header.classList.add('gray');
     };
 
     headerServicesClose.forEach(function (item) {
       item.addEventListener("click", function (e) {
         document.body.classList.remove('openServicesMenu');
         headerServicesElem.classList.remove('active');
+        header.classList.remove('gray');
       });
     });
   }

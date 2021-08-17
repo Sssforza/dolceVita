@@ -36,46 +36,6 @@ body {
             border-radius: 0;
             opacity: 1;
         }
-        .header {
-            &__logo {
-                svg {
-                    .color {
-                        fill:$greenDark;
-                    }
-                }
-            }
-            &__tel {
-                color: $blueDark;
-            }
-            &__quest {
-                border: 2px solid $greenMedium;
-                svg {
-                    path,
-                    circle {
-                        stroke:$greenDark;
-                    }
-                }
-            }
-        }
-        .headerNavTop,
-        .headerNavBottom {
-            &__link {
-                color: $greenDark;
-            }
-        }
-        .headerNavTop__link {
-            &:after {
-                background-image: url($imgUrl + "svg/headerNavTDark-active.svg");
-            }
-        }
-        .headerNavBottom {
-            &__link {
-                color: $greenDark;
-                &.active {
-                    color: $purple;
-                }
-            }
-        }
         .servicesMain, .servicesMiddle {
             &__item {
                 transform: translateY(0px);
