@@ -349,7 +349,12 @@ body {
         color: $greenLight;
     }
 }
-
+.whiteSection {
+    &__content {
+        padding-top: 163px;
+        padding-left: 303px;
+    }
+}
 
 @keyframes mainLinesDraw{
     to {stroke-dashoffset: 0;}

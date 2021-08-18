@@ -32,6 +32,9 @@ import {popupMoreStageDate, servicesAttendance} from "./blocks/services.js";
 //📁 /assets/js/blocks  team.js
 import {tabsSpecificityDoctor, aimingAtTheDoctor} from "./blocks/team.js";
 
+//📁 /assets/js/blocks  price.js
+import {tabsPriceServices} from "./blocks/price.js";
+
 //📁 /assets/js/blocks  map.js
 import {map} from "./blocks/map.js";
 
@@ -90,6 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // aiming at the doctor
     aimingAtTheDoctor();
+
+    // tabs price services
+    tabsPriceServices();
 
     // map
     map();

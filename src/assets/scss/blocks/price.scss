@@ -1,0 +1,137 @@
+@import "../modules/utilities/_variables.scss";
+@import "../modules/utilities/_mixins.scss";
+.pagePrice {
+    margin-top: 57px;
+    &__info {
+        margin-top: 45px;
+        display: flex;
+    }
+    &__description {
+        flex:none;
+        width: 417px;
+        font-size: 16px;
+        line-height: 22px;
+        color: $greenDark;
+    }
+    &__services {
+        margin-top: 64px;
+        display: flex;
+    }
+}
+.priceHeader {
+    display: flex;
+    align-items: center;
+    &__title {
+        font-size: 72px;
+        line-height: 72px;
+        color: $blueDark;
+        font-family: 'Prata';
+    }
+    &__list {
+        margin-left: 67px;
+        display: flex;
+    }
+    &__item {
+        &:not(:first-child) {
+            margin-left: 48px;
+        }
+    }
+    &__link {
+        font-size: 21px;
+        line-height: 27px;
+        font-weight: 500;
+        color: $blueDark;
+    }
+}
+.priceSearch {
+    margin-left: 43px;
+    position: relative;
+    &__envelope {
+        width: 1034px;
+        input {
+            width: 100%;
+            padding: 0 64px 0 24px;
+            font-size: 18px;
+            line-height: 23px;
+            color: $greenMedium;
+            background: rgba(219, 233, 239, .5);
+            border: none;
+            border-radius: 20px;
+            @include placeholder(18px, $greenMedium, EuclidFlex);
+        }
+    }
+    &__button {
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 22px;
+        cursor: pointer;
+        svg {
+            display: block;
+        }
+    }
+}
+.priceNav {
+    flex:none;
+    width: 417px;
+    padding-right: 20px;
+    &__li {
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+    &__choice {
+        font-size: 21px;
+        line-height: 27px;
+        color: $blueDark;
+        cursor: pointer;
+        &.active {
+            color: $purple;
+        }
+    }
+}
+.priceList {
+    width: 1034px;
+    margin-left: 43px;
+    &__item {
+        &:not(:first-child) {
+            margin-top: 48px;
+        }
+    }
+    &__header {
+        padding-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(141, 155, 178, .3);
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 500;
+        color: $blueDark;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+    &__svg {
+        svg {
+            display: block;
+            transform: rotate(-180deg);
+        }
+    }
+    &__li {
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(141, 155, 178, .3);
+    }
+    &__name,
+    &__cost {
+        font-size: 21px;
+        line-height: 29px;
+        color: $greenDark;
+    }
+    &__cost {
+        font-weight: 500;
+    }
+}
