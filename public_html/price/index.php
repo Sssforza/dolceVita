@@ -14,10 +14,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/price.css");
                                 <a href="" class="breadCrumbs__chit">На главную</a>
                             </li>
                             <li class="breadCrumbs__item">
-                                <a href="" class="breadCrumbs__chit">О нас</a>
-                            </li>
-                            <li class="breadCrumbs__item">
-                                <span class="breadCrumbs__chit">Специалисты</span>
+                                <span class="breadCrumbs__chit">Стоимость</span>
                             </li>
                         </ul>
                     </div>
