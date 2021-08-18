@@ -86,16 +86,16 @@
                     <div class="servicesMain">
                         <ul class="servicesMain__list">
                             <li class="servicesMain__item">
-                                <span class="servicesMain__link active">Косметология</span>
+                                <span class="servicesMain__link active" data-services="cosmetology">Косметология</span>
                             </li>
                             <li class="servicesMain__item">
-                                <span class="servicesMain__link">Коррекция фигуры</span>
+                                <span class="servicesMain__link" data-services="bodyShaping">Коррекция фигуры</span>
                             </li>
                             <li class="servicesMain__item">
-                                <span class="servicesMain__link">Качество жизни</span>
+                                <span class="servicesMain__link" data-services="qualityLife">Качество жизни</span>
                             </li>
                             <li class="servicesMain__item">
-                                <span class="servicesMain__link">Салон красоты</span>
+                                <span class="servicesMain__link" data-services="beautySaloon">Салон красоты</span>
                             </li>
                             <li class="servicesMain__item">
                                 <a class="servicesMain__link" href="#">Все услуги</a>
