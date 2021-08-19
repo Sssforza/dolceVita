@@ -16718,9 +16718,35 @@ function popupMoreStageDate() {
 
 function servicesAttendance() {
   if (document.querySelector('.servicesCardBtn_js')) {
+    var parent = document.querySelector('.servicesAttendance_js');
+    var flex = parent.querySelector('.services__content');
     var btn = document.querySelector('.servicesCardBtn_js');
+    var heightAll = parent.scrollHeight;
+    var height = parent.clientHeight;
+    var num = parent.querySelector('.servicesCardNumber_js').innerHTML;
+    var numPaste = parent.querySelector('.servicesCardNumber_js');
+    var gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
+    var numberItems = Number(num);
+    var heightPaste;
+    var count = 1;
+    var countGap = 0;
     btn.addEventListener("click", function (e) {
-      btn.closest(".services_attendance").classList.add('all');
+      count = count + 1;
+      countGap = countGap + 1;
+      numberItems = numberItems - 6;
+      numPaste.innerHTML = numberItems;
+      heightPaste = height * count + Number(gap) * countGap;
+
+      if (heightPaste < heightAll) {
+        console.log('if');
+        parent.style.height = heightPaste + "px";
+      }
+
+      if (heightPaste === heightAll) {
+        console.log('=');
+        parent.style.height = heightPaste + "px";
+        btn.closest(".servicesCardBig").remove();
+      }
     });
   }
 }

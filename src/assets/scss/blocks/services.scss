@@ -148,13 +148,7 @@
         margin-top: 56px;
         height: 680px;
         overflow: hidden;
-        transition: $transition;
-        &.all {
-            height: 1040px;
-            .servicesCardBig {
-                opacity: 0;
-            }
-        }
+        transition: all .4s ease-in-out;
     }
     &_cosmetic {
         .services__container {
@@ -292,8 +286,9 @@
     }
 }
 .servicesCardBig {
+    padding-bottom: 35px;
     position: absolute;
-    bottom: 360px;
+    bottom: 0;
     right: 15px;
     z-index: 1;
     background: $white;
@@ -304,6 +299,7 @@
         display: none;
     }
     &__content {
+        position: relative;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -322,6 +318,18 @@
         font-weight: 500;
         color: $blueDark;
         cursor: pointer;
+    }
+    &__number {
+        position: absolute;
+        right: 16px;
+        top: -27px;
+        text-align: right;
+        font-size: 288px;
+        line-height: 346px;
+        color: $greenLight;
+        font-family: 'Prata';
+        letter-spacing: -0.03em;
+        z-index: -1;
     }
 }
 .cosmeticCard {

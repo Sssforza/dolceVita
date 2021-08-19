@@ -55,9 +55,33 @@ export function popupMoreStageDate () {
 // services attendance all cards
 export function servicesAttendance () {
     if(document.querySelector('.servicesCardBtn_js')) {
+        const parent = document.querySelector('.servicesAttendance_js');
+        const flex = parent.querySelector('.services__content');
         const btn = document.querySelector('.servicesCardBtn_js');
+        const heightAll = parent.scrollHeight;
+        const height = parent.clientHeight;
+        const num = parent.querySelector('.servicesCardNumber_js').innerHTML;
+        const numPaste = parent.querySelector('.servicesCardNumber_js');
+        const gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
+        let numberItems = Number(num);
+        let heightPaste;
+        let count = 1;
+        let countGap = 0;
 		btn.addEventListener( "click" , (e) => {
-            btn.closest(".services_attendance").classList.add('all');
+            count = count + 1;
+            countGap = countGap + 1;
+            numberItems = numberItems - 6;
+            numPaste.innerHTML = numberItems;
+            heightPaste = (height * count) + (Number(gap) * countGap);
+            if (heightPaste < heightAll){
+                console.log('if');
+                parent.style.height = heightPaste + "px";
+            }
+            if (heightPaste === heightAll){
+                console.log('=');
+                parent.style.height = heightPaste + "px";
+                btn.closest(".servicesCardBig").remove();
+            }
         });
 	}
 }
