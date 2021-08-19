@@ -294,7 +294,7 @@ body {
     padding-top: 163px;
     padding-left: 367px;
     width: 100%;
-    min-height: 594px;
+    height: 594px;
     background: linear-gradient(188.86deg, #A9C2C9 1.18%, #79A5B1 85.9%);
     overflow: hidden;
     &:before {
@@ -347,6 +347,19 @@ body {
         font-size: 24px;
         line-height: 34px;
         color: $greenLight;
+    }
+    &__container {
+        display: flex;
+    }
+    &__img {
+        position: absolute;
+        right: 166px;
+        bottom: 0px;
+        max-width: 897px;
+        max-height: 594px;
+        img {
+            display: block;
+        }
     }
 }
 .whiteSection {
