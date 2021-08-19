@@ -36,7 +36,7 @@ import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/speciali
 import {tabsSpecificityDoctor, aimingAtTheDoctor} from "./blocks/team.js";
 
 //📁 /assets/js/blocks  price.js
-import {tabsPriceServices} from "./blocks/price.js";
+import {tabsPriceServices, interactionCards} from "./blocks/price.js";
 
 //📁 /assets/js/blocks  map.js
 import {map} from "./blocks/map.js";
@@ -105,6 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // tabs price services
     tabsPriceServices();
+
+    // opening and closing cards
+    interactionCards();
 
     // map
     map();

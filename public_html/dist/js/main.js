@@ -11479,7 +11479,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_11__["aimingAtTheDoctor"])(); // tabs price services
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["tabsPriceServices"])(); // map
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["tabsPriceServices"])(); // opening and closing cards
+
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["interactionCards"])(); // map
 
   Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_13__["map"])();
 });
@@ -16870,6 +16872,7 @@ function aimingAtTheDoctor() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsPriceServices", function() { return tabsPriceServices; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionCards", function() { return interactionCards; });
 // tabs price services
 function tabsPriceServices() {
   if (document.querySelector('.pagePriceServices_js')) {
@@ -16892,6 +16895,26 @@ function tabsPriceServices() {
         });
       });
     });
+  }
+}
+; // opening and closing cards
+
+function interactionCards() {
+  if (document.querySelector('.priceList_js')) {
+    var shoppingСard = function shoppingСard() {
+      $('.priceList_js .priceList__header').not($(this)).removeClass('show');
+
+      if ($(this).hasClass('show')) {
+        $(this).removeClass('show');
+      } else {
+        $(this).addClass('show');
+      }
+
+      $('.priceList_js .priceList__content').not($(this).next()).slideUp(500);
+      $(this).next().slideToggle(500);
+    };
+
+    $('.priceList_js .priceList__header').on('click', shoppingСard);
   }
 }
 ;

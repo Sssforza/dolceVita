@@ -21,3 +21,20 @@ export function tabsPriceServices () {
 		});
 	}
 };
+
+// opening and closing cards
+export function interactionCards () {
+	if(document.querySelector('.priceList_js')) {
+		$('.priceList_js .priceList__header').on('click', shoppingСard);
+		function shoppingСard(){
+			$('.priceList_js .priceList__header').not($(this)).removeClass('show');
+			if($(this).hasClass('show')) {
+				$(this).removeClass('show');
+			} else {
+				$(this).addClass('show');
+			}
+			$('.priceList_js .priceList__content').not($(this).next()).slideUp(500);
+			$(this).next().slideToggle(500);
+		}
+	}
+};

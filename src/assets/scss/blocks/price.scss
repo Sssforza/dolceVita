@@ -102,7 +102,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid rgba(141, 155, 178, .3);
+        cursor: pointer;
+        &.show {
+            .priceList__svg {
+                svg {
+                    display: block;
+                    transform: rotate(0deg);
+                }
+            }
+        }
     }
     &__title {
         font-size: 24px;
@@ -116,7 +124,12 @@
         svg {
             display: block;
             transform: rotate(-180deg);
+            transition: $transition;
         }
+    }
+    &__content {
+        display: none;
+        border-top: 1px solid rgba(141, 155, 178, .3);
     }
     &__li {
         padding: 12px 0;

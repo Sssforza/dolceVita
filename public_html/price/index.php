@@ -80,7 +80,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/price.css");
                             </li>
                         </ul>
                     </div>
-                    <div class="priceList">
+                    <div class="priceList blockPriceList_js">
                         <div class="priceList__list priceList_js" data-list="laser">
                             <div class="priceList__item">
                                 <div class="priceList__header">
