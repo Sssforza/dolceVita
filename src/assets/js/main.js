@@ -12,7 +12,7 @@ import 'magnific-popup';
 import {moreStage, popupClose} from "./blocks/_popups.js";
 
 //📁 /assets/js/blocks  _pageLoad.js
-import {headerShow, headerGray} from "./blocks/_pageLoad.js";
+import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
 
 //📁 /assets/js/blocks  _animPageScroll.js
 import {animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPractice, usefulBlog} from "./blocks/_animPageScroll.js";
@@ -21,7 +21,7 @@ import {animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPract
 import {headerServices} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
-import {sliderMain, sliderEquipment, sliderSpecialists} from "./blocks/_sliders.js";
+import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio} from "./blocks/_sliders.js";
 
 //📁 /assets/js/blocks  scrollbar.js
 import {specialistsNavScroll} from "./blocks/scrollbar.js";
@@ -43,8 +43,8 @@ import {map} from "./blocks/map.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // header top 0
-    headerShow();
+    // window.onload
+    windowOnload();
 
     // header gray theme
     headerGray();
@@ -75,6 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // slider main page specialists
     sliderSpecialists();
+
+    // slider portfolio specialist
+    sliderSpecialistsPortfolio();
 
     // specialists nav scroll
     specialistsNavScroll();
