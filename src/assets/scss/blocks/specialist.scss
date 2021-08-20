@@ -1,6 +1,12 @@
 @import "../modules/utilities/_variables.scss";
 .specialist {
     margin-top: 97px;
+    .services {
+        margin-top: 196px;
+        &__content {
+            margin-top: 45px;
+        }
+    }
 }
 .aboutSpecialist {
     &__container {
@@ -56,16 +62,7 @@
         margin-top: 48px;
         max-height: 268px;
         overflow: hidden;
-        transition: height .3s;
-    }
-    &__wrapper {
-        &.hide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0;
-        }
+        transition: all .4s;
     }
     &__item {
         display: flex;
@@ -134,7 +131,9 @@
         line-height: 28px;
         color: $greenDark;
     }
-    &__show {
+    &__show,
+    &__hide {
+        position: absolute;
         margin-top: 48px;
         margin-left: 154px;
         display: inline-flex;
@@ -152,10 +151,14 @@
             margin-left: 16px;
             display: block;
         }
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
-    &.show {
-        .aboutSpecialist__list {
-            max-height: 100%;
+    &__hide {
+        svg {
+            transform: rotate(-180deg);
         }
     }
 }

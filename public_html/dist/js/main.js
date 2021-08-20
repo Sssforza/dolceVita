@@ -16762,7 +16762,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aboutSpecialistShowAll", function() { return aboutSpecialistShowAll; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecialistEducation", function() { return tabsSpecialistEducation; });
 // about specialist show all
-function aboutSpecialistShowAll() {// if(document.querySelector('.aboutSpecialist__list')) {
+function aboutSpecialistShowAll() {
+  // if(document.querySelector('.aboutSpecialist__list')) {
   //     let elem = document.querySelector('.aboutSpecialistShow_js');
   //     let list = document.querySelector('.aboutSpecialist__list');
   //     let height;
@@ -16778,6 +16779,40 @@ function aboutSpecialistShowAll() {// if(document.querySelector('.aboutSpecialis
   // $('.aboutSpecialistShow_js').on('click', function() {
   // 	$('.aboutSpecialist__list').next().slideToggle(500);
   // });
+  if (document.querySelector('.aboutSpecialist__list')) {
+    var desktop = 268;
+    var wrapper = document.querySelector('.aboutSpecialist__content');
+    var btnsShow = wrapper.querySelectorAll('.aboutSpecialistShow_js');
+    var btnsHide = wrapper.querySelectorAll('.aboutSpecialistHide_js');
+    var heightparent;
+    var heightList;
+    var list; //let height2;
+
+    btnsShow.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        heightparent = item.closest('.aboutSpecialist__wrapper');
+        list = heightparent.querySelector('.aboutSpecialist__list');
+        heightparent.querySelector('.aboutSpecialistHide_js').classList.remove('hide');
+        heightList = list.scrollHeight;
+        heightparent.classList.add('show');
+        item.classList.add('hide');
+        list.style.maxHeight = heightList + "px";
+        console.log(heightList);
+      });
+    });
+    btnsHide.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        heightparent = item.closest('.aboutSpecialist__wrapper');
+        list = heightparent.querySelector('.aboutSpecialist__list');
+        heightparent.querySelector('.aboutSpecialistShow_js').classList.remove('hide');
+        heightList = desktop;
+        heightparent.classList.add('show');
+        item.classList.add('hide');
+        list.style.maxHeight = heightList + "px";
+        console.log(heightList);
+      });
+    });
+  }
 } // tabs specialist education
 
 function tabsSpecialistEducation() {
@@ -16794,10 +16829,10 @@ function tabsSpecialistEducation() {
         });
         item.classList.add('active');
         elements.forEach(function (elem) {
-          elem.classList.add('hide');
+          elem.classList.add('hidden');
 
           if (elem.getAttribute('data-list') === thisShow) {
-            elem.classList.remove('hide');
+            elem.classList.remove('hidden');
           } // if(wrapper.classList.contains('show')) {
           //     console.log(9)
           //     let list = document.querySelector('.aboutSpecialist__list');
