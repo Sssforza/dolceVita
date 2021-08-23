@@ -233,11 +233,6 @@
     .sliderArrow__next {
         right: 151px;
     }
-    .slick-disabled {
-        opacity: 0;
-        pointer-events: none;
-        transition: $transition;
-    }
 }
 .portfolioSliderNav {
     display: flex;

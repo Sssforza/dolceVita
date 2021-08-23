@@ -16637,6 +16637,8 @@ function sliderSpecialists() {
       slidesToScroll: 1,
       arrows: true,
       fade: true,
+      draggable: false,
+      infinite: false,
       prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
       nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
     });
@@ -16646,6 +16648,19 @@ function sliderSpecialists() {
       $(this).addClass('active');
       var slideno = $(this).data('slide');
       slickSpecialists.slick('slickGoTo', slideno - 1);
+    });
+    $('.slick-arrow').click(function (e) {
+      var slide = $('.specialistsNav__item.active').data('slide');
+      slide = Number(slide);
+      $('div[data-slide]').removeClass('active');
+
+      if ($(this).hasClass('sliderArrow__next')) {
+        slide = slide + 1;
+      } else {
+        slide = slide - 1;
+      }
+
+      $('.specialistsNavScroll_js').find("[data-slide='".concat(slide, "']")).addClass('active');
     });
   }
 }

@@ -204,6 +204,11 @@ body {
         top: 50%;
         margin-top: -25px;
         cursor: pointer;
+        transition: $transition;
+        &.slick-disabled {
+            opacity: 0;
+            pointer-events: none;
+        }
         svg {
             display: block;
         }
