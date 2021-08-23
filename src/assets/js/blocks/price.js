@@ -38,3 +38,24 @@ export function interactionCards () {
 		}
 	}
 };
+
+// show clear element and clear
+export function clearInput () {
+	if(document.querySelector('.priceSearchInput_js')) {
+		const parent = document.querySelector('.priceSearch_js');
+		const input = parent.querySelector('.priceSearchInput_js');
+		const clear = parent.querySelector('.clearInput_js');
+		input.addEventListener('keyup', logKey);
+		function logKey(e) {
+			if(input.value.length >= 3){
+				clear.classList.add('show');
+			} else {
+				clear.classList.remove('show');
+			}
+		}
+		clear.onclick = () => {
+			clear.classList.remove('show');
+			input.value = "";
+		};
+	}
+};

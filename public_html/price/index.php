@@ -39,12 +39,15 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/price.css");
                         На&nbsp;этой странице мы&nbsp;собрали цены на&nbsp;все услуги. Если вы&nbsp;что-то не&nbsp;нашли
                         или хотите уточнить стоимость услуги, смело звоните нам
                     </div>
-                    <div class="priceSearch">
-                        <div class="priceSearch__envelope envelopeInput">
-                            <input class="priceSearch__input" placeholder="ВВЕДИТЕ НАЗВАНИЕ УСЛУГИ" type="text">
+                    <div class="priceSearch priceSearch_js">
+                        <div class="priceSearch__envelope envelopeInput grayInput">
+                            <input class="priceSearch__input priceSearchInput_js" placeholder="ВВЕДИТЕ НАЗВАНИЕ УСЛУГИ" type="text">
                             <button class="priceSearch__button">
                                 <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/priceSearch-i.svg';?>
                             </button>
+                            <div class="priceSearch__clear clearInput clearInput_js">
+                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/clearInput.svg';?>
+                            </div>
                         </div>
                     </div>
                 </div>

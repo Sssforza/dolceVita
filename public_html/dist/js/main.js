@@ -11483,7 +11483,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["tabsPriceServices"])(); // opening and closing cards
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["interactionCards"])(); // map
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["interactionCards"])(); // show clear element and clear
+
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["clearInput"])(); // map
 
   Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_13__["map"])();
 });
@@ -16946,6 +16948,7 @@ function aimingAtTheDoctor() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsPriceServices", function() { return tabsPriceServices; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionCards", function() { return interactionCards; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearInput", function() { return clearInput; });
 // tabs price services
 function tabsPriceServices() {
   if (document.querySelector('.pagePriceServices_js')) {
@@ -16988,6 +16991,29 @@ function interactionCards() {
     };
 
     $('.priceList_js .priceList__header').on('click', shoppingСard);
+  }
+}
+; // show clear element and clear
+
+function clearInput() {
+  if (document.querySelector('.priceSearchInput_js')) {
+    var logKey = function logKey(e) {
+      if (input.value.length >= 3) {
+        clear.classList.add('show');
+      } else {
+        clear.classList.remove('show');
+      }
+    };
+
+    var parent = document.querySelector('.priceSearch_js');
+    var input = parent.querySelector('.priceSearchInput_js');
+    var clear = parent.querySelector('.clearInput_js');
+    input.addEventListener('keyup', logKey);
+
+    clear.onclick = function () {
+      clear.classList.remove('show');
+      input.value = "";
+    };
   }
 }
 ;

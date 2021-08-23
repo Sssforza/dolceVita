@@ -51,13 +51,6 @@
         input {
             width: 100%;
             padding: 0 64px 0 24px;
-            font-size: 18px;
-            line-height: 23px;
-            color: $greenMedium;
-            background: rgba(219, 233, 239, .5);
-            border: none;
-            border-radius: 20px;
-            @include placeholder(18px, $greenMedium, EuclidFlex);
         }
     }
     &__button {
@@ -65,9 +58,27 @@
         top: calc(50% - 10px);
         right: 22px;
         cursor: pointer;
+        &:hover {
+            svg {
+                circle,
+                path {
+                    stroke: $blueDark;
+                }
+            }
+        }
         svg {
             display: block;
+            circle,
+                path {
+                    transition: $transition;
+                }
         }
+    }
+    &__clear {
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 64px;
+        cursor: pointer;
     }
 }
 .priceNav {
