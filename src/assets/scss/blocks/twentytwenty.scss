@@ -147,7 +147,7 @@
   z-index: 40;
   cursor: pointer;
   background: {
-    image: url($imgUrl + "twentytwentyHandle.png");
+    image: url("/dist/img/twentytwentyHandle.png");
     size: contain;
     repeat: no-repeat;
   }
@@ -155,7 +155,7 @@
 
 .twentytwenty-horizontal .twentytwenty-handle:before {
   bottom: 50%;
-  margin-bottom: 22px;
+  margin-bottom: 29px;
   height: 624px;}
 .twentytwenty-horizontal .twentytwenty-handle:after {
   top: 50%;
