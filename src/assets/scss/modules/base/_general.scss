@@ -75,6 +75,13 @@ body {
     color: $white;
     background: $purple;
     border-radius: 20px;
+    transition: all .5s;
+    &:hover {
+        background: #820062;
+    }
+    &:active {
+        background: $gray;
+    }
 }
 .btrWhiteBorder {
     display: flex;
@@ -222,7 +229,7 @@ body {
 }
 //popup
 .mfp-bg {
-    background: #7C8F99 !important;
+    background: $greenDark !important;
 }
 .mfp-close {
     padding: 0 !important;
@@ -265,12 +272,34 @@ body {
     }
     &:hover {
         input {
-            border: 2px solid #7C8F99;
+            border: 2px solid $greenDark;
         }
     }
     &:focus {
         input {
-            border: 2px solid #7C8F99;
+            border: 2px solid $greenDark;
+        }
+    }
+}
+.whiteInput {
+    input {
+        color: $greenDark;
+        background: $white;
+        font-size: 23px;
+        line-height: 29px;
+        border: 2px solid #A9C2C9;
+        border-radius: 32px;
+        @include placeholder(23px, $greenMedium, EuclidFlex);
+        transition: all .5s;
+    }
+    &:hover {
+        input {
+            border: 2px solid $greenDark;
+        }
+    }
+    &:focus {
+        input {
+            border: 2px solid $greenDark;
         }
     }
 }

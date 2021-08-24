@@ -18,3 +18,15 @@ export function headerServices () {
         });
     }
 }
+
+// header open search input
+export function headerSearch () {
+    if(document.querySelector('.headerQuest_js')) {
+        const parent = document.querySelector('.headerSearch_js');
+        const btn = document.querySelector('.headerQuest_js');
+        btn.onclick = () => {
+			btn.remove();
+			parent.classList.add('show');
+		};
+    }
+}

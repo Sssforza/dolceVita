@@ -28,13 +28,36 @@
                         <div class="headerNavTop">
                             <ul class="headerNavTop__ul">
                                 <li class="headerNavTop__li">
-                                    <a class="headerNavTop__link active" href="#">О нас</a>
+                                    <a class="headerNavTop__link headerNavTop__hover" href="#">Контакты</a>
                                 </li>
                                 <li class="headerNavTop__li">
-                                    <a class="headerNavTop__link" href="#">Блог</a>
+                                    <a class="headerNavTop__link headerNavTop__hover" href="#">Блог</a>
                                 </li>
-                                <li class="headerNavTop__li">
-                                    <a class="headerNavTop__link" href="#">Контакты</a>
+                                <li class="headerNavTop__li headerNavList">
+                                    <a class="headerNavTop__link about" href="#">
+                                        О нас
+                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerNavT-active.svg';?>
+                                    </a>
+                                    <ul class="headerNavList__content">
+                                        <li class="headerNavList__li">
+                                            <a href="#" class="headerNavList__a">О Dolce Vita</a>
+                                        </li>
+                                        <li class="headerNavList__li">
+                                            <a href="#" class="headerNavList__a">Специалисты</a>
+                                        </li>
+                                        <li class="headerNavList__li">
+                                            <a href="#" class="headerNavList__a">Отзывы клиентов</a>
+                                        </li>
+                                        <li class="headerNavList__li">
+                                            <a href="#" class="headerNavList__a">Работа в Dolce Vita</a>
+                                        </li>
+                                        <li class="headerNavList__li">
+                                            <a href="#" class="headerNavList__a">Блог</a>
+                                        </li>
+                                        <li class="headerNavList__li">
+                                            <a href="#" class="headerNavList__a">Вопросы и ответы</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -63,8 +86,14 @@
                         </a>
                     </div>
                     <div class="header__btns">
-                        <div class="header__search">
-                            <div class="header__quest">
+                        <div class="header__search headerSearch_js">
+                            <div class="envelopeInput whiteInput header__envelopeInput">
+                                <input type="text" placeholder="Введите услугу">
+                                <button class="header__button">
+                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerSearch-i.svg';?>
+                                </button>
+                            </div>
+                            <div class="header__quest headerQuest_js">
                                 <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerSearch-i.svg';?>
                             </div>
                         </div>
