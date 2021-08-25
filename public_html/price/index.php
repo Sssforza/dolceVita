@@ -11,7 +11,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/price.css");
                         <ul class="breadCrumbs__list">
                             <li class="breadCrumbs__item">
                                 <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                                <a href="" class="breadCrumbs__chit">На главную</a>
+                                <a href="/" class="breadCrumbs__chit">На главную</a>
                             </li>
                             <li class="breadCrumbs__item">
                                 <span class="breadCrumbs__chit">Стоимость</span>
