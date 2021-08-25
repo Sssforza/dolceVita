@@ -16574,7 +16574,10 @@ function headerServices() {
       item.addEventListener("click", function (e) {
         document.body.classList.remove('openServicesMenu');
         headerServicesElem.classList.remove('active');
-        header.classList.remove('gray');
+
+        if (document.querySelector('.main.whiteBg_js') == null) {
+          header.classList.remove('gray');
+        }
       });
     });
   }
