@@ -18,7 +18,7 @@ import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
 import {animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPractice, usefulBlog} from "./blocks/_animPageScroll.js";
 
 //📁 /assets/js/blocks  _header.js
-import {headerServices, headerSearch} from "./blocks/_header.js";
+import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
 import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio} from "./blocks/_sliders.js";
@@ -69,6 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // header open search input
     headerSearch();
+
+    // header menu selection
+    menuSelection();
 
     // slider main page
     sliderMain();

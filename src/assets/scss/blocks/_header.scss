@@ -377,6 +377,7 @@
         }
         &.active {
             color: $purple;
+            pointer-events: none;
             &:after {
                 content:'';
                 position: absolute;
@@ -432,6 +433,7 @@
         }
         &.active {
             color: $purple;
+            pointer-events: none;
             &:after {
                 content:'';
                 position: absolute;
@@ -445,8 +447,10 @@
     }
 }
 .servicesDetail {
-    margin-left: 188px;
-    display: flex;
+    &__content {
+        margin-left: 188px;
+        display: flex;
+    }
     &__list {
         width: 267px;
         &:not(:first-child) {

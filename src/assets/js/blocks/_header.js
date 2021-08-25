@@ -30,3 +30,56 @@ export function headerSearch () {
 		};
     }
 }
+
+// header menu selection
+export function menuSelection () {
+    if(document.querySelector('.servicesMain_js')) {
+        let wrapper = document.querySelector('.headerServicesMenu_js');
+        let mainSelected = wrapper.querySelectorAll('.servicesMain_js');
+        let middleSelected = wrapper.querySelectorAll('.servicesMiddleLink_js');
+        let elementsMiddle = wrapper.querySelectorAll('.servicesMiddle_js');
+        let elementsDetail = wrapper.querySelectorAll('.servicesDetail_js');
+        mainSelected.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                let thisShow = item.getAttribute('data-services');
+                mainSelected.forEach((i) => {
+                    i.classList.remove('active');
+                });
+                item.classList.add('active');
+                middleSelected.forEach((i) => {
+                    i.classList.remove('active');
+                });
+                middleSelected[0].classList.add('active');
+                let thisShowDetail = middleSelected[0].getAttribute('data-servicesMiddleDetail');
+                elementsMiddle.forEach((elem) => {
+                    elem.classList.add('hidden');
+                    if (elem.getAttribute('data-servicesMiddle') === thisShow) {
+                        elem.classList.remove('hidden');
+                    }
+                });
+                elementsDetail.forEach((elem) => {
+                    elem.classList.add('hidden');
+                    if (elem.getAttribute('data-servicesDetail') === thisShowDetail) {
+                        elem.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+        middleSelected.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                let thisShowMiddle = item.getAttribute('data-servicesMiddleDetail');
+                console.log(thisShowMiddle)
+                middleSelected.forEach((i) => {
+                    i.classList.remove('active');
+                });
+                item.classList.add('active');
+                elementsDetail.forEach((elem) => {
+                    elem.classList.add('hidden');
+                    if (elem.getAttribute('data-servicesDetail') === thisShowMiddle) {
+                        elem.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    }
+}

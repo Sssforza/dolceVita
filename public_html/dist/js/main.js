@@ -11455,7 +11455,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["headerServices"])(); // header open search input
 
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["headerSearch"])(); // slider main page
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["headerSearch"])(); // header menu selection
+
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["menuSelection"])(); // slider main page
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderMain"])(); // slider main page equipment
 
@@ -16554,6 +16556,7 @@ function usefulBlog() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerServices", function() { return headerServices; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerSearch", function() { return headerSearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuSelection", function() { return menuSelection; });
 // header services
 function headerServices() {
   if (document.querySelector('.headerServices_js')) {
@@ -16586,6 +16589,61 @@ function headerSearch() {
       btn.remove();
       parent.classList.add('show');
     };
+  }
+} // header menu selection
+
+function menuSelection() {
+  if (document.querySelector('.servicesMain_js')) {
+    var wrapper = document.querySelector('.headerServicesMenu_js');
+    var mainSelected = wrapper.querySelectorAll('.servicesMain_js');
+    var middleSelected = wrapper.querySelectorAll('.servicesMiddleLink_js');
+    var elementsMiddle = wrapper.querySelectorAll('.servicesMiddle_js');
+    var elementsDetail = wrapper.querySelectorAll('.servicesDetail_js');
+    mainSelected.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShow = item.getAttribute('data-services');
+        mainSelected.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        middleSelected.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        middleSelected[0].classList.add('active');
+        var thisShowDetail = middleSelected[0].getAttribute('data-servicesMiddleDetail');
+        elementsMiddle.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-servicesMiddle') === thisShow) {
+            elem.classList.remove('hidden');
+          }
+        });
+        elementsDetail.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-servicesDetail') === thisShowDetail) {
+            elem.classList.remove('hidden');
+          }
+        });
+      });
+    });
+    middleSelected.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShowMiddle = item.getAttribute('data-servicesMiddleDetail');
+        console.log(thisShowMiddle);
+        middleSelected.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        elementsDetail.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-servicesDetail') === thisShowMiddle) {
+            elem.classList.remove('hidden');
+          }
+        });
+      });
+    });
   }
 }
 
