@@ -353,6 +353,7 @@
     }
 }
 .sliderEquipWarranty {
+    position: relative;
     width: 195px;
     display: flex;
     flex-direction: column;
@@ -370,6 +371,57 @@
         font-size: 18px;
         line-height: 18px;
         color: $purple;
+    }
+    &__svg {
+        position: absolute;
+        top: -120px;
+        left: -125px;
+        &:hover {
+            svg {
+                .sliderEquipWarranty__path {
+                    &_1 {
+                        opacity: .6;
+                        transform: rotate(15deg);
+                    }
+                    &_2 {
+                        opacity: .5;
+                        transform: rotate(25deg) scale(.95);
+                    }
+                    &_3 {
+                        opacity: .4;
+                        transform: rotate(25deg);
+                    }
+                    &_4 {
+                        opacity: .3;
+                        transform: rotate(15deg);
+                    }
+                    &_5 {
+                        opacity: .2;
+                        transform: rotate(15deg);
+                    }
+                }
+            }
+        }
+    }
+    &__path {
+        opacity: 0;
+        transform-origin: center center;
+        transition: $transition5;
+        &_1 {
+            transition-delay: .1s;
+        }
+        &_2 {
+            transition-delay: .3s;
+        }
+        &_3 {
+            transition-delay: .5s;
+        }
+        &_4 {
+            transition-delay: .7s;
+        }
+        &_5 {
+            transition-delay: .9s;
+        }
     }
     svg {
         display: block;
