@@ -216,12 +216,24 @@
         height: 48px;
         background: rgba(219, 233, 239, .2);
         border-radius: 50%;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+            background: rgba(219, 233, 239, .6);
+        }
+        &:active {
+            background: rgba(219, 233, 239, .9);
+        }
         svg {
             display: block;
         }
     }
     &__next {
         margin-top: 12px;
+        padding-left: 1px;
+    }
+    &__prev {
+        padding-right: 2px;
     }
     .slick-active {
         .sliderMain__title,
@@ -277,6 +289,13 @@
         line-height: 104px;
         color: $blueDark;
         font-family: 'Prata';
+        transition: $transition;
+        &:hover {
+            color: $greenMedium;
+            &:before {
+                background: transparent;
+            }
+        }
         &:before {
             content:'';
             position: absolute;
@@ -286,6 +305,7 @@
             height: 2px;
             opacity: 0.5;
             background: $blueDark;
+            transition: $transition;
         }
     }
     &__description {
@@ -312,6 +332,11 @@
         line-height: 23px;
         text-decoration-line: underline;
         color: $greenDark;
+        transition: $transition;
+        &:hover {
+            color: $blueDark;
+            text-decoration-line: none;
+        }
         &:not(:first-child) {
             margin-right: 41px;
         }
@@ -337,6 +362,7 @@
         font-size: 28px;
         line-height: 30px;
         color: $blueDark;
+        font-family: 'Prata';
     }
     &__link {
         display: inline-block;
@@ -847,6 +873,7 @@
         height: 880px;
         border-radius: 80px;
         overflow: hidden;
+        background: #000000;
     }
     &__content {
         position: absolute;
@@ -905,6 +932,11 @@
         line-height: 24px;
         color: $greenDark;
         border-bottom: 1px solid $greenDark;
+        transition: $transition;
+        &:hover {
+            color: $blueDark;
+            border-bottom: 1px solid transparent;
+        }
     }
     &__state {
         position: absolute;

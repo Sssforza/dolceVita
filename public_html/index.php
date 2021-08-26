@@ -78,7 +78,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<div class="sliderEquipment__content sliderEquipment_js">
 						<div class="sliderEquipment__item">
 							<div class="sliderEquipment__texts">
-								<div class="sliderEquipment__title">Ultherapy</div>
+								<a href="#" class="sliderEquipment__title">Ultherapy</a>
 								<div class="sliderEquipment__description">
 									Альтера-терапия (Ultherapy <sup class="reg">&reg;</sup>) &mdash; это единственная процедура 
 									с&nbsp;технологией микро-сфокусированного ультразвука для лифтинга кожи, одобренная FDA 
@@ -120,7 +120,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 						</div>
 						<div class="sliderEquipment__item">
 							<div class="sliderEquipment__texts">
-								<div class="sliderEquipment__title">2Ultherapy</div>
+								<a href="#" class="sliderEquipment__title">2Ultherapy</a>
 								<div class="sliderEquipment__description">
 									Альтера-терапия (Ultherapy <sup class="reg">&reg;</sup>) &mdash; это единственная процедура 
 									с&nbsp;технологией микро-сфокусированного ультразвука для лифтинга кожи, одобренная FDA 

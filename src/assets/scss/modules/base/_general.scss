@@ -94,8 +94,15 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $white;
-    border: 2px solid $greenLight;
+    background: transparent;
+    border: 2px solid $white;
     border-radius: 20px;
+    transition: $transition;
+    &:hover {
+        color: $white;
+        background: $greenLight;
+        border: 2px solid $greenLight;
+    }
 }
 .btrBlueBorder {
     display: flex;
@@ -212,12 +219,26 @@ body {
         margin-top: -25px;
         cursor: pointer;
         transition: $transition;
+        &:hover {
+            svg {
+                path {
+                    stroke: $blueDark;
+                }
+            }
+        }
         &.slick-disabled {
-            opacity: 0;
             pointer-events: none;
+            svg {
+                path {
+                    stroke: $greenMedium;
+                }
+            }
         }
         svg {
             display: block;
+            path {
+                transition: $transition;
+            }
         }
     }
     &__prev {
