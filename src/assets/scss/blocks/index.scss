@@ -802,17 +802,18 @@
     }
     &__content {
         z-index: 1;
-        padding-right: 200px !important;
+        //padding-right: 200px !important;
     }
     &__list {
-        margin: 62px -2px 0 -2px;
+        margin-top: 62px;
+        //margin: 62px -2px 0 -2px;
         display: flex;
         flex-wrap: wrap;
     }
     &__item {
         flex:none;
         position: relative;
-        margin: 2px;
+        //margin: 2px;
         width: 245px;
         height: 245px;
         overflow: hidden;
