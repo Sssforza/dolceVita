@@ -511,8 +511,12 @@
     }
 }
 .bonusCard {
-    margin-top: 272px;
+    padding-top: 272px;
+    padding-bottom: 165px;
     position: relative;
+    &__content {
+        position: relative;
+    }
     &__card {
         width: 662px;
         height: 467px;
@@ -655,7 +659,7 @@
     }
 }
 .sectionConsult {
-    margin-top: 333px;
+    padding-top: 333px;
     position: relative;
     &__description {
         margin-top: 22px;
@@ -735,7 +739,7 @@
     }
 }
 .usefulBlog {
-    margin-top: 201px;
+    padding-top: 201px;
     &__list {
         display: flex;
         margin-top: 40px;
@@ -925,11 +929,13 @@
     }
 }
 .videoHistory {
-    margin-top: 165px;
     position: relative;
+    &__container {
+        height: 880px;
+    }
     &__video {
         width: 100%;
-        height: 880px;
+        height: 100%;
         border-radius: 80px;
         overflow: hidden;
         background: #000000;
@@ -959,7 +965,7 @@
 }
 .specialists {
     position: relative;
-    margin-top: 152px;
+    padding-top: 152px;
     &__bg {
         position: absolute;
         top: -628px;

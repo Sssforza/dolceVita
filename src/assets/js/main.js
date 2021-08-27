@@ -15,7 +15,7 @@ import {moreStage, popupClose} from "./blocks/_popups.js";
 import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
 
 //📁 /assets/js/blocks  _animPageScroll.js
-import {animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPractice, usefulBlog} from "./blocks/_animPageScroll.js";
+import {animGradientBgHeader, animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPractice, usefulBlog} from "./blocks/_animPageScroll.js";
 
 //📁 /assets/js/blocks  _header.js
 import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // header gray theme
     headerGray();
+
+    // anim gradient bg header
+    animGradientBgHeader();
 
     // next anim main lines
     animMainLines();

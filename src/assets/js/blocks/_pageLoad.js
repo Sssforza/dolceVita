@@ -19,6 +19,8 @@ export function windowOnload () {
             console.log('twentytwenty_js')
             $(".twentytwenty_js").twentytwenty();
         }
+        // midnight
+        $('.header_js').midnight();
     }
 }
 // header gray theme

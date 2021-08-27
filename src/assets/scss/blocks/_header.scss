@@ -3,14 +3,28 @@
     top: 0;
     right: 0;
     left: 0;
+    // height: 100px !important;
     z-index: 1000;
-    padding-top: 15px;
-    padding-bottom: 19px;
     transition: .8s cubic-bezier(0.43, 0.17, 0, 0.54);
     &.hide {
         top: -100%;
     }
+    &:after {
+        content:'';
+        display: block;
+        position: absolute;
+        top: -100%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(180deg, #5D6A77 0%, rgba(64, 81, 98, 0.3) 43.23%, rgba(79, 86, 94, 0.15) 64.06%, rgba(78, 80, 83, 0.04) 88.02%, rgba(108, 108, 108, 0) 100%);
+        z-index: -1;
+        transition: $transition5;
+    }
     &__content {
+        padding-top: 16px;
+        padding-bottom: 32px;
         display: flex;
         justify-content: space-between;
     }
@@ -221,6 +235,11 @@
                     color: $purple;
                 }
             }
+        }
+    }
+    &.gradient {
+        &:after {
+            top: 0;
         }
     }
 }
@@ -527,6 +546,94 @@
             &:after {
                 opacity: 1;
                 background: $blueDark;
+            }
+        }
+    }
+}
+// midnight
+.midnightInner {
+    overflow: hidden !important;
+}
+.midnightHeader.gray {
+    background: $white;
+    .header {
+        &__logo {
+            svg {
+                .color {
+                    fill:$greenDark;
+                }
+            }
+            &:hover {
+                svg {
+                    .color {
+                        fill:$blueDark;
+                    }
+                }
+            }
+        }
+        &__tel {
+            color: $blueDark;
+        }
+        &__quest {
+            border: 2px solid $greenMedium;
+            &:hover {
+                border: 2px solid $greenDark;
+                svg {
+                    path,
+                    circle {
+                        stroke: $greenDark;
+                    }
+                }
+            }
+            svg {
+                path,
+                circle {
+                    stroke:$greenMedium;
+                }
+            }
+        }
+    }
+    .headerNavTop,
+    .headerNavBottom {
+        &__link {
+            color: $greenDark;
+        }
+    }
+    .headerNavTop__hover {
+        &:after {
+            background: $blueDark;
+        }
+    }
+    .headerNavTop__link {
+        &:hover {
+            color: $blueDark;
+        }
+        &.about {
+            svg {
+                path {
+                    stroke: $greenDark;
+                }
+            }
+            &:hover {
+                svg {
+                    path {
+                        stroke: $blueDark;
+                    }
+                }
+            }
+        }
+    }
+    .headerNavBottom {
+        &__link {
+            color: $greenDark;
+            &:hover {
+                color: $blueDark !important;
+            }
+            &:after {
+                background: $blueDark;
+            }
+            &.active {
+                color: $purple;
             }
         }
     }

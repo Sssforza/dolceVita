@@ -9,7 +9,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				<div class="sliderMain__item first">
 					<div class="sliderMain__bg" style="background-image:url(/dist/img/mainSlierItem1.jpg)"></div>
 					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
+						<div class="sliderMain__inner gradientHeader_js">
 							<div class="sliderMain__title">Инновационная косметология</div>
 							<div class="sliderMain__description">
 								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
@@ -22,7 +22,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				<div class="sliderMain__item">
 					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem2.jpg)"></div>
 					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
+						<div class="sliderMain__inner gradientHeader_js">
 							<div class="sliderMain__title">Косметика<br> мировых брендов</div>
 							<div class="sliderMain__description">
 								Работаем с профессиональной косметикой премиум-сегментов
@@ -34,7 +34,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				<div class="sliderMain__item">
 					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem3.jpg)"></div>
 					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
+						<div class="sliderMain__inner gradientHeader_js">
 							<div class="sliderMain__title">Инновационная</div>
 							<div class="sliderMain__description">
 								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
@@ -47,7 +47,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				<div class="sliderMain__item">
 					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem4.jpg)"></div>
 					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
+						<div class="sliderMain__inner gradientHeader_js">
 							<div class="sliderMain__title">косметология</div>
 							<div class="sliderMain__description">
 								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
@@ -63,7 +63,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				<div class="sliderMain__arrows"></div>
 			</div>
 		</section>
-		<section class="originalEquipment">
+		<section class="originalEquipment" data-midnight="gray">
 			<div class="originalEquipment__content">
 				<div class="originalEquipment__texts">
 					<div class="originalEquipment__title">
@@ -167,10 +167,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<section class="mainLines mainLines_js">
+		<section class="mainLines mainLines_js" data-midnight="gray">
 			<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesMain.svg';?>
 		</section>
-		<section class="specialists specialists_js">
+		<section class="specialists specialists_js" data-midnight="gray">
 			<div class="specialists__bg"></div>
 			<div class="specialists__content container">
 				<div class="specialists__container">
@@ -410,7 +410,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<section class="bonusCard bonusCard_js">
+		<section class="bonusCard bonusCard_js" data-midnight="gray">
 			<div class="bonusCard__content">
 				<div class="container">
 					<div class="bonusSystem">
@@ -527,7 +527,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<section class="videoHistory">
+		<section class="videoHistory" data-midnight="gray">
 			<div class="videoHistory__container container">
 				<video autoplay muted loop class="videoHistory__video">
 					<source src="/dist/video/videoHistory.mp4" type="video/mp4">
@@ -541,7 +541,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<div class="reviews reviews_js">
+		<div class="reviews reviews_js" data-midnight="gray">
 			<div class="reviews__bg"></div>
 			<div class="reviews__svg">
 				<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesHeart.svg';?>
@@ -590,7 +590,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</div>
-		<section class="sectionConsult sectionConsult_js">
+		<section class="sectionConsult sectionConsult_js" data-midnight="gray">
 			<div class="sectionConsult__content container">
 				<div class="bonusSystem__ground bonusSystem__ground_left">
 					<img src="/dist/img/formTrees01.png" alt="">
@@ -626,7 +626,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<img src="/dist/img/doctor15.png">
 				</div>
 		</section>
-		<section class="usefulBlog usefulBlog_js">
+		<section class="usefulBlog usefulBlog_js" data-midnight="gray">
 			<div class="usefulBlog__content containerMin">
 				<div class="section">
 					<div class="section__title">Полезный блог</div>
