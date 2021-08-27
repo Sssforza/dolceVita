@@ -5,7 +5,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 <main class="main">
 	<section class="page page_services">
         <section class="banerSection banerServices">
-            <div class="breadCrumbs">
+            <div class="breadCrumbs gradientHeader_js">
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
@@ -52,7 +52,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                 </div>
             </div>
         </section>
-        <section class="services services_attendance container servicesAttendance_js">
+        <section class="services services_attendance container servicesAttendance_js" data-midnight="gray">
             <div class="services__content">
                 <div class="services__item servicesCard">
                     <div class="servicesCard__header">
@@ -668,7 +668,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                 </div>
             </div>
         </section>
-        <section class="services services_cosmetic">
+        <section class="services services_cosmetic" data-midnight="gray">
             <div class="container">
                 <div class="services__title">Для лучшего результата после процедуры <br>рекомендуем косметику</div>
                 <div class="services__container">
@@ -801,7 +801,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                 </div>
             </div>
         </section>
-        <section class="services servicesAction">
+        <section class="services servicesAction" data-midnight="gray">
             <div class="container">
                 <div class="services__title">Акция</div>
                 <div class="services__container">

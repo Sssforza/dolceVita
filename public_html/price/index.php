@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/price.css");
 ?>
 <main class="main whiteBg_js">
-	<section class="page page_price">
+	<section class="page page_price" data-midnight="gray">
         <section class="whiteSection">
             <div class="container">
                 <div class="whiteSection__content">

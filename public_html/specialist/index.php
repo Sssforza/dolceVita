@@ -8,7 +8,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 	<section class="page page_specialist">
         <section class="banerSection">
             <div class="banerSection__sheet banerSection__sheet_left"></div>
-            <div class="breadCrumbs">
+            <div class="breadCrumbs gradientHeader_js">
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
@@ -37,7 +37,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
             </div>
             <div class="banerSection__sheet banerSection__sheet_right"></div>
         </section>
-        <section class="specialist">
+        <section class="specialist" data-midnight="gray">
             <div class="specialist__content">
                 <div class="containerMin">
                     <div class="specialist__about">

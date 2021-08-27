@@ -467,7 +467,7 @@ body {
 }
 .services {
     position: relative;
-    margin-top: 96px;
+    padding-top: 96px;
     &__content {
         display: flex;
         flex-wrap: wrap;
@@ -484,7 +484,7 @@ body {
         color: $blueDark;
     }
     &_attendance {
-        margin-top: 56px;
+        padding-top: 56px;
         height: 680px;
         overflow: hidden;
         transition: all .4s ease-in-out;

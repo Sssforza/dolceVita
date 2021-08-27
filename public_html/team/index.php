@@ -6,7 +6,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
 	<section class="page page_team">
         <section class="banerSection">
             <div class="banerSection__sheet banerSection__sheet_left"></div>
-            <div class="breadCrumbs">
+            <div class="breadCrumbs gradientHeader_js">
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
@@ -29,7 +29,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
             </div>
             <div class="banerSection__sheet banerSection__sheet_right"></div>
         </section>
-        <section class="team team_js">
+        <section class="team team_js" data-midnight="gray">
             <div class="team__content containerMin">
                 <div class="teamList">
                     <div class="teamList__content">
