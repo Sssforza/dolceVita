@@ -1009,6 +1009,13 @@
   width: 7px;
   background-color: $purple;
   border-radius: 12px;
+  transition: $transition5;
+  &:hover {
+      background-color: $greenMedium;
+  }
+  &:active {
+      background-color: $greenDark;
+  }
 }
 .scrollbar-inner > .scroll-element.scroll-y {
   width: 7px;

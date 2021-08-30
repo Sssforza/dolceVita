@@ -764,8 +764,22 @@
         &:nth-child(3) {
             transition: transform .3s .3s;
         }
+        &.hover {
+            .usefulBlog__img {
+                &:after {
+                    opacity: 1;
+                }
+                &:before {
+                    opacity: 1;
+                }
+            }
+            .usefulBlog__link {
+                color: $blueDark;
+            }
+        }
     }
     &__img {
+        position: relative;
         display: block;
         width: 100%;
         height: 290px;
@@ -776,6 +790,30 @@
         }
         border-radius: 60px 60px 60px 20px;
         overflow: hidden;
+        &:after {
+            content:'';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(0deg, rgba(59, 94, 130, 0.4), rgba(59, 94, 130, 0.4)), url(BpSdF-NEz5s.jpg);
+            opacity: 0;
+            transition: $transition;
+        }
+        &:before {
+            content:'Прочитать';
+            position: absolute;
+            top: calc(50% - 19px);
+            left: calc(50% - 75px);
+            font-size: 30px;
+            line-height: 36px;
+            color: $white;
+            border-bottom: 2px solid $white;
+            z-index: 1;
+            opacity: 0;
+            transition: $transition;
+        }
     }
     &__date {
         margin-top: 38px;
@@ -790,6 +828,7 @@
         font-size: 30px;
         line-height: 36px;
         color: $gray;
+        transition: $transition;
     }
 }
 .reviews {
@@ -1056,6 +1095,16 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        &:hover {
+            .specialistsNav__img {
+                &:after {
+                    border: 2px solid $greenMedium;
+                }
+            }
+            .specialistsNav__bg {
+                background-color: $greenMedium;
+            }
+        }
         &:not(:first-child) {
             margin-top: 15px;
         }
@@ -1063,13 +1112,6 @@
             pointer-events: none;
             .specialistsNav__img {
                 &:after {
-                    content:'';
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    border-radius: 50%;
                     border: 2px solid #8D5287;
                 }
             }
@@ -1113,7 +1155,9 @@
         background: {
             repeat: no-repeat;
             size: cover;
+            color: #EFFAFC;
         }
+        transition: $transition;
     }
     &__name {
         font-size: 21px;
@@ -1156,7 +1200,6 @@
         line-height: 48px;
         font-weight: 500;
         color: $blueDark;
-        
     }
     &__ul {
         &:not(:first-child) {
@@ -1180,16 +1223,26 @@
     &__a {
         display: inline-flex;
         align-items: center;
+        &:hover {
+            span {
+                opacity: 1;
+            }
+            svg {
+                width: 36px;
+            }
+        }
         span {
             font-size: 24px;
             line-height: 30px;
             color: $purple;
             opacity: 0.8;
+            transition: $transition;
         }
         svg {
             margin-top: 4px;
             margin-left: 12px;
             display: block;
+            transition: $transition5;
         }
     }
     &__img {

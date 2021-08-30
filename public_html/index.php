@@ -604,6 +604,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<div class="sectionConsult__input">
 						<div class="envelopeInput">
 							<input class="envelopeInput__field" placeholder="Телефон" type="text">
+							<span class="envelopeInput__error">
+								Неверный формат телефона
+							</span>
 						</div>
 					</div>
 					<div class="sectionConsult__send">
@@ -634,32 +637,32 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 				<div class="usefulBlog__list top">
 					<div class="usefulBlog__item">
-						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg1.png)"></div>
+						<a href="#" class="usefulBlog__img usefulBlogHover_js" style="background-image:url(/dist/img/usefulBlogImg1.png)"></a>
 						<div class="usefulBlog__date">25 марта 2021</div>
 						<div class="usefulBlog__title">
-							<a class="usefulBlog__link" href="#">
-								Криолиполиз&nbsp;&mdash; что это такое? 
-								Преимущества и&nbsp;недостатки 
+							<a href="#" class="usefulBlog__link usefulBlogHover_js">
+								Криолиполиз&nbsp;&mdash; что это такое?
+								Преимущества и&nbsp;недостатки
 								процедуры
 							</a>
 						</div>
 					</div>
 					<div class="usefulBlog__item">
-						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg2.png)"></div>
+						<a href="#" class="usefulBlog__img usefulBlogHover_js" style="background-image:url(/dist/img/usefulBlogImg2.png)"></a>
 						<div class="usefulBlog__date">18 февраля 2021</div>
 						<div class="usefulBlog__title">
-							<a class="usefulBlog__link" href="#">
+							<a href="#" class="usefulBlog__link usefulBlogHover_js">
 								Технология омоложения Fotona&nbsp;4D
 							</a>
 						</div>
 					</div>
 					<div class="usefulBlog__item">
-						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg3.png)"></div>
+						<a href="#" class="usefulBlog__img usefulBlogHover_js" style="background-image:url(/dist/img/usefulBlogImg3.png)"></a>
 						<div class="usefulBlog__date">3 февраля 2021</div>
 						<div class="usefulBlog__title">
-							<a class="usefulBlog__link" href="#">
-								Аппарат М-22 от&nbsp;Lumenis 
-								является последней новинкой 
+							<a href="#" class="usefulBlog__link usefulBlogHover_js">
+								Аппарат М-22 от&nbsp;Lumenis
+								является последней новинкой
 								от&nbsp;компании Lumenis, лидера...
 							</a>
 						</div>

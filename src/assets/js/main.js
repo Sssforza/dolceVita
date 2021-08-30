@@ -26,6 +26,9 @@ import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfol
 //📁 /assets/js/blocks  scrollbar.js
 import {specialistsNavScroll} from "./blocks/scrollbar.js";
 
+//📁 /assets/js/blocks  index.js
+import {usefulBlogHover} from "./blocks/index.js";
+
 //📁 /assets/js/blocks  services.js
 import {popupMoreStageDate, servicesAttendance} from "./blocks/services.js";
 
@@ -90,6 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // specialists nav scroll
     specialistsNavScroll();
+
+    // useful blog hover
+    usefulBlogHover();
 
     // popup close
     popupClose();

@@ -90,7 +90,7 @@
 
 __webpack_require__(1);
 __webpack_require__(3);
-module.exports = __webpack_require__(18);
+module.exports = __webpack_require__(19);
 
 
 /***/ }),
@@ -11404,11 +11404,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
 /* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
 /* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
-/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
-/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
-/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(15);
-/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16);
-/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(17);
+/* harmony import */ var _blocks_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
+/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
+/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(15);
+/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16);
+/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(17);
+/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(18);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11426,6 +11427,8 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
  //📁 /assets/js/blocks  _sliders.js
 
  //📁 /assets/js/blocks  scrollbar.js
+
+ //📁 /assets/js/blocks  index.js
 
  //📁 /assets/js/blocks  services.js
 
@@ -11470,31 +11473,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialistsPortfolio"])(); // specialists nav scroll
 
-  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["specialistsNavScroll"])(); // popup close
+  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["specialistsNavScroll"])(); // useful blog hover
+
+  Object(_blocks_index_js__WEBPACK_IMPORTED_MODULE_9__["usefulBlogHover"])(); // popup close
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupClose"])(); // moreStage
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // popupMoreStageDate
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["popupMoreStageDate"])(); // services attendance all cards
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["popupMoreStageDate"])(); // services attendance all cards
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["servicesAttendance"])(); // about specialist show all
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesAttendance"])(); // about specialist show all
 
-  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_10__["aboutSpecialistShowAll"])(); // tabs specialist education
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__["aboutSpecialistShowAll"])(); // tabs specialist education
 
-  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_10__["tabsSpecialistEducation"])(); // tabs specificity of the doctor
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__["tabsSpecialistEducation"])(); // tabs specificity of the doctor
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_11__["tabsSpecificityDoctor"])(); // aiming at the doctor
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_12__["tabsSpecificityDoctor"])(); // aiming at the doctor
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_11__["aimingAtTheDoctor"])(); // tabs price services
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_12__["aimingAtTheDoctor"])(); // tabs price services
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["tabsPriceServices"])(); // opening and closing cards
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_13__["tabsPriceServices"])(); // opening and closing cards
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["interactionCards"])(); // show clear element and clear
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_13__["interactionCards"])(); // show clear element and clear
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_12__["clearInput"])(); // map
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_13__["clearInput"])(); // map
 
-  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_13__["map"])();
+  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_14__["map"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16823,6 +16828,33 @@ function specialistsNavScroll() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usefulBlogHover", function() { return usefulBlogHover; });
+// useful blog hover
+function usefulBlogHover() {
+  if (document.querySelector('.usefulBlogHover_js')) {
+    var list = document.querySelector('.usefulBlog__list');
+    var hoversElem = list.querySelectorAll('.usefulBlogHover_js');
+    var parent;
+    hoversElem.forEach(function (item) {
+      item.onmouseover = function (elem) {
+        parent = item.closest('.usefulBlog__item');
+        parent.classList.add('hover');
+      };
+
+      item.onmouseout = function (elem) {
+        parent = item.closest('.usefulBlog__item');
+        parent.classList.remove('hover');
+      };
+    });
+  }
+}
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupMoreStageDate", function() { return popupMoreStageDate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesAttendance", function() { return servicesAttendance; });
 // popupMoreStageDate
@@ -16917,7 +16949,7 @@ function servicesAttendance() {
 }
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16987,7 +17019,7 @@ function tabsSpecialistEducation() {
 ;
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17039,7 +17071,7 @@ function aimingAtTheDoctor() {
 ;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17117,7 +17149,7 @@ function clearInput() {
 ;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17148,7 +17180,7 @@ function map() {
 }
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

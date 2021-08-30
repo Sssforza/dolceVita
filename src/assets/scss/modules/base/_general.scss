@@ -206,6 +206,7 @@ body {
         border-bottom: 1px solid #BCC3D6;
         transition: $transition;
         &:hover {
+            color: $greenMedium;
             border-bottom: 1px solid transparent;
         }
     }
@@ -266,18 +267,50 @@ body {
 }
 //envelope inputs
 .envelopeInput {
+    position: relative;
+    &:hover {
+        .envelopeInput__field {
+            border: 1px solid $white;
+        }
+    }
     &__field {
         padding: 0 22px;
         font-size: 24px;
         line-height: 30px;
-        color: $greenLight;
+        color: $white;
         background: transparent;
         border: 1px solid $white;
         border-radius: 4px;
         @include placeholder(24px, $greenLight, EuclidFlex);
+        transition: $transition;
+        &:focus {
+            border: 2px solid $white !important;
+        }
+    }
+    &__error {
+        display: block;
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        font-size: 14px;
+        line-height: 18px;
+        color: $error;
+        opacity: 0;
+        pointer-events: none;
+        transition: $transition;
     }
     input {
         height: 64px;
+    }
+    &.error {
+        .envelopeInput__field {
+            border: 1px solid $error !important;
+        }
+        .envelopeInput__error {
+            bottom: -24px;
+            opacity: 1;
+            pointer-events: auto;
+        }
     }
 }
 .grayInput {
@@ -376,6 +409,11 @@ body {
     }
     &__policy {
         border-bottom: 1px solid $greenLight;
+        transition: $transition;
+        &:hover {
+            color: $white;
+            border-bottom: 1px solid transparent;
+        }
     }
     &__doctor {
         position: absolute;
