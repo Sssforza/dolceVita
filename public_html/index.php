@@ -20,38 +20,15 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					</div>
 				</div>
 				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem2.jpg)"></div>
+					<div class="sliderMain__bg" style="background-image:url(/dist/img/mainSlierItem2.jpg)"></div>
 					<div class="sliderMain__wrapper">
 						<div class="sliderMain__inner gradientHeader_js">
-							<div class="sliderMain__title">Косметика<br> мировых брендов</div>
+							<div class="sliderMain__title">Косметика <br>мировых брендов</div>
 							<div class="sliderMain__description">
-								Работаем с профессиональной косметикой премиум-сегментов
-							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
-						</div>
-					</div>
-				</div>
-				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem3.jpg)"></div>
-					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner gradientHeader_js">
-							<div class="sliderMain__title">Инновационная</div>
-							<div class="sliderMain__description">
-								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
-								и&nbsp;красоты: инновационные решения, передовые технологии
-							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
-						</div>
-					</div>
-				</div>
-				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem4.jpg)"></div>
-					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner gradientHeader_js">
-							<div class="sliderMain__title">косметология</div>
-							<div class="sliderMain__description">
-								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
-								и&nbsp;красоты: инновационные решения, передовые технологии
+								Работаем с&nbsp;профессиональной косметикой
+								премиум-сегмента (Biologique Recherche, Babor),
+								производящаяся в&nbsp;соответствии со&nbsp;строгим
+								соблюдением всех фармацевтических стандартов.
 							</div>
 							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
 						</div>
