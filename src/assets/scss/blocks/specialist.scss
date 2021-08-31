@@ -1,0 +1,267 @@
+@import "../modules/utilities/_variables.scss";
+// twentytwenty
+@import "../blocks/twentytwenty.scss";
+// Scrollbar
+@import "../blocks/_jquery.scrollbar.scss";
+.specialist {
+    padding-top: 97px;
+    .services {
+        margin-top: 196px;
+        &__content {
+            margin-top: 45px;
+        }
+    }
+}
+.aboutSpecialist {
+    &__container {
+        display: flex;
+    }
+    &__content {
+        width: 727px;
+    }
+    &__choices {
+        position: relative;
+        display: inline-flex;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            left: 0;
+            height: 1px;
+            background: $greenMedium;
+            border-radius: 50px;
+        }
+    }
+    &__tab {
+        position: relative;
+        font-size: 18px;
+        line-height: 23px;
+        color: rgba(124, 143, 153, .6);
+        cursor: pointer;
+        &:not(:first-child) {
+            margin-left: 27px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            left: 0;
+            height: 2px;
+            background: transparent;
+            border-radius: 50px;
+            z-index: 2;
+            transition: $transition;
+        }
+        &.active {
+            font-weight: 500;
+            pointer-events: none;
+            &:after {
+                background: $purple;
+            }
+        }
+    }
+    &__list {
+        margin-top: 48px;
+        max-height: 268px;
+        overflow: hidden;
+        transition: all .4s;
+    }
+    &__item {
+        display: flex;
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+    &__year {
+        flex:none;
+        width: 154px;
+        font-size: 26px;
+        line-height: 34px;
+        color: $greenDark;
+        font-family: 'Prata';
+    }
+    &__description {
+        span {
+            display: block;
+            font-size: 18px;
+            line-height: 25px;
+            color: $greenDark;
+        }
+    }
+    &__diploma {
+        margin-top: 13px;
+        display: inline-flex;
+        align-items: center;
+        svg {
+            display: block;
+            margin-right: 10px;
+        }
+        span {
+            position: relative;
+            font-size: 18px;
+            line-height: 30px;
+            color: $purple;
+            &:after {
+                content:'';
+                position: absolute;
+                right: 0;
+                bottom: 2px;
+                left: 0;
+                border-bottom: 2px dashed #8D5287;
+                opacity: 0.4;
+            }
+        }
+    }
+    &__aside {
+        margin-left: 193px;
+    }
+    &__li {
+        &:not(:first-child) {
+            margin-top: 32px;
+        }
+    }
+    &__top {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        color: $greenDark;
+        opacity: 0.5;
+    }
+    &__bottom {
+        margin-top: 4px;
+        font-size: 24px;
+        line-height: 28px;
+        color: $greenDark;
+    }
+    &__show,
+    &__hide {
+        position: absolute;
+        margin-top: 48px;
+        margin-left: 154px;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        span {
+            font-size: 18px;
+            line-height: 23px;
+            font-weight: 500;
+            color: $blueDark;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        svg {
+            margin-left: 16px;
+            display: block;
+        }
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    &__hide {
+        svg {
+            transform: rotate(-180deg);
+        }
+    }
+}
+.portfolioSpecialist {
+    margin-top: 196px;
+    &__title {
+        font-size: 36px;
+        line-height: 28px;
+        color: $blueDark;
+        font-family: 'Prata';
+    }
+    &__content {
+        margin-top: 89px;
+        position: relative;
+    }
+}
+.portfolioSliderFor {
+    &__item {
+        display: flex !important;
+    }
+    &__img {
+        width: 363px;
+        height: 646px !important;
+        border-radius: 48px;
+        overflow: visible !important;
+        img {
+            border-radius: 48px;
+        }
+    }
+    &__pseudoElements {
+        margin-top: 17px;
+        display: flex;
+        justify-content: space-between;
+        span {
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 500;
+            color: $greenMedium;
+        }
+    }
+    &__description {
+        margin-left: 121px;
+        width: 727px;
+        max-height: 280px;
+        overflow: hidden;
+    }
+    &__procedure {
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 500;
+        color: $greenMedium;
+    }
+    &__name {
+        margin-top: 24px;
+        font-size: 36px;
+        line-height: 50px;
+        color: $blueDark;
+    }
+    .twentytwenty-before-label,
+    .twentytwenty-after-label,
+    .twentytwenty-left-arrow,
+    .twentytwenty-right-arrow {
+        display: none !important;
+    }
+    .sliderArrow__prev {
+        left: -91px;
+    }
+    .sliderArrow__next {
+        right: 151px;
+    }
+}
+.portfolioSliderNav {
+    display: flex;
+    position: absolute;
+    top: 303px;
+    left: 484px;
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 152px;
+        height: 260px;
+        &:not(:first-child) {
+            margin-left: 50px;
+        }
+        &.active {
+            border: 2px solid #8D5287;
+            border-radius: 36px;
+            pointer-events: none;
+        }
+    }
+    &__bg {
+        width: 142px;
+        height: 250px;
+        border-radius: 32px;
+        background: {
+            size: cover;
+            repeat: no-repeat;
+        }
+        cursor: pointer;
+    }
+}

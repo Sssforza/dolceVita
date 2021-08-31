@@ -72,6 +72,7 @@
                         </div>
                         <div class="footer__development">
                             <a class="footer__ferma" href="https://fermastudio.com/" target="_blank">
+                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/fermaLogo.svg';?>
                                 <span>создание сайта</span>
                             </a>
                         </div>

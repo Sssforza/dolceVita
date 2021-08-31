@@ -4,13 +4,26 @@
     right: 0;
     left: 0;
     z-index: 1000;
-    padding-top: 15px;
-    padding-bottom: 19px;
     transition: .8s cubic-bezier(0.43, 0.17, 0, 0.54);
     &.hide {
         top: -100%;
     }
+    &:after {
+        content:'';
+        display: block;
+        position: absolute;
+        top: -100%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(93, 106, 119, 0.9) 0%, rgba(64, 81, 98, 0.6) 38.54%, rgba(78, 80, 83, 0.08) 85.94%, rgba(108, 108, 108, 0) 100%);
+        z-index: -1;
+        transition: $transition5;
+    }
     &__content {
+        padding-top: 20px;
+        padding-bottom: 42px;
         display: flex;
         justify-content: space-between;
     }
@@ -25,6 +38,13 @@
     }
     &__logo {
         display: block;
+        &:hover {
+            svg {
+                .color {
+                    fill:$greenLight;
+                }
+            }
+        }
         svg {
             display: block;
             .color {
@@ -54,21 +74,48 @@
         top: 16px;
     }
     &__search {
+        position: relative;
         margin-left: 25px;
+        &.show {
+            .header__envelopeInput {
+                width: 320px;
+                opacity: 1;
+                pointer-events: auto;
+                input {
+                    padding-left: 27px;
+                    padding-right: 50px;
+                }
+            }
+        }
     }
     &__quest {
+        position: absolute;
+        top: 0;
+        right: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 64px;
         height: 64px;
-        border: 2px solid $greenLight;
+        border: 2px solid $white;
         border-radius: 32px;
+        z-index: 2;
+        cursor: pointer;
         transition: $transition;
+        &:hover {
+            border: 2px solid $greenMedium;
+            svg {
+                path,
+                circle {
+                    stroke: $greenMedium;
+                }
+            }
+        }
         svg {
             display: block;
             path,
             circle {
+                stroke: $white;
                 transition: $transition;
             }
         }
@@ -76,6 +123,123 @@
     &__signUp {
         margin-left: 29px;
         width: 267px;
+    }
+    &__envelopeInput {
+        width: 64px;
+        pointer-events: none;
+        opacity: 0;
+        transition: width .3s;
+        input {
+            width: 100%;
+            border-radius: 32px;
+        }
+    }
+    &__button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 64px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+            display: block;
+            path,
+            circle {
+                stroke: $greenDark;
+                transition: $transition;
+            }
+        }
+    }
+    &.gray {
+        .header {
+            &__logo {
+                svg {
+                    .color {
+                        fill:$greenDark;
+                    }
+                }
+                &:hover {
+                    svg {
+                        .color {
+                            fill:$blueDark;
+                        }
+                    }
+                }
+            }
+            &__tel {
+                color: $blueDark;
+            }
+            &__quest {
+                border: 2px solid $greenMedium;
+                &:hover {
+                    border: 2px solid $greenDark;
+                    svg {
+                        path,
+                        circle {
+                            stroke: $greenDark;
+                        }
+                    }
+                }
+                svg {
+                    path,
+                    circle {
+                        stroke:$greenMedium;
+                    }
+                }
+            }
+        }
+        .headerNavTop,
+        .headerNavBottom {
+            &__link {
+                color: $greenDark;
+            }
+        }
+        .headerNavTop__hover {
+            &:after {
+                background: $blueDark;
+            }
+        }
+        .headerNavTop__link {
+            &:hover {
+                color: $blueDark;
+            }
+            &.about {
+                svg {
+                    path {
+                        stroke: $greenDark;
+                    }
+                }
+                &:hover {
+                    svg {
+                        path {
+                            stroke: $blueDark;
+                        }
+                    }
+                }
+            }
+        }
+        .headerNavBottom {
+            &__link {
+                color: $greenDark;
+                &:hover {
+                    color: $blueDark !important;
+                }
+                &:after {
+                    background: $blueDark;
+                }
+                &.active {
+                    color: $purple;
+                }
+            }
+        }
+    }
+    &.gradient {
+        &:after {
+            top: 0;
+        }
     }
 }
 .headerNavTop {
@@ -93,23 +257,33 @@
         line-height: 23px;
         color: $greenLight;
         transition: $transition;
+        &.about {
+            svg {
+                position: absolute;
+                bottom: -7px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 8px;
+                path {
+                    transition: $transition;
+                }
+            }
+        }
+    }
+    &__hover {
         &:after {
             content:'';
             position: absolute;
-            bottom: -7px;
-            left: 0;
             right: 0;
-            width: 100%;
-            height: 8px;
-            background: {
-                image: url($imgUrl + "svg/headerNavT-active.svg");
-                repeat: no-repeat;
-                size: 99%;
-            }
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            background: $greenLight;
             opacity: 0;
             transition: $transition;
         }
-        &.active {
+        &:hover {
             &:after {
                 opacity: 1;
             }
@@ -127,11 +301,28 @@
         }
     }
     &__link {
+        position: relative;
         font-size: 23px;
         line-height: 29px;
         color: $white;
         cursor: pointer;
         transition: $transition;
+        &:after {
+            content:'';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            background: $white;
+            opacity: 0;
+            transition: $transition;
+        }
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
     }
 }
 .headerServices {
@@ -204,6 +395,7 @@
         }
         &.active {
             color: $purple;
+            pointer-events: none;
             &:after {
                 content:'';
                 position: absolute;
@@ -259,6 +451,7 @@
         }
         &.active {
             color: $purple;
+            pointer-events: none;
             &:after {
                 content:'';
                 position: absolute;
@@ -272,8 +465,10 @@
     }
 }
 .servicesDetail {
-    margin-left: 188px;
-    display: flex;
+    &__content {
+        margin-left: 188px;
+        display: flex;
+    }
     &__list {
         width: 267px;
         &:not(:first-child) {
@@ -294,6 +489,151 @@
         transition: $transition;
         &:hover {
             color: $purple;
+        }
+    }
+}
+.headerNavList {
+    position: relative;
+    &__content {
+        padding: 31px 0;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        left: -112px;
+        width: 276px;
+        transform: translateY(-2em);
+        z-index: -1;
+        background: $greenLight;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    }
+    &:focus .headerNavList__content,
+    &:focus-within .headerNavList__content,
+    &:hover .headerNavList__content {
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+    }
+    &__li {
+        &:not(:first-child) {
+            margin-top: 12px;
+        }
+    }
+    &__a {
+        position: relative;
+        font-size: 18px;
+        line-height: 23px;
+        color: $greenDark;
+        transition: $transition;
+        &:after {
+            content:'';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            background: transparent;
+            transition: $transition;
+            opacity: 0;
+        }
+        &:hover {
+            color: $blueDark;
+            &:after {
+                opacity: 1;
+                background: $blueDark;
+            }
+        }
+    }
+}
+// midnight
+.midnightInner {
+    overflow: hidden !important;
+}
+.midnightHeader.gray {
+    background: $white;
+    .header {
+        &__logo {
+            svg {
+                .color {
+                    fill:$greenDark;
+                }
+            }
+            &:hover {
+                svg {
+                    .color {
+                        fill:$blueDark;
+                    }
+                }
+            }
+        }
+        &__tel {
+            color: $blueDark;
+        }
+        &__quest {
+            border: 2px solid $greenMedium;
+            &:hover {
+                border: 2px solid $greenDark;
+                svg {
+                    path,
+                    circle {
+                        stroke: $greenDark;
+                    }
+                }
+            }
+            svg {
+                path,
+                circle {
+                    stroke:$greenMedium;
+                }
+            }
+        }
+    }
+    .headerNavTop,
+    .headerNavBottom {
+        &__link {
+            color: $greenDark;
+        }
+    }
+    .headerNavTop__hover {
+        &:after {
+            background: $blueDark;
+        }
+    }
+    .headerNavTop__link {
+        &:hover {
+            color: $blueDark;
+        }
+        &.about {
+            svg {
+                path {
+                    stroke: $greenDark;
+                }
+            }
+            &:hover {
+                svg {
+                    path {
+                        stroke: $blueDark;
+                    }
+                }
+            }
+        }
+    }
+    .headerNavBottom {
+        &__link {
+            color: $greenDark;
+            &:hover {
+                color: $blueDark !important;
+            }
+            &:after {
+                background: $blueDark;
+            }
+            &.active {
+                color: $purple;
+            }
         }
     }
 }

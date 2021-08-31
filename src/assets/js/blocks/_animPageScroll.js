@@ -1,3 +1,19 @@
+// anim gradient bg header
+export function animGradientBgHeader () {
+    if(document.querySelector('.gradientHeader_js')) {
+        const header = document.querySelector('.header_js');
+        const headerHeight = document.querySelector('.header_js').offsetHeight;
+        const text = document.querySelector('.gradientHeader_js').offsetTop;
+        window.addEventListener('scroll', function() {
+            if(pageYOffset > (text - headerHeight)){
+                header.classList.add('gradient');
+            } else {
+                header.classList.remove('gradient');
+            }
+        });
+    }
+}
+
 // anim main lines
 export function animMainLines () {
     if(document.querySelector('.mainLines_js')) {

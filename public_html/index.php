@@ -9,7 +9,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				<div class="sliderMain__item first">
 					<div class="sliderMain__bg" style="background-image:url(/dist/img/mainSlierItem1.jpg)"></div>
 					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
+						<div class="sliderMain__inner gradientHeader_js">
 							<div class="sliderMain__title">Инновационная косметология</div>
 							<div class="sliderMain__description">
 								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
@@ -20,38 +20,15 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					</div>
 				</div>
 				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem2.jpg)"></div>
+					<div class="sliderMain__bg" style="background-image:url(/dist/img/mainSlierItem2.jpg)"></div>
 					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
-							<div class="sliderMain__title">Косметика<br> мировых брендов</div>
+						<div class="sliderMain__inner gradientHeader_js">
+							<div class="sliderMain__title">Косметика <br>мировых брендов</div>
 							<div class="sliderMain__description">
-								Работаем с профессиональной косметикой премиум-сегментов
-							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
-						</div>
-					</div>
-				</div>
-				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem3.jpg)"></div>
-					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
-							<div class="sliderMain__title">Инновационная</div>
-							<div class="sliderMain__description">
-								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
-								и&nbsp;красоты: инновационные решения, передовые технологии
-							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
-						</div>
-					</div>
-				</div>
-				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/trash/mainSlierItem4.jpg)"></div>
-					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner">
-							<div class="sliderMain__title">косметология</div>
-							<div class="sliderMain__description">
-								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
-								и&nbsp;красоты: инновационные решения, передовые технологии
+								Работаем с&nbsp;профессиональной косметикой
+								премиум-сегмента (Biologique Recherche, Babor),
+								производящаяся в&nbsp;соответствии со&nbsp;строгим
+								соблюдением всех фармацевтических стандартов.
 							</div>
 							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
 						</div>
@@ -63,7 +40,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				<div class="sliderMain__arrows"></div>
 			</div>
 		</section>
-		<section class="originalEquipment">
+		<section class="originalEquipment" data-midnight="gray">
 			<div class="originalEquipment__content">
 				<div class="originalEquipment__texts">
 					<div class="originalEquipment__title">
@@ -78,7 +55,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<div class="sliderEquipment__content sliderEquipment_js">
 						<div class="sliderEquipment__item">
 							<div class="sliderEquipment__texts">
-								<div class="sliderEquipment__title">Ultherapy</div>
+								<a href="#" class="sliderEquipment__title">Ultherapy</a>
 								<div class="sliderEquipment__description">
 									Альтера-терапия (Ultherapy <sup class="reg">&reg;</sup>) &mdash; это единственная процедура 
 									с&nbsp;технологией микро-сфокусированного ультразвука для лифтинга кожи, одобренная FDA 
@@ -104,11 +81,14 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								<img src="/dist/img/sliderEquipmentImg-1.png" alt="">
 							</div>
 							<div class="sliderEquipment__dop">
-								<div class="sliderEquipment__warranty sliderEquipWarranty">
+								<a href="#" class="sliderEquipment__warranty sliderEquipWarranty">
 									<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentWarranty-i.svg';?>
 									<div class="sliderEquipWarranty__title">Гарантия <br>подлинности</div>
-									<a href="#" class="sliderEquipWarranty__link">Посмотреть <br>сертификат</a>
-								</div>
+									<div class="sliderEquipWarranty__link">Посмотреть <br>сертификат</div>
+									<div class="sliderEquipWarranty__svg">
+										<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipWarrantyLink.svg';?>
+									</div>
+								</a>
 								<div class="sliderEquipment__hexagon sliderEquipHexagon">
 									<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipHexagon.svg';?>
 									<div class="sliderEquipHexagon__number">4</div>
@@ -120,7 +100,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 						</div>
 						<div class="sliderEquipment__item">
 							<div class="sliderEquipment__texts">
-								<div class="sliderEquipment__title">2Ultherapy</div>
+								<a href="#" class="sliderEquipment__title">2Ultherapy</a>
 								<div class="sliderEquipment__description">
 									Альтера-терапия (Ultherapy <sup class="reg">&reg;</sup>) &mdash; это единственная процедура 
 									с&nbsp;технологией микро-сфокусированного ультразвука для лифтинга кожи, одобренная FDA 
@@ -164,10 +144,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<section class="mainLines mainLines_js">
+		<section class="mainLines mainLines_js" data-midnight="gray">
 			<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesMain.svg';?>
 		</section>
-		<section class="specialists specialists_js">
+		<section class="specialists specialists_js" data-midnight="gray">
 			<div class="specialists__bg"></div>
 			<div class="specialists__content container">
 				<div class="specialists__container">
@@ -187,7 +167,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<div class="specialists__box">
 						<div class="specialists__nav specialistsNav">
 							<div class="specialistsNav__content specialistsNavScroll_js scrollbar-inner specialistsNav_js">
-								<div class="specialistsNav__item active">
+								<div class="specialistsNav__item active" data-slide="1">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav1.png)"></div>
 									</div>
@@ -196,7 +176,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Врач-косметолог, дерматолог</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="2">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
 									</div>
@@ -205,7 +185,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="3">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
 									</div>
@@ -214,7 +194,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="4">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav4.png)"></div>
 									</div>
@@ -223,21 +203,21 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										<div class="specialistsNav__hakeem">Специалист по коррекции фигуры и массажу</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="5">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
 									</div>
 									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Светлана Зуева</div>
+										<div class="specialistsNav__name">Кристина Барабина</div>
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
-								<div class="specialistsNav__item">
+								<div class="specialistsNav__item" data-slide="6">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
 									</div>
 									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Татьяна Малицкая</div>
+										<div class="specialistsNav__name">Ангелина Линова</div>
 										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
 									</div>
 								</div>
@@ -352,7 +332,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								<div class="specialistsFor__item">
 									<div class="specialistsFor__description">
 										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">5Галина Лагутова</div>
+											<div class="specialistsFor__name">Кристина Барабина</div>
 											<div class="specialistsFor__block">
 												<ul class="specialistsFor__ul">
 													<li class="specialistsFor__specialization">Специализация</li>
@@ -378,7 +358,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								<div class="specialistsFor__item">
 									<div class="specialistsFor__description">
 										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">6Галина Лагутова</div>
+											<div class="specialistsFor__name">Ангелина Линова</div>
 											<div class="specialistsFor__block">
 												<ul class="specialistsFor__ul">
 													<li class="specialistsFor__specialization">Специализация</li>
@@ -407,7 +387,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<section class="bonusCard bonusCard_js">
+		<section class="bonusCard bonusCard_js" data-midnight="gray">
 			<div class="bonusCard__content">
 				<div class="container">
 					<div class="bonusSystem">
@@ -524,7 +504,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<section class="videoHistory">
+		<section class="videoHistory" data-midnight="gray">
 			<div class="videoHistory__container container">
 				<video autoplay muted loop class="videoHistory__video">
 					<source src="/dist/video/videoHistory.mp4" type="video/mp4">
@@ -538,7 +518,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<div class="reviews reviews_js">
+		<div class="reviews reviews_js" data-midnight="gray">
 			<div class="reviews__bg"></div>
 			<div class="reviews__svg">
 				<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesHeart.svg';?>
@@ -587,7 +567,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</div>
-		<section class="sectionConsult sectionConsult_js">
+		<section class="sectionConsult sectionConsult_js" data-midnight="gray">
 			<div class="sectionConsult__content container">
 				<div class="bonusSystem__ground bonusSystem__ground_left">
 					<img src="/dist/img/formTrees01.png" alt="">
@@ -601,6 +581,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<div class="sectionConsult__input">
 						<div class="envelopeInput">
 							<input class="envelopeInput__field" placeholder="Телефон" type="text">
+							<span class="envelopeInput__error">
+								Неверный формат телефона
+							</span>
 						</div>
 					</div>
 					<div class="sectionConsult__send">
@@ -623,7 +606,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					<img src="/dist/img/doctor15.png">
 				</div>
 		</section>
-		<section class="usefulBlog usefulBlog_js">
+		<section class="usefulBlog usefulBlog_js" data-midnight="gray">
 			<div class="usefulBlog__content containerMin">
 				<div class="section">
 					<div class="section__title">Полезный блог</div>
@@ -631,32 +614,32 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 				<div class="usefulBlog__list top">
 					<div class="usefulBlog__item">
-						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg1.png)"></div>
+						<a href="#" class="usefulBlog__img usefulBlogHover_js" style="background-image:url(/dist/img/usefulBlogImg1.png)"></a>
 						<div class="usefulBlog__date">25 марта 2021</div>
 						<div class="usefulBlog__title">
-							<a class="usefulBlog__link" href="#">
-								Криолиполиз&nbsp;&mdash; что это такое? 
-								Преимущества и&nbsp;недостатки 
+							<a href="#" class="usefulBlog__link usefulBlogHover_js">
+								Криолиполиз&nbsp;&mdash; что это такое?
+								Преимущества и&nbsp;недостатки
 								процедуры
 							</a>
 						</div>
 					</div>
 					<div class="usefulBlog__item">
-						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg2.png)"></div>
+						<a href="#" class="usefulBlog__img usefulBlogHover_js" style="background-image:url(/dist/img/usefulBlogImg2.png)"></a>
 						<div class="usefulBlog__date">18 февраля 2021</div>
 						<div class="usefulBlog__title">
-							<a class="usefulBlog__link" href="#">
+							<a href="#" class="usefulBlog__link usefulBlogHover_js">
 								Технология омоложения Fotona&nbsp;4D
 							</a>
 						</div>
 					</div>
 					<div class="usefulBlog__item">
-						<div class="usefulBlog__img" style="background-image:url(/dist/img/usefulBlogImg3.png)"></div>
+						<a href="#" class="usefulBlog__img usefulBlogHover_js" style="background-image:url(/dist/img/usefulBlogImg3.png)"></a>
 						<div class="usefulBlog__date">3 февраля 2021</div>
 						<div class="usefulBlog__title">
-							<a class="usefulBlog__link" href="#">
-								Аппарат М-22 от&nbsp;Lumenis 
-								является последней новинкой 
+							<a href="#" class="usefulBlog__link usefulBlogHover_js">
+								Аппарат М-22 от&nbsp;Lumenis
+								является последней новинкой
 								от&nbsp;компании Lumenis, лидера...
 							</a>
 						</div>

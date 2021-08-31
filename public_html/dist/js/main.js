@@ -89,7 +89,8 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(3);
+__webpack_require__(3);
+module.exports = __webpack_require__(19);
 
 
 /***/ }),
@@ -11398,13 +11399,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
-/* harmony import */ var _blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+/* harmony import */ var _blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 /* harmony import */ var _blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
 /* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
 /* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
 /* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
-/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
-/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
+/* harmony import */ var _blocks_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
+/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
+/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(15);
+/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16);
+/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(17);
+/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(18);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11413,7 +11418,7 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
 
  //📁 /assets/js/blocks  _popups.js
 
- //📁 /assets/js/blocks  _animPageLoad.js
+ //📁 /assets/js/blocks  _pageLoad.js
 
  //📁 /assets/js/blocks  _animPageScroll.js
 
@@ -11423,14 +11428,26 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
 
  //📁 /assets/js/blocks  scrollbar.js
 
+ //📁 /assets/js/blocks  index.js
+
  //📁 /assets/js/blocks  services.js
+
+ //📁 /assets/js/blocks  specialist.js
 
  //📁 /assets/js/blocks  team.js
 
+ //📁 /assets/js/blocks  price.js
+
+ //📁 /assets/js/blocks  map.js
+
 
 document.addEventListener("DOMContentLoaded", function () {
-  // header top 0
-  Object(_blocks_animPageLoad_js__WEBPACK_IMPORTED_MODULE_4__["headerShow"])(); // next anim main lines
+  // window.onload
+  Object(_blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__["windowOnload"])(); // header gray theme
+
+  Object(_blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__["headerGray"])(); // anim gradient bg header
+
+  Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__["animGradientBgHeader"])(); // next anim main lines
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__["animMainLines"])(); // next anim reviews lines
 
@@ -11442,25 +11459,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__["usefulBlog"])(); // header services
 
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["headerServices"])(); // slider main page
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["headerServices"])(); // header open search input
+
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["headerSearch"])(); // header menu selection
+
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_6__["menuSelection"])(); // slider main page
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderMain"])(); // slider main page equipment
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderEquipment"])(); // slider main page specialists
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialists"])(); // specialists nav scroll
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialists"])(); // slider portfolio specialist
 
-  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["specialistsNavScroll"])(); // popup close
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialistsPortfolio"])(); // specialists nav scroll
+
+  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["specialistsNavScroll"])(); // useful blog hover
+
+  Object(_blocks_index_js__WEBPACK_IMPORTED_MODULE_9__["usefulBlogHover"])(); // popup close
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupClose"])(); // moreStage
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // popupMoreStageDate
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["popupMoreStageDate"])(); // services attendance all cards
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["popupMoreStageDate"])(); // services attendance all cards
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_9__["servicesAttendance"])(); // tabs specificity of the doctor
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesAttendance"])(); // about specialist show all
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_10__["tabsSpecificityDoctor"])();
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__["aboutSpecialistShowAll"])(); // tabs specialist education
+
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__["tabsSpecialistEducation"])(); // tabs specificity of the doctor
+
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_12__["tabsSpecificityDoctor"])(); // aiming at the doctor
+
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_12__["aimingAtTheDoctor"])(); // tabs price services
+
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_13__["tabsPriceServices"])(); // opening and closing cards
+
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_13__["interactionCards"])(); // show clear element and clear
+
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_13__["clearInput"])(); // map
+
+  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_14__["map"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16399,22 +16438,43 @@ function moreStage() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerShow", function() { return headerShow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "windowOnload", function() { return windowOnload; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerGray", function() { return headerGray; });
 // header services
-function headerShow() {
+function windowOnload() {
   window.onload = function () {
+    //header
     if (document.querySelector('.header_js')) {
       var header = document.querySelector('.header_js');
       header.classList.remove('hide');
-    }
+    } // first slide main slider
+
 
     if (document.querySelector('.sliderMain_js')) {
       var slideFirstItem = document.querySelector('.sliderMain__item.first');
       setTimeout(function () {
         slideFirstItem.classList.remove('first');
       }, 800);
-    }
+    } //page specialist twentytwenty
+
+
+    if (document.querySelector('.twentytwenty_js')) {
+      console.log('twentytwenty_js');
+      $(".twentytwenty_js").twentytwenty();
+    } // midnight
+
+
+    $('.header_js').midnight();
   };
+} // header gray theme
+
+function headerGray() {
+  var main = document.querySelector('.main');
+  var header = document.querySelector('.header_js');
+
+  if (main.classList.contains('whiteBg_js')) {
+    header.classList.add('gray');
+  }
 }
 
 /***/ }),
@@ -16423,12 +16483,28 @@ function headerShow() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animGradientBgHeader", function() { return animGradientBgHeader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animMainLines", function() { return animMainLines; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animReviewsLines", function() { return animReviewsLines; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sectionBonusSystem", function() { return sectionBonusSystem; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sectionConsultPractice", function() { return sectionConsultPractice; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usefulBlog", function() { return usefulBlog; });
-// anim main lines
+// anim gradient bg header
+function animGradientBgHeader() {
+  if (document.querySelector('.gradientHeader_js')) {
+    var header = document.querySelector('.header_js');
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    var text = document.querySelector('.gradientHeader_js').offsetTop;
+    window.addEventListener('scroll', function () {
+      if (pageYOffset > text - headerHeight) {
+        header.classList.add('gradient');
+      } else {
+        header.classList.remove('gradient');
+      }
+    });
+  }
+} // anim main lines
+
 function animMainLines() {
   if (document.querySelector('.mainLines_js')) {
     var mainLines = document.querySelector('.mainLines__svg');
@@ -16506,21 +16582,96 @@ function usefulBlog() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerServices", function() { return headerServices; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerSearch", function() { return headerSearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuSelection", function() { return menuSelection; });
 // header services
 function headerServices() {
   if (document.querySelector('.headerServices_js')) {
+    var header = document.querySelector('.header_js');
     var headerServicesElem = document.querySelector('.headerServices_js');
     var headerServicesClose = document.querySelectorAll('.headerServicesClose_js');
 
     headerServicesElem.onmouseover = function (e) {
       document.body.classList.add('openServicesMenu');
       headerServicesElem.classList.add('active');
+      header.classList.add('gray');
     };
 
     headerServicesClose.forEach(function (item) {
       item.addEventListener("click", function (e) {
         document.body.classList.remove('openServicesMenu');
         headerServicesElem.classList.remove('active');
+
+        if (document.querySelector('.main.whiteBg_js') == null) {
+          header.classList.remove('gray');
+        }
+      });
+    });
+  }
+} // header open search input
+
+function headerSearch() {
+  if (document.querySelector('.headerQuest_js')) {
+    var parent = document.querySelector('.headerSearch_js');
+    var btn = document.querySelector('.headerQuest_js');
+
+    btn.onclick = function () {
+      btn.remove();
+      parent.classList.add('show');
+    };
+  }
+} // header menu selection
+
+function menuSelection() {
+  if (document.querySelector('.servicesMain_js')) {
+    var wrapper = document.querySelector('.headerServicesMenu_js');
+    var mainSelected = wrapper.querySelectorAll('.servicesMain_js');
+    var middleSelected = wrapper.querySelectorAll('.servicesMiddleLink_js');
+    var elementsMiddle = wrapper.querySelectorAll('.servicesMiddle_js');
+    var elementsDetail = wrapper.querySelectorAll('.servicesDetail_js');
+    mainSelected.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShow = item.getAttribute('data-services');
+        mainSelected.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        middleSelected.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        middleSelected[0].classList.add('active');
+        var thisShowDetail = middleSelected[0].getAttribute('data-servicesMiddleDetail');
+        elementsMiddle.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-servicesMiddle') === thisShow) {
+            elem.classList.remove('hidden');
+          }
+        });
+        elementsDetail.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-servicesDetail') === thisShowDetail) {
+            elem.classList.remove('hidden');
+          }
+        });
+      });
+    });
+    middleSelected.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShowMiddle = item.getAttribute('data-servicesMiddleDetail');
+        console.log(thisShowMiddle);
+        middleSelected.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        elementsDetail.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-servicesDetail') === thisShowMiddle) {
+            elem.classList.remove('hidden');
+          }
+        });
       });
     });
   }
@@ -16535,7 +16686,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderMain", function() { return sliderMain; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderEquipment", function() { return sliderEquipment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderSpecialists", function() { return sliderSpecialists; });
-// SliderMain
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderSpecialistsPortfolio", function() { return sliderSpecialistsPortfolio; });
+// sliderMain
 function sliderMain() {
   var slickMain = $(".sliderMain_js");
 
@@ -16561,7 +16713,7 @@ function sliderMain() {
     });
   }
 }
-; // Slider equipment
+; // slider equipment
 
 function sliderEquipment() {
   var slickEquipment = $(".sliderEquipment_js");
@@ -16579,7 +16731,7 @@ function sliderEquipment() {
     });
   }
 }
-; // Slider specialists
+; // slider specialists
 
 function sliderSpecialists() {
   var slickSpecialists = $(".specialistsFor_js");
@@ -16590,8 +16742,67 @@ function sliderSpecialists() {
       slidesToScroll: 1,
       arrows: true,
       fade: true,
+      draggable: false,
+      infinite: false,
       prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
       nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+    });
+    $('div[data-slide]').click(function (e) {
+      e.preventDefault();
+      $('div[data-slide]').removeClass('active');
+      $(this).addClass('active');
+      var slideno = $(this).data('slide');
+      slickSpecialists.slick('slickGoTo', slideno - 1);
+    });
+    $('.slick-arrow').click(function (e) {
+      var slide = $('.specialistsNav__item.active').data('slide');
+      slide = Number(slide);
+      $('div[data-slide]').removeClass('active');
+
+      if ($(this).hasClass('sliderArrow__next')) {
+        slide = slide + 1;
+      } else {
+        slide = slide - 1;
+      }
+
+      $('.specialistsNavScroll_js').find("[data-slide='".concat(slide, "']")).addClass('active');
+    });
+  }
+}
+; // slider portfolio specialist
+
+function sliderSpecialistsPortfolio() {
+  var slickSpecialistPortfolio = $(".portfolioSliderFor_js");
+
+  if (slickSpecialistPortfolio.length) {
+    slickSpecialistPortfolio.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      fade: true,
+      draggable: false,
+      infinite: false,
+      prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+      nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+    });
+    $('div[data-slide]').click(function (e) {
+      $('div[data-slide]').removeClass('active');
+      $(this).addClass('active');
+      var slideno = $(this).data('slide');
+      slickSpecialistPortfolio.slick('slickGoTo', slideno - 1);
+    });
+    $('.slick-arrow').click(function (e) {
+      var slide = $('.portfolioSliderNav__item.active').data('slide');
+      slide = Number(slide);
+      $('div[data-slide]').removeClass('active');
+
+      if ($(this).hasClass('sliderArrow__next')) {
+        slide = slide + 1;
+      } else {
+        slide = slide - 1;
+      }
+
+      $('.portfolioSliderNav_js').find("[data-slide='".concat(slide, "']")).addClass('active');
     });
   }
 }
@@ -16613,6 +16824,33 @@ function specialistsNavScroll() {
 
 /***/ }),
 /* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usefulBlogHover", function() { return usefulBlogHover; });
+// useful blog hover
+function usefulBlogHover() {
+  if (document.querySelector('.usefulBlogHover_js')) {
+    var list = document.querySelector('.usefulBlog__list');
+    var hoversElem = list.querySelectorAll('.usefulBlogHover_js');
+    var parent;
+    hoversElem.forEach(function (item) {
+      item.onmouseover = function (elem) {
+        parent = item.closest('.usefulBlog__item');
+        parent.classList.add('hover');
+      };
+
+      item.onmouseout = function (elem) {
+        parent = item.closest('.usefulBlog__item');
+        parent.classList.remove('hover');
+      };
+    });
+  }
+}
+
+/***/ }),
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16677,34 +16915,700 @@ function popupMoreStageDate() {
 
 function servicesAttendance() {
   if (document.querySelector('.servicesCardBtn_js')) {
+    var parent = document.querySelector('.servicesAttendance_js');
+    var flex = parent.querySelector('.services__content');
     var btn = document.querySelector('.servicesCardBtn_js');
+    var heightAll = parent.scrollHeight;
+    var height = parent.clientHeight;
+    var num = parent.querySelector('.servicesCardNumber_js').innerHTML;
+    var numPaste = parent.querySelector('.servicesCardNumber_js');
+    var gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
+    var numberItems = Number(num);
+    var heightPaste;
+    var count = 1;
+    var countGap = 0;
     btn.addEventListener("click", function (e) {
-      btn.closest(".services_attendance").classList.add('all');
+      count = count + 1;
+      countGap = countGap + 1;
+      numberItems = numberItems - 6;
+      numPaste.innerHTML = numberItems;
+      heightPaste = height * count + Number(gap) * countGap;
+
+      if (heightPaste < heightAll) {
+        console.log('if');
+        parent.style.height = heightPaste + "px";
+      }
+
+      if (heightPaste === heightAll) {
+        console.log('=');
+        parent.style.height = heightPaste + "px";
+        btn.closest(".servicesCardBig").remove();
+      }
     });
   }
 }
 
 /***/ }),
-/* 14 */
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aboutSpecialistShowAll", function() { return aboutSpecialistShowAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecialistEducation", function() { return tabsSpecialistEducation; });
+// about specialist show all
+function aboutSpecialistShowAll() {
+  if (document.querySelector('.aboutSpecialist__list')) {
+    var desktop = 268;
+    var wrapper = document.querySelector('.aboutSpecialist__content');
+    var btnsShow = wrapper.querySelectorAll('.aboutSpecialistShow_js');
+    var btnsHide = wrapper.querySelectorAll('.aboutSpecialistHide_js');
+    var heightparent;
+    var heightList;
+    var list;
+    btnsShow.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        heightparent = item.closest('.aboutSpecialist__wrapper');
+        list = heightparent.querySelector('.aboutSpecialist__list');
+        heightparent.querySelector('.aboutSpecialistHide_js').classList.remove('hide');
+        heightList = list.scrollHeight;
+        heightparent.classList.add('show');
+        item.classList.add('hide');
+        list.style.maxHeight = heightList + "px";
+        console.log(heightList);
+      });
+    });
+    btnsHide.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        heightparent = item.closest('.aboutSpecialist__wrapper');
+        list = heightparent.querySelector('.aboutSpecialist__list');
+        heightparent.querySelector('.aboutSpecialistShow_js').classList.remove('hide');
+        heightList = desktop;
+        heightparent.classList.add('show');
+        item.classList.add('hide');
+        list.style.maxHeight = heightList + "px";
+        console.log(heightList);
+      });
+    });
+  }
+} // tabs specialist education
+
+function tabsSpecialistEducation() {
+  if (document.querySelector('.aboutSpecialist_js')) {
+    var wrapper = document.querySelector('.aboutSpecialist_js');
+    var tabs = wrapper.querySelectorAll('.aboutSpecialistTab_js');
+    var elements = wrapper.querySelectorAll('.aboutSpecialistWrapper_js');
+    tabs.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShow = item.getAttribute('data-tab');
+        tabs.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        elements.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-list') === thisShow) {
+            elem.classList.remove('hidden');
+          }
+        });
+      });
+    });
+  }
+}
+;
+
+/***/ }),
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecificityDoctor", function() { return tabsSpecificityDoctor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aimingAtTheDoctor", function() { return aimingAtTheDoctor; });
 // tabs specificity of the doctor
 function tabsSpecificityDoctor() {
-  if (document.querySelector('.teamList')) {
-    var container = document.querySelector('.teamList');
-    container.addEventListener('click', function (e) {
-      var tabs = document.querySelectorAll('.teamItem_js');
-      var target = e.target;
-      Array.from(tabs).forEach(function (item) {
-        item.classList.remove('active');
+  if (document.querySelector('.team_js')) {
+    var wrapper = document.querySelector('.team_js');
+    var tabs = wrapper.querySelectorAll('.teamItem_js');
+    var elements = wrapper.querySelectorAll('.teamPeopleList_js');
+    tabs.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShow = item.getAttribute('data-choice');
+        tabs.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        elements.forEach(function (elem) {
+          elem.classList.add('hide');
+          elem.classList.remove('show');
+
+          if (elem.getAttribute('data-specificity') === thisShow) {
+            elem.classList.remove('hide');
+            elem.classList.add('show');
+          }
+        });
       });
-      target.classList.add('active');
     });
   }
 }
+; // aiming at the doctor
+
+function aimingAtTheDoctor() {
+  if (document.querySelector('.teamPeopleLink_js')) {
+    var name = document.querySelectorAll('.teamPeopleLink_js');
+    name.forEach(function (item) {
+      item.onmouseover = function (e) {
+        item.closest(".teamPeople__item").classList.add('hover');
+      };
+
+      item.onmouseout = function (e) {
+        item.closest(".teamPeople__item").classList.remove('hover');
+      };
+    });
+  }
+}
+;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsPriceServices", function() { return tabsPriceServices; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionCards", function() { return interactionCards; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearInput", function() { return clearInput; });
+// tabs price services
+function tabsPriceServices() {
+  if (document.querySelector('.pagePriceServices_js')) {
+    var wrapper = document.querySelector('.pagePriceServices_js');
+    var tabs = wrapper.querySelectorAll('.priceNav_js');
+    var elements = wrapper.querySelectorAll('.priceList_js');
+    tabs.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShow = item.getAttribute('data-services');
+        tabs.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        elements.forEach(function (elem) {
+          elem.classList.add('hidden');
+
+          if (elem.getAttribute('data-list') === thisShow) {
+            elem.classList.remove('hidden');
+          }
+        });
+      });
+    });
+  }
+}
+; // opening and closing cards
+
+function interactionCards() {
+  if (document.querySelector('.priceList_js')) {
+    var shoppingСard = function shoppingСard() {
+      $('.priceList_js .priceList__header').not($(this)).removeClass('show');
+
+      if ($(this).hasClass('show')) {
+        $(this).removeClass('show');
+      } else {
+        $(this).addClass('show');
+      }
+
+      $('.priceList_js .priceList__content').not($(this).next()).slideUp(500);
+      $(this).next().slideToggle(500);
+    };
+
+    $('.priceList_js .priceList__header').on('click', shoppingСard);
+  }
+}
+; // show clear element and clear
+
+function clearInput() {
+  if (document.querySelector('.priceSearchInput_js')) {
+    var logKey = function logKey(e) {
+      if (input.value.length >= 3) {
+        clear.classList.add('show');
+      } else {
+        clear.classList.remove('show');
+      }
+    };
+
+    var parent = document.querySelector('.priceSearch_js');
+    var input = parent.querySelector('.priceSearchInput_js');
+    var clear = parent.querySelector('.clearInput_js');
+    input.addEventListener('keyup', logKey);
+
+    clear.onclick = function () {
+      clear.classList.remove('show');
+      input.value = "";
+    };
+  }
+}
+;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "map", function() { return map; });
+// Map
+var mobileOffsetX = 0.0009987452878874592;
+var mobileOffsetY = 0.00005002167360146359;
+function map() {
+  if (document.querySelector('#map')) {
+    ymaps.ready(init);
+  }
+
+  function init() {
+    var myMap = new ymaps.Map("map", {
+      center: [54.995715, 73.353974],
+      zoom: 14,
+      controls: []
+    });
+    myMap.geoObjects.add(new ymaps.Placemark([54.995715, 73.353974], {
+      balloonContent: 'цвет <strong>носика Гены</strong>',
+      iconCaption: 'Dolce Vita'
+    }, {
+      preset: 'islands#icon',
+      iconColor: '#0095b6'
+    }));
+  }
+}
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * Midnight.js 1.1.1
+ * jQuery plugin to switch between multiple fixed header designs on the fly, so it looks in line with the content below it.
+ * http://aerolab.github.io/midnight.js/
+ *
+ * Copyright (c) 2014 Aerolab <info@aerolab.co>
+ *
+ * Released under the MIT license
+ * http://aerolab.github.io/midnight.js/LICENSE.txt
+ */
+!function (t) {
+   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
+}(function (t) {
+  var e = 0,
+      s = Array.prototype.slice;
+  t.cleanData = function (e) {
+    return function (s) {
+      var i, n, o;
+
+      for (o = 0; null != (n = s[o]); o++) {
+        try {
+          i = t._data(n, "events"), i && i.remove && t(n).triggerHandler("remove");
+        } catch (r) {}
+      }
+
+      e(s);
+    };
+  }(t.cleanData), t.widget = function (e, s, i) {
+    var n,
+        o,
+        r,
+        a,
+        h = {},
+        d = e.split(".")[0];
+    return e = e.split(".")[1], n = d + "-" + e, i || (i = s, s = t.Widget), t.expr[":"][n.toLowerCase()] = function (e) {
+      return !!t.data(e, n);
+    }, t[d] = t[d] || {}, o = t[d][e], r = t[d][e] = function (t, e) {
+      return this._createWidget ? void (arguments.length && this._createWidget(t, e)) : new r(t, e);
+    }, t.extend(r, o, {
+      version: i.version,
+      _proto: t.extend({}, i),
+      _childConstructors: []
+    }), a = new s(), a.options = t.widget.extend({}, a.options), t.each(i, function (e, i) {
+      return t.isFunction(i) ? void (h[e] = function () {
+        var t = function t() {
+          return s.prototype[e].apply(this, arguments);
+        },
+            n = function n(t) {
+          return s.prototype[e].apply(this, t);
+        };
+
+        return function () {
+          var e,
+              s = this._super,
+              o = this._superApply;
+          return this._super = t, this._superApply = n, e = i.apply(this, arguments), this._super = s, this._superApply = o, e;
+        };
+      }()) : void (h[e] = i);
+    }), r.prototype = t.widget.extend(a, {
+      widgetEventPrefix: o ? a.widgetEventPrefix || e : e
+    }, h, {
+      constructor: r,
+      namespace: d,
+      widgetName: e,
+      widgetFullName: n
+    }), o ? (t.each(o._childConstructors, function (e, s) {
+      var i = s.prototype;
+      t.widget(i.namespace + "." + i.widgetName, r, s._proto);
+    }), delete o._childConstructors) : s._childConstructors.push(r), t.widget.bridge(e, r), r;
+  }, t.widget.extend = function (e) {
+    for (var i, n, o = s.call(arguments, 1), r = 0, a = o.length; a > r; r++) {
+      for (i in o[r]) {
+        n = o[r][i], o[r].hasOwnProperty(i) && void 0 !== n && (e[i] = t.isPlainObject(n) ? t.isPlainObject(e[i]) ? t.widget.extend({}, e[i], n) : t.widget.extend({}, n) : n);
+      }
+    }
+
+    return e;
+  }, t.widget.bridge = function (e, i) {
+    var n = i.prototype.widgetFullName || e;
+
+    t.fn[e] = function (o) {
+      var r = "string" == typeof o,
+          a = s.call(arguments, 1),
+          h = this;
+      return o = !r && a.length ? t.widget.extend.apply(null, [o].concat(a)) : o, r ? this.each(function () {
+        var s,
+            i = t.data(this, n);
+        return "instance" === o ? (h = i, !1) : i ? t.isFunction(i[o]) && "_" !== o.charAt(0) ? (s = i[o].apply(i, a), s !== i && void 0 !== s ? (h = s && s.jquery ? h.pushStack(s.get()) : s, !1) : void 0) : t.error("no such method '" + o + "' for " + e + " widget instance") : t.error("cannot call methods on " + e + " prior to initialization; attempted to call method '" + o + "'");
+      }) : this.each(function () {
+        var e = t.data(this, n);
+        e ? (e.option(o || {}), e._init && e._init()) : t.data(this, n, new i(o, this));
+      }), h;
+    };
+  }, t.Widget = function () {}, t.Widget._childConstructors = [], t.Widget.prototype = {
+    widgetName: "widget",
+    widgetEventPrefix: "",
+    defaultElement: "<div>",
+    options: {
+      disabled: !1,
+      create: null
+    },
+    _createWidget: function _createWidget(s, i) {
+      i = t(i || this.defaultElement || this)[0], this.element = t(i), this.uuid = e++, this.eventNamespace = "." + this.widgetName + this.uuid, this.bindings = t(), this.hoverable = t(), this.focusable = t(), i !== this && (t.data(i, this.widgetFullName, this), this._on(!0, this.element, {
+        remove: function remove(t) {
+          t.target === i && this.destroy();
+        }
+      }), this.document = t(i.style ? i.ownerDocument : i.document || i), this.window = t(this.document[0].defaultView || this.document[0].parentWindow)), this.options = t.widget.extend({}, this.options, this._getCreateOptions(), s), this._create(), this._trigger("create", null, this._getCreateEventData()), this._init();
+    },
+    _getCreateOptions: t.noop,
+    _getCreateEventData: t.noop,
+    _create: t.noop,
+    _init: t.noop,
+    destroy: function destroy() {
+      this._destroy(), this.element.unbind(this.eventNamespace).removeData(this.widgetFullName).removeData(t.camelCase(this.widgetFullName)), this.widget().unbind(this.eventNamespace).removeAttr("aria-disabled").removeClass(this.widgetFullName + "-disabled ui-state-disabled"), this.bindings.unbind(this.eventNamespace), this.hoverable.removeClass("ui-state-hover"), this.focusable.removeClass("ui-state-focus");
+    },
+    _destroy: t.noop,
+    widget: function widget() {
+      return this.element;
+    },
+    option: function option(e, s) {
+      var i,
+          n,
+          o,
+          r = e;
+      if (0 === arguments.length) return t.widget.extend({}, this.options);
+      if ("string" == typeof e) if (r = {}, i = e.split("."), e = i.shift(), i.length) {
+        for (n = r[e] = t.widget.extend({}, this.options[e]), o = 0; i.length - 1 > o; o++) {
+          n[i[o]] = n[i[o]] || {}, n = n[i[o]];
+        }
+
+        if (e = i.pop(), 1 === arguments.length) return void 0 === n[e] ? null : n[e];
+        n[e] = s;
+      } else {
+        if (1 === arguments.length) return void 0 === this.options[e] ? null : this.options[e];
+        r[e] = s;
+      }
+      return this._setOptions(r), this;
+    },
+    _setOptions: function _setOptions(t) {
+      var e;
+
+      for (e in t) {
+        this._setOption(e, t[e]);
+      }
+
+      return this;
+    },
+    _setOption: function _setOption(t, e) {
+      return this.options[t] = e, "disabled" === t && (this.widget().toggleClass(this.widgetFullName + "-disabled", !!e), e && (this.hoverable.removeClass("ui-state-hover"), this.focusable.removeClass("ui-state-focus"))), this;
+    },
+    enable: function enable() {
+      return this._setOptions({
+        disabled: !1
+      });
+    },
+    disable: function disable() {
+      return this._setOptions({
+        disabled: !0
+      });
+    },
+    _on: function _on(e, s, i) {
+      var n,
+          o = this;
+      "boolean" != typeof e && (i = s, s = e, e = !1), i ? (s = n = t(s), this.bindings = this.bindings.add(s)) : (i = s, s = this.element, n = this.widget()), t.each(i, function (i, r) {
+        function a() {
+          return e || o.options.disabled !== !0 && !t(this).hasClass("ui-state-disabled") ? ("string" == typeof r ? o[r] : r).apply(o, arguments) : void 0;
+        }
+
+        "string" != typeof r && (a.guid = r.guid = r.guid || a.guid || t.guid++);
+        var h = i.match(/^([\w:-]*)\s*(.*)$/),
+            d = h[1] + o.eventNamespace,
+            l = h[2];
+        l ? n.delegate(l, d, a) : s.bind(d, a);
+      });
+    },
+    _off: function _off(e, s) {
+      s = (s || "").split(" ").join(this.eventNamespace + " ") + this.eventNamespace, e.unbind(s).undelegate(s), this.bindings = t(this.bindings.not(e).get()), this.focusable = t(this.focusable.not(e).get()), this.hoverable = t(this.hoverable.not(e).get());
+    },
+    _delay: function _delay(t, e) {
+      function s() {
+        return ("string" == typeof t ? i[t] : t).apply(i, arguments);
+      }
+
+      var i = this;
+      return setTimeout(s, e || 0);
+    },
+    _hoverable: function _hoverable(e) {
+      this.hoverable = this.hoverable.add(e), this._on(e, {
+        mouseenter: function mouseenter(e) {
+          t(e.currentTarget).addClass("ui-state-hover");
+        },
+        mouseleave: function mouseleave(e) {
+          t(e.currentTarget).removeClass("ui-state-hover");
+        }
+      });
+    },
+    _focusable: function _focusable(e) {
+      this.focusable = this.focusable.add(e), this._on(e, {
+        focusin: function focusin(e) {
+          t(e.currentTarget).addClass("ui-state-focus");
+        },
+        focusout: function focusout(e) {
+          t(e.currentTarget).removeClass("ui-state-focus");
+        }
+      });
+    },
+    _trigger: function _trigger(e, s, i) {
+      var n,
+          o,
+          r = this.options[e];
+      if (i = i || {}, s = t.Event(s), s.type = (e === this.widgetEventPrefix ? e : this.widgetEventPrefix + e).toLowerCase(), s.target = this.element[0], o = s.originalEvent) for (n in o) {
+        n in s || (s[n] = o[n]);
+      }
+      return this.element.trigger(s, i), !(t.isFunction(r) && r.apply(this.element[0], [s].concat(i)) === !1 || s.isDefaultPrevented());
+    }
+  }, t.each({
+    show: "fadeIn",
+    hide: "fadeOut"
+  }, function (e, s) {
+    t.Widget.prototype["_" + e] = function (i, n, o) {
+      "string" == typeof n && (n = {
+        effect: n
+      });
+      var r,
+          a = n ? n === !0 || "number" == typeof n ? s : n.effect || s : e;
+      n = n || {}, "number" == typeof n && (n = {
+        duration: n
+      }), r = !t.isEmptyObject(n), n.complete = o, n.delay && i.delay(n.delay), r && t.effects && t.effects.effect[a] ? i[e](n) : a !== e && i[a] ? i[a](n.duration, n.easing, o) : i.queue(function (s) {
+        t(this)[e](), o && o.call(i[0]), s();
+      });
+    };
+  }), t.widget;
+}), function (t) {
+  "use strict";
+
+  t.widget("aerolab.midnight", {
+    options: {
+      headerClass: "midnightHeader",
+      innerClass: "midnightInner",
+      defaultClass: "default",
+      classPrefix: "",
+      sectionSelector: "midnight"
+    },
+    _headers: {},
+    _headerInfo: {
+      top: 0,
+      height: 0
+    },
+    _$sections: [],
+    _sections: [],
+    _scrollTop: 0,
+    _documentHeight: 0,
+    _transformMode: !1,
+    refresh: function refresh() {
+      this._headerInfo = {
+        top: 0,
+        height: this.element.outerHeight()
+      }, this._$sections = t("[data-" + this.options.sectionSelector + "]:not(:hidden)"), this._sections = [], this._setupHeaders(), this.recalculate();
+    },
+    _create: function _create() {
+      var e = this;
+      this._scrollTop = window.pageYOffset || document.documentElement.scrollTop, this._documentHeight = t(document).height(), this._headers = {}, this._transformMode = this._getSupportedTransform(), this.refresh(), setInterval(function () {
+        e._recalculateSections();
+      }, 1e3), e.recalculate(), t(window).resize(function () {
+        e.recalculate();
+      }), this._updateHeadersLoop();
+    },
+    recalculate: function recalculate() {
+      this._recalculateSections(), this._updateHeaderHeight(), this._recalculateHeaders(), this._updateHeaders();
+    },
+    _getSupportedTransform: function _getSupportedTransform() {
+      for (var t = ["transform", "WebkitTransform", "MozTransform", "OTransform", "msTransform"], e = 0; e < t.length; e++) {
+        if (void 0 !== document.createElement("div").style[t[e]]) return t[e];
+      }
+
+      return !1;
+    },
+    _getContainerHeight: function _getContainerHeight() {
+      var e = this.element.find("> ." + this.options.headerClass),
+          s = 0,
+          i = 0,
+          n = this;
+      return e.length ? e.each(function () {
+        var e = t(this),
+            o = e.find("> ." + n.options.innerClass);
+        o.length ? (o.css("bottom", "auto").css("overflow", "auto"), i = o.outerHeight(), o.css("bottom", "0")) : (e.css("bottom", "auto"), i = e.outerHeight(), e.css("bottom", "0")), s = i > s ? i : s;
+      }) : s = i = this.element.outerHeight(), s;
+    },
+    _setupHeaders: function _setupHeaders() {
+      var e = this;
+      this._headers[this.options.defaultClass] = {};
+
+      for (var s = 0; s < this._$sections.length; s++) {
+        var i = t(this._$sections[s]),
+            n = i.data(this.options.sectionSelector);
+        "string" == typeof n && (n = n.trim(), "" !== n && (e._headers[n] = {}));
+      }
+
+      ({
+        top: this.element.css("padding-top"),
+        right: this.element.css("padding-right"),
+        bottom: this.element.css("padding-bottom"),
+        left: this.element.css("padding-left")
+      });
+      this.element.css({
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        overflow: "hidden"
+      }), this._updateHeaderHeight();
+      var o = this.element.find("> ." + this.options.headerClass);
+      o.length ? o.filter("." + this.options.defaultClass).length || o.filter("." + this.options.headerClass + ":first").clone(!0, !0).attr("class", this.options.headerClass + " " + this.options.defaultClass) : this.element.wrapInner('<div class="' + this.options.headerClass + " " + this.options.defaultClass + '"></div>');
+      var o = this.element.find("> ." + this.options.headerClass),
+          r = o.filter("." + this.options.defaultClass).clone(!0, !0);
+
+      for (var n in this._headers) {
+        if (this._headers.hasOwnProperty(n) && "undefined" == typeof this._headers[n].element) {
+          var a = o.filter("." + n);
+          a.length ? this._headers[n].element = a : this._headers[n].element = r.clone(!0, !0).removeClass(this.options.defaultClass).addClass(n).appendTo(this.element);
+          var h = {
+            position: "absolute",
+            overflow: "hidden",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+          };
+          this._headers[n].element.css(h), this._transformMode !== !1 && this._headers[n].element.css(this._transformMode, "translateZ(0)"), this._headers[n].element.find("> ." + this.options.innerClass).length || this._headers[n].element.wrapInner('<div class="' + this.options.innerClass + '"></div>'), this._headers[n].inner = this._headers[n].element.find("> ." + this.options.innerClass), this._headers[n].inner.css(h), this._transformMode !== !1 && this._headers[n].inner.css(this._transformMode, "translateZ(0)"), this._headers[n].from = "", this._headers[n].progress = 0;
+        }
+      }
+
+      o.each(function () {
+        var s = t(this),
+            i = !1;
+
+        for (var n in e._headers) {
+          e._headers.hasOwnProperty(n) && s.hasClass(n) && (i = !0);
+        }
+
+        s.find("> ." + e.options.innerClass).length || s.wrapInner('<div class="' + e.options.innerClass + '"></div>'), i ? s.show() : s.hide();
+      });
+    },
+    _recalculateHeaders: function _recalculateHeaders() {
+      this._scrollTop = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop, this._scrollTop = Math.max(this._scrollTop, 0), this._scrollTop = Math.min(this._scrollTop, this._documentHeight);
+      var t = this._headerInfo.height,
+          e = this._scrollTop + this._headerInfo.top,
+          s = e + t;
+
+      if ("function" == typeof window.getComputedStyle) {
+        var i = window.getComputedStyle(this.element[0], null),
+            n = 0,
+            o = 0;
+
+        if (this._transformMode !== !1 && "string" == typeof i.transform) {
+          var r = i.transform.match(/(-?[0-9\.]+)/g);
+          null !== r && r.length >= 6 && !isNaN(parseFloat(r[5])) && (o = parseFloat(r[5]));
+        }
+
+        i.top.indexOf("px") >= 0 && !isNaN(parseFloat(i.top)) && (n = parseFloat(i.top)), e += n + o, s += n + o;
+      }
+
+      for (var a in this._headers) {
+        this._headers.hasOwnProperty(a) && (this._headers[a].from = "", this._headers[a].progress = 0);
+      }
+
+      for (var h = 0; h < this._sections.length; h++) {
+        s >= this._sections[h].start && e <= this._sections[h].end && (this._headers[this._sections[h].className].visible = !0, e >= this._sections[h].start && s <= this._sections[h].end ? (this._headers[this._sections[h].className].from = "top", this._headers[this._sections[h].className].progress += 1) : s > this._sections[h].end && e < this._sections[h].end ? (this._headers[this._sections[h].className].from = "top", this._headers[this._sections[h].className].progress = 1 - (s - this._sections[h].end) / t) : s > this._sections[h].start && e < this._sections[h].start && ("top" === this._headers[this._sections[h].className].from ? this._headers[this._sections[h].className].progress += (s - this._sections[h].start) / t : (this._headers[this._sections[h].className].from = "bottom", this._headers[this._sections[h].className].progress = (s - this._sections[h].start) / t)));
+      }
+    },
+    _updateHeaders: function _updateHeaders() {
+      if ("undefined" != typeof this._headers[this.options.defaultClass]) {
+        var t = 0,
+            e = "";
+
+        for (var s in this._headers) {
+          this._headers.hasOwnProperty(s) && "" !== !this._headers[s].from && (t += this._headers[s].progress, e = s);
+        }
+
+        t < 1 && ("" === this._headers[this.options.defaultClass].from ? (this._headers[this.options.defaultClass].from = "top" === this._headers[e].from ? "bottom" : "top", this._headers[this.options.defaultClass].progress = 1 - t) : this._headers[this.options.defaultClass].progress += 1 - t);
+
+        for (var i in this._headers) {
+          if (this._headers.hasOwnProperty(i) && "" !== !this._headers[i].from) {
+            var n = 100 * (1 - this._headers[i].progress);
+            n >= 100 && (n = 110), n <= -100 && (n = -110), "top" === this._headers[i].from ? this._transformMode !== !1 ? (this._headers[i].element[0].style[this._transformMode] = "translateY(-" + n + "%) translateZ(0)", this._headers[i].inner[0].style[this._transformMode] = "translateY(+" + n + "%) translateZ(0)") : (this._headers[i].element[0].style.top = "-" + n + "%", this._headers[i].inner[0].style.top = "+" + n + "%") : this._transformMode !== !1 ? (this._headers[i].element[0].style[this._transformMode] = "translateY(+" + n + "%) translateZ(0)", this._headers[i].inner[0].style[this._transformMode] = "translateY(-" + n + "%) translateZ(0)") : (this._headers[i].element[0].style.top = "+" + n + "%", this._headers[i].inner[0].style.top = "-" + n + "%");
+          }
+        }
+      }
+    },
+    _recalculateSections: function _recalculateSections() {
+      this._documentHeight = t(document).height(), this._sections = [];
+
+      for (var e = 0; e < this._$sections.length; e++) {
+        var s = t(this._$sections[e]);
+
+        this._sections.push({
+          element: s,
+          className: s.data(this.options.sectionSelector),
+          start: s.offset().top,
+          end: s.offset().top + s.outerHeight()
+        });
+      }
+    },
+    _updateHeaderHeight: function _updateHeaderHeight() {
+      this._headerInfo.height = this._getContainerHeight(), this.element.css("height", this._headerInfo.height + "px");
+    },
+    _updateHeadersLoop: function _updateHeadersLoop() {
+      var t = this;
+      this._requestAnimationFrame(function () {
+        t._updateHeadersLoop();
+      }), this._recalculateHeaders(), this._updateHeaders();
+    },
+    _requestAnimationFrame: function _requestAnimationFrame(t) {
+      var e = e || function () {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (t) {
+          window.setTimeout(t, 1e3 / 60);
+        };
+      }();
+
+      e(t);
+    }
+  });
+}(jQuery);
 
 /***/ })
 /******/ ]);
