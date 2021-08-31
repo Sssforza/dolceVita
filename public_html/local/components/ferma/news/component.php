@@ -28,9 +28,9 @@ $rsSections = CIBlockSection::GetList($arOrder, $arFilter, false, array(
         'IBLOCK_SECTION_ID',
         'DESCRIPTION'
 ));
-$rsElements = CIBlockElement::GetList(array(), array('IBLOCK_ID' => $arParams['IBLOCK_ID']), false, Array(), array('ID', '*', 'PROPERTY_*'));
+$rsElements = CIBlockElement::GetList(array('SORT' => 'ASC'), array('IBLOCK_ID' => $arParams['IBLOCK_ID']), false, false, array('ID', 'IBLOCK_ID', '*', 'PROPERTY_*'));
 $menuElements = array();
-while($arElement = $rsElements->GetNext()){
+while($arElement = $rsElements->Fetch()){
 	$menuElements[$arElement['IBLOCK_SECTION_ID']][] = $arElement;
 }
 $menuItems = array();
@@ -101,6 +101,7 @@ $arComponentVariables = array(
 	"SECTION_CODE",
 	"ELEMENT_ID",
 	"ELEMENT_CODE",
+	"DEPTH_LEVEL"
 );
 
 if($arParams["USE_SEARCH"] != "Y")
@@ -188,6 +189,21 @@ if($arParams["SEF_MODE"] == "Y")
 
 	CComponentEngine::initComponentVariables($componentPage, $arComponentVariables, $arVariableAliases, $arVariables);
 
+	if ($arVariables['SECTION_CODE'] != $arVariables['SECTION_CODE_PATH']) {
+		$ar_sections= explode('/', $arVariables['SECTION_CODE_PATH']);
+		$arVariables['PARENT_SECTION_ID'] = '';
+		foreach ($ar_sections as $section) {
+			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'CODE' => $section, 'SITE_ID' => SITE_ID));
+			$sec = $res->Fetch();
+			$arVariables['IBLOCK_SECTION_ID'][] = $sec['ID'];
+			if (empty($arVariables['PARENT_SECTION_ID'])) {
+				$arVariables['PARENT_SECTION_ID'] = $sec['ID'];
+			}
+		}
+	} else {
+		$arVariables['IBLOCK_SECTION_ID'][] = $menuItems[$arVariables['SECTION_ID']][0]["ID"];
+		$arVariables['PARENT_SECTION_ID'] = $arVariables['SECTION_ID'];
+	}
 	$arResult = array(
 		"FOLDER" => $arParams["SEF_FOLDER"],
 		"URL_TEMPLATES" => $arUrlTemplates,

@@ -11,7 +11,10 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$iblock_section_id = $arResult["VARIABLES"]["IBLOCK_SECTION_ID"][0];
+$section_code = $arResult["VARIABLES"]["SECTION_CODE"];
 $section_id = $arResult["VARIABLES"]["SECTION_ID"];
+$parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
 ?>
 <main class="main">
 	<pre>
@@ -28,32 +31,29 @@ $section_id = $arResult["VARIABLES"]["SECTION_ID"];
             <div class="banerServices__content">
                 <div class="banerServices__header">
                     <div class="banerServices__title"><?= $arResult['IBLOCK_AR']['NAME']?></div>
-                    <? if (array_key_exists($section_id, $arResult['MENU_ITEMS'])) {?>
+                    <? if ($arResult['MENU_ITEMS'][$section_id] || $arResult['MENU_ITEMS'][$iblock_section_id]) {?>
                     	<div class="banerServices__tabs servicesTabs">
 	                        <div class="servicesTabs__list">
-	                        	<? foreach ($arResult['MENU_ITEMS'][$section_id] as $key => $value) { ?>
-	                        		<a href="<?= $value['LINK']?>" class='servicesTabs__item <?= $key == 0 ? "active": ""?>'>
+	                        	<? foreach ($arResult['MENU_ITEMS'][$parent_id] as $key => $value) { ?>
+	                        		<? $active = '';
+	                        		if ($section_id == $value["ID"] || ($section_id == $parent_id && $key == 0)) {
+	                        			$active = 'active';
+	                        		}?>
+	                        		<a href="<?= $value['LINK']?>" class='servicesTabs__item <?= $active?>'>
 		                                <span><?= $value['NAME']?></span>
 		                            </a>
-
 	                        	<? } ?>
 	                        </div>
 	                    </div>
                     <? } ?>
                 </div>
-                <? if ($arResult['MENU_ITEMS']['ROOT'][$section_id]['DESCRIPTION']) { ?>
-                	<div class="banerServices__question"><?= $arResult['MENU_ITEMS']['ROOT'][$arResult["VARIABLES"]["SECTION_ID"]]['DESCRIPTION']?></div>
-                <? } ?>
-                <? if ($arResult['ELEMENT_AR'][$arResult['MENU_ITEMS'][$section_id][0]['ID']]) { ?>
+                <? if ($arResult['ELEMENT_AR'][$section_id] || $arResult['ELEMENT_AR'][$iblock_section_id]) { ?>
+	                <? if ($arResult['MENU_ITEMS']['ROOT'][$parent_id]['DESCRIPTION']) { ?>
+	                	<div class="banerServices__question"><?= $arResult['MENU_ITEMS']['ROOT'][$parent_id]['DESCRIPTION']?></div>
+	                <? } ?>                
                 	<div class="banerServices__selected">
 	                    <div class="servicesSelected">
 	                        <div class="servicesSelected__input">
-	                        	<select required>
-								    <option value="">Выберите желаемый результат</option>
-								    <? foreach ($arResult['ELEMENT_AR'][$arResult['MENU_ITEMS'][$section_id][0]['ID']] as $key => $value) { ?>
-								    	<option value="<?= $value['ID']?>"><?= $value['NAME']?></option>
-								    <? } ?>
-								</select>
 	                            <input type="text" placeholder="Выберите желаемый результат">
 	                        </div>
 	                        <div class="servicesSelected__list">
