@@ -116,8 +116,8 @@
                         ".default",
                         Array(
                         "IS_SEF" => "N",
-                        "IBLOCK_TYPE" => "services", 
-                        "IBLOCK_ID" => "13", 
+                        "IBLOCK_TYPE" => "", 
+                        "IBLOCK_ID" => array('13', '14'), 
                         "DEPTH_LEVEL" => "4", 
                         "CACHE_TYPE" => "N", 
                         "CACHE_TIME" => "3600" 

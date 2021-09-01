@@ -4,10 +4,12 @@ if (!function_exists(createMenuArray)){
         foreach($arParent as $item){
             $isParent = ($item['IS_SECTION']&&isset($menuItems[$item['ID']]));
             $res[] = array(
-                htmlspecialchars($item['~NAME']),
-                $item['LINK'],
+                'name' => htmlspecialchars($item['~NAME']),
+                'link' => $item['LINK'],
+                'code' => $item['CODE'],
+                'section_code' => $item['IBLOCK_SECTION_ID'] ?? $item['IBLOCK_ID'],
                 array(), //массив доп ссылок
-                array(
+                'params' => array(
                     'FROM_IBLOCK' => true,
                     'IS_PARENT' => $isParent,
                     'DEPTH_LEVEL' => $depthLevel,
@@ -24,7 +26,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
 if(!isset($arParams['CACHE_TIME']))
 	$arParams['CACHE_TIME'] = 36000000;
 
-$arParams['IBLOCK_ID'] = intval($arParams['IBLOCK_ID']);
+//$arParams['IBLOCK_ID'] = intval($arParams['IBLOCK_ID']);
 
 $arParams['DEPTH_LEVEL'] = intval($arParams['DEPTH_LEVEL']);
 if($arParams['DEPTH_LEVEL']<=0)
@@ -48,43 +50,57 @@ if($this->StartResultCache()) {
             'NAME',
             'SECTION_PAGE_URL',
             'IBLOCK_SECTION_ID',
+            'CODE'
     ));
     $menuItems = array();
     while($arSection = $rsSections->GetNext()){
         $arSection['IS_SECTION'] = 1;
         $arSection['LINK'] = $arSection['SECTION_PAGE_URL'];
+
         if ($arSection['IBLOCK_SECTION_ID']){
-            $menuItems[$arSection['IBLOCK_SECTION_ID']][] = $arSection;
+            $res = CIBlockSection::GetByID($arSection["IBLOCK_SECTION_ID"]);
+            if($ar_res = $res->GetNext()) {
+                $arSection['IBLOCK_SECTION_CODE'] = $ar_res['CODE'];
+            }
+            $menuItems['SECTION'][$arSection['IBLOCK_SECTION_ID']][] = $arSection;
         } else {
             $menuItems['ROOT'][] = $arSection;
         }
         $arSectionId[] = $arSection['ID'];
     }
-    //Получим элементы
-    $arSelect = Array('ID', 'NAME','DETAIL_PAGE_URL', 'IBLOCK_SECTION_ID');
-    $arFilter = Array(
-        'IBLOCK_ID' => $arParams['IBLOCK_ID'],
-        'ACTIVE' => 'Y',
-        array(
-        'LOGIC' => 'OR',
-            array('SECTION_ID' => $arSectionId),
-            array('SECTION_ID' => false),
-        ),
-    );
-    $arOrder = Array('SORT' => 'ASC');
-    $res = CIBlockElement::GetList($arOrder, $arFilter, false, false, $arSelect);
-    while ($ob = $res->GetNextElement()){
-        $arFields = $ob->GetFields();
-        $arFields['IS_SECTION'] = 0;
-        $arFields['LINK'] = $arFields['DETAIL_PAGE_URL'];
-        if ($arFields['IBLOCK_SECTION_ID']){
-            $menuItems[$arFields['IBLOCK_SECTION_ID']][] = $arFields;
-        } else {
-            $menuItems['ROOT'][] = $arFields;
+        //Получим элементы
+        $arSelect = Array('ID', 'NAME','DETAIL_PAGE_URL', 'IBLOCK_SECTION_ID', 'CODE');
+        $arFilter = Array(
+            'IBLOCK_ID' => $arParams['IBLOCK_ID'],
+            'ACTIVE' => 'Y',
+            array(
+            'LOGIC' => 'OR',
+                array('SECTION_ID' => $arSectionId),
+                array('SECTION_ID' => false),
+            ),
+        );
+        $arOrder = Array('SORT' => 'ASC');
+        $res = CIBlockElement::GetList($arOrder, $arFilter, false, false, $arSelect);
+        while ($ob = $res->GetNextElement()){
+            $arFields = $ob->GetFields();
+            $arFields['IS_SECTION'] = 0;
+            $arFields['LINK'] = $arFields['DETAIL_PAGE_URL'];
+            if ($arFields['IBLOCK_SECTION_ID']){
+                $elem = CIBlockSection::GetByID($arFields["IBLOCK_SECTION_ID"]);
+                if($ar_elem = $elem->GetNext()) {
+                    $arFields['IBLOCK_SECTION_CODE'] = $ar_elem['CODE'];
+                }
+                $menuItems['ELEMENTS'][$arFields['IBLOCK_SECTION_ID']][] = $arFields;
+            } else {
+                $menuItems['ROOT'][] = $arFields;
+            }
         }
-    }
+    //}
     //Рекурсивно сформируем итоговый массив для меню
     $arResult = array();
+    echo '<pre>';
+    print_r($menuItems);
+    echo '</pre>';
     createMenuArray($arResult,$menuItems,$menuItems['ROOT'],1);
     $this->EndResultCache();
 }
