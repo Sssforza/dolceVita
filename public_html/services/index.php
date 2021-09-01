@@ -22,17 +22,17 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
             <div class="banerServices__content">
                 <div class="banerServices__header">
                     <div class="banerServices__title">Косметология</div>
-                    <div class="banerServices__tabs servicesTabs">
+                    <div class="banerServices__tabs servicesTabs servicesTabsList_js">
                         <div class="servicesTabs__list">
-                            <div class="servicesTabs__item active">
+                            <div class="servicesTabs__item servicesTabs_js active" data-tab="face">
                                 <span>Лица</span>
                             </div>
-                            <div class="servicesTabs__item">
+                            <div class="servicesTabs__item servicesTabs_js" data-tab="body">
                                 <span>Тела</span>
                             </div>
-                            <div class="servicesTabs__item">
+                            <div class="servicesTabs__item servicesTabs_js" data-tab="hands">
                                 <span>Рук</span></div>
-                            <div class="servicesTabs__item">
+                            <div class="servicesTabs__item servicesTabs_js" data-tab="legs">
                                 <span>Ног</span>
                             </div>
                         </div>
@@ -40,12 +40,172 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                 </div>
                 <div class="banerServices__question">Какой результат я хочу получить от приема</div>
                 <div class="banerServices__selected">
-                    <div class="servicesSelected">
-                        <div class="servicesSelected__input">
-                            <input type="text" placeholder="Выберите желаемый результат">
+                    <div class="servicesSelected servicesSelected_js">
+                        <div class="servicesSelected__input servicesSelectedInput_js" data-select="face">
+                            <input class="servicesSelectedSelected_js" type="text" placeholder="Выберите желаемый результат" readonly>
                         </div>
-                        <div class="servicesSelected__list">
-                            <div class="servicesSelected__item"></div>
+                        <div class="servicesSelected__wrapper">
+                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="face">
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Пигментация</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Пигментация</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                            </ul>
+                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="body">
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Улучшить цвет тела</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Пигментация</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                            </ul>
+                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="hands">
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Улучшить цвет рук</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Пигментация</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Пигментация</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                            </ul>
+                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="legs">
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Улучшить цвет ног</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Пигментация</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Пигментация</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
+                                </li>
+                                <li class="servicesSelected__item">
+                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="btnBlue banerServices__btn">Посмотреть услуги</div>

@@ -56,6 +56,11 @@ body {
 }
 .page {
     padding-bottom: 96px;
+    &_services {
+        .banerServices {
+            overflow: visible;
+        }
+    }
 }
 .overflowHidden {
     overflow: hidden;
@@ -778,5 +783,73 @@ body {
             stroke:#DBE9EF;
             animation: mainLinesDraw 10s linear forwards;
         }
+    }
+}
+.scrollbarCustom {
+    overflow: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar-button {
+        background-image: url("");
+        background-repeat: no-repeat;
+        width: 1px;
+        height: 0px;
+    }
+    &::-webkit-scrollbar-track {
+        margin: 15px 0;
+        width: 1px;
+        background-color: #E9E5E8;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        width: 7px;
+        -webkit-border-radius: 0px;
+        border-radius: 10px;
+        background-color: $purple;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+            background-color: $greenMedium !important;
+        }
+        &:active {
+            background-color: $greenDark !important;
+        }
+    }
+    &::-webkit-resizer {
+        background-image: url("");
+        background-repeat: no-repeat;
+        width: 1px;
+        height: 0px;
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+.scrollbar {
+    .scrollbar-inner>.scroll-element.scroll-y {
+        width: 7px;
+    }
+    .scrollbar-inner>.scroll-element .scroll-element_track {
+        width: 1px;
+        left: 3px;
+        background-color: #E9E5E8;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    .scrollbar-inner>.scroll-element .scroll-bar {
+        background-color: $purple;
+        opacity: 1;
+        width: 7px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+            background-color: $greenMedium !important;
+        }
+        &:active {
+            background-color: $greenDark !important;
+        }
+    }
+    .scrollbar-inner>.scroll-element.scroll-draggable .scroll-bar, .scrollbar-inner>.scroll-element:hover .scroll-bar {
+        background-color: $purple;
     }
 }

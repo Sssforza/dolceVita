@@ -85,3 +85,64 @@ export function servicesAttendance () {
         });
 	}
 }
+// services selected drop
+export function servicesSelectedDrop () {
+    if(document.querySelector('.servicesSelectedInput_js')) {
+        const parentList = document.querySelector('.servicesSelected_js');
+        const parentTabs = document.querySelector('.servicesTabsList_js');
+        const input = parentList.querySelector('.servicesSelectedInput_js');
+        const selected = parentList.querySelector('.servicesSelectedSelected_js');
+        let lists = parentList.querySelectorAll('.servicesSelectedList_js');
+        let tabs = parentTabs.querySelectorAll('.servicesTabs_js');
+        let choice = parentList.querySelectorAll('.servicesSelected__choice');
+        let thisChoice;
+        let dataSelect;
+        // const menu = document.querySelector('.servicesSelected__wrapper');
+        const toggleMenu = function() {
+            parentList.classList.toggle('open');
+        }
+		tabs.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                let tab = item.getAttribute('data-tab');
+                tabs.forEach((i) => {
+                    i.classList.remove('active');
+                });
+                item.classList.add('active');
+                input.setAttribute('data-select', tab);
+                dataSelect = input.getAttribute('data-select');
+                selected.setAttribute('value', '');
+                lists.forEach((item) => {
+                    item.classList.remove('open');
+                    if(item.getAttribute('data-list') === dataSelect) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+        });
+		input.addEventListener( "click" , (elem) => {
+            toggleMenu();
+            dataSelect = input.getAttribute('data-select');
+            lists.forEach((item) => {
+                item.classList.remove('open');
+                if(item.getAttribute('data-list') === dataSelect) {
+                    item.classList.add('open');
+                }
+            });
+        });
+        choice.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                thisChoice = item.innerHTML;
+                selected.setAttribute('value', thisChoice);
+            });
+        });
+        document.onclick = function(e){
+            var container = $(".servicesSelected__wrapper");
+            var container2 = $(".servicesTabs__item");
+            var container3 = $(".servicesSelectedInput_js");
+            if (container.has(e.target).length === 0 && container2.has(e.target).length === 0 && container3.has(e.target).length === 0){
+                console.log(1);
+                parentList.classList.remove('open');
+            }
+        };
+	}
+}
