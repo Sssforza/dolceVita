@@ -165,8 +165,8 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 						</div>
 					</div>
 					<div class="specialists__box">
-						<div class="specialists__nav specialistsNav">
-							<div class="specialistsNav__content specialistsNavScroll_js scrollbar-inner specialistsNav_js">
+						<div class="specialists__nav specialistsNav scrollbar">
+							<div class="specialistsNav__content specialistsNavScroll_js scrollbar-inner">
 								<div class="specialistsNav__item active" data-slide="1">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav1.png)"></div>

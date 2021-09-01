@@ -24,13 +24,13 @@ import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
 import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio} from "./blocks/_sliders.js";
 
 //📁 /assets/js/blocks  scrollbar.js
-import {specialistsNavScroll} from "./blocks/scrollbar.js";
+import {scrollbar} from "./blocks/scrollbar.js";
 
 //📁 /assets/js/blocks  index.js
 import {usefulBlogHover} from "./blocks/index.js";
 
 //📁 /assets/js/blocks  services.js
-import {popupMoreStageDate, servicesAttendance} from "./blocks/services.js";
+import {popupMoreStageDate, servicesAttendance, servicesSelectedDrop} from "./blocks/services.js";
 
 //📁 /assets/js/blocks  specialist.js
 import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/specialist.js";
@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // slider portfolio specialist
     sliderSpecialistsPortfolio();
 
-    // specialists nav scroll
-    specialistsNavScroll();
+    // scrollbar
+    scrollbar();
 
     // useful blog hover
     usefulBlogHover();
@@ -108,6 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // services attendance all cards
     servicesAttendance();
+
+    // services selected drop
+    servicesSelectedDrop();
 
     // about specialist show all
     aboutSpecialistShowAll();

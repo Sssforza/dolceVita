@@ -11471,9 +11471,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialists"])(); // slider portfolio specialist
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialistsPortfolio"])(); // specialists nav scroll
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_7__["sliderSpecialistsPortfolio"])(); // scrollbar
 
-  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["specialistsNavScroll"])(); // useful blog hover
+  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_8__["scrollbar"])(); // useful blog hover
 
   Object(_blocks_index_js__WEBPACK_IMPORTED_MODULE_9__["usefulBlogHover"])(); // popup close
 
@@ -11483,7 +11483,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["popupMoreStageDate"])(); // services attendance all cards
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesAttendance"])(); // about specialist show all
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesAttendance"])(); // services selected drop
+
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesSelectedDrop"])(); // about specialist show all
 
   Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__["aboutSpecialistShowAll"])(); // tabs specialist education
 
@@ -16814,10 +16816,10 @@ function sliderSpecialistsPortfolio() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "specialistsNavScroll", function() { return specialistsNavScroll; });
-// specialists nav scroll
-function specialistsNavScroll() {
-  if (document.querySelector(".specialistsNavScroll_js")) {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollbar", function() { return scrollbar; });
+// scrollbar
+function scrollbar() {
+  if (document.querySelector(".scrollbar-inner")) {
     $(".scrollbar-inner").scrollbar();
   }
 }
@@ -16857,6 +16859,7 @@ function usefulBlogHover() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupMoreStageDate", function() { return popupMoreStageDate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesAttendance", function() { return servicesAttendance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesSelectedDrop", function() { return servicesSelectedDrop; });
 // popupMoreStageDate
 function popupMoreStageDate() {
   var popupMoreStage = document.querySelectorAll('.popupMoreStage_js');
@@ -16945,6 +16948,72 @@ function servicesAttendance() {
         btn.closest(".servicesCardBig").remove();
       }
     });
+  }
+} // services selected drop
+
+function servicesSelectedDrop() {
+  if (document.querySelector('.servicesSelectedInput_js')) {
+    var parentList = document.querySelector('.servicesSelected_js');
+    var parentTabs = document.querySelector('.servicesTabsList_js');
+    var input = parentList.querySelector('.servicesSelectedInput_js');
+    var selected = parentList.querySelector('.servicesSelectedSelected_js');
+    var lists = parentList.querySelectorAll('.servicesSelectedList_js');
+    var tabs = parentTabs.querySelectorAll('.servicesTabs_js');
+    var choice = parentList.querySelectorAll('.servicesSelected__choice');
+    var thisChoice;
+    var dataSelect; // const menu = document.querySelector('.servicesSelected__wrapper');
+
+    var toggleMenu = function toggleMenu() {
+      parentList.classList.toggle('open');
+    };
+
+    tabs.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var tab = item.getAttribute('data-tab');
+        tabs.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        input.setAttribute('data-select', tab);
+        dataSelect = input.getAttribute('data-select');
+        selected.setAttribute('value', '');
+        lists.forEach(function (item) {
+          item.classList.remove('open');
+
+          if (item.getAttribute('data-list') === dataSelect) {
+            item.classList.add('open');
+          }
+        });
+      });
+    });
+    input.addEventListener("click", function (elem) {
+      toggleMenu();
+      dataSelect = input.getAttribute('data-select');
+      lists.forEach(function (item) {
+        item.classList.remove('open');
+
+        if (item.getAttribute('data-list') === dataSelect) {
+          item.classList.add('open');
+        }
+      });
+    });
+    choice.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        thisChoice = item.innerHTML;
+        selected.setAttribute('value', thisChoice);
+      });
+    });
+
+    document.onclick = function (e) {
+      var container = $(".servicesSelected__wrapper");
+      var container2 = $(".servicesTabs__item");
+      var container3 = $(".servicesSelectedInput_js");
+
+      if (container.has(e.target).length === 0 && container2.has(e.target).length === 0 && container3.has(e.target).length === 0) {
+        console.log(1);
+        parentList.classList.remove('open');
+      }
+    };
   }
 }
 
