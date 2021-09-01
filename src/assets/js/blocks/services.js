@@ -92,12 +92,20 @@ export function servicesSelectedDrop () {
         const parentTabs = document.querySelector('.servicesTabsList_js');
         const input = parentList.querySelector('.servicesSelectedInput_js');
         const selected = parentList.querySelector('.servicesSelectedSelected_js');
+        const btn = document.querySelector('.banerServices__btn');
         let lists = parentList.querySelectorAll('.servicesSelectedList_js');
         let tabs = parentTabs.querySelectorAll('.servicesTabs_js');
         let choice = parentList.querySelectorAll('.servicesSelected__choice');
         let thisChoice;
         let dataSelect;
         // const menu = document.querySelector('.servicesSelected__wrapper');
+        const checkBtn = function() {
+            if(selected.value <= 0) {
+                btn.classList.add('disabled');
+            } else {
+                btn.classList.remove('disabled');
+            }
+        }
         const toggleMenu = function() {
             parentList.classList.toggle('open');
         }
@@ -136,10 +144,11 @@ export function servicesSelectedDrop () {
             });
         });
         document.onclick = function(e){
+            checkBtn();
             var container = $(".servicesSelected__wrapper");
             var container2 = $(".servicesTabs__item");
             var container3 = $(".servicesSelectedInput_js");
-            if (container.has(e.target).length === 0 && container2.has(e.target).length === 0 && container3.has(e.target).length === 0){
+            if (container2.has(e.target).length === 0 && container3.has(e.target).length === 0){
                 console.log(1);
                 parentList.classList.remove('open');
             }

@@ -137,6 +137,7 @@ body {
     color: $white;
     background: $blueDark;
     border-radius: 20px;
+    transition: $transition;
 }
 //breadCrumbs
 .breadCrumbs {
@@ -528,7 +529,7 @@ body {
     }
     &_attendance {
         padding-top: 56px;
-        height: 680px;
+        height: 736px;
         overflow: hidden;
         transition: all .4s ease-in-out;
     }

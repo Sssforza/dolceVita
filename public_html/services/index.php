@@ -208,7 +208,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                             </ul>
                         </div>
                     </div>
-                    <div class="btnBlue banerServices__btn">Посмотреть услуги</div>
+                    <div class="btnBlue banerServices__btn disabled">Посмотреть услуги</div>
                 </div>
             </div>
         </section>
