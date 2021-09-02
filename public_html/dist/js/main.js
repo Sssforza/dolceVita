@@ -16911,7 +16911,6 @@ function popupMoreStageDate() {
         newName.innerHTML = item.querySelector('.servicesCard__how').innerHTML;
         newText.innerHTML = item.getAttribute('data-description');
       });
-      $(".scrollbar-inner").scrollbar();
     });
   });
 } // services attendance all cards

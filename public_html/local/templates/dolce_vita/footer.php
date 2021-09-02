@@ -1,3 +1,24 @@
+<div id="popupMoreStage" class="mfp-hide popupBlock serviceMore">
+    <div class="mfp-close popupBlock__close popupClose_js">
+        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/popupsClose.svg';?>
+    </div>
+    <div class="serviceMore__content">
+        <div class="serviceMore__left">
+            <div class="serviceMore__img" style="background-image:url()">
+            </div>
+            <a class="btnBlueBorder serviceMore__btn" href="">Подробнее о программе</a>
+        </div>
+        <div class="serviceMore__right">
+            <div class="serviceMore__header">
+                <div class="serviceMore__title"></div>
+                <div class="serviceMore__programm">программа</div>
+            </div>
+            <div class="serviceMore__wrapper">
+                <div class="serviceMore__list scrollbarCustomGray"></div>
+            </div>
+        </div>
+    </div>
+</div>
         <footer class="footer">
             <div class="footer__content containerMin">
                 <div class="footer__top">
