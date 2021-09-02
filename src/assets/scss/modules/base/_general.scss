@@ -273,8 +273,23 @@ body {
     right: 48px !important;
     opacity: 1 !important;
     cursor: pointer;
-    svg {
-        display: block;
+}
+.popupBlock {
+    &__close {
+        svg {
+            display: block;
+            path {
+                transition: $transition;
+            }
+        }
+        &:hover {
+            svg {
+                display: block;
+                path {
+                    fill: $greenDark;
+                }
+            }
+        }
     }
 }
 //envelope inputs
