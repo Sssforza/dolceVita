@@ -16925,8 +16925,9 @@ function servicesAttendance() {
     var num = parent.querySelector('.servicesCardNumber_js').innerHTML;
     var numPaste = parent.querySelector('.servicesCardNumber_js');
     var gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
+    var padding = getComputedStyle(parent).paddingTop.replace(/[\D]+/g, '');
     var numberItems = Number(num);
-    var heightPaste;
+    var heightPaste = 0 - padding;
     var count = 1;
     var countGap = 0;
     btn.addEventListener("click", function (e) {
@@ -16935,14 +16936,13 @@ function servicesAttendance() {
       numberItems = numberItems - 6;
       numPaste.innerHTML = numberItems;
       heightPaste = height * count + Number(gap) * countGap;
+      heightPaste = heightPaste - padding;
 
       if (heightPaste < heightAll) {
-        console.log('if');
         parent.style.height = heightPaste + "px";
       }
 
-      if (heightPaste === heightAll) {
-        console.log('=');
+      if (heightPaste === heightAll || heightPaste > heightAll) {
         parent.style.height = heightPaste + "px";
         btn.closest(".servicesCardBig").remove();
       }
@@ -16961,7 +16961,7 @@ function servicesSelectedDrop() {
     var tabs = parentTabs.querySelectorAll('.servicesTabs_js');
     var choice = parentList.querySelectorAll('.servicesSelected__choice');
     var thisChoice;
-    var dataSelect; // const menu = document.querySelector('.servicesSelected__wrapper');
+    var dataSelect;
 
     var checkBtn = function checkBtn() {
       if (selected.value <= 0) {
@@ -17019,7 +17019,6 @@ function servicesSelectedDrop() {
       var container3 = $(".servicesSelectedInput_js");
 
       if (container2.has(e.target).length === 0 && container3.has(e.target).length === 0) {
-        console.log(1);
         parentList.classList.remove('open');
       }
     };

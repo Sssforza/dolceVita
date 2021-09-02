@@ -62,8 +62,9 @@ export function servicesAttendance () {
         const num = parent.querySelector('.servicesCardNumber_js').innerHTML;
         const numPaste = parent.querySelector('.servicesCardNumber_js');
         const gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
+        const padding = getComputedStyle(parent).paddingTop.replace(/[\D]+/g, '');
         let numberItems = Number(num);
-        let heightPaste;
+        let heightPaste = 0 - padding;
         let count = 1;
         let countGap = 0;
 		btn.addEventListener( "click" , (e) => {
@@ -72,12 +73,11 @@ export function servicesAttendance () {
             numberItems = numberItems - 6;
             numPaste.innerHTML = numberItems;
             heightPaste = (height * count) + (Number(gap) * countGap);
+            heightPaste = heightPaste - padding;
             if (heightPaste < heightAll){
-                console.log('if');
                 parent.style.height = heightPaste + "px";
             }
-            if (heightPaste === heightAll){
-                console.log('=');
+            if (heightPaste === heightAll || heightPaste > heightAll){
                 parent.style.height = heightPaste + "px";
                 btn.closest(".servicesCardBig").remove();
             }
@@ -97,7 +97,6 @@ export function servicesSelectedDrop () {
         let choice = parentList.querySelectorAll('.servicesSelected__choice');
         let thisChoice;
         let dataSelect;
-        // const menu = document.querySelector('.servicesSelected__wrapper');
         const checkBtn = function() {
             if(selected.value <= 0) {
                 btn.classList.add('disabled');
@@ -148,7 +147,6 @@ export function servicesSelectedDrop () {
             var container2 = $(".servicesTabs__item");
             var container3 = $(".servicesSelectedInput_js");
             if (container2.has(e.target).length === 0 && container3.has(e.target).length === 0){
-                console.log(1);
                 parentList.classList.remove('open');
             }
         };

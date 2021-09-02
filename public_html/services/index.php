@@ -823,7 +823,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                         <div class="servicesCardBig__more">
                             <div class="servicesCardBig__link servicesCardBtn_js">посмотреть</div>
                         </div>
-                        <div class="servicesCardBig__number servicesCardNumber_js">18</div>
+                        <div class="servicesCardBig__number servicesCardNumber_js">13</div>
                     </div>
                 </div>
             </div>
