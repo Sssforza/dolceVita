@@ -11479,13 +11479,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupClose"])(); // moreStage
 
-  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // popupMoreStageDate
+  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // services selected drop
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["popupMoreStageDate"])(); // services attendance all cards
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesSelectedDrop"])(); // popup more stage date
+  // services attendance all cards
+  // services selected fetch
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesAttendance"])(); // services selected drop
-
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesSelectedDrop"])(); // about specialist show all
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_10__["servicesSelectedFetch"])(); // about specialist show all
 
   Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_11__["aboutSpecialistShowAll"])(); // tabs specialist education
 
@@ -16876,99 +16876,9 @@ function usefulBlogHover() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupMoreStageDate", function() { return popupMoreStageDate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesAttendance", function() { return servicesAttendance; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesSelectedDrop", function() { return servicesSelectedDrop; });
-// popupMoreStageDate
-function popupMoreStageDate() {
-  var popupMoreStage = document.querySelectorAll('.popupMoreStage_js');
-  var parent;
-  var title;
-  var stage;
-  var newItem;
-  var newStage;
-  var newDescription;
-  var newName;
-  var newText;
-  var linkimg;
-  var newImg;
-  var list;
-
-  function addElement() {
-    newItem = document.createElement("div");
-    newStage = document.createElement("div");
-    newDescription = document.createElement("div");
-    newName = document.createElement("div");
-    newText = document.createElement("div");
-    newItem.className = "serviceMore__item";
-    newStage.className = "serviceMore__stage";
-    newDescription.className = "serviceMore__description";
-    newName.className = "serviceMore__name";
-    newText.className = "serviceMore__text";
-    list.append(newItem);
-    newItem.append(newStage);
-    newItem.append(newDescription);
-    newDescription.append(newName);
-    newDescription.append(newText);
-  }
-
-  popupMoreStage.forEach(function (item) {
-    item.addEventListener("click", function (e) {
-      list = document.querySelector(".serviceMore__list");
-      list.innerHTML = '';
-      parent = item.closest(".servicesCard_js");
-      linkimg = parent.querySelector(".popupMoreStage_js").getAttribute('data-linkimg');
-      newImg = document.querySelector('.serviceMore__img');
-      newImg.style.backgroundImage = linkimg;
-      document.querySelector('.serviceMore__btn').setAttribute('href', item.getAttribute('data-linkMore'));
-      title = parent.querySelector('.servicesCard__title').innerHTML;
-      document.querySelector('.serviceMore__title').innerText = title;
-      stage = parent.querySelectorAll('.servicesCard__box');
-      stage.forEach(function (item) {
-        addElement();
-        newStage.innerHTML = item.querySelector('.servicesCard__what').innerHTML;
-        newName.innerHTML = item.querySelector('.servicesCard__how').innerHTML;
-        newText.innerHTML = item.getAttribute('data-description');
-      });
-    });
-  });
-} // services attendance all cards
-
-function servicesAttendance() {
-  if (document.querySelector('.servicesCardBtn_js')) {
-    var parent = document.querySelector('.servicesAttendance_js');
-    var flex = parent.querySelector('.services__content');
-    var btn = document.querySelector('.servicesCardBtn_js');
-    var heightAll = parent.scrollHeight;
-    var height = parent.clientHeight;
-    var num = parent.querySelector('.servicesCardNumber_js').innerHTML;
-    var numPaste = parent.querySelector('.servicesCardNumber_js');
-    var gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
-    var padding = getComputedStyle(parent).paddingTop.replace(/[\D]+/g, '');
-    var numberItems = Number(num);
-    var heightPaste = 0 - padding;
-    var count = 1;
-    var countGap = 0;
-    btn.addEventListener("click", function (e) {
-      count = count + 1;
-      countGap = countGap + 1;
-      numberItems = numberItems - 6;
-      numPaste.innerHTML = numberItems;
-      heightPaste = height * count + Number(gap) * countGap;
-      heightPaste = heightPaste - padding;
-
-      if (heightPaste < heightAll) {
-        parent.style.height = heightPaste + "px";
-      }
-
-      if (heightPaste === heightAll || heightPaste > heightAll) {
-        parent.style.height = heightPaste + "px";
-        btn.closest(".servicesCardBig").remove();
-      }
-    });
-  }
-} // services selected drop
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesSelectedFetch", function() { return servicesSelectedFetch; });
+// services selected drop
 function servicesSelectedDrop() {
   if (document.querySelector('.servicesSelectedInput_js')) {
     var parentList = document.querySelector('.servicesSelected_js');
@@ -16981,6 +16891,7 @@ function servicesSelectedDrop() {
     var choice = parentList.querySelectorAll('.servicesSelected__choice');
     var thisChoice;
     var dataSelect;
+    var id;
 
     var checkBtn = function checkBtn() {
       if (selected.value <= 0) {
@@ -17027,7 +16938,9 @@ function servicesSelectedDrop() {
     choice.forEach(function (item) {
       item.addEventListener("click", function (e) {
         thisChoice = item.innerHTML;
+        id = item.getAttribute('id');
         selected.setAttribute('value', thisChoice);
+        selected.setAttribute('id', id);
       });
     });
 
@@ -17041,6 +16954,131 @@ function servicesSelectedDrop() {
         parentList.classList.remove('open');
       }
     };
+  }
+} // popup more stage date
+// services attendance all cards
+// services selected fetch
+
+function servicesSelectedFetch() {
+  if (document.querySelector('.popupMoreStage_js')) {
+    var popupMore = function popupMore() {
+      var popupMoreStage = document.querySelectorAll('.popupMoreStage_js');
+      var parent;
+      var title;
+      var stage;
+      var newItem;
+      var newStage;
+      var newDescription;
+      var newName;
+      var newText;
+      var linkimg;
+      var newImg;
+      var list;
+
+      function addElement() {
+        newItem = document.createElement("div");
+        newStage = document.createElement("div");
+        newDescription = document.createElement("div");
+        newName = document.createElement("div");
+        newText = document.createElement("div");
+        newItem.className = "serviceMore__item";
+        newStage.className = "serviceMore__stage";
+        newDescription.className = "serviceMore__description";
+        newName.className = "serviceMore__name";
+        newText.className = "serviceMore__text";
+        list.append(newItem);
+        newItem.append(newStage);
+        newItem.append(newDescription);
+        newDescription.append(newName);
+        newDescription.append(newText);
+      }
+
+      popupMoreStage.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+          list = document.querySelector(".serviceMore__list");
+          list.innerHTML = '';
+          parent = item.closest(".servicesCard_js");
+          linkimg = parent.querySelector(".popupMoreStage_js").getAttribute('data-linkimg');
+          newImg = document.querySelector('.serviceMore__img');
+          newImg.style.backgroundImage = linkimg;
+          document.querySelector('.serviceMore__btn').setAttribute('href', item.getAttribute('data-linkMore'));
+          title = parent.querySelector('.servicesCard__title').innerHTML;
+          document.querySelector('.serviceMore__title').innerText = title;
+          stage = parent.querySelectorAll('.servicesCard__box');
+          stage.forEach(function (item) {
+            addElement();
+            newStage.innerHTML = item.querySelector('.servicesCard__what').innerHTML;
+            newName.innerHTML = item.querySelector('.servicesCard__how').innerHTML;
+            newText.innerHTML = item.getAttribute('data-description');
+          });
+        });
+      });
+    };
+
+    popupMore();
+  }
+
+  if (document.querySelector('.servicesCardBtn_js')) {
+    var servicesCard = function servicesCard() {
+      var parent = document.querySelector('.servicesAttendance_js');
+      var flex = parent.querySelector('.services__content');
+      var btn = document.querySelector('.servicesCardBtn_js');
+      var heightAll = parent.scrollHeight;
+      var height = parent.clientHeight;
+      var num = parent.querySelector('.servicesCardNumber_js').innerHTML;
+      var numPaste = parent.querySelector('.servicesCardNumber_js');
+      var gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
+      var padding = getComputedStyle(parent).paddingTop.replace(/[\D]+/g, '');
+      var numberItems = Number(num);
+      var heightPaste = 0 - padding;
+      var count = 1;
+      var countGap = 0;
+      btn.addEventListener("click", function (e) {
+        count = count + 1;
+        countGap = countGap + 1;
+        numberItems = numberItems - 6;
+        numPaste.innerHTML = numberItems;
+        heightPaste = height * count + Number(gap) * countGap;
+        heightPaste = heightPaste - padding;
+
+        if (heightPaste < heightAll) {
+          parent.style.height = heightPaste + "px";
+        }
+
+        if (heightPaste === heightAll || heightPaste > heightAll) {
+          parent.style.height = heightPaste + "px";
+          btn.closest(".servicesCardBig").remove();
+        }
+      });
+    };
+
+    servicesCard();
+  }
+
+  if (document.querySelector('.banerServicesBtn_js')) {
+    var btn = document.querySelector('.banerServicesBtn_js');
+    var input = document.querySelector('.servicesSelectedSelected_js');
+    var message = 'Произошла ошибка, пожалуйста обновите страницу';
+    var id;
+    btn.addEventListener("click", function (elem) {
+      id = input.getAttribute('id');
+      var body = new FormData();
+      body.append('id', id);
+      fetch('/local/ajax/services.php', {
+        method: 'POST',
+        body: body
+      }).then(function (response) {
+        response.text().then(function (data) {
+          if (response.ok && data != null && data != "") {
+            console.log('insert html');
+            servicesCard();
+            popupMore();
+          } else {
+            alert(message);
+          }
+        });
+      });
+    });
   }
 }
 

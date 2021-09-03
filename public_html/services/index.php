@@ -43,21 +43,21 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                 <div class="banerServices__selected">
                     <div class="servicesSelected servicesSelected_js">
                         <div class="servicesSelected__input servicesSelectedInput_js" data-select="face">
-                            <input class="servicesSelectedSelected_js" type="text" placeholder="Выберите желаемый результат" readonly>
+                            <input class="servicesSelectedSelected_js" id="" type="text" placeholder="Выберите желаемый результат" readonly>
                         </div>
                         <div class="servicesSelected__wrapper">
                             <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="face">
                                 <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
+                                    <span class="servicesSelected__choice" id="improve-complexion">Улучшить цвет лица</span>
                                 </li>
                                 <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
+                                    <span class="servicesSelected__choice" id="refresh-your-skin">Освежить кожу</span>
                                 </li>
                                 <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Легкий пилинг</span>
+                                    <span class="servicesSelected__choice" id="light-peeling">Легкий пилинг</span>
                                 </li>
                                 <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Пигментация</span>
+                                    <span class="servicesSelected__choice" id="pigmentation">Пигментация</span>
                                 </li>
                                 <li class="servicesSelected__item">
                                     <span class="servicesSelected__choice">Омоложение кожи</span>
@@ -92,7 +92,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                             </ul>
                             <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="body">
                                 <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Улучшить цвет тела</span>
+                                    <span class="servicesSelected__choice" id="improve-body-color">Улучшить цвет тела</span>
                                 </li>
                                 <li class="servicesSelected__item">
                                     <span class="servicesSelected__choice">Освежить кожу</span>
@@ -209,7 +209,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                             </ul>
                         </div>
                     </div>
-                    <div class="btnBlue banerServices__btn disabled">Посмотреть услуги</div>
+                    <div class="btnBlue banerServices__btn banerServicesBtn_js disabled">Посмотреть услуги</div>
                 </div>
             </div>
         </section>
