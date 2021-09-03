@@ -33,31 +33,11 @@
                                 <li class="headerNavTop__li">
                                     <a class="headerNavTop__link headerNavTop__hover" href="#">Блог</a>
                                 </li>
-                                <li class="headerNavTop__li headerNavList">
-                                    <a class="headerNavTop__link about" href="#">
+                                <li class="headerNavTop__li">
+                                    <div class="headerNavTop__link about headerAboutPosition_js headerAboutHover_js">
                                         О нас
                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerNavT-active.svg';?>
-                                    </a>
-                                    <ul class="headerNavList__content">
-                                        <li class="headerNavList__li">
-                                            <a href="#" class="headerNavList__a">О Dolce Vita</a>
-                                        </li>
-                                        <li class="headerNavList__li">
-                                            <a href="#" class="headerNavList__a">Специалисты</a>
-                                        </li>
-                                        <li class="headerNavList__li">
-                                            <a href="#" class="headerNavList__a">Отзывы клиентов</a>
-                                        </li>
-                                        <li class="headerNavList__li">
-                                            <a href="#" class="headerNavList__a">Работа в Dolce Vita</a>
-                                        </li>
-                                        <li class="headerNavList__li">
-                                            <a href="#" class="headerNavList__a">Блог</a>
-                                        </li>
-                                        <li class="headerNavList__li">
-                                            <a href="#" class="headerNavList__a">Вопросы и ответы</a>
-                                        </li>
-                                    </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -103,6 +83,28 @@
             </div>
         </header>
 
+        <div class="headerAbout headerAboutList_js headerAbout_js headerAboutHover_js">
+            <ul class="headerAbout__content">
+                <li class="headerAbout__li">
+                    <a href="#" class="headerAbout__a">О Dolce Vita</a>
+                </li>
+                <li class="headerAbout__li">
+                    <a href="#" class="headerAbout__a">Специалисты</a>
+                </li>
+                <li class="headerAbout__li">
+                    <a href="#" class="headerAbout__a">Отзывы клиентов</a>
+                </li>
+                <li class="headerAbout__li">
+                    <a href="#" class="headerAbout__a">Работа в Dolce Vita</a>
+                </li>
+                <li class="headerAbout__li">
+                    <a href="#" class="headerAbout__a">Блог</a>
+                </li>
+                <li class="headerAbout__li">
+                    <a href="#" class="headerAbout__a">Вопросы и ответы</a>
+                </li>
+            </ul>
+        </div>
         <div class="headerServices headerServicesMenu_js">
             <div class="headerServices__content container">
                 <div class="headerServices__close">

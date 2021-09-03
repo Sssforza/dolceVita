@@ -20,7 +20,6 @@ export function headerServices () {
         });
     }
 }
-
 // header open search input
 export function headerSearch () {
     if(document.querySelector('.headerQuest_js')) {
@@ -32,7 +31,6 @@ export function headerSearch () {
 		};
     }
 }
-
 // header menu selection
 export function menuSelection () {
     if(document.querySelector('.servicesMain_js')) {
