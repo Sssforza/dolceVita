@@ -15,7 +15,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
 								и&nbsp;красоты: инновационные решения, передовые технологии
 							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
+							<a href="#" class="btnWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
 						</div>
 					</div>
 				</div>
@@ -30,7 +30,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								производящаяся в&nbsp;соответствии со&nbsp;строгим
 								соблюдением всех фармацевтических стандартов.
 							</div>
-							<a href="#" class="btrWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
+							<a href="#" class="btnWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
 						</div>
 					</div>
 				</div>

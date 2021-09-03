@@ -80,7 +80,7 @@ body {
     color: $white;
     background: $purple;
     border-radius: 20px;
-    transition: all .5s;
+    transition: $transition5;
     &:hover {
         background: #820062;
     }
@@ -88,7 +88,7 @@ body {
         background: $gray;
     }
 }
-.btrWhiteBorder {
+.btnWhiteBorder {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,14 +102,14 @@ body {
     background: transparent;
     border: 2px solid $white;
     border-radius: 20px;
-    transition: $transition;
+    transition: $transition5;
     &:hover {
         color: $white;
         background: $greenLight;
         border: 2px solid $greenLight;
     }
 }
-.btrBlueBorder {
+.btnBlueBorder {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,6 +122,12 @@ body {
     color: $blueDark;
     border: 2px solid $blueDark;
     border-radius: 20px;
+    transition: $transition5;
+    &:hover {
+        color: $white;
+        background: $greenMedium;
+        border: 2px solid $greenMedium;
+    }
 }
 .btnBlue {
     flex: none;
@@ -137,6 +143,7 @@ body {
     color: $white;
     background: $blueDark;
     border-radius: 20px;
+    transition: $transition5;
 }
 //breadCrumbs
 .breadCrumbs {
@@ -266,8 +273,23 @@ body {
     right: 48px !important;
     opacity: 1 !important;
     cursor: pointer;
-    svg {
-        display: block;
+}
+.popupBlock {
+    &__close {
+        svg {
+            display: block;
+            path {
+                transition: $transition;
+            }
+        }
+        &:hover {
+            svg {
+                display: block;
+                path {
+                    fill: $greenDark;
+                }
+            }
+        }
     }
 }
 //envelope inputs
@@ -327,7 +349,7 @@ body {
         border: 2px solid transparent;
         border-radius: 20px;
         @include placeholder(18px, $greenMedium, EuclidFlex);
-        transition: all .5s;
+        transition: $transition5;
     }
     &:hover {
         input {
@@ -349,7 +371,7 @@ body {
         border: 2px solid #A9C2C9;
         border-radius: 32px;
         @include placeholder(23px, $greenMedium, EuclidFlex);
-        transition: all .5s;
+        transition: $transition5;
     }
     &:hover {
         input {
@@ -527,8 +549,8 @@ body {
         color: $blueDark;
     }
     &_attendance {
-        padding-top: 56px;
-        height: 680px;
+        padding-top: 57px;
+        height: 737px;
         overflow: hidden;
         transition: all .4s ease-in-out;
     }
@@ -655,6 +677,12 @@ body {
         line-height: 23px;
         font-weight: 500;
         color: $blueDark;
+        border-bottom: 1px solid transparent;
+        transition: $transition;
+        &:hover {
+            color: $greenMedium;
+            border-bottom: 1px solid $greenMedium;
+        }
     }
     &_programm {
         .servicesCard__how {
@@ -701,13 +729,15 @@ body {
     &__header {
         display: flex;
         padding-right: 40px;
+        max-height: 100px;
+        overflow: hidden;
     }
     &__title {
         font-size: 36px;
         line-height: 50px;
         color: $blueDark;
         font-family: 'Prata';
-        padding-right: 70px;
+        padding-right: 41px;
     }
     &__programm {
         padding: 3px 8px 2px;
@@ -720,9 +750,31 @@ body {
         background: #3b5e8280;
         border-radius: 0 10px;
     }
-    &__list {
+    &__wrapper {
         margin-top: 22px;
-        height: 367px;
+        position: relative;
+        &:before,
+        &:after {
+            content:'';
+            position: absolute;
+            right: 0;
+            left: 0;
+            height: 20px;
+            z-index: 1;
+        }
+        &:before {
+            top: 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        &:after {
+            bottom: 0;
+            background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+        }
+    }
+    &__list {
+        padding-top: 8px;
+        padding-right: 50px;
+        height: 362px;
     }
     &__item {
         margin-bottom: 24px;
@@ -751,23 +803,6 @@ body {
         line-height: 23px;
         color: $greenDark;
     }
-    .scroll-wrapper {
-        padding-right: 54px !important;
-    }
-    .scrollbar-inner>.scroll-element.scroll-y {
-        width: 4px;
-        border-radius: 10px;
-    }
-    .scrollbar-inner>.scroll-element .scroll-element_track {
-        width: 4px;
-        left: 0;
-        margin-left: 0;
-    }
-    .scrollbar-inner>.scroll-element .scroll-bar {
-        width: 4px;
-        background-color: #B3BFCF;
-        border-radius: 10px;
-    }
 }
 @keyframes mainLinesDraw{
     to {stroke-dashoffset: 0;}
@@ -791,17 +826,17 @@ body {
     &::-webkit-scrollbar-button {
         background-image: url("");
         background-repeat: no-repeat;
-        width: 1px;
+        width: 4px;
         height: 0px;
     }
     &::-webkit-scrollbar-track {
         margin: 15px 0;
-        width: 1px;
+        width: 4px;
         background-color: #E9E5E8;
         border-radius: 10px;
     }
     &::-webkit-scrollbar-thumb {
-        width: 7px;
+        width: 4px;
         -webkit-border-radius: 0px;
         border-radius: 10px;
         background-color: $purple;
@@ -817,7 +852,46 @@ body {
     &::-webkit-resizer {
         background-image: url("");
         background-repeat: no-repeat;
-        width: 1px;
+        width: 4px;
+        height: 0px;
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+.scrollbarCustomGray {
+    overflow: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar-button {
+        background-image: url("");
+        background-repeat: no-repeat;
+        width: 4px;
+        height: 0px;
+    }
+    &::-webkit-scrollbar-track {
+        margin-top: 22px;
+        width: 4px;
+        background-color: #DFE9F9;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        width: 4px;
+        -webkit-border-radius: 0px;
+        border-radius: 10px;
+        background-color: #B3BFCF;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+            background-color: $greenDark !important;
+        }
+        &:active {
+            background-color: $greenDark !important;
+        }
+    }
+    &::-webkit-resizer {
+        background-image: url("");
+        background-repeat: no-repeat;
+        width: 4px;
         height: 0px;
     }
     &::-webkit-scrollbar {

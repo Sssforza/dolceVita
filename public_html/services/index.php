@@ -209,7 +209,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                             </ul>
                         </div>
                     </div>
-                    <div class="btnBlue banerServices__btn">Посмотреть услуги</div>
+                    <div class="btnBlue banerServices__btn disabled">Посмотреть услуги</div>
                 </div>
             </div>
         </section>
@@ -824,7 +824,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                         <div class="servicesCardBig__more">
                             <div class="servicesCardBig__link servicesCardBtn_js">посмотреть</div>
                         </div>
-                        <div class="servicesCardBig__number servicesCardNumber_js">18</div>
+                        <div class="servicesCardBig__number servicesCardNumber_js">13</div>
                     </div>
                 </div>
             </div>
@@ -835,9 +835,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                 <div class="services__container">
                     <div class="cosmeticCard">
                         <div class="cosmeticCard__top">
-                            <div class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></div>
+                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
                             <div class="cosmeticCard__title">
-                                <a class="cosmeticCard__name" href="">Babor Spa</a>
+                                <a href="" class="cosmeticCard__name">Babor Spa</a>
                             </div>
                         </div>
                         <div class="cosmeticCard__bottom">
@@ -856,9 +856,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                     </div>
                     <div class="cosmeticCard">
                         <div class="cosmeticCard__top">
-                            <div class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></div>
+                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
                             <div class="cosmeticCard__title">
-                                <a class="cosmeticCard__name" href="">Babor Spa</a>
+                                <a href="" class="cosmeticCard__name">Babor Spa</a>
                             </div>
                         </div>
                         <div class="cosmeticCard__bottom">
@@ -877,9 +877,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                     </div>
                     <div class="cosmeticCard">
                         <div class="cosmeticCard__top">
-                            <div class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></div>
+                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
                             <div class="cosmeticCard__title">
-                                <a class="cosmeticCard__name" href="">Babor Spa</a>
+                                <a href="" class="cosmeticCard__name">Babor Spa</a>
                             </div>
                         </div>
                         <div class="cosmeticCard__bottom">
@@ -898,9 +898,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                     </div>
                     <div class="cosmeticCard">
                         <div class="cosmeticCard__top">
-                            <div class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></div>
+                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
                             <div class="cosmeticCard__title">
-                                <a class="cosmeticCard__name" href="">Babor Spa</a>
+                                <a href="" class="cosmeticCard__name">Babor Spa</a>
                             </div>
                         </div>
                         <div class="cosmeticCard__bottom">
@@ -919,9 +919,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                     </div>
                     <div class="cosmeticCard">
                         <div class="cosmeticCard__top">
-                            <div class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></div>
+                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
                             <div class="cosmeticCard__title">
-                                <a class="cosmeticCard__name" href="">Babor Spa</a>
+                                <a href="" class="cosmeticCard__name">Babor Spa</a>
                             </div>
                         </div>
                         <div class="cosmeticCard__bottom">
@@ -940,9 +940,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                     </div>
                     <div class="cosmeticCard">
                         <div class="cosmeticCard__top">
-                            <div class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></div>
+                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
                             <div class="cosmeticCard__title">
-                                <a class="cosmeticCard__name" href="">Babor Spa</a>
+                                <a href="" class="cosmeticCard__name">Babor Spa</a>
                             </div>
                         </div>
                         <div class="cosmeticCard__bottom">
@@ -973,7 +973,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                                 У&nbsp;Вас есть отличный повод записаться <br>на&nbsp;процедуру LPG‐массажа, 
                                 которую вы&nbsp;уже давно <br>откладывали!
                             </div>
-                            <a class="servicesAction__btn btrWhiteBorder" href="#">ЗАПИСАТЬСЯ НА ПРИЁМ</a>
+                            <a class="servicesAction__btn btnWhiteBorder" href="#">ЗАПИСАТЬСЯ НА ПРИЁМ</a>
                         </div>
                     </div>
                 </div>
@@ -981,80 +981,6 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
         </section>
     </section>
 </main>
-<div id="popupMoreStage" class="mfp-hide popupBlock serviceMore">
-    <div class="mfp-close popupBlock__close popupClose_js">
-        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/popupsClose.svg';?>
-    </div>
-    <div class="serviceMore__content">
-        <div class="serviceMore__left">
-            <div class="serviceMore__img" style="background-image:url(/dist/img/servicesCardImg.png)">
-            </div>
-            <a class="btrBlueBorder serviceMore__btn" href="">Подробнее о программе</a>
-        </div>
-        <div class="serviceMore__right">
-            <div class="serviceMore__header">
-                <div class="serviceMore__title"></div>
-                <div class="serviceMore__programm">программа</div>
-            </div>
-            <div class="serviceMore__list scrollbar-inner">
-                <div class="serviceMore__item">
-                    <div class="serviceMore__stage">1 ЭТАП</div>
-                    <div class="serviceMore__description">
-                        <div class="serviceMore__name">Криолиполиз</div>
-                        <div class="serviceMore__text">
-                            Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах
-                        </div>
-                    </div>
-                </div>
-                <div class="serviceMore__item">
-                    <div class="serviceMore__stage">2 ЭТАП</div>
-                    <div class="serviceMore__description">
-                        <div class="serviceMore__name">LPG-массаж</div>
-                        <div class="serviceMore__text">
-                            Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение
-                        </div>
-                    </div>
-                </div>
-                <div class="serviceMore__item">
-                    <div class="serviceMore__stage">3 ЭТАП</div>
-                    <div class="serviceMore__description">
-                        <div class="serviceMore__name">Морское утончение</div>
-                        <div class="serviceMore__text">
-                            Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.
-                        </div>
-                    </div>
-                </div>
-                <div class="serviceMore__item">
-                    <div class="serviceMore__stage">4 ЭТАП</div>
-                    <div class="serviceMore__description">
-                        <div class="serviceMore__name">Vela Shape II</div>
-                        <div class="serviceMore__text">
-                            Позволяет уменьшить растяжки, подтянуть и разгладить кожу
-                        </div>
-                    </div>
-                </div>
-                <div class="serviceMore__item">
-                    <div class="serviceMore__stage">5 ЭТАП</div>
-                    <div class="serviceMore__description">
-                        <div class="serviceMore__name">Лифтинг</div>
-                        <div class="serviceMore__text">
-                            Лифтинг
-                        </div>
-                    </div>
-                </div>
-                <div class="serviceMore__item">
-                    <div class="serviceMore__stage">6 ЭТАП</div>
-                    <div class="serviceMore__description">
-                        <div class="serviceMore__name">Моделирование фигуры</div>
-                        <div class="serviceMore__text">
-                            Моделирование
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>

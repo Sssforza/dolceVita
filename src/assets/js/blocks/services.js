@@ -48,7 +48,6 @@ export function popupMoreStageDate () {
                 newName.innerHTML = item.querySelector('.servicesCard__how').innerHTML;
                 newText.innerHTML = item.getAttribute('data-description');
             });
-            $(".scrollbar-inner").scrollbar();
         });
     });
 }
@@ -63,8 +62,9 @@ export function servicesAttendance () {
         const num = parent.querySelector('.servicesCardNumber_js').innerHTML;
         const numPaste = parent.querySelector('.servicesCardNumber_js');
         const gap = getComputedStyle(flex).gap.replace(/[\D]+/g, '');
+        const padding = getComputedStyle(parent).paddingTop.replace(/[\D]+/g, '');
         let numberItems = Number(num);
-        let heightPaste;
+        let heightPaste = 0 - padding;
         let count = 1;
         let countGap = 0;
 		btn.addEventListener( "click" , (e) => {
@@ -73,12 +73,11 @@ export function servicesAttendance () {
             numberItems = numberItems - 6;
             numPaste.innerHTML = numberItems;
             heightPaste = (height * count) + (Number(gap) * countGap);
+            heightPaste = heightPaste - padding;
             if (heightPaste < heightAll){
-                console.log('if');
                 parent.style.height = heightPaste + "px";
             }
-            if (heightPaste === heightAll){
-                console.log('=');
+            if (heightPaste === heightAll || heightPaste > heightAll){
                 parent.style.height = heightPaste + "px";
                 btn.closest(".servicesCardBig").remove();
             }
@@ -92,12 +91,19 @@ export function servicesSelectedDrop () {
         const parentTabs = document.querySelector('.servicesTabsList_js');
         const input = parentList.querySelector('.servicesSelectedInput_js');
         const selected = parentList.querySelector('.servicesSelectedSelected_js');
+        const btn = document.querySelector('.banerServices__btn');
         let lists = parentList.querySelectorAll('.servicesSelectedList_js');
         let tabs = parentTabs.querySelectorAll('.servicesTabs_js');
         let choice = parentList.querySelectorAll('.servicesSelected__choice');
         let thisChoice;
         let dataSelect;
-        // const menu = document.querySelector('.servicesSelected__wrapper');
+        const checkBtn = function() {
+            if(selected.value <= 0) {
+                btn.classList.add('disabled');
+            } else {
+                btn.classList.remove('disabled');
+            }
+        }
         const toggleMenu = function() {
             parentList.classList.toggle('open');
         }
@@ -136,11 +142,11 @@ export function servicesSelectedDrop () {
             });
         });
         document.onclick = function(e){
+            checkBtn();
             var container = $(".servicesSelected__wrapper");
             var container2 = $(".servicesTabs__item");
             var container3 = $(".servicesSelectedInput_js");
-            if (container.has(e.target).length === 0 && container2.has(e.target).length === 0 && container3.has(e.target).length === 0){
-                console.log(1);
+            if (container2.has(e.target).length === 0 && container3.has(e.target).length === 0){
                 parentList.classList.remove('open');
             }
         };
