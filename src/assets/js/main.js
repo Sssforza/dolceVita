@@ -30,7 +30,7 @@ import {scrollbar} from "./blocks/scrollbar.js";
 import {usefulBlogHover} from "./blocks/index.js";
 
 //📁 /assets/js/blocks  services.js
-import {popupMoreStageDate, servicesAttendance, servicesSelectedDrop} from "./blocks/services.js";
+import {servicesSelectedDrop, servicesSelectedFetch} from "./blocks/services.js";
 
 //📁 /assets/js/blocks  specialist.js
 import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/specialist.js";
@@ -103,14 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // moreStage
     moreStage();
 
-    // popupMoreStageDate
-    popupMoreStageDate();
-
-    // services attendance all cards
-    servicesAttendance();
-
     // services selected drop
     servicesSelectedDrop();
+
+    // popup more stage date
+    // services attendance all cards
+    // services selected fetch
+    servicesSelectedFetch();
 
     // about specialist show all
     aboutSpecialistShowAll();

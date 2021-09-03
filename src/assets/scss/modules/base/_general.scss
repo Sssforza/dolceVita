@@ -52,6 +52,11 @@ body {
                 opacity: 1;
             }
         }
+        .header {
+            &:after {
+                top: -100%;
+            }
+        }
     }
 }
 .page {
