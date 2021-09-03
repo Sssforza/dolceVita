@@ -1,9 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+$APPLICATION->SetTitle("");
+$APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 ?>
-<link rel='stylesheet' href="/dist/css/blocks/services.css">
 <main class="main">
-	<section class="page page_services">
+    <section class="page page_services">
         <section class="banerSection banerServices">
             <div class="breadCrumbs gradientHeader_js">
                 <ul class="breadCrumbs__list">
@@ -978,7 +979,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
                 </div>
             </div>
         </section>
-	</section>
+    </section>
 </main>
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");

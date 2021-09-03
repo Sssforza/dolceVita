@@ -114,6 +114,17 @@
                     <div class="headerServices__cover headerServicesClose_js">Закрыть меню</div>
                 </div>
                 <div class="headerServices__box">
+                    <? $APPLICATION->IncludeComponent("ferma:menu.sections.elements",
+                        ".default",
+                        Array(
+                        "IS_SEF" => "N",
+                        "IBLOCK_TYPE" => "", 
+                        "IBLOCK_ID" => array('13', '14'), 
+                        "DEPTH_LEVEL" => "4", 
+                        "CACHE_TYPE" => "N", 
+                        "CACHE_TIME" => "3600" 
+                    )
+                );?>
                     <div class="servicesMain">
                         <ul class="servicesMain__list">
                             <li class="servicesMain__item">
