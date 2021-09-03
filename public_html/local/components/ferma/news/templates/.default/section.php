@@ -18,7 +18,7 @@ $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
 ?>
 <main class="main">
 	<pre>
-	<? //print_r($arResult)?>
+	<? print_r($arResult)?>
 	</pre>
     <section class="page page_services">
         <section class="banerSection banerServices">
@@ -32,16 +32,18 @@ $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
                 <div class="banerServices__header">
                     <div class="banerServices__title"><?= $arResult['IBLOCK_AR']['NAME']?></div>
                     <? if ($arResult['MENU_ITEMS'][$section_id] || $arResult['MENU_ITEMS'][$iblock_section_id]) {?>
-                    	<div class="banerServices__tabs servicesTabs">
+                    	<div class="banerServices__tabs servicesTabs servicesTabsList_js">
 	                        <div class="servicesTabs__list">
 	                        	<? foreach ($arResult['MENU_ITEMS'][$parent_id] as $key => $value) { ?>
 	                        		<? $active = '';
 	                        		if ($section_id == $value["ID"] || ($section_id == $parent_id && $key == 0)) {
 	                        			$active = 'active';
+                                        $data_select = $value["ID"];
 	                        		}?>
-	                        		<a href="<?= $value['LINK']?>" class='servicesTabs__item <?= $active?>'>
+	                        		<div class='servicesTabs__item servicesTabs_js <?= $active?>' data-tab="<?= $value['ID']?>">
 		                                <span><?= $value['NAME']?></span>
-		                            </a>
+		                            </div>
+                                    <?$ar_section[] = $value['ID'] ?>
 	                        	<? } ?>
 	                        </div>
 	                    </div>
@@ -50,16 +52,26 @@ $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
                 <? if ($arResult['ELEMENT_AR'][$section_id] || $arResult['ELEMENT_AR'][$iblock_section_id]) { ?>
 	                <? if ($arResult['MENU_ITEMS']['ROOT'][$parent_id]['DESCRIPTION']) { ?>
 	                	<div class="banerServices__question"><?= $arResult['MENU_ITEMS']['ROOT'][$parent_id]['DESCRIPTION']?></div>
-	                <? } ?>                
+	                <? } ?>
                 	<div class="banerServices__selected">
-	                    <div class="servicesSelected">
-	                        <div class="servicesSelected__input">
-	                            <input type="text" placeholder="Выберите желаемый результат">
-	                        </div>
-	                        <div class="servicesSelected__list">
-	                            <div class="servicesSelected__item"></div>
-	                        </div>
-	                    </div>
+	                    <div class="servicesSelected servicesSelected_js">
+                            <div class="servicesSelected__input servicesSelectedInput_js" data-select="<?= $data_select?>">
+                                <input class="servicesSelectedSelected_js" type="text" placeholder="Выберите желаемый результат" readonly>
+                            </div>
+                            <div class="servicesSelected__wrapper">
+                                <? foreach ($ar_section as $arElement) { ?>
+                                    <? if (array_key_exists($arElement, $arResult['ELEMENT_AR'])) { ?>
+                                        <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="<?= $arElement?>">
+                                            <? foreach ($arResult['ELEMENT_AR'][$arElement] as $element) { ?>
+                                                <li class="servicesSelected__item">
+                                                    <span class="servicesSelected__choice"><?= $element['NAME']?></span>
+                                                </li>
+                                            <? } ?>
+                                        </ul>
+                                    <? } ?>
+                                <? } ?>
+                            </div>
+                        </div>
 	                    <div class="btnBlue banerServices__btn">Посмотреть услуги</div>
 	                </div>
                 <? } ?>
