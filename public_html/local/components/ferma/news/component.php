@@ -193,14 +193,20 @@ if($arParams["SEF_MODE"] == "Y")
 		$ar_sections= explode('/', $arVariables['SECTION_CODE_PATH']);
 		$arVariables['PARENT_SECTION_ID'] = '';
 		foreach ($ar_sections as $section) {
-			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'CODE' => $section, 'SITE_ID' => SITE_ID));
+			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'CODE' => $section, 'SITE_ID' => SITE_ID),false, array("ID", "IBLOCK_ID", "*", "UF_*"));
 			$sec = $res->Fetch();
 			$arVariables['IBLOCK_SECTION_ID'][] = $sec['ID'];
 			if (empty($arVariables['PARENT_SECTION_ID'])) {
 				$arVariables['PARENT_SECTION_ID'] = $sec['ID'];
 			}
+			$arVariables['UF_ELEMENT'] = $sec['UF_ELEMENT'];
 		}
 	} else {
+		if ($arVariables['SECTION_ID']) {
+			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'ID' => $arVariables['SECTION_ID'], 'SITE_ID' => SITE_ID),false, array("ID", "IBLOCK_ID", "UF_*"));
+			$sec = $res->Fetch();
+			$arVariables['UF_ELEMENT'] = $sec['UF_ELEMENT'];
+		}
 		$arVariables['IBLOCK_SECTION_ID'][] = $menuItems[$arVariables['SECTION_ID']][0]["ID"];
 		$arVariables['PARENT_SECTION_ID'] = $arVariables['SECTION_ID'];
 	}
