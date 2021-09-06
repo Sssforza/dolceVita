@@ -17304,9 +17304,6 @@ function map() {
       controls: []
     });
     myMap.geoObjects.add(new ymaps.Placemark([54.995715, 73.353974], {
-      balloonContent: 'цвет <strong>носика Гены</strong>',
-      iconCaption: 'Dolce Vita'
-    }, {
       preset: 'islands#icon',
       iconColor: '#0095b6'
     }));

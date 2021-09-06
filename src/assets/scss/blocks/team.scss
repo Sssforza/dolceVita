@@ -27,6 +27,12 @@
         opacity: 0.6;
         cursor: pointer;
         transition: $transition;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $purple;
+                opacity: 1;
+            }
+        }
         &:after {
             content:'';
             position: absolute;
@@ -42,6 +48,7 @@
         &.active {
             opacity: 1;
             cursor: auto;
+            pointer-events: none;
             &:after {
                 background: $purple;
             }
@@ -69,15 +76,17 @@
     }
     &__item {
         width: 281px;
-        &.hover {
-            .teamPeople__bg {
-                svg {
-                    display: block;
-                    .border {
-                        opacity: 1;
-                    }
-                    .circle {
-                        opacity: 1;
+        @media (min-width:$xl) {
+            &.hover {
+                .teamPeople__bg {
+                    svg {
+                        display: block;
+                        .border {
+                            opacity: 1;
+                        }
+                        .circle {
+                            opacity: 1;
+                        }
                     }
                 }
             }

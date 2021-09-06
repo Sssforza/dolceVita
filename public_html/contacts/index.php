@@ -53,23 +53,17 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
                                 </div>
                                 <div class="contacts__social">
                                     <div class="contacts__name">Социальные <br>сети</div>
-                                    <ul class="contacts__ul">
-                                        <li class="contacts__li">
-                                            <a href="" class="contacts__link">
-                                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/inst.svg';?>
-                                            </a>
-                                        </li>
-                                        <li class="contacts__li">
-                                            <a href="" class="contacts__link">
-                                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/fb.svg';?>
-                                            </a>
-                                        </li>
-                                        <li class="contacts__li">
-                                            <a href="" class="contacts__link">
-                                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/vk.svg';?>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div class="contacts__ul">
+                                        <a href="" class="contacts__link">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/inst.svg';?>
+                                        </a>
+                                        <a href="" class="contacts__link">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/fb.svg';?>
+                                        </a>
+                                        <a href="" class="contacts__link">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/vk.svg';?>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
