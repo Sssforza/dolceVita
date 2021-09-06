@@ -1,23 +1,19 @@
 // header services
 export function headerServices () {
-    if(document.querySelector('.headerServices_js')) {
+    if(document.querySelectorAll('.headerServices_js')) {
         const header = document.querySelector('.header_js');
-        const headerServicesElem = document.querySelector('.headerServices_js');
-        const headerServicesClose = document.querySelectorAll('.headerServicesClose_js');
-        headerServicesElem.onmouseover = function(e) {
+        $( ".headerServices_js" ).hover(function(){
             document.body.classList.add('openServicesMenu');
-            headerServicesElem.classList.add('active');
+            $(this).addClass('active');
             header.classList.add('gray');
-        };
-        headerServicesClose.forEach((item) => {
-            item.addEventListener( "click" , (e) => {
-                document.body.classList.remove('openServicesMenu');
-                headerServicesElem.classList.remove('active');
-                if(document.querySelector('.main.whiteBg_js') == null){
-                    header.classList.remove('gray');
-                }
-            });
         });
+        $('.headerServicesClose_js').on('click', function(){
+			document.body.classList.remove('openServicesMenu');
+            $('.headerServicesClose_js').removeClass('active');
+            if(document.querySelector('.main.whiteBg_js') == null){
+                header.classList.remove('gray');
+            }
+		});
     }
 }
 // header open search input
