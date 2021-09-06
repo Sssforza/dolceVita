@@ -250,16 +250,40 @@
         bottom: 0;
         left: 0;
         width: 1000000000px;
-        &_1 {
+        &_1,
+        &_2,
+        &_3,
+        &_4,
+        &_5 {
+            position: absolute;
+            bottom: 0;
             display: block;
             width: 100%;
             height: 200px;
             background: {
                 image: url($imgUrl + "sliderMainArrows.png");
                 repeat: repeat;
-                //position: 0;
             }
-	        animation: animatedBackground 18000s linear infinite;
+            animation: animatedBackground 18000s linear infinite;
+        }
+        &_1 {
+            opacity: .9;
+        }
+        &_2 {
+            left: -700px;
+            opacity: .8;
+        }
+        &_3 {
+            left: -1300px;
+            opacity: .7;
+        }
+        &_4 {
+            left: -1900px;
+            opacity: .6;
+        }
+        &_5 {
+            left: -2500px;
+            opacity: .5;
         }
     }
     .slick-active {

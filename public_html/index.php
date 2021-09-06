@@ -41,6 +41,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 			</div>
 			<div class="sliderMain__waves">
 				<div class="sliderMain__waves_1"></div>
+				<div class="sliderMain__waves_2"></div>
+				<div class="sliderMain__waves_3"></div>
+				<div class="sliderMain__waves_4"></div>
+				<div class="sliderMain__waves_5"></div>
 			</div>
 		</section>
 		<section class="originalEquipment" data-midnight="gray">
