@@ -256,15 +256,15 @@
         &_4,
         &_5 {
             position: absolute;
-            bottom: 0;
+            bottom: 20px;
             display: block;
             width: 100%;
-            height: 200px;
+            height: 202px;
             background: {
                 image: url($imgUrl + "sliderMainArrows.png");
                 repeat: repeat;
             }
-            animation: animatedBackground 18000s linear infinite;
+            animation: animatedBackground 35000s linear infinite;
         }
         &_1 {
             opacity: .9;
@@ -430,28 +430,30 @@
         position: absolute;
         top: -120px;
         left: -125px;
-        &:hover {
-            svg {
-                .sliderEquipWarranty__path {
-                    &_1 {
-                        opacity: .6;
-                        transform: rotate(15deg);
-                    }
-                    &_2 {
-                        opacity: .5;
-                        transform: rotate(25deg) scale(.95);
-                    }
-                    &_3 {
-                        opacity: .4;
-                        transform: rotate(25deg);
-                    }
-                    &_4 {
-                        opacity: .3;
-                        transform: rotate(15deg);
-                    }
-                    &_5 {
-                        opacity: .2;
-                        transform: rotate(15deg);
+        @media (min-width:$xl) {
+            &:hover {
+                svg {
+                    .sliderEquipWarranty__path {
+                        &_1 {
+                            opacity: .6;
+                            transform: rotate(15deg);
+                        }
+                        &_2 {
+                            opacity: .5;
+                            transform: rotate(25deg) scale(.95);
+                        }
+                        &_3 {
+                            opacity: .4;
+                            transform: rotate(25deg);
+                        }
+                        &_4 {
+                            opacity: .3;
+                            transform: rotate(15deg);
+                        }
+                        &_5 {
+                            opacity: .2;
+                            transform: rotate(15deg);
+                        }
                     }
                 }
             }
@@ -967,6 +969,7 @@
         }
     }
     &__people {
+        display: block;
         width: 100%;
         height: 100%;
         position: relative;

@@ -173,7 +173,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 					</div>
 					<div class="specialists__box">
 						<div class="specialists__nav specialistsNav scrollbar">
-							<div class="specialistsNav__content specialistsNavScroll_js scrollbar-inner">
+							<div class="specialistsNav__content specialistsNavScroll_js scrollbarCustom">
 								<div class="specialistsNav__item active" data-slide="1">
 									<div class="specialistsNav__img">
 										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav1.png)"></div>
@@ -525,7 +525,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 		</section>
-		<div class="reviews reviews_js" data-midnight="gray">
+		<section class="reviews reviews_js" data-midnight="gray">
 			<div class="reviews__bg"></div>
 			<div class="reviews__svg">
 				<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesHeart.svg';?>
@@ -536,44 +536,44 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 				<div class="reviews__list">
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem1.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem1.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem2.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem3.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem3.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem4.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem4.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem5.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem5.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem6.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem6.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem7.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem7.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem8.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem8.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem9.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem9.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem10.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem11.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem11.png)"></a>
 					</div>
 					<div class="reviews__item">
-						<div class="reviews__people" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+						<a href="#" class="reviews__people" style="background-image:url(/dist/img/reviewsItem12.png)"></a>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<section class="sectionConsult sectionConsult_js" data-midnight="gray">
 			<div class="sectionConsult__content container">
 				<div class="bonusSystem__ground bonusSystem__ground_left">
