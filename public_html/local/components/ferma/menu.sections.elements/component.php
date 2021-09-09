@@ -98,9 +98,9 @@ if($this->StartResultCache()) {
     //}
     //Рекурсивно сформируем итоговый массив для меню
     $arResult = array();
-    echo '<pre>';
-    print_r($menuItems);
-    echo '</pre>';
+    // echo '<pre>';
+    // print_r($menuItems);
+    // echo '</pre>';
     createMenuArray($arResult,$menuItems,$menuItems['ROOT'],1);
     $this->EndResultCache();
 }
