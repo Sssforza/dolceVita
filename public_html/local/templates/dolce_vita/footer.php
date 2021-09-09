@@ -24,7 +24,7 @@
                 <div class="footer__top">
                     <div class="footer__left">
                         <div class="footer__address">Омск, ул. Волочаевская, 15/1</div>
-                        <a class="footer__yandex" href="#">Смотреть в Яндекс.Картах</a>
+                        <a class="footer__yandex" href="https://yandex.ru/maps/66/omsk/house/volochayevskaya_ulitsa_15k1/Y0oYdQJjQEIDQFtufXV4dHtiYQ==/?ll=73.353973%2C54.995715&z=17" target="_blank">Смотреть в Яндекс.Картах</a>
                         <div class="footer__mode footerMode">
                             <div class="footerMode__item">
                                 <span class="footerMode__day">Пн — сб</span>
@@ -40,22 +40,22 @@
                         <nav class="footer__nav footerNav">
                             <ul class="footerNav__list">
                                 <li class="footerNav__li">
-                                    <a href="#" class="footerNav__link">Услуги</a>
+                                    <a href="/services/" class="footerNav__link">Услуги</a>
                                 </li>
                                 <li class="footerNav__li">
                                     <a href="#" class="footerNav__link">Магазин</a>
                                 </li>
                                 <li class="footerNav__li">
-                                    <a href="#" class="footerNav__link">Цены</a>
+                                    <a href="/price/" class="footerNav__link">Цены</a>
                                 </li>
                                 <li class="footerNav__li">
                                     <a href="#" class="footerNav__link">О нас</a>
                                 </li>
                                 <li class="footerNav__li">
-                                    <a href="#" class="footerNav__link">Специалисты</a>
+                                    <a href="/team/" class="footerNav__link">Специалисты</a>
                                 </li>
                                 <li class="footerNav__li">
-                                    <a href="#" class="footerNav__link">Контакты</a>
+                                    <a href="/contacts/" class="footerNav__link">Контакты</a>
                                 </li>
                                 <li class="footerNav__li">
                                     <a href="#" class="footerNav__link">Блог</a>
@@ -65,17 +65,17 @@
                         <div class="footer__social footerSocial">
                             <ul class="footerSocial__list">
                                 <li class="footerSocial__item">
-                                    <a href="" class="footerSocial__link">
+                                    <a href="https://www.instagram.com/dolcevita_omsk/" class="footerSocial__link" target="_blank">
                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-inst.svg';?>
                                     </a>
                                 </li>
                                 <li class="footerSocial__item">
-                                    <a href="" class="footerSocial__link">
+                                    <a href="https://www.facebook.com/dolcevita.omsk/" class="footerSocial__link" target="_blank">
                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-fb.svg';?>
                                     </a>
                                 </li>
                                 <li class="footerSocial__item">
-                                    <a href="" class="footerSocial__link">
+                                    <a href="https://vk.com/dolcevita55" class="footerSocial__link" target="_blank">
                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-vk.svg';?>
                                     </a>
                                 </li>

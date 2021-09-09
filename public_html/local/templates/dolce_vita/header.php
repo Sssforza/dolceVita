@@ -28,7 +28,7 @@
                         <div class="headerNavTop">
                             <ul class="headerNavTop__ul">
                                 <li class="headerNavTop__li">
-                                    <a class="headerNavTop__link headerNavTop__hover" href="#">Контакты</a>
+                                    <a class="headerNavTop__link headerNavTop__hover" href="/contacts/">Контакты</a>
                                 </li>
                                 <li class="headerNavTop__li">
                                     <a class="headerNavTop__link headerNavTop__hover" href="#">Блог</a>
@@ -53,7 +53,7 @@
                                     <a class="headerNavBottom__link" href="#">Акции</a>
                                 </li>
                                 <li class="headerNavBottom__li">
-                                    <a class="headerNavBottom__link" href="#">Стоимость</a>
+                                    <a class="headerNavBottom__link" href="/price/">Стоимость</a>
                                 </li>
                             </ul>
                         </div>
