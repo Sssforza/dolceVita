@@ -11482,9 +11482,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_index_js__WEBPACK_IMPORTED_MODULE_10__["usefulBlogHover"])(); // popup close
 
-  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupClose"])(); // moreStage
+  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupClose"])(); // more stage
 
-  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // services selected drop
+  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // popup image
+
+  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupImage"])(); // services selected drop
 
   Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_11__["servicesSelectedDrop"])(); // popup more stage date
   // services attendance all cards
@@ -16422,6 +16424,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupClose", function() { return popupClose; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moreStage", function() { return moreStage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupImage", function() { return popupImage; });
 // popup close
 function popupClose() {
   $('.popupClose_js').on("click", function () {
@@ -16435,6 +16438,17 @@ function moreStage() {
       type: 'inline',
       tClose: 'Закрыть (Esc)',
       tLoading: 'Загрузка...'
+    });
+  }
+} // popup image
+
+function popupImage() {
+  if (document.querySelector('.popupImage_js')) {
+    $('.popupImage_js').magnificPopup({
+      type: 'image',
+      tClose: 'Закрыть (Esc)',
+      tLoading: 'Загрузка...',
+      mainClass: 'mfp-img'
     });
   }
 }

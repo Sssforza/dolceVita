@@ -334,6 +334,21 @@ body {
         }
     }
 }
+img.mfp-img {
+    padding: 80px !important;
+    background: #fff;
+    border-radius: 60px;
+}
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    background: {
+        image: url($imgUrl + "svg/popupsClose.svg");
+        size: cover;
+        repeat: no-repeat;
+    }
+    font-size: 0;
+    right: 35px !important;
+    cursor: pointer !important;
+}
 //envelope inputs
 .envelopeInput {
     position: relative;

@@ -77,7 +77,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                     <span>
                                                         Омская государственная медицинская академия, специальность &laquo;Лечебное дело&raquo;
                                                     </span>
-                                                    <a href="#" class="aboutSpecialist__diploma">
+                                                    <a href="/dist/img/trash/diploma.png" class="aboutSpecialist__diploma popupImage_js">
                                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistDiploma.svg';?>
                                                         <span>Посмотреть диплом</span>
                                                     </a>
@@ -134,7 +134,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                     <span>
                                                         Омская государственная медицинская академия, специальность &laquo;Лечебное дело&raquo;
                                                     </span>
-                                                    <a href="#" class="aboutSpecialist__diploma">
+                                                    <a href="/dist/img/trash/diploma.png" class="aboutSpecialist__diploma popupImage_js">
                                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistDiploma.svg';?>
                                                         <span>Посмотреть диплом</span>
                                                     </a>
@@ -162,7 +162,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                     <span>
                                                         Омская государственная медицинская академия, специальность &laquo;Лечебное дело&raquo;
                                                     </span>
-                                                    <a href="#" class="aboutSpecialist__diploma">
+                                                    <a href="/dist/img/trash/diploma.png" class="aboutSpecialist__diploma popupImage_js">
                                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistDiploma.svg';?>
                                                         <span>Посмотреть диплом</span>
                                                     </a>

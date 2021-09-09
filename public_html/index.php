@@ -88,7 +88,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								<img src="/dist/img/sliderEquipmentImg-1.png" alt="">
 							</div>
 							<div class="sliderEquipment__dop">
-								<a href="#" class="sliderEquipment__warranty sliderEquipWarranty">
+								<a href="/dist/img/trash/certificate.png" class="sliderEquipment__warranty sliderEquipWarranty popupImage_js">
 									<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentWarranty-i.svg';?>
 									<div class="sliderEquipWarranty__title">Гарантия <br>подлинности</div>
 									<div class="sliderEquipWarranty__link">Посмотреть <br>сертификат</div>
@@ -133,7 +133,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								<img src="/dist/img/sliderEquipmentImg-1.png" alt="">
 							</div>
 							<div class="sliderEquipment__dop">
-								<a href="#" class="sliderEquipment__warranty sliderEquipWarranty">
+								<a href="/dist/img/trash/certificate.png" class="sliderEquipment__warranty sliderEquipWarranty popupImage_js">
 									<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentWarranty-i.svg';?>
 									<div class="sliderEquipWarranty__title">Гарантия <br>подлинности</div>
 									<div class="sliderEquipWarranty__link">Посмотреть <br>сертификат</div>

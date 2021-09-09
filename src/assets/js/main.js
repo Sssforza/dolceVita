@@ -9,7 +9,7 @@ import 'slick-carousel';
 import 'magnific-popup';
 
 //📁 /assets/js/blocks  _popups.js
-import {moreStage, popupClose} from "./blocks/_popups.js";
+import {moreStage, popupClose, popupImage} from "./blocks/_popups.js";
 
 //📁 /assets/js/blocks  _pageLoad.js
 import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
@@ -106,8 +106,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // popup close
     popupClose();
 
-    // moreStage
+    // more stage
     moreStage();
+
+    // popup image
+    popupImage();
 
     // services selected drop
     servicesSelectedDrop();
