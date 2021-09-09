@@ -12,13 +12,6 @@ export function servicesSelectedDrop () {
         let thisChoice;
         let dataSelect;
         let id;
-        const checkBtn = function() {
-            if(selected.value <= 0) {
-                btn.classList.add('disabled');
-            } else {
-                btn.classList.remove('disabled');
-            }
-        }
         const toggleMenu = function() {
             parentList.classList.toggle('open');
         }
@@ -58,15 +51,6 @@ export function servicesSelectedDrop () {
                 selected.setAttribute('id', id);
             });
         });
-        document.onclick = function(e){
-            checkBtn();
-            var container = $(".servicesSelected__wrapper");
-            var container2 = $(".servicesTabs__item");
-            var container3 = $(".servicesSelectedInput_js");
-            if (container2.has(e.target).length === 0 && container3.has(e.target).length === 0){
-                parentList.classList.remove('open');
-            }
-        };
 	}
 }
 // popup more stage date

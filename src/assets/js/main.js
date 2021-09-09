@@ -17,6 +17,9 @@ import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
 //📁 /assets/js/blocks  _animPageScroll.js
 import {animGradientBgHeader, animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPractice, usefulBlog} from "./blocks/_animPageScroll.js";
 
+//📁 /assets/js/blocks  _documentClick.js
+import {documentClick} from "./blocks/_documentClick.js";
+
 //📁 /assets/js/blocks  _header.js
 import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
 
@@ -69,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // useful blog translateY 0
     usefulBlog();
+
+    // document onclick
+    documentClick();
 
     // header services
     headerServices();

@@ -108,7 +108,7 @@
         border-radius: 32px;
         z-index: 2;
         cursor: pointer;
-        transition: $transition;
+        transition: $transition5;
         @media (min-width:$xl) {
             &:hover {
                 border: 2px solid $greenMedium;
@@ -119,6 +119,10 @@
                     }
                 }
             }
+        }
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
         }
         svg {
             display: block;

@@ -22,18 +22,9 @@ export function headerSearch () {
         const parent = document.querySelector('.headerSearch_js');
         const btn = document.querySelector('.headerQuest_js');
         btn.onclick = () => {
-			btn.remove();
+			btn.classList.add('hide');
 			parent.classList.add('show');
 		};
-        document.onclick = function(e){
-            console.log('document')
-            if (parent.has(e.target).length === 0){
-                console.log('e.target ' + e.target)
-                console.log('parent ' + parent)
-                console.log('length === 0')
-                parent.classList.remove('show');
-            }
-        };
     }
 }
 // header menu selection
@@ -73,7 +64,6 @@ export function menuSelection () {
         middleSelected.forEach((item) => {
             item.addEventListener("click", (e) => {
                 let thisShowMiddle = item.getAttribute('data-servicesMiddleDetail');
-                console.log(thisShowMiddle)
                 middleSelected.forEach((i) => {
                     i.classList.remove('active');
                 });
