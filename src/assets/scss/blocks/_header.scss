@@ -27,6 +27,10 @@
         padding-bottom: 42px;
         display: flex;
         justify-content: space-between;
+        @media (max-width:$xl) {
+            padding-top: 16px;
+            padding-bottom: 32px;
+        }
     }
     &__left,
     &__right {
@@ -72,13 +76,13 @@
         }
     }
     &__btns {
+        margin-left: 25px;
         display: flex;
         position: relative;
         top: 16px;
     }
     &__search {
         position: relative;
-        margin-left: 25px;
         &.show {
             .header__envelopeInput {
                 width: 320px;
@@ -128,6 +132,10 @@
     &__signUp {
         margin-left: 29px;
         width: 267px;
+        @media (max-width:$xl) {
+            margin-left: 24px;
+            width: 182px;
+        }
     }
     &__envelopeInput {
         width: 64px;

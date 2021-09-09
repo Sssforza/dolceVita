@@ -23,6 +23,11 @@
     }
     &__bottom {
         margin-top: 37px;
+        .footer__right {
+            display: flex;
+            position: relative;
+            left: -14px;
+        }
     }
     &__right {
         display: flex;

@@ -22,10 +22,14 @@ $transition5: all .5s;
 $transition8eio: all .8s ease-in-out;
 
 %center {
-	position:relative;
+	position: relative;
 	max-width: 1830px;
 	margin: 0 auto;
 	padding: 0px 15px;
+	@media (max-width:$xl) {
+		max-width: 1440px;
+		padding: 0px 60px;
+	}
 	// @media (max-width:$lg) {
 	// 	max-width: 990px;
 	// }

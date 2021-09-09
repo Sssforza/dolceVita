@@ -123,6 +123,12 @@ body {
             border: 2px solid $greenLight;
         }
     }
+    @media (max-width:$xl) {
+        height: 48px;
+        font-size: 16px;
+        line-height: 20px;
+        border-radius: 20px;
+    }
 }
 .btnBlueBorder {
     display: flex;
@@ -684,6 +690,14 @@ body {
         font-weight: 500;
         color: $gray;
         white-space: nowrap;
+        border-bottom: 1px solid transparent;
+        transition: $transition;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $greenMedium;
+                border-bottom: 1px solid $greenMedium;
+            }
+        }
     }
     &__equipment {
         margin-top: 16px;
@@ -882,6 +896,9 @@ body {
         width: 4px;
         background-color: #E9E5E8;
         border-radius: 10px;
+        @media (max-width:$xl) {
+            margin-top: 0;
+        }
     }
     &::-webkit-scrollbar-thumb {
         width: 4px;

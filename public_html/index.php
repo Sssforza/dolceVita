@@ -70,18 +70,18 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 									Безопасность Альтеры подкрепляется...
 								</div>
 								<div class="sliderEquipment__box">
-									<div class="sliderEquipment__procedures">
+									<a href="#" class="sliderEquipment__procedures procedures">
 										<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentVideo-i-play.svg';?>
-										<a href="#" class="sliderEquipment__video">
+										<span class="sliderEquipment__video">
 											Видео <br>процедуры
-										</a>
-									</div>
-									<div class="sliderEquipment__procedures">
+										</span>
+									</a>
+									<a href="#" class="sliderEquipment__procedures apparatus">
 										<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentVideo-i-face.svg';?>
-										<a href="#" class="sliderEquipment__video">
-											Процедуры <br>на&nbsp;аппарате
-										</a>
-									</div>
+										<span class="sliderEquipment__video">
+										Процедуры <br>на&nbsp;аппарате
+										</span>
+									</a>
 								</div>
 							</div>
 							<div class="sliderEquipment__img">
@@ -115,29 +115,32 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 									Безопасность Альтеры подкрепляется...
 								</div>
 								<div class="sliderEquipment__box">
-									<div class="sliderEquipment__procedures">
+									<a href="#" class="sliderEquipment__procedures procedures">
 										<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentVideo-i-play.svg';?>
-										<a href="#" class="sliderEquipment__video">
+										<span class="sliderEquipment__video">
 											Видео <br>процедуры
-										</a>
-									</div>
-									<div class="sliderEquipment__procedures">
+										</span>
+									</a>
+									<a href="#" class="sliderEquipment__procedures apparatus">
 										<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentVideo-i-face.svg';?>
-										<a href="#" class="sliderEquipment__video">
-											Процедуры <br>на&nbsp;аппарате
-										</a>
-									</div>
+										<span class="sliderEquipment__video">
+										Процедуры <br>на&nbsp;аппарате
+										</span>
+									</a>
 								</div>
 							</div>
 							<div class="sliderEquipment__img">
 								<img src="/dist/img/sliderEquipmentImg-1.png" alt="">
 							</div>
 							<div class="sliderEquipment__dop">
-								<div class="sliderEquipment__warranty sliderEquipWarranty">
+								<a href="#" class="sliderEquipment__warranty sliderEquipWarranty">
 									<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentWarranty-i.svg';?>
 									<div class="sliderEquipWarranty__title">Гарантия <br>подлинности</div>
-									<a href="#" class="sliderEquipWarranty__link">Посмотреть <br>сертификат</a>
-								</div>
+									<div class="sliderEquipWarranty__link">Посмотреть <br>сертификат</div>
+									<div class="sliderEquipWarranty__svg">
+										<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipWarrantyLink.svg';?>
+									</div>
+								</a>
 								<div class="sliderEquipment__hexagon sliderEquipHexagon">
 									<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipHexagon.svg';?>
 									<div class="sliderEquipHexagon__number">4</div>

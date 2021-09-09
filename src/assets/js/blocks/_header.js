@@ -25,6 +25,15 @@ export function headerSearch () {
 			btn.remove();
 			parent.classList.add('show');
 		};
+        document.onclick = function(e){
+            console.log('document')
+            if (parent.has(e.target).length === 0){
+                console.log('e.target ' + e.target)
+                console.log('parent ' + parent)
+                console.log('length === 0')
+                parent.classList.remove('show');
+            }
+        };
     }
 }
 // header menu selection
