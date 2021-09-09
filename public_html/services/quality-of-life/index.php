@@ -147,7 +147,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "/services/quality-of-life/",
 			"section" => "#SECTION_CODE_PATH#/",
-			"detail" => "#SECTION_CODE_PATH#/#ID#",
+			"detail" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
 		)
 	),
 	false

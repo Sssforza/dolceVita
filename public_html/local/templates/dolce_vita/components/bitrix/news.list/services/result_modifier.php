@@ -6,10 +6,13 @@
  */
 
 $component = $this->getComponent();
-
-
-$rsResult = CIBlockSection::GetList(array("SORT" => "ASC"), array("IBLOCK_ID" => $arParams["IBLOCK_ID"], "ID" =>$arParams['PARENT_SECTION']), false, $arSelect = array("UF_*")); 
-if($arSection = $rsResult -> GetNext())
-    { 
-	    $arResult["SECTION_USER_FIELDS"]["UF_RAZDEL_DESC"] = $arSection["UF_ELEMENT"];
-	}
+// echo '<pre>';
+// //print_r($arParams);
+// echo '</pre>';
+foreach ($arResult["ITEMS"] as $key => $value) {
+	$rsResult = CIBlockSection::GetByID($value['IBLOCK_SECTION_ID']); 
+	if($arSection = $rsResult -> GetNext())
+	    { 
+		    $arResult["ITEMS"][$key]["IBLOCK_SECTION_CODE"] = $arSection;
+		}
+}

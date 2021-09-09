@@ -201,16 +201,27 @@ if($arParams["SEF_MODE"] == "Y")
 			}
 			$arVariables['UF_ELEMENT'] = $sec['UF_ELEMENT'];
 		}
+		foreach ($menuElements[$arVariables['SECTION_ID']] as $value) {
+			$arVariables['AR_ID_ELEMENTS'][] = $value['ID'];
+		}
 	} else {
 		if ($arVariables['SECTION_ID']) {
-			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'ID' => $arVariables['SECTION_ID'], 'SITE_ID' => SITE_ID),false, array("ID", "IBLOCK_ID", "UF_*"));
+			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'ID' => $arVariables['SECTION_ID'], 'SITE_ID' => SITE_ID),false, array("ID", "IBLOCK_ID", "*", "UF_*"));
 			$sec = $res->Fetch();
 			$arVariables['UF_ELEMENT'] = $sec['UF_ELEMENT'];
+			$arVariables['CHECK_SECTION'] = true;
+			if(($sec['RIGHT_MARGIN'] - $sec['LEFT_MARGIN']) > 1) {
+				$arVariables['CHECK_SECTION'] = false;
+			}
 		}
 		$arVariables['IBLOCK_SECTION_ID'][] = $menuItems[$arVariables['SECTION_ID']][0]["ID"];
 		$arVariables['PARENT_SECTION_ID'] = $arVariables['SECTION_ID'];
+		foreach ($menuElements[$arVariables['SECTION_ID']] as $value) {
+			$arVariables['AR_ID_ELEMENTS'][] = $value['ID'];
+		}
 	}
 	$arResult = array(
+		"TEST" => $sec,
 		"FOLDER" => $arParams["SEF_FOLDER"],
 		"URL_TEMPLATES" => $arUrlTemplates,
 		"VARIABLES" => $arVariables,

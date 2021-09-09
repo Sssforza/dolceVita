@@ -1,5 +1,5 @@
 <? require_once($_SERVER['DOCUMENT_ROOT'] . "/bitrix/modules/main/include/prolog_before.php" ) ;
-$element_id = trim($_POST['sID']);
+$element_id = trim($_POST['id']);
 $APPLICATION->IncludeComponent(
 	"ferma:news.detail",
 	".default",
@@ -14,8 +14,8 @@ $APPLICATION->IncludeComponent(
         "SHARE_SHORTEN_URL_LOGIN" => "",
         "SHARE_SHORTEN_URL_KEY" => "",
         "AJAX_MODE" => "N",
-        "IBLOCK_TYPE" => "",
-        "IBLOCK_ID" => "13",
+        "IBLOCK_TYPE" => "services",
+        "IBLOCK_ID" => "",
         "ELEMENT_ID" => $element_id,
         "ELEMENT_CODE" => "",
         "CHECK_DATES" => "Y",

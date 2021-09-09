@@ -24,7 +24,7 @@ $arParams["IBLOCK_TYPE"] = trim($arParams["IBLOCK_TYPE"]);
 if($arParams["IBLOCK_TYPE"] == '')
 	$arParams["IBLOCK_TYPE"] = "news";
 
-$arParams["ELEMENT_ID"] = intval($arParams["~ELEMENT_ID"]);
+$arParams["ELEMENT_ID"] = $arParams["~ELEMENT_ID"];
 if($arParams["ELEMENT_ID"] > 0 && $arParams["ELEMENT_ID"]."" != $arParams["~ELEMENT_ID"])
 {
 	if (Loader::includeModule("iblock"))
@@ -345,6 +345,23 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 				$arPath["IPROPERTY_VALUES"] = $ipropValues->getValues();
 				$arResult["SECTION"]["PATH"][] = $arPath;
 				$arResult["SECTION_URL"] = $arPath["~SECTION_PAGE_URL"];
+			}
+		}
+		$arElementId = array_merge((array)$arResult["PROPERTIES"]["SERVICES"]["VALUE"], (array)$arResult["PROPERTIES"]["PROGRAMS"]["VALUE"], (array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"]);
+		$arResult["arElementId"] = $arElementId;
+		if (!empty($arElementId)) {
+			foreach ($arElementId as $key => $value) {
+				$arFilter["ID"] = $value;
+				$arsSelect = array_merge($arSelect, array(
+								"PROPERTIES_*",
+							));
+				$arElement = CIBlockElement::GetList(array(), $arFilter, false, false, $arsSelect);
+				while($obyElement = $arElement->GetNextElement())
+				{
+					$arFields = $obyElement->GetFields();
+					$arProps = $obyElement->GetProperties();
+					$arResult["ELEMENTS"][$arFields["ID"]] = array_merge($arFields, $arProps);
+				}
 			}
 		}
 
