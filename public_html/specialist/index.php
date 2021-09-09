@@ -39,8 +39,8 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
         </section>
         <section class="specialist" data-midnight="gray">
             <div class="specialist__content">
-                <div class="containerMin">
-                    <div class="specialist__about">
+                <div class="specialist__about">
+                    <div class="containerMin">
                         <div class="aboutSpecialist aboutSpecialist_js">
                             <div class="aboutSpecialist__container">
                                 <div class="aboutSpecialist__content">
@@ -210,7 +210,9 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             </div>
                         </div>
                     </div>
-                    <div class="specialist__portfolio">
+                </div>
+                <div class="specialist__portfolio">
+                    <div class="containerMin">
                         <div class="portfolioSpecialist">
                             <div class="portfolioSpecialist__title">Портфолио специалиста</div>
                             <div class="portfolioSpecialist__content">

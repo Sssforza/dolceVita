@@ -241,6 +241,51 @@
     &__prev {
         padding-right: 2px;
     }
+    @keyframes animatedBackground {
+        0% { background-position: 0 0; }
+        100% { background-position: 100% 0; }
+    }
+    &__waves{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 1000000000px;
+        &_1,
+        &_2,
+        &_3,
+        &_4,
+        &_5 {
+            position: absolute;
+            bottom: 20px;
+            display: block;
+            width: 100%;
+            height: 202px;
+            background: {
+                image: url($imgUrl + "sliderMainArrows.png");
+                repeat: repeat;
+            }
+            animation: animatedBackground 35000s linear infinite;
+        }
+        &_1 {
+            opacity: .9;
+        }
+        &_2 {
+            left: -700px;
+            opacity: .8;
+        }
+        &_3 {
+            left: -1300px;
+            opacity: .7;
+        }
+        &_4 {
+            left: -1900px;
+            opacity: .6;
+        }
+        &_5 {
+            left: -2500px;
+            opacity: .5;
+        }
+    }
     .slick-active {
         .sliderMain__title,
         .sliderMain__description,
@@ -271,6 +316,9 @@
         font-size: 24px;
         line-height: 34px;
         color: $gray;
+    }
+    .slick-slide {
+        height: auto;
     }
 }
 .sliderEquipment {
@@ -382,28 +430,30 @@
         position: absolute;
         top: -120px;
         left: -125px;
-        &:hover {
-            svg {
-                .sliderEquipWarranty__path {
-                    &_1 {
-                        opacity: .6;
-                        transform: rotate(15deg);
-                    }
-                    &_2 {
-                        opacity: .5;
-                        transform: rotate(25deg) scale(.95);
-                    }
-                    &_3 {
-                        opacity: .4;
-                        transform: rotate(25deg);
-                    }
-                    &_4 {
-                        opacity: .3;
-                        transform: rotate(15deg);
-                    }
-                    &_5 {
-                        opacity: .2;
-                        transform: rotate(15deg);
+        @media (min-width:$xl) {
+            &:hover {
+                svg {
+                    .sliderEquipWarranty__path {
+                        &_1 {
+                            opacity: .6;
+                            transform: rotate(15deg);
+                        }
+                        &_2 {
+                            opacity: .5;
+                            transform: rotate(25deg) scale(.95);
+                        }
+                        &_3 {
+                            opacity: .4;
+                            transform: rotate(25deg);
+                        }
+                        &_4 {
+                            opacity: .3;
+                            transform: rotate(15deg);
+                        }
+                        &_5 {
+                            opacity: .2;
+                            transform: rotate(15deg);
+                        }
                     }
                 }
             }
@@ -919,6 +969,7 @@
         }
     }
     &__people {
+        display: block;
         width: 100%;
         height: 100%;
         position: relative;

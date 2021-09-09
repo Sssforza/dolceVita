@@ -39,10 +39,12 @@
     }
     &__logo {
         display: block;
-        &:hover {
-            svg {
-                .color {
-                    fill:$greenLight;
+        @media (min-width:$xl) {
+            &:hover {
+                svg {
+                    .color {
+                        fill:$greenLight;
+                    }
                 }
             }
         }
@@ -62,10 +64,10 @@
         font-weight: 500;
         letter-spacing: 0.01em;
         color: $white;
-        span {
-            color: $greenMedium;
-        }
-        @media (min-width:$xs) {
+        // span {
+        //     color: $greenMedium;
+        // }
+        @media (min-width:$xl) {
             pointer-events: none;
         }
     }
@@ -103,12 +105,14 @@
         z-index: 2;
         cursor: pointer;
         transition: $transition;
-        &:hover {
-            border: 2px solid $greenMedium;
-            svg {
-                path,
-                circle {
-                    stroke: $greenMedium;
+        @media (min-width:$xl) {
+            &:hover {
+                border: 2px solid $greenMedium;
+                svg {
+                    path,
+                    circle {
+                        stroke: $greenMedium;
+                    }
                 }
             }
         }
@@ -162,10 +166,12 @@
                         fill:$greenDark;
                     }
                 }
-                &:hover {
-                    svg {
-                        .color {
-                            fill:$blueDark;
+                @media (min-width:$xl) {
+                    &:hover {
+                        svg {
+                            .color {
+                                fill:$blueDark;
+                            }
                         }
                     }
                 }
@@ -175,12 +181,14 @@
             }
             &__quest {
                 border: 2px solid $greenMedium;
-                &:hover {
-                    border: 2px solid $greenDark;
-                    svg {
-                        path,
-                        circle {
-                            stroke: $greenDark;
+                @media (min-width:$xl) {
+                    &:hover {
+                        border: 2px solid $greenDark;
+                        svg {
+                            path,
+                            circle {
+                                stroke: $greenDark;
+                            }
                         }
                     }
                 }
@@ -204,8 +212,10 @@
             }
         }
         .headerNavTop__link {
-            &:hover {
-                color: $blueDark;
+            @media (min-width:$xl) {
+                &:hover {
+                    color: $blueDark;
+                }
             }
             &.about {
                 svg {
@@ -213,10 +223,12 @@
                         stroke: $greenDark;
                     }
                 }
-                &:hover {
-                    svg {
-                        path {
-                            stroke: $blueDark;
+                @media (min-width:$xl) {
+                    &:hover {
+                        svg {
+                            path {
+                                stroke: $blueDark;
+                            }
                         }
                     }
                 }
@@ -225,8 +237,10 @@
         .headerNavBottom {
             &__link {
                 color: $greenDark;
-                &:hover {
-                    color: $blueDark !important;
+                @media (min-width:$xl) {
+                    &:hover {
+                        color: $blueDark !important;
+                    }
                 }
                 &:after {
                     background: $blueDark;
@@ -284,9 +298,11 @@
             opacity: 0;
             transition: $transition;
         }
-        &:hover {
-            &:after {
-                opacity: 1;
+        @media (min-width:$xl) {
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -319,9 +335,11 @@
             opacity: 0;
             transition: $transition;
         }
-        &:hover {
-            &:after {
-                opacity: 1;
+        @media (min-width:$xl) {
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -343,8 +361,15 @@
         padding: 147px 23px 40px;
     }
     &__close {
-        display: flex;
+        display: inline-flex;
         align-items: center;
+        @media (min-width:$xl) {
+            &:hover {
+                .headerServices__cover  {
+                    border-bottom: 1px solid $purple;
+                }
+            }
+        }
     }
     &__cross {
         display: flex;
@@ -367,6 +392,13 @@
         color: $purple;
         text-transform: uppercase;
         cursor: pointer;
+        border-bottom: 1px solid transparent;
+        transition: $transition5;
+        // @media (min-width:$xl) {
+        //     &:hover {
+        //         border-bottom: 1px solid $purple;
+        //     }
+        // }
     }
     &__box {
         margin-top: 52px;
@@ -391,8 +423,10 @@
         font-family: 'Prata';
         cursor: pointer;
         transition: $transition;
-        &:hover {
-            color: $purple;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $purple;
+            }
         }
         &.active {
             color: $purple;
@@ -447,8 +481,10 @@
         color: $blueDark;
         cursor: pointer;
         transition: $transition;
-        &:hover {
-            color: $purple;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $purple;
+            }
         }
         &.active {
             color: $purple;
@@ -488,8 +524,10 @@
         line-height: 25px;
         color: $blueDark;
         transition: $transition;
-        &:hover {
-            color: $purple;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $purple;
+            }
         }
     }
 }
@@ -531,11 +569,13 @@
             transition: $transition;
             opacity: 0;
         }
-        &:hover {
-            color: $blueDark;
-            &:after {
-                opacity: 1;
-                background: $blueDark;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $blueDark;
+                &:after {
+                    opacity: 1;
+                    background: $blueDark;
+                }
             }
         }
     }
@@ -559,10 +599,12 @@
                     fill:$greenDark;
                 }
             }
-            &:hover {
-                svg {
-                    .color {
-                        fill:$blueDark;
+            @media (min-width:$xl) {
+                &:hover {
+                    svg {
+                        .color {
+                            fill:$blueDark;
+                        }
                     }
                 }
             }
@@ -572,12 +614,14 @@
         }
         &__quest {
             border: 2px solid $greenMedium;
-            &:hover {
-                border: 2px solid $greenDark;
-                svg {
-                    path,
-                    circle {
-                        stroke: $greenDark;
+            @media (min-width:$xl) {
+                &:hover {
+                    border: 2px solid $greenDark;
+                    svg {
+                        path,
+                        circle {
+                            stroke: $greenDark;
+                        }
                     }
                 }
             }
@@ -601,8 +645,10 @@
         }
     }
     .headerNavTop__link {
-        &:hover {
-            color: $blueDark;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $blueDark;
+            }
         }
         &.about {
             svg {
@@ -610,10 +656,12 @@
                     stroke: $greenDark;
                 }
             }
-            &:hover {
-                svg {
-                    path {
-                        stroke: $blueDark;
+            @media (min-width:$xl) {
+                &:hover {
+                    svg {
+                        path {
+                            stroke: $blueDark;
+                        }
                     }
                 }
             }
@@ -622,8 +670,10 @@
     .headerNavBottom {
         &__link {
             color: $greenDark;
-            &:hover {
-                color: $blueDark !important;
+            @media (min-width:$xl) {
+                &:hover {
+                    color: $blueDark !important;
+                }
             }
             &:after {
                 background: $blueDark;

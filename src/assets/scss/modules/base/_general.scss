@@ -15,6 +15,9 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+.tablebodytext {
+    display: none !important;
+}
 .container {
     @extend %center;
 }
@@ -57,6 +60,9 @@ body {
                 top: -100%;
             }
         }
+        .midnightHeader.gray {
+            background: #eef5f8;
+        }
     }
 }
 .page {
@@ -86,11 +92,13 @@ body {
     background: $purple;
     border-radius: 20px;
     transition: $transition5;
-    &:hover {
-        background: #820062;
-    }
-    &:active {
-        background: $gray;
+    @media (min-width:$xl) {
+        &:hover {
+            background: #820062;
+        }
+        &:active {
+            background: $gray;
+        }
     }
 }
 .btnWhiteBorder {
@@ -108,10 +116,12 @@ body {
     border: 2px solid $white;
     border-radius: 20px;
     transition: $transition5;
-    &:hover {
-        color: $white;
-        background: $greenLight;
-        border: 2px solid $greenLight;
+    @media (min-width:$xl) {
+        &:hover {
+            color: $white;
+            background: $greenLight;
+            border: 2px solid $greenLight;
+        }
     }
 }
 .btnBlueBorder {
@@ -128,10 +138,12 @@ body {
     border: 2px solid $blueDark;
     border-radius: 20px;
     transition: $transition5;
-    &:hover {
-        color: $white;
-        background: $greenMedium;
-        border: 2px solid $greenMedium;
+    @media (min-width:$xl) {
+        &:hover {
+            color: $white;
+            background: $greenMedium;
+            border: 2px solid $greenMedium;
+        }
     }
 }
 .btnBlue {
@@ -177,6 +189,13 @@ body {
         }
         a {
             border-bottom: 1px solid $greenLight;
+            transition: $transition;
+            @media (min-width:$xl) {
+                &:hover {
+                    color: $white;
+                    border-bottom: 1px solid transparent;
+                }
+            }
         }
     }
     &__chit {
@@ -192,6 +211,12 @@ body {
             }
             a {
                 border-bottom: 1px solid $gray;
+                @media (min-width:$xl) {
+                    &:hover {
+                        color: $blueDark;
+                        border-bottom: 1px solid transparent;
+                    }
+                }
             }
             svg {
                 .color {
@@ -222,9 +247,11 @@ body {
         font-family: 'Roboto';
         border-bottom: 1px solid #BCC3D6;
         transition: $transition;
-        &:hover {
-            color: $greenMedium;
-            border-bottom: 1px solid transparent;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $greenMedium;
+                border-bottom: 1px solid transparent;
+            }
         }
     }
 }
@@ -237,10 +264,12 @@ body {
         margin-top: -25px;
         cursor: pointer;
         transition: $transition;
-        &:hover {
-            svg {
-                path {
-                    stroke: $blueDark;
+        @media (min-width:$xl) {
+            &:hover {
+                svg {
+                    path {
+                        stroke: $blueDark;
+                    }
                 }
             }
         }
@@ -287,11 +316,13 @@ body {
                 transition: $transition;
             }
         }
-        &:hover {
-            svg {
-                display: block;
-                path {
-                    fill: $greenDark;
+        @media (min-width:$xl) {
+            &:hover {
+                svg {
+                    display: block;
+                    path {
+                        fill: $greenDark;
+                    }
                 }
             }
         }
@@ -300,9 +331,11 @@ body {
 //envelope inputs
 .envelopeInput {
     position: relative;
-    &:hover {
-        .envelopeInput__field {
-            border: 1px solid $white;
+    @media (min-width:$xl) {
+        &:hover {
+            .envelopeInput__field {
+                border: 1px solid $white;
+            }
         }
     }
     &__field {
@@ -356,9 +389,11 @@ body {
         @include placeholder(18px, $greenMedium, EuclidFlex);
         transition: $transition5;
     }
-    &:hover {
-        input {
-            border: 2px solid $greenDark;
+    @media (min-width:$xl) {
+        &:hover {
+            input {
+                border: 2px solid $greenDark;
+            }
         }
     }
     &:focus {
@@ -378,9 +413,11 @@ body {
         @include placeholder(23px, $greenMedium, EuclidFlex);
         transition: $transition5;
     }
-    &:hover {
-        input {
-            border: 2px solid $greenDark;
+    @media (min-width:$xl) {
+        &:hover {
+            input {
+                border: 2px solid $greenDark;
+            }
         }
     }
     &:focus {
@@ -403,9 +440,11 @@ body {
             transition: $transition;
         }
     }
-    &:hover {
-        path {
-            stroke: $blueDark;
+    @media (min-width:$xl) {
+        &:hover {
+            path {
+                stroke: $blueDark;
+            }
         }
     }
 }
@@ -442,9 +481,11 @@ body {
     &__policy {
         border-bottom: 1px solid $greenLight;
         transition: $transition;
-        &:hover {
-            color: $white;
-            border-bottom: 1px solid transparent;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $white;
+                border-bottom: 1px solid transparent;
+            }
         }
     }
     &__doctor {
@@ -684,9 +725,11 @@ body {
         color: $blueDark;
         border-bottom: 1px solid transparent;
         transition: $transition;
-        &:hover {
-            color: $greenMedium;
-            border-bottom: 1px solid $greenMedium;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $greenMedium;
+                border-bottom: 1px solid $greenMedium;
+            }
         }
     }
     &_programm {
@@ -847,11 +890,13 @@ body {
         background-color: $purple;
         cursor: pointer;
         transition: $transition;
-        &:hover {
-            background-color: $greenMedium !important;
-        }
-        &:active {
-            background-color: $greenDark !important;
+        @media (min-width:$xl) {
+            &:hover {
+                background-color: $greenMedium !important;
+            }
+            &:active {
+                background-color: $greenDark !important;
+            }
         }
     }
     &::-webkit-resizer {
@@ -886,11 +931,13 @@ body {
         background-color: #B3BFCF;
         cursor: pointer;
         transition: $transition;
-        &:hover {
-            background-color: $greenDark !important;
-        }
-        &:active {
-            background-color: $greenDark !important;
+        @media (min-width:$xl) {
+            &:hover {
+                background-color: $greenDark !important;
+            }
+            &:active {
+                background-color: $greenDark !important;
+            }
         }
     }
     &::-webkit-resizer {
@@ -921,14 +968,18 @@ body {
         border-radius: 12px;
         cursor: pointer;
         transition: $transition;
-        &:hover {
-            background-color: $greenMedium !important;
-        }
-        &:active {
-            background-color: $greenDark !important;
+        @media (min-width:$xl) {
+            &:hover {
+                background-color: $greenMedium !important;
+            }
+            &:active {
+                background-color: $greenDark !important;
+            }
         }
     }
-    .scrollbar-inner>.scroll-element.scroll-draggable .scroll-bar, .scrollbar-inner>.scroll-element:hover .scroll-bar {
-        background-color: $purple;
+    @media (min-width:$xl) {
+        .scrollbar-inner>.scroll-element.scroll-draggable .scroll-bar, .scrollbar-inner>.scroll-element:hover .scroll-bar {
+            background-color: $purple;
+        }
     }
 }

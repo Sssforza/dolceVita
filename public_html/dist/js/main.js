@@ -16607,26 +16607,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuSelection", function() { return menuSelection; });
 // header services
 function headerServices() {
-  if (document.querySelector('.headerServices_js')) {
+  if (document.querySelectorAll('.headerServices_js')) {
     var header = document.querySelector('.header_js');
-    var headerServicesElem = document.querySelector('.headerServices_js');
-    var headerServicesClose = document.querySelectorAll('.headerServicesClose_js');
-
-    headerServicesElem.onmouseover = function (e) {
+    $(".headerServices_js").hover(function () {
       document.body.classList.add('openServicesMenu');
-      headerServicesElem.classList.add('active');
+      $(this).addClass('active');
       header.classList.add('gray');
-    };
+    });
+    $('.headerServicesClose_js').on('click', function () {
+      document.body.classList.remove('openServicesMenu');
+      $('.headerServicesClose_js').removeClass('active');
 
-    headerServicesClose.forEach(function (item) {
-      item.addEventListener("click", function (e) {
-        document.body.classList.remove('openServicesMenu');
-        headerServicesElem.classList.remove('active');
-
-        if (document.querySelector('.main.whiteBg_js') == null) {
-          header.classList.remove('gray');
-        }
-      });
+      if (document.querySelector('.main.whiteBg_js') == null) {
+        header.classList.remove('gray');
+      }
     });
   }
 } // header open search input
@@ -17304,9 +17298,6 @@ function map() {
       controls: []
     });
     myMap.geoObjects.add(new ymaps.Placemark([54.995715, 73.353974], {
-      balloonContent: 'цвет <strong>носика Гены</strong>',
-      iconCaption: 'Dolce Vita'
-    }, {
       preset: 'islands#icon',
       iconColor: '#0095b6'
     }));
