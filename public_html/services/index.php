@@ -10,10 +10,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                        <a href="" class="breadCrumbs__chit">На главную</a>
+                        <a href="/" class="breadCrumbs__chit">На главную</a>
                     </li>
                     <li class="breadCrumbs__item">
-                        <a href="" class="breadCrumbs__chit">Услуги</a>
+                        <a href="/services/" class="breadCrumbs__chit">Услуги</a>
                     </li>
                     <li class="breadCrumbs__item">
                         <span class="breadCrumbs__chit">Косметология</span>

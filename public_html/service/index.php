@@ -18,7 +18,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                         <a href="/services/" class="breadCrumbs__chit">Услуги</a>
                     </li>
                     <li class="breadCrumbs__item">
-                        <a href="№" class="breadCrumbs__chit">Косметология</a>
+                        <a href="#" class="breadCrumbs__chit">Косметология</a>
                     </li>
                     <li class="breadCrumbs__item">
                         <span class="breadCrumbs__chit">Омоложение 4D на аппарате Fotona</span>

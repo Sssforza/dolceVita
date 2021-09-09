@@ -12,13 +12,13 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                        <a href="" class="breadCrumbs__chit">На главную</a>
+                        <a href="/" class="breadCrumbs__chit">На главную</a>
                     </li>
                     <li class="breadCrumbs__item">
-                        <a href="" class="breadCrumbs__chit">О нас</a>
+                        <a href="#" class="breadCrumbs__chit">О нас</a>
                     </li>
                     <li class="breadCrumbs__item">
-                        <a href="" class="breadCrumbs__chit">Специалисты</a>
+                        <a href="/team/" class="breadCrumbs__chit">Специалисты</a>
                     </li>
                     <li class="breadCrumbs__item">
                         <span class="breadCrumbs__chit">Денисенко Дарья</span>
