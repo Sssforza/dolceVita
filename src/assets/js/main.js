@@ -24,7 +24,7 @@ import {documentClick} from "./blocks/_documentClick.js";
 import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
-import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio} from "./blocks/_sliders.js";
+import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio, sliderstageView} from "./blocks/_sliders.js";
 
 //📁 /assets/js/blocks  scrollbar.js
 import {scrollbar} from "./blocks/scrollbar.js";
@@ -34,6 +34,9 @@ import {usefulBlogHover} from "./blocks/index.js";
 
 //📁 /assets/js/blocks  services.js
 import {servicesSelectedDrop, servicesSelectedFetch} from "./blocks/services.js";
+
+//📁 /assets/js/blocks  service.js
+import {serviceStageShow, tabsServiceReviews, itemServiceTestimony} from "./blocks/service.js";
 
 //📁 /assets/js/blocks  specialist.js
 import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/specialist.js";
@@ -97,6 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // slider portfolio specialist
     sliderSpecialistsPortfolio();
 
+    // slider stage view
+    sliderstageView();
+
     // scrollbar
     scrollbar();
 
@@ -119,6 +125,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // services attendance all cards
     // services selected fetch
     servicesSelectedFetch();
+
+    // services stage show
+    serviceStageShow();
+
+    // tabs service reviews
+    tabsServiceReviews();
+
+    // items service testimony
+    itemServiceTestimony();
 
     // about specialist show all
     aboutSpecialistShowAll();

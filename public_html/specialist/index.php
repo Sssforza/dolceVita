@@ -357,6 +357,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </section>
             </div>
         </section>

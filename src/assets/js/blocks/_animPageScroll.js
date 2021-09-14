@@ -42,6 +42,17 @@ export function animReviewsLines () {
             }
         });
     }
+    if(document.querySelector('.serviceReviews_js')) {
+        const serviceReviewsLines = document.querySelector('.serviceReviewsSvg_js');
+        const serviceReviewsLinesTop = document.querySelector('.serviceReviews_js').offsetTop;
+        const serviceReviewsLinesHeight = document.querySelector('.serviceReviews_js').offsetHeight;
+        const headerHeight = document.querySelector('.header_js').offsetHeight;
+        window.addEventListener('scroll', function() {
+            if(pageYOffset > (serviceReviewsLinesTop - serviceReviewsLinesHeight - headerHeight)){
+                serviceReviewsLines.classList.add('show');
+            }
+        });
+    }
 }
 
 // anim bonus system

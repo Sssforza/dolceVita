@@ -90,7 +90,7 @@
 
 __webpack_require__(1);
 __webpack_require__(3);
-module.exports = __webpack_require__(20);
+module.exports = __webpack_require__(21);
 
 
 /***/ }),
@@ -11407,10 +11407,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
 /* harmony import */ var _blocks_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
 /* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(15);
-/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16);
-/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(17);
-/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(18);
-/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(19);
+/* harmony import */ var _blocks_service_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16);
+/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(17);
+/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(18);
+/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(19);
+/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(20);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11434,6 +11435,8 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
  //📁 /assets/js/blocks  index.js
 
  //📁 /assets/js/blocks  services.js
+
+ //📁 /assets/js/blocks  service.js
 
  //📁 /assets/js/blocks  specialist.js
 
@@ -11476,7 +11479,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderSpecialists"])(); // slider portfolio specialist
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderSpecialistsPortfolio"])(); // scrollbar
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderSpecialistsPortfolio"])(); // slider stage view
+
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderstageView"])(); // scrollbar
 
   Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_9__["scrollbar"])(); // useful blog hover
 
@@ -11492,23 +11497,29 @@ document.addEventListener("DOMContentLoaded", function () {
   // services attendance all cards
   // services selected fetch
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_11__["servicesSelectedFetch"])(); // about specialist show all
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_11__["servicesSelectedFetch"])(); // services stage show
 
-  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_12__["aboutSpecialistShowAll"])(); // tabs specialist education
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceStageShow"])(); // tabs service reviews
 
-  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_12__["tabsSpecialistEducation"])(); // tabs specificity of the doctor
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["tabsServiceReviews"])(); // items service testimony
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_13__["tabsSpecificityDoctor"])(); // aiming at the doctor
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["itemServiceTestimony"])(); // about specialist show all
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_13__["aimingAtTheDoctor"])(); // tabs price services
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__["aboutSpecialistShowAll"])(); // tabs specialist education
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_14__["tabsPriceServices"])(); // opening and closing cards
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__["tabsSpecialistEducation"])(); // tabs specificity of the doctor
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_14__["interactionCards"])(); // show clear element and clear
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_14__["tabsSpecificityDoctor"])(); // aiming at the doctor
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_14__["clearInput"])(); // map
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_14__["aimingAtTheDoctor"])(); // tabs price services
 
-  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_15__["map"])();
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_15__["tabsPriceServices"])(); // opening and closing cards
+
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_15__["interactionCards"])(); // show clear element and clear
+
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_15__["clearInput"])(); // map
+
+  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_16__["map"])();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
@@ -16571,6 +16582,18 @@ function animReviewsLines() {
       }
     });
   }
+
+  if (document.querySelector('.serviceReviews_js')) {
+    var serviceReviewsLines = document.querySelector('.serviceReviewsSvg_js');
+    var serviceReviewsLinesTop = document.querySelector('.serviceReviews_js').offsetTop;
+    var serviceReviewsLinesHeight = document.querySelector('.serviceReviews_js').offsetHeight;
+    var _headerHeight = document.querySelector('.header_js').offsetHeight;
+    window.addEventListener('scroll', function () {
+      if (pageYOffset > serviceReviewsLinesTop - serviceReviewsLinesHeight - _headerHeight) {
+        serviceReviewsLines.classList.add('show');
+      }
+    });
+  }
 } // anim bonus system
 
 function sectionBonusSystem() {
@@ -16762,6 +16785,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderEquipment", function() { return sliderEquipment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderSpecialists", function() { return sliderSpecialists; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderSpecialistsPortfolio", function() { return sliderSpecialistsPortfolio; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderstageView", function() { return sliderstageView; });
 // sliderMain
 function sliderMain() {
   var slickMain = $(".sliderMain_js");
@@ -16878,6 +16902,25 @@ function sliderSpecialistsPortfolio() {
       }
 
       $('.portfolioSliderNav_js').find("[data-slide='".concat(slide, "']")).addClass('active');
+    });
+  }
+}
+; // slider stage view
+
+function sliderstageView() {
+  var slickstageView = $(".stageViewSlider_js");
+
+  if (slickstageView.length) {
+    slickstageView.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      speed: 900,
+      arrows: true,
+      fade: false,
+      draggable: false,
+      infinite: false,
+      prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#DBE9EF" stroke-width="2" stroke-linecap="round"/></svg></div>',
+      nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#DBE9EF" stroke-width="2" stroke-linecap="round"/></svg></div>'
     });
   }
 }
@@ -17123,6 +17166,78 @@ function servicesSelectedFetch() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceStageShow", function() { return serviceStageShow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsServiceReviews", function() { return tabsServiceReviews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itemServiceTestimony", function() { return itemServiceTestimony; });
+// services stage show
+function serviceStageShow() {
+  if (document.querySelector('.serviceStage')) {
+    var commonParent = document.querySelector('.serviceStage');
+    var stages = commonParent.querySelectorAll('.serviceStageItem_js');
+    var btns = commonParent.querySelectorAll('.serviceStageBtn_js');
+    var parent;
+    btns.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        parent = item.closest('.serviceStageItem_js');
+        parent.classList.toggle('show');
+      });
+    });
+  }
+} // tabs service reviews
+
+function tabsServiceReviews() {
+  if (document.querySelector('.serviceReviews_js')) {
+    var wrapper = document.querySelector('.serviceReviews_js');
+    var tabs = wrapper.querySelectorAll('.serviceReviewsItem_js');
+    var texts = wrapper.querySelectorAll('.serviceReviewsText_js');
+    tabs.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        var thisShow = item.getAttribute('data-people');
+        tabs.forEach(function (i) {
+          i.classList.remove('active');
+        });
+        item.classList.add('active');
+        texts.forEach(function (elem) {
+          elem.classList.add('hide');
+          elem.classList.remove('show');
+
+          if (elem.getAttribute('data-review') === thisShow) {
+            elem.classList.remove('hide');
+            elem.classList.add('show');
+          }
+        });
+      });
+    });
+  }
+}
+; // items service testimony
+
+function itemServiceTestimony() {
+  if (document.querySelector('.serviceTestimony_js')) {
+    var shoppingСard = function shoppingСard() {
+      $('.serviceTestimony__list .serviceTestimonyAbout_js').not($(this)).removeClass('show');
+
+      if ($(this).hasClass('show')) {
+        $(this).removeClass('show');
+      } else {
+        $(this).addClass('show');
+      }
+
+      $('.serviceTestimony__list .serviceTestimony__text').not($(this).next()).slideUp(500);
+      $(this).next().slideToggle(500);
+    };
+
+    $('.serviceTestimony__list .serviceTestimonyAbout_js').on('click', shoppingСard);
+  }
+}
+;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "aboutSpecialistShowAll", function() { return aboutSpecialistShowAll; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsSpecialistEducation", function() { return tabsSpecialistEducation; });
 // about specialist show all
@@ -17188,7 +17303,7 @@ function tabsSpecialistEducation() {
 ;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17240,7 +17355,7 @@ function aimingAtTheDoctor() {
 ;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17318,7 +17433,7 @@ function clearInput() {
 ;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17346,7 +17461,7 @@ function map() {
 }
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

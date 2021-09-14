@@ -33,8 +33,6 @@ export function aboutSpecialistShowAll() {
             });
         });
     }
-
-
 }
 // tabs specialist education
 export function tabsSpecialistEducation() {

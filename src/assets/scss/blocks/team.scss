@@ -2,59 +2,6 @@
 .team {
     padding-top: 97px;
 }
-.teamList {
-    position: relative;
-    width: 1224px;
-    &:after {
-        content:'';
-        position: absolute;
-        right: 0;
-        bottom: -3px;
-        left: 0;
-        height: 1px;
-        background: $greenMedium;
-        border-radius: 50px;
-    }
-    &__content {
-        display: flex;
-        justify-content: space-between;
-    }
-    &__item {
-        position: relative;
-        font-size: 21px;
-        line-height: 27px;
-        color: $greenDark;
-        opacity: 0.6;
-        cursor: pointer;
-        transition: $transition;
-        @media (min-width:$xl) {
-            &:hover {
-                color: $purple;
-                opacity: 1;
-            }
-        }
-        &:after {
-            content:'';
-            position: absolute;
-            right: 0;
-            bottom: -3px;
-            left: 0;
-            height: 2px;
-            background: transparent;
-            border-radius: 50px;
-            z-index: 2;
-            transition: $transition;
-        }
-        &.active {
-            opacity: 1;
-            cursor: auto;
-            pointer-events: none;
-            &:after {
-                background: $purple;
-            }
-        }
-    }
-}
 .teamPeople {
     margin-top: 137px;
     &__list {
