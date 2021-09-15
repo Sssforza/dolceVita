@@ -256,18 +256,18 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             </div>
                             <div class="servicePrice__content">
                                 <div class="servicePrice__list">
-                                    <div class="servicePrice__item">
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">1 насадка</div>
                                         <div class="servicePrice__cost">12 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">2 насадки</div>
                                         <div class="servicePrice__cost">18 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">4 насадки</div>
                                         <div class="servicePrice__cost">36 000 ₽</div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -491,7 +491,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     </div>
                                     <div class="serviceTestimony__list">
                                         <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about serviceTestimonyAbout_js">
+                                            <div class="serviceTestimony__about">
                                                 <span>
                                                     Аллергия на&nbsp;холод
                                                 </span>

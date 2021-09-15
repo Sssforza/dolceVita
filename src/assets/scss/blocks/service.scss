@@ -261,10 +261,12 @@
         position: relative;
         color: $blueDark;
         transition: $transition;
-        &:hover {
-            color: $greenMedium;
-            &:after {
-                background: $greenMedium;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $greenMedium;
+                &:after {
+                    background: $greenMedium;
+                }
             }
         }
         &:after {
@@ -304,11 +306,13 @@
         display: inline-flex;
         align-items: center;
         cursor: pointer;
-        &:hover {
-            span {
-                color: $greenMedium;
-                &:after {
-                    background: $greenMedium;
+        @media (min-width:$xl) {
+            &:hover {
+                span {
+                    color: $greenMedium;
+                    &:after {
+                        background: $greenMedium;
+                    }
                 }
             }
         }
@@ -363,7 +367,7 @@
         position: relative;
         margin-left: -25px;
         display: flex;
-        max-height: 500px;
+        height: 500px;
         &::after {
             content:'';
             position: absolute;
@@ -532,9 +536,11 @@
         backdrop-filter: blur(40px);
         border-radius: 16px;
         cursor: pointer;
-        &:hover {
-            &:after {
-                border: 2px solid $greenMedium;
+        @media (min-width:$xl) {
+            &:hover {
+                &:after {
+                    border: 2px solid $greenMedium;
+                }
             }
         }
         &:after {
@@ -635,8 +641,14 @@
         font-size: 24px;
         line-height: 30px;
         color: $blueDark;
+        transition: $transition5;
         &:nth-child(2n) {
             background: $greenLight;
+        }
+        @media (min-width:$xl) {
+            &:hover {
+                background: #8d528733;
+            }
         }
     }
     &__cost {
@@ -667,9 +679,19 @@
         margin-top: 136px;
         left: 48px;
         width: 376px;
-        height: 376px;
+        height: 332px;
+        @media (min-width:$xl) {
+            &:hover {
+                .serviceEquipmenent__img {
+                    &:after {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
     }
     &__img {
+        position: relative;
         display: block;
         width: 100%;
         height: 100%;
@@ -679,11 +701,23 @@
             position: center;
             repeat: no-repeat;
         }
+        &:after {
+            content:'';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $greenDark;
+            opacity: 0;
+            pointer-events: none;
+            transition: $transition5;
+        }
     }
     &__play {
         position: absolute;
-        top: calc(50% - 59px);
-        left: calc(50% - 35px);
+        top: calc(50% - 34px);
+        left: calc(50% - 37px);
         pointer-events: none;
         svg {
             display: block;
@@ -698,7 +732,7 @@
     }
 }
 .serviceSpecialists {
-    margin-top: 140px;
+    margin-top: 183px;
     position: relative;
     &:after {
         content:'';
@@ -762,6 +796,12 @@
         font-weight: 500;
         color: $blueDark;
         cursor: pointer;
+        transition: $transition5;
+        @media (min-width:$xl) {
+            &:hover {
+                color: $purple;
+            }
+        }
         &.show {
             svg {
                 transform: rotate(180deg);

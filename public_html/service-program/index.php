@@ -491,26 +491,26 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             </div>
                             <div class="servicePrice__content">
                                 <div class="servicePrice__list">
-                                    <div class="servicePrice__item">
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">Fotona 3D</div>
                                         <div class="servicePrice__cost">32 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">SMOOTHEye</div>
                                         <div class="servicePrice__cost">15 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">SMOOTHLips</div>
                                         <div class="servicePrice__cost">8 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">ThightSculping 1 зона 10×10см</div>
                                         <div class="servicePrice__cost">4 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
                                         <div class="servicePrice__equipmenent">Fotona 4D лицо</div>
                                         <div class="servicePrice__cost">40 000 ₽</div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <a href="/price/" class="btnBlueBorder servicePrice__btn">Показать больше</a>
                             </div>
@@ -719,7 +719,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     </div>
                                     <div class="serviceTestimony__list">
                                         <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about serviceTestimonyAbout_js">
+                                            <div class="serviceTestimony__about hover serviceTestimonyAbout_js">
                                                 <span>
                                                     Возрастные изменения кожи лица и шеи
                                                 </span>
@@ -742,7 +742,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                             </div>
                                         </div>
                                         <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about serviceTestimonyAbout_js">
+                                            <div class="serviceTestimony__about hover serviceTestimonyAbout_js">
                                                 <span>
                                                     Дряблость кожи, утрата объема
                                                 </span>
@@ -776,7 +776,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     </div>
                                     <div class="serviceTestimony__list">
                                         <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about serviceTestimonyAbout_js">
+                                            <div class="serviceTestimony__about hover serviceTestimonyAbout_js">
                                                 <span>
                                                     Беременность и период лактации
                                                 </span>
