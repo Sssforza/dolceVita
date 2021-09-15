@@ -11501,7 +11501,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceStageShow"])(); // tabs service reviews
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["tabsServiceReviews"])(); // items service testimony
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["tabsServiceReviews"])(); // service anchor scroll
+
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceScrollTo"])(); // items service testimony
 
   Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["itemServiceTestimony"])(); // about specialist show all
 
@@ -16919,8 +16921,8 @@ function sliderstageView() {
       fade: false,
       draggable: false,
       infinite: false,
-      prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#DBE9EF" stroke-width="2" stroke-linecap="round"/></svg></div>',
-      nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#DBE9EF" stroke-width="2" stroke-linecap="round"/></svg></div>'
+      prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+      nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
     });
   }
 }
@@ -17169,6 +17171,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceStageShow", function() { return serviceStageShow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsServiceReviews", function() { return tabsServiceReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itemServiceTestimony", function() { return itemServiceTestimony; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceScrollTo", function() { return serviceScrollTo; });
 // services stage show
 function serviceStageShow() {
   if (document.querySelector('.serviceStage')) {
@@ -17229,6 +17232,29 @@ function itemServiceTestimony() {
 
     $('.serviceTestimony__list .serviceTestimonyAbout_js').on('click', shoppingСard);
   }
+}
+; // service anchor scroll
+
+function serviceScrollTo() {
+  if (document.querySelector('.anchorScroll_js')) {
+    var anchors = document.querySelectorAll('.anchorScroll_js');
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    anchors.forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        var dopIndent = 30;
+        var dataAnchor = anchor.getAttribute('data-anchor');
+        var element = document.getElementById(dataAnchor);
+        var scrollTo = element.getBoundingClientRect().top + window.pageYOffset - dopIndent - headerHeight;
+        window.scrollTo({
+          top: scrollTo,
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
+
+  ;
 }
 ;
 

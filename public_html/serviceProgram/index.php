@@ -41,17 +41,17 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                         <div class="contentService__anchors">
                             <div class="teamList">
                                 <div class="teamList__content">
-                                    <div class="teamList__item active">Результат</div>
-                                    <div class="teamList__item">Программа</div>
-                                    <div class="teamList__item">Отзывы</div>
-                                    <div class="teamList__item">Стоимость</div>
-                                    <div class="teamList__item">Оборудование</div>
-                                    <div class="teamList__item">Специалисты</div>
-                                    <div class="teamList__item">Показания</div>
+                                    <div class="teamList__item anchorScroll_js active" data-anchor="result">Результат</div>
+                                    <div class="teamList__item anchorScroll_js" data-anchor="program">Программа</div>
+                                    <div class="teamList__item anchorScroll_js" data-anchor="reviews">Отзывы</div>
+                                    <div class="teamList__item anchorScroll_js" data-anchor="price">Стоимость</div>
+                                    <div class="teamList__item anchorScroll_js" data-anchor="equipment">Оборудование</div>
+                                    <div class="teamList__item anchorScroll_js" data-anchor="specialists">Специалисты</div>
+                                    <div class="teamList__item anchorScroll_js" data-anchor="indications">Показания</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="contentService__result">
+                        <div class="contentService__result" id="result">
                             <div class="portfolioSliderFor portfolioSliderFor_js">
                                 <div class="portfolioSliderFor__item">
                                     <div class="portfolioSliderFor__wrapper">
@@ -100,7 +100,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                             </div>
                         </div>
-                        <div class="contentService__stage serviceStage">
+                        <div class="contentService__stage serviceStage" id="program">
                             <div class="serviceStage__title">
                                 Программа состоит из 3 этапов
                             </div>
@@ -414,7 +414,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                             </div>
                         </div>
-                        <div class="contentService__reviews serviceStage serviceReviews serviceReviews_js">
+                        <div class="contentService__reviews serviceStage serviceReviews serviceReviews_js" id="reviews">
                             <div class="serviceReviews__svg serviceReviewsSvg_js">
                                 <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesHeart.svg';?>
                             </div>
@@ -481,7 +481,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                             </div>
                         </div>
-                        <div class="contentService__price serviceStage servicePrice">
+                        <div class="contentService__price serviceStage servicePrice" id="price">
                             <div class="serviceStage__title">
                                 Стоимость
                             </div>
@@ -511,7 +511,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 <a href="/price/" class="btnBlueBorder servicePrice__btn">Показать больше</a>
                             </div>
                         </div>
-                        <div class="contentService__equipmenent serviceStage serviceEquipmenent">
+                        <div class="contentService__equipmenent serviceStage serviceEquipmenent" id="equipment">
                             <div class="serviceEquipmenent__content">
                                 <div class="serviceEquipmenent__description">
                                     <div class="serviceStage__title">
@@ -529,7 +529,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/playIcon.svg';?>
                                     </span>
                                 </div>
-                                <a href="" class="serviceEquipmenent__warranty sliderEquipWarranty">
+                                <a href="/dist/img/trash/certificate.png" class="serviceEquipmenent__warranty sliderEquipWarranty popupImage_js">
 									<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentWarranty-i.svg';?>
 									<div class="sliderEquipWarranty__title">Гарантия <br>подлинности</div>
 									<div class="sliderEquipWarranty__link">Посмотреть <br>сертификат</div>
@@ -539,7 +539,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 								</a>
                             </div>
                         </div>
-                        <div class="contentService__specialists serviceStage serviceSpecialists specialists specialists_js">
+                        <div class="contentService__specialists serviceStage serviceSpecialists specialists specialists_js" id="specialists">
                             <div class="serviceStage__title">
                                 Специалисты
                             </div>
@@ -706,7 +706,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                             </div>
                         </div>
-                        <div class="contentService__testimony serviceTestimony serviceTestimony_js">
+                        <div class="contentService__testimony serviceTestimony serviceTestimony_js" id="indications">
                             <div class="serviceTestimony__content">
                                 <div class="serviceTestimony__box">
                                     <div class="serviceTestimony__title">

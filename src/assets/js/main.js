@@ -36,7 +36,7 @@ import {usefulBlogHover} from "./blocks/index.js";
 import {servicesSelectedDrop, servicesSelectedFetch} from "./blocks/services.js";
 
 //📁 /assets/js/blocks  service.js
-import {serviceStageShow, tabsServiceReviews, itemServiceTestimony} from "./blocks/service.js";
+import {serviceStageShow, tabsServiceReviews, itemServiceTestimony, serviceScrollTo} from "./blocks/service.js";
 
 //📁 /assets/js/blocks  specialist.js
 import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/specialist.js";
@@ -131,6 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // tabs service reviews
     tabsServiceReviews();
+
+    // service anchor scroll
+    serviceScrollTo();
 
     // items service testimony
     itemServiceTestimony();

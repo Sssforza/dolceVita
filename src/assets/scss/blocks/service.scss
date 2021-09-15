@@ -429,6 +429,7 @@
         position: absolute;
         top: 109px;
         cursor: pointer;
+        opacity: .7;
         transition: $transition;
         @media (min-width:$xl) {
             &:hover {
@@ -441,9 +442,10 @@
         }
         &.slick-disabled {
             pointer-events: none;
+            opacity: 1;
             svg {
                 path {
-                    stroke: $greenMedium;
+                    stroke: $greenLight;
                 }
             }
         }
@@ -675,6 +677,7 @@
         position: absolute;
         top: calc(50% - 59px);
         left: calc(50% - 35px);
+        pointer-events: none;
         svg {
             display: block;
         }

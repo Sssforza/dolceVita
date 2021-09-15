@@ -54,3 +54,25 @@ export function itemServiceTestimony () {
 		}
 	}
 };
+// service anchor scroll
+export function serviceScrollTo () {
+	if(document.querySelector('.anchorScroll_js')) {
+        const anchors = document.querySelectorAll('.anchorScroll_js');
+        const headerHeight = document.querySelector('.header_js').offsetHeight;
+
+        anchors.forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault()
+                const dopIndent = 30;
+                const dataAnchor = anchor.getAttribute('data-anchor');
+                const element = document.getElementById(dataAnchor);
+                const scrollTo = element.getBoundingClientRect().top + window.pageYOffset - dopIndent - headerHeight;
+
+                window.scrollTo({
+                    top: scrollTo,
+                    behavior: 'smooth'
+                });
+            });
+        });
+	};
+};
