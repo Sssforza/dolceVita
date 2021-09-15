@@ -157,7 +157,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">1</div>
                                                     <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/serviceMoreImg.png)"></div>
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImage-1.png)"></div>
                                                     </div>
                                                     <div class="stageView__wrapper">
                                                         <div class="stageView__name">Очищение</div>
@@ -168,7 +168,9 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                 </div>
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">2</div>
-                                                    <div class="stageView__img"></div>
+                                                    <div class="stageView__img">
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImage-2.png)"></div>
+                                                    </div>
                                                     <div class="stageView__wrapper">
                                                         <div class="stageView__name">Ультразвуковой пилинг</div>
                                                         <div class="stageView__description">
@@ -178,7 +180,9 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                 </div>
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">3</div>
-                                                    <div class="stageView__img"></div>
+                                                    <div class="stageView__img">
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImage-3.png)"></div>
+                                                    </div>
                                                     <div class="stageView__wrapper">
                                                         <div class="stageView__name">Механическая чистка</div>
                                                         <div class="stageView__description">

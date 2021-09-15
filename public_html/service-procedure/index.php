@@ -6,7 +6,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 ?>
 <main class="main">
 	<section class="page page_service">
-        <section class="banerService" style="background-image:url(/dist/img/trash/banerService-1.jpg)">
+        <section class="banerService" style="background-image:url(/dist/img/trash/banerService-2.jpg)">
             <div class="containerMin">
                 <div class="banerService__content">
                     <div class="banerService__title gradientHeader_js">Криолиполиз</div>
@@ -66,8 +66,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     <div class="portfolioSliderFor__description">
                                         <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
                                         <div class="portfolioSliderFor__name">
-                                            Разглаживание мимических и&nbsp;носогубных морщин с&nbsp;помощью лазерного
-                                            аппарата Fotona&nbsp;4D
+                                            Криолиполиз
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +84,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     <div class="portfolioSliderFor__description">
                                         <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
                                         <div class="portfolioSliderFor__name">
-                                            Программа &quot;Сладкая жизнь&quot;
+                                            Криолиполиз
                                         </div>
                                     </div>
                                 </div>
@@ -104,9 +103,11 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 Как проходит процедура
                             </div>
                             <div class="serviceStage__procedure">
-                                Вакуумная насадка аппарата затягивает жировую складку и&nbsp;постепенно охлаждает&nbsp;её.
-                                &laquo;Выключенные&raquo; холодом клетки жира уйдут из&nbsp;организма постепенно, и&nbsp;результат
-                                в&nbsp;виде уменьшения жировой складки будет виден через 2-3&nbsp;месяца.
+                                Криолиполиз&nbsp;&mdash; методика коррекции локальных жировых отложений без травм
+                                и&nbsp;хирургического вмешательства.
+                                Благодаря использованию низких температур происходит запуск естественных процессов сжигания
+                                подкожно-жировой клетчатки, что дает возможность сделать фигуру более гармоничной. За&nbsp;один сеанс
+                                можно уменьшить складку на&nbsp;30%.
                             </div>
                             <div class="serviceStage__items">
                                 <div class="serviceStage__phase serviceStageItem_js show">
@@ -116,55 +117,63 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">1</div>
                                                     <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/serviceMoreImg.png)"></div>
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-2.jpg)"></div>
                                                     </div>
                                                     <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Очищение</div>
+                                                        <div class="stageView__name">Измеряем исходные параметры</div>
                                                         <div class="stageView__description">
-                                                            Измеряем толщину жировой складки и&nbsp;выбирает аппаратную насадку нужного размера
+                                                            Измеряем толщину жировой складки. Фиксируем показатель &laquo;до&raquo; в&nbsp;карту клиента.
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">2</div>
-                                                    <div class="stageView__img"></div>
+                                                    <div class="stageView__img">
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-3.jpg)"></div>
+                                                    </div>
                                                     <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Ультразвуковой пилинг</div>
+                                                        <div class="stageView__name">Подготовливаем зону</div>
                                                         <div class="stageView__description">
-                                                            Кожу в&nbsp;зонах воздействия предварительно размечают маркером на&nbsp;участки
+                                                            Маркером обозначаем зону воздействия. Обрабатываем выбранный участок специальным составом
+                                                            и&nbsp;накрываем гелевой салфеткой для равномерного охлаждения тканей
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">3</div>
-                                                    <div class="stageView__img"></div>
+                                                    <div class="stageView__img">
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-4.jpg)"></div>
+                                                    </div>
                                                     <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Механическая чистка</div>
+                                                        <div class="stageView__name">Воздействие на&nbsp;жировые отложения холодом</div>
                                                         <div class="stageView__description">
-                                                            Обрабатываем специальным составом и&nbsp;накрываем гелевой салфеткой, 
-                                                            для равномерного охлаждения тканей
+                                                            Устанавливаем вакуумную насадку с&nbsp;охлаждающими панелями. Запускается процесс разрушения жировых клеток.
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">4</div>
                                                     <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/serviceMoreImg.png)"></div>
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-5.jpg)"></div>
                                                     </div>
                                                     <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Очищение</div>
+                                                        <div class="stageView__name">Усиление эффекта</div>
                                                         <div class="stageView__description">
-                                                            Измеряем толщину жировой складки и&nbsp;выбирает аппаратную насадку нужного размера
+                                                            После процедуры врач делает легкий массаж зоны, на&nbsp;которой была выполнена процедура.
+                                                            Это усилит эффект от&nbsp;процедуры.
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="stageView__item">
                                                     <div class="stageView__number">5</div>
-                                                    <div class="stageView__img"></div>
+                                                    <div class="stageView__img">
+                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-6.jpg)"></div>
+                                                    </div>
                                                     <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Ультразвуковой пилинг</div>
+                                                        <div class="stageView__name">Наступление окончательного результата</div>
                                                         <div class="stageView__description">
-                                                            Кожу в&nbsp;зонах воздействия предварительно размечают маркером на&nbsp;участки
+                                                            Спустя три месяца измеряем толщину жировой складки
+                                                            и&nbsp;фиксируем показатель &laquo;после&raquo;. Сравниваем результаты.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -248,27 +257,18 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             <div class="servicePrice__content">
                                 <div class="servicePrice__list">
                                     <div class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">Fotona 3D</div>
-                                        <div class="servicePrice__cost">32 000 ₽</div>
+                                        <div class="servicePrice__equipmenent">1 насадка</div>
+                                        <div class="servicePrice__cost">12 000 ₽</div>
                                     </div>
                                     <div class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">SMOOTHEye</div>
-                                        <div class="servicePrice__cost">15 000 ₽</div>
+                                        <div class="servicePrice__equipmenent">2 насадки</div>
+                                        <div class="servicePrice__cost">18 000 ₽</div>
                                     </div>
                                     <div class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">SMOOTHLips</div>
-                                        <div class="servicePrice__cost">8 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">ThightSculping 1 зона 10×10см</div>
-                                        <div class="servicePrice__cost">4 000 ₽</div>
-                                    </div>
-                                    <div class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">Fotona 4D лицо</div>
-                                        <div class="servicePrice__cost">40 000 ₽</div>
+                                        <div class="servicePrice__equipmenent">4 насадки</div>
+                                        <div class="servicePrice__cost">36 000 ₽</div>
                                     </div>
                                 </div>
-                                <a href="/price/" class="btnBlueBorder servicePrice__btn">Показать больше</a>
                             </div>
                         </div>
                         <div class="contentService__equipmenent serviceStage serviceEquipmenent" id="equipment">
@@ -278,9 +278,9 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                         Оригинальное оборудование
                                     </div>
                                     <div class="serviceEquipmenent__text">
-                                        Fotona 4D&nbsp;&mdash; новейшая технология омоложения кожи лица, которая прекрасно заменяет
-                                        хирургическое вмешательство. Лазерное 4D&nbsp;омоложение&nbsp;&mdash; самый эффектный метод
-                                        лечения и&nbsp;обновления кожи, содержащий в&nbsp;себе 4&nbsp;этапа очистки и&nbsp;подтяжки кожи.
+                                        COCOON&nbsp;&mdash; аппарат для криолиполиза на&nbsp;базе использования контролируемого
+                                        холода для избавления от&nbsp;нежелательных отложений жировой ткани, коррекции
+                                        контуров тела и&nbsp;фигуры в&nbsp;целом.
                                     </div>
                                 </div>
                                 <div class="serviceEquipmenent__video">
@@ -475,51 +475,10 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     </div>
                                     <div class="serviceTestimony__list">
                                         <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about serviceTestimonyAbout_js">
-                                                <span>
-                                                    Возрастные изменения кожи лица и шеи
-                                                </span>
-                                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/servicesSelected-i.svg';?>
-                                            </div>
-                                            <div class="serviceTestimony__text">
-                                                После 30-35 лет каждая девушка отмечает появление следов возрастных изменений.
-                                                В&nbsp;первую очередь они проявляются на&nbsp;коже лица и&nbsp;шеи. Лазерное омоложение
-                                                поможет комплексно решить ряд проблем, не&nbsp;только замедлив процесс старения,
-                                                но&nbsp;и&nbsp;реконструировав увядающие клетки. Уникальное сочетание 4&nbsp;технологий
-                                                восстановит объем тканей, сделает четким овал лица, разгладит морщины <br>и&nbsp;вернет коже
-                                                прежнюю гладкость и&nbsp;свежесть.
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
                                             <div class="serviceTestimony__about">
                                                 <span>
-                                                    Опущение тканей лица, неровный овал лица
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about serviceTestimonyAbout_js">
-                                                <span>
-                                                    Дряблость кожи, утрата объема
-                                                </span>
-                                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/servicesSelected-i.svg';?>
-                                            </div>
-                                            <div class="serviceTestimony__text">
-                                                После 30-35 лет каждая девушка отмечает появление следов возрастных изменений.
-                                                В&nbsp;первую очередь они проявляются.
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Пигментация, тусклый цвет лица
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Морщины (поверхностные и глубокие)
+                                                    Наличие локальных жировых отложений, которые не&nbsp;поддаются традиционным способам
+                                                    похудения&nbsp;&mdash; спорту, диетам и&nbsp;массажу; уменьшение объемов тела
                                                 </span>
                                             </div>
                                         </div>
@@ -534,23 +493,35 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                         <div class="serviceTestimony__item">
                                             <div class="serviceTestimony__about serviceTestimonyAbout_js">
                                                 <span>
-                                                    Беременность и период лактации
+                                                    Аллергия на&nbsp;холод
                                                 </span>
-                                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/servicesSelected-i.svg';?>
-                                            </div>
-                                            <div class="serviceTestimony__text">
-                                                После 30-35 лет каждая девушка отмечает появление следов возрастных изменений.
-                                                В&nbsp;первую очередь они проявляются на&nbsp;коже лица и&nbsp;шеи. Лазерное омоложение
-                                                поможет комплексно решить ряд проблем, не&nbsp;только замедлив процесс старения,
-                                                но&nbsp;и&nbsp;реконструировав увядающие клетки. Уникальное сочетание 4&nbsp;технологий
-                                                восстановит объем тканей, сделает четким овал лица, разгладит морщины и&nbsp;вернет коже
-                                                прежнюю гладкость и&nbsp;свежесть.
                                             </div>
                                         </div>
                                         <div class="serviceTestimony__item">
                                             <div class="serviceTestimony__about">
                                                 <span>
-                                                    Острые формы инфекционных заболеваний
+                                                    Тяжелая степень ожирения
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="serviceTestimony__item">
+                                            <div class="serviceTestimony__about">
+                                                <span>
+                                                    Острые воспалительные процессы
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="serviceTestimony__item">
+                                            <div class="serviceTestimony__about">
+                                                <span>
+                                                    Наличие кардиостимулятора
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="serviceTestimony__item">
+                                            <div class="serviceTestimony__about">
+                                                <span>
+                                                    Беременность
                                                 </span>
                                             </div>
                                         </div>
@@ -558,20 +529,6 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                             <div class="serviceTestimony__about">
                                                 <span>
                                                     Онкологические заболевания
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Психические расстройства
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Диабет
                                                 </span>
                                             </div>
                                         </div>
@@ -739,80 +696,15 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                         <div class="cosmeticCard__top">
                             <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
                             <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
+                                <a href="" class="cosmeticCard__name">Thalion Thalisvelt</a>
                             </div>
                         </div>
                         <div class="cosmeticCard__bottom">
                             <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
+                                <li class="cosmeticCard__effect">Крем против отеков</li>
                             </ul>
                             <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
+                                <div class="cosmeticCard__price">5 730 ₽</div>
                                 <div class="cosmeticCard__basket">
                                     <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
                                 </div>
