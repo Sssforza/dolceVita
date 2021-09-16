@@ -99,6 +99,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="scrollUp scrollUp_js">
+                    <div class="scrollUp__content">
+                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/priceItem-i.svg';?>
+                    </div>
+                </div>
             </div>
         </footer>
     </div>

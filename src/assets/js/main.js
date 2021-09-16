@@ -21,7 +21,7 @@ import {animGradientBgHeader, animMainLines, animReviewsLines, sectionBonusSyste
 import {documentClick} from "./blocks/_documentClick.js";
 
 //📁 /assets/js/blocks  _header.js
-import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
+import {headerServices, headerSearch, menuSelection, scrollUp} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
 import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio, sliderstageView, slickServiceReviews} from "./blocks/_sliders.js";
@@ -87,6 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // header menu selection
     menuSelection();
+
+    // btn scroll up
+    scrollUp();
 
     // slider main page
     sliderMain();

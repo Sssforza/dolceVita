@@ -78,3 +78,15 @@ export function menuSelection () {
         });
     }
 }
+// btn scroll up
+export function scrollUp () {
+    const scrollUp = document.querySelector('.scrollUp_js');
+    if(scrollUp) {
+        scrollUp.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+}
