@@ -24,7 +24,7 @@ import {documentClick} from "./blocks/_documentClick.js";
 import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
-import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio, sliderstageView} from "./blocks/_sliders.js";
+import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio, sliderstageView, slickServiceReviews} from "./blocks/_sliders.js";
 
 //📁 /assets/js/blocks  scrollbar.js
 import {scrollbar} from "./blocks/scrollbar.js";
@@ -36,7 +36,7 @@ import {usefulBlogHover} from "./blocks/index.js";
 import {servicesSelectedDrop, servicesSelectedFetch} from "./blocks/services.js";
 
 //📁 /assets/js/blocks  service.js
-import {serviceStageShow, tabsServiceReviews, itemServiceTestimony, serviceScrollTo} from "./blocks/service.js";
+import {serviceStageShow, tabsServiceReviews, itemServiceTestimony, serviceScrollTo, servicePriceShowAll, serviceFixedAsideBar} from "./blocks/service.js";
 
 //📁 /assets/js/blocks  specialist.js
 import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/specialist.js";
@@ -103,6 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // slider stage view
     sliderstageView();
 
+    // slider service reviews
+    slickServiceReviews();
+
     // scrollbar
     scrollbar();
 
@@ -134,6 +137,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // service anchor scroll
     serviceScrollTo();
+
+    // service price show all
+    servicePriceShowAll();
+
+    // service fixed aside bar
+    serviceFixedAsideBar();
 
     // items service testimony
     itemServiceTestimony();

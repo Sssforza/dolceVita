@@ -11481,7 +11481,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderSpecialistsPortfolio"])(); // slider stage view
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderstageView"])(); // scrollbar
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderstageView"])(); // slider service reviews
+
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["slickServiceReviews"])(); // scrollbar
 
   Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_9__["scrollbar"])(); // useful blog hover
 
@@ -11503,7 +11505,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["tabsServiceReviews"])(); // service anchor scroll
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceScrollTo"])(); // items service testimony
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceScrollTo"])(); // service price show all
+
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["servicePriceShowAll"])(); // service fixed aside bar
+
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceFixedAsideBar"])(); // items service testimony
 
   Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["itemServiceTestimony"])(); // about specialist show all
 
@@ -16788,6 +16794,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderSpecialists", function() { return sliderSpecialists; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderSpecialistsPortfolio", function() { return sliderSpecialistsPortfolio; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderstageView", function() { return sliderstageView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slickServiceReviews", function() { return slickServiceReviews; });
 // sliderMain
 function sliderMain() {
   var slickMain = $(".sliderMain_js");
@@ -16921,6 +16928,24 @@ function sliderstageView() {
       fade: false,
       draggable: false,
       infinite: false,
+      prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+      nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+    });
+  }
+}
+; // slider service reviews
+
+function slickServiceReviews() {
+  var slickServiceReviews = $(".serviceReviewsSlider_js");
+
+  if (slickServiceReviews.length) {
+    slickServiceReviews.slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      speed: 900,
+      variableWidth: true,
+      infinite: false,
+      arrows: true,
       prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
       nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
     });
@@ -17172,6 +17197,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsServiceReviews", function() { return tabsServiceReviews; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itemServiceTestimony", function() { return itemServiceTestimony; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceScrollTo", function() { return serviceScrollTo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicePriceShowAll", function() { return servicePriceShowAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceFixedAsideBar", function() { return serviceFixedAsideBar; });
 // services stage show
 function serviceStageShow() {
   if (document.querySelector('.serviceStage')) {
@@ -17251,6 +17278,62 @@ function serviceScrollTo() {
           behavior: 'smooth'
         });
       });
+    });
+  }
+
+  ;
+}
+; // service price show all
+
+function servicePriceShowAll() {
+  if (document.querySelector('.servicePriceBtn_js')) {
+    var wrapper = document.querySelector('.servicePrice');
+    var btn = wrapper.querySelector('.servicePriceBtn_js');
+    var list = wrapper.querySelector('.servicePrice__list');
+    btn.addEventListener('click', function (e) {
+      list.classList.add('show');
+      btn.remove();
+    });
+  }
+
+  ;
+}
+; // service fixed aside bar
+
+function serviceFixedAsideBar() {
+  if (document.querySelector('.asideService_js')) {
+    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    var aside = document.querySelector('.asideService_js');
+    var asideHeight = aside.offsetHeight;
+    var scroll = aside.getBoundingClientRect().top + window.scrollY;
+    var mainBlock = document.querySelector('.contentService');
+    var mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
+    var mainBlockTop = mainBlock.getBoundingClientRect().top + window.scrollY;
+    var mainBlockHeight = document.querySelector('.contentService').offsetHeight;
+    var mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
+    var asideStop = mainBlockHeight - asideHeight - mainBlockPadding;
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= scroll - headerHeight) {
+        $('aside').css({
+          position: 'fixed',
+          top: headerHeight,
+          right: 50
+        });
+      } else {
+        $('aside').css({
+          position: 'relative',
+          top: 0,
+          right: 0
+        });
+      }
+
+      if ($(window).scrollTop() >= mainBlockEnd) {
+        $('aside').css({
+          position: 'relative',
+          top: asideStop,
+          right: 0
+        });
+      }
     });
   }
 

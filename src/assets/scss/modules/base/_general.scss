@@ -1030,21 +1030,19 @@ img.mfp-img {
     }
 }
 .teamList {
-    position: relative;
-    width: 1224px;
-    &:after {
-        content:'';
-        position: absolute;
-        right: 0;
-        bottom: -3px;
-        left: 0;
-        height: 1px;
-        background: $greenMedium;
-        border-radius: 50px;
-    }
     &__content {
-        display: flex;
-        justify-content: space-between;
+        position: relative;
+        display: inline-flex;
+        &:after {
+            content:'';
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            left: 0;
+            height: 1px;
+            background: $greenMedium;
+            border-radius: 50px;
+        }
     }
     &__item {
         position: relative;
@@ -1059,6 +1057,9 @@ img.mfp-img {
                 color: $purple;
                 opacity: 1;
             }
+        }
+        &:not(:first-child) {
+            margin-left: 24px;
         }
         &:after {
             content:'';

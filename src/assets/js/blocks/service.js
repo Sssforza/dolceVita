@@ -76,3 +76,53 @@ export function serviceScrollTo () {
         });
 	};
 };
+// service price show all
+export function servicePriceShowAll () {
+	if(document.querySelector('.servicePriceBtn_js')) {
+        const wrapper = document.querySelector('.servicePrice');
+        const btn = wrapper.querySelector('.servicePriceBtn_js');
+        const list = wrapper.querySelector('.servicePrice__list');
+
+		btn.addEventListener('click', function (e) {
+			list.classList.add('show');
+			btn.remove();
+		});
+	};
+};
+// service fixed aside bar
+export function serviceFixedAsideBar () {
+	if(document.querySelector('.asideService_js')) {
+		const headerHeight = document.querySelector('.header_js').offsetHeight;
+		let aside = document.querySelector('.asideService_js');
+		let asideHeight = aside.offsetHeight;
+		let scroll = aside.getBoundingClientRect().top+window.scrollY;
+		let mainBlock = document.querySelector('.contentService');
+		let mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
+		let mainBlockTop = mainBlock.getBoundingClientRect().top+window.scrollY;
+		let mainBlockHeight = document.querySelector('.contentService').offsetHeight;
+		let mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
+		let asideStop = mainBlockHeight - asideHeight - mainBlockPadding;
+        $(window).scroll(function() {
+			if ($(window).scrollTop() >= (scroll - headerHeight)) {
+				$('aside').css({
+					position: 'fixed',
+					top: headerHeight,
+					right: 50,
+				});
+			} else {
+				$('aside').css({
+					position: 'relative',
+					top: 0,
+					right: 0,
+				});
+			}
+			if ($(window).scrollTop() >= (mainBlockEnd)) {
+				$('aside').css({
+					position: 'relative',
+					top: asideStop,
+					right: 0,
+				});
+			}
+		});
+	};
+};

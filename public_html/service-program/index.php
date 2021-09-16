@@ -426,8 +426,33 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 Отзывы о процедуре
                             </div>
                             <div class="serviceReviews__content">
-                                <div class="serviceReviews__list">
+                                <div class="serviceReviews__list serviceReviewsSlider_js">
                                     <div class="serviceReviews__item serviceReviewsItem_js active" data-people="1">
+                                        <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
+                                        <div class="serviceReviews__name">Константина</div>
+                                        <div class="serviceReviews__date">15.12.2020</div>
+                                    </div>
+                                    <div class="serviceReviews__item serviceReviewsItem_js" data-people="2">
+                                        <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+                                        <div class="serviceReviews__name">Ксения</div>
+                                        <div class="serviceReviews__date">22.09.2020</div>
+                                    </div>
+                                    <div class="serviceReviews__item serviceReviewsItem_js" data-people="3">
+                                        <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+                                        <div class="serviceReviews__name">Яна</div>
+                                        <div class="serviceReviews__date">14.05.2020</div>
+                                    </div>
+                                    <div class="serviceReviews__item serviceReviewsItem_js" data-people="2">
+                                        <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+                                        <div class="serviceReviews__name">Ксения</div>
+                                        <div class="serviceReviews__date">22.09.2020</div>
+                                    </div>
+                                    <div class="serviceReviews__item serviceReviewsItem_js" data-people="3">
+                                        <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+                                        <div class="serviceReviews__name">Яна</div>
+                                        <div class="serviceReviews__date">14.05.2020</div>
+                                    </div>
+                                    <div class="serviceReviews__item serviceReviewsItem_js" data-people="1">
                                         <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
                                         <div class="serviceReviews__name">Константина</div>
                                         <div class="serviceReviews__date">15.12.2020</div>
@@ -511,8 +536,24 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                         <div class="servicePrice__equipmenent">Fotona 4D лицо</div>
                                         <div class="servicePrice__cost">40 000 ₽</div>
                                     </a>
+                                    <a href="#" class="servicePrice__item">
+                                        <div class="servicePrice__equipmenent">SMOOTHEye</div>
+                                        <div class="servicePrice__cost">15 000 ₽</div>
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
+                                        <div class="servicePrice__equipmenent">SMOOTHLips</div>
+                                        <div class="servicePrice__cost">8 000 ₽</div>
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
+                                        <div class="servicePrice__equipmenent">ThightSculping 1 зона 10×10см</div>
+                                        <div class="servicePrice__cost">4 000 ₽</div>
+                                    </a>
+                                    <a href="#" class="servicePrice__item">
+                                        <div class="servicePrice__equipmenent">Fotona 4D лицо</div>
+                                        <div class="servicePrice__cost">40 000 ₽</div>
+                                    </a>
                                 </div>
-                                <a href="/price/" class="btnBlueBorder servicePrice__btn">Показать больше</a>
+                                <div class="btnBlueBorder servicePrice__btn servicePriceBtn_js">Показать больше</div>
                             </div>
                         </div>
                         <div class="contentService__equipmenent serviceStage serviceEquipmenent" id="equipment">
@@ -824,7 +865,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             </div>
                         </div>
                     </section>
-                    <aside class="contentService__aside asideService">
+                    <aside class="contentService__aside asideService asideService_js">
                         <div class="asideService__wrapper">
                             <div class="asideService__title">
                                 Стройное тело, упругая и&nbsp;гладкая кожа, улучшеное крово- и&nbsp;лимфообращение

@@ -52,9 +52,6 @@
     }
     &__anchors {
         margin-top: 96px;
-        .teamList {
-            width: 938px;
-        }
     }
     &__result {
         position: relative;
@@ -62,12 +59,13 @@
         margin-left: -32px;
     }
     .containerMin {
-        padding-right: 47px !important;
+        padding-right: 50px !important;
     }
 }
 .asideService {
     margin-left: 60px;
     width: 280px;
+    height: 100%;
     &__wrapper {
         padding: 30px;
         padding-bottom: 25px;
@@ -126,6 +124,15 @@
         line-height: 19px;
         font-weight: 500;
         color: $greenDark;
+    }
+    &.fixed {
+        position: fixed;
+        top: 126px;
+        right: 50px;
+        z-index: 1;
+    }
+    &.relative {
+        position: relative;
     }
 }
 .serviceStage {
@@ -523,14 +530,17 @@
         }
     }
     &__list {
+        margin-left: -18px;
         margin-top: 36px;
+        height: 202px;
+        width: 1060px;
         display: flex;
     }
     &__item {
-        width: 176px;
-        height: 192px;
         padding: 20px;
-        width: 176px;
+        margin: 0 18px;
+        margin-top: 5px;
+        width: 176px !important;
         height: 192px;
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(40px);
@@ -623,6 +633,10 @@
             pointer-events: none;
         }
     }
+    .stageView__next,
+    .stageView__prev {
+        top: calc(50% - 25px);
+    }
 }
 .servicePrice {
     &__content {
@@ -630,6 +644,12 @@
     }
     &__list {
         margin-left: -18px;
+        max-height: 300px;
+        overflow: hidden;
+        transition: $transition5;
+        &.show {
+            max-height: 100%;
+        }
     }
     &__item {
         padding: 0 18px;
@@ -658,6 +678,7 @@
         margin-top: 26px;
         margin-left: -18px;
         width: 267px;
+        cursor: pointer;
     }
 }
 .serviceEquipmenent {

@@ -191,7 +191,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 Отзывы о процедуре
                             </div>
                             <div class="serviceReviews__content">
-                                <div class="serviceReviews__list">
+                                <div class="serviceReviews__list serviceReviewsSlider_js">
                                     <div class="serviceReviews__item serviceReviewsItem_js active" data-people="1">
                                         <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
                                         <div class="serviceReviews__name">Константина</div>
@@ -537,7 +537,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             </div>
                         </div>
                     </section>
-                    <aside class="contentService__aside asideService">
+                    <aside class="contentService__aside asideService asideService_js">
                         <div class="asideService__wrapper">
                             <div class="asideService__title">
                                 Уменьшение объема жировых складок до &minus;30%
