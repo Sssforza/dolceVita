@@ -500,6 +500,10 @@
     padding-top: 272px;
     padding-bottom: 165px;
     position: relative;
+    @media (max-width:$xl) {
+        padding-top: 248px;
+        padding-bottom: 139px;
+    }
     &__content {
         position: relative;
     }
@@ -512,6 +516,12 @@
         z-index: 1;
         transform: translateY(300px) translateX(200px) scale(0.8) rotate(-16deg);
         transition: $transition8eio;
+        @media (max-width:$xl) {
+            width: 490px;
+            height: 347px;
+            top: -115px;
+            right: 158px;
+        }
         img {
             display: block;
             height: 100%;
@@ -523,6 +533,14 @@
         right: 390px;
         transform: translateY(110px) scale(0.8);
         transition: $transition8eio;
+        @media (max-width:$xl) {
+            width: 490px;
+            right: 210px;
+            top: 19px;
+        }
+        img {
+            width: 100%;
+        }
     }
     &.show {
         .bonusCard__card {
@@ -543,9 +561,16 @@
     }
     &__box {
         max-width: 572px;
+        @media (max-width:$xl) {
+            max-width: 521px;
+            flex: none;
+        }
         &.guest {
             .typesCards__numbers {
                 margin-top: 36px;
+                @media (max-width:$xl) {
+                    margin-top: 47px;
+                }
                 .typesCards__description {
                     margin-top: 8px;
                 }
@@ -562,6 +587,9 @@
         }
         &.regular {
             margin-left: 198px;
+            @media (max-width:$xl) {
+                margin-left: 46px;
+            }
             .typesCards__item {
                 &:not(:first-child) {
                     margin-left: 34px;
@@ -570,8 +598,14 @@
             .typesCards__numbers {
                 margin-top: 47px;
                 display: flex;
+                @media (max-width:$xl) {
+                    margin-top: 71px;
+                }
                 .typesCards__description {
                     margin-top: -6px;
+                    @media (max-width:$xl) {
+                        margin-top: 2px;
+                    }
                 }
             }
         }
@@ -600,6 +634,9 @@
         line-height: 63px;
         font-weight: 300;
         color: $blueDark;
+        @media (max-width:$xl) {
+            width: 180px;
+        }
     }
     &__percentage {
         font-family: "Roboto";
@@ -607,9 +644,15 @@
 }
 .usefulBlog {
     padding-top: 201px;
+    @media (max-width:$xl) {
+        padding-top: 140px;
+    }
     &__list {
         display: flex;
         margin-top: 40px;
+        @media (max-width:$xl) {
+            margin-top: 48px;
+        }
         &.top {
             .usefulBlog__item {
                 transform: translateY(-40px);
@@ -619,8 +662,14 @@
     &__item {
         width: 450px;
         transform: translateY(0px);
+        @media (max-width:$xl) {
+            width: 326px;
+        }
         &:not(:first-child) {
             margin-left: 63px;
+            @media (max-width:$xl) {
+                margin-left: 58px;
+            }
         }
         &:nth-child(1) {
             transition: transform .3s .1s;
@@ -657,6 +706,9 @@
         }
         border-radius: 60px 60px 60px 20px;
         overflow: hidden;
+        @media (max-width:$xl) {
+            height: 210px;
+        }
         &:after {
             content:'';
             position: absolute;
@@ -687,6 +739,11 @@
         font-size: 20px;
         line-height: 20px;
         color: #748092;
+        @media (max-width:$xl) {
+            margin-top: 40px;
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
     &__title {
         margin-top: 12px;
@@ -696,11 +753,18 @@
         line-height: 36px;
         color: $gray;
         transition: $transition;
+        @media (max-width:$xl) {
+            font-size: 24px;
+            line-height: 34px;
+        }
     }
 }
 .reviews {
     position: relative;
     padding-top: 395px;
+    @media (max-width:$xl) {
+        padding-top: 296px;
+    }
     &__bg {
         position: absolute;
         top: -182px;
@@ -721,6 +785,10 @@
         //margin: 62px -2px 0 -2px;
         display: flex;
         flex-wrap: wrap;
+        @media (max-width:$xl) {
+            margin-top: 50px;
+            margin-right: -32px;
+        }
     }
     &__item {
         flex:none;
@@ -730,6 +798,10 @@
         height: 245px;
         overflow: hidden;
         transition: $transition;
+        @media (max-width:$xl) {
+            width: 180px;
+            height: 180px;
+        }
         &:first-child {
             border-radius: 60px 0 0 0;
         }
@@ -798,6 +870,14 @@
     &__svg {
         position: absolute;
         top: 159px;
+        @media (max-width:$xl) {
+            top: -20px;
+        }
+        svg {
+            @media (max-width:$xl) {
+                width: 1440px;
+            }
+        }
         &.show {
             .reviews__path {
                 &_0 {
@@ -832,6 +912,9 @@
     position: relative;
     &__container {
         height: 880px;
+        @media (max-width:$xl) {
+            height: 645px;
+        }
     }
     &__video {
         width: 100%;
@@ -845,22 +928,39 @@
         bottom: 85px;
         left: 153px;
         z-index: 2;
+        @media (max-width:$xl) {
+            bottom: 61px;
+            left: 172px;
+        }
     }
     &__title {
         font-size: 72px;
         line-height: 79px;
         color: $white;
         font-family: 'Prata';
+        @media (max-width:$xl) {
+            font-size: 60px;
+            line-height: 60px;
+        }
     }
     &__description {
         margin-top: 33px;
         font-size: 24px;
         line-height: 34px;
-        color: $greenLight
+        color: $greenLight;
+        @media (max-width:$xl) {
+            margin-top: 24px;
+            font-size: 18px;
+            line-height: 25px;
+        }
     }
     &__btn {
         margin-top: 39px;
         width: 196px;
+        @media (max-width:$xl) {
+            margin-top: 28px;
+            width: 147px;
+        }
     }
 }
 .specialists {
@@ -884,6 +984,9 @@
         position: relative;
         display: flex;
         align-items: center;
+        @media (max-width:$xl) {
+            padding-left: 45px;
+        }
     }
     &__title {
         font-size: 48px;
@@ -921,7 +1024,7 @@
         width: 255px;
         height: 375px;
         @media (max-width:$xl) {
-            right: -130px;
+            right: -168px;
         }
         svg {
             @extend %stretch;
@@ -971,7 +1074,7 @@
     overflow: hidden;
     flex: none;
     @media (max-width:$xl) {
-        padding: 48px 27px 33px 38px;
+        padding: 42px 27px 33px 38px;
     }
     &__content {
         padding-right: 35px;

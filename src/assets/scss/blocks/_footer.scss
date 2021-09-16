@@ -1,8 +1,17 @@
 .footer {
     padding-top: 118px;
-    padding-bottom: 58px;
+    padding-bottom: 42px;
+    overflow: hidden;
+    @media (max-width:$xl) {
+        padding-top: 74px;
+        padding-bottom: 34px;
+    }
     &__content {
         position: relative;
+        @media (max-width:$xl) {
+            padding-left: 61px;
+            padding-right: 93px;
+        }
         &:before {
             content:'';
             position: absolute;
@@ -13,6 +22,14 @@
             background: {
                 image: url($imgUrl + "footerMap.png");
                 repeat: no-repeat;
+            }
+            z-index: -1;
+            @media (max-width:$xl) {
+                top: -55px;
+                left: 20%;
+                width: 464px;
+                height: 479px;
+                background-size: contain;
             }
         }
     }
@@ -163,6 +180,10 @@
         border: 2px solid rgba(141, 155, 178, .3);
         border-radius: 50%;
         transition: $transition;
+        @media (max-width:$xl) {
+            width: 42px;
+            height: 42px;
+        }
         svg {
             display: block;
             path {
