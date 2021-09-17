@@ -327,13 +327,10 @@
         text-align: center;
     }
     &__title {
-        font-size: 56px;
+        font-size: 48px;
         line-height: 58px;
         color: $blueDark;
         font-family: 'Prata';
-        @media (max-width:$xl) {
-            font-size: 48px;
-        }
     }
     &__description {
         width: 80%;
@@ -1038,6 +1035,9 @@
     @media (max-width:$xl) {
         padding-top: 80px;
     }
+    @media (max-width:$lg) {
+        padding-top: 30px;
+    }
     &__bg {
         position: absolute;
         top: -628px;
@@ -1056,6 +1056,9 @@
         @media (max-width:$xl) {
             padding-left: 45px;
         }
+        @media (max-width:$lg) {
+            padding-left: 0;
+        }
     }
     &__title {
         font-size: 48px;
@@ -1069,6 +1072,9 @@
     }
     &__link {
         margin-left: 41px;
+        @media (max-width:$lg) {
+            margin-left: 65px;
+        }
     }
     &__all {
         display: inline-block;
@@ -1094,6 +1100,10 @@
         height: 375px;
         @media (max-width:$xl) {
             right: -168px;
+        }
+        @media (max-width:$lg) {
+            top: -82px;
+            right: 2px;
         }
         svg {
             @extend %stretch;
@@ -1135,6 +1145,9 @@
         @media (max-width:$xl) {
             margin-top: 52px;
             justify-content: space-between;
+        }
+        @media (max-width:$lg) {
+            margin-top: 20px;
         }
     }
 }

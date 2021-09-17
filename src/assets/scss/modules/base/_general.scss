@@ -1484,7 +1484,10 @@ img.mfp-img {
         width: 672px;
     }
     @media (max-width:$lg) {
+        margin-left: 0;
         width: 100%;
+        overflow-x: scroll;
+        padding-top: 60px;
     }
     &__content {
         height: 100%;
@@ -1502,6 +1505,7 @@ img.mfp-img {
         }
         @media (max-width:$lg) {
             flex: none;
+            height: 340px;
         }
     }
     &__description {
@@ -1519,10 +1523,16 @@ img.mfp-img {
             padding-top: 62px;
             padding-bottom: 64px;
         }
+        @media (max-width:$lg) {
+            animation: none;
+        }
     }
     &__wrapper {
         @media (max-width:$xl) {
             max-width: 235px;
+        }
+        @media (max-width:$lg) {
+            max-width: 335px;
         }
     }
     &__name {
@@ -1603,6 +1613,10 @@ img.mfp-img {
             right: 0;
             zoom: 0.9;
         }
+        @media (max-width:$lg) {
+            right: -20px;
+            zoom: .7;
+        }
         &:after {
             content:'';
             position: absolute;
@@ -1615,12 +1629,18 @@ img.mfp-img {
                 repeat: no-repeat;
             }
             animation:fadeOutLeftTopImg .5s both 0.9s;
+            @media (max-width:$lg) {
+                animation: none;
+            }
         }
         img {
             display: block;
             position: relative;
             z-index: 1;
             animation:fadeOutLeftTopImg 1.2s both;
+            @media (max-width:$lg) {
+                animation: none;
+            }
         }
     }
     .sliderArrow__prev {
