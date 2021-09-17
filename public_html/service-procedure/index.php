@@ -55,26 +55,8 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 <div class="portfolioSliderFor__item">
                                     <div class="portfolioSliderFor__wrapper">
                                         <div class="portfolioSliderFor__img twentytwenty_js">
-                                            <img src="/dist/img/portfolioSliderImg1-1.jpg">
-                                            <img src="/dist/img/portfolioSliderImg1-2.jpg">
-                                        </div>
-                                        <div class="portfolioSliderFor__pseudoElements">
-                                            <span>До</span>
-                                            <span>После</span>
-                                        </div>
-                                    </div>
-                                    <div class="portfolioSliderFor__description">
-                                        <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
-                                        <div class="portfolioSliderFor__name">
-                                            Криолиполиз
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolioSliderFor__item">
-                                    <div class="portfolioSliderFor__wrapper">
-                                        <div class="portfolioSliderFor__img twentytwenty_js">
-                                            <img src="/dist/img/portfolioSliderImg2-1.jpg">
-                                            <img src="/dist/img/portfolioSliderImg2-2.jpg">
+                                            <img src="/dist/img/trash/portfolioSliderImgProcedure1-1.jpg">
+                                            <img src="/dist/img/trash/portfolioSliderImgProcedure1-2.jpg">
                                         </div>
                                         <div class="portfolioSliderFor__pseudoElements">
                                             <span>До</span>
@@ -91,10 +73,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             </div>
                             <div class="portfolioSliderNav portfolioSliderNav_js">
                                 <div class="portfolioSliderNav__item active" data-slide="1">
-                                    <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
-                                </div>
-                                <div class="portfolioSliderNav__item" data-slide="2">
-                                    <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                    <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-2.jpg)"></div>
                                 </div>
                             </div>
                         </div>
@@ -478,7 +457,14 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                             <div class="serviceTestimony__about">
                                                 <span>
                                                     Наличие локальных жировых отложений, которые не&nbsp;поддаются традиционным способам
-                                                    похудения&nbsp;&mdash; спорту, диетам и&nbsp;массажу; уменьшение объемов тела
+                                                    похудения&nbsp;&mdash; спорту, диетам и&nbsp;массажу
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="serviceTestimony__item">
+                                            <div class="serviceTestimony__about">
+                                                <span>
+                                                    Уменьшение объемов тела
                                                 </span>
                                             </div>
                                         </div>

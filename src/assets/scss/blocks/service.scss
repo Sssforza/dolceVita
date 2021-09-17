@@ -816,11 +816,13 @@
         line-height: 30px;
         font-weight: 500;
         color: $blueDark;
-        cursor: pointer;
         transition: $transition5;
-        @media (min-width:$xl) {
-            &:hover {
-                color: $purple;
+        &.hover {
+            cursor: pointer;
+            @media (min-width:$xl) {
+                &:hover {
+                    color: $purple;
+                }
             }
         }
         &.show {

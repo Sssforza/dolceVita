@@ -153,6 +153,7 @@ body {
     background: $purple;
     border-radius: 20px;
     transition: $transition5;
+    font-family: 'EuclidFlex';
     @media (min-width:$xl) {
         &:hover {
             background: #820062;
@@ -1721,7 +1722,7 @@ img.mfp-img {
     }
     &__doctor {
         position: absolute;
-        right: 0;
+        right: 10px;
         bottom: 0;
         img {
             display: block;
