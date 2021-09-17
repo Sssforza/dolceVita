@@ -917,6 +917,12 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 					</div>
 					<div class="sectionConsult__input">
 						<div class="envelopeInput">
+							<input class="envelopeInput__field" placeholder="Имя" type="text">
+							<span class="envelopeInput__error">
+								Введите Ваше имя
+							</span>
+						</div>
+						<div class="envelopeInput">
 							<input class="envelopeInput__field" placeholder="Телефон" type="text">
 							<span class="envelopeInput__error">
 								Неверный формат телефона

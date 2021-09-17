@@ -466,6 +466,7 @@ img.mfp-img {
 //envelope inputs
 .envelopeInput {
     position: relative;
+    transition: $transition;
     @media (min-width:$xl) {
         &:hover {
             .envelopeInput__field {
@@ -1733,8 +1734,14 @@ img.mfp-img {
     }
     &__input {
         margin-top: 42px;
+        display: flex;
         @media (max-width:$xl) {
             margin-top: 30px;
+        }
+        .envelopeInput {
+            &:not(:first-child) {
+                margin-left: 20px;
+            }
         }
     }
     &__send {
@@ -1835,9 +1842,9 @@ img.mfp-img {
     }
     .envelopeInput {
         &__field {
-            width: 576px;
+            width: 288px;
             @media (max-width:$xl) {
-                width: 422px;
+                width: 211px;
             }
         }
     }

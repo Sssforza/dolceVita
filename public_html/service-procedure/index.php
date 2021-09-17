@@ -576,7 +576,13 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 						Не&nbsp;знаете что выбрать, оставьте свой номер телефона: мы&nbsp;позвоним 
 						и&nbsp;ответим на&nbsp;все интересующие вас вопросы
 					</div>
-					<div class="sectionConsult__input">
+                    <div class="sectionConsult__input">
+						<div class="envelopeInput">
+							<input class="envelopeInput__field" placeholder="Имя" type="text">
+							<span class="envelopeInput__error">
+								Введите Ваше имя
+							</span>
+						</div>
 						<div class="envelopeInput">
 							<input class="envelopeInput__field" placeholder="Телефон" type="text">
 							<span class="envelopeInput__error">
