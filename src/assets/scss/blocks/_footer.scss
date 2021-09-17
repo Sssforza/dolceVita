@@ -143,6 +143,10 @@
 }
 .footerNav {
     width: 304px;
+    @media (max-width:$lg) {
+        padding-top: 74px;
+        padding-bottom: 34px;
+    }
     &__list {
         display: grid;
         grid-template-columns: 196px 108px;

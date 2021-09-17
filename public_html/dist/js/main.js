@@ -90,11 +90,297 @@
 
 __webpack_require__(1);
 __webpack_require__(3);
-module.exports = __webpack_require__(21);
+__webpack_require__(5);
+__webpack_require__(23);
+module.exports = __webpack_require__(24);
 
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+// Device.js
+// (c) 2014 Matthew Hudson
+// Device.js is freely distributable under the MIT license.
+// For all details and documentation:
+// http://matthewhudson.me/projects/device.js/
+console.log("device.js");
+(function () {
+  var device, previousDevice, addClass, documentElement, find, handleOrientation, hasClass, orientationEvent, removeClass, userAgent; // Save the previous value of the device variable.
+
+  previousDevice = window.device;
+  device = {}; // Add device as a global object.
+
+  window.device = device; // The <html> element.
+
+  documentElement = window.document.documentElement; // The client user agent string.
+  // Lowercase, so we can use the more efficient indexOf(), instead of Regex
+
+  userAgent = window.navigator.userAgent.toLowerCase(); // Main functions
+  // --------------
+
+  device.ios = function () {
+    return device.iphone() || device.ipod() || device.ipad();
+  };
+
+  device.iphone = function () {
+    return !device.windows() && find('iphone');
+  };
+
+  device.ipod = function () {
+    return find('ipod');
+  };
+
+  device.ipad = function () {
+    return find('ipad');
+  };
+
+  device.android = function () {
+    return !device.windows() && find('android');
+  };
+
+  device.androidPhone = function () {
+    return device.android() && find('mobile');
+  };
+
+  device.androidTablet = function () {
+    return device.android() && !find('mobile');
+  };
+
+  device.blackberry = function () {
+    return find('blackberry') || find('bb10') || find('rim');
+  };
+
+  device.blackberryPhone = function () {
+    return device.blackberry() && !find('tablet');
+  };
+
+  device.blackberryTablet = function () {
+    return device.blackberry() && find('tablet');
+  };
+
+  device.windows = function () {
+    return find('windows');
+  };
+
+  device.windowsPhone = function () {
+    return device.windows() && find('phone');
+  };
+
+  device.windowsTablet = function () {
+    return device.windows() && find('touch') && !device.windowsPhone();
+  };
+
+  device.fxos = function () {
+    return (find('(mobile;') || find('(tablet;')) && find('; rv:');
+  };
+
+  device.fxosPhone = function () {
+    return device.fxos() && find('mobile');
+  };
+
+  device.fxosTablet = function () {
+    return device.fxos() && find('tablet');
+  };
+
+  device.meego = function () {
+    return find('meego');
+  };
+
+  device.cordova = function () {
+    return window.cordova && location.protocol === 'file:';
+  };
+
+  device.nodeWebkit = function () {
+    return _typeof(window.process) === 'object';
+  };
+
+  device.mobile = function () {
+    return device.androidPhone() || device.iphone() || device.ipod() || device.windowsPhone() || device.blackberryPhone() || device.fxosPhone() || device.meego();
+  };
+
+  device.tablet = function () {
+    return device.ipad() || device.androidTablet() || device.blackberryTablet() || device.windowsTablet() || device.fxosTablet();
+  };
+
+  device.desktop = function () {
+    return !device.tablet() && !device.mobile();
+  };
+
+  device.television = function () {
+    var i, tvString;
+    television = ["googletv", "viera", "smarttv", "internet.tv", "netcast", "nettv", "appletv", "boxee", "kylo", "roku", "dlnadoc", "roku", "pov_tv", "hbbtv", "ce-html"];
+    i = 0;
+
+    while (i < television.length) {
+      if (find(television[i])) {
+        return true;
+      }
+
+      i++;
+    }
+
+    return false;
+  };
+
+  device.portrait = function () {
+    return window.innerHeight / window.innerWidth > 1;
+  };
+
+  device.landscape = function () {
+    return window.innerHeight / window.innerWidth < 1;
+  }; // Public Utility Functions
+  // ------------------------
+  // Run device.js in noConflict mode,
+  // returning the device variable to its previous owner.
+
+
+  device.noConflict = function () {
+    window.device = previousDevice;
+    return this;
+  }; // Private Utility Functions
+  // -------------------------
+  // Simple UA string search
+
+
+  find = function find(needle) {
+    return userAgent.indexOf(needle) !== -1;
+  }; // Check if documentElement already has a given class.
+
+
+  hasClass = function hasClass(className) {
+    var regex;
+    regex = new RegExp(className, 'i');
+    return documentElement.className.match(regex);
+  }; // Add one or more CSS classes to the <html> element.
+
+
+  addClass = function addClass(className) {
+    var currentClassNames = null;
+
+    if (!hasClass(className)) {
+      currentClassNames = documentElement.className.replace(/^\s+|\s+$/g, '');
+      documentElement.className = currentClassNames + " " + className;
+    }
+  }; // Remove single CSS class from the <html> element.
+
+
+  removeClass = function removeClass(className) {
+    if (hasClass(className)) {
+      documentElement.className = documentElement.className.replace(" " + className, "");
+    }
+  }; // HTML Element Handling
+  // ---------------------
+  // Insert the appropriate CSS class based on the _user_agent.
+
+
+  if (device.ios()) {
+    if (device.ipad()) {
+      addClass("ios ipad tablet");
+    } else if (device.iphone()) {
+      addClass("ios iphone mobile");
+    } else if (device.ipod()) {
+      addClass("ios ipod mobile");
+    }
+  } else if (device.android()) {
+    if (device.androidTablet()) {
+      addClass("android tablet");
+    } else {
+      addClass("android mobile");
+    }
+  } else if (device.blackberry()) {
+    if (device.blackberryTablet()) {
+      addClass("blackberry tablet");
+    } else {
+      addClass("blackberry mobile");
+    }
+  } else if (device.windows()) {
+    if (device.windowsTablet()) {
+      addClass("windows tablet");
+    } else if (device.windowsPhone()) {
+      addClass("windows mobile");
+    } else {
+      addClass("desktop");
+    }
+  } else if (device.fxos()) {
+    if (device.fxosTablet()) {
+      addClass("fxos tablet");
+    } else {
+      addClass("fxos mobile");
+    }
+  } else if (device.meego()) {
+    addClass("meego mobile");
+  } else if (device.nodeWebkit()) {
+    addClass("node-webkit");
+  } else if (device.television()) {
+    addClass("television");
+  } else if (device.desktop()) {
+    addClass("desktop");
+  }
+
+  if (device.cordova()) {
+    addClass("cordova");
+  } // Orientation Handling
+  // --------------------
+  // Handle device orientation changes.
+
+
+  handleOrientation = function handleOrientation() {
+    if (device.landscape()) {
+      removeClass("portrait");
+      addClass("landscape");
+    } else {
+      removeClass("landscape");
+      addClass("portrait");
+    }
+
+    return;
+  }; // Detect whether device supports orientationchange event,
+  // otherwise fall back to the resize event.
+
+
+  if (Object.prototype.hasOwnProperty.call(window, "onorientationchange")) {
+    orientationEvent = "orientationchange";
+  } else {
+    orientationEvent = "resize";
+  } // Listen for changes in orientation.
+
+
+  if (window.addEventListener) {
+    window.addEventListener(orientationEvent, handleOrientation, false);
+  } else if (window.attachEvent) {
+    window.attachEvent(orientationEvent, handleOrientation);
+  } else {
+    window[orientationEvent] = handleOrientation;
+  }
+
+  handleOrientation();
+
+  if ( true && _typeof(__webpack_require__(2)) === 'object' && __webpack_require__(2)) {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+      return device;
+    }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ( true && module.exports) {
+    module.exports = device;
+  } else {
+    window.device = device;
+  }
+}).call(this);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(this, {}))
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -113,7 +399,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  *
  */
 !function (a, b) {
-   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (b),
+   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (b),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
@@ -499,7 +785,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11387,31 +11673,31 @@ return jQuery;
 
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
-/* harmony import */ var _blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
-/* harmony import */ var _blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
-/* harmony import */ var _blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
-/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
-/* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
-/* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
-/* harmony import */ var _blocks_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
-/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(15);
-/* harmony import */ var _blocks_service_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16);
-/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(17);
-/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(18);
-/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(19);
-/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(20);
+/* harmony import */ var _blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony import */ var _blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
+/* harmony import */ var _blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(11);
+/* harmony import */ var _blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(12);
+/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13);
+/* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(14);
+/* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(15);
+/* harmony import */ var _blocks_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16);
+/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(17);
+/* harmony import */ var _blocks_service_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(18);
+/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(19);
+/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(20);
+/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(21);
+/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(22);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11531,10 +11817,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_16__["map"])();
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(6)))
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports) {
 
 var g;
@@ -11560,7 +11846,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11583,7 +11869,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 ;(function(factory) {
     'use strict';
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -14576,7 +14862,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Magnific Popup - v1.1.0 - 2016-02-20
@@ -14585,7 +14871,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 ;(function (factory) { 
 if (true) { 
  // AMD. Register as an anonymous module. 
- !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+ !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); 
@@ -16438,7 +16724,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
  _checkInstance(); }));
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16475,7 +16761,7 @@ function popupImage() {
 }
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16539,7 +16825,7 @@ function headerGray() {
 }
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16649,7 +16935,7 @@ function usefulBlog() {
 }
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16691,7 +16977,7 @@ function documentClick() {
 }
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16800,7 +17086,7 @@ function scrollUp() {
 }
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16861,36 +17147,38 @@ function sliderSpecialists() {
   var slickSpecialists = $(".specialistsFor_js");
 
   if (slickSpecialists.length) {
-    slickSpecialists.slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-      fade: true,
-      draggable: false,
-      infinite: false,
-      prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-      nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
-    });
-    $('div[data-slide]').click(function (e) {
-      e.preventDefault();
-      $('div[data-slide]').removeClass('active');
-      $(this).addClass('active');
-      var slideno = $(this).data('slide');
-      slickSpecialists.slick('slickGoTo', slideno - 1);
-    });
-    $('.slick-arrow').click(function (e) {
-      var slide = $('.specialistsNav__item.active').data('slide');
-      slide = Number(slide);
-      $('div[data-slide]').removeClass('active');
+    if (window.screen.availWidth >= 1025) {
+      slickSpecialists.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        draggable: false,
+        infinite: false,
+        prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+        nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+      });
+      $('div[data-slide]').click(function (e) {
+        e.preventDefault();
+        $('div[data-slide]').removeClass('active');
+        $(this).addClass('active');
+        var slideno = $(this).data('slide');
+        slickSpecialists.slick('slickGoTo', slideno - 1);
+      });
+      $('.slick-arrow').click(function (e) {
+        var slide = $('.specialistsNav__item.active').data('slide');
+        slide = Number(slide);
+        $('div[data-slide]').removeClass('active');
 
-      if ($(this).hasClass('sliderArrow__next')) {
-        slide = slide + 1;
-      } else {
-        slide = slide - 1;
-      }
+        if ($(this).hasClass('sliderArrow__next')) {
+          slide = slide + 1;
+        } else {
+          slide = slide - 1;
+        }
 
-      $('.specialistsNavScroll_js').find("[data-slide='".concat(slide, "']")).addClass('active');
-    });
+        $('.specialistsNavScroll_js').find("[data-slide='".concat(slide, "']")).addClass('active');
+      });
+    }
   }
 }
 ; // slider portfolio specialist
@@ -16970,7 +17258,7 @@ function slickServiceReviews() {
 ;
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16984,7 +17272,7 @@ function scrollbar() {
 }
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17011,7 +17299,7 @@ function usefulBlogHover() {
 }
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17204,7 +17492,7 @@ function servicesSelectedFetch() {
 }
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17358,7 +17646,7 @@ function serviceFixedAsideBar() {
 ;
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17428,7 +17716,7 @@ function tabsSpecialistEducation() {
 ;
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17480,7 +17768,7 @@ function aimingAtTheDoctor() {
 ;
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17558,7 +17846,7 @@ function clearInput() {
 ;
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17586,7 +17874,7 @@ function map() {
 }
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -17600,7 +17888,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * http://aerolab.github.io/midnight.js/LICENSE.txt
  */
 !function (t) {
-   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
@@ -18015,6 +18303,222 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   });
 }(jQuery);
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module './jquery.mask.min.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/document.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/_addCounter.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+
+
+var windowInnerWidth = document.documentElement.clientWidth;
+var lg = 1025; //1024
+
+var md = 769; //768
+
+var xs = 541; //540 content=320
+
+var viewport = $('meta[name="viewport"]');
+
+if (window.screen.availWidth < lg) {
+  if (device.tablet()) {
+    viewport.attr("content", "width=1024");
+  }
+}
+
+if (window.screen.availWidth < md) {
+  if (device.tablet()) {
+    viewport.attr("content", "width=768");
+  }
+}
+
+if (window.screen.availWidth < xs) {
+  if (device.mobile()) {
+    viewport.attr("content", "width=320");
+  }
+}
+
+!(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/document.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(function (parent) {
+  /* Favorites */
+  $('.likeProducts_js', parent).on('click', function (e) {
+    var favorID = $(this).attr('data-item');
+    if ($(this).hasClass('likeProducts_active')) var doAction = 'add';else var doAction = 'delete';
+    addFavorite(favorID, doAction);
+  });
+  $('.orderCardAll_js', parent).on('click', shoppingСard);
+
+  function shoppingСard() {
+    $('.orderCard').not($(this).parents('.orderCard')).removeClass('show');
+
+    if ($(this).parents('.orderCard').hasClass('show')) {
+      $(this).parents('.orderCard').removeClass('show');
+    } else {
+      $(this).parents('.orderCard').addClass('show');
+    }
+
+    $('.lkOrders__list .orderCard__products').not($(this).next()).slideUp(500);
+    $(this).next().slideToggle(500);
+  }
+});
+$(document).ready(function () {
+  if ($('main').hasClass('404_js')) {
+    $('body').addClass('page404');
+  }
+
+  ;
+
+  if ($('main').hasClass('general_js')) {
+    $('body').addClass('pageGeneral');
+  }
+
+  ;
+
+  if ($('main').hasClass('detail_js')) {
+    $('body').addClass('pageDetail');
+  }
+
+  ; // Скролл
+
+  if (window.screen.availWidth < md) {
+    jQuery('.scrollbar-inner').scrollbar();
+  }
+
+  ;
+  $(".counter").each(function (index, element) {
+    var count = $(element).text();
+
+    if (count > 0) {
+      $(element).show();
+    }
+  }); // кнопка отмена в попапе
+
+  $('.deleteAddressCancel_js, .popupDuplicateOrder_js').on('click', function () {
+    $('.popupMessage__close').trigger('click');
+  }); // open map in the page contacts
+
+  $('.contactsOpenMap_js').on('click', function () {
+    $('.contactsMain').addClass('showMap');
+    $('body').addClass('body_overflow');
+  }); // close map in the page contacts
+
+  $('.contactsCloseMap_js').on('click', function () {
+    $('.contactsMain').removeClass('showMap');
+    $('body').removeClass('body_overflow');
+  });
+  $('.maskPhone').mask('+7 Z00 000-00-00', {
+    'translation': {
+      Z: {
+        pattern: /[0-69-9]/
+      }
+    }
+  });
+  $('.checkInSwipe_js').on('click', function () {
+    $('.checkInSwipe_js').removeClass('active');
+    $('.checkoutCheckIn').removeClass('entityForm, individualForm');
+    $(this).addClass('active');
+    var face = $(this).attr('data-face');
+    $('.checkoutCheckIn').addClass(face);
+  });
+});
+/* Избранное */
+
+function addFavorite(id, action) {
+  var param = 'id=' + id + "&action=" + action;
+  $.ajax({
+    url: '/local/ajax/wishlist.php',
+    type: "GET",
+    dataType: "html",
+    data: param,
+    success: function success(response) {
+      if (response) {
+        var result = $.parseJSON(response);
+      }
+
+      if (result.success == 'success') {
+        if (result.report == 1 || action == 'add') {
+          $('.likeProducts_js[data-item="' + id + '"]').addClass('likeProducts_active');
+          var wishCount = parseInt($('.user__link_favorites .counter').html()) + 1;
+          $('.user__link_favorites .counter').html(wishCount).show();
+          $('.bottomMenu__item_favorite .bottomMenu__goods').html(wishCount).show();
+        }
+
+        if (result.report == 2 || action == 'delete') {
+          $('.likeProducts_js[data-item="' + id + '"]').removeClass('likeProducts_active');
+          var wishCount = parseInt($('.user__link_favorites .counter').html()) - 1;
+          $('.user__link_favorites .counter').html(wishCount);
+          $('.bottomMenu__item_favorite .bottomMenu__goods').html(wishCount).show();
+
+          if (wishCount == 0) {
+            $('.user__link_favorites .counter').hide(wishCount);
+            $('.bottomMenu__item_favorite .bottomMenu__goods').hide(wishCount);
+            ;
+          }
+        }
+      } else {}
+    },
+    error: function error(jqXHR, textStatus, errorThrown) {}
+  });
+}
+
+$(document).on('click', '.favorites', function () {
+  var targetContainer = $('.lkOrders__list'),
+      url = $('.showMore').attr('data-url');
+  $('.showMore').find('.showMore__btn').html('Загрузка');
+
+  if (url !== undefined) {
+    $.ajax({
+      type: 'GET',
+      url: url,
+      dataType: 'html',
+      success: function success(data) {
+        $('.showMore').remove();
+        $('.pagination').remove();
+        var tempContainer = document.createElement('div');
+        var pagination = $(data).find('.pagination');
+        var elements = $(data).find('.lkOrders__list');
+        var showMore = $(data).find('.showMore');
+        tempContainer.innerHTML = elements[0].innerHTML; //initContentHandlers(tempContainer);
+
+        targetContainer.append($(tempContainer).children('div'));
+        targetContainer.append(showMore);
+        targetContainer.append(pagination);
+        $('.mainCountCardAct_js').off('click');
+        $('.mainCardBasket_js').off('click');
+        $('.likeProducts_js').off('click');
+        !(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/_addCounter.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+        !(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/_addCounter.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+        !(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/_addCounter.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+        $('.likeProducts_js').on('click', function (e) {
+          var favorID = $(this).attr('data-item');
+          if ($(this).hasClass('likeProducts_active')) var doAction = 'delete';else var doAction = 'add';
+          addFavorite(favorID, doAction);
+        });
+        var arUrl = url.split('=');
+        var urls = new URL(window.location);
+        urls.searchParams.set('PAGEN_1', arUrl[1]);
+        history.pushState(null, null, urls);
+      }
+    });
+  }
+});
+BX.addCustomEvent('onAjaxSuccess', function () {
+  $('.likeProducts_js').off('click');
+  $('.mainCountCardAct_js').off('click');
+  $('.mainCardBasket_js').off('click');
+  $('.likeProducts_js').on('click', function (e) {
+    var favorID = $(this).attr('data-item');
+    if ($(this).hasClass('likeProducts_active')) var doAction = 'delete';else var doAction = 'add';
+    addFavorite(favorID, doAction);
+  });
+  !(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/_addCounter.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+  !(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/_addCounter.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+  !(function webpackMissingModule() { var e = new Error("Cannot find module './blocks/_addCounter.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+});
 
 /***/ })
 /******/ ]);

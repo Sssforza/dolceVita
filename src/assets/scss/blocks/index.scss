@@ -71,11 +71,18 @@
             padding-top: 70px;
             padding-left: 174px;
         }
+        @media (max-width:$lg) {
+            padding-top: 30px;
+            padding-left: 42px;
+        }
     }
     &__inner {
         max-width: 530px;
         @media (max-width:$xl) {
             max-width: 510px;
+        }
+        @media (max-width:$lg) {
+            max-width: 420px;
         }
     }
     &__title {
@@ -92,6 +99,10 @@
             font-size: 48px;
             line-height: 53px;
         }
+        @media (max-width:$lg) {
+            font-size: 42px;
+            line-height: 50px;
+        }
     }
     &__description {
         position: relative;
@@ -107,6 +118,11 @@
             font-size: 18px;
             line-height: 26px;
         }
+        @media (max-width:$lg) {
+            margin-top: 15px;
+            font-size: 18px;
+            line-height: 26px;
+        }
     }
     &__btn {
         position: relative;
@@ -119,6 +135,10 @@
             margin-top: 64px;
             width: 202px;
         }
+        @media (max-width:$lg) {
+            margin-top: 25px;
+            width: 203px;
+        }
     }
     &__nav {
         position: absolute;
@@ -129,6 +149,9 @@
         align-items: center;
         flex-direction: column;
         justify-content: center;
+        @media (max-width:$lg) {
+            right: 60px;
+        }
     }
     &__dots {
         display: flex;
@@ -294,6 +317,9 @@
         @media (max-width:$xl) {
             padding-top: 160px;
         }
+        @media (max-width:$lg) {
+            padding-top: 120px;
+        }
     }
     &__texts {
         max-width: 880px;
@@ -316,7 +342,7 @@
         line-height: 34px;
         color: $gray;
         @media (max-width:$xl) {
-            margin-top: 31px;
+            margin-top: 32px;
         }
     }
     .slick-slide {
@@ -326,6 +352,9 @@
 .sliderEquipment {
     position: relative;
     padding-top: 115px;
+    @media (max-width:$lg) {
+        padding-top: 58px;
+    }
     @media (max-width:$xl) {
         padding-top: 85px;
     }
@@ -336,16 +365,27 @@
             padding-left: 174px;
             padding-right: 112px;
         }
+        @media (max-width:$lg) {
+            padding-left: 162px;
+        }
     }
     &__item {
         display: flex !important;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:$lg) {
+            flex-wrap: wrap;
+        }
     }
     &__texts {
         max-width: 574px;
         @media (max-width:$xl) {
             max-width: 408px;
+        }
+        @media (max-width:$lg) {
+            order: 3;
+            margin-top: 12px;
+            max-width: 80%;
         }
     }
     &__title {
@@ -403,6 +443,9 @@
             align-items: flex-start;
             flex-direction: column;
         }
+        @media (max-width:$lg) {
+            flex-direction: row;
+        }
     }
     &__procedures {
         display: flex;
@@ -418,6 +461,10 @@
             @media (max-width:$xl) {
                 margin-left: 0;
                 margin-top: 22px;
+            }
+            @media (max-width:$lg) {
+                margin-left: 78px;
+                margin-top: 0;
             }
         }
         svg {
@@ -439,8 +486,17 @@
             min-width: 308px;
             right: -40px;
         }
+        @media (max-width:$lg) {
+            order: 1;
+            min-width: auto;
+            max-width: 268px;
+            right: -47px;
+        }
         img {
             display: block;
+            @media (max-width:$lg) {
+                height: 584px;
+            }
         }
     }
     &__dop {
@@ -450,6 +506,16 @@
         text-align: center;
         @media (max-width:$xl) {
             width: 438px;
+        }
+        @media (max-width:$lg) {
+            order: 2;
+            left: -48px;
+        }
+    }
+    .sliderArrow__next,
+    .sliderArrow__prev {
+        @media (max-width:$lg) {
+            margin-top: -209px;
         }
     }
 }
@@ -466,6 +532,9 @@
     @media (max-width:$xl) {
         margin-top: 0;
         top: -8px;
+    }
+    @media (max-width:$lg) {
+        top: -27px;
     }
     &__number {
         position: relative;
@@ -1054,6 +1123,10 @@
             padding-left: 73px;
             padding-right: 121px;
         }
+        @media (max-width:$lg) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
     &__box {
         margin-top: 45px;
@@ -1075,6 +1148,9 @@
     flex: none;
     @media (max-width:$xl) {
         padding: 42px 27px 33px 38px;
+    }
+    @media (max-width:$lg) {
+        display: none;
     }
     &__content {
         padding-right: 35px;

@@ -61,6 +61,9 @@
     }
     &__nav {
         margin-left: 54px;
+        @media (max-width:$lg) {
+            display: none;
+        }
     }
     &__tel {
         font-size: 23px;
@@ -75,6 +78,11 @@
             pointer-events: none;
         }
     }
+    &__phone {
+        @media (max-width:$lg) {
+            display: none;
+        }
+    }
     &__btns {
         margin-left: 25px;
         display: flex;
@@ -83,6 +91,9 @@
     }
     &__search {
         position: relative;
+        @media (max-width:$lg) {
+            display: none;
+        }
         &.show {
             .header__envelopeInput {
                 width: 320px;
