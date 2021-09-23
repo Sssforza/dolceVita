@@ -2,33 +2,8 @@
 // Scrollbar
 @import "../blocks/_jquery.scrollbar.scss";
 
-@keyframes mainLinesDraw{
-    to {stroke-dashoffset: 0;}
-}
 @keyframes sliderLinesDraw{
     to {stroke-dashoffset: 0;}
-}
-@keyframes moveGroundLeft {
-    0% {
-        transform: rotate(-5deg) translateX(-10px);
-    }
-    50% {
-        transform: rotate(5deg) translateX(50px);
-    }
-    100% {
-        transform: rotate(-5deg) translateX(-10px);
-    }
-}
-@keyframes moveGroundRight {
-    0% {
-        transform: rotate(15deg) translateX(80px);
-    }
-    50% {
-        transform: rotate(0deg) translateX(-50px);
-    }
-    100% {
-        transform: rotate(15deg) translateX(80px);
-    }
 }
 @keyframes fadeOutLeftTop {
     0% {
@@ -40,37 +15,10 @@
        transform: translateY(-50px) translateX(-50px);
     }
 }
-@keyframes fadeInDown {
-    0% {
-       opacity: 0;
-       transform: translateY(-50px) translateX(-50px);
-    }
-    100% {
-       opacity: 1;
-       transform: translateY(0) translateX(0);
-    }
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
 }
-@keyframes fadeOutLeftTopImg {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0.88);
-        opacity: 0;
-    }
-}
-@keyframes fadeInDownImg {
-    0% {
-        transform: scale(0.88);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
 .sliderMain {
     position: relative;
     width: 100%;
@@ -119,9 +67,23 @@
         padding-left: 122px;
         width: 100%;
         height: 100%;
+        @media (max-width:$xl) {
+            padding-top: 70px;
+            padding-left: 174px;
+        }
+        @media (max-width:$lg) {
+            padding-top: 30px;
+            padding-left: 42px;
+        }
     }
     &__inner {
         max-width: 530px;
+        @media (max-width:$xl) {
+            max-width: 510px;
+        }
+        @media (max-width:$lg) {
+            max-width: 420px;
+        }
     }
     &__title {
         position: relative;
@@ -133,6 +95,14 @@
         font-family: 'Prata';
         letter-spacing: 0.9px;
         transition: top 0.8s ease 0.7s, opacity 0.8s ease 0.7s;
+        @media (max-width:$xl) {
+            font-size: 48px;
+            line-height: 53px;
+        }
+        @media (max-width:$lg) {
+            font-size: 42px;
+            line-height: 50px;
+        }
     }
     &__description {
         position: relative;
@@ -143,6 +113,16 @@
         line-height: 30px;
         color: $greenLight;
         transition: top 1s ease 0.9s, opacity 1s ease 0.9s;
+        @media (max-width:$xl) {
+            margin-top: 16px;
+            font-size: 18px;
+            line-height: 26px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 15px;
+            font-size: 18px;
+            line-height: 26px;
+        }
     }
     &__btn {
         position: relative;
@@ -151,6 +131,14 @@
         margin-top: 66px;
         width: 271px;
         transition: top 1s ease 1.1s, opacity 1s ease 1.1s, background .5s, border .5s, color .5s !important;
+        @media (max-width:$xl) {
+            margin-top: 64px;
+            width: 202px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 25px;
+            width: 203px;
+        }
     }
     &__nav {
         position: absolute;
@@ -161,6 +149,9 @@
         align-items: center;
         flex-direction: column;
         justify-content: center;
+        @media (max-width:$lg) {
+            right: 60px;
+        }
     }
     &__dots {
         display: flex;
@@ -174,13 +165,14 @@
             font-size: 0;
             cursor: pointer;
             overflow: hidden;
+            @media (max-width:$xl) {
+                width: 36px;
+                height: 36px;
+            }
             &:hover {
                 &:after {
                     opacity: 1;
                 }
-            }
-            &:not(:last-child) {
-                margin-right: 13px;
             }
             &:after {
                 content:"";
@@ -193,6 +185,9 @@
                 border-radius: 50%;
                 opacity: .5;
                 transition: $transition;
+                @media (max-width:$xl) {
+                    margin: 13px;
+                }
             }
             &.slick-active {
                 &:after {
@@ -209,6 +204,16 @@
         stroke-miterlimit:10;
         stroke-dasharray: 145;
         stroke-dashoffset: 145;
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            path {
+                @media (max-width:$xl) {
+                    stroke-width: 3;
+                }
+            }
+        }
     }
     &__arrows {
         margin-top: 12px;
@@ -224,6 +229,10 @@
         border-radius: 50%;
         cursor: pointer;
         transition: $transition;
+        @media (max-width:$xl) {
+            width: 36px;
+            height: 36px;
+        }
         &:hover {
             background: rgba(219, 233, 239, .6);
         }
@@ -232,20 +241,23 @@
         }
         svg {
             display: block;
+            @media (max-width:$xl) {
+                width: 10px;
+                height: 19px;
+            }
         }
     }
     &__next {
         margin-top: 12px;
         padding-left: 1px;
+        svg {
+            transform: rotate(180deg);
+        }
     }
     &__prev {
         padding-right: 2px;
     }
-    @keyframes animatedBackground {
-        0% { background-position: 0 0; }
-        100% { background-position: 100% 0; }
-    }
-    &__waves{
+    &__waves {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -265,6 +277,10 @@
                 repeat: repeat;
             }
             animation: animatedBackground 35000s linear infinite;
+            @media (max-width:$xl) {
+                bottom: -5px;
+                animation: animatedBackground 50000s linear infinite;
+            }
         }
         &_1 {
             opacity: .9;
@@ -298,6 +314,12 @@
 .originalEquipment {
     &__content {
         padding-top: 185px;
+        @media (max-width:$xl) {
+            padding-top: 160px;
+        }
+        @media (max-width:$lg) {
+            padding-top: 120px;
+        }
     }
     &__texts {
         max-width: 880px;
@@ -305,7 +327,7 @@
         text-align: center;
     }
     &__title {
-        font-size: 56px;
+        font-size: 48px;
         line-height: 58px;
         color: $blueDark;
         font-family: 'Prata';
@@ -316,6 +338,9 @@
         font-size: 24px;
         line-height: 34px;
         color: $gray;
+        @media (max-width:$xl) {
+            margin-top: 32px;
+        }
     }
     .slick-slide {
         height: auto;
@@ -323,18 +348,42 @@
 }
 .sliderEquipment {
     position: relative;
+    padding-top: 115px;
+    @media (max-width:$lg) {
+        padding-top: 58px;
+    }
+    @media (max-width:$xl) {
+        padding-top: 85px;
+    }
     &__content {
-        margin-top: 115px;
         padding-left: 214px;
         padding-right: 148px;
+        @media (max-width:$xl) {
+            padding-left: 174px;
+            padding-right: 112px;
+        }
+        @media (max-width:$lg) {
+            padding-left: 162px;
+        }
     }
     &__item {
         display: flex !important;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:$lg) {
+            flex-wrap: wrap;
+        }
     }
     &__texts {
         max-width: 574px;
+        @media (max-width:$xl) {
+            max-width: 408px;
+        }
+        @media (max-width:$lg) {
+            order: 3;
+            margin-top: 12px;
+            max-width: 80%;
+        }
     }
     &__title {
         position: relative;
@@ -344,10 +393,16 @@
         color: $blueDark;
         font-family: 'Prata';
         transition: $transition;
-        &:hover {
-            color: $greenMedium;
-            &:before {
-                background: transparent;
+        @media (max-width:$xl) {
+            font-size: 72px;
+            line-height: 93px;
+        }
+        @media (min-width:$xl) {
+            &:hover {
+                color: $greenMedium;
+                &:before {
+                    background: transparent;
+                }
             }
         }
         &:before {
@@ -360,6 +415,9 @@
             opacity: 0.5;
             background: $blueDark;
             transition: $transition;
+            @media (max-width:$xl) {
+                bottom: 7px;
+            }
         }
     }
     &__description {
@@ -367,15 +425,45 @@
         font-size: 21px;
         line-height: 29px;
         color: $gray;
+        @media (max-width:$xl) {
+            margin-top: 36px;
+            font-size: 18px;
+            line-height: 25px;
+        }
     }
     &__box {
         margin-top: 44px;
         display: flex;
         align-items: center;
+        @media (max-width:$xl) {
+            margin-top: 36px;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        @media (max-width:$lg) {
+            flex-direction: row;
+        }
     }
     &__procedures {
         display: flex;
         align-items: center;
+        &:hover {
+            .sliderEquipment__video {
+                color: $blueDark;
+                text-decoration-line: none;
+            }
+        }
+        &.apparatus {
+            margin-left: 41px;
+            @media (max-width:$xl) {
+                margin-left: 0;
+                margin-top: 22px;
+            }
+            @media (max-width:$lg) {
+                margin-left: 78px;
+                margin-top: 0;
+            }
+        }
         svg {
             display: block;
         }
@@ -387,100 +475,45 @@
         text-decoration-line: underline;
         color: $greenDark;
         transition: $transition;
-        &:hover {
-            color: $blueDark;
-            text-decoration-line: none;
-        }
-        &:not(:first-child) {
-            margin-right: 41px;
-        }
     }
     &__img {
         max-width: 544px;
+        position: relative;
+        @media (max-width:$xl) {
+            min-width: 308px;
+            right: -40px;
+        }
+        @media (max-width:$lg) {
+            order: 1;
+            min-width: auto;
+            max-width: 268px;
+            right: -47px;
+        }
         img {
             display: block;
-        }
-    }
-    &__dop {
-        width: 400px;
-        text-align: center;
-    }
-}
-.sliderEquipWarranty {
-    position: relative;
-    width: 195px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__title {
-        margin-top: 20px;
-        font-size: 28px;
-        line-height: 30px;
-        color: $blueDark;
-        font-family: 'Prata';
-    }
-    &__link {
-        display: inline-block;
-        margin-top: 19px;
-        font-size: 18px;
-        line-height: 18px;
-        color: $purple;
-    }
-    &__svg {
-        position: absolute;
-        top: -120px;
-        left: -125px;
-        @media (min-width:$xl) {
-            &:hover {
-                svg {
-                    .sliderEquipWarranty__path {
-                        &_1 {
-                            opacity: .6;
-                            transform: rotate(15deg);
-                        }
-                        &_2 {
-                            opacity: .5;
-                            transform: rotate(25deg) scale(.95);
-                        }
-                        &_3 {
-                            opacity: .4;
-                            transform: rotate(25deg);
-                        }
-                        &_4 {
-                            opacity: .3;
-                            transform: rotate(15deg);
-                        }
-                        &_5 {
-                            opacity: .2;
-                            transform: rotate(15deg);
-                        }
-                    }
-                }
+            @media (max-width:$lg) {
+                height: 584px;
             }
         }
     }
-    &__path {
-        opacity: 0;
-        transform-origin: center center;
-        transition: $transition5;
-        &_1 {
-            transition-delay: .1s;
+    &__dop {
+        position: relative;
+        width: 400px;
+        flex: none;
+        text-align: center;
+        @media (max-width:$xl) {
+            width: 438px;
         }
-        &_2 {
-            transition-delay: .3s;
-        }
-        &_3 {
-            transition-delay: .5s;
-        }
-        &_4 {
-            transition-delay: .7s;
-        }
-        &_5 {
-            transition-delay: .9s;
+        @media (max-width:$lg) {
+            order: 2;
+            left: -48px;
         }
     }
-    svg {
-        display: block;
+    .sliderArrow__next,
+    .sliderArrow__prev {
+        @media (max-width:$lg) {
+            margin-top: -209px;
+        }
     }
 }
 .sliderEquipHexagon {
@@ -493,6 +526,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @media (max-width:$xl) {
+        margin-top: 0;
+        top: -8px;
+    }
+    @media (max-width:$lg) {
+        top: -27px;
+    }
     &__number {
         position: relative;
         left: -10px;
@@ -522,48 +562,14 @@
         @extend %stretch;
     }
 }
-.mainLines {
-    margin-top: -228px;
-    &__path {
-        stroke-miterlimit:10;
-        stroke-dasharray: 3001;
-        stroke-dashoffset: 3001;
-    }
-    &__svg {
-        &.show {
-            .mainLines__path {
-                &_0 {
-                    stroke:#DBE9EF;
-                    animation: mainLinesDraw 1s linear forwards;
-                }
-                &_1 {
-                    stroke:#BBCDD9;
-                    animation: mainLinesDraw 1.1s linear 0.3s forwards;
-                }
-                &_2 {
-                    stroke:#9BB1C3;
-                    animation: mainLinesDraw 1.2s linear 0.5s forwards;
-                }
-                &_3 {
-                    stroke:#7B96AE;
-                    animation: mainLinesDraw 1.3s linear 0.7s forwards;
-                }
-                &_4 {
-                    stroke:#5B7A98;
-                    animation: mainLinesDraw 1.4s linear 0.9s forwards;
-                }
-                &_5 {
-                    stroke:#3B5E82;
-                    animation: mainLinesDraw 1.5s linear 1.2s forwards;
-                }
-            }
-        }
-    }
-}
 .bonusCard {
     padding-top: 272px;
     padding-bottom: 165px;
     position: relative;
+    @media (max-width:$xl) {
+        padding-top: 248px;
+        padding-bottom: 139px;
+    }
     &__content {
         position: relative;
     }
@@ -576,6 +582,12 @@
         z-index: 1;
         transform: translateY(300px) translateX(200px) scale(0.8) rotate(-16deg);
         transition: $transition8eio;
+        @media (max-width:$xl) {
+            width: 490px;
+            height: 347px;
+            top: -115px;
+            right: 158px;
+        }
         img {
             display: block;
             height: 100%;
@@ -587,6 +599,14 @@
         right: 390px;
         transform: translateY(110px) scale(0.8);
         transition: $transition8eio;
+        @media (max-width:$xl) {
+            width: 490px;
+            right: 210px;
+            top: 19px;
+        }
+        img {
+            width: 100%;
+        }
     }
     &.show {
         .bonusCard__card {
@@ -594,45 +614,6 @@
         }
         .bonusCard__phone{
             transform: translateY(0px) scale(1);
-        }
-    }
-}
-.bonusSystem {
-    position: relative;
-    padding-top: 60px;
-    padding-bottom: 65px;
-    width: 100%;
-    background: $blueGrayGrad;
-    border-radius: 60px;
-    overflow: hidden;
-    @extend %centerContainer;
-    &__box {
-        width: 501px;
-    }
-    &__title {
-        font-size: 48px;
-        line-height: 60px;
-        color: $white;
-        font-family: 'Prata';
-    }
-    &__description {
-        margin-top: 26px;
-        font-size: 20px;
-        line-height: 32px;
-        color: $greenLight;
-    }
-    &__ground {
-        position: absolute;
-        pointer-events: none;
-        &_left {
-            left: -220px;
-            top: -300px;
-            animation: moveGroundLeft 2.5s infinite linear;
-        }
-        &_right {
-            top: -160px;
-            right: -130px;
-            animation: moveGroundRight 4s infinite 1s linear;
         }
     }
 }
@@ -646,9 +627,16 @@
     }
     &__box {
         max-width: 572px;
+        @media (max-width:$xl) {
+            max-width: 521px;
+            flex: none;
+        }
         &.guest {
             .typesCards__numbers {
                 margin-top: 36px;
+                @media (max-width:$xl) {
+                    margin-top: 47px;
+                }
                 .typesCards__description {
                     margin-top: 8px;
                 }
@@ -665,6 +653,9 @@
         }
         &.regular {
             margin-left: 198px;
+            @media (max-width:$xl) {
+                margin-left: 46px;
+            }
             .typesCards__item {
                 &:not(:first-child) {
                     margin-left: 34px;
@@ -673,8 +664,14 @@
             .typesCards__numbers {
                 margin-top: 47px;
                 display: flex;
+                @media (max-width:$xl) {
+                    margin-top: 71px;
+                }
                 .typesCards__description {
                     margin-top: -6px;
+                    @media (max-width:$xl) {
+                        margin-top: 2px;
+                    }
                 }
             }
         }
@@ -703,96 +700,25 @@
         line-height: 63px;
         font-weight: 300;
         color: $blueDark;
+        @media (max-width:$xl) {
+            width: 180px;
+        }
     }
     &__percentage {
         font-family: "Roboto";
     }
 }
-.sectionConsult {
-    padding-top: 333px;
-    position: relative;
-    &__description {
-        margin-top: 22px;
-    }
-    &__input {
-        margin-top: 42px;
-    }
-    &__send {
-        margin-top: 48px;
-        display: flex;
-        align-items: center;
-    }
-    &__button {
-        width: 196px;
-    }
-    &__privacy {
-        margin-left: 32px;
-    }
-    &__practice {
-        margin-left: 65px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 373px;
-        height: 335px;
-        transition: opacity .7s .7s;
-        &.hide {
-            opacity: 0;
-        }
-        span {
-            position: absolute;
-            top: 50%;
-            margin-top: -42px;
-            font-size: 24px;
-            line-height: 28px;
-            color: $white;
-            font-weight: 500;
-            text-align: center;
-        }
-        &:after {
-            content:'';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: {
-                image: url($imgUrl + "svg/hexagon.svg");
-                size: contain;
-                repeat: no-repeat;
-            }
-        }
-    }
-    &__year {
-        position: relative;
-        top: 14px;
-        left: -5px;
-        font-size: 180px;
-        line-height: 233px;
-        letter-spacing: -0.05em;
-        color: #DBE9EF;
-        font-family: 'Prata';
-    }
-    .envelopeInput {
-        &__field {
-            width: 576px;
-        }
-    }
-    .bonusSystem__ground_left {
-        left: -450px;
-        top: -200px;
-    }
-    .bonusSystem__ground_right {
-        top: -310px;
-        right: -350px;
-    }
-}
 .usefulBlog {
     padding-top: 201px;
+    @media (max-width:$xl) {
+        padding-top: 140px;
+    }
     &__list {
         display: flex;
         margin-top: 40px;
+        @media (max-width:$xl) {
+            margin-top: 48px;
+        }
         &.top {
             .usefulBlog__item {
                 transform: translateY(-40px);
@@ -802,8 +728,14 @@
     &__item {
         width: 450px;
         transform: translateY(0px);
+        @media (max-width:$xl) {
+            width: 326px;
+        }
         &:not(:first-child) {
             margin-left: 63px;
+            @media (max-width:$xl) {
+                margin-left: 58px;
+            }
         }
         &:nth-child(1) {
             transition: transform .3s .1s;
@@ -840,6 +772,9 @@
         }
         border-radius: 60px 60px 60px 20px;
         overflow: hidden;
+        @media (max-width:$xl) {
+            height: 210px;
+        }
         &:after {
             content:'';
             position: absolute;
@@ -870,6 +805,11 @@
         font-size: 20px;
         line-height: 20px;
         color: #748092;
+        @media (max-width:$xl) {
+            margin-top: 40px;
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
     &__title {
         margin-top: 12px;
@@ -879,11 +819,18 @@
         line-height: 36px;
         color: $gray;
         transition: $transition;
+        @media (max-width:$xl) {
+            font-size: 24px;
+            line-height: 34px;
+        }
     }
 }
 .reviews {
     position: relative;
     padding-top: 395px;
+    @media (max-width:$xl) {
+        padding-top: 296px;
+    }
     &__bg {
         position: absolute;
         top: -182px;
@@ -895,10 +842,6 @@
         background: radial-gradient(50% 50% at 50% 50%, rgba(111, 1, 87, 0.23) 31.77%, rgba(255, 255, 255, 0) 100%);
         opacity: 0.5;
     }
-    &__svg {
-        position: absolute;
-        top: 159px;
-    }
     &__content {
         z-index: 1;
         //padding-right: 200px !important;
@@ -908,6 +851,10 @@
         //margin: 62px -2px 0 -2px;
         display: flex;
         flex-wrap: wrap;
+        @media (max-width:$xl) {
+            margin-top: 50px;
+            margin-right: -32px;
+        }
     }
     &__item {
         flex:none;
@@ -917,6 +864,10 @@
         height: 245px;
         overflow: hidden;
         transition: $transition;
+        @media (max-width:$xl) {
+            width: 180px;
+            height: 180px;
+        }
         &:first-child {
             border-radius: 60px 0 0 0;
         }
@@ -982,12 +933,17 @@
         transition: $transition;
         overflow: hidden;
     }
-    &__path {
-        stroke-miterlimit:10;
-        stroke-dasharray: 3601;
-        stroke-dashoffset: 3601;
-    }
     &__svg {
+        position: absolute;
+        top: 159px;
+        @media (max-width:$xl) {
+            top: -20px;
+        }
+        svg {
+            @media (max-width:$xl) {
+                width: 1440px;
+            }
+        }
         &.show {
             .reviews__path {
                 &_0 {
@@ -1022,6 +978,9 @@
     position: relative;
     &__container {
         height: 880px;
+        @media (max-width:$xl) {
+            height: 645px;
+        }
     }
     &__video {
         width: 100%;
@@ -1035,27 +994,50 @@
         bottom: 85px;
         left: 153px;
         z-index: 2;
+        @media (max-width:$xl) {
+            bottom: 61px;
+            left: 172px;
+        }
     }
     &__title {
         font-size: 72px;
         line-height: 79px;
         color: $white;
         font-family: 'Prata';
+        @media (max-width:$xl) {
+            font-size: 60px;
+            line-height: 60px;
+        }
     }
     &__description {
         margin-top: 33px;
         font-size: 24px;
         line-height: 34px;
-        color: $greenLight
+        color: $greenLight;
+        @media (max-width:$xl) {
+            margin-top: 24px;
+            font-size: 18px;
+            line-height: 25px;
+        }
     }
     &__btn {
         margin-top: 39px;
         width: 196px;
+        @media (max-width:$xl) {
+            margin-top: 28px;
+            width: 147px;
+        }
     }
 }
 .specialists {
     position: relative;
     padding-top: 152px;
+    @media (max-width:$xl) {
+        padding-top: 80px;
+    }
+    @media (max-width:$lg) {
+        padding-top: 30px;
+    }
     &__bg {
         position: absolute;
         top: -628px;
@@ -1071,15 +1053,28 @@
         position: relative;
         display: flex;
         align-items: center;
+        @media (max-width:$xl) {
+            padding-left: 45px;
+        }
+        @media (max-width:$lg) {
+            padding-left: 0;
+        }
     }
     &__title {
         font-size: 48px;
         line-height: 62px;
         color: $blueDark;
         font-family: 'Prata';
+        @media (max-width:$xl) {
+            font-size: 42px;
+            line-height: 55px;
+        }
     }
     &__link {
         margin-left: 41px;
+        @media (max-width:$lg) {
+            margin-left: 65px;
+        }
     }
     &__all {
         display: inline-block;
@@ -1088,6 +1083,9 @@
         color: $greenDark;
         border-bottom: 1px solid $greenDark;
         transition: $transition;
+        @media (max-width:$xl) {
+            padding-top: 5px;
+        }
         &:hover {
             color: $blueDark;
             border-bottom: 1px solid transparent;
@@ -1100,6 +1098,13 @@
         padding-top: 62px;
         width: 255px;
         height: 375px;
+        @media (max-width:$xl) {
+            right: -168px;
+        }
+        @media (max-width:$lg) {
+            top: -82px;
+            right: 2px;
+        }
         svg {
             @extend %stretch;
         }
@@ -1124,11 +1129,26 @@
     }
     &__container {
         padding-left: 177px;
+        @media (max-width:$xl) {
+            padding-left: 73px;
+            padding-right: 121px;
+        }
+        @media (max-width:$lg) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
     &__box {
         margin-top: 45px;
         display: flex;
         height: 475px;
+        @media (max-width:$xl) {
+            margin-top: 52px;
+            justify-content: space-between;
+        }
+        @media (max-width:$lg) {
+            margin-top: 20px;
+        }
     }
 }
 .specialistsNav {
@@ -1138,6 +1158,13 @@
     backdrop-filter: blur(40px);
     border-radius: 40px;
     overflow: hidden;
+    flex: none;
+    @media (max-width:$xl) {
+        padding: 42px 27px 33px 38px;
+    }
+    @media (max-width:$lg) {
+        display: none;
+    }
     &__content {
         padding-right: 35px;
         height: 405px;
@@ -1146,6 +1173,9 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        @media (max-width:$xl) {
+            align-items: flex-start;
+        }
         &:hover {
             .specialistsNav__img {
                 &:after {
@@ -1158,6 +1188,9 @@
         }
         &:not(:first-child) {
             margin-top: 15px;
+            @media (max-width:$xl) {
+                margin-top: 10px;
+            }
         }
         &.active {
             pointer-events: none;
@@ -1177,6 +1210,10 @@
     &__wrapper {
         margin-left: 22px;
         max-width: 212px;
+        @media (max-width:$xl) {
+            margin-left: 18px;
+            margin-top: 18px;
+        }
     }
     &__img {
         position: relative;
@@ -1221,136 +1258,5 @@
         font-size: 15px;
         line-height: 20px;
         color: $greenMedium;
-    }
-}
-.specialistsFor {
-    margin-left: 40px;
-    width: calc(100% - 589px);
-    &__content {
-        height: 100%;
-    }
-    &__item {
-        height: 100%;
-        display: flex !important;
-        position: relative;
-    }
-    &__description {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 61px 63px;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(40px);
-        border-radius: 40px;
-        animation:fadeOutLeftTop 1.2s both;
-    }
-    &__name {
-        font-size: 38px;
-        line-height: 48px;
-        font-weight: 500;
-        color: $blueDark;
-    }
-    &__ul {
-        &:not(:first-child) {
-            margin-top: 24px;
-        }
-    }
-    &__block {
-        margin-top: 34px;
-    }
-    &__specialization {
-        font-size: 18px;
-        line-height: 24px;
-        color: $greenMedium;
-    }
-    &__medic {
-        margin-top: 6px;
-        font-size: 20px;
-        line-height: 24px;
-        color: $blueDark;
-    }
-    &__a {
-        display: inline-flex;
-        align-items: center;
-        &:hover {
-            span {
-                opacity: 1;
-            }
-            svg {
-                width: 36px;
-            }
-        }
-        span {
-            font-size: 24px;
-            line-height: 30px;
-            color: $purple;
-            opacity: 0.8;
-            transition: $transition;
-        }
-        svg {
-            margin-top: 4px;
-            margin-left: 12px;
-            display: block;
-            transition: $transition5;
-        }
-    }
-    &__img {
-        position: absolute;
-        right: 138px;
-        bottom: 0;
-        
-        &:after {
-            content:'';
-            position: absolute;
-            top: 106px;
-            left: -110px;
-            width: 632px;
-            height: 475px;
-            background: {
-                image: url($imgUrl + "specialistsForImg-bgPeople.png");
-                repeat: no-repeat;
-            }
-            animation:fadeOutLeftTopImg .5s both 0.9s;
-        }
-        img {
-            display: block;
-            position: relative;
-            z-index: 1;
-            animation:fadeOutLeftTopImg 1.2s both;
-        }
-    }
-    .sliderArrow__prev {
-        left: -670px;
-    }
-    .sliderArrow__next {
-        right: -156px;
-    }
-    .slick-list {
-        overflow: visible !important;
-    }
-    .slick-list,
-    .slick-track {
-        height: 100%;
-    }
-    .slick-slide {
-        height: 100%;
-        & > div {
-            height: 100%;
-        }
-    }
-    .slick-active {
-        .specialistsFor__description {
-            animation:fadeInDown 1.2s both;
-        }
-        img {
-            animation:fadeInDownImg 1.2s both;
-        }
-        .specialistsFor__img {
-            &:after {
-                animation:fadeInDownImg .5s both 0.9s;
-            }
-        }
     }
 }

@@ -9,7 +9,7 @@ import 'slick-carousel';
 import 'magnific-popup';
 
 //📁 /assets/js/blocks  _popups.js
-import {moreStage, popupClose} from "./blocks/_popups.js";
+import {moreStage, popupClose, popupImage} from "./blocks/_popups.js";
 
 //📁 /assets/js/blocks  _pageLoad.js
 import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
@@ -17,11 +17,14 @@ import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
 //📁 /assets/js/blocks  _animPageScroll.js
 import {animGradientBgHeader, animMainLines, animReviewsLines, sectionBonusSystem, sectionConsultPractice, usefulBlog} from "./blocks/_animPageScroll.js";
 
+//📁 /assets/js/blocks  _documentClick.js
+import {documentClick} from "./blocks/_documentClick.js";
+
 //📁 /assets/js/blocks  _header.js
-import {headerServices, headerSearch, menuSelection} from "./blocks/_header.js";
+import {headerServices, headerSearch, menuSelection, scrollUp} from "./blocks/_header.js";
 
 //📁 /assets/js/blocks  _sliders.js
-import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio} from "./blocks/_sliders.js";
+import {sliderMain, sliderEquipment, sliderSpecialists, sliderSpecialistsPortfolio, sliderstageView, slickServiceReviews} from "./blocks/_sliders.js";
 
 //📁 /assets/js/blocks  scrollbar.js
 import {scrollbar} from "./blocks/scrollbar.js";
@@ -31,6 +34,9 @@ import {usefulBlogHover} from "./blocks/index.js";
 
 //📁 /assets/js/blocks  services.js
 import {servicesSelectedDrop, servicesSelectedFetch} from "./blocks/services.js";
+
+//📁 /assets/js/blocks  service.js
+import {serviceStageShow, tabsServiceReviews, itemServiceTestimony, serviceScrollTo, servicePriceShowAll, serviceFixedAsideBar} from "./blocks/service.js";
 
 //📁 /assets/js/blocks  specialist.js
 import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/specialist.js";
@@ -70,6 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // useful blog translateY 0
     usefulBlog();
 
+    // document onclick
+    documentClick();
+
     // header services
     headerServices();
 
@@ -78,6 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // header menu selection
     menuSelection();
+
+    // btn scroll up
+    scrollUp();
 
     // slider main page
     sliderMain();
@@ -91,6 +103,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // slider portfolio specialist
     sliderSpecialistsPortfolio();
 
+    // slider stage view
+    sliderstageView();
+
+    // slider service reviews
+    slickServiceReviews();
+
     // scrollbar
     scrollbar();
 
@@ -100,8 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // popup close
     popupClose();
 
-    // moreStage
+    // more stage
     moreStage();
+
+    // popup image
+    popupImage();
 
     // services selected drop
     servicesSelectedDrop();
@@ -110,6 +131,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // services attendance all cards
     // services selected fetch
     servicesSelectedFetch();
+
+    // services stage show
+    serviceStageShow();
+
+    // tabs service reviews
+    tabsServiceReviews();
+
+    // service anchor scroll
+    serviceScrollTo();
+
+    // service price show all
+    servicePriceShowAll();
+
+    // service fixed aside bar
+    serviceFixedAsideBar();
+
+    // items service testimony
+    itemServiceTestimony();
 
     // about specialist show all
     aboutSpecialistShowAll();

@@ -12,13 +12,13 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                        <a href="" class="breadCrumbs__chit">На главную</a>
+                        <a href="/" class="breadCrumbs__chit">На главную</a>
                     </li>
                     <li class="breadCrumbs__item">
-                        <a href="" class="breadCrumbs__chit">О нас</a>
+                        <a href="#" class="breadCrumbs__chit">О нас</a>
                     </li>
                     <li class="breadCrumbs__item">
-                        <a href="" class="breadCrumbs__chit">Специалисты</a>
+                        <a href="/team/" class="breadCrumbs__chit">Специалисты</a>
                     </li>
                     <li class="breadCrumbs__item">
                         <span class="breadCrumbs__chit">Денисенко Дарья</span>
@@ -77,7 +77,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                     <span>
                                                         Омская государственная медицинская академия, специальность &laquo;Лечебное дело&raquo;
                                                     </span>
-                                                    <a href="#" class="aboutSpecialist__diploma">
+                                                    <a href="/dist/img/trash/diploma.png" class="aboutSpecialist__diploma popupImage_js">
                                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistDiploma.svg';?>
                                                         <span>Посмотреть диплом</span>
                                                     </a>
@@ -134,7 +134,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                     <span>
                                                         Омская государственная медицинская академия, специальность &laquo;Лечебное дело&raquo;
                                                     </span>
-                                                    <a href="#" class="aboutSpecialist__diploma">
+                                                    <a href="/dist/img/trash/diploma.png" class="aboutSpecialist__diploma popupImage_js">
                                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistDiploma.svg';?>
                                                         <span>Посмотреть диплом</span>
                                                     </a>
@@ -162,7 +162,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                     <span>
                                                         Омская государственная медицинская академия, специальность &laquo;Лечебное дело&raquo;
                                                     </span>
-                                                    <a href="#" class="aboutSpecialist__diploma">
+                                                    <a href="/dist/img/trash/diploma.png" class="aboutSpecialist__diploma popupImage_js">
                                                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistDiploma.svg';?>
                                                         <span>Посмотреть диплом</span>
                                                     </a>
@@ -220,8 +220,8 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     <div class="portfolioSliderFor__item">
                                         <div class="portfolioSliderFor__wrapper">
                                             <div class="portfolioSliderFor__img twentytwenty_js">
-                                                <img src="/dist/img/trash/portfolioSliderImg1-1.jpg">
-                                                <img src="/dist/img/trash/portfolioSliderImg1-2.jpg">
+                                                <img src="/dist/img/portfolioSliderImg1-1.jpg">
+                                                <img src="/dist/img/portfolioSliderImg1-2.jpg">
                                             </div>
                                             <div class="portfolioSliderFor__pseudoElements">
                                                 <span>До</span>
@@ -239,45 +239,8 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     <div class="portfolioSliderFor__item">
                                         <div class="portfolioSliderFor__wrapper">
                                             <div class="portfolioSliderFor__img twentytwenty_js">
-                                                <img src="/dist/img/trash/portfolioSliderImg2-1.jpg">
-                                                <img src="/dist/img/trash/portfolioSliderImg2-2.jpg">
-                                            </div>
-                                            <div class="portfolioSliderFor__pseudoElements">
-                                                <span>До</span>
-                                                <span>После</span>
-                                            </div>
-                                        </div>
-                                        <div class="portfolioSliderFor__description">
-                                            <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
-                                            <div class="portfolioSliderFor__name">
-                                                Программа &quot;Сладкая жизнь&quot;
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolioSliderFor__item">
-                                        <div class="portfolioSliderFor__wrapper">
-                                            <div class="portfolioSliderFor__img twentytwenty_js">
-                                                <img src="/dist/img/trash/portfolioSliderImg1-1.jpg">
-                                                <img src="/dist/img/trash/portfolioSliderImg1-2.jpg">
-                                            </div>
-                                            <div class="portfolioSliderFor__pseudoElements">
-                                                <span>До</span>
-                                                <span>После</span>
-                                            </div>
-                                        </div>
-                                        <div class="portfolioSliderFor__description">
-                                            <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
-                                            <div class="portfolioSliderFor__name">
-                                                Разглаживание мимических и&nbsp;носогубных морщин с&nbsp;помощью лазерного
-                                                аппарата Fotona&nbsp;4D
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolioSliderFor__item">
-                                        <div class="portfolioSliderFor__wrapper">
-                                            <div class="portfolioSliderFor__img twentytwenty_js">
-                                                <img src="/dist/img/trash/portfolioSliderImg2-1.jpg">
-                                                <img src="/dist/img/trash/portfolioSliderImg2-2.jpg">
+                                                <img src="/dist/img/portfolioSliderImg2-1.jpg">
+                                                <img src="/dist/img/portfolioSliderImg2-2.jpg">
                                             </div>
                                             <div class="portfolioSliderFor__pseudoElements">
                                                 <span>До</span>
@@ -294,16 +257,10 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                                 <div class="portfolioSliderNav portfolioSliderNav_js">
                                     <div class="portfolioSliderNav__item active" data-slide="1">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/trash/portfolioSliderImg1-1.jpg)"></div>
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
                                     </div>
                                     <div class="portfolioSliderNav__item" data-slide="2">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/trash/portfolioSliderImg2-2.jpg)"></div>
-                                    </div>
-                                    <div class="portfolioSliderNav__item" data-slide="3">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/trash/portfolioSliderImg1-1.jpg)"></div>
-                                    </div>
-                                    <div class="portfolioSliderNav__item" data-slide="4">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/trash/portfolioSliderImg2-2.jpg)"></div>
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
                                     </div>
                                 </div>
                             </div>
@@ -361,32 +318,32 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                             <div class="servicesCard__box"
                                                 data-description="Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах">
                                                 <div class="servicesCard__what">1 этап</div>
-                                                <div class="servicesCard__how">Криолиполиз</div>
+                                                <a href="#" class="servicesCard__how">Криолиполиз</a>
                                             </div>
                                             <div class="servicesCard__box"
                                                 data-description="Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение">
                                                 <div class="servicesCard__what">2 этап</div>
-                                                <div class="servicesCard__how">LPG-массаж</div>
+                                                <a href="#" class="servicesCard__how">LPG-массаж</a>
                                             </div>
                                             <div class="servicesCard__box"
                                                 data-description="Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.">
                                                 <div class="servicesCard__what">3 этап</div>
-                                                <div class="servicesCard__how">Морское утончение</div>
+                                                <a href="#" class="servicesCard__how">Морское утончение</a>
                                             </div>
                                             <div class="servicesCard__box"
                                                 data-description="Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
                                                 <div class="servicesCard__what">4 этап</div>
-                                                <div class="servicesCard__how">Vela Shape II</div>
+                                                <a href="#" class="servicesCard__how">Vela Shape II</a>
                                             </div>
                                             <div class="servicesCard__box"
                                                 data-description="Лифтинг">
                                                 <div class="servicesCard__what">5 этап</div>
-                                                <div class="servicesCard__how">Лифтинг</div>
+                                                <a href="#" class="servicesCard__how">Лифтинг</a>
                                             </div>
                                             <div class="servicesCard__box"
                                                 data-description="Моделирование">
                                                 <div class="servicesCard__what">6 этап</div>
-                                                <div class="servicesCard__how">Моделирование фигуры</div>
+                                                <a href="#" class="servicesCard__how">Моделирование фигуры</a>
                                             </div>
                                         </div>
                                         <div class="servicesCard__more">
@@ -400,6 +357,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </section>
             </div>
         </section>

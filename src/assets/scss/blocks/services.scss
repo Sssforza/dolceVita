@@ -162,6 +162,7 @@
             font-size: 24px;
             line-height: 30px;
             color: $greenMedium;
+            font-family: 'EuclidFlex';
             background: $white;
             border: none;
             border-radius: 4px;
@@ -276,87 +277,6 @@
         font-family: 'Prata';
         letter-spacing: -0.03em;
         z-index: -1;
-    }
-}
-.cosmeticCard {
-    width: 267px;
-    height: 426px;
-    padding: 6px 0 13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #F4F5F8;
-    border-radius: 24px;
-    transition: $transition;
-    @media (min-width:$xl) {
-        &:hover {
-            filter: drop-shadow(0px 10px 25px rgba(59, 94, 130, 0.4));
-        }
-    }
-    &__img {
-        display: block;
-        margin: 0 auto;
-        flex: none;
-        width: 254px;
-        height: 202px;
-        border-radius: 16px;
-        overflow: hidden;
-        background: {
-            repeat: no-repeat;
-            size: cover;
-        }
-    }
-    &__title {
-        margin-top: 16px;
-    }
-    &__title,
-    &__bottom {
-        padding: 0 24px;
-    }
-    &__name {
-        font-size: 21px;
-        line-height: 27px;
-        color: $blueDark;
-        transition: $transition;
-        @media (min-width:$xl) {
-            &:hover {
-                color: $greenDark;
-            }
-        }
-    }
-    &__effect {
-        font-size: 14px;
-        line-height: 22px;
-        color: $gray;
-    }
-    &__wrapper {
-        margin-top: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    &__price {
-        font-size: 24px;
-        line-height: 28px;
-        color: $blueDark;
-    }
-    &__basket {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 48px;
-        height: 48px;
-        border-radius: 16px;
-        transition: $transition;
-        cursor: pointer;
-        @media (min-width:$xl) {
-            &:hover {
-                background: $greenLight;
-            }
-        }
-        svg {
-            display: block;
-        }
     }
 }
 .servicesAction {

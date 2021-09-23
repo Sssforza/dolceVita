@@ -14,7 +14,7 @@ export function sliderMain () {
 			arrows: true,
 			appendArrows: '.sliderMain__arrows',
 			prevArrow: '<div class="sliderMain__prev"><svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.4287 1.35986L2.20014 10.2741L10.4287 19.1884" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>',
-			nextArrow: '<div class="sliderMain__next"><svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.08008 19.1885L9.30865 10.2742L1.08008 1.35991" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>',
+			nextArrow: '<div class="sliderMain__next"><svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.4287 1.35986L2.20014 10.2741L10.4287 19.1884" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>',
 			dots: true,
 			appendDots: '.sliderMain__dots',
 			// dotsClass: "sliderMain__dots",
@@ -24,7 +24,6 @@ export function sliderMain () {
 		});
     }
 };
-
 // slider equipment
 export function sliderEquipment () {
     const slickEquipment = $(".sliderEquipment_js");
@@ -42,43 +41,43 @@ export function sliderEquipment () {
 		});
     }
 };
-
 // slider specialists
 export function sliderSpecialists () {
     const slickSpecialists = $(".specialistsFor_js");
 
 	if (slickSpecialists.length) {
-		slickSpecialists.slick({
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			arrows: true,
-			fade: true,
-			draggable: false,
-			infinite: false,
-			prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-			nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-		});
-		$('div[data-slide]').click(function(e) {
-			e.preventDefault();
-			$('div[data-slide]').removeClass('active')
-			$(this).addClass('active')
-			var slideno = $(this).data('slide');
-			slickSpecialists.slick('slickGoTo', slideno - 1);
-		});
-		$('.slick-arrow').click(function(e) {
-			var slide = $('.specialistsNav__item.active').data('slide');
-			slide = Number(slide);
-			$('div[data-slide]').removeClass('active');
-			if ($(this).hasClass('sliderArrow__next')){
-				slide = slide + 1
-			} else {
-				slide = slide - 1
-			}
-			$('.specialistsNavScroll_js').find(`[data-slide='${slide}']`).addClass('active');
-		});
+		if (window.screen.availWidth >= 1025) {
+			slickSpecialists.slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: true,
+				fade: true,
+				draggable: false,
+				infinite: false,
+				prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+				nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+			});
+			$('div[data-slide]').click(function(e) {
+				e.preventDefault();
+				$('div[data-slide]').removeClass('active')
+				$(this).addClass('active')
+				var slideno = $(this).data('slide');
+				slickSpecialists.slick('slickGoTo', slideno - 1);
+			});
+			$('.slick-arrow').click(function(e) {
+				var slide = $('.specialistsNav__item.active').data('slide');
+				slide = Number(slide);
+				$('div[data-slide]').removeClass('active');
+				if ($(this).hasClass('sliderArrow__next')){
+					slide = slide + 1
+				} else {
+					slide = slide - 1
+				}
+				$('.specialistsNavScroll_js').find(`[data-slide='${slide}']`).addClass('active');
+			});
+		}
 	}
 };
-
 // slider portfolio specialist
 export function sliderSpecialistsPortfolio () {
     const slickSpecialistPortfolio = $(".portfolioSliderFor_js");
@@ -112,4 +111,39 @@ export function sliderSpecialistsPortfolio () {
 			$('.portfolioSliderNav_js').find(`[data-slide='${slide}']`).addClass('active');
 		});
 	}
+};
+// slider stage view
+export function sliderstageView () {
+    const slickstageView = $(".stageViewSlider_js");
+
+	if (slickstageView.length) {
+		slickstageView.slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			speed: 900,
+			arrows: true,
+			fade: false,
+			draggable: false,
+			infinite: false,
+			prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+			nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+		});
+	}
+};
+// slider service reviews
+export function slickServiceReviews () {
+    const slickServiceReviews = $(".serviceReviewsSlider_js");
+
+	if (slickServiceReviews.length) {
+		slickServiceReviews.slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			speed: 900,
+			variableWidth: true,
+			infinite: false,
+			arrows: true,
+			prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+			nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+		});
+    }
 };

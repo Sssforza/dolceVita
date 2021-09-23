@@ -14,3 +14,14 @@ export function moreStage () {
         });
     }
 }
+// popup image
+export function popupImage () {
+    if(document.querySelector('.popupImage_js')) {
+        $('.popupImage_js').magnificPopup({
+            type: 'image',
+            tClose: 'Закрыть (Esc)',
+            tLoading: 'Загрузка...',
+            mainClass: 'mfp-img'
+        });
+    }
+}

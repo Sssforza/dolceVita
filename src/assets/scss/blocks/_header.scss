@@ -27,6 +27,10 @@
         padding-bottom: 42px;
         display: flex;
         justify-content: space-between;
+        @media (max-width:$xl) {
+            padding-top: 16px;
+            padding-bottom: 32px;
+        }
     }
     &__left,
     &__right {
@@ -57,6 +61,9 @@
     }
     &__nav {
         margin-left: 54px;
+        @media (max-width:$lg) {
+            display: none;
+        }
     }
     &__tel {
         font-size: 23px;
@@ -71,14 +78,22 @@
             pointer-events: none;
         }
     }
+    &__phone {
+        @media (max-width:$lg) {
+            display: none;
+        }
+    }
     &__btns {
+        margin-left: 25px;
         display: flex;
         position: relative;
         top: 16px;
     }
     &__search {
         position: relative;
-        margin-left: 25px;
+        @media (max-width:$lg) {
+            display: none;
+        }
         &.show {
             .header__envelopeInput {
                 width: 320px;
@@ -104,7 +119,7 @@
         border-radius: 32px;
         z-index: 2;
         cursor: pointer;
-        transition: $transition;
+        transition: $transition5;
         @media (min-width:$xl) {
             &:hover {
                 border: 2px solid $greenMedium;
@@ -115,6 +130,10 @@
                     }
                 }
             }
+        }
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
         }
         svg {
             display: block;
@@ -128,6 +147,11 @@
     &__signUp {
         margin-left: 29px;
         width: 267px;
+        @media (max-width:$xl) {
+            margin-left: 24px;
+            width: 182px;
+            height: 64px;
+        }
     }
     &__envelopeInput {
         width: 64px;

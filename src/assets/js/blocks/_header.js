@@ -22,7 +22,7 @@ export function headerSearch () {
         const parent = document.querySelector('.headerSearch_js');
         const btn = document.querySelector('.headerQuest_js');
         btn.onclick = () => {
-			btn.remove();
+			btn.classList.add('hide');
 			parent.classList.add('show');
 		};
     }
@@ -64,7 +64,6 @@ export function menuSelection () {
         middleSelected.forEach((item) => {
             item.addEventListener("click", (e) => {
                 let thisShowMiddle = item.getAttribute('data-servicesMiddleDetail');
-                console.log(thisShowMiddle)
                 middleSelected.forEach((i) => {
                     i.classList.remove('active');
                 });
@@ -75,6 +74,18 @@ export function menuSelection () {
                         elem.classList.remove('hidden');
                     }
                 });
+            });
+        });
+    }
+}
+// btn scroll up
+export function scrollUp () {
+    const scrollUp = document.querySelector('.scrollUp_js');
+    if(scrollUp) {
+        scrollUp.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
             });
         });
     }

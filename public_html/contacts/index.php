@@ -13,10 +13,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
                             <ul class="breadCrumbs__list">
                                 <li class="breadCrumbs__item">
                                     <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                                    <a href="" class="breadCrumbs__chit">На главную</a>
+                                    <a href="/" class="breadCrumbs__chit">На главную</a>
                                 </li>
                                 <li class="breadCrumbs__item">
-                                    <a href="" class="breadCrumbs__chit">О нас</a>
+                                    <a href="#" class="breadCrumbs__chit">О нас</a>
                                 </li>
                                 <li class="breadCrumbs__item">
                                     <span class="breadCrumbs__chit">Специалисты</span>
@@ -54,13 +54,13 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
                                 <div class="contacts__social">
                                     <div class="contacts__name">Социальные <br>сети</div>
                                     <div class="contacts__ul">
-                                        <a href="" class="contacts__link">
+                                        <a href="https://www.instagram.com/dolcevita_omsk/" class="contacts__link" target="_blank">
                                             <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/inst.svg';?>
                                         </a>
-                                        <a href="" class="contacts__link">
+                                        <a href="https://www.facebook.com/dolcevita.omsk/" class="contacts__link" target="_blank">
                                             <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/fb.svg';?>
                                         </a>
-                                        <a href="" class="contacts__link">
+                                        <a href="https://vk.com/dolcevita55" class="contacts__link" target="_blank">
                                             <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/vk.svg';?>
                                         </a>
                                     </div>

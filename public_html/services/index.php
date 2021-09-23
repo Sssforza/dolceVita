@@ -10,10 +10,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
                         <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                        <a href="" class="breadCrumbs__chit">На главную</a>
+                        <a href="/" class="breadCrumbs__chit">На главную</a>
                     </li>
                     <li class="breadCrumbs__item">
-                        <a href="" class="breadCrumbs__chit">Услуги</a>
+                        <a href="/services/" class="breadCrumbs__chit">Услуги</a>
                     </li>
                     <li class="breadCrumbs__item">
                         <span class="breadCrumbs__chit">Косметология</span>
@@ -262,32 +262,32 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                             <div class="servicesCard__box"
                                 data-description="Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах">
                                 <div class="servicesCard__what">1 этап</div>
-                                <div class="servicesCard__how">Криолиполиз</div>
+                                <a href="#" class="servicesCard__how">Криолиполиз</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение">
                                 <div class="servicesCard__what">2 этап</div>
-                                <div class="servicesCard__how">LPG-массаж</div>
+                                <a href="#" class="servicesCard__how">LPG-массаж</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.">
                                 <div class="servicesCard__what">3 этап</div>
-                                <div class="servicesCard__how">Морское утончение</div>
+                                <a href="#" class="servicesCard__how">Морское утончение</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
                                 <div class="servicesCard__what">4 этап</div>
-                                <div class="servicesCard__how">Vela Shape II</div>
+                                <a href="#" class="servicesCard__how">Vela Shape II</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="Лифтинг">
                                 <div class="servicesCard__what">5 этап</div>
-                                <div class="servicesCard__how">Лифтинг</div>
+                                <a href="#" class="servicesCard__how">Лифтинг</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="Моделирование">
                                 <div class="servicesCard__what">6 этап</div>
-                                <div class="servicesCard__how">Моделирование фигуры</div>
+                                <a href="#" class="servicesCard__how">Моделирование фигуры</a>
                             </div>
                         </div>
                         <div class="servicesCard__more">
@@ -315,27 +315,27 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                             <div class="servicesCard__box"
                                 data-description="1Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах">
                                 <div class="servicesCard__what">11 этап</div>
-                                <div class="servicesCard__how">1Криолиполиз</div>
+                                <a href="#" class="servicesCard__how">1Криолиполиз</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="2Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение">
                                 <div class="servicesCard__what">22 этап</div>
-                                <div class="servicesCard__how">2LPG-массаж</div>
+                                <a href="#" class="servicesCard__how">2LPG-массаж</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="3Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.">
                                 <div class="servicesCard__what">33 этап</div>
-                                <div class="servicesCard__how">3Морское утончение</div>
+                                <a href="#" class="servicesCard__how">3Морское утончение</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="4Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
                                 <div class="servicesCard__what">44 этап</div>
-                                <div class="servicesCard__how">4Vela Shape II</div>
+                                <a href="#" class="servicesCard__how">4Vela Shape II</a>
                             </div>
                             <div class="servicesCard__box"
                                 data-description="5Лифтинг Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
                                 <div class="servicesCard__what">55 этап</div>
-                                <div class="servicesCard__how">5Лифтинг</div>
+                                <a href="#" class="servicesCard__how">5Лифтинг</a>
                             </div>
                         </div>
                         <div class="servicesCard__more">

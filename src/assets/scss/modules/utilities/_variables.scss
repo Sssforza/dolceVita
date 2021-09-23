@@ -22,13 +22,18 @@ $transition5: all .5s;
 $transition8eio: all .8s ease-in-out;
 
 %center {
-	position:relative;
+	position: relative;
 	max-width: 1830px;
 	margin: 0 auto;
 	padding: 0px 15px;
-	// @media (max-width:$lg) {
-	// 	max-width: 990px;
-	// }
+	@media (max-width:$xl) {
+		max-width: 1440px;
+		padding: 0px 60px;
+	}
+	@media (max-width:$lg) {
+		max-width: 1024px;
+		padding: 0px 40px;
+	}
 	// @media (max-width:$xs) {
 	// 	padding: 0px 20px;
 	// 	max-width: 580px;
@@ -39,9 +44,21 @@ $transition8eio: all .8s ease-in-out;
 	max-width: 1920px;
 	margin: 0 auto;
 	padding: 0px 213px;
+	@media (max-width:$xl) {
+		padding: 0px 173px;
+	}
+	@media (max-width:$lg) {
+		max-width: 1024px;
+	}
 }
 %centerContainer {
 	padding: 0px 177px;
+	@media (max-width:$xl) {
+		padding: 0px 113px;
+	}
+	@media (max-width:$lg) {
+		max-width: 1024px;
+	}
 }
 
 %stretch {
