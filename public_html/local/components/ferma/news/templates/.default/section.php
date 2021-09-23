@@ -18,6 +18,9 @@ $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
 $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
 ?>
 <main class="main">
+    <pre>
+        <? print_r($arResult)?>
+    </pre>
     <section class="page page_services">
         <section class="banerSection banerServices">
         	<?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
@@ -77,7 +80,8 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
             </div>
         </section>
         <section class="services services_attendance container servicesAttendance_js" data-midnight="gray">
-                <? foreach ($arResult["VARIABLES"]["AR_ID_ELEMENTS"] as $element_id) { ?>
+            <div class="services__content">
+                <? foreach ($arResult["VARIABLES"]["AR_ID_ELEMENTS"] as $keys => $element_id) { ?>
                     <? $APPLICATION->IncludeComponent(
                         "ferma:news.detail",
                         ".default",
@@ -101,7 +105,7 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
                             "PROPERTY_CODE" => Array("DESCRIPTION"),
                             "IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#\"",
                             "DETAIL_URL" => "",
-                            "SET_TITLE" => "Y",
+                            "SET_TITLE" => "N",
                             "SET_CANONICAL_URL" => "Y",
                             "SET_BROWSER_TITLE" => "Y",
                             "BROWSER_TITLE" => "-",
@@ -111,8 +115,8 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
                             "META_DESCRIPTION" => "-",
                             "SET_STATUS_404" => "Y",
                             "SET_LAST_MODIFIED" => "Y",
-                            "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-                            "ADD_SECTIONS_CHAIN" => "Y",
+                            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                            "ADD_SECTIONS_CHAIN" => "N",
                             "ADD_ELEMENT_CHAIN" => "N",
                             "ACTIVE_DATE_FORMAT" => "d.m.Y",
                             "USE_PERMISSIONS" => "Y",
@@ -137,7 +141,19 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
                         )
                     );
                     ?>
+                <? } 
+                if (($keys-4) > 0) {?>
+                    <div class="services__item servicesCard servicesCardBig">
+                        <div class="servicesCardBig__content">
+                            <div class="servicesCardBig__title">больше услуг</div>
+                            <div class="servicesCardBig__more">
+                                <div class="servicesCardBig__link servicesCardBtn_js">посмотреть</div>
+                            </div>
+                            <div class="servicesCardBig__number servicesCardNumber_js"><?= $keys-4 ?></div>
+                        </div>
+                    </div>
                 <? } ?>
+            </div>
         </section>
 		<section class="services services_cosmetic">
             <div class="container">

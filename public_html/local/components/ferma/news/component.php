@@ -221,7 +221,7 @@ if($arParams["SEF_MODE"] == "Y")
 		}
 	}
 	$arResult = array(
-		"TEST" => $sec,
+		//"IBLOCK" => $block_type,
 		"FOLDER" => $arParams["SEF_FOLDER"],
 		"URL_TEMPLATES" => $arUrlTemplates,
 		"VARIABLES" => $arVariables,
@@ -230,6 +230,16 @@ if($arParams["SEF_MODE"] == "Y")
 		"IBLOCK_AR" => $block_type,
 		"ELEMENT_AR" => $menuElements
 	);
+	if($arParams["INCLUDE_IBLOCK_INTO_CHAIN"] && isset($arResult["IBLOCK_AR"]["NAME"]))
+	{
+		$APPLICATION->AddChainItem($arResult["IBLOCK_AR"]["NAME"], $arParams["SEF_FOLDER"]);
+	}
+	if($arParams["ADD_SECTIONS_CHAIN"] && isset($arResult["VARIABLES"]["SECTION_ID"]))
+	{
+		$APPLICATION->AddChainItem($arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["SECTION_ID"]]["NAME"], $arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["SECTION_ID"]]["~SECTION_PAGE_URL"]);
+	}
+	if($arParams["SET_TITLE"])
+		$APPLICATION->SetTitle($arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["SECTION_ID"]]["NAME"]);
 }
 else
 {
