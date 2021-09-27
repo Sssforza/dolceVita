@@ -128,6 +128,9 @@ body {
     @media (max-width:$xl) {
         padding-bottom: 73px;
     }
+    @media (max-width:$lg) {
+        padding-bottom: 140px;
+    }
     &_services {
         .banerServices {
             overflow: visible;
@@ -250,6 +253,9 @@ body {
         right: 17px;
         width: 54px;
         height: 54px;
+    }
+    @media (max-width:$lg) {
+        right: 25px;
     }
     &__content {
         width: 100%;
@@ -486,6 +492,11 @@ img.mfp-img {
         transition: $transition;
         &:focus {
             border: 2px solid $white !important;
+        }
+        @media (max-width:$lg) {
+            font-size: 18px;
+            line-height: 22px;
+            @include placeholder(18px, $greenLight, EuclidFlex);
         }
     }
     &__error {
@@ -1337,6 +1348,7 @@ img.mfp-img {
 }
 .mainLines {
     margin-top: -228px;
+    overflow: hidden;
     @media (max-width:$xl) {
         margin-top: -306px;
     }
@@ -1486,12 +1498,12 @@ img.mfp-img {
     @media (max-width:$lg) {
         margin-left: 0;
         width: 100%;
-        overflow-x: scroll;
-        padding-top: 60px;
     }
     &__content {
         height: 100%;
         @media (max-width:$lg) {
+            margin-left: -10px;
+            height: auto;
             display: flex;
             overflow-x: scroll;
         }
@@ -1504,8 +1516,11 @@ img.mfp-img {
             width: 672px !important;
         }
         @media (max-width:$lg) {
+            margin: 0 10px;
+            margin-top: 64px;
             flex: none;
             height: 340px;
+            width: 703px !important;
         }
     }
     &__description {
@@ -1525,6 +1540,7 @@ img.mfp-img {
         }
         @media (max-width:$lg) {
             animation: none;
+            padding: 37px 44px 36px;
         }
     }
     &__wrapper {
@@ -1614,7 +1630,7 @@ img.mfp-img {
             zoom: 0.9;
         }
         @media (max-width:$lg) {
-            right: -20px;
+            right: 20px;
             zoom: .7;
         }
         &:after {
@@ -1640,6 +1656,7 @@ img.mfp-img {
             animation:fadeOutLeftTopImg 1.2s both;
             @media (max-width:$lg) {
                 animation: none;
+                max-height: 585px;
             }
         }
     }
@@ -1687,12 +1704,14 @@ img.mfp-img {
 .sectionConsult {
     padding-top: 333px;
     position: relative;
+    overflow-x: hidden;
     @media (max-width:$xl) {
         padding-top: 224px;
         width: 1320px;
         margin: 0 auto;
     }
     @media (max-width:$lg) {
+        padding-top: 148px;
         width: 944px;
     }
     &_service {
@@ -1712,6 +1731,12 @@ img.mfp-img {
             align-items: center;
             padding-top: 44px;
             padding-bottom: 52px;
+        }
+        @media (max-width:$lg) {
+            padding-top: 46px;
+            padding-bottom: 54px;
+            padding-left: 45px;
+            border-radius: 60px;
         }
     }
     &__form {
@@ -1745,10 +1770,19 @@ img.mfp-img {
         position: absolute;
         right: 10px;
         bottom: 0;
+        @media (max-width:$lg) {
+            right: 0;
+            width: 372px;
+            border-radius: 60px;
+            overflow: hidden;
+        }
         img {
             display: block;
             @media (max-width:$xl) {
                 width: 490px;
+            }
+            @media (max-width:$lg) {
+                width: 503px;
             }
         }
     }
@@ -1757,6 +1791,9 @@ img.mfp-img {
         display: flex;
         @media (max-width:$xl) {
             margin-top: 30px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 28px;
         }
         .envelopeInput {
             &:not(:first-child) {
@@ -1771,11 +1808,19 @@ img.mfp-img {
         @media (max-width:$xl) {
             margin-top: 35px;
         }
+        @media (max-width:$lg) {
+            margin-top: 28px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
     &__button {
         width: 196px;
         @media (max-width:$xl) {
             width: 144px;
+        }
+        @media (max-width:$lg) {
+            width: 298px;
         }
     }
     &__privacy {
@@ -1787,6 +1832,10 @@ img.mfp-img {
             margin-left: 24px;
             font-size: 11px;
             line-height: 15px;
+        }
+        @media (max-width:$lg) {
+            margin-left: 6px;
+            margin-top: 16px;
         }
     }
     &__policy {
@@ -1812,6 +1861,10 @@ img.mfp-img {
             margin-left: 47px;
             width: 286px;
             height: 244px;
+        }
+        @media (max-width:$lg) {
+            margin-left: -33px;
+            margin-top: 58px;
         }
         &.hide {
             opacity: 0;
@@ -1866,6 +1919,9 @@ img.mfp-img {
             @media (max-width:$xl) {
                 width: 211px;
             }
+            @media (max-width:$lg) {
+                width: 176px;
+            }
         }
     }
     .bonusSystem__ground_left {
@@ -1887,8 +1943,11 @@ img.mfp-img {
     overflow: hidden;
     @extend %centerContainer;
     @media (max-width:$xl) {
-		padding-top: 60px;
+        padding-top: 60px;
         padding-bottom: 72px;
+	}
+    @media (max-width:$lg) {
+        padding: 36px 44px 49px;
 	}
     &__box {
         width: 501px;
@@ -1910,6 +1969,9 @@ img.mfp-img {
         @media (max-width:$xl) {
             font-size: 18px;
             line-height: 30px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 12px;
         }
     }
     &__ground {

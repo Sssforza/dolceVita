@@ -31,6 +31,13 @@
                 height: 479px;
                 background-size: contain;
             }
+            @media (max-width:$lg) {
+                top: -75px;
+                left: auto;
+                right: 3px;
+                width: 530px;
+                height: 504px;
+            }
         }
     }
     &__top,
@@ -38,12 +45,43 @@
         display: flex;
         justify-content: space-between;
     }
+    &__top {
+        @media (max-width:$lg) {
+            flex-direction: column;
+        }
+        .footer__right {
+            @media (max-width:$lg) {
+                flex-direction: column;
+            }
+        }
+        .footerNav {
+            @media (max-width:$lg) {
+                margin-top: 44px;
+            }
+        }
+    }
     &__bottom {
         margin-top: 37px;
+        @media (max-width:$lg) {
+            position: relative;
+        }
+        @media (max-width:$lg) {
+            margin-top: 90px;
+        }
         .footer__right {
             display: flex;
             position: relative;
             left: -14px;
+            @media (max-width:$lg) {
+                left: 0;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+        .footer__left {
+            @media (max-width:$lg) {
+                position: absolute;
+            }
         }
     }
     &__right {
@@ -80,6 +118,10 @@
         opacity: 0.8;
         border-bottom: 1px solid transparent;
         transition: $transition;
+        @media (max-width:$lg) {
+            position: relative;
+            top: -58px;
+        }
         &:hover {
             border-bottom: 1px solid $blueDark;
         }
@@ -89,6 +131,10 @@
         position: relative;
         left: 58px;
         top: -12px;
+        @media (max-width:$lg) {
+            margin-left: 0;
+            left: -22px;
+        }
     }
     &__ferma {
         position: relative;
@@ -147,9 +193,16 @@
         padding-top: 74px;
         padding-bottom: 34px;
     }
+    @media (max-width:$lg) {
+        padding: 0;
+        width: 350px;
+    }
     &__list {
         display: grid;
         grid-template-columns: 196px 108px;
+        @media (max-width:$lg) {
+            grid-template-columns: 241px 110px;
+        }
     }
     &__li {
         margin-bottom: 20px;
@@ -166,6 +219,10 @@
 }
 .footerSocial {
     margin-left: 114px;
+    @media (max-width:$lg) {
+        margin-left: 0;
+        margin-top: 11px;
+    }
     &__list {
         display: flex;
     }

@@ -49,6 +49,7 @@ $transition8eio: all .8s ease-in-out;
 	}
 	@media (max-width:$lg) {
 		max-width: 1024px;
+		padding: 0 40px;
 	}
 }
 %centerContainer {
