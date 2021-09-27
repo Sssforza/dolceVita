@@ -16,7 +16,6 @@ gulp.task("serve", () => {
     gulp.watch(paths.modules.watch, gulp.parallel("modules"));
     gulp.watch(paths.images.watch, gulp.parallel("images"));
     gulp.watch(paths.images.watch, gulp.parallel("fontgen"));
-    gulp.watch(paths.webp.watch, gulp.parallel("webp"));
 });
 
 gulp.task("serveJc", () => {
