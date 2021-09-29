@@ -130,6 +130,7 @@ body {
     }
     @media (max-width:$lg) {
         padding-bottom: 140px;
+        overflow: hidden;
     }
     &_services {
         .banerServices {
@@ -170,6 +171,12 @@ body {
         font-size: 16px;
         line-height: 20px;
     }
+    @media (max-width:$xs) {
+        height: 62px;
+        font-size: 22px;
+        line-height: 28px;
+        border-radius: 12px;
+    }
 }
 .btnWhiteBorder {
     display: flex;
@@ -198,6 +205,11 @@ body {
         font-size: 16px;
         line-height: 20px;
         border-radius: 20px;
+    }
+    @media (max-width:$xs) {
+        height: 64px;
+        font-size: 18px;
+        line-height: 23px;
     }
 }
 .btnBlueBorder {
@@ -359,6 +371,10 @@ body {
             font-size: 42px;
             line-height: 54px;
         }
+        @media (max-width:$xs) {
+            font-size: 36px;
+            line-height: 47px;
+        }
     }
     &__all {
         font-size: 20px;
@@ -373,6 +389,10 @@ body {
                 border-bottom: 1px solid transparent;
             }
         }
+        @media (max-width:$xs) {
+            font-size: 18px;
+            line-height: 24px;
+        }
     }
 }
 //sliders arrows
@@ -383,6 +403,7 @@ body {
         top: 50%;
         margin-top: -25px;
         cursor: pointer;
+        z-index: 10;
         transition: $transition;
         @media (min-width:$xl) {
             &:hover {
@@ -405,6 +426,9 @@ body {
             display: block;
             path {
                 transition: $transition;
+                @media (max-width:$xs) {
+                    stroke: $greenMedium;
+                }
             }
         }
     }
@@ -498,6 +522,12 @@ img.mfp-img {
             line-height: 22px;
             @include placeholder(18px, $greenLight, EuclidFlex);
         }
+        @media (max-width:$xs) {
+            padding: 0 20px;
+            font-size: 22px;
+            line-height: 28px;
+            @include placeholder(22px, $greenLight, EuclidFlex);
+        }
     }
     &__error {
         display: block;
@@ -515,6 +545,9 @@ img.mfp-img {
         height: 64px;
         @media (max-width:$xl) {
             height: 48px;
+        }
+        @media (max-width:$xs) {
+            height: 62px;
         }
     }
     &.error {
@@ -1349,12 +1382,17 @@ img.mfp-img {
 .mainLines {
     margin-top: -228px;
     overflow: hidden;
+    pointer-events: none;
     @media (max-width:$xl) {
         margin-top: -306px;
     }
     @media (max-width:$lg) {
         margin-top: -294px;
         margin-left: -152px;
+    }
+    @media (max-width:$xs) {
+        margin-left: 0;
+        height: 510px;
     }
     &_service {
         margin-top: -205px;
@@ -1368,6 +1406,9 @@ img.mfp-img {
         width: 100%;
         @media (max-width:$lg) {
             width: 110%;
+        }
+        @media (max-width:$xs) {
+            width: 100%;
         }
         &.show {
             .mainLines__path {
@@ -1444,12 +1485,23 @@ img.mfp-img {
     @media (max-width:$lg) {
         top: 20px;
     }
+    @media (max-width:$xs) {
+        width: 263px;
+        height: 263px;
+        top: -39px;
+        left: -48px;
+    }
     &__title {
         margin-top: 20px;
         font-size: 28px;
         line-height: 30px;
         color: $blueDark;
         font-family: 'Prata';
+        @media (max-width:$xs) {
+            margin-top: 12px;
+            font-size: 22px;
+            line-height: 26px;
+        }
     }
     &__link {
         display: inline-block;
@@ -1457,12 +1509,39 @@ img.mfp-img {
         font-size: 18px;
         line-height: 18px;
         color: $purple;
+        @media (max-width:$xs) {
+            margin-top: 16px;
+            font-size: 18px;
+            line-height: 14px;
+        }
+    }
+    svg {
+        display: block;
+        @media (max-width:$xs) {
+            width: 43px;
+            height: 55px;
+        }
+        path {
+            transform-origin: center center;
+        }
     }
     &__svg {
         position: absolute;
         top: -55px;
         left: -67px;
         pointer-events: none;
+        @media (max-width:$xs) {
+            top: -26px;
+            left: -32px;
+            width: 100%;
+            height: 100%;
+        }
+        svg {
+            @media (max-width:$xs) {
+                width: 325px;
+                height: 332px;
+            }
+        }
     }
     &__path {
         opacity: 0;
@@ -1478,12 +1557,6 @@ img.mfp-img {
         }
         &_5 {
             transition-delay: .7s;
-        }
-    }
-    svg {
-        display: block;
-        path {
-            transform-origin: center center;
         }
     }
 }
@@ -1507,6 +1580,9 @@ img.mfp-img {
             display: flex;
             overflow-x: scroll;
         }
+        @media (max-width:$xs) {
+            margin-right: -40px;
+        }
     }
     &__item {
         height: 100%;
@@ -1521,6 +1597,14 @@ img.mfp-img {
             flex: none;
             height: 340px;
             width: 703px !important;
+        }
+        @media (max-width:$xs) {
+            margin-top: 8px;
+            height: 295px;
+            width: 460px !important;
+            background: rgba(255, 255, 255, 0.7);
+            //backdrop-filter: blur(40px);
+            border-radius: 30px;
         }
     }
     &__description {
@@ -1542,6 +1626,12 @@ img.mfp-img {
             animation: none;
             padding: 37px 44px 36px;
         }
+        @media (max-width:$xs) {
+            padding: 20px 27px 28px;
+            background: transparent;
+            backdrop-filter: none;
+            z-index: 2;
+        }
     }
     &__wrapper {
         @media (max-width:$xl) {
@@ -1549,6 +1639,9 @@ img.mfp-img {
         }
         @media (max-width:$lg) {
             max-width: 335px;
+        }
+        @media (max-width:$xs) {
+            max-width: 260px;
         }
     }
     &__name {
@@ -1560,14 +1653,24 @@ img.mfp-img {
             font-size: 34px;
             line-height: 43px;
         }
+        @media (max-width:$xs) {
+            font-size: 28px;
+            line-height: 36px;
+        }
     }
     &__ul {
         &:not(:first-child) {
             margin-top: 24px;
+            @media (max-width:$xs) {
+                margin-top: 16px;
+            }
         }
     }
     &__block {
         margin-top: 34px;
+        @media (max-width:$xs) {
+            margin-top: 26px;
+        }
     }
     &__specialization {
         font-size: 18px;
@@ -1575,6 +1678,9 @@ img.mfp-img {
         color: $greenMedium;
         @media (max-width:$xl) {
             font-size: 16px;
+        }
+        @media (max-width:$xs) {
+            font-size: 18px;
         }
     }
     &__medic {
@@ -1587,16 +1693,23 @@ img.mfp-img {
             font-size: 18px;
             line-height: 24px;
         }
+        @media (max-width:$xs) {
+            margin-top: 0;
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
     &__a {
         display: inline-flex;
         align-items: center;
-        &:hover {
-            span {
-                opacity: 1;
-            }
-            svg {
-                width: 36px;
+        @media (min-width:$xl) {
+            &:hover {
+                span {
+                    opacity: 1;
+                }
+                svg {
+                    width: 36px;
+                }
             }
         }
         span {
@@ -1608,6 +1721,10 @@ img.mfp-img {
             @media (max-width:$xl) {
                 font-size: 20px;
                 line-height: 25px;
+            }
+            @media (max-width:$xs) {
+                font-size: 18px;
+                line-height: 23px;
             }
         }
         svg {
@@ -1632,6 +1749,10 @@ img.mfp-img {
         @media (max-width:$lg) {
             right: 20px;
             zoom: .7;
+        }
+        @media (max-width:$xs) {
+            right: -14px;
+            zoom: .53;
         }
         &:after {
             content:'';
@@ -1714,6 +1835,10 @@ img.mfp-img {
         padding-top: 148px;
         width: 944px;
     }
+    @media (max-width:$xs) {
+        padding-top: 117px;
+		width: 460px;
+	}
     &_service {
         padding-top: 0;
         margin-top: -314px;
@@ -1738,11 +1863,19 @@ img.mfp-img {
             padding-left: 45px;
             border-radius: 60px;
         }
+        @media (max-width:$xs) {
+            padding: 57px 50px 55px;
+            text-align: center;
+            border-radius: 50px;
+        }
     }
     &__form {
         width: 576px;
         @media (max-width:$xl) {
             width: 428px;
+        }
+        @media (max-width:$xs) {
+            width: 100%;
         }
     }
     &__title {
@@ -1753,6 +1886,10 @@ img.mfp-img {
         @media (max-width:$xl) {
             font-size: 38px;
             line-height: 49px;
+        }
+        @media (max-width:$xs) {
+            font-size: 36px;
+            line-height: 46px;
         }
     }
     &__description {
@@ -1765,6 +1902,11 @@ img.mfp-img {
             font-size: 14px;
             line-height: 20px;
         }
+        @media (max-width:$xs) {
+            margin-top: 12px;
+            font-size: 22px;
+            line-height: 31px;
+        }
     }
     &__doctor {
         position: absolute;
@@ -1775,6 +1917,9 @@ img.mfp-img {
             width: 372px;
             border-radius: 60px;
             overflow: hidden;
+        }
+        @media (max-width:$xs) {
+            display: none;
         }
         img {
             display: block;
@@ -1795,9 +1940,17 @@ img.mfp-img {
         @media (max-width:$lg) {
             margin-top: 28px;
         }
+        @media (max-width:$xs) {
+            margin-top: 37px;
+            flex-direction: column;
+        }
         .envelopeInput {
             &:not(:first-child) {
                 margin-left: 20px;
+                @media (max-width:$xs) {
+                    margin-left: 0;
+                    margin-top: 10px;
+                }
             }
         }
     }
@@ -1813,6 +1966,9 @@ img.mfp-img {
             flex-direction: column;
             align-items: flex-start;
         }
+        @media (max-width:$xs) {
+            margin-top: 24px;
+        }
     }
     &__button {
         width: 196px;
@@ -1821,6 +1977,10 @@ img.mfp-img {
         }
         @media (max-width:$lg) {
             width: 298px;
+        }
+        @media (max-width:$xs) {
+            margin: 0 auto;
+            width: 300px;
         }
     }
     &__privacy {
@@ -1834,8 +1994,14 @@ img.mfp-img {
             line-height: 15px;
         }
         @media (max-width:$lg) {
-            margin-left: 6px;
             margin-top: 16px;
+            margin-left: 6px;
+        }
+        @media (max-width:$xs) {
+            margin-top: 23px;
+            margin-left: 0;
+            font-size: 16px;
+            line-height: 22px;
         }
     }
     &__policy {
@@ -1865,6 +2031,9 @@ img.mfp-img {
         @media (max-width:$lg) {
             margin-left: -33px;
             margin-top: 58px;
+        }
+        @media (max-width:$xs) {
+            display: none;
         }
         &.hide {
             opacity: 0;
@@ -1922,15 +2091,38 @@ img.mfp-img {
             @media (max-width:$lg) {
                 width: 176px;
             }
+            @media (max-width:$xs) {
+                width: 300px;
+            }
         }
     }
     .bonusSystem__ground_left {
         left: -450px;
         top: -200px;
+        @media (max-width:$xs) {
+            left: -500px;
+            top: -50px;
+        }
+        img {
+            @media (max-width:$xs) {
+                height: 700px;
+                transform: rotate(-35deg);
+            }
+        }
     }
     .bonusSystem__ground_right {
         top: -310px;
         right: -350px;
+        @media (max-width:$xs) {
+            top: -220px;
+            right: -500px;
+        }
+        img {
+            @media (max-width:$xs) {
+                height: 1100px;
+                transform: rotate(11deg);
+            }
+        }
     }
 }
 .bonusSystem {
@@ -1949,8 +2141,15 @@ img.mfp-img {
     @media (max-width:$lg) {
         padding: 36px 44px 49px;
 	}
+    @media (max-width:$xs) {
+        padding: 338px 30px 58px;
+        border-radius: 50px;
+	}
     &__box {
         width: 501px;
+        @media (max-width:$xs) {
+            width: 100%;
+        }
     }
     &__title {
         font-size: 48px;
@@ -1959,6 +2158,10 @@ img.mfp-img {
         font-family: 'Prata';
         @media (max-width:$xl) {
             font-size: 42px;
+        }
+        @media (max-width:$xs) {
+            font-size: 36px;
+            line-height: 47px;
         }
     }
     &__description {
@@ -1972,6 +2175,11 @@ img.mfp-img {
         }
         @media (max-width:$lg) {
             margin-top: 12px;
+        }
+        @media (max-width:$xs) {
+            margin-top: 10px;
+            font-size: 22px;
+            line-height: 29px;
         }
     }
     &__ground {

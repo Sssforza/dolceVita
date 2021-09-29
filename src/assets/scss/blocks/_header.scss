@@ -6,6 +6,10 @@
     height: auto;
     z-index: 1000;
     transition: .8s cubic-bezier(0.43, 0.17, 0, 0.54);
+    @media (max-width:$xs) {
+        top: auto !important;
+        bottom: 0 !important;
+    }
     &.hide {
         top: -100%;
     }
