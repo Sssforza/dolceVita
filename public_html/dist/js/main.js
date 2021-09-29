@@ -16853,13 +16853,15 @@ function animGradientBgHeader() {
 } // anim main lines
 
 function animMainLines() {
-  if (document.querySelector('.mainLines_js')) {
+  if (document.querySelector('.reviews_js')) {
     var mainLines = document.querySelector('.mainLines__svg');
-    var mainLinesTop = document.querySelector('.mainLines_js').offsetTop;
-    var mainLinesHeight = document.querySelector('.mainLines_js').offsetHeight;
     var headerHeight = document.querySelector('.header_js').offsetHeight;
+    var clientHeight = document.documentElement.clientHeight / 2 - headerHeight;
+    var clientRectTop;
     window.addEventListener('scroll', function () {
-      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
+      clientRectTop = mainLines.getBoundingClientRect().top;
+
+      if (clientRectTop < clientHeight) {
         mainLines.classList.add('show');
       }
     });
@@ -16868,13 +16870,15 @@ function animMainLines() {
 
 function animReviewsLines() {
   if (document.querySelector('.reviews_js')) {
-    var mainLines = document.querySelector('.reviews__svg');
-    var mainLinesTop = document.querySelector('.reviews_js').offsetTop;
-    var mainLinesHeight = document.querySelector('.reviews_js').offsetHeight;
+    var reviewsSvg = document.querySelector('.reviews__svg');
     var headerHeight = document.querySelector('.header_js').offsetHeight;
+    var clientHeight = document.documentElement.clientHeight / 2 - headerHeight;
+    var clientRectTop;
     window.addEventListener('scroll', function () {
-      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
-        mainLines.classList.add('show');
+      clientRectTop = reviewsSvg.getBoundingClientRect().top;
+
+      if (clientRectTop < clientHeight) {
+        reviewsSvg.classList.add('show');
       }
     });
   }
@@ -16908,13 +16912,14 @@ function sectionBonusSystem() {
 
 function sectionConsultPractice() {
   if (document.querySelector('.sectionConsult_js')) {
-    var mainLines = document.querySelector('.sectionConsult__practice');
-    var mainLinesTop = document.querySelector('.sectionConsult_js').offsetTop;
-    var mainLinesHeight = document.querySelector('.sectionConsult_js').offsetHeight;
-    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    var consultPractice = document.querySelector('.sectionConsult__practice');
+    var clientHeight = document.documentElement.clientHeight / 2;
+    var clientRectTop;
     window.addEventListener('scroll', function () {
-      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
-        mainLines.classList.remove('hide');
+      clientRectTop = consultPractice.getBoundingClientRect().top;
+
+      if (clientRectTop < clientHeight) {
+        consultPractice.classList.remove('hide');
       }
     });
   }

@@ -16,13 +16,14 @@ export function animGradientBgHeader () {
 
 // anim main lines
 export function animMainLines () {
-    if(document.querySelector('.mainLines_js')) {
+    if(document.querySelector('.reviews_js')) {
         const mainLines = document.querySelector('.mainLines__svg');
-        const mainLinesTop = document.querySelector('.mainLines_js').offsetTop;
-        const mainLinesHeight = document.querySelector('.mainLines_js').offsetHeight;
         const headerHeight = document.querySelector('.header_js').offsetHeight;
+        let clientHeight = document.documentElement.clientHeight/2 - headerHeight;
+        let clientRectTop;
         window.addEventListener('scroll', function() {
-            if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
+            clientRectTop = mainLines.getBoundingClientRect().top;
+            if(clientRectTop < clientHeight) {
                 mainLines.classList.add('show');
             }
         });
@@ -32,13 +33,14 @@ export function animMainLines () {
 // anim reviews lines
 export function animReviewsLines () {
     if(document.querySelector('.reviews_js')) {
-        const mainLines = document.querySelector('.reviews__svg');
-        const mainLinesTop = document.querySelector('.reviews_js').offsetTop;
-        const mainLinesHeight = document.querySelector('.reviews_js').offsetHeight;
+        const reviewsSvg = document.querySelector('.reviews__svg');
         const headerHeight = document.querySelector('.header_js').offsetHeight;
+        let clientHeight = document.documentElement.clientHeight/2 - headerHeight;
+        let clientRectTop;
         window.addEventListener('scroll', function() {
-            if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
-                mainLines.classList.add('show');
+            clientRectTop = reviewsSvg.getBoundingClientRect().top;
+            if(clientRectTop < clientHeight) {
+                reviewsSvg.classList.add('show');
             }
         });
     }
@@ -73,13 +75,13 @@ export function sectionBonusSystem () {
 // section consult practice
 export function sectionConsultPractice () {
     if(document.querySelector('.sectionConsult_js')) {
-        const mainLines = document.querySelector('.sectionConsult__practice');
-        const mainLinesTop = document.querySelector('.sectionConsult_js').offsetTop;
-        const mainLinesHeight = document.querySelector('.sectionConsult_js').offsetHeight;
-        const headerHeight = document.querySelector('.header_js').offsetHeight;
+        const consultPractice = document.querySelector('.sectionConsult__practice');
+        let clientHeight = document.documentElement.clientHeight/2;
+        let clientRectTop;
         window.addEventListener('scroll', function() {
-            if(pageYOffset > (mainLinesTop - mainLinesHeight - headerHeight)){
-                mainLines.classList.remove('hide');
+            clientRectTop = consultPractice.getBoundingClientRect().top;
+            if(clientRectTop < clientHeight) {
+                consultPractice.classList.remove('hide');
             }
         });
     }
