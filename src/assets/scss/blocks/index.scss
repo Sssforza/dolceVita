@@ -206,9 +206,11 @@
                 width: 36px;
                 height: 36px;
             }
-            &:hover {
-                &:after {
-                    opacity: 1;
+            @media (min-width:$lg) {
+                &:hover {
+                    &:after {
+                        opacity: 1;
+                    }
                 }
             }
             &:after {
@@ -279,8 +281,10 @@
             height: 64px;
             background: $greenMedium;
         }
-        &:hover {
-            background: rgba(219, 233, 239, .6);
+        @media (min-width:$lg) {
+            &:hover {
+                background: rgba(219, 233, 239, .6);
+            }
         }
         &:active {
             background: rgba(219, 233, 239, .9);
@@ -420,7 +424,7 @@
 }
 .sliderEquipment {
     position: relative;
-    padding-top: 115px;
+    padding-top: 144px;
     @media (max-width:$lg) {
         padding-top: 58px;
     }
@@ -432,7 +436,7 @@
     }
     &__content {
         padding-left: 214px;
-        padding-right: 148px;
+        padding-right: 150px;
         @media (max-width:$xl) {
             padding-left: 174px;
             padding-right: 112px;
@@ -479,7 +483,7 @@
             font-size: 72px;
             line-height: 93px;
         }
-        @media (min-width:$xl) {
+        @media (min-width:$lg) {
             &:hover {
                 color: $greenMedium;
                 &:before {
@@ -546,10 +550,12 @@
     &__procedures {
         display: flex;
         align-items: center;
-        &:hover {
-            .sliderEquipment__video {
-                color: $blueDark;
-                text-decoration-line: none;
+        @media (min-width:$lg) {
+            &:hover {
+                .sliderEquipment__video {
+                    color: $blueDark;
+                    text-decoration-line: none;
+                }
             }
         }
         &.procedures {
@@ -606,8 +612,10 @@
     &__img {
         max-width: 544px;
         position: relative;
+        top: -24px;
         @media (max-width:$xl) {
             min-width: 308px;
+            top: 0;
             right: -40px;
         }
         @media (max-width:$lg) {
@@ -631,11 +639,15 @@
         }
     }
     &__dop {
+        margin-left: 74px;
         position: relative;
-        width: 242px;
+        top: 17px;
+        //width: 242px;
         flex: none;
         text-align: center;
         @media (max-width:$xl) {
+            margin-left: 0;
+            top: 0;
             width: 438px;
         }
         @media (max-width:$lg) {
@@ -671,7 +683,6 @@
     }
 }
 .sliderEquipHexagon {
-    margin-top: 14px;
     margin-left: auto;
     position: relative;
     width: 259px;
@@ -680,8 +691,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    top: -47px;
     @media (max-width:$xl) {
-        margin-top: 0;
         top: -8px;
     }
     @media (max-width:$lg) {
@@ -1062,7 +1073,7 @@
         &:nth-child(3) {
             transition: transform .3s .3s;
         }
-        @media (min-width:$xl) {
+        @media (min-width:$lg) {
             &.hover {
                 .usefulBlog__img {
                     &:after {
@@ -1237,7 +1248,7 @@
         &:last-child {
             border-radius: 0 0 60px 0;
         }
-        @media (min-width:$xl) {
+        @media (min-width:$lg) {
             &:hover {
                 transform: scale(1.34);
                 z-index: 2;
@@ -1529,9 +1540,11 @@
         @media (max-width:$xs) {
             white-space: nowrap;
         }
-        &:hover {
-            color: $blueDark;
-            border-bottom: 1px solid transparent;
+        @media (min-width:$lg) {
+            &:hover {
+                color: $blueDark;
+                border-bottom: 1px solid transparent;
+            }
         }
     }
     &__state {
@@ -1623,14 +1636,16 @@
         @media (max-width:$xl) {
             align-items: flex-start;
         }
-        &:hover {
-            .specialistsNav__img {
-                &:after {
-                    border: 2px solid $greenMedium;
+        @media (min-width:$lg) {
+            &:hover {
+                .specialistsNav__img {
+                    &:after {
+                        border: 2px solid $greenMedium;
+                    }
                 }
-            }
-            .specialistsNav__bg {
-                background-color: $greenMedium;
+                .specialistsNav__bg {
+                    background-color: $greenMedium;
+                }
             }
         }
         &:not(:first-child) {
