@@ -16922,13 +16922,15 @@ function sectionConsultPractice() {
 
 function usefulBlog() {
   if (document.querySelector('.usefulBlog_js')) {
-    var mainLines = document.querySelector('.usefulBlog__list');
-    var mainLinesTop = document.querySelector('.usefulBlog_js').offsetTop;
-    var mainLinesHeight = document.querySelector('.usefulBlog_js').offsetHeight;
-    var headerHeight = document.querySelector('.header_js').offsetHeight;
+    var _usefulBlog = document.querySelector('.usefulBlog__list');
+
+    var clientHeight = document.documentElement.clientHeight / 2;
+    var clientRectTop;
     window.addEventListener('scroll', function () {
-      if (pageYOffset > mainLinesTop - mainLinesHeight - headerHeight) {
-        mainLines.classList.remove('top');
+      clientRectTop = _usefulBlog.getBoundingClientRect().top;
+
+      if (clientRectTop < clientHeight) {
+        _usefulBlog.classList.remove('top');
       }
     });
   }

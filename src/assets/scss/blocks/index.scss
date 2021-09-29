@@ -1066,12 +1066,21 @@
         }
         &:nth-child(1) {
             transition: transform .3s .1s;
+            @media (max-width:$lg) {
+                transition: transform .3s 0s;
+            }
         }
         &:nth-child(2) {
             transition: transform .3s .2s;
+            @media (max-width:$lg) {
+                transition: transform .3s 0s;
+            }
         }
         &:nth-child(3) {
             transition: transform .3s .3s;
+            @media (max-width:$lg) {
+                transition: transform .3s 0s;
+            }
         }
         @media (min-width:$lg) {
             &.hover {
