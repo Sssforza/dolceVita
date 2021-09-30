@@ -19,7 +19,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
                                     <a href="#" class="breadCrumbs__chit">О нас</a>
                                 </li>
                                 <li class="breadCrumbs__item">
-                                    <span class="breadCrumbs__chit">Специалисты</span>
+                                    <span class="breadCrumbs__chit">Контакты</span>
                                 </li>
                             </ul>
                         </div>

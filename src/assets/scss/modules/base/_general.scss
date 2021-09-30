@@ -344,6 +344,9 @@ body {
         font-size: 14px;
         line-height: 18px;
         color: $greenLight;
+        @media (max-width:$lg) {
+            margin-left: 5px;
+        }
     }
     &.gray {
         .breadCrumbs__item {
