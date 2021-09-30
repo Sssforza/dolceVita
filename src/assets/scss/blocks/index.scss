@@ -790,6 +790,12 @@
             top: -128px;
             right: 67px;
         }
+        @media (max-width:$xs) {
+            width: 360px;
+            height: 232px;
+            top: -120px;
+            right: 61px;
+        }
         img {
             display: block;
             height: 100%;
@@ -797,19 +803,24 @@
     }
     &__phone {
         position: absolute;
-        top: 16px;
-        right: 390px;
+        top: 0px;
+        right: 394px;
         transform: translateY(110px) scale(0.8);
         transition: $transition8eio;
         @media (max-width:$xl) {
             width: 490px;
-            right: 210px;
-            top: 19px;
+            right: 196px;
+            top: 5px;
         }
         @media (max-width:$lg) {
-            width: 400px;
-            right: 100px;
-            top: -34px;
+            width: 380px;
+            right: 98px;
+            top: -27px;
+        }
+        @media (max-width:$xs) {
+            width: 320px;
+            right: 126px;
+            top: -35px;
         }
         img {
             width: 100%;
@@ -997,6 +1008,17 @@
     }
     &__percentage {
         font-family: "Roboto";
+    }
+    &__rub {
+        @media (max-width:$xs) {
+            display: none;
+        }
+    }
+    &__symbol {
+        display: none;
+        @media (max-width:$xs) {
+            display: inline-block;
+        }
     }
     .containerMin {
         @media (max-width:$lg) {
