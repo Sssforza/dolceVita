@@ -4,10 +4,17 @@
         padding-top: 166px;
         display: flex;
         justify-content: space-between;
+        @media (max-width:$xl) {
+            padding-top: 199px;
+        }
     }
     &__content {
         padding-top: 90px;
         padding-left: 155px;
+        @media (max-width:$xl) {
+            padding-top: 17px;
+            padding-left: 110px;
+        }
     }
     &__box {
         margin-top: 55px;
@@ -20,6 +27,9 @@
     }
     &__list {
         margin-top: 48px;
+        @media (max-width:$xl) {
+            margin-top: 44px;
+        }
     }
     &__item {
         display: flex;
@@ -84,12 +94,14 @@
         border: 2px solid rgba(141, 155, 178, .3);
         border-radius: 50%;
         transition: $transition;
-        &:hover {
-            border: 2px solid rgba(#820062, .3);
-            svg {
-                display: block;
-                .fill {
-                    fill: $purple;
+        @media (min-width:$lg) {
+            &:hover {
+                border: 2px solid rgba(#820062, .3);
+                svg {
+                    display: block;
+                    .fill {
+                        fill: $purple;
+                    }
                 }
             }
         }
@@ -108,5 +120,14 @@
         height: 716px;
         border-radius: 80px;
         overflow: hidden;
+        @media (max-width:$xl) {
+            width: 587px;
+            height: 535px;
+        }
+    }
+    .container {
+        @media (max-width:$xl) {
+            padding-right: 0;
+        }
     }
 }
