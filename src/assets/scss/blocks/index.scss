@@ -1199,6 +1199,17 @@
         height: 1920px;
         background: radial-gradient(50% 50% at 50% 50%, rgba(111, 1, 87, 0.23) 31.77%, rgba(255, 255, 255, 0) 100%);
         opacity: 0.5;
+        @media (max-width:$lg) {
+            top: -600px;
+            height: 1820px;
+        }
+        @media (max-width:$xs) {
+            top: 273px;
+            height: 610px;
+            width: 150%;
+            left: -110px;
+            opacity: .4;
+        }
     }
     &__content {
         z-index: 1;
@@ -1490,6 +1501,10 @@
         background: radial-gradient(50% 50% at 50% 50%, #E7F0FA 54.69%, rgba(255, 255, 255, 0) 100%);
         opacity: 0.75;
         pointer-events: none;
+        @media (max-width:$lg) {
+            top: -250px;
+            height: 1200px;
+        }
         @media (max-width:$xs) {
             top: -44px;
             left: -10px;
