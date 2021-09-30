@@ -2,9 +2,15 @@
 @import "../modules/utilities/_mixins.scss";
 .pagePrice {
     margin-top: 57px;
+    @media (max-width:$xl) {
+        margin-top: 69px;
+    }
     &__info {
         margin-top: 45px;
         display: flex;
+        @media (max-width:$xl) {
+            margin-top: 32px;
+        }
     }
     &__description {
         flex:none;
@@ -12,15 +18,24 @@
         font-size: 16px;
         line-height: 22px;
         color: $greenDark;
+        @media (max-width:$xl) {
+            margin-top: 26px;
+        }
     }
     &__services {
         margin-top: 64px;
         display: flex;
+        @media (max-width:$xl) {
+            margin-top: 29px;
+        }
     }
 }
 .priceHeader {
     display: flex;
     align-items: center;
+    @media (max-width:$xl) {
+        align-items: flex-start;
+    }
     &__title {
         font-size: 72px;
         line-height: 72px;
@@ -30,6 +45,10 @@
     &__list {
         margin-left: 67px;
         display: flex;
+        @media (max-width:$xl) {
+            margin-left: 56px;
+            margin-top: 8px;
+        }
     }
     &__item {
         &:not(:first-child) {
@@ -43,10 +62,12 @@
         font-weight: 500;
         color: $blueDark;
         transition: $transition5;
-        &:hover {
-            color: $greenMedium;
-            &:after {
-                opacity: 1;
+        @media (min-width:$lg) {
+            &:hover {
+                color: $greenMedium;
+                &:after {
+                    opacity: 1;
+                }
             }
         }
         &:after {
@@ -65,8 +86,14 @@
 .priceSearch {
     margin-left: 43px;
     position: relative;
+    @media (max-width:$xl) {
+        margin-left: 37px;
+    }
     &__envelope {
         width: 1034px;
+        @media (max-width:$xl) {
+            width: 753px;
+        }
         input {
             width: 100%;
             padding: 0 64px 0 24px;
@@ -77,11 +104,13 @@
         top: calc(50% - 10px);
         right: 22px;
         cursor: pointer;
-        &:hover {
-            svg {
-                circle,
-                path {
-                    stroke: $blueDark;
+        @media (min-width:$lg) {
+            &:hover {
+                svg {
+                    circle,
+                    path {
+                        stroke: $blueDark;
+                    }
                 }
             }
         }
@@ -99,11 +128,19 @@
         right: 64px;
         cursor: pointer;
     }
+    .envelopeInput input {
+        @media (max-width:$xl) {
+            height: 64px;
+        }
+    }
 }
 .priceNav {
     flex:none;
     width: 417px;
     padding-right: 20px;
+    @media (max-width:$xl) {
+        margin-top: 35px;
+    }
     &__li {
         &:not(:first-child) {
             margin-top: 24px;
@@ -116,10 +153,12 @@
         color: $blueDark;
         cursor: pointer;
         transition: $transition5;
-        &:hover {
-            color: $greenMedium;
-            &:after {
-                opacity: 1;
+        @media (min-width:$lg) {
+            &:hover {
+                color: $greenMedium;
+                &:after {
+                    opacity: 1;
+                }
             }
         }
         &:after {
@@ -142,9 +181,17 @@
 .priceList {
     width: 1034px;
     margin-left: 43px;
+    flex: none;
+    @media (max-width:$xl) {
+        width: 753px;
+        margin-left: 37px;
+    }
     &__item {
         &:not(:first-child) {
             margin-top: 48px;
+            @media (max-width:$xl) {
+                margin-top: 41px;
+            }
         }
     }
     &__header {
@@ -153,18 +200,23 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        &:hover {
-            .priceList__title {
-                color: $greenMedium;
-            }
-            .priceList__svg {
-                background: $greenMedium;
-                svg {
-                    path {
-                        stroke: $white;
+        @media (min-width:$lg) {
+            &:hover {
+                .priceList__title {
+                    color: $greenMedium;
+                }
+                .priceList__svg {
+                    background: $greenMedium;
+                    svg {
+                        path {
+                            stroke: $white;
+                        }
                     }
                 }
             }
+        }
+        @media (max-width:$xl) {
+            margin-bottom: 5px;
         }
         &.show {
             .priceList__svg {

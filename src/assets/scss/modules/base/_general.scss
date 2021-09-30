@@ -758,6 +758,9 @@ img.mfp-img {
     &__content {
         padding-top: 163px;
         padding-left: 303px;
+        @media (max-width:$xl) {
+            padding-left: 112px;
+        }
     }
 }
 .services {
