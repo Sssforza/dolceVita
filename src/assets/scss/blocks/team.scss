@@ -1,14 +1,29 @@
 @import "../modules/utilities/_variables.scss";
 .team {
     padding-top: 97px;
+    @media (max-width:$xl) {
+        padding-top: 142px;
+    }
+    .containerMin {
+        @media (max-width:$xl) {
+            padding: 0 60px;
+        }
+    }
 }
 .teamPeople {
     margin-top: 137px;
+    @media (max-width:$xl) {
+        margin-top: 152px;
+    }
     &__list {
         margin: 0 -6px;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 158px 21px;
+        @media (max-width:$xl) {
+            gap: 161px 58px;
+        }
         &.show {
             position: relative;
             opacity: 1;
@@ -68,6 +83,9 @@
     }
     &__name {
         text-align: center;
+        @media (max-width:$xl) {
+            margin-top: 12px;
+        }
     }
     &__link {
         font-size: 36px;

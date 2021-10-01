@@ -689,6 +689,11 @@ img.mfp-img {
     height: 594px;
     background: linear-gradient(188.86deg, #A9C2C9 1.18%, #79A5B1 85.9%);
     overflow: hidden;
+    @media (max-width:$xl) {
+        padding-top: 157px;
+        padding-left: 177px;
+        height: 550px;
+    }
     &:before {
         content:'';
         width: 1335px;
@@ -726,6 +731,10 @@ img.mfp-img {
         margin-top: 48px;
         max-width: 573px;
         z-index: 2;
+        @media (max-width:$xl) {
+            margin-top: 28px;
+            max-width: 580px;
+        }
     }
     &__title {
         margin-left: -154px;
@@ -733,12 +742,18 @@ img.mfp-img {
         line-height: 101px;
         color: $white;
         font-family: 'Prata';
+        @media (max-width:$xl) {
+            margin-left: -116px;
+        }
     }
     &__description {
         margin-top: 48px;
         font-size: 24px;
         line-height: 34px;
         color: $greenLight;
+        @media (max-width:$xl) {
+            margin-top: 28px;
+        }
     }
     &__container {
         display: flex;
@@ -1169,6 +1184,9 @@ img.mfp-img {
         }
         &:not(:first-child) {
             margin-left: 24px;
+            @media (max-width:$xl) {
+                margin-left: 37px;
+            }
         }
         &:after {
             content:'';
