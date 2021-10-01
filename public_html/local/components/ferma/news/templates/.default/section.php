@@ -19,7 +19,7 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
 ?>
 <main class="main">
     <pre>
-        <? print_r($arResult)?>
+        <? //print_r($arResult)?>
     </pre>
     <section class="page page_services">
         <section class="banerSection banerServices">

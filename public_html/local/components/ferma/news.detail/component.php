@@ -347,7 +347,12 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 				$arResult["SECTION_URL"] = $arPath["~SECTION_PAGE_URL"];
 			}
 		}
-		$arElementId = array_merge((array)$arResult["PROPERTIES"]["SERVICES"]["VALUE"], (array)$arResult["PROPERTIES"]["PROGRAMS"]["VALUE"], (array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"]);
+		$arElementId = array_merge(
+						(array)$arResult["PROPERTIES"]["SERVICES"]["VALUE"],
+						(array)$arResult["PROPERTIES"]["PROGRAMS"]["VALUE"],
+						(array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"],
+						(array)$arResult["PROPERTIES"]["STAGE"]["VALUE"]
+					);
 		$arResult["arElementId"] = $arElementId;
 		if (!empty($arElementId)) {
 			foreach ($arElementId as $key => $value) {
