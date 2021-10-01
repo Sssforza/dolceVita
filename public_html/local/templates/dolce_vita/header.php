@@ -34,8 +34,6 @@
     <link rel="icon" sizes="144x144" href="/dist/img/favicons/android-icon-144x144.png" type="image/png">
     <link rel="icon" sizes="192x192" href="/dist/img/favicons/android-icon-192x192.png" type="image/png">
 
-    <meta name="theme-color" content="#ffffff">
-
 </head>
 
 <body>

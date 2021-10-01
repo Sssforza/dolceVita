@@ -34,10 +34,10 @@ $transition8eio: all .8s ease-in-out;
 		max-width: 1024px;
 		padding: 0px 40px;
 	}
-	// @media (max-width:$xs) {
-	// 	padding: 0px 20px;
-	// 	max-width: 580px;
-	// }
+	@media (max-width:$xs) {
+		padding: 0px 40px;
+		max-width: 540px;
+	}
 }
 %centerMin {
 	position:relative;
@@ -49,6 +49,7 @@ $transition8eio: all .8s ease-in-out;
 	}
 	@media (max-width:$lg) {
 		max-width: 1024px;
+		padding: 0 40px;
 	}
 }
 %centerContainer {

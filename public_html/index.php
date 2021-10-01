@@ -447,7 +447,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 							<div class="typesCards__numbers">
 								<div class="typesCards__item">
 									<div class="typesCards__percent">
-										&mdash;20<span class="typesCards__percentage">%</span>
+										&#8211;20<span class="typesCards__percentage">%</span>
 									</div>
 									<div class="typesCards__wrapper">
 										<span>На&nbsp;первую процедуру по&nbsp;уходу&nbsp;за:</span>
@@ -466,7 +466,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 								</div>
 								<div class="typesCards__item">
 									<div class="typesCards__percent">
-										&mdash;10<span class="typesCards__percentage">%</span>
+										&#8211;10<span class="typesCards__percentage">%</span>
 									</div>
 									<div class="typesCards__wrapper">
 										<span>Лечебная и&nbsp;декоративная <br>косметика</span>
@@ -489,7 +489,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										3<span class="typesCards__percentage">%</span>
 									</div>
 									<div class="typesCards__description">
-										от 30 000 руб
+										от 30 000 <span class="typesCards__rub">руб</span><span class="typesCards__symbol">₽</span>
 									</div>
 								</div>
 								<div class="typesCards__item">
@@ -497,7 +497,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										5<span class="typesCards__percentage">%</span>
 									</div>
 									<div class="typesCards__description">
-										от 50 000 руб
+										от 50 000 <span class="typesCards__rub">руб</span><span class="typesCards__symbol">₽</span>
 									</div>
 								</div>
 								<div class="typesCards__item">
@@ -505,7 +505,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 										10<span class="typesCards__percentage">%</span>
 									</div>
 									<div class="typesCards__description">
-										от 100 000 руб
+										от 100 000 <span class="typesCards__rub">руб</span><span class="typesCards__symbol">₽</span>
 									</div>
 								</div>
 							</div>

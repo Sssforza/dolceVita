@@ -4,6 +4,14 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
 ?>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8ff686a7-c893-462e-9d60-01bd90ade3ee" type="text/javascript"></script>
 <main class="main whiteBg_js">
+    <section class="comeBack">
+        <div class="comeBack__content container">
+            <a href="/team/" class="comeBack__link">
+                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
+                <div class="comeBack__page">Специалисты</div>
+            </a>
+        </div>
+    </section>
 	<section class="page page_contacts" data-midnight="gray">
         <section class="contacts">
             <div class="container">
@@ -19,7 +27,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
                                     <a href="#" class="breadCrumbs__chit">О нас</a>
                                 </li>
                                 <li class="breadCrumbs__item">
-                                    <span class="breadCrumbs__chit">Специалисты</span>
+                                    <span class="breadCrumbs__chit">Контакты</span>
                                 </li>
                             </ul>
                         </div>
