@@ -717,6 +717,10 @@ img.mfp-img {
             width: 852px;
             height: 594px;
             background-image: url($imgUrl + "banerSectionSheet-left.png");
+            @media (max-width:$xl) {
+                top: -30px;
+                left: -270px;
+            }
         }
         &_right {
             top: 0;
@@ -724,6 +728,9 @@ img.mfp-img {
             width: 840px;
             height: 594px;
             background-image: url($imgUrl + "banerSectionSheet-right.png");
+            @media (max-width:$xl) {
+                right: -300px;
+            }
         }
     }
     &__content {
