@@ -5,11 +5,18 @@
     @media (max-width:$xl) {
         margin-top: 69px;
     }
+    @media (max-width:$lg) {
+        margin-top: 76px;
+    }
     &__info {
         margin-top: 45px;
         display: flex;
         @media (max-width:$xl) {
             margin-top: 32px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 24px;
+            flex-direction: column;
         }
     }
     &__description {
@@ -21,12 +28,77 @@
         @media (max-width:$xl) {
             margin-top: 26px;
         }
+        @media (max-width:$lg) {
+            margin-top: 0;
+            width: 84%;
+        }
     }
     &__services {
         margin-top: 64px;
         display: flex;
         @media (max-width:$xl) {
             margin-top: 29px;
+        }
+        @media (max-width:$lg) {
+            position: relative;
+            display: block;
+        }
+        &.list {
+            margin-top: 49px;
+            .priceNav {
+                @media (max-width:$lg) {
+                    position: absolute;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+            .priceList {
+                @media (max-width:$lg) {
+                    left: 8px;
+                    background: $white;
+                }
+            }
+            .pagePrice__selection {
+                @media (max-width:$lg) {
+                    display: inline-flex;
+                    position: relative;
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+        }
+    }
+    &__selection {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        transition: $transition5;
+        @media (max-width:$lg) {
+            &:after {
+                content:'';
+                position: absolute;
+                top: -3px;
+                left: 0;
+                width: 19px;
+                height: 34px;
+                background: {
+                    image: url($imgUrl + "svg/priceListHeader-lgArrows.svg");
+                    repeat: no-repeat;
+                }
+                transform: rotate(180deg)
+            }
+        }
+        span {
+            padding-left: 41px;
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 500;
+            color: $greenMedium;
+        }
+    }
+    .containerMin {
+        @media (max-width:$lg) {
+            padding: 0 160px;
         }
     }
 }
@@ -36,11 +108,22 @@
     @media (max-width:$xl) {
         align-items: flex-start;
     }
+    @media (max-width:$lg) {
+        flex-direction: column;
+    }
     &__title {
         font-size: 72px;
         line-height: 72px;
         color: $blueDark;
         font-family: 'Prata';
+        @media (max-width:$lg) {
+            font-size: 42px;
+            line-height: 50px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 44px;
+            order: 2;
+        }
     }
     &__list {
         margin-left: 67px;
@@ -49,10 +132,18 @@
             margin-left: 56px;
             margin-top: 8px;
         }
+        @media (max-width:$lg) {
+            margin-left: 0;
+            margin-top: 0;
+            order: 1;
+        }
     }
     &__item {
         &:not(:first-child) {
             margin-left: 48px;
+            @media (max-width:$lg) {
+                margin-left: 35px;
+            }
         }
     }
     &__link {
@@ -89,11 +180,19 @@
     @media (max-width:$xl) {
         margin-left: 37px;
     }
+    @media (max-width:$lg) {
+        margin-left: 0;
+        margin-top: 48px;
+        transition: $transition5;
+    }
     &__envelope {
         width: 1034px;
         @media (max-width:$xl) {
             width: 753px;
         }
+        @media (max-width:$lg) {
+            width: 704px;
+        } 
         input {
             width: 100%;
             padding: 0 64px 0 24px;
@@ -141,9 +240,34 @@
     @media (max-width:$xl) {
         margin-top: 35px;
     }
+    @media (max-width:$lg) {
+        width: 100%;
+        margin-top: 21px;
+        padding-right: 0;
+        transition: $transition5;
+    }
     &__li {
+        position: relative;
+        @media (max-width:$lg) {
+            &:after {
+                content:'';
+                position: absolute;
+                top: -3px;
+                right: 0;
+                width: 19px;
+                height: 34px;
+                background: {
+                    image: url($imgUrl + "svg/priceListHeader-lgArrows.svg");
+                    repeat: no-repeat;
+                }
+                pointer-events: none;
+            }
+        }
         &:not(:first-child) {
             margin-top: 24px;
+            @media (max-width:$lg) {
+                margin-top: 41px;
+            }
         }
     }
     &__choice {
@@ -160,6 +284,11 @@
                     opacity: 1;
                 }
             }
+        }
+        @media (max-width:$lg) {
+            display: block;
+            font-size: 24px;
+            line-height: 30px;
         }
         &:after {
             content:'';
@@ -186,6 +315,25 @@
         width: 753px;
         margin-left: 37px;
     }
+    @media (max-width:$lg) {
+        position: relative;
+        top: 42px;
+        left: 100%;
+        width: 700px;
+        margin-left: 0;
+        background: transparent;
+        transition: $transition5;
+    }
+    &__list {
+        transition:$transition5;
+        &.hide {
+            @media (max-width:$lg) {
+                position: absolute;
+                opacity: 0;
+                pointer-events: none;
+            }    
+        }
+    }
     &__item {
         &:not(:first-child) {
             margin-top: 48px;
@@ -200,7 +348,7 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        @media (min-width:$lg) {
+        @media (min-width:$xl) {
             &:hover {
                 .priceList__title {
                     color: $greenMedium;
@@ -245,6 +393,9 @@
         background: transparent;
         border-radius: 50%;
         transition: $transition5;
+        @media (max-width:$lg) {
+            margin-right: 12px;
+        }
         svg {
             display: block;
             transform: rotate(-180deg);
@@ -273,5 +424,8 @@
     }
     &__cost {
         font-weight: 500;
+        @media (max-width:$lg) {
+            margin-right: 4px;
+        }
     }
 }

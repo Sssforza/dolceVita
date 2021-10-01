@@ -52,6 +52,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/price.css");
                     </div>
                 </div>
                 <div class="pagePrice__services pagePriceServices_js">
+                    <div class="pagePrice__selection">
+                        <span class="pagePriceSelection_js"></span>
+                    </div>
                     <div class="priceNav">
                         <ul class="priceNav__ul">
                             <li class="priceNav__li">
