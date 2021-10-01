@@ -755,6 +755,9 @@ img.mfp-img {
     }
 }
 .whiteSection {
+    @media (max-width:$xs) {
+        display: none;
+    }
     &__content {
         padding-top: 163px;
         padding-left: 303px;

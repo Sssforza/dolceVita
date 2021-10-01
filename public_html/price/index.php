@@ -3,6 +3,14 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/price.css");
 ?>
 <main class="main whiteBg_js">
+    <section class="comeBack">
+        <div class="comeBack__content container">
+            <a href="/" class="comeBack__link">
+                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
+                <div class="comeBack__page">На главную</div>
+            </a>
+        </div>
+    </section>
 	<section class="page page_price" data-midnight="gray">
         <section class="whiteSection">
             <div class="container">
