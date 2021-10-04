@@ -694,6 +694,11 @@ img.mfp-img {
         padding-left: 177px;
         height: 550px;
     }
+    @media (max-width:$lg) {
+        padding-top: 149px;
+        padding-left: 159px;
+        height: 507px;
+    }
     &:before {
         content:'';
         width: 1335px;
@@ -752,6 +757,11 @@ img.mfp-img {
         @media (max-width:$xl) {
             margin-left: -116px;
         }
+        @media (max-width:$lg) {
+            margin-left: -119px;
+            font-size: 64px;
+            line-height: 90px;
+        }
     }
     &__description {
         margin-top: 48px;
@@ -760,6 +770,11 @@ img.mfp-img {
         color: $greenLight;
         @media (max-width:$xl) {
             margin-top: 28px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 35px;
+            font-size: 20px;
+            line-height: 28px;
         }
     }
     &__container {
@@ -1161,9 +1176,38 @@ img.mfp-img {
     }
 }
 .teamList {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -43px;
+        bottom: 0;
+        width: 60px;
+        display: block;
+        z-index: 1;
+        background: linear-gradient(60deg,#fff 33.33%,rgba(237,244,247,0) 100%);
+    }
+    &:after {
+        @media (max-width:$lg) {
+            content:'';
+            position: absolute;
+            right: -43px;
+            bottom: 0;
+            left: -43px;
+            height: 1px;
+            background: $greenMedium;
+            border-radius: 50px;
+        }
+    }
     &__content {
         position: relative;
         display: inline-flex;
+        @media (max-width:$lg) {
+            margin: 0 -43px;
+            padding: 0 43px;
+            overflow-x: scroll;
+        }
         &:after {
             content:'';
             position: absolute;
@@ -1173,9 +1217,13 @@ img.mfp-img {
             height: 1px;
             background: $greenMedium;
             border-radius: 50px;
+            @media (max-width:$lg) {
+                display: none;
+            }
         }
     }
     &__item {
+        flex: none;
         position: relative;
         font-size: 21px;
         line-height: 27px;
@@ -1194,6 +1242,9 @@ img.mfp-img {
             @media (max-width:$xl) {
                 margin-left: 37px;
             }
+            @media (max-width:$lg) {
+                margin-left: 35px;
+            }
         }
         &:after {
             content:'';
@@ -1206,6 +1257,9 @@ img.mfp-img {
             border-radius: 50px;
             z-index: 2;
             transition: $transition;
+            @media (max-width:$lg) {
+                bottom: 0;
+            }
         }
         &.active {
             opacity: 1;

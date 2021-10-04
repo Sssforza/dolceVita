@@ -4,9 +4,15 @@
     @media (max-width:$xl) {
         padding-top: 142px;
     }
+    @media (max-width:$lg) {
+        padding-top: 82px;
+    }
     .containerMin {
         @media (max-width:$xl) {
             padding: 0 60px;
+        }
+        @media (max-width:$lg) {
+            padding: 0 43px;
         }
     }
 }
@@ -14,6 +20,9 @@
     margin-top: 137px;
     @media (max-width:$xl) {
         margin-top: 152px;
+    }
+    @media (max-width:$lg) {
+        margin-top: 167px;
     }
     &__list {
         margin: 0 -6px;
@@ -23,6 +32,9 @@
         gap: 158px 21px;
         @media (max-width:$xl) {
             gap: 161px 58px;
+        }
+        @media (max-width:$xl) {
+            gap: 173px 70px;
         }
         &.show {
             position: relative;
@@ -85,6 +97,9 @@
         text-align: center;
         @media (max-width:$xl) {
             margin-top: 12px;
+        }
+        @media (max-width:$xl) {
+            margin-top: 4px;
         }
     }
     &__link {
