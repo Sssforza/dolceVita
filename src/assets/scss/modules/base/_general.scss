@@ -385,6 +385,7 @@ body {
     height: 80px;
     background: rgba(219, 233, 239, .4);
     align-items: center;
+    z-index: 1;
     @media (max-width:$xs) {
         display: flex;
     }
@@ -405,6 +406,9 @@ body {
     svg {
         display: block;
         margin-right: 16px;
+    }
+    &_banerSection {
+        background: rgba(219, 233, 239, 1);
     }
 }
 //titles
@@ -699,6 +703,11 @@ img.mfp-img {
         padding-left: 159px;
         height: 507px;
     }
+    @media (max-width:$xs) {
+        padding-top: 80px;
+        padding-left: 0;
+        height: 620px;
+    }
     &:before {
         content:'';
         width: 1335px;
@@ -717,14 +726,26 @@ img.mfp-img {
         }
         pointer-events: none;
         &_left {
-            top: 0;
-            left: 0;
-            width: 852px;
-            height: 594px;
+            top: -550px;
+            left: -440px;
+            width: 1336px;
+            height: 1353px;
             background-image: url($imgUrl + "banerSectionSheet-left.png");
+            background-repeat: no-repeat;
             @media (max-width:$xl) {
-                top: -30px;
-                left: -270px;
+                top: -430px;
+                left: -770px;
+                zoom: 1.1;
+            }
+            @media (max-width:$lg) {
+                top: -450px;
+                left: -840px;
+                zoom: 1;
+            }
+            @media (max-width:$xs) {
+                top: -330px;
+                left: -610px;
+                zoom: .8;
             }
         }
         &_right {
@@ -733,8 +754,19 @@ img.mfp-img {
             width: 840px;
             height: 594px;
             background-image: url($imgUrl + "banerSectionSheet-right.png");
+            background-repeat: no-repeat;
             @media (max-width:$xl) {
-                right: -300px;
+                top: -10px;
+                right: -280px;
+                zoom: 1.1;
+            }
+            @media (max-width:$lg) {
+                zoom: 1;
+                top: -30px;
+                right: -380px;
+            }
+            @media (max-width:$xs) {
+                display: none;
             }
         }
     }
@@ -746,6 +778,16 @@ img.mfp-img {
         @media (max-width:$xl) {
             margin-top: 28px;
             max-width: 580px;
+        }
+        @media (max-width:$xs) {
+            margin: 0 auto;
+            max-width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
     }
     &__title {
@@ -762,6 +804,11 @@ img.mfp-img {
             font-size: 64px;
             line-height: 90px;
         }
+        @media (max-width:$xs) {
+            margin-left: 0;
+            font-size: 60px;
+            line-height: 84px;
+        }
     }
     &__description {
         margin-top: 48px;
@@ -775,6 +822,11 @@ img.mfp-img {
             margin-top: 35px;
             font-size: 20px;
             line-height: 28px;
+        }
+        @media (max-width:$xs) {
+            margin-top: 24px;
+            font-size: 22px;
+            line-height: 31px;
         }
     }
     &__container {
@@ -1178,15 +1230,20 @@ img.mfp-img {
 .teamList {
     position: relative;
     &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -43px;
-        bottom: 0;
-        width: 60px;
-        display: block;
-        z-index: 1;
-        background: linear-gradient(60deg,#fff 33.33%,rgba(237,244,247,0) 100%);
+        @media (max-width:$lg) {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -43px;
+            bottom: 0;
+            width: 60px;
+            display: block;
+            z-index: 1;
+            background: linear-gradient(60deg,#fff 33.33%,rgba(237,244,247,0) 100%);
+        }
+        @media (max-width:$xs) {
+            left: -40px;
+        }
     }
     &:after {
         @media (max-width:$lg) {
@@ -1199,6 +1256,10 @@ img.mfp-img {
             background: $greenMedium;
             border-radius: 50px;
         }
+        @media (max-width:$xs) {
+            right: -40px;
+            left: -40px;
+        }
     }
     &__content {
         position: relative;
@@ -1207,6 +1268,11 @@ img.mfp-img {
             margin: 0 -43px;
             padding: 0 43px;
             overflow-x: scroll;
+        }
+        @media (max-width:$xs) {
+            display: flex;
+            margin: 0 -40px;
+            padding: 0 40px;
         }
         &:after {
             content:'';

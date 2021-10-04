@@ -3,6 +3,14 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/team.css");
 ?>
 <main class="main">
+    <section class="comeBack comeBack_banerSection">
+        <div class="comeBack__content container">
+            <a href="/about/" class="comeBack__link">
+                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
+                <div class="comeBack__page">О нас</div>
+            </a>
+        </div>
+    </section>
 	<section class="page page_team">
         <section class="banerSection">
             <div class="banerSection__sheet banerSection__sheet_left"></div>
