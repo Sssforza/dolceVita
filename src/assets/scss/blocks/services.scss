@@ -3,8 +3,11 @@
 // Scrollbar
 @import "../blocks/_jquery.scrollbar.scss";
 .banerServices {
-    min-height: 635px;
+    height: 635px;
     background: linear-gradient(2.88deg, #A9C2C9 2.26%, #79A5B1 89.87%);
+    @media (max-width:$lg) {
+        height: 490px;
+    }
     &:before {
         width: 100%;
         height: 100%;
@@ -23,6 +26,9 @@
         max-width: 80%;
         position: relative;
         z-index: 1;
+        @media (max-width:$lg) {
+            display: none;
+        }
     }
     &__header {
         display: flex;
@@ -245,6 +251,12 @@
     @media (max-width:$xl) {
         right: 38px;
     }
+    @media (max-width:$lg) {
+        padding-left: 30px;
+        width: 462px;
+        height: 389px;
+        right: 40px;
+    }
     &:after {
         display: none;
     }
@@ -304,6 +316,11 @@
             padding-left: 113px;
             background-position: -110px 0;
         }
+        @media (max-width:$lg) {
+            padding-left: 70px;
+            padding-top: 75px;
+            background-position: -393px 0;
+        }
     }
     &__box {
         max-width: 35%;
@@ -316,15 +333,32 @@
         line-height: 62px;
         color: $white;
         font-family: 'Prata';
+        @media (max-width:$lg) {
+            font-size: 46px;
+            line-height: 60px;
+        }
     }
     &__description {
         margin-top: 24px;
         font-size: 21px;
         line-height: 30px;
         color: $greenLight;
+        @media (max-width:$lg) {
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 29px;
+        }
+        br {
+            @media (max-width:$lg) {
+                display: none;
+            }
+        }
     }
     &__btn {
         margin-top: 24px;
         width: 271px;
+        @media (max-width:$lg) {
+            width: 262px;
+        }
     }
 }

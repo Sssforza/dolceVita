@@ -251,11 +251,11 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                         <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
                         <div class="servicesCard__wrapper">
                             <div class="servicesCard__title">Комплексный подход коррекции фигуры</div>
+                            <div class="servicesCard__programm">программа</div>
                             <div class="servicesCard__description">
                                 4-этапная программа восстановления упругости кожи и коррекции фигуры 
                             </div>
                         </div>
-                        <div class="servicesCard__programm">программа</div>
                     </div>
                     <div class="servicesCard__bottom">
                         <div class="servicesCard__list">
@@ -304,11 +304,11 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                         <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
                         <div class="servicesCard__wrapper">
                             <div class="servicesCard__title">1Комплексный подход коррекции фигуры</div>
+                            <div class="servicesCard__programm">программа</div>
                             <div class="servicesCard__description">
-                                14-этапная программа восстановления упругости кожи и коррекции фигуры 
+                                14-этапная программа восстановления упругости кожи и коррекции фигуры
                             </div>
                         </div>
-                        <div class="servicesCard__programm">программа</div>
                     </div>
                     <div class="servicesCard__bottom">
                         <div class="servicesCard__list">
