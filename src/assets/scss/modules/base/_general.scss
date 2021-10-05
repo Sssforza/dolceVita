@@ -869,6 +869,9 @@ img.mfp-img {
         display: flex;
         flex-wrap: wrap;
         gap: 40px;
+        @media (max-width:$xl) {
+            margin-right: -23px;
+        }
     }
     &__container {
         margin-top: 34px;
@@ -879,12 +882,19 @@ img.mfp-img {
         line-height: 50px;
         font-family: 'Prata';
         color: $blueDark;
+        @media (max-width:$xl) {
+            padding-left: 114px;
+        }
     }
     &_attendance {
         padding-top: 57px;
         height: 737px;
         overflow: hidden;
         transition: all .4s ease-in-out;
+        @media (max-width:$xl) {
+            padding-top: 57px;
+            height: 1097px;
+        }
     }
     &_cosmetic {
         .services__container {
@@ -901,6 +911,11 @@ img.mfp-img {
     background: #dbe9ef80;
     border-radius: 32px;
     overflow: hidden;
+    @media (max-width:$xl) {
+        padding-left: 32px;
+        width: 640px;
+        height: 320px;
+    }
     &:after {
         content:'';
         position: absolute;
@@ -927,6 +942,9 @@ img.mfp-img {
     }
     &__wrapper {
         margin-left: 24px;
+        @media (max-width:$xl) {
+            margin-left: 28px;
+        }
     }
     &__title {
         max-width: 70%;
@@ -941,11 +959,18 @@ img.mfp-img {
         font-size: 16px;
         line-height: 20px;
         color: $gray;
+        @media (max-width:$xl) {
+            max-width: 80%;
+        }
     }
     &__bottom {
         position: absolute;
         bottom: 38px;
         left: 178px;
+        margin-left: 24px;
+        @media (max-width:$xl) {
+            left: 160px;
+        }
     }
     &__list {
         display: flex;
@@ -1008,6 +1033,9 @@ img.mfp-img {
         text-transform: uppercase;
         background: #3b5e8280;
         border-radius: 0 10px;
+        @media (max-width:$xl) {
+            padding: 3px 14px 2px;
+        }
     }
     &__more {
         margin-top: 31px;
@@ -1041,6 +1069,7 @@ img.mfp-img {
     width: 267px;
     height: 426px;
     padding: 6px 0 13px;
+    flex: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1051,6 +1080,10 @@ img.mfp-img {
         &:hover {
             filter: drop-shadow(0px 10px 25px rgba(59, 94, 130, 0.4));
         }
+    }
+    @media (max-width:$xl) {
+        width: 271px;
+        height: 426px;
     }
     &__img {
         display: block;
@@ -1064,6 +1097,10 @@ img.mfp-img {
             repeat: no-repeat;
             size: cover;
         }
+        @media (max-width:$xl) {
+            width: 257px;
+            height: 202px;
+        }
     }
     &__title {
         margin-top: 16px;
@@ -1071,6 +1108,9 @@ img.mfp-img {
     &__title,
     &__bottom {
         padding: 0 24px;
+        @media (max-width:$xl) {
+            padding-right: 12px;
+        }
     }
     &__name {
         font-size: 21px;
@@ -1093,6 +1133,9 @@ img.mfp-img {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:$xl) {
+            margin-top: 0;
+        }
     }
     &__price {
         font-size: 24px;

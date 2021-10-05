@@ -14,6 +14,9 @@
         left: 0;
         background:  url($imgUrl + "banerServicesBg.png");
         opacity: 1;
+        @media (max-width:$xl) {
+            background-position: -243px 0px;
+        }
     }
     &__content {
         margin-top: 88px;
@@ -44,14 +47,17 @@
         margin-left: 40px;
         width: 267px;
         cursor: pointer;
-        &.disabled {
-            background: $greenDark;
-            pointer-events: none;
-        }
         @media (min-width:$xl) {
             &:hover {
                 background: $greenMedium;
             }
+        }
+        @media (max-width:$xl) {
+            margin-left: 26px;
+        }
+        &.disabled {
+            background: $greenDark;
+            pointer-events: none;
         }
     }
     &__selected {
@@ -236,6 +242,9 @@
     border: 2px solid #a9c2c980;
     border-radius: 32px;
     transition: $transition;
+    @media (max-width:$xl) {
+        right: 38px;
+    }
     &:after {
         display: none;
     }
@@ -291,9 +300,15 @@
             repeat: no-repeat;
             size: cover;
         }
+        @media (max-width:$xl) {
+            padding-left: 113px;
+        }
     }
     &__box {
         max-width: 35%;
+        @media (max-width:$xl) {
+            max-width: 44%;
+        }
     }
     &__title {
         font-size: 56px;
