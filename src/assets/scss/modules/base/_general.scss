@@ -834,12 +834,17 @@ img.mfp-img {
     }
     &__img {
         position: absolute;
-        right: 166px;
-        bottom: 0px;
-        max-width: 897px;
-        max-height: 594px;
+        top: 0;
+        right: 314px;
+        width: 715px;
+        @media (max-width:$xl) {
+            top: 20px;
+            right: 128px;
+            width: 562px;
+        }
         img {
             display: block;
+            width: 100%;
         }
     }
 }
@@ -1410,6 +1415,11 @@ img.mfp-img {
         width: 727px;
         max-height: 280px;
         overflow: hidden;
+        @media (max-width:$xl) {
+            margin-left: 88px;
+            width: 520px;
+            max-height: 300px;
+        }
     }
     &__procedure {
         font-size: 24px;
@@ -1434,6 +1444,11 @@ img.mfp-img {
     }
     .sliderArrow__next {
         right: 151px;
+        @media (max-width:$xl) {
+            right: -23px;
+            top: 71%;
+            margin-top: 0;
+        }
     }
     .slick-slide {
         height: auto !important;
@@ -1455,6 +1470,10 @@ img.mfp-img {
     position: absolute;
     top: 347px;
     left: 487px;
+    @media (max-width:$xl) {
+        top: 386px;
+        left: 485px;
+    }
     &__item {
         display: flex;
         align-items: center;
