@@ -12,33 +12,6 @@
             padding-left: 61px;
             padding-right: 93px;
         }
-        &:before {
-            content:'';
-            position: absolute;
-            top: -119px;
-            left: 29%;
-            width: 558px;
-            height: 429px;
-            background: {
-                image: url($imgUrl + "footerMap.png");
-                repeat: no-repeat;
-            }
-            z-index: -1;
-            @media (max-width:$xl) {
-                top: -55px;
-                left: 20%;
-                width: 464px;
-                height: 479px;
-                background-size: contain;
-            }
-            @media (max-width:$lg) {
-                top: -75px;
-                left: auto;
-                right: 3px;
-                width: 530px;
-                height: 504px;
-            }
-        }
     }
     &__top,
     &__bottom {
@@ -61,7 +34,7 @@
         }
     }
     &__bottom {
-        margin-top: 37px;
+        margin-top: -15px;
         @media (max-width:$lg) {
             position: relative;
         }
@@ -185,6 +158,47 @@
     }
     &__time {
         letter-spacing: 0.03em;
+    }
+}
+.footerTravel {
+    position: relative;
+    margin-left: 80px;
+    &__video {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 45px;
+        left: -79px;
+        width: 162px;
+        height: 162px;
+        background: {
+            repeat: no-repeat;
+            size: cover;
+        }
+        border-radius: 50%;
+        overflow: hidden;
+        svg {
+            display: block;
+        }
+    }
+    &__how {
+        padding: 50px 50px 50px 112px;
+        width: 360px;
+        height: 249px;
+        border: 1px solid $greenMedium;
+        border-radius: 4px;
+    }
+    &__question {
+        font-size: 36px;
+        line-height: 43px;
+        color: $greenDark;
+    }
+    &__description {
+        margin-top: 17px;
+        font-size: 14px;
+        line-height: 18px;
+        color: $greenDark;
     }
 }
 .footerNav {
