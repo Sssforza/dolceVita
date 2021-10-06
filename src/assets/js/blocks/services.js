@@ -1,3 +1,6 @@
+let lg = 1025 //1024
+let xs = 541 //540
+
 // services selected drop
 export function servicesSelectedDrop () {
     if(document.querySelector('.servicesSelectedInput_js')) {
@@ -51,6 +54,9 @@ export function servicesSelectedDrop () {
                 selected.setAttribute('id', id);
             });
         });
+	}
+    if(window.screen.availWidth < xs) {
+        document.querySelector('.servicesSelectedSelected_js').placeholder='Выберите результат';
 	}
 }
 // popup more stage date

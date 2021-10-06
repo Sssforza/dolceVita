@@ -36,6 +36,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="footerTravel">
+                        <a href="#" class="footerTravel__video" style="background-image:url(/dist/img/footerTravelVideo.png)">
+                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerTravelVideo-i.svg';?>
+                        </a>
+                        <div class="footerTravel__how">
+                            <div class="footerTravel__question">
+                                Как к&nbsp;нам проехать?
+                            </div>
+                            <div class="footerTravel__description">
+                                Посмотрите подробное видео, как легко нас найти
+                            </div>
+                        </div>
+                    </div>
                     <div class="footer__right">
                         <nav class="footer__nav footerNav">
                             <ul class="footerNav__list">

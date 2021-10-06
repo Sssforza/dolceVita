@@ -17313,7 +17313,11 @@ function usefulBlogHover() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesSelectedDrop", function() { return servicesSelectedDrop; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesSelectedFetch", function() { return servicesSelectedFetch; });
+var lg = 1025; //1024
+
+var xs = 541; //540
 // services selected drop
+
 function servicesSelectedDrop() {
   if (document.querySelector('.servicesSelectedInput_js')) {
     var parentList = document.querySelector('.servicesSelected_js');
@@ -17370,6 +17374,10 @@ function servicesSelectedDrop() {
         selected.setAttribute('id', id);
       });
     });
+  }
+
+  if (window.screen.availWidth < xs) {
+    document.querySelector('.servicesSelectedSelected_js').placeholder = 'Выберите результат';
   }
 } // popup more stage date
 // services attendance all cards
@@ -17783,31 +17791,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tabsPriceServices", function() { return tabsPriceServices; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "interactionCards", function() { return interactionCards; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearInput", function() { return clearInput; });
+var lg = 1025; //1024
+
+var xs = 541; //540
 // tabs price services
+
 function tabsPriceServices() {
   if (document.querySelector('.pagePriceServices_js')) {
     var wrapper = document.querySelector('.pagePriceServices_js');
     var tabs = wrapper.querySelectorAll('.priceNav_js');
     var elements = wrapper.querySelectorAll('.priceList_js');
-    tabs.forEach(function (item) {
-      item.addEventListener("click", function (e) {
-        var thisShow = item.getAttribute('data-services');
-        tabs.forEach(function (i) {
-          i.classList.remove('active');
-        });
-        item.classList.add('active');
-        elements.forEach(function (elem) {
-          elem.classList.add('hidden');
+    var nav = document.querySelectorAll('.priceNav_js');
+    var content = document.querySelectorAll('.priceList_js');
+    var selection = document.querySelector('.pagePriceSelection_js');
+    var search = document.querySelector('.priceSearch_js');
 
-          if (elem.getAttribute('data-list') === thisShow) {
-            elem.classList.remove('hidden');
-          }
+    if (window.screen.availWidth < lg) {
+      nav.forEach(function (item) {
+        item.classList.remove('active');
+      });
+      content.forEach(function (item) {
+        item.classList.remove('hidden');
+        item.classList.add('hide');
+      });
+      tabs.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+          var thisShow = item.getAttribute('data-services');
+          var thisName = item.innerHTML;
+          selection.innerHTML = thisName;
+          wrapper.classList.add('list');
+          search.classList.add('hidden');
+          tabs.forEach(function (i) {
+            i.classList.remove('active');
+          });
+          item.classList.add('active');
+          elements.forEach(function (elem) {
+            elem.classList.add('hide');
+
+            if (elem.getAttribute('data-list') === thisShow) {
+              elem.classList.remove('hide');
+            }
+          });
         });
       });
-    });
+      selection.addEventListener("click", function (e) {
+        selection.innerHTML = '';
+        wrapper.classList.remove('list');
+        search.classList.remove('hidden');
+        nav.forEach(function (item) {
+          item.classList.remove('active');
+        });
+        content.forEach(function (item) {
+          item.classList.add('hide');
+        });
+      });
+    } else {
+      tabs.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+          var thisShow = item.getAttribute('data-services');
+          tabs.forEach(function (i) {
+            i.classList.remove('active');
+          });
+          item.classList.add('active');
+          elements.forEach(function (elem) {
+            elem.classList.add('hidden');
+
+            if (elem.getAttribute('data-list') === thisShow) {
+              elem.classList.remove('hidden');
+            }
+          });
+        });
+      });
+    }
   }
-}
-; // opening and closing cards
+} // opening and closing cards
 
 function interactionCards() {
   if (document.querySelector('.priceList_js')) {

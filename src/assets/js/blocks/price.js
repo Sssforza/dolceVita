@@ -1,26 +1,74 @@
+let lg = 1025 //1024
+let xs = 541 //540
+
 // tabs price services
 export function tabsPriceServices () {
 	if(document.querySelector('.pagePriceServices_js')) {
 		let wrapper = document.querySelector('.pagePriceServices_js');
 		let tabs = wrapper.querySelectorAll('.priceNav_js');
 		let elements = wrapper.querySelectorAll('.priceList_js');
-		tabs.forEach((item) => {
-			item.addEventListener( "click" , (e) => {
-				let thisShow = item.getAttribute('data-services');
-				tabs.forEach((i) => {
-					i.classList.remove('active');
-				});
-				item.classList.add('active');
-				elements.forEach((elem) => {
-					elem.classList.add('hidden');
-					if (elem.getAttribute('data-list') === thisShow) {
-						elem.classList.remove('hidden');
-					}
+		let nav = document.querySelectorAll('.priceNav_js');
+		let content = document.querySelectorAll('.priceList_js');
+		let selection = document.querySelector('.pagePriceSelection_js');
+		let search = document.querySelector('.priceSearch_js');
+		
+		if (window.screen.availWidth < lg) {
+			nav.forEach((item) => {
+				item.classList.remove('active');
+			});
+			content.forEach((item) => {
+				item.classList.remove('hidden');
+				item.classList.add('hide');
+			});
+			tabs.forEach((item) => {
+				item.addEventListener( "click" , (e) => {
+					let thisShow = item.getAttribute('data-services');
+					let thisName = item.innerHTML;
+					selection.innerHTML = thisName;
+					wrapper.classList.add('list');
+					search.classList.add('hidden');
+					tabs.forEach((i) => {
+						i.classList.remove('active');
+					});
+					item.classList.add('active');
+					elements.forEach((elem) => {
+						elem.classList.add('hide');
+						if (elem.getAttribute('data-list') === thisShow) {
+							elem.classList.remove('hide');
+						}
+					});
 				});
 			});
-		});
+			selection.addEventListener( "click" , (e) => {
+				selection.innerHTML = '';
+				wrapper.classList.remove('list');
+				search.classList.remove('hidden');
+				nav.forEach((item) => {
+					item.classList.remove('active');
+				});
+				content.forEach((item) => {
+					item.classList.add('hide');
+				});
+			});
+		} else {
+			tabs.forEach((item) => {
+				item.addEventListener( "click" , (e) => {
+					let thisShow = item.getAttribute('data-services');
+					tabs.forEach((i) => {
+						i.classList.remove('active');
+					});
+					item.classList.add('active');
+					elements.forEach((elem) => {
+						elem.classList.add('hidden');
+						if (elem.getAttribute('data-list') === thisShow) {
+							elem.classList.remove('hidden');
+						}
+					});
+				});
+			});
+		}
 	}
-};
+}
 
 // opening and closing cards
 export function interactionCards () {

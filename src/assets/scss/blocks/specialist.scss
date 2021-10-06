@@ -8,8 +8,22 @@
     .services {
         margin-top: 196px;
         padding-top: 0;
+        @media (max-width:$xl) {
+            margin-top: 185px;
+        }
         &__content {
             margin-top: 45px;
+            @media (max-width:$xl) {
+                margin-top: 34px;
+                margin-left: 114px;
+                margin-right: 0;
+            }
+        }
+        .servicesCard {
+            @media (max-width:$xl) {
+                width: 527px;
+                height: 320px;
+            }
         }
     }
 }
@@ -19,6 +33,9 @@
     }
     &__content {
         width: 727px;
+        @media (max-width:$xl) {
+            width: 690px;
+        }
     }
     &__choices {
         position: relative;
@@ -46,8 +63,15 @@
                 color: $purple;
             }
         }
+        @media (max-width:$xl) {
+            font-size: 21px;
+            line-height: 27px;
+        }
         &:not(:first-child) {
             margin-left: 27px;
+            @media (max-width:$xl) {
+                margin-left: 24px;
+            }
         }
         &:after {
             content: '';
@@ -74,6 +98,9 @@
         max-height: 268px;
         overflow: hidden;
         transition: all .4s;
+        @media (max-width:$xl) {
+            margin-top: 50px;
+        }
     }
     &__item {
         display: flex;
@@ -88,6 +115,9 @@
         line-height: 34px;
         color: $greenDark;
         font-family: 'Prata';
+        @media (max-width:$xl) {
+            width: 114px;
+        }
     }
     &__description {
         span {
@@ -101,6 +131,9 @@
         margin-top: 13px;
         display: inline-flex;
         align-items: center;
+        @media (max-width:$xl) {
+            margin-top: 7px;
+        }
         svg {
             display: block;
             margin-right: 10px;
@@ -132,6 +165,9 @@
     }
     &__aside {
         margin-left: 193px;
+        @media (max-width:$xl) {
+            margin-left: 112px;
+        }
     }
     &__li {
         &:not(:first-child) {
@@ -166,6 +202,10 @@
                 }
             }
         }
+        @media (max-width:$xl) {
+            margin-top: 42px;
+            margin-left: 114px;
+        }
         span {
             font-size: 18px;
             line-height: 23px;
@@ -178,6 +218,9 @@
         svg {
             margin-left: 16px;
             display: block;
+            @media (max-width:$xl) {
+                margin-left: 10px;
+            }
         }
         &.hide {
             opacity: 0;
@@ -192,6 +235,9 @@
 }
 .portfolioSpecialist {
     margin-top: 196px;
+    @media (max-width:$xl) {
+        margin-top: 261px;
+    }
     &__title {
         font-size: 36px;
         line-height: 28px;
@@ -202,5 +248,8 @@
         margin-top: 89px;
         margin-left: -32px;
         position: relative;
+        @media (max-width:$xl) {
+            margin-top: 44px;
+        }
     }
 }

@@ -4,8 +4,17 @@ $APPLICATION->SetTitle("");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 ?>
 <main class="main">
+    <section class="comeBack comeBack_banerSection">
+        <div class="comeBack__content container">
+            <a href="/" class="comeBack__link">
+                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
+                <div class="comeBack__page">На главную</div>
+            </a>
+        </div>
+    </section>
     <section class="page page_services">
         <section class="banerSection banerServices">
+            <div class="banerServices__bg" style="background-image:url(/dist/img/banerServicesBg.png)"></div>
             <div class="breadCrumbs gradientHeader_js">
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
@@ -209,7 +218,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                             </ul>
                         </div>
                     </div>
-                    <div class="btnBlue banerServices__btn banerServicesBtn_js disabled">Посмотреть услуги</div>
+                    <div class="btnBlue banerServices__btn banerServicesBtn_js disabled">
+                        <span>Посмотреть услуги</span>
+                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerSearch-i.svg';?>
+                    </div>
                 </div>
             </div>
         </section>
@@ -251,11 +263,11 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                         <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
                         <div class="servicesCard__wrapper">
                             <div class="servicesCard__title">Комплексный подход коррекции фигуры</div>
+                            <div class="servicesCard__programm">программа</div>
                             <div class="servicesCard__description">
                                 4-этапная программа восстановления упругости кожи и коррекции фигуры 
                             </div>
                         </div>
-                        <div class="servicesCard__programm">программа</div>
                     </div>
                     <div class="servicesCard__bottom">
                         <div class="servicesCard__list">
@@ -304,11 +316,11 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                         <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
                         <div class="servicesCard__wrapper">
                             <div class="servicesCard__title">1Комплексный подход коррекции фигуры</div>
+                            <div class="servicesCard__programm">программа</div>
                             <div class="servicesCard__description">
-                                14-этапная программа восстановления упругости кожи и коррекции фигуры 
+                                14-этапная программа восстановления упругости кожи и коррекции фигуры
                             </div>
                         </div>
-                        <div class="servicesCard__programm">программа</div>
                     </div>
                     <div class="servicesCard__bottom">
                         <div class="servicesCard__list">
