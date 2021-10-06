@@ -24,7 +24,7 @@ $arUrlRewrite=array (
     'PATH' => '/services/body-shaping/index.php',
     'SORT' => 100,
   ),
-  12 => 
+  14 => 
   array (
     'CONDITION' => '#^/services/cosmetology/#',
     'RULE' => '',
@@ -88,7 +88,7 @@ $arUrlRewrite=array (
     'PATH' => '/content/news/index.php',
     'SORT' => 100,
   ),
-  9 => 
+  15 => 
   array (
     'CONDITION' => '#^/services/#',
     'RULE' => '',

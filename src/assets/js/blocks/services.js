@@ -155,6 +155,7 @@ export function servicesSelectedFetch () {
         const btn = document.querySelector('.banerServicesBtn_js');
         const input = document.querySelector('.servicesSelectedSelected_js');
         const message = 'Произошла ошибка, пожалуйста обновите страницу';
+        const content = document.querySelector('.services__content');
         let id;
         btn.addEventListener("click", (elem) => {
             id = input.getAttribute('id');
@@ -167,8 +168,17 @@ export function servicesSelectedFetch () {
                 (response) => {
                     response.text().then((data) => {
                         if(response.ok && data != null && data != "") {
-                            console.log('insert html');
-                            servicesCard();
+                            content.innerHTML = data;
+                            if(document.querySelector('.servicesCardBtn_js')) {
+                                servicesCard();
+                            }
+                            if(document.querySelector('.popupMoreStage_js')) {
+                                $('.popupMoreStage_js').magnificPopup({
+                                    type: 'inline',
+                                    tClose: 'Закрыть (Esc)',
+                                    tLoading: 'Загрузка...'
+                                });
+                            }
                             popupMore();
                         } else {
                             alert(message);

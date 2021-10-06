@@ -222,6 +222,7 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 		"ACTIVE_FROM",
 		"LIST_PAGE_URL",
 		"DETAIL_PAGE_URL",
+		"PROPERTY_*",
 	));
 	$bGetProperty = count($arParams["PROPERTY_CODE"]) > 0
 			|| $arParams["BROWSER_TITLE"] != "-"
@@ -353,10 +354,15 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 						(array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"],
 						(array)$arResult["PROPERTIES"]["STAGE"]["VALUE"]
 					);
+		$arElementId = array_diff($arElementId, array('', NULL, false));
 		$arResult["arElementId"] = $arElementId;
 		if (!empty($arElementId)) {
 			foreach ($arElementId as $key => $value) {
+				$res = CIBlockElement::GetByID($value);
+				if($ar_res = $res->GetNext())
+				  $arFilter["IBLOCK_ID"] = $ar_res["IBLOCK_ID"];
 				$arFilter["ID"] = $value;
+				unset($arFilter["SECTION_CODE"]);
 				$arsSelect = array_merge($arSelect, array(
 								"PROPERTIES_*",
 							));
@@ -366,6 +372,28 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 					$arFields = $obyElement->GetFields();
 					$arProps = $obyElement->GetProperties();
 					$arResult["ELEMENTS"][$arFields["ID"]] = array_merge($arFields, $arProps);
+				}
+			}
+		}
+
+		if ((array)$arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"]) {
+			foreach ($arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"] as $key => $value) {
+				$res = CIBlockElement::GetByID($value);
+				if($ar_res = $res->GetNext())
+				  $arFilter["IBLOCK_ID"] = $ar_res["IBLOCK_ID"];
+				$arFilter["ID"] = $value;
+				unset($arFilter["SECTION_CODE"]);
+				$arsSelect = array_merge($arSelect, array(
+								"PROPERTIES_*",
+							));
+				$arElement = CIBlockElement::GetList(array(), $arFilter, false, false, $arsSelect);
+				while($obyElement = $arElement->GetNextElement())
+				{
+					$arFields = $obyElement->GetFields();
+					$arProps = $obyElement->GetProperties();
+					$arProps["AFTER"]["FILE"] = CFile::GetFileArray($arProps["AFTER"]["VALUE"]);
+					$arProps["BEFORE"]["FILE"] = CFile::GetFileArray($arProps["BEFORE"]["VALUE"]);
+					$arResult["BEFORE_AND_AFTER"][$arFields["ID"]] = array_merge($arFields, $arProps);
 				}
 			}
 		}

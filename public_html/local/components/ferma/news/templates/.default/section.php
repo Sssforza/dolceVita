@@ -16,6 +16,7 @@ $section_code = $arResult["VARIABLES"]["SECTION_CODE"];
 $section_id = $arResult["VARIABLES"]["SECTION_ID"];
 $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
 $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
+$sec = true;
 ?>
 <main class="main">
     <pre>
@@ -23,6 +24,7 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
     </pre>
     <section class="page page_services">
         <section class="banerSection banerServices">
+            <div class="banerServices__bg" style="background-image:url(<?= CFile::GetPath($arResult["IBLOCK_AR"]["PICTURE"]);?>)"></div>
         	<?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
 			        "START_FROM" => "0",
 			        "PATH" => "",
@@ -37,20 +39,29 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
 	                        <div class="servicesTabs__list">
 	                        	<? foreach ($arResult['MENU_ITEMS'][$parent_id] as $key => $value) { ?>
 	                        		<? $active = '';
-	                        		if ($section_id == $value["ID"] || ($section_id == $parent_id && $key == 0)) {
+	                        		if ($section_id == $value["ID"] || ($section_id == $parent_id && $sec)) {
 	                        			$active = 'active';
                                         $data_select = $value["ID"];
+                                        $sec = false;
 	                        		}?>
 	                        		<div class='servicesTabs__item servicesTabs_js <?= $active?>' data-tab="<?= $value['ID']?>">
 		                                <span><?= $value['NAME']?></span>
 		                            </div>
-                                    <?$ar_section[] = $value['ID'] ?>
+                                    <?$ar_section[] = $key;?>
 	                        	<? } ?>
 	                        </div>
 	                    </div>
+                    <? } else { ?>
+                        <div class="banerServices__tabs servicesTabs">
+                            <div class="servicesTabs__list">
+                                <div class='servicesTabs__item active'>
+                                    <span><?= $arResult['MENU_ITEMS']['ROOT'][$parent_id]['NAME']?></span>
+                                </div>
+                            </div>
+                        </div>
                     <? } ?>
                 </div>
-                <? if (($arResult['ELEMENT_AR'][$section_id] || $arResult['ELEMENT_AR'][$iblock_section_id]) && empty($arResult["VARIABLES"]["AR_ID_ELEMENTS"])) { ?>
+                <? if ($arResult['MENU_ITEMS'][$parent_id][$section_id]['DEPTH_LEVEL'] > 1 || $arResult['VARIABLES']['CHECK_SECTION']) { ?>
 	                <? if ($arResult['MENU_ITEMS']['ROOT'][$parent_id]['DESCRIPTION']) { ?>
 	                	<div class="banerServices__question"><?= $arResult['MENU_ITEMS']['ROOT'][$parent_id]['DESCRIPTION']?></div>
 	                <? } ?>
@@ -71,7 +82,9 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
                                         </ul>
                                     <? } ?>
                                 <? } ?>
-                                <? $arResult["VARIABLES"]["AR_ID_ELEMENTS"][] = $element['ID'];?>
+                                <? if (empty($arResult["VARIABLES"]["AR_ID_ELEMENTS"])) { ?>
+                                    <? $arResult["VARIABLES"]["AR_ID_ELEMENTS"][] = $element['ID'];?>
+                                <? } ?>
                             </div>
                         </div>
 	                    <div class="btnBlue banerServices__btn banerServicesBtn_js disabled">Посмотреть услуги</div>
@@ -100,6 +113,7 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
                             "IBLOCK_ID" => "",
                             "ELEMENT_ID" => $element_id,
                             "ELEMENT_CODE" => "",
+                            "SECTIONS_CODE" => $section_code,
                             "CHECK_DATES" => "Y",
                             "FIELD_CODE" => Array("ID"),
                             "PROPERTY_CODE" => Array("DESCRIPTION"),
