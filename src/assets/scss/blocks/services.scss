@@ -7,9 +7,13 @@
     background: linear-gradient(2.88deg, #A9C2C9 2.26%, #79A5B1 89.87%);
     @media (max-width:$lg) {
         height: 490px;
+        padding-top: 140px;
+        padding-left: 42px;
     }
     @media (max-width:$xs) {
-        height: 816px;
+        padding-top: 80px;
+        padding-left: 0;
+        height: 620px;
     }
     &:before {
         width: 100%;
@@ -23,6 +27,9 @@
         @media (max-width:$xl) {
             background-position: -243px 0px;
         }
+        @media (max-width:$lg) {
+            background-position: -493px 0;
+        }
         @media (max-width:$xs) {
             top: 80px;
             height: 360px;
@@ -35,6 +42,9 @@
         max-width: 80%;
         position: relative;
         z-index: 1;
+        @media (max-width:$lg) {
+            margin-top: 58px;
+        }
         @media (max-width:$xs) {
             margin-top: 360px;
             padding: 40px;
@@ -56,6 +66,10 @@
         line-height: 90px;
         color: $white;
         font-family: 'Prata';
+        @media (max-width:$lg) {
+            font-size: 50px;
+            line-height: 50px;
+        }
         @media (max-width:$xs) {
             font-size: 42px;
             line-height: 59px;
@@ -66,6 +80,10 @@
         line-height: 34px;
         font-weight: 500;
         color: $greenLight;
+        @media (max-width:$lg) {
+            margin-top: 20px;
+            font-size: 20px;
+        }
         @media (max-width:$xs) {
             margin-top: 58px;
             font-size: 22px;
@@ -74,6 +92,9 @@
     }
     &__selected {
         margin-top: 28px;
+        @media (max-width:$lg) {
+            margin-top: 15px;
+        }
         @media (max-width:$xs) {
             margin-top: 14px;
         }
