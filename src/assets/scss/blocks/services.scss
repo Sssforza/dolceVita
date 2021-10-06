@@ -15,26 +15,29 @@
         padding-left: 0;
         height: 620px;
     }
-    &:before {
+    &__bg {
+        position: absolute;
         width: 100%;
         height: 100%;
         top: 0px;
         right: 0;
         bottom: 0;
         left: 0;
-        background:  url($imgUrl + "banerServicesBg.png");
-        opacity: 1;
+        background: {
+            repeat: no-repeat;
+            size: cover;
+        }
+        pointer-events: none;
         @media (max-width:$xl) {
             background-position: -243px 0px;
         }
         @media (max-width:$lg) {
-            background-position: -493px 0;
+            background-position: -223px 0;
         }
         @media (max-width:$xs) {
             top: 80px;
             height: 360px;
-            background-position: -1638px 0;
-            background-size: cover;
+            background-position: -545px 0;
         }
     }
     &__content {

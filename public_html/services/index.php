@@ -14,6 +14,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
     </section>
     <section class="page page_services">
         <section class="banerSection banerServices">
+            <div class="banerServices__bg" style="background-image:url(/dist/img/banerServicesBg.png)"></div>
             <div class="breadCrumbs gradientHeader_js">
                 <ul class="breadCrumbs__list">
                     <li class="breadCrumbs__item">
