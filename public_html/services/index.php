@@ -4,6 +4,14 @@ $APPLICATION->SetTitle("");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 ?>
 <main class="main">
+    <section class="comeBack comeBack_banerSection">
+        <div class="comeBack__content container">
+            <a href="/" class="comeBack__link">
+                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
+                <div class="comeBack__page">На главную</div>
+            </a>
+        </div>
+    </section>
     <section class="page page_services">
         <section class="banerSection banerServices">
             <div class="breadCrumbs gradientHeader_js">
@@ -209,7 +217,10 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
                             </ul>
                         </div>
                     </div>
-                    <div class="btnBlue banerServices__btn banerServicesBtn_js disabled">Посмотреть услуги</div>
+                    <div class="btnBlue banerServices__btn banerServicesBtn_js disabled">
+                        <span>Посмотреть услуги</span>
+                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerSearch-i.svg';?>
+                    </div>
                 </div>
             </div>
         </section>

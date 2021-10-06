@@ -17313,7 +17313,11 @@ function usefulBlogHover() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesSelectedDrop", function() { return servicesSelectedDrop; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicesSelectedFetch", function() { return servicesSelectedFetch; });
+var lg = 1025; //1024
+
+var xs = 541; //540
 // services selected drop
+
 function servicesSelectedDrop() {
   if (document.querySelector('.servicesSelectedInput_js')) {
     var parentList = document.querySelector('.servicesSelected_js');
@@ -17370,6 +17374,10 @@ function servicesSelectedDrop() {
         selected.setAttribute('id', id);
       });
     });
+  }
+
+  if (window.screen.availWidth < xs) {
+    document.querySelector('.servicesSelectedSelected_js').placeholder = 'Выберите результат';
   }
 } // popup more stage date
 // services attendance all cards
