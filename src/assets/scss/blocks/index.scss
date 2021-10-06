@@ -106,7 +106,6 @@
         font-size: 66px;
         line-height: 62px;
         color: $white;
-        font-family: 'Prata';
         letter-spacing: 0.9px;
         transition: top 0.8s ease 0.7s, opacity 0.8s ease 0.7s;
         @media (max-width:$xl) {
@@ -397,7 +396,6 @@
         font-size: 48px;
         line-height: 58px;
         color: $blueDark;
-        font-family: 'Prata';
         @media (max-width:$xs) {
             font-size: 36px;
             line-height: 47px;
@@ -477,7 +475,6 @@
         font-size: 80px;
         line-height: 104px;
         color: $blueDark;
-        font-family: 'Prata';
         transition: $transition;
         @media (max-width:$xl) {
             font-size: 72px;
@@ -711,7 +708,6 @@
         line-height: 100%;
         color: $greenMedium;
         opacity: 0.75;
-        font-family: 'Prata';
         @media (max-width:$xs) {
             font-size: 81px;
             line-height: 76px;
@@ -723,7 +719,6 @@
             font-size: 36px;
             line-height: 48px;
             color: $greenDark;
-            font-family: 'Prata';
             @media (max-width:$xs) {
                 top: 10px;
                 font-size: 24px;
@@ -1005,9 +1000,6 @@
         @media (max-width:$xl) {
             width: 180px;
         }
-    }
-    &__percentage {
-        font-family: "Roboto";
     }
     &__rub {
         @media (max-width:$xs) {
@@ -1452,7 +1444,6 @@
         font-size: 72px;
         line-height: 79px;
         color: $white;
-        font-family: 'Prata';
         @media (max-width:$xl) {
             font-size: 60px;
             line-height: 60px;
@@ -1554,7 +1545,6 @@
         font-size: 48px;
         line-height: 62px;
         color: $blueDark;
-        font-family: 'Prata';
         @media (max-width:$xl) {
             font-size: 42px;
             line-height: 55px;
@@ -1621,7 +1611,6 @@
         letter-spacing: -0.015em;
         color: $greenMedium;
         opacity: 0.75;
-        font-family: 'Prata';
     }
     &__text {
         position: absolute;

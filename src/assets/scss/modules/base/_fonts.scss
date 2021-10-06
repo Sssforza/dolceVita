@@ -1,18 +1,4 @@
 // Firasans
-@include font-face("EuclidFlex", "../fonts/EuclidFlex-Bold", 700);
+@include font-face("cmun", "../fonts/cmun-bold", 700);
 
-@include font-face("EuclidFlex", "../fonts/EuclidFlex-SemiBold", 600);
-
-@include font-face("EuclidFlex", "../fonts/EuclidFlex-Medium", 500);
-
-@include font-face("EuclidFlex", "../fonts/EuclidFlex-Regular", 400);
-
-@include font-face("EuclidFlex", "../fonts/EuclidFlex-Light", 300);
-
-@include font-face("EuclidFlex", "../fonts/EuclidFlex-UltraLight", 200);
-
-@include font-face("EuclidFlex", "../fonts/EuclidFlex-Thin", 100);
-
-
-// Rubik
-@include font-face("Prata", "../fonts/Prata-Regular", 400);
+@include font-face("cmun", "../fonts/cmun-medium", 500);
