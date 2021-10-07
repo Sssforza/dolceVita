@@ -178,7 +178,7 @@ textarea {
     }
     @media (max-width:$xs) {
         height: 62px;
-        font-size: 22px;
+        font-size: 21px;
         line-height: 28px;
         border-radius: 12px;
     }
@@ -433,7 +433,7 @@ textarea {
             line-height: 54px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 47px;
         }
     }
@@ -589,9 +589,9 @@ img.mfp-img {
         }
         @media (max-width:$xs) {
             padding: 0 20px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 28px;
-            @include placeholder(22px, $greenLight, 'cmun');
+            @include placeholder(23px, $greenLight, 'cmun');
         }
     }
     &__error {
@@ -605,6 +605,10 @@ img.mfp-img {
         opacity: 0;
         pointer-events: none;
         transition: $transition;
+        @media (max-width:$lg) {
+            bottom: -10px;
+            font-size: 13px;
+        }
     }
     input {
         height: 64px;
@@ -623,6 +627,9 @@ img.mfp-img {
             bottom: -24px;
             opacity: 1;
             pointer-events: auto;
+            @media (max-width:$lg) {
+                bottom: -18px;
+            }
         }
     }
 }
@@ -835,7 +842,7 @@ img.mfp-img {
         }
         @media (max-width:$xs) {
             margin-top: 24px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 31px;
         }
     }
@@ -924,7 +931,7 @@ img.mfp-img {
             line-height: 59px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 50px;
         }
     }
@@ -1004,6 +1011,9 @@ img.mfp-img {
         display: flex;
         max-height: 156px;
         overflow: hidden;
+        @media (max-width:$lg) {
+            max-height: 200px;
+        }
         @media (max-width:$xs) {
             max-height: 201px;
         }
@@ -1090,7 +1100,7 @@ img.mfp-img {
         color: $gray;
         opacity: 0.6;
         @media (max-width:$lg) {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 20px;
         }
     }
@@ -1103,7 +1113,7 @@ img.mfp-img {
         border-bottom: 1px solid transparent;
         transition: $transition;
         @media (max-width:$xs) {
-            font-size: 18px;
+            font-size: 19px;
             line-height: 23px;
         }
     }
@@ -1120,8 +1130,11 @@ img.mfp-img {
         color: $gray;
         opacity: 0.6;
         @media (max-width:$lg) {
-            font-size: 16px;
+            font-size: 17px;
             line-height: 20px;
+        }
+        @media (max-width:$xs) {
+            font-size: 18px;
         }
     }
     &__name {
@@ -1138,7 +1151,7 @@ img.mfp-img {
         position: absolute;
         top: 24px;
         right: 32px;
-        padding: 3px 8px 2px;
+        padding: 4px 8px 2px;
         height: 26px;
         font-size: 12px;
         line-height: 20px;
@@ -1152,11 +1165,13 @@ img.mfp-img {
         }
         @media (max-width:$lg) {
             margin-top: 11px;
+            padding: 0;
+            padding-top: 2px;
+            font-size: 11px;
             position: relative;
             top: 0;
             right: 0;
-            width: 92px;
-            padding: 0;
+            width: 99px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1205,7 +1220,7 @@ img.mfp-img {
         }
         .servicesCard__description {
             @media (max-width:$lg) {
-                font-size: 16px;
+                font-size: 15px;
                 line-height: 20px;
             }
             @media (max-width:$xs) {
@@ -1312,7 +1327,7 @@ img.mfp-img {
         line-height: 22px;
         color: $gray;
         @media (max-width:$xs) {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 22px;
         }
     }
@@ -1546,6 +1561,9 @@ img.mfp-img {
                 color: $purple;
                 opacity: 1;
             }
+        }
+        @media (max-width:$xs) {
+            font-size: 23px;
         }
         &:not(:first-child) {
             margin-left: 24px;
@@ -1964,7 +1982,7 @@ img.mfp-img {
         color: $blueDark;
         @media (max-width:$xs) {
             margin-top: 12px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 26px;
         }
     }
@@ -1977,7 +1995,7 @@ img.mfp-img {
         @media (max-width:$xs) {
             margin-top: 16px;
             font-size: 18px;
-            line-height: 14px;
+            line-height: 16px;
         }
     }
     svg {
@@ -2143,6 +2161,9 @@ img.mfp-img {
         color: $greenMedium;
         @media (max-width:$xl) {
             font-size: 16px;
+        }
+        @media (max-width:$lg) {
+            font-size: 17px;
         }
         @media (max-width:$xs) {
             font-size: 18px;
@@ -2359,7 +2380,7 @@ img.mfp-img {
             line-height: 49px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 46px;
         }
     }
@@ -2375,7 +2396,7 @@ img.mfp-img {
         }
         @media (max-width:$xs) {
             margin-top: 12px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 31px;
         }
     }
@@ -2471,7 +2492,7 @@ img.mfp-img {
         @media (max-width:$xs) {
             margin-top: 23px;
             margin-left: 0;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 22px;
         }
     }
@@ -2522,9 +2543,6 @@ img.mfp-img {
                 margin-top: -31px;
                 font-size: 18px;
                 line-height: 28px;
-            }
-            @media (max-width:$lg) {
-                margin-top: -27px;
             }
         }
         &:after {
@@ -2632,7 +2650,7 @@ img.mfp-img {
             font-size: 42px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 47px;
         }
     }
@@ -2650,7 +2668,7 @@ img.mfp-img {
         }
         @media (max-width:$xs) {
             margin-top: 10px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 29px;
         }
     }

@@ -141,7 +141,7 @@
         }
         @media (max-width:$xs) {
             margin-top: 32px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 32px;
         }
     }
@@ -161,7 +161,7 @@
             width: 203px;
         }
         @media (max-width:$xs) {
-            width: 203px;
+            width: 230px;
             margin: 32px auto 0;
         }
     }
@@ -397,7 +397,8 @@
         line-height: 58px;
         color: $blueDark;
         @media (max-width:$xs) {
-            font-size: 36px;
+            padding: 0 10px;
+            font-size: 37px;
             line-height: 47px;
         }
     }
@@ -412,7 +413,7 @@
         }
         @media (max-width:$xs) {
             margin-top: 28px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 31px;
         }
     }
@@ -720,7 +721,7 @@
             line-height: 48px;
             color: $greenDark;
             @media (max-width:$xs) {
-                top: 10px;
+                top: 16px;
                 font-size: 24px;
                 line-height: 31px;
             }
@@ -1452,7 +1453,7 @@
             line-height: 77px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 50px;
             color: $blueDark;
         }
@@ -1469,7 +1470,7 @@
         }
         @media (max-width:$xs) {
             margin-top: 13px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 29px;
             color: $greenDark;
         }
@@ -1550,8 +1551,9 @@
             line-height: 55px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 43px;
+            max-width: 50%;
         }
     }
     &__link {
@@ -1575,6 +1577,7 @@
         }
         @media (max-width:$xs) {
             white-space: nowrap;
+            line-height: 15px;
         }
         @media (min-width:$lg) {
             &:hover {

@@ -38,7 +38,7 @@
         @media (max-width:$xs) {
             margin: 0 auto;
             width: 96%;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 31px;
             text-align: center;
         }
@@ -202,7 +202,7 @@
             }
         }
         @media (max-width:$xs) {
-            font-size: 22px;
+            font-size: 23px;
             line-height: 28px;
         }
         &:after {
@@ -493,6 +493,9 @@
         font-size: 22px;
         line-height: 29px;
         color: $greenDark;
+        @media (max-width:$xs) {
+            font-size: 21px;
+        }
     }
     &__name {
         padding-right: 10px;
