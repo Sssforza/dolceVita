@@ -84,8 +84,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 body {
     font: {
-        family: "cmun", serif;
-        weight: 400;
+        family: 'cmun', serif;
+        weight: 500;
     }
     color: $gray;
     background: $white;
@@ -123,6 +123,11 @@ body {
         }
     }
 }
+button,
+input,
+textarea {
+    font-family: 'cmun', serif;
+}
 .page {
     padding-bottom: 96px;
     @media (max-width:$xl) {
@@ -147,6 +152,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 4px;
     height: 64px;
     font-size: 18px;
     line-height: 23px;
@@ -181,6 +187,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 4px;
     height: 64px;
     font-weight: 500;
     font-size: 18px;
@@ -215,6 +222,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 4px;
     height: 64px;
     font-weight: 500;
     font-size: 18px;
@@ -238,6 +246,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 4px;
     height: 64px;
     font-size: 18px;
     line-height: 23px;
@@ -343,7 +352,7 @@ body {
     }
     &__chit {
         margin-left: 8px;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         color: $greenLight;
         @media (max-width:$lg) {
@@ -563,7 +572,7 @@ img.mfp-img {
         background: transparent;
         border: 1px solid $white;
         border-radius: 4px;
-        @include placeholder(24px, $greenLight, EuclidFlex);
+        @include placeholder(24px, $greenLight, 'cmun');
         transition: $transition;
         &:focus {
             border: 2px solid $white !important;
@@ -571,13 +580,13 @@ img.mfp-img {
         @media (max-width:$lg) {
             font-size: 18px;
             line-height: 22px;
-            @include placeholder(18px, $greenLight, EuclidFlex);
+            @include placeholder(18px, $greenLight, 'cmun');
         }
         @media (max-width:$xs) {
             padding: 0 20px;
             font-size: 22px;
             line-height: 28px;
-            @include placeholder(22px, $greenLight, EuclidFlex);
+            @include placeholder(22px, $greenLight, 'cmun');
         }
     }
     &__error {
@@ -585,7 +594,7 @@ img.mfp-img {
         position: absolute;
         bottom: -18px;
         left: 0;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         color: $error;
         opacity: 0;
@@ -620,7 +629,7 @@ img.mfp-img {
         line-height: 23px;
         border: 2px solid transparent;
         border-radius: 20px;
-        @include placeholder(18px, $greenMedium, EuclidFlex);
+        @include placeholder(18px, $greenMedium, 'cmun');
         transition: $transition5;
     }
     @media (min-width:$lg) {
@@ -644,7 +653,7 @@ img.mfp-img {
         line-height: 29px;
         border: 2px solid #A9C2C9;
         border-radius: 32px;
-        @include placeholder(23px, $greenMedium, EuclidFlex);
+        @include placeholder(23px, $greenMedium, 'cmun');
         transition: $transition5;
     }
     @media (min-width:$lg) {
@@ -1025,7 +1034,7 @@ img.mfp-img {
     }
     &__description {
         margin-top: 12px;
-        font-size: 16px;
+        font-size: 17px;
         line-height: 20px;
         color: $gray;
         @media (max-width:$xl) {
@@ -1068,7 +1077,7 @@ img.mfp-img {
         }
     }
     &__what {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         font-weight: 500;
         color: $gray;
@@ -1086,12 +1095,6 @@ img.mfp-img {
         white-space: nowrap;
         border-bottom: 1px solid transparent;
         transition: $transition;
-        @media (min-width:$lg) {
-            &:hover {
-                color: $greenMedium;
-                border-bottom: 1px solid $greenMedium;
-            }
-        }
         @media (max-width:$lg) {
             font-size: 18px;
             line-height: 23px;
@@ -1104,7 +1107,7 @@ img.mfp-img {
         }
     }
     &__facilities {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         font-weight: 500;
         color: $gray;
@@ -1115,7 +1118,7 @@ img.mfp-img {
         }
     }
     &__name {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 20px;
         font-weight: 500;
         color: $blueDark;
@@ -1174,6 +1177,12 @@ img.mfp-img {
             font-size: 18px;
             line-height: 23px;
             color: $blueDark;
+            @media (min-width:$lg) {
+                &:hover {
+                    color: $greenMedium;
+                    border-bottom: 1px solid $greenMedium;
+                }
+            }
         }
         .servicesCard__bottom {
             bottom: 31px;
@@ -1286,7 +1295,7 @@ img.mfp-img {
         }
     }
     &__effect {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 22px;
         color: $gray;
         @media (max-width:$xs) {
@@ -1513,7 +1522,7 @@ img.mfp-img {
     &__item {
         flex: none;
         position: relative;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 27px;
         color: $greenDark;
         opacity: 0.6;
@@ -2427,7 +2436,7 @@ img.mfp-img {
     }
     &__privacy {
         margin-left: 32px;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         color: $greenLight;
         @media (max-width:$xl) {

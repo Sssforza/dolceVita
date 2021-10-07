@@ -66,8 +66,7 @@
     width: 280px;
     height: 100%;
     &__wrapper {
-        padding: 30px;
-        padding-bottom: 25px;
+        padding: 30px 25px 25px 30px;
         background: rgba(219, 233, 239, 0.5);
         border-radius: 32px 32px 16px 16px;
     }
@@ -95,7 +94,7 @@
         margin-top: 16px;
     }
     &__what {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         font-weight: 500;
         color: $gray;
@@ -119,7 +118,7 @@
         border-radius: 16px;
     }
     &__more {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 19px;
         font-weight: 500;
         color: $greenDark;
@@ -534,41 +533,41 @@
         display: flex;
     }
     &__item {
+        position: relative;
         padding: 20px;
         margin: 0 18px;
         margin-top: 5px;
         width: 176px !important;
         height: 192px;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(40px);
-        border-radius: 16px;
+        border-radius: 20px;
         cursor: pointer;
+        border: 2px solid transparent;
+        transition: $transition;
         @media (min-width:$xl) {
             &:hover {
-                &:after {
-                    border: 2px solid $greenMedium;
-                }
+                border: 2px solid $greenMedium;
             }
         }
         &:after {
             content:'';
             position: absolute;
-            top: -4px;
-            right: -4px;
-            bottom: -4px;
-            left: -4px;
-            border: 2px solid transparent;
-            border-radius: 20px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 4px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(40px);
+            border-radius: 16px;
             transition: $transition;
+            z-index: -1;
         }
         &:not(:first-child) {
             margin-left: 30px;
         }
         &.active {
             pointer-events: none;
-            &:after {
-                border: 2px solid $purple;
-            }
+            border: 2px solid $purple;
             .serviceReviews__name {
                 color: $blueDark;
             }
@@ -589,7 +588,7 @@
     }
     &__name {
         margin-top: 23px;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 27px;
         font-weight: 500;
         color: $greenDark;
@@ -829,7 +828,7 @@
         svg {
             margin-left: 16px;
             position: relative;
-            top: 3px;
+            top: 0;
             display: block;
             width: 18px;
             height: 10px;

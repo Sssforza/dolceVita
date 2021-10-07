@@ -79,7 +79,7 @@
         }
     }
     &__title {
-        font-size: 64px;
+        font-size: 65px;
         line-height: 90px;
         color: $white;
         @media (max-width:$lg) {
@@ -279,7 +279,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            @include placeholder(24px, $greenMedium, 'EuclidFlex');
+            @include placeholder(24px, $greenMedium, 'cmun');
         }
     }
     &__wrapper {
@@ -467,7 +467,7 @@
     }
     &__description {
         margin-top: 24px;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 30px;
         color: $greenLight;
         @media (max-width:$lg) {

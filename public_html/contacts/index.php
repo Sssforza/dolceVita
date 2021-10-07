@@ -50,12 +50,12 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/contacts.css");
                                     <div class="contacts__name">Режим работы</div>
                                     <div class="contacts__mode">
                                         <div class="contacts__working">
-                                            <div class="contacts__day">Пн — сб</div>
-                                            <div class="contacts__time">09:00—21:00</div>
+                                            <div class="contacts__day">Пн &ndash; сб</div>
+                                            <div class="contacts__time">09:00 &ndash; 21:00</div>
                                         </div>
                                         <div class="contacts__working">
                                             <div class="contacts__day">Вс</div>
-                                            <div class="contacts__time">10:00—20:00</div>
+                                            <div class="contacts__time">10:00 &ndash; 20:00</div>
                                         </div>
                                     </div>
                                 </div>

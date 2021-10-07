@@ -61,14 +61,14 @@
         display: flex;
     }
     &__address {
-        font-size: 21px;
+        font-size: 22px;
         line-height: 25px;
         color: $gray;
     }
     &__yandex {
         display: inline-block;
         margin-top: 7px;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         color: $blueDark;
         border-bottom: 1px solid $blueDark;
@@ -85,7 +85,7 @@
         color: $gray;
     }
     &__policy {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 17px;
         color: $blueDark;
         opacity: 0.8;
@@ -136,6 +136,7 @@
             font-weight: 500;
             color: $gray;
             white-space: nowrap;
+            font-family: 'Roboto';
             transition: $transition;
         }
     }
@@ -196,7 +197,7 @@
     }
     &__description {
         margin-top: 17px;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 18px;
         color: $greenDark;
     }
