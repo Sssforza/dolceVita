@@ -349,7 +349,7 @@
     border-radius: 32px;
     transition: $transition;
     @media (max-width:$xl) {
-        right: 38px;
+        right: 48px;
     }
     @media (max-width:$lg) {
         padding-left: 30px;
@@ -443,7 +443,7 @@
     &__box {
         max-width: 35%;
         @media (max-width:$xl) {
-            max-width: 44%;
+            max-width: 45%;
         }
         @media (max-width:$xs) {
             max-width: 100%;
