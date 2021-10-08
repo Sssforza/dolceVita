@@ -16800,9 +16800,14 @@ function windowOnload() {
 
     if (document.querySelector('.sliderMain_js')) {
       var slideFirstItem = document.querySelector('.sliderMain__item.first');
+      var slideDots = document.querySelector('.sliderMain__dots.stop');
       setTimeout(function () {
         slideFirstItem.classList.remove('first');
       }, 800);
+      setTimeout(function () {
+        slideDots.classList.remove('stop');
+        console.log('stop');
+      }, 5500);
     } //page specialist twentytwenty
 
 

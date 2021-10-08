@@ -242,7 +242,16 @@
                 }
                 .sliderMain__line {
                     stroke:#DBE9EF;
-                    animation: sliderLinesDraw 5.5s linear forwards;
+                    animation: sliderLinesDraw 5.4s linear forwards;
+                }
+            }
+        }
+        &.stop {
+            li {
+                &.slick-active {
+                    .sliderMain__line {
+                        animation: sliderLinesDraw 5.2s linear forwards;
+                    }
                 }
             }
         }
