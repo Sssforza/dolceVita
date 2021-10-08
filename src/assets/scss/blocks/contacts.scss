@@ -41,7 +41,6 @@
         font-size: 72px;
         line-height: 101px;
         color: $blueDark;
-        font-family: 'Prata';
         @media (max-width:$lg) {
             font-size: 42px;
             line-height: 50px;
@@ -81,7 +80,7 @@
         line-height: 28px;
         color: $greenMedium;
         @media (max-width:$xs) {
-            width: 160px;
+            width: 147px;
             font-size: 20px;
             line-height: 28px;
         }
@@ -95,11 +94,11 @@
         }
     }
     &__text {
-        font-size: 21px;
+        font-size: 22px;
         line-height: 25px;
         color: $greenDark;
         @media (max-width:$xs) {
-            font-size: 22px;
+            font-size: 23px;
             line-height: 26px;
         }
     }
@@ -154,7 +153,6 @@
         display: flex;
         @media (max-width:$xs) {
             position: relative;
-            left: -5px;
             top: -8px;
         }
     }

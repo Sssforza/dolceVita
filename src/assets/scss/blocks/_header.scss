@@ -70,14 +70,11 @@
         }
     }
     &__tel {
-        font-size: 23px;
+        font-size: 24px;
         line-height: 29px;
         font-weight: 500;
         letter-spacing: 0.01em;
         color: $white;
-        // span {
-        //     color: $greenMedium;
-        // }
         @media (min-width:$xl) {
             pointer-events: none;
         }
@@ -319,7 +316,7 @@
             content:'';
             position: absolute;
             right: 0;
-            bottom: 0;
+            bottom: 3px;
             left: 0;
             height: 1px;
             background: $greenLight;
@@ -356,7 +353,7 @@
             content:'';
             position: absolute;
             right: 0;
-            bottom: 0;
+            bottom: 6px;
             left: 0;
             height: 1px;
             background: $white;
@@ -448,7 +445,6 @@
         font-size: 43px;
         line-height: 47px;
         color: $blueDark;
-        font-family: 'Prata';
         cursor: pointer;
         transition: $transition;
         @media (min-width:$xl) {
@@ -486,7 +482,7 @@
         flex: none;
         padding-top: 5px;
         width: 124px;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 27px;
         font-weight: 500;
         color: $greenMedium;

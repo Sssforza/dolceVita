@@ -54,9 +54,9 @@ export function servicesSelectedDrop () {
                 selected.setAttribute('id', id);
             });
         });
-	}
-    if(window.screen.availWidth < xs) {
-        document.querySelector('.servicesSelectedSelected_js').placeholder='Выберите результат';
+        if(window.screen.availWidth < xs) {
+            document.querySelector('.servicesSelectedSelected_js').placeholder='Выберите результат';
+        }
 	}
 }
 // popup more stage date

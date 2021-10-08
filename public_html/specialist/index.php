@@ -262,6 +262,18 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     <div class="portfolioSliderNav__item" data-slide="2">
                                         <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
                                     </div>
+                                    <div class="portfolioSliderNav__item" data-slide="3">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="4">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="5">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="6">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

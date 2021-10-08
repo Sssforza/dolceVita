@@ -16800,14 +16800,20 @@ function windowOnload() {
 
     if (document.querySelector('.sliderMain_js')) {
       var slideFirstItem = document.querySelector('.sliderMain__item.first');
+      var slideDots = document.querySelector('.sliderMain__dots.stop');
       setTimeout(function () {
         slideFirstItem.classList.remove('first');
       }, 800);
+      setTimeout(function () {
+        slideDots.classList.remove('stop');
+      }, 5500);
     } //page specialist twentytwenty
 
 
     if (document.querySelector('.twentytwenty_js')) {
-      $(".twentytwenty_js").twentytwenty();
+      $(".twentytwenty_js").twentytwenty({
+        default_offset_pct: 0.2
+      });
     } // midnight
 
 
@@ -17114,7 +17120,11 @@ function sliderMain() {
       infinite: true,
       autoplay: true,
       autoplaySpeed: 5500,
-      speed: 900,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      slickPause: false,
+      //speed: 900,
       slidesToShow: 1,
       cssEase: 'ease',
       arrows: true,
@@ -17202,7 +17212,13 @@ function sliderSpecialistsPortfolio() {
       draggable: false,
       infinite: false,
       prevArrow: '<div class="sliderArrow__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-      nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+      nextArrow: '<div class="sliderArrow__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+      responsive: [{
+        breakpoint: 1025,
+        settings: {
+          arrows: false
+        }
+      }]
     });
     $('div[data-slide]').click(function (e) {
       $('div[data-slide]').removeClass('active');
@@ -17374,10 +17390,10 @@ function servicesSelectedDrop() {
         selected.setAttribute('id', id);
       });
     });
-  }
 
-  if (window.screen.availWidth < xs) {
-    document.querySelector('.servicesSelectedSelected_js').placeholder = 'Выберите результат';
+    if (window.screen.availWidth < xs) {
+      document.querySelector('.servicesSelectedSelected_js').placeholder = 'Выберите результат';
+    }
   }
 } // popup more stage date
 // services attendance all cards

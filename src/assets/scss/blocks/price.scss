@@ -25,7 +25,7 @@
     &__description {
         flex:none;
         width: 417px;
-        font-size: 16px;
+        font-size: 17px;
         line-height: 22px;
         color: $greenDark;
         @media (max-width:$xl) {
@@ -38,7 +38,7 @@
         @media (max-width:$xs) {
             margin: 0 auto;
             width: 96%;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 31px;
             text-align: center;
         }
@@ -148,7 +148,6 @@
         font-size: 72px;
         line-height: 72px;
         color: $blueDark;
-        font-family: 'Prata';
         @media (max-width:$lg) {
             font-size: 42px;
             line-height: 50px;
@@ -189,7 +188,7 @@
     }
     &__link {
         position: relative;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 27px;
         font-weight: 500;
         color: $blueDark;
@@ -203,7 +202,7 @@
             }
         }
         @media (max-width:$xs) {
-            font-size: 22px;
+            font-size: 23px;
             line-height: 28px;
         }
         &:after {
@@ -330,7 +329,7 @@
     }
     &__choice {
         position: relative;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 27px;
         color: $blueDark;
         cursor: pointer;
@@ -491,9 +490,12 @@
     }
     &__name,
     &__cost {
-        font-size: 21px;
+        font-size: 22px;
         line-height: 29px;
         color: $greenDark;
+        @media (max-width:$xs) {
+            font-size: 21px;
+        }
     }
     &__name {
         padding-right: 10px;

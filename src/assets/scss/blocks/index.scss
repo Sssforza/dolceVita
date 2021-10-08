@@ -87,7 +87,7 @@
         }
     }
     &__inner {
-        max-width: 530px;
+        max-width: 540px;
         @media (max-width:$xl) {
             max-width: 510px;
         }
@@ -103,10 +103,9 @@
         position: relative;
         top: -30px;
         opacity: 0;
-        font-size: 66px;
+        font-size: 65px;
         line-height: 62px;
         color: $white;
-        font-family: 'Prata';
         letter-spacing: 0.9px;
         transition: top 0.8s ease 0.7s, opacity 0.8s ease 0.7s;
         @media (max-width:$xl) {
@@ -126,7 +125,7 @@
         top: -45px;
         opacity: 0;
         margin-top: 20px;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 30px;
         color: $greenLight;
         transition: top 1s ease 0.9s, opacity 1s ease 0.9s;
@@ -142,7 +141,7 @@
         }
         @media (max-width:$xs) {
             margin-top: 32px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 32px;
         }
     }
@@ -162,7 +161,7 @@
             width: 203px;
         }
         @media (max-width:$xs) {
-            width: 203px;
+            width: 230px;
             margin: 32px auto 0;
         }
     }
@@ -234,7 +233,16 @@
                 }
                 .sliderMain__line {
                     stroke:#DBE9EF;
-                    animation: sliderLinesDraw 6s linear forwards;
+                    animation: sliderLinesDraw 5.4s linear forwards;
+                }
+            }
+        }
+        &.stop {
+            li {
+                &.slick-active {
+                    .sliderMain__line {
+                        animation: sliderLinesDraw 5.2s linear forwards;
+                    }
                 }
             }
         }
@@ -397,9 +405,9 @@
         font-size: 48px;
         line-height: 58px;
         color: $blueDark;
-        font-family: 'Prata';
         @media (max-width:$xs) {
-            font-size: 36px;
+            padding: 0 10px;
+            font-size: 37px;
             line-height: 47px;
         }
     }
@@ -414,7 +422,7 @@
         }
         @media (max-width:$xs) {
             margin-top: 28px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 31px;
         }
     }
@@ -477,7 +485,6 @@
         font-size: 80px;
         line-height: 104px;
         color: $blueDark;
-        font-family: 'Prata';
         transition: $transition;
         @media (max-width:$xl) {
             font-size: 72px;
@@ -499,23 +506,20 @@
             content:'';
             position: absolute;
             right: 0;
-            bottom: 0px;
+            bottom: 20px;
             left: 0;
             height: 2px;
             opacity: 0.5;
             background: $blueDark;
             transition: $transition;
-            @media (max-width:$xl) {
-                bottom: 7px;
-            }
             @media (max-width:$xs) {
-                bottom: -9px;
+                bottom: 8px;
             }
         }
     }
     &__description {
         margin-top: 32px;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 29px;
         color: $gray;
         @media (max-width:$xl) {
@@ -711,7 +715,6 @@
         line-height: 100%;
         color: $greenMedium;
         opacity: 0.75;
-        font-family: 'Prata';
         @media (max-width:$xs) {
             font-size: 81px;
             line-height: 76px;
@@ -723,9 +726,8 @@
             font-size: 36px;
             line-height: 48px;
             color: $greenDark;
-            font-family: 'Prata';
             @media (max-width:$xs) {
-                top: 10px;
+                top: 16px;
                 font-size: 24px;
                 line-height: 31px;
             }
@@ -850,7 +852,7 @@
         }
     }
     &__box {
-        max-width: 572px;
+        max-width: 592px;
         @media (max-width:$xl) {
             max-width: 521px;
             flex: none;
@@ -885,9 +887,6 @@
             }
             .typesCards__percent {
                 margin-top: -10px;
-                @media (max-width:$lg) {
-                    width: 163px;
-                }
                 @media (max-width:$xs) {
                     margin-top: -6px;
                 }
@@ -934,6 +933,9 @@
             }
             .typesCards__percent {
                 margin-top: -10px;
+                @media (max-width:$xl) {
+                    width: 180px;
+                }
                 @media (max-width:$lg) {
                     width: 147px;
                 }
@@ -957,7 +959,7 @@
     }
     &__wrapper {
         & > span {
-            font-size: 16px;
+            font-size: 17px;
             line-height: 24px;
             color: $gray;
             @media (max-width:$xs) {
@@ -968,7 +970,7 @@
     }
     &__description {
         margin-top: 24px;
-        font-size: 16px;
+        font-size: 17px;
         line-height: 24px;
         color: $gray;
         @media (max-width:$xs) {
@@ -997,17 +999,11 @@
     }
     &__percent {
         flex: none;
-        width: 162px;
+        width: 140px;
         font-size: 50px;
         line-height: 63px;
         font-weight: 300;
         color: $blueDark;
-        @media (max-width:$xl) {
-            width: 180px;
-        }
-    }
-    &__percentage {
-        font-family: "Roboto";
     }
     &__rub {
         @media (max-width:$xs) {
@@ -1452,7 +1448,6 @@
         font-size: 72px;
         line-height: 79px;
         color: $white;
-        font-family: 'Prata';
         @media (max-width:$xl) {
             font-size: 60px;
             line-height: 60px;
@@ -1461,7 +1456,7 @@
             line-height: 77px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 50px;
             color: $blueDark;
         }
@@ -1478,7 +1473,7 @@
         }
         @media (max-width:$xs) {
             margin-top: 13px;
-            font-size: 22px;
+            font-size: 23px;
             line-height: 29px;
             color: $greenDark;
         }
@@ -1502,15 +1497,15 @@
 }
 .specialists {
     position: relative;
-    padding-top: 152px;
+    margin-top: -260px;
     @media (max-width:$xl) {
-        padding-top: 80px;
+        margin-top: -292px;
     }
     @media (max-width:$lg) {
-        padding-top: 30px;
+        margin-top: -302px;
     }
-    @media (max-width:$lg) {
-        padding-top: 104px;
+    @media (max-width:$xs) {
+        margin-top: -100px;
     }
     &__bg {
         position: absolute;
@@ -1554,14 +1549,14 @@
         font-size: 48px;
         line-height: 62px;
         color: $blueDark;
-        font-family: 'Prata';
         @media (max-width:$xl) {
             font-size: 42px;
             line-height: 55px;
         }
         @media (max-width:$xs) {
-            font-size: 36px;
+            font-size: 37px;
             line-height: 43px;
+            max-width: 50%;
         }
     }
     &__link {
@@ -1585,6 +1580,7 @@
         }
         @media (max-width:$xs) {
             white-space: nowrap;
+            line-height: 15px;
         }
         @media (min-width:$lg) {
             &:hover {
@@ -1621,7 +1617,6 @@
         letter-spacing: -0.015em;
         color: $greenMedium;
         opacity: 0.75;
-        font-family: 'Prata';
     }
     &__text {
         position: absolute;
@@ -1756,7 +1751,7 @@
         transition: $transition;
     }
     &__name {
-        font-size: 21px;
+        font-size: 22px;
         line-height: 27px;
         font-weight: 500;
         color: $greenDark;

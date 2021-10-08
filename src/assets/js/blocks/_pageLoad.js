@@ -29,13 +29,19 @@ export function windowOnload () {
         // first slide main slider
         if(document.querySelector('.sliderMain_js')) {
             const slideFirstItem = document.querySelector('.sliderMain__item.first');
+            const slideDots = document.querySelector('.sliderMain__dots.stop');
             setTimeout(function(){
                 slideFirstItem.classList.remove('first');
             }, 800);
+            setTimeout(function(){
+                slideDots.classList.remove('stop');
+            }, 5500);
         }
         //page specialist twentytwenty
         if (document.querySelector('.twentytwenty_js')) {
-            $(".twentytwenty_js").twentytwenty();
+            $(".twentytwenty_js").twentytwenty({
+                default_offset_pct: 0.2,
+            });
         }
         // midnight
         $('.header_js').midnight();

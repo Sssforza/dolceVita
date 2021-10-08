@@ -36,7 +36,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 			</div>
 			<div class="sliderMain__nav">
-				<div class="sliderMain__dots"></div>
+				<div class="sliderMain__dots stop"></div>
 				<div class="sliderMain__arrows"></div>
 			</div>
 			<div class="sliderMain__waves">
