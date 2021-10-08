@@ -493,17 +493,6 @@
 .serviceReviews {
     margin-top: 235px;
     position: relative;
-    &:after {
-        content:'';
-        position: absolute;
-        top: -240px;
-        left: -351px;
-        width: 1471px;
-        height: 1471px;
-        background: radial-gradient(50% 50% at 51.01% 50.01%, #E7F0FA 38.54%, rgba(255, 255, 255, 0) 100%);
-        opacity: 0.75;
-        z-index: -1;
-    }
     &__svg {
         position: absolute;
         top: -230px;
@@ -569,7 +558,7 @@
             bottom: 0;
             left: 0;
             margin: 4px;
-            background: rgba(255, 255, 255, 0.7);
+            background: #ECF5F9;
             backdrop-filter: blur(40px);
             border-radius: 16px;
             transition: $transition;
@@ -611,7 +600,7 @@
         margin-top: 4px;
         font-size: 14px;
         line-height: 18px;
-        color: $greenDark;
+        color: $greenMedium;
         transition: $transition;
     }
     &__info {

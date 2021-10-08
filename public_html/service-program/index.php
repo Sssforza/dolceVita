@@ -419,9 +419,6 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             </div>
                         </div>
                         <div class="contentService__reviews serviceStage serviceReviews serviceReviews_js" id="reviews">
-                            <div class="serviceReviews__svg serviceReviewsSvg_js">
-                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesHeart.svg';?>
-                            </div>
                             <div class="serviceStage__title">
                                 Отзывы о процедуре
                             </div>
