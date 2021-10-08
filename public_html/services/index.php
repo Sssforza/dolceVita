@@ -3,996 +3,222 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 ?>
-<main class="main">
-    <section class="comeBack comeBack_banerSection">
-        <div class="comeBack__content container">
-            <a href="/" class="comeBack__link">
-                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
-                <div class="comeBack__page">На главную</div>
-            </a>
-        </div>
-    </section>
-    <section class="page page_services">
-        <section class="banerSection banerServices">
-            <div class="banerServices__bg" style="background-image:url(/dist/img/banerServicesBg.png)"></div>
-            <div class="breadCrumbs gradientHeader_js">
-                <ul class="breadCrumbs__list">
-                    <li class="breadCrumbs__item">
-                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                        <a href="/" class="breadCrumbs__chit">На главную</a>
-                    </li>
-                    <li class="breadCrumbs__item">
-                        <a href="/services/" class="breadCrumbs__chit">Услуги</a>
-                    </li>
-                    <li class="breadCrumbs__item">
-                        <span class="breadCrumbs__chit">Косметология</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="banerServices__content">
-                <div class="banerServices__header">
-                    <div class="banerServices__title">Косметология</div>
-                    <div class="banerServices__tabs servicesTabs servicesTabsList_js">
-                        <div class="servicesTabs__list">
-                            <div class="servicesTabs__item servicesTabs_js active" data-tab="face">
-                                <span>Лица</span>
-                            </div>
-                            <div class="servicesTabs__item servicesTabs_js" data-tab="body">
-                                <span>Тела</span>
-                            </div>
-                            <div class="servicesTabs__item servicesTabs_js" data-tab="hands">
-                                <span>Рук</span></div>
-                            <div class="servicesTabs__item servicesTabs_js" data-tab="legs">
-                                <span>Ног</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="banerServices__question">Какой результат я хочу получить от приема</div>
-                <div class="banerServices__selected">
-                    <div class="servicesSelected servicesSelected_js">
-                        <div class="servicesSelected__input servicesSelectedInput_js" data-select="face">
-                            <input class="servicesSelectedSelected_js" id="" type="text" placeholder="Выберите желаемый результат" readonly>
-                        </div>
-                        <div class="servicesSelected__wrapper">
-                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="face">
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice" id="improve-complexion">Улучшить цвет лица</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice" id="refresh-your-skin">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice" id="light-peeling">Легкий пилинг</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice" id="pigmentation">Пигментация</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Легкий пилинг</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Пигментация</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                            </ul>
-                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="body">
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice" id="improve-body-color">Улучшить цвет тела</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Легкий пилинг</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Пигментация</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                            </ul>
-                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="hands">
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Улучшить цвет рук</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Легкий пилинг</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Пигментация</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Легкий пилинг</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Пигментация</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                            </ul>
-                            <ul class="servicesSelected__list scrollbarCustom servicesSelectedList_js" data-list="legs">
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Улучшить цвет ног</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Легкий пилинг</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Пигментация</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Улучшить цвет лица</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Легкий пилинг</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Пигментация</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Омоложение кожи и блеск в глазах для длинного названия</span>
-                                </li>
-                                <li class="servicesSelected__item">
-                                    <span class="servicesSelected__choice">Освежить кожу</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="btnBlue banerServices__btn banerServicesBtn_js disabled">
-                        <span>Посмотреть услуги</span>
-                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerSearch-i.svg';?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="services services_attendance container servicesAttendance_js" data-midnight="gray">
-            <div class="services__content">
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard servicesCard_programm servicesCard_js">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Комплексный подход коррекции фигуры</div>
-                            <div class="servicesCard__programm">программа</div>
-                            <div class="servicesCard__description">
-                                4-этапная программа восстановления упругости кожи и коррекции фигуры 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box"
-                                data-description="Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах">
-                                <div class="servicesCard__what">1 этап</div>
-                                <a href="#" class="servicesCard__how">Криолиполиз</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение">
-                                <div class="servicesCard__what">2 этап</div>
-                                <a href="#" class="servicesCard__how">LPG-массаж</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.">
-                                <div class="servicesCard__what">3 этап</div>
-                                <a href="#" class="servicesCard__how">Морское утончение</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
-                                <div class="servicesCard__what">4 этап</div>
-                                <a href="#" class="servicesCard__how">Vela Shape II</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="Лифтинг">
-                                <div class="servicesCard__what">5 этап</div>
-                                <a href="#" class="servicesCard__how">Лифтинг</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="Моделирование">
-                                <div class="servicesCard__what">6 этап</div>
-                                <a href="#" class="servicesCard__how">Моделирование фигуры</a>
-                            </div>
-                        </div>
-                        <div class="servicesCard__more">
-                            <a class="servicesCard__details popupMoreStage_js"
-                                href="#popupMoreStage"
-                                data-linkMore="linkMore"
-                                data-linkImg="url(/dist/img/servicesCardImg-1.png)"
-                            >Подробнее об этапах</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard servicesCard_programm servicesCard_js">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">1Комплексный подход коррекции фигуры</div>
-                            <div class="servicesCard__programm">программа</div>
-                            <div class="servicesCard__description">
-                                14-этапная программа восстановления упругости кожи и коррекции фигуры
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box"
-                                data-description="1Эффективно моделируем фигуру. Выборочное воздействие позволяет избавиться от жира в конкретных местах">
-                                <div class="servicesCard__what">11 этап</div>
-                                <a href="#" class="servicesCard__how">1Криолиполиз</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="2Возвращаем коже упругость. Лифтинг и укрепление кожи, устранение">
-                                <div class="servicesCard__what">22 этап</div>
-                                <a href="#" class="servicesCard__how">2LPG-массаж</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="3Уход эффективно воздействует на лишние объемы, активизируют процессы липолиза и выведения воды.">
-                                <div class="servicesCard__what">33 этап</div>
-                                <a href="#" class="servicesCard__how">3Морское утончение</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="4Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
-                                <div class="servicesCard__what">44 этап</div>
-                                <a href="#" class="servicesCard__how">4Vela Shape II</a>
-                            </div>
-                            <div class="servicesCard__box"
-                                data-description="5Лифтинг Позволяет уменьшить растяжки, подтянуть и разгладить кожу">
-                                <div class="servicesCard__what">55 этап</div>
-                                <a href="#" class="servicesCard__how">5Лифтинг</a>
-                            </div>
-                        </div>
-                        <div class="servicesCard__more">
-                            <a class="servicesCard__details popupMoreStage_js"
-                                href="#popupMoreStage"
-                                data-linkMore="linkMore1"
-                                data-linkImg="url(/dist/img/usefulBlogImg3.png)"
-                            >Подробнее об этапах</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Морское утончение</div>
-                            <div class="servicesCard__description">
-                                Процедура обеспечивает двойной эффект утончения: препятствует образованию новых лишних 
-                                объемов и&nbsp;устраняет уже существующие. Массаж-уход.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">60 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">3 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 15 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Морское утончение</div>
-                            <div class="servicesCard__description">
-                                Процедура обеспечивает двойной эффект утончения: препятствует образованию новых лишних 
-                                объемов и&nbsp;устраняет уже существующие. Массаж-уход.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">60 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">3 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 15 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Морское утончение</div>
-                            <div class="servicesCard__description">
-                                Процедура обеспечивает двойной эффект утончения: препятствует образованию новых лишних 
-                                объемов и&nbsp;устраняет уже существующие. Массаж-уход.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">60 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">3 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 15 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Морское утончение</div>
-                            <div class="servicesCard__description">
-                                Процедура обеспечивает двойной эффект утончения: препятствует образованию новых лишних 
-                                объемов и&nbsp;устраняет уже существующие. Массаж-уход.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">60 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">3 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 15 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Морское утончение</div>
-                            <div class="servicesCard__description">
-                                Процедура обеспечивает двойной эффект утончения: препятствует образованию новых лишних 
-                                объемов и&nbsp;устраняет уже существующие. Массаж-уход.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">60 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">3 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 15 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Морское утончение</div>
-                            <div class="servicesCard__description">
-                                Процедура обеспечивает двойной эффект утончения: препятствует образованию новых лишних 
-                                объемов и&nbsp;устраняет уже существующие. Массаж-уход.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">60 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">3 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 15 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard">
-                    <div class="servicesCard__header">
-                        <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
-                        <div class="servicesCard__wrapper">
-                            <div class="servicesCard__title">Криолиполиз</div>
-                            <div class="servicesCard__description">
-                                Выборочное воздействие позволяет избавиться от&nbsp;жира в&nbsp;конкретных местах
-                            </div>
-                        </div>
-                    </div>
-                    <div class="servicesCard__bottom">
-                        <div class="servicesCard__list">
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Длительность</div>
-                                <div class="servicesCard__how">90 мин</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Процедуры</div>
-                                <div class="servicesCard__how">4 сеанса</div>
-                            </div>
-                            <div class="servicesCard__box">
-                                <div class="servicesCard__what">Стоимость</div>
-                                <div class="servicesCard__how">от 40 000 ₽</div>
-                            </div>
-                        </div>
-                        <div class="servicesCard__equipment">
-                            <div class="servicesCard__facilities">Оборудование</div>
-                            <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="services__item servicesCard servicesCardBig">
-                    <div class="servicesCardBig__content">
-                        <div class="servicesCardBig__title">больше услуг</div>
-                        <div class="servicesCardBig__more">
-                            <div class="servicesCardBig__link servicesCardBtn_js">посмотреть</div>
-                        </div>
-                        <div class="servicesCardBig__number servicesCardNumber_js">13</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="services services_cosmetic" data-midnight="gray">
-            <div class="container">
-                <div class="services__title">Для лучшего результата после процедуры <br>рекомендуем косметику</div>
-                <div class="services__container">
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cosmeticCard">
-                        <div class="cosmeticCard__top">
-                            <a href="" class="cosmeticCard__img" style="background-image:url(/dist/img/cosmeticCardImg-1.png)"></a>
-                            <div class="cosmeticCard__title">
-                                <a href="" class="cosmeticCard__name">Babor Spa</a>
-                            </div>
-                        </div>
-                        <div class="cosmeticCard__bottom">
-                            <ul class="cosmeticCard__result">
-                                <li class="cosmeticCard__effect">Лифтинг</li>
-                                <li class="cosmeticCard__effect">Гладкая кожа</li>
-                                <li class="cosmeticCard__effect">Совершенный силуэт</li>
-                            </ul>
-                            <div class="cosmeticCard__wrapper">
-                                <div class="cosmeticCard__price">11 500 ₽</div>
-                                <div class="cosmeticCard__basket">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/cosmeticCardBasket-i.svg';?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="services servicesAction" data-midnight="gray">
-            <div class="container">
-                <div class="services__title">Акция</div>
-                <div class="services__container">
-                    <div class="servicesAction__bg" style="background-image:url(/dist/img/servicesActionBg.png)">
-                        <div class="servicesAction__box">
-                            <div class="servicesAction__title">Скидки до 50% <br>в январе!</div>
-                            <div class="servicesAction__description">
-                                У&nbsp;Вас есть отличный повод записаться <br>на&nbsp;процедуру LPG‐массажа, 
-                                которую вы&nbsp;уже давно <br>откладывали!
-                            </div>
-                            <a class="servicesAction__btn btnWhiteBorder" href="#">ЗАПИСАТЬСЯ НА ПРИЁМ</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
-</main>
-<?
+<?$APPLICATION->IncludeComponent(
+	"ferma:news", 
+	"services", 
+	array(
+		"IS_SERVICES" => false,
+		"DEPTH_LEVEL" => "3",
+		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "Y",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"CACHE_FILTER" => "Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "N",
+		"CATEGORY_CODE" => "CATEGORY",
+		"CATEGORY_IBLOCK" => array(
+			0 => "8",
+		),
+		"CATEGORY_ITEMS_COUNT" => "5",
+		"CHECK_DATES" => "Y",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
+		"DETAIL_DISPLAY_TOP_PAGER" => "Y",
+		"DETAIL_FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "USER_NAME",
+			27 => "",
+		),
+		"DETAIL_PAGER_SHOW_ALL" => "Y",
+		"DETAIL_PAGER_TEMPLATE" => "",
+		"DETAIL_PAGER_TITLE" => "Страница",
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "DURATION_PROCEDURE",
+			1 => "WQUIPMENT",
+			2 => "NUMBER_PROCEDURES",
+			3 => "INDICATIONS",
+			4 => "ADVANTAGE_ONE",
+			5 => "ADVANTAGE_TWO",
+			6 => "ADVANTAGE_THREE",
+			7 => "CONTRAINDICATIONS",
+			8 => "BEFORE_AND_AFTER",
+			9 => "TOTAL_COST",
+			10 => "EQUIPMENT",
+			11 => "REVIEWS",
+			12 => "PROGRAMS",
+			13 => "RESULTAT",
+			14 => "SPECIALISTS",
+			15 => "SERVICES",
+			16 => "STAGE",
+			17 => "",
+		),
+		"DETAIL_SET_CANONICAL_URL" => "Y",
+		"DISPLAY_AS_RATING" => "rating",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "Y",
+		"FILE_404" => "",
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FORUM_ID" => "1",
+		"GROUP_PERMISSIONS" => array(
+			0 => "1",
+		),
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "8",
+		"IBLOCK_TYPE" => "services",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"LIST_FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "USER_NAME",
+			27 => "",
+		),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"MAX_VOTE" => "5",
+		"MESSAGES_PER_PAGE" => "10",
+		"MESSAGE_404" => "",
+		"META_DESCRIPTION" => "-",
+		"META_KEYWORDS" => "-",
+		"NEWS_COUNT" => "20",
+		"NUM_DAYS" => "30",
+		"NUM_NEWS" => "20",
+		"PAGER_BASE_LINK" => "",
+		"PAGER_BASE_LINK_ENABLE" => "Y",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_PARAMS_NAME" => "arrPager",
+		"PAGER_SHOW_ALL" => "Y",
+		"PAGER_SHOW_ALWAYS" => "Y",
+		"PAGER_TEMPLATE" => "",
+		"PAGER_TITLE" => "Услуги",
+		"PATH_TO_SMILE" => "/bitrix/images/forum/smile/",
+		"POST_FIRST_MESSAGE" => "Y",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"REVIEW_AJAX_POST" => "Y",
+		"SEF_MODE" => "Y",
+		"SET_LAST_MODIFIED" => "Y",
+		"SET_STATUS_404" => "Y",
+		"SET_TITLE" => "Y",
+		"SHARE_HANDLERS" => array(
+			0 => "delicious",
+			1 => "facebook",
+			2 => "lj",
+			3 => "twitter",
+		),
+		"SHARE_HIDE" => "Y",
+		"SHARE_SHORTEN_URL_KEY" => "",
+		"SHARE_SHORTEN_URL_LOGIN" => "",
+		"SHARE_TEMPLATE" => "",
+		"SHOW_404" => "Y",
+		"SHOW_LINK_TO_FORUM" => "Y",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"URL_TEMPLATES_READ" => "",
+		"USE_CAPTCHA" => "Y",
+		"USE_CATEGORIES" => "Y",
+		"USE_FILTER" => "N",
+		"USE_PERMISSIONS" => "Y",
+		"USE_RATING" => "N",
+		"USE_REVIEW" => "N",
+		"USE_RSS" => "N",
+		"USE_SEARCH" => "N",
+		"USE_SHARE" => "N",
+		"VOTE_NAMES" => array(
+			0 => "0",
+			1 => "1",
+			2 => "2",
+			3 => "3",
+			4 => "4",
+			5 => "",
+		),
+		"YANDEX" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"CATEGORY_THEME_12" => "list",
+		"CATEGORY_THEME_13" => "list",
+		"CATEGORY_THEME_14" => "list",
+		"CATEGORY_THEME_15" => "list",
+		"SEF_FOLDER" => "/services/",
+		"CATEGORY_THEME_8" => "list",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "/services/",
+			"section" => "",
+			"detail" => "#ELEMENT_CODE#/",
+		)
+	),
+	false
+);?><?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
 ?>

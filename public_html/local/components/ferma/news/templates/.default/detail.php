@@ -10,14 +10,17 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+$APPLICATION->SetAdditionalCSS("/dist/css/blocks/service.css");
+$APPLICATION->AddHeadScript("/dist/js/modules/jquery.event.move.js");
+$APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 $this->setFrameMode(true);
 ?>
 <pre>
-<? print_r($arResult)?>
+<? //print_r($arResult)?>
 </pre>
 <?$ElementID = $APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	"",
+	"ferma:news.detail",
+	"program",
 	Array(
 		"DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
 		"DISPLAY_NAME" => $arParams["DISPLAY_NAME"],

@@ -11,21 +11,22 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-$programmy = true;
+$programmy = false;
 $class_prog = '';
-if (!empty($arResult["SECTION"]["PATH"][0]["CODE"]) == "programmy") {
+if (
+    !empty($arResult["SECTION"]["PATH"][0]["CODE"]) == "programmy" ||
+    !empty($arParams["SECTIONS_CODE"]) == "programmy") 
+{
 	$programmy = true;
 	$class_prog = " servicesCard_programm servicesCard_js";
 }
-$class_prog = " servicesCard_programm servicesCard_js";
+$prewPicture = CFile::ResizeImageGet($arResult['DETAIL_PICTURE'], array('width'=>124), BX_RESIZE_IMAGE_EXACT, true);
+$detailPicture = CFile::ResizeImageGet($arResult['DETAIL_PICTURE'], array('width'=>478), BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true);
 ?>
-<!-- <pre>
-    <? //print_r($arResult)?>
-</pre> -->
 <? if (!empty($arResult)) { ?>
     <div class="services__item servicesCard<?= $class_prog?>">
         <div class="servicesCard__header">
-            <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
+            <div class="servicesCard__img" style="background-image:url(<?= $prewPicture['src']?>)"></div>
             <div class="servicesCard__wrapper">
                 <div class="servicesCard__title"><?= $arResult["NAME"]?></div>
                 <div class="servicesCard__description">
@@ -53,7 +54,7 @@ $class_prog = " servicesCard_programm servicesCard_js";
                     <a class="servicesCard__details popupMoreStage_js"
                         href="#popupMoreStage"
                         data-linkMore="<?= $arResult['DETAIL_PAGE_URL']?>"
-                        data-linkImg="url(/dist/img/servicesCardImg-1.png)"
+                        data-linkImg="url(<?= $detailPicture['src']?>)"
                     >Подробнее об этапах</a>
                 </div>
             <? } else { ?>

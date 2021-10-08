@@ -26,7 +26,8 @@ $rsSections = CIBlockSection::GetList($arOrder, $arFilter, false, array(
         'NAME',
         'SECTION_PAGE_URL',
         'IBLOCK_SECTION_ID',
-        'DESCRIPTION'
+        'DESCRIPTION',
+        'DETAIL_PICTURE'
 ));
 $rsElements = CIBlockElement::GetList(array('SORT' => 'ASC'), array('IBLOCK_ID' => $arParams['IBLOCK_ID']), false, false, array('ID', 'IBLOCK_ID', '*', 'PROPERTY_*'));
 $menuElements = array();
@@ -38,7 +39,7 @@ while($arSection = $rsSections->GetNext()){
     $arSection['IS_SECTION'] = 1;
     $arSection['LINK'] = $arSection['SECTION_PAGE_URL'];
     if ($arSection['IBLOCK_SECTION_ID']){
-        $menuItems[$arSection['IBLOCK_SECTION_ID']][] = $arSection;
+        $menuItems[$arSection['IBLOCK_SECTION_ID']][$arSection['ID']] = $arSection;
     } else {
         $menuItems['ROOT'][$arSection['ID']] = $arSection;
     }
@@ -127,6 +128,8 @@ else
 	$arComponentVariables[] = "rss";
 }
 
+$program = false;
+
 /* Compatibility with deleted DETAIL_STRICT_SECTION_CHECK */
 if (isset($arParams["STRICT_SECTION_CHECK"]))
 	$arParams["DETAIL_STRICT_SECTION_CHECK"] = $arParams["STRICT_SECTION_CHECK"];
@@ -159,6 +162,11 @@ if($arParams["SEF_MODE"] == "Y")
 		$b404 = true;
 	}
 
+	// if ($arVariables["SECTION_CODE"] != "programmy" && $componentPage == "detail" && $arParams["IS_SERVICES"]) {
+	// 	$componentPage = "section";
+	// }
+
+	//print_r($arVariables);
 	if($componentPage == "section")
 	{
 		if (isset($arVariables["SECTION_ID"]))
@@ -200,19 +208,23 @@ if($arParams["SEF_MODE"] == "Y")
 				$arVariables['PARENT_SECTION_ID'] = $sec['ID'];
 			}
 			$arVariables['UF_ELEMENT'] = $sec['UF_ELEMENT'];
+			$arVariables['SECTION_ID'] = $sec['ID'];
 		}
 		foreach ($menuElements[$arVariables['SECTION_ID']] as $value) {
 			$arVariables['AR_ID_ELEMENTS'][] = $value['ID'];
 		}
 	} else {
-		if ($arVariables['SECTION_ID']) {
-			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"], 'ID' => $arVariables['SECTION_ID'], 'SITE_ID' => SITE_ID),false, array("ID", "IBLOCK_ID", "*", "UF_*"));
+		if ($arVariables['SECTION_ID'] && $arVariables['SECTION_CODE']) {
+			$res = CIBlockSection::GetList(array(), array('IBLOCK_ID' => $arParams["IBLOCK_ID"],'CODE' => $arVariables['SECTION_CODE'], 'ID' => $arVariables['SECTION_ID'], 'SITE_ID' => SITE_ID),false, array("ID", "IBLOCK_ID", "*", "UF_*", 'LEFT_MARGIN', 'RIGHT_MARGIN'));
 			$sec = $res->Fetch();
 			$arVariables['UF_ELEMENT'] = $sec['UF_ELEMENT'];
-			$arVariables['CHECK_SECTION'] = true;
+			$arVariables['CHECK_SECTION'] = false;
 			if(($sec['RIGHT_MARGIN'] - $sec['LEFT_MARGIN']) > 1) {
-				$arVariables['CHECK_SECTION'] = false;
+				$arVariables['CHECK_SECTION'] = true;
 			}
+		}
+		if ($arVariables["SECTION_ID"]) {
+			$arVariables['SECTION_ID'] = $sec['ID'];
 		}
 		$arVariables['IBLOCK_SECTION_ID'][] = $menuItems[$arVariables['SECTION_ID']][0]["ID"];
 		$arVariables['PARENT_SECTION_ID'] = $arVariables['SECTION_ID'];
@@ -221,7 +233,6 @@ if($arParams["SEF_MODE"] == "Y")
 		}
 	}
 	$arResult = array(
-		//"IBLOCK" => $block_type,
 		"FOLDER" => $arParams["SEF_FOLDER"],
 		"URL_TEMPLATES" => $arUrlTemplates,
 		"VARIABLES" => $arVariables,
@@ -230,16 +241,23 @@ if($arParams["SEF_MODE"] == "Y")
 		"IBLOCK_AR" => $block_type,
 		"ELEMENT_AR" => $menuElements
 	);
+	// if ($arParams["ELEMENT_CODE"] || $arParams["ELEMENT_ID"]) {
+	// 	$arResult["ELEMENT_1"] = 1;
+	// 	$arElements = CIBlockElement::GetList(array('SORT' => 'ASC'), array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'CODE' => $arVariables['ELEMENT_CODE']), false, false, array('ID', 'IBLOCK_ID', '*', 'PROPERTY_*'));
+	// 	while($element = $arElements->Fetch()){
+	// 		$arResult["ELEMENT"] = $element;
+	// 	}
+	// }
 	if($arParams["INCLUDE_IBLOCK_INTO_CHAIN"] && isset($arResult["IBLOCK_AR"]["NAME"]))
 	{
 		$APPLICATION->AddChainItem($arResult["IBLOCK_AR"]["NAME"], $arParams["SEF_FOLDER"]);
 	}
 	if($arParams["ADD_SECTIONS_CHAIN"] && isset($arResult["VARIABLES"]["SECTION_ID"]))
 	{
-		$APPLICATION->AddChainItem($arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["SECTION_ID"]]["NAME"], $arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["SECTION_ID"]]["~SECTION_PAGE_URL"]);
+		$APPLICATION->AddChainItem($arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["PARENT_SECTION_ID"]]["NAME"], $arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["PARENT_SECTION_ID"]]["~SECTION_PAGE_URL"]);
 	}
 	if($arParams["SET_TITLE"])
-		$APPLICATION->SetTitle($arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["SECTION_ID"]]["NAME"]);
+		$APPLICATION->SetTitle($arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["PARENT_SECTION_ID"]]["NAME"]);
 }
 else
 {
@@ -248,9 +266,13 @@ else
 
 	$componentPage = "";
 
-	if(isset($arVariables["ELEMENT_ID"]) && intval($arVariables["ELEMENT_ID"]) > 0)
+	if ($arVariables["SECTION_CODE"] == "programmy") {
+		$componentPage = "section";
+	}
+
+	if(isset($arVariables["ELEMENT_ID"]) && intval($arVariables["ELEMENT_ID"]) > 0 && $program)
 		$componentPage = "detail";
-	elseif(isset($arVariables["ELEMENT_CODE"]) && $arVariables["ELEMENT_CODE"] <> '')
+	elseif(isset($arVariables["ELEMENT_CODE"]) && $arVariables["ELEMENT_CODE"] <> '' && $program)
 		$componentPage = "detail";
 	elseif(isset($arVariables["SECTION_ID"]) && intval($arVariables["SECTION_ID"]) > 0)
 	{
