@@ -35,7 +35,6 @@ export function windowOnload () {
             }, 800);
             setTimeout(function(){
                 slideDots.classList.remove('stop');
-                console.log('stop')
             }, 5500);
         }
         //page specialist twentytwenty
