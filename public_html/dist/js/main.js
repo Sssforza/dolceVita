@@ -16811,7 +16811,9 @@ function windowOnload() {
 
 
     if (document.querySelector('.twentytwenty_js')) {
-      $(".twentytwenty_js").twentytwenty();
+      $(".twentytwenty_js").twentytwenty({
+        default_offset_pct: 0.2
+      });
     } // midnight
 
 
