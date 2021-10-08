@@ -398,6 +398,26 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 			}
 		}
 
+		if ((array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"]) {
+			foreach ($arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"] as $key => $value) {
+				$res = CIBlockElement::GetByID($value);
+				if($ar_res = $res->GetNext())
+				  $arFilter["IBLOCK_ID"] = $ar_res["IBLOCK_ID"];
+				$arFilter["ID"] = $value;
+				unset($arFilter["SECTION_CODE"]);
+				$arsSelect = array_merge($arSelect, array(
+								"PROPERTIES_*",
+							));
+				$arElement = CIBlockElement::GetList(array(), $arFilter, false, false, $arsSelect);
+				while($obyElement = $arElement->GetNextElement())
+				{
+					$arFields = $obyElement->GetFields();
+					$arProps = $obyElement->GetProperties();
+					$arResult["EQUIPMENT"][$arFields["ID"]] = array_merge($arFields, $arProps);
+				}
+			}
+		}
+
 		$resultCacheKeys = array(
 			"ID",
 			"IBLOCK_ID",

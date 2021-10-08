@@ -5,8 +5,9 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 ?>
 <?$APPLICATION->IncludeComponent(
 	"ferma:news", 
-	".default", 
+	"services", 
 	array(
+		"IS_SERVICES" => false,
 		"DEPTH_LEVEL" => "3",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -104,7 +105,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"GROUP_PERMISSIONS" => array(
 			0 => "1",
 		),
-		"HIDE_LINK_WHEN_NO_DETAIL" => "Y",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "8",
 		"IBLOCK_TYPE" => "services",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
@@ -159,7 +160,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"PAGER_SHOW_ALL" => "Y",
 		"PAGER_SHOW_ALWAYS" => "Y",
 		"PAGER_TEMPLATE" => "",
-		"PAGER_TITLE" => "Косметология",
+		"PAGER_TITLE" => "Услуги",
 		"PATH_TO_SMILE" => "/bitrix/images/forum/smile/",
 		"POST_FIRST_MESSAGE" => "Y",
 		"PREVIEW_TRUNCATE_LEN" => "",
@@ -184,7 +185,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "Y",
+		"STRICT_SECTION_CHECK" => "N",
 		"URL_TEMPLATES_READ" => "",
 		"USE_CAPTCHA" => "Y",
 		"USE_CATEGORIES" => "Y",
@@ -194,7 +195,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "Y",
+		"USE_SHARE" => "N",
 		"VOTE_NAMES" => array(
 			0 => "0",
 			1 => "1",
@@ -213,8 +214,8 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"CATEGORY_THEME_8" => "list",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "/services/",
-			"section" => "#SECTION_CODE_PATH#/",
-			"detail" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+			"section" => "",
+			"detail" => "#ELEMENT_CODE#/",
 		)
 	),
 	false

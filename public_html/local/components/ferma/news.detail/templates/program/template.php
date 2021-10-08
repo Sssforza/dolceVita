@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <pre>
-    <? //print_r($arResult)?>
+    <? print_r($arResult)?>
 </pre>
 <main class="main">
     <section class="page page_service">
@@ -93,7 +93,7 @@ $this->setFrameMode(true);
                                 <div class="portfolioSliderNav portfolioSliderNav_js">
                                     <? foreach ($arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"] as $nav => $foto) { ?>
                                         <? $renderPrewAfter = CFile::ResizeImageGet($arResult['BEFORE_AND_AFTER'][$foto]['AFTER']['FILE'], array('width'=>142), BX_RESIZE_IMAGE_EXACT, true);?>
-                                        <div class="portfolioSliderNav__item active" data-slide="<?= $nav+1?>">
+                                        <div class="portfolioSliderNav__item <?= $nav == 0 ? 'active' : ''?>" data-slide="<?= $nav+1?>">
                                             <div class="portfolioSliderNav__bg" style="background-image:url(<?= $renderPrewAfter['src']?>)"></div>
                                         </div>
                                     <? } ?>

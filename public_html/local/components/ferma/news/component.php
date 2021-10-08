@@ -162,9 +162,9 @@ if($arParams["SEF_MODE"] == "Y")
 		$b404 = true;
 	}
 
-	if ($arVariables["SECTION_CODE"] != "programmy" && $componentPage == "detail") {
-		$componentPage = "section";
-	}
+	// if ($arVariables["SECTION_CODE"] != "programmy" && $componentPage == "detail" && $arParams["IS_SERVICES"]) {
+	// 	$componentPage = "section";
+	// }
 
 	//print_r($arVariables);
 	if($componentPage == "section")
