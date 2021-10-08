@@ -5,6 +5,16 @@
 @import "../blocks/_jquery.scrollbar.scss";
 .specialist {
     padding-top: 97px;
+    @media (max-width:$lg) {
+        padding-top: 82px;
+    }
+    &__about {
+        .containerMin {
+            @media (max-width:$lg) {
+                padding-left: 166px;
+            }
+        }
+    }
     .services {
         margin-top: 196px;
         padding-top: 0;
@@ -30,11 +40,17 @@
 .aboutSpecialist {
     &__container {
         display: flex;
+        @media (max-width:$lg) {
+            flex-direction: column;
+        }
     }
     &__content {
         width: 727px;
         @media (max-width:$xl) {
             width: 690px;
+        }
+        @media (max-width:$lg) {
+            width: 680px;
         }
     }
     &__choices {
@@ -64,7 +80,7 @@
             }
         }
         @media (max-width:$xl) {
-            font-size: 21px;
+            font-size: 22px;
             line-height: 27px;
         }
         &:not(:first-child) {
@@ -167,10 +183,22 @@
         @media (max-width:$xl) {
             margin-left: 112px;
         }
+        @media (max-width:$lg) {
+            margin-top: 114px;
+        }
+    }
+    &__ul {
+        @media (max-width:$lg) {
+            display: flex;
+        }
     }
     &__li {
         &:not(:first-child) {
             margin-top: 32px;
+            @media (max-width:$lg) {
+                margin-top: 0;
+                margin-left: 124px;
+            }
         }
     }
     &__top {
@@ -205,6 +233,9 @@
             margin-top: 42px;
             margin-left: 114px;
         }
+        @media (max-width:$lg) {
+            margin-top: 48px;
+        }
         span {
             font-size: 18px;
             line-height: 23px;
@@ -236,6 +267,9 @@
     margin-top: 196px;
     @media (max-width:$xl) {
         margin-top: 261px;
+    }
+    @media (max-width:$lg) {
+        margin-top: 132px;
     }
     &__title {
         font-size: 36px;

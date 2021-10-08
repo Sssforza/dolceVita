@@ -859,6 +859,11 @@ img.mfp-img {
             right: 128px;
             width: 562px;
         }
+        @media (max-width:$lg) {
+            top: 90px;
+            right: 40px;
+            width: 426px;
+        }
         img {
             display: block;
             width: 100%;
@@ -1009,7 +1014,7 @@ img.mfp-img {
     }
     &__header {
         display: flex;
-        max-height: 156px;
+        max-height: 160px;
         overflow: hidden;
         @media (max-width:$lg) {
             max-height: 200px;
@@ -1608,6 +1613,10 @@ img.mfp-img {
         height: 646px !important;
         border-radius: 48px;
         overflow: visible !important;
+        @media (max-width:$lg) {
+            width: 282px;
+            height: 503px !important;
+        }
         img {
             border-radius: 48px;
         }
@@ -1634,6 +1643,11 @@ img.mfp-img {
             width: 520px;
             max-height: 300px;
         }
+        @media (max-width:$lg) {
+            padding-top: 3px;
+            margin-left: 78px;
+            max-height: 260px;
+        }
     }
     &__procedure {
         font-size: 24px;
@@ -1646,6 +1660,9 @@ img.mfp-img {
         font-size: 36px;
         line-height: 50px;
         color: $blueDark;
+        @media (max-width:$lg) {
+            margin-top: 18px;
+        }
     }
     .twentytwenty-before-label,
     .twentytwenty-after-label,
@@ -1688,6 +1705,12 @@ img.mfp-img {
         top: 386px;
         left: 485px;
     }
+    @media (max-width:$lg) {
+        top: 301px;
+        left: 391px;
+        overflow-x: scroll;
+        width: 625px;
+    }
     &__item {
         display: flex;
         align-items: center;
@@ -1702,8 +1725,15 @@ img.mfp-img {
                 border: 2px solid $greenMedium;
             }
         }
+        @media (max-width:$lg) {
+            width: 118px;
+            height: 202px;
+        }
         &:not(:first-child) {
             margin-left: 50px;
+            @media (max-width:$lg) {
+                margin-left: 33px;
+            }
         }
         &.active {
             border: 2px solid #8D5287 !important;
@@ -1719,6 +1749,10 @@ img.mfp-img {
             repeat: no-repeat;
         }
         cursor: pointer;
+        @media (max-width:$lg) {
+            width: 110px;
+            height: 194px;
+        }
     }
 }
 .containerMin {
