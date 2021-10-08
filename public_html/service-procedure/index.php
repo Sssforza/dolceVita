@@ -490,34 +490,6 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Острые воспалительные процессы
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Наличие кардиостимулятора
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Беременность
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Онкологические заболевания
-                                                </span>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -529,15 +501,13 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 Уменьшение объема жировых складок до &minus;30%
                             </div>
                             <div class="asideService__list">
-                                <div class="asideService__line">
-                                    <div class="asideService__item">
-                                        <div class="asideService__what">Длительность</div>
-                                        <div class="asideService__answer">90 мин</div>
-                                    </div>
-                                    <div class="asideService__item">
-                                        <div class="asideService__what">Процедуры</div>
-                                        <div class="asideService__answer">Определяется индивидуально</div>
-                                    </div>
+                                <div class="asideService__item">
+                                    <div class="asideService__what">Длительность</div>
+                                    <div class="asideService__answer">90 мин</div>
+                                </div>
+                                <div class="asideService__item">
+                                    <div class="asideService__what">Процедуры</div>
+                                    <div class="asideService__answer">Определяется индивидуально</div>
                                 </div>
                                 <div class="asideService__item">
                                     <div class="asideService__what">Оборудование</div>

@@ -190,7 +190,7 @@
                     color: $white;
                 }
             }
-            @media (min-width:$xs) {
+            @media (max-width:$xs) {
                 color: $white;
             }
         }
@@ -490,9 +490,12 @@
     }
     &__btn {
         margin-top: 24px;
-        width: 271px;
+        width: 290px;
+        @media (max-width:$xl) {
+            width: 245px;
+        }
         @media (max-width:$lg) {
-            width: 262px;
+            width: 260px;
         }
         @media (max-width:$xs) {
             width: 289px;

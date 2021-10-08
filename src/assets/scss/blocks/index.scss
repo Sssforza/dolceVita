@@ -49,6 +49,15 @@
             .sliderMain__btn {
                 top: -50px !important;
             }
+            // .sliderMain__dots {
+            //     li {
+            //         &.slick-active {
+            //             .sliderMain__line {
+            //                 animation: none;
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
     &__bg {
@@ -233,7 +242,7 @@
                 }
                 .sliderMain__line {
                     stroke:#DBE9EF;
-                    animation: sliderLinesDraw 6s linear forwards;
+                    animation: sliderLinesDraw 5.5s linear forwards;
                 }
             }
         }
@@ -497,17 +506,14 @@
             content:'';
             position: absolute;
             right: 0;
-            bottom: 0px;
+            bottom: 20px;
             left: 0;
             height: 2px;
             opacity: 0.5;
             background: $blueDark;
             transition: $transition;
-            @media (max-width:$xl) {
-                bottom: 7px;
-            }
             @media (max-width:$xs) {
-                bottom: -9px;
+                bottom: 8px;
             }
         }
     }
@@ -881,9 +887,6 @@
             }
             .typesCards__percent {
                 margin-top: -10px;
-                @media (max-width:$lg) {
-                    width: 163px;
-                }
                 @media (max-width:$xs) {
                     margin-top: -6px;
                 }
@@ -930,6 +933,9 @@
             }
             .typesCards__percent {
                 margin-top: -10px;
+                @media (max-width:$xl) {
+                    width: 180px;
+                }
                 @media (max-width:$lg) {
                     width: 147px;
                 }
@@ -993,14 +999,11 @@
     }
     &__percent {
         flex: none;
-        width: 162px;
+        width: 140px;
         font-size: 50px;
         line-height: 63px;
         font-weight: 300;
         color: $blueDark;
-        @media (max-width:$xl) {
-            width: 180px;
-        }
     }
     &__rub {
         @media (max-width:$xs) {
@@ -1494,15 +1497,15 @@
 }
 .specialists {
     position: relative;
-    padding-top: 152px;
+    margin-top: -260px;
     @media (max-width:$xl) {
-        padding-top: 80px;
+        margin-top: -292px;
     }
     @media (max-width:$lg) {
-        padding-top: 30px;
+        margin-top: -302px;
     }
-    @media (max-width:$lg) {
-        padding-top: 104px;
+    @media (max-width:$xs) {
+        margin-top: -100px;
     }
     &__bg {
         position: absolute;

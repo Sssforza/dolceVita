@@ -871,15 +871,13 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 Стройное тело, упругая и&nbsp;гладкая кожа, улучшеное крово- и&nbsp;лимфообращение
                             </div>
                             <div class="asideService__list">
-                                <div class="asideService__line">
-                                    <div class="asideService__item">
-                                        <div class="asideService__what">Длительность</div>
-                                        <div class="asideService__answer">60 мин</div>
-                                    </div>
-                                    <div class="asideService__item">
-                                        <div class="asideService__what">Процедуры</div>
-                                        <div class="asideService__answer">4 сеанса</div>
-                                    </div>
+                                <div class="asideService__item">
+                                    <div class="asideService__what">Длительность</div>
+                                    <div class="asideService__answer">60 мин</div>
+                                </div>
+                                <div class="asideService__item">
+                                    <div class="asideService__what">Процедуры</div>
+                                    <div class="asideService__answer">4 сеанса</div>
                                 </div>
                                 <div class="asideService__item">
                                     <div class="asideService__what">Оборудование</div>
@@ -893,9 +891,11 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                         </div>
                         <div class="asideService__above">
                             <div class="asideService__more">более 1000 <br>довольных пациентов</div>
+                            <span class="asideService__plus">1000+</span>
                         </div>
                         <div class="asideService__above">
-                        <div class="asideService__more">более 4000 <br>проведённых процедур</div>
+                            <div class="asideService__more">более 4000 <br>проведённых процедур</div>
+                            <span class="asideService__plus">4000+</span>
                         </div>
                     </aside>
                 </div>
