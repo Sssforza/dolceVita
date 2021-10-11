@@ -5,6 +5,14 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.event.move.js");
 $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 ?>
 <main class="main">
+    <section class="comeBack comeBack_banerSection">
+        <div class="comeBack__content container">
+            <a href="/team/" class="comeBack__link">
+                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
+                <div class="comeBack__page">Специалисты</div>
+            </a>
+        </div>
+    </section>
 	<section class="page page_specialist">
         <section class="banerSection">
             <div class="banerSection__sheet banerSection__sheet_left"></div>
@@ -220,8 +228,82 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     <div class="portfolioSliderFor__item">
                                         <div class="portfolioSliderFor__wrapper">
                                             <div class="portfolioSliderFor__img twentytwenty_js">
-                                                <img src="/dist/img/portfolioSliderImg1-1.jpg">
                                                 <img src="/dist/img/portfolioSliderImg1-2.jpg">
+                                                <img src="/dist/img/portfolioSliderImg1-1.jpg">
+                                            </div>
+                                            <div class="portfolioSliderFor__pseudoElements">
+                                                <span>До</span>
+                                                <span>После</span>
+                                            </div>
+                                        </div>
+                                        <div class="portfolioSliderFor__description">
+                                            <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                            <div class="portfolioSliderFor__name">
+                                                Разглаживание мимических и&nbsp;носогубных морщин с&nbsp;помощью лазерного
+                                                аппарата Fotona&nbsp;4D
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__item">
+                                        <div class="portfolioSliderFor__wrapper">
+                                            <div class="portfolioSliderFor__img twentytwenty_js">
+                                                <img src="/dist/img/portfolioSliderImg2-1.jpg">
+                                                <img src="/dist/img/portfolioSliderImg2-2.jpg">
+                                            </div>
+                                            <div class="portfolioSliderFor__pseudoElements">
+                                                <span>До</span>
+                                                <span>После</span>
+                                            </div>
+                                        </div>
+                                        <div class="portfolioSliderFor__description">
+                                            <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                            <div class="portfolioSliderFor__name">
+                                                Программа &quot;Сладкая жизнь&quot;
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__item">
+                                        <div class="portfolioSliderFor__wrapper">
+                                            <div class="portfolioSliderFor__img twentytwenty_js">
+                                                <img src="/dist/img/portfolioSliderImg1-2.jpg">
+                                                <img src="/dist/img/portfolioSliderImg1-1.jpg">
+                                            </div>
+                                            <div class="portfolioSliderFor__pseudoElements">
+                                                <span>До</span>
+                                                <span>После</span>
+                                            </div>
+                                        </div>
+                                        <div class="portfolioSliderFor__description">
+                                            <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                            <div class="portfolioSliderFor__name">
+                                                Разглаживание мимических и&nbsp;носогубных морщин с&nbsp;помощью лазерного
+                                                аппарата Fotona&nbsp;4D
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__item">
+                                        <div class="portfolioSliderFor__wrapper">
+                                            <div class="portfolioSliderFor__img twentytwenty_js">
+                                                <img src="/dist/img/portfolioSliderImg2-1.jpg">
+                                                <img src="/dist/img/portfolioSliderImg2-2.jpg">
+                                            </div>
+                                            <div class="portfolioSliderFor__pseudoElements">
+                                                <span>До</span>
+                                                <span>После</span>
+                                            </div>
+                                        </div>
+                                        <div class="portfolioSliderFor__description">
+                                            <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                            <div class="portfolioSliderFor__name">
+                                                Программа &quot;Сладкая жизнь&quot;
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__item">
+                                        <div class="portfolioSliderFor__wrapper">
+                                            <div class="portfolioSliderFor__img twentytwenty_js">
+                                                <img src="/dist/img/portfolioSliderImg1-2.jpg">
+                                                <img src="/dist/img/portfolioSliderImg1-1.jpg">
                                             </div>
                                             <div class="portfolioSliderFor__pseudoElements">
                                                 <span>До</span>
@@ -256,23 +338,25 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                     </div>
                                 </div>
                                 <div class="portfolioSliderNav portfolioSliderNav_js">
-                                    <div class="portfolioSliderNav__item active" data-slide="1">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
-                                    </div>
-                                    <div class="portfolioSliderNav__item" data-slide="2">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
-                                    </div>
-                                    <div class="portfolioSliderNav__item" data-slide="3">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
-                                    </div>
-                                    <div class="portfolioSliderNav__item" data-slide="4">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
-                                    </div>
-                                    <div class="portfolioSliderNav__item" data-slide="5">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
-                                    </div>
-                                    <div class="portfolioSliderNav__item" data-slide="6">
-                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                    <div class="portfolioSliderNav__list">
+                                        <div class="portfolioSliderNav__item active" data-slide="0">
+                                            <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                        </div>
+                                        <div class="portfolioSliderNav__item" data-slide="1">
+                                            <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                        </div>
+                                        <div class="portfolioSliderNav__item" data-slide="2">
+                                            <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                        </div>
+                                        <div class="portfolioSliderNav__item" data-slide="3">
+                                            <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                        </div>
+                                        <div class="portfolioSliderNav__item" data-slide="4">
+                                            <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                        </div>
+                                        <div class="portfolioSliderNav__item" data-slide="5">
+                                            <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -319,11 +403,11 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                         <div class="servicesCard__img" style="background-image:url(/dist/img/servicesCardImg-1.png)"></div>
                                         <div class="servicesCard__wrapper">
                                             <div class="servicesCard__title">Комплексный подход коррекции фигуры</div>
+                                            <div class="servicesCard__programm">программа</div>
                                             <div class="servicesCard__description">
                                                 4-этапная программа восстановления упругости кожи и коррекции фигуры 
                                             </div>
                                         </div>
-                                        <div class="servicesCard__programm">программа</div>
                                     </div>
                                     <div class="servicesCard__bottom">
                                         <div class="servicesCard__list">

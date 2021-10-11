@@ -476,6 +476,13 @@ textarea {
         }
         &.slick-disabled {
             pointer-events: none;
+            &:hover {
+                svg {
+                    path {
+                        stroke: $greenMedium;
+                    }
+                }
+            }
             svg {
                 path {
                     stroke: $greenMedium;
@@ -736,6 +743,9 @@ img.mfp-img {
         background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.38) 43.25%, rgba(255, 255, 255, 0) 100%);
         opacity: 0.75;
         pointer-events: none;
+        @media (max-width:$xs) {
+            display: none;
+        }
     }
     &__sheet {
         position: absolute;
@@ -864,6 +874,11 @@ img.mfp-img {
             right: 40px;
             width: 426px;
         }
+        @media (max-width:$xs) {
+            top: 80px;
+            right: 110px;
+            width: 323px;
+        }
         img {
             display: block;
             width: 100%;
@@ -982,6 +997,7 @@ img.mfp-img {
     background: #dbe9ef80;
     border-radius: 32px;
     overflow: hidden;
+    flex: none;
     @media (max-width:$xl) {
         padding-left: 32px;
         width: 640px;
@@ -1162,6 +1178,7 @@ img.mfp-img {
         text-transform: uppercase;
         background: #3b5e8280;
         border-radius: 0 10px;
+        flex: none;
         @media (max-width:$xl) {
             padding: 3px 14px 2px;
         }
@@ -1604,6 +1621,9 @@ img.mfp-img {
 .portfolioSliderFor {
     &__item {
         display: flex !important;
+        @media (max-width:$xs) {
+            flex-direction: column;
+        }
     }
     &__img {
         width: 363px;
@@ -1614,6 +1634,10 @@ img.mfp-img {
             width: 282px;
             height: 503px !important;
         }
+        @media (max-width:$xs) {
+            width: 363px;
+            height: 646px !important;
+        }
         img {
             border-radius: 48px;
         }
@@ -1622,6 +1646,9 @@ img.mfp-img {
         margin-top: 17px;
         display: flex;
         justify-content: space-between;
+        @media (max-width:$xs) {
+            width: 363px;
+        }
         span {
             font-size: 24px;
             line-height: 30px;
@@ -1645,6 +1672,12 @@ img.mfp-img {
             margin-left: 78px;
             max-height: 260px;
         }
+        @media (max-width:$xs) {
+            padding-top: 48px;
+            margin-left: 0;
+            width: 460px;
+            max-height: none;
+        }
     }
     &__procedure {
         font-size: 24px;
@@ -1659,6 +1692,10 @@ img.mfp-img {
         color: $blueDark;
         @media (max-width:$lg) {
             margin-top: 18px;
+        }
+        @media (max-width:$xs) {
+            margin-top: 24px;
+            font-size: 35px;
         }
     }
     .twentytwenty-before-label,
@@ -1683,6 +1720,9 @@ img.mfp-img {
     }
     .slick-list {
         padding-left: 32px !important;
+        @media (max-width:$xs) {
+            padding-left: 40px !important;
+        }
     }
     .twentytwenty-handle {
         transition: filter .3s;
@@ -1694,11 +1734,12 @@ img.mfp-img {
     }
 }
 .portfolioSliderNav {
-    display: flex;
     position: absolute;
     top: 347px;
     left: 487px;
+    width: 735px;
     @media (max-width:$xl) {
+        width: 575px;
         top: 386px;
         left: 485px;
     }
@@ -1708,33 +1749,66 @@ img.mfp-img {
         overflow-x: scroll;
         width: 625px;
     }
-    &__item {
+    @media (max-width:$xs) {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 540px;
+        margin-top: 52px;
+    }
+    &__list {
         display: flex;
+    }
+    &__item {
+        display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 152px;
+        width: 152px !important;
         height: 260px;
         border: 2px solid transparent;
         border-radius: 36px;
         transition: $transition;
-        @media (min-width:$lg) {
-            &:hover {
-                border: 2px solid $greenMedium;
+        flex: none;
+        &:hover {
+            border: 2px solid $greenMedium;
+            @media (max-width:$lg) {
+                border: 2px solid transparent;
             }
         }
         @media (max-width:$lg) {
-            width: 118px;
+            width: 118px !important;
             height: 202px;
+            margin-right: 30px;
         }
-        &:not(:first-child) {
-            margin-left: 50px;
+        @media (max-width:$xs) {
+            width: 152px !important;
+            height: 260px;
+            margin-right: 18px;
+        }
+        &:last-child {
             @media (max-width:$lg) {
-                margin-left: 33px;
+                padding-right: 30px;
+            }
+            @media (max-width:$xs) {
+                padding-right: 40px;
+            }
+        }
+        &:first-child {
+            @media (max-width:$xs) {
+                margin-left: 40px;
             }
         }
         &.active {
             border: 2px solid #8D5287 !important;
             pointer-events: none;
+            @media (max-width:$lg) {
+                border: 2px solid transparent !important;
+            }
+            .portfolioSliderNav__bg {
+                &:after {
+                    border: 2px solid #8D5287;
+                }
+            }
         }
     }
     &__bg {
@@ -1746,9 +1820,26 @@ img.mfp-img {
             repeat: no-repeat;
         }
         cursor: pointer;
+        flex: none;
         @media (max-width:$lg) {
+            position: relative;
             width: 110px;
             height: 194px;
+            &:after {
+                content:'';
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                bottom: -4px;
+                left: -4px;
+                border: 2px solid transparent;
+                transition: $transition;
+                border-radius: 36px;
+            }
+        }
+        @media (max-width:$xs) {
+            width: 141px;
+            height: 250px;
         }
     }
 }

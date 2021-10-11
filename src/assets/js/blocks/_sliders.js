@@ -12,7 +12,6 @@ export function sliderMain () {
 			pauseOnHover: false,
 			pauseOnDotsHover: false,
 			slickPause: false,
-			//speed: 900,
 			slidesToShow: 1,
 			cssEase: 'ease',
 			arrows: true,
@@ -21,7 +20,6 @@ export function sliderMain () {
 			nextArrow: '<div class="sliderMain__next"><svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.4287 1.35986L2.20014 10.2741L10.4287 19.1884" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>',
 			dots: true,
 			appendDots: '.sliderMain__dots',
-			// dotsClass: "sliderMain__dots",
 			customPaging : function(slider, i) {
 				return `<div class="sliderMain__svg"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path class="sliderMain__line" d="M24,1c12.7,0,23,10.3,23,23S36.7,47,24,47S1,36.7,1,24S11.3,1,24,1" fill="none" stroke="#DBE9EF" stroke-width="2" stroke-miterlimit="10"/></svg></div>`;
 			}
@@ -85,6 +83,7 @@ export function sliderSpecialists () {
 // slider portfolio specialist
 export function sliderSpecialistsPortfolio () {
     const slickSpecialistPortfolio = $(".portfolioSliderFor_js");
+    const slickSpecialistPortfolioNav = $(".portfolioSliderNav__list");
 
 	if (slickSpecialistPortfolio.length) {
 		slickSpecialistPortfolio.slick({
@@ -105,22 +104,40 @@ export function sliderSpecialistsPortfolio () {
 				},
 			]
 		});
-		$('div[data-slide]').click(function(e) {
-			$('div[data-slide]').removeClass('active');
-			$(this).addClass('active');
-			var slideno = $(this).data('slide');
-			slickSpecialistPortfolio.slick('slickGoTo', slideno - 1);
-		});
+		if (window.screen.availWidth >= 1025) {
+			slickSpecialistPortfolioNav.slick({
+				slidesToShow: 4,
+				arrows: false,
+				draggable: true,
+				infinite: false,
+				responsive: [
+					{
+						breakpoint: 1442,
+						settings: {
+							slidesToShow: 3,
+						}
+					},
+				]
+			})
+			$('.portfolioSliderNav_js .slick-slide').click(function(e) {
+				var slide = $(this).data('slick-index');
+				$('div[data-slide]').removeClass('active');
+				slickSpecialistPortfolio.slick('slickGoTo', slide);
+				$('.portfolioSliderNav_js').find(`[data-slide='${slide}']`).addClass('active');
+			})
+		} else {
+			$('.portfolioSliderNav__item').click(function(e) {
+				var slide = $(this).data('slide');
+				$('div[data-slide]').removeClass('active');
+				slickSpecialistPortfolio.slick('slickGoTo', slide);
+				$('.portfolioSliderNav_js').find(`[data-slide='${slide}']`).addClass('active');
+			})
+		}
 		$('.slick-arrow').click(function(e) {
-			var slide = $('.portfolioSliderNav__item.active').data('slide');
-			slide = Number(slide);
+			var item = $('.portfolioSliderFor_js .slick-active').data('slick-index');
 			$('div[data-slide]').removeClass('active');
-			if ($(this).hasClass('sliderArrow__next')){
-				slide = slide + 1
-			} else {
-				slide = slide - 1
-			}
-			$('.portfolioSliderNav_js').find(`[data-slide='${slide}']`).addClass('active');
+			slickSpecialistPortfolioNav.slick('slickGoTo', item);
+			$('.portfolioSliderNav_js').find(`[data-slide='${item}']`).addClass('active');
 		});
 	}
 };
