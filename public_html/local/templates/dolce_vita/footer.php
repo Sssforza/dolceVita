@@ -6,7 +6,7 @@
         <div class="serviceMore__left">
             <div class="serviceMore__img" style="background-image:url()">
             </div>
-            <a class="btnBlueBorder serviceMore__btn" href="">Подробнее о программе</a>
+            <a class="btnBlueBorder serviceMore__btn" href="">Подробнее о&nbsp;программе</a>
         </div>
         <div class="serviceMore__right">
             <div class="serviceMore__header">
