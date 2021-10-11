@@ -560,6 +560,12 @@ img.mfp-img {
     padding: 80px !important;
     background: #fff;
     border-radius: 60px;
+    @media (max-width:$lg) {
+        padding: 60px !important;
+    }
+    @media (max-width:$xs) {
+        padding: 50px 44px !important;
+    }
 }
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
     background: {
@@ -570,6 +576,26 @@ img.mfp-img {
     font-size: 0;
     right: 35px !important;
     cursor: pointer !important;
+    @media (max-width:$lg) {
+        top: 30px!important;
+        right: 30px!important;
+        width: 22px!important;
+        height: 22px!important;
+    }
+    @media (max-width:$xs) {
+        top: -40px!important;
+        right: 0px!important;
+        width: 24px!important;
+        height: 24px!important;
+        background: {
+            image: url($imgUrl + "svg/popupsCloseWhite.svg");
+        }
+    }
+}
+.mfp-image-holder .mfp-content {
+    @media (max-width:$lg) {
+        max-width: 90%;
+    }
 }
 //envelope inputs
 .envelopeInput {
