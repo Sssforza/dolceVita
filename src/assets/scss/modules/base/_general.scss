@@ -163,7 +163,7 @@ textarea {
     background: $purple;
     border-radius: 20px;
     transition: $transition5;
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             background: #820062;
         }
@@ -199,7 +199,7 @@ textarea {
     border: 2px solid $white;
     border-radius: 20px;
     transition: $transition5;
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             color: $white;
             background: $greenLight;
@@ -233,7 +233,7 @@ textarea {
     border: 2px solid $blueDark;
     border-radius: 20px;
     transition: $transition5;
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             color: $white;
             background: $greenMedium;
@@ -269,7 +269,7 @@ textarea {
     filter: drop-shadow(0px 5px 8px rgba(169, 194, 201, 0.6));
     cursor: pointer;
     transition: $transition5;
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             background: $greenLight;
             svg {
@@ -342,7 +342,7 @@ textarea {
         a {
             border-bottom: 1px solid $greenLight;
             transition: $transition;
-            @media (min-width:$lg) {
+            @media (min-width:$hover) {
                 &:hover {
                     color: $white;
                     border-bottom: 1px solid transparent;
@@ -366,7 +366,7 @@ textarea {
             }
             a {
                 border-bottom: 1px solid $gray;
-                @media (min-width:$lg) {
+                @media (min-width:$hover) {
                     &:hover {
                         color: $blueDark;
                         border-bottom: 1px solid transparent;
@@ -443,7 +443,7 @@ textarea {
         color: $blueDark;
         border-bottom: 1px solid #BCC3D6;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $greenMedium;
                 border-bottom: 1px solid transparent;
@@ -465,7 +465,7 @@ textarea {
         cursor: pointer;
         z-index: 10;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 svg {
                     path {
@@ -535,22 +535,22 @@ textarea {
 }
 .popupBlock {
     &__close {
-        svg {
-            display: block;
-            path {
-                transition: $transition;
-                @media (max-width:$xs) {
-                    fill: $white;
-                }
-            }
-        }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 svg {
                     display: block;
                     path {
                         fill: $greenDark;
                     }
+                }
+            }
+        }
+        svg {
+            display: block;
+            path {
+                transition: $transition;
+                @media (max-width:$xs) {
+                    fill: $white;
                 }
             }
         }
@@ -602,7 +602,7 @@ textarea {
         a {
             border-bottom: 1px solid $greenLight;
             transition: $transition5;
-            @media (min-width:$lg) {
+            @media (min-width:$hover) {
                 &:hover {
                     border-bottom: 1px solid transparent;
                 }
@@ -670,7 +670,7 @@ img.mfp-img {
 .envelopeInput {
     position: relative;
     transition: $transition;
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             .envelopeInput__field {
                 border: 1px solid $white;
@@ -757,7 +757,7 @@ img.mfp-img {
         @include placeholder(18px, $greenMedium, 'cmun');
         transition: $transition5;
     }
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             input {
                 border: 2px solid $greenDark;
@@ -781,7 +781,7 @@ img.mfp-img {
         @include placeholder(23px, $greenMedium, 'cmun');
         transition: $transition5;
     }
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             input {
                 border: 2px solid $greenDark;
@@ -808,7 +808,7 @@ img.mfp-img {
             transition: $transition;
         }
     }
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             path {
                 stroke: $blueDark;
@@ -1312,7 +1312,7 @@ img.mfp-img {
         color: $blueDark;
         border-bottom: 1px solid transparent;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $greenMedium;
                 border-bottom: 1px solid $greenMedium;
@@ -1324,7 +1324,7 @@ img.mfp-img {
             font-size: 18px;
             line-height: 23px;
             color: $blueDark;
-            @media (min-width:$lg) {
+            @media (min-width:$hover) {
                 &:hover {
                     color: $greenMedium;
                     border-bottom: 1px solid $greenMedium;
@@ -1376,7 +1376,7 @@ img.mfp-img {
     background: #F4F5F8;
     border-radius: 24px;
     transition: $transition;
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             filter: drop-shadow(0px 10px 25px rgba(59, 94, 130, 0.4));
         }
@@ -1437,7 +1437,7 @@ img.mfp-img {
         line-height: 27px;
         color: $blueDark;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $greenDark;
             }
@@ -1489,7 +1489,7 @@ img.mfp-img {
         @media (max-width:$xs) {
             margin-top: 3px;
         }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 background: $greenLight;
             }
@@ -1779,7 +1779,7 @@ img.mfp-img {
         opacity: 0.6;
         cursor: pointer;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $purple;
                 opacity: 1;
@@ -1930,7 +1930,7 @@ img.mfp-img {
     }
     .twentytwenty-handle {
         transition: filter .3s;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 filter: drop-shadow(0px 10px 25px rgba(59, 94, 130, 0.4));
             }
@@ -2085,7 +2085,7 @@ img.mfp-img {
         background-color: $purple;
         cursor: pointer;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 background-color: $greenMedium !important;
             }
@@ -2129,7 +2129,7 @@ img.mfp-img {
         background-color: #B3BFCF;
         cursor: pointer;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 background-color: $greenDark !important;
             }
@@ -2166,7 +2166,7 @@ img.mfp-img {
         border-radius: 12px;
         cursor: pointer;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 background-color: $greenMedium !important;
             }
@@ -2175,7 +2175,7 @@ img.mfp-img {
             }
         }
     }
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         .scrollbar-inner>.scroll-element.scroll-draggable .scroll-bar, .scrollbar-inner>.scroll-element:hover .scroll-bar {
             background-color: $purple;
         }
@@ -2262,7 +2262,7 @@ img.mfp-img {
     text-align: center;
     flex: none;
     left: -127px;
-    @media (min-width:$lg) {
+    @media (min-width:$hover) {
         &:hover {
             svg {
                 .sliderEquipWarranty__path {
@@ -2517,7 +2517,7 @@ img.mfp-img {
     &__a {
         display: inline-flex;
         align-items: center;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 span {
                     opacity: 1;
@@ -2828,7 +2828,7 @@ img.mfp-img {
     &__policy {
         border-bottom: 1px solid $greenLight;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $white;
                 border-bottom: 1px solid transparent;

@@ -205,7 +205,7 @@
                 width: 36px;
                 height: 36px;
             }
-            @media (min-width:$lg) {
+            @media (min-width:$hover) {
                 &:hover {
                     &:after {
                         opacity: 1;
@@ -289,7 +289,7 @@
             height: 64px;
             background: $greenMedium;
         }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 background: rgba(219, 233, 239, .6);
             }
@@ -490,7 +490,7 @@
             font-size: 72px;
             line-height: 93px;
         }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $greenMedium;
                 &:before {
@@ -554,7 +554,7 @@
     &__procedures {
         display: flex;
         align-items: center;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 .sliderEquipment__video {
                     color: $blueDark;
@@ -617,7 +617,7 @@
         max-width: 544px;
         position: relative;
         top: -24px;
-        @media (max-width:$xl) {
+        @media (max-width:$hover) {
             min-width: 308px;
             top: 0;
             right: -40px;
@@ -1100,7 +1100,7 @@
                 transition: transform .3s 0s;
             }
         }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &.hover {
                 .usefulBlog__img {
                     &:after {
@@ -1286,7 +1286,7 @@
         &:last-child {
             border-radius: 0 0 60px 0;
         }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 transform: scale(1.34);
                 z-index: 2;
@@ -1582,7 +1582,7 @@
             white-space: nowrap;
             line-height: 15px;
         }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $blueDark;
                 border-bottom: 1px solid transparent;
@@ -1677,7 +1677,7 @@
         @media (max-width:$xl) {
             align-items: flex-start;
         }
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 .specialistsNav__img {
                     &:after {

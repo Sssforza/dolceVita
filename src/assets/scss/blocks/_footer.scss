@@ -73,8 +73,10 @@
         color: $blueDark;
         border-bottom: 1px solid $blueDark;
         transition: $transition;
-        &:hover {
-            border-bottom: 1px solid transparent;
+        @media (min-width:$hover) {
+            &:hover {
+                border-bottom: 1px solid transparent;
+            }
         }
     }
     &__dolce {
@@ -95,8 +97,10 @@
             position: relative;
             top: -58px;
         }
-        &:hover {
-            border-bottom: 1px solid $blueDark;
+        @media (min-width:$hover) {
+            &:hover {
+                border-bottom: 1px solid $blueDark;
+            }
         }
     }
     &__development {
@@ -111,13 +115,15 @@
     }
     &__ferma {
         position: relative;
-        &:hover {
-            span {
-                color: $purple;
-            }
-            svg {
-                path {
-                    fill:$purple;
+        @media (min-width:$hover) {
+            &:hover {
+                span {
+                    color: $purple;
+                }
+                svg {
+                    path {
+                        fill:$purple;
+                    }
                 }
             }
         }
@@ -179,8 +185,28 @@
         }
         border-radius: 50%;
         overflow: hidden;
+        &:after {
+            content:'';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $greenDark;
+            opacity: 0;
+            transition: $transition5;
+        }
+        @media (min-width:$hover) {
+            &:hover {
+                &:after {
+                    opacity: 0.8;
+                }
+            }
+        }
         svg {
             display: block;
+            position: relative;
+            z-index: 1;
         }
     }
     &__how {
@@ -227,8 +253,10 @@
         line-height: 29px;
         color: $blueDark;
         transition: $transition;
-        &:hover {
-            color: $purple;
+        @media (min-width:$hover) {
+            &:hover {
+                color: $purple;
+            }
         }
     }
 }
@@ -266,12 +294,14 @@
                 transition: $transition;
             }
         }
-        &:hover {
-            border: 2px solid rgba(130, 0, 98, .3);
-            svg {
-                display: block;
-                .fill {
-                    fill: $purple;
+        @media (min-width:$hover) {
+            &:hover {
+                border: 2px solid rgba(130, 0, 98, .3);
+                svg {
+                    display: block;
+                    .fill {
+                        fill: $purple;
+                    }
                 }
             }
         }
