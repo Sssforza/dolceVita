@@ -19,6 +19,33 @@
         </div>
     </div>
 </div>
+<div id="popupFormRecording" class="mfp-hide popupForm popupForm_consultation">
+    <div class="mfp-close popupForm__close popupClose_js">
+        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/popupsClose.svg';?>
+    </div>
+    <div class="popupForm__content">
+        <div class="popupForm__title">Записаться на&nbsp;консультацию</div>
+        <div class="popupForm__description">Оставьте заявку, мы&nbsp;свяжемся с&nbsp;вами для уточнения даты и&nbsp;времени приема</div>
+        <form class="popupForm__form popupFormRecording_js">
+            <div class="popupForm__filed">
+                <div class="envelopeInput">
+                    <input type="text" class="envelopeInput__field requiredField_js" placeholder="Представьтесь">
+                </div>
+                <div class="envelopeInput">
+                    <input type="text" class="envelopeInput__field maskPhone requiredField_js" placeholder="Телефон">
+                </div>
+            </div>
+            <div class="popupForm__actions">
+                <button class="btnPurple popupForm__btn">Записаться</button>
+                <div class="popupForm__policy">
+                    <span>
+                        Нажимая кнопку &laquo;Записаться&raquo;, вы&nbsp;соглашаетесь с&nbsp;<a href="#">политикой конфиденциальности</a>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
         <footer class="footer">
             <div class="footer__content containerMin">
                 <div class="footer__top">

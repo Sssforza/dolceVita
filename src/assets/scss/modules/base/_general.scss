@@ -556,6 +556,75 @@ textarea {
         }
     }
 }
+.popupForm {
+    position: relative;
+    margin: 20px auto;
+    width: 860px;
+    height: 542px;
+    background: linear-gradient(188.86deg, #A9C2C9 1.18%, #79A5B1 85.9%);
+    border-radius: 60px;
+    &__content {
+        padding: 52px 63px 64px;
+    }
+    &__title {
+        font-size: 48px;
+        line-height: 63px;
+        font-weight: 500;
+        color: $white;
+    }
+    &__description {
+        margin-top: 9px;
+        font-size: 24px;
+        line-height: 31px;
+        font-weight: 500;
+        color: $white;
+    }
+    &__form {
+        margin-top: 35px;
+    }
+    &__actions {
+        margin-top: 48px;
+        display: flex;
+        align-items: center;
+    }
+    &__btn {
+        width: 196px;
+    }
+    &__policy {
+        margin-left: 32px;
+        max-width: 350px;
+        span {
+            font-size: 15px;
+            line-height: 18px;
+            font-weight: 500;
+            color: $greenLight;
+        }
+        a {
+            border-bottom: 1px solid $greenLight;
+            transition: $transition5;
+            @media (min-width:$lg) {
+                &:hover {
+                    border-bottom: 1px solid transparent;
+                }
+            }
+        }
+    }
+    .envelopeInput {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        &__field {
+            width: 723px;
+        }
+    }
+    &__close {
+        svg {
+            path {
+                fill: $white;
+            }
+        }
+    }
+}
 img.mfp-img {
     padding: 80px !important;
     background: #fff;

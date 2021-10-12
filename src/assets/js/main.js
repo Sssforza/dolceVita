@@ -9,7 +9,7 @@ import 'slick-carousel';
 import 'magnific-popup';
 
 //📁 /assets/js/blocks  _popups.js
-import {moreStage, popupClose, popupImage} from "./blocks/_popups.js";
+import {moreStage, popupClose, popupImage, popupForm} from "./blocks/_popups.js";
 
 //📁 /assets/js/blocks  _pageLoad.js
 import {windowOnload, headerGray} from "./blocks/_pageLoad.js";
@@ -19,6 +19,9 @@ import {animGradientBgHeader, animMainLines, animReviewsLines, sectionBonusSyste
 
 //📁 /assets/js/blocks  _documentClick.js
 import {documentClick} from "./blocks/_documentClick.js";
+
+//📁 /assets/js/blocks  form.js
+import {popupFormRecording} from "./blocks/form.js";
 
 //📁 /assets/js/blocks  _header.js
 import {headerServices, headerSearch, menuSelection, scrollUp} from "./blocks/_header.js";
@@ -79,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // document onclick
     documentClick();
 
+    // popup form recording
+    popupFormRecording();
+
     // header services
     headerServices();
 
@@ -123,6 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // popup image
     popupImage();
+
+    // popup form
+    popupForm();
 
     // services selected drop
     servicesSelectedDrop();
