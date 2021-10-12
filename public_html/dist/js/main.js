@@ -90,9 +90,10 @@
 
 __webpack_require__(1);
 __webpack_require__(3);
-__webpack_require__(5);
-__webpack_require__(23);
-module.exports = __webpack_require__(24);
+__webpack_require__(6);
+__webpack_require__(7);
+__webpack_require__(25);
+module.exports = __webpack_require__(26);
 
 
 /***/ }),
@@ -383,409 +384,476 @@ module.exports = __webpack_amd_options__;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
- * jQuery CSS Customizable Scrollbar
- *
- * Copyright 2015, Yuriy Khabarov
- * Dual licensed under the MIT or GPL Version 2 licenses.
- *
- * If you found bug, please contact me via email <13real008@gmail.com>
- *
- * Compressed by http://jscompress.com/
- *
- * @author Yuriy Khabarov aka Gromo
- * @version 0.2.11
- * @url https://github.com/gromo/jquery.scrollbar/
- *
- */
-!function (a, b) {
-   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (b),
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+// jQuery Mask Plugin v1.14.16
+// github.com/igorescobar/jQuery-Mask-Plugin
+var $jscomp = $jscomp || {};
+$jscomp.scope = {};
+
+$jscomp.findInternal = function (a, n, f) {
+  a instanceof String && (a = String(a));
+
+  for (var p = a.length, k = 0; k < p; k++) {
+    var b = a[k];
+    if (n.call(f, b, k, a)) return {
+      i: k,
+      v: b
+    };
+  }
+
+  return {
+    i: -1,
+    v: void 0
+  };
+};
+
+$jscomp.ASSUME_ES5 = !1;
+$jscomp.ASSUME_NO_NATIVE_MAP = !1;
+$jscomp.ASSUME_NO_NATIVE_SET = !1;
+$jscomp.SIMPLE_FROUND_POLYFILL = !1;
+$jscomp.defineProperty = $jscomp.ASSUME_ES5 || "function" == typeof Object.defineProperties ? Object.defineProperty : function (a, n, f) {
+  a != Array.prototype && a != Object.prototype && (a[n] = f.value);
+};
+
+$jscomp.getGlobal = function (a) {
+  return "undefined" != typeof window && window === a ? a : "undefined" != typeof global && null != global ? global : a;
+};
+
+$jscomp.global = $jscomp.getGlobal(this);
+
+$jscomp.polyfill = function (a, n, f, p) {
+  if (n) {
+    f = $jscomp.global;
+    a = a.split(".");
+
+    for (p = 0; p < a.length - 1; p++) {
+      var k = a[p];
+      k in f || (f[k] = {});
+      f = f[k];
+    }
+
+    a = a[a.length - 1];
+    p = f[a];
+    n = n(p);
+    n != p && null != n && $jscomp.defineProperty(f, a, {
+      configurable: !0,
+      writable: !0,
+      value: n
+    });
+  }
+};
+
+$jscomp.polyfill("Array.prototype.find", function (a) {
+  return a ? a : function (a, f) {
+    return $jscomp.findInternal(this, a, f).v;
+  };
+}, "es6", "es3");
+
+(function (a, n, f) {
+   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5)], __WEBPACK_AMD_DEFINE_FACTORY__ = (a),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
-}(this, function (a) {
-  "use strict";
+})(function (a) {
+  var n = function n(b, d, e) {
+    var c = {
+      invalid: [],
+      getCaret: function getCaret() {
+        try {
+          var a = 0,
+              r = b.get(0),
+              h = document.selection,
+              d = r.selectionStart;
 
-  function h(b) {
-    if (c.webkit && !b) return {
-      height: 0,
-      width: 0
+          if (h && -1 === navigator.appVersion.indexOf("MSIE 10")) {
+            var e = h.createRange();
+            e.moveStart("character", -c.val().length);
+            a = e.text.length;
+          } else if (d || "0" === d) a = d;
+
+          return a;
+        } catch (C) {}
+      },
+      setCaret: function setCaret(a) {
+        try {
+          if (b.is(":focus")) {
+            var c = b.get(0);
+            if (c.setSelectionRange) c.setSelectionRange(a, a);else {
+              var g = c.createTextRange();
+              g.collapse(!0);
+              g.moveEnd("character", a);
+              g.moveStart("character", a);
+              g.select();
+            }
+          }
+        } catch (B) {}
+      },
+      events: function events() {
+        b.on("keydown.mask", function (a) {
+          b.data("mask-keycode", a.keyCode || a.which);
+          b.data("mask-previus-value", b.val());
+          b.data("mask-previus-caret-pos", c.getCaret());
+          c.maskDigitPosMapOld = c.maskDigitPosMap;
+        }).on(a.jMaskGlobals.useInput ? "input.mask" : "keyup.mask", c.behaviour).on("paste.mask drop.mask", function () {
+          setTimeout(function () {
+            b.keydown().keyup();
+          }, 100);
+        }).on("change.mask", function () {
+          b.data("changed", !0);
+        }).on("blur.mask", function () {
+          f === c.val() || b.data("changed") || b.trigger("change");
+          b.data("changed", !1);
+        }).on("blur.mask", function () {
+          f = c.val();
+        }).on("focus.mask", function (b) {
+          !0 === e.selectOnFocus && a(b.target).select();
+        }).on("focusout.mask", function () {
+          e.clearIfNotMatch && !k.test(c.val()) && c.val("");
+        });
+      },
+      getRegexMask: function getRegexMask() {
+        for (var a = [], b, c, e, t, f = 0; f < d.length; f++) {
+          (b = l.translation[d.charAt(f)]) ? (c = b.pattern.toString().replace(/.{1}$|^.{1}/g, ""), e = b.optional, (b = b.recursive) ? (a.push(d.charAt(f)), t = {
+            digit: d.charAt(f),
+            pattern: c
+          }) : a.push(e || b ? c + "?" : c)) : a.push(d.charAt(f).replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"));
+        }
+
+        a = a.join("");
+        t && (a = a.replace(new RegExp("(" + t.digit + "(.*" + t.digit + ")?)"), "($1)?").replace(new RegExp(t.digit, "g"), t.pattern));
+        return new RegExp(a);
+      },
+      destroyEvents: function destroyEvents() {
+        b.off("input keydown keyup paste drop blur focusout ".split(" ").join(".mask "));
+      },
+      val: function val(a) {
+        var c = b.is("input") ? "val" : "text";
+
+        if (0 < arguments.length) {
+          if (b[c]() !== a) b[c](a);
+          c = b;
+        } else c = b[c]();
+
+        return c;
+      },
+      calculateCaretPosition: function calculateCaretPosition(a) {
+        var d = c.getMasked(),
+            h = c.getCaret();
+
+        if (a !== d) {
+          var e = b.data("mask-previus-caret-pos") || 0;
+          d = d.length;
+          var g = a.length,
+              f = a = 0,
+              l = 0,
+              k = 0,
+              m;
+
+          for (m = h; m < d && c.maskDigitPosMap[m]; m++) {
+            f++;
+          }
+
+          for (m = h - 1; 0 <= m && c.maskDigitPosMap[m]; m--) {
+            a++;
+          }
+
+          for (m = h - 1; 0 <= m; m--) {
+            c.maskDigitPosMap[m] && l++;
+          }
+
+          for (m = e - 1; 0 <= m; m--) {
+            c.maskDigitPosMapOld[m] && k++;
+          }
+
+          h > g ? h = 10 * d : e >= h && e !== g ? c.maskDigitPosMapOld[h] || (e = h, h = h - (k - l) - a, c.maskDigitPosMap[h] && (h = e)) : h > e && (h = h + (l - k) + f);
+        }
+
+        return h;
+      },
+      behaviour: function behaviour(d) {
+        d = d || window.event;
+        c.invalid = [];
+        var e = b.data("mask-keycode");
+
+        if (-1 === a.inArray(e, l.byPassKeys)) {
+          e = c.getMasked();
+          var h = c.getCaret(),
+              g = b.data("mask-previus-value") || "";
+          setTimeout(function () {
+            c.setCaret(c.calculateCaretPosition(g));
+          }, a.jMaskGlobals.keyStrokeCompensation);
+          c.val(e);
+          c.setCaret(h);
+          return c.callbacks(d);
+        }
+      },
+      getMasked: function getMasked(a, b) {
+        var h = [],
+            f = void 0 === b ? c.val() : b + "",
+            g = 0,
+            k = d.length,
+            n = 0,
+            p = f.length,
+            m = 1,
+            r = "push",
+            u = -1,
+            w = 0;
+        b = [];
+
+        if (e.reverse) {
+          r = "unshift";
+          m = -1;
+          var x = 0;
+          g = k - 1;
+          n = p - 1;
+
+          var A = function A() {
+            return -1 < g && -1 < n;
+          };
+        } else x = k - 1, A = function A() {
+          return g < k && n < p;
+        };
+
+        for (var z; A();) {
+          var y = d.charAt(g),
+              v = f.charAt(n),
+              q = l.translation[y];
+          if (q) v.match(q.pattern) ? (h[r](v), q.recursive && (-1 === u ? u = g : g === x && g !== u && (g = u - m), x === u && (g -= m)), g += m) : v === z ? (w--, z = void 0) : q.optional ? (g += m, n -= m) : q.fallback ? (h[r](q.fallback), g += m, n -= m) : c.invalid.push({
+            p: n,
+            v: v,
+            e: q.pattern
+          }), n += m;else {
+            if (!a) h[r](y);
+            v === y ? (b.push(n), n += m) : (z = y, b.push(n + w), w++);
+            g += m;
+          }
+        }
+
+        a = d.charAt(x);
+        k !== p + 1 || l.translation[a] || h.push(a);
+        h = h.join("");
+        c.mapMaskdigitPositions(h, b, p);
+        return h;
+      },
+      mapMaskdigitPositions: function mapMaskdigitPositions(a, b, d) {
+        a = e.reverse ? a.length - d : 0;
+        c.maskDigitPosMap = {};
+
+        for (d = 0; d < b.length; d++) {
+          c.maskDigitPosMap[b[d] + a] = 1;
+        }
+      },
+      callbacks: function callbacks(a) {
+        var g = c.val(),
+            h = g !== f,
+            k = [g, a, b, e],
+            l = function l(a, b, c) {
+          "function" === typeof e[a] && b && e[a].apply(this, c);
+        };
+
+        l("onChange", !0 === h, k);
+        l("onKeyPress", !0 === h, k);
+        l("onComplete", g.length === d.length, k);
+        l("onInvalid", 0 < c.invalid.length, [g, a, b, c.invalid, e]);
+      }
+    };
+    b = a(b);
+    var l = this,
+        f = c.val(),
+        k;
+    d = "function" === typeof d ? d(c.val(), void 0, b, e) : d;
+    l.mask = d;
+    l.options = e;
+
+    l.remove = function () {
+      var a = c.getCaret();
+      l.options.placeholder && b.removeAttr("placeholder");
+      b.data("mask-maxlength") && b.removeAttr("maxlength");
+      c.destroyEvents();
+      c.val(l.getCleanVal());
+      c.setCaret(a);
+      return b;
     };
 
-    if (!c.data.outer) {
-      var d = {
-        border: "none",
-        "box-sizing": "content-box",
-        height: "200px",
-        margin: "0",
-        padding: "0",
-        width: "200px"
-      };
-      c.data.inner = a("<div>").css(a.extend({}, d)), c.data.outer = a("<div>").css(a.extend({
-        left: "-1000px",
-        overflow: "scroll",
-        position: "absolute",
-        top: "-1000px"
-      }, d)).append(c.data.inner).appendTo("body");
-    }
-
-    return c.data.outer.scrollLeft(1e3).scrollTop(1e3), {
-      height: Math.ceil(c.data.outer.offset().top - c.data.inner.offset().top || 0),
-      width: Math.ceil(c.data.outer.offset().left - c.data.inner.offset().left || 0)
+    l.getCleanVal = function () {
+      return c.getMasked(!0);
     };
-  }
 
-  function i() {
-    var a = h(!0);
-    return !(a.height || a.width);
-  }
+    l.getMaskedVal = function (a) {
+      return c.getMasked(!1, a);
+    };
 
-  function j(a) {
-    var b = a.originalEvent;
-    return (!b.axis || b.axis !== b.HORIZONTAL_AXIS) && !b.wheelDeltaX;
-  }
+    l.init = function (g) {
+      g = g || !1;
+      e = e || {};
+      l.clearIfNotMatch = a.jMaskGlobals.clearIfNotMatch;
+      l.byPassKeys = a.jMaskGlobals.byPassKeys;
+      l.translation = a.extend({}, a.jMaskGlobals.translation, e.translation);
+      l = a.extend(!0, {}, l, e);
+      k = c.getRegexMask();
+      if (g) c.events(), c.val(c.getMasked());else {
+        e.placeholder && b.attr("placeholder", e.placeholder);
+        b.data("mask") && b.attr("autocomplete", "off");
+        g = 0;
 
-  var b = !1,
-      c = {
-    data: {
-      index: 0,
-      name: "scrollbar"
-    },
-    firefox: /firefox/i.test(navigator.userAgent),
-    macosx: /mac/i.test(navigator.platform),
-    msedge: /edge\/\d+/i.test(navigator.userAgent),
-    msie: /(msie|trident)/i.test(navigator.userAgent),
-    mobile: /android|webos|iphone|ipad|ipod|blackberry/i.test(navigator.userAgent),
-    overlay: null,
-    scroll: null,
-    scrolls: [],
-    webkit: /webkit/i.test(navigator.userAgent) && !/edge\/\d+/i.test(navigator.userAgent)
+        for (var f = !0; g < d.length; g++) {
+          var h = l.translation[d.charAt(g)];
+
+          if (h && h.recursive) {
+            f = !1;
+            break;
+          }
+        }
+
+        f && b.attr("maxlength", d.length).data("mask-maxlength", !0);
+        c.destroyEvents();
+        c.events();
+        g = c.getCaret();
+        c.val(c.getMasked());
+        c.setCaret(g);
+      }
+    };
+
+    l.init(!b.is("input"));
   };
-  c.scrolls.add = function (a) {
-    this.remove(a).push(a);
-  }, c.scrolls.remove = function (b) {
-    for (; a.inArray(b, this) >= 0;) {
-      this.splice(a.inArray(b, this), 1);
-    }
 
+  a.maskWatchers = {};
+
+  var f = function f() {
+    var b = a(this),
+        d = {},
+        e = b.attr("data-mask");
+    b.attr("data-mask-reverse") && (d.reverse = !0);
+    b.attr("data-mask-clearifnotmatch") && (d.clearIfNotMatch = !0);
+    "true" === b.attr("data-mask-selectonfocus") && (d.selectOnFocus = !0);
+    if (p(b, e, d)) return b.data("mask", new n(this, e, d));
+  },
+      p = function p(b, d, e) {
+    e = e || {};
+    var c = a(b).data("mask"),
+        f = JSON.stringify;
+    b = a(b).val() || a(b).text();
+
+    try {
+      return "function" === typeof d && (d = d(b)), "object" !== _typeof(c) || f(c.options) !== f(e) || c.mask !== d;
+    } catch (w) {}
+  },
+      k = function k(a) {
+    var b = document.createElement("div");
+    a = "on" + a;
+    var e = (a in b);
+    e || (b.setAttribute(a, "return;"), e = "function" === typeof b[a]);
+    return e;
+  };
+
+  a.fn.mask = function (b, d) {
+    d = d || {};
+    var e = this.selector,
+        c = a.jMaskGlobals,
+        f = c.watchInterval;
+    c = d.watchInputs || c.watchInputs;
+
+    var k = function k() {
+      if (p(this, b, d)) return a(this).data("mask", new n(this, b, d));
+    };
+
+    a(this).each(k);
+    e && "" !== e && c && (clearInterval(a.maskWatchers[e]), a.maskWatchers[e] = setInterval(function () {
+      a(document).find(e).each(k);
+    }, f));
     return this;
   };
 
-  var d = {
-    autoScrollSize: !0,
-    autoUpdate: !0,
-    debug: !1,
-    disableBodyScroll: !1,
-    duration: 200,
-    ignoreMobile: !1,
-    ignoreOverlay: !1,
-    isRtl: !1,
-    scrollStep: 30,
-    showArrows: !1,
-    stepScrolling: !0,
-    scrollx: null,
-    scrolly: null,
-    onDestroy: null,
-    onFallback: null,
-    onInit: null,
-    onScroll: null,
-    onUpdate: null
-  },
-      e = function e(b) {
-    c.scroll || (c.overlay = i(), c.scroll = h(), g(), a(window).resize(function () {
-      var a = !1;
-
-      if (c.scroll && (c.scroll.height || c.scroll.width)) {
-        var b = h();
-        b.height === c.scroll.height && b.width === c.scroll.width || (c.scroll = b, a = !0);
-      }
-
-      g(a);
-    })), this.container = b, this.namespace = ".scrollbar_" + c.data.index++, this.options = a.extend({}, d, window.jQueryScrollbarOptions || {}), this.scrollTo = null, this.scrollx = {}, this.scrolly = {}, b.data(c.data.name, this), c.scrolls.add(this);
+  a.fn.masked = function (a) {
+    return this.data("mask").getMaskedVal(a);
   };
 
-  e.prototype = {
-    destroy: function destroy() {
-      if (this.wrapper) {
-        this.container.removeData(c.data.name), c.scrolls.remove(this);
-        var b = this.container.scrollLeft(),
-            d = this.container.scrollTop();
-        this.container.insertBefore(this.wrapper).css({
-          height: "",
-          margin: "",
-          "max-height": ""
-        }).removeClass("scroll-content scroll-scrollx_visible scroll-scrolly_visible").off(this.namespace).scrollLeft(b).scrollTop(d), this.scrollx.scroll.removeClass("scroll-scrollx_visible").find("div").addBack().off(this.namespace), this.scrolly.scroll.removeClass("scroll-scrolly_visible").find("div").addBack().off(this.namespace), this.wrapper.remove(), a(document).add("body").off(this.namespace), a.isFunction(this.options.onDestroy) && this.options.onDestroy.apply(this, [this.container]);
-      }
-    },
-    init: function init(b) {
-      var d = this,
-          e = this.container,
-          f = this.containerWrapper || e,
-          g = this.namespace,
-          h = a.extend(this.options, b || {}),
-          i = {
-        x: this.scrollx,
-        y: this.scrolly
+  a.fn.unmask = function () {
+    clearInterval(a.maskWatchers[this.selector]);
+    delete a.maskWatchers[this.selector];
+    return this.each(function () {
+      var b = a(this).data("mask");
+      b && b.remove().removeData("mask");
+    });
+  };
+
+  a.fn.cleanVal = function () {
+    return this.data("mask").getCleanVal();
+  };
+
+  a.applyDataMask = function (b) {
+    b = b || a.jMaskGlobals.maskElements;
+    (b instanceof a ? b : a(b)).filter(a.jMaskGlobals.dataMaskAttr).each(f);
+  };
+
+  k = {
+    maskElements: "input,td,span,div",
+    dataMaskAttr: "*[data-mask]",
+    dataMask: !0,
+    watchInterval: 300,
+    watchInputs: !0,
+    keyStrokeCompensation: 10,
+    useInput: !/Chrome\/[2-4][0-9]|SamsungBrowser/.test(window.navigator.userAgent) && k("input"),
+    watchDataMask: !1,
+    byPassKeys: [9, 16, 17, 18, 36, 37, 38, 39, 40, 91],
+    translation: {
+      0: {
+        pattern: /\d/
       },
-          k = this.wrapper,
-          l = {},
-          m = {
-        scrollLeft: e.scrollLeft(),
-        scrollTop: e.scrollTop()
-      };
-      if (c.mobile && h.ignoreMobile || c.overlay && h.ignoreOverlay || c.macosx && !c.webkit) return a.isFunction(h.onFallback) && h.onFallback.apply(this, [e]), !1;
-      if (k) l = {
-        height: "auto",
-        "margin-bottom": c.scroll.height * -1 + "px",
-        "max-height": ""
-      }, l[h.isRtl ? "margin-left" : "margin-right"] = c.scroll.width * -1 + "px", f.css(l);else {
-        if (this.wrapper = k = a("<div>").addClass("scroll-wrapper").addClass(e.attr("class")).css("position", "absolute" === e.css("position") ? "absolute" : "relative").insertBefore(e).append(e), h.isRtl && k.addClass("scroll--rtl"), e.is("textarea") && (this.containerWrapper = f = a("<div>").insertBefore(e).append(e), k.addClass("scroll-textarea")), l = {
-          height: "auto",
-          "margin-bottom": c.scroll.height * -1 + "px",
-          "max-height": ""
-        }, l[h.isRtl ? "margin-left" : "margin-right"] = c.scroll.width * -1 + "px", f.addClass("scroll-content").css(l), e.on("scroll" + g, function (b) {
-          var f = e.scrollLeft(),
-              g = e.scrollTop();
-          if (h.isRtl) switch (!0) {
-            case c.firefox:
-              f = Math.abs(f);
-
-            case c.msedge || c.msie:
-              f = e[0].scrollWidth - e[0].clientWidth - f;
-          }
-          a.isFunction(h.onScroll) && h.onScroll.call(d, {
-            maxScroll: i.y.maxScrollOffset,
-            scroll: g,
-            size: i.y.size,
-            visible: i.y.visible
-          }, {
-            maxScroll: i.x.maxScrollOffset,
-            scroll: f,
-            size: i.x.size,
-            visible: i.x.visible
-          }), i.x.isVisible && i.x.scroll.bar.css("left", f * i.x.kx + "px"), i.y.isVisible && i.y.scroll.bar.css("top", g * i.y.kx + "px");
-        }), k.on("scroll" + g, function () {
-          k.scrollTop(0).scrollLeft(0);
-        }), h.disableBodyScroll) {
-          var n = function n(a) {
-            j(a) ? i.y.isVisible && i.y.mousewheel(a) : i.x.isVisible && i.x.mousewheel(a);
-          };
-
-          k.on("MozMousePixelScroll" + g, n), k.on("mousewheel" + g, n), c.mobile && k.on("touchstart" + g, function (b) {
-            var c = b.originalEvent.touches && b.originalEvent.touches[0] || b,
-                d = {
-              pageX: c.pageX,
-              pageY: c.pageY
-            },
-                f = {
-              left: e.scrollLeft(),
-              top: e.scrollTop()
-            };
-            a(document).on("touchmove" + g, function (a) {
-              var b = a.originalEvent.targetTouches && a.originalEvent.targetTouches[0] || a;
-              e.scrollLeft(f.left + d.pageX - b.pageX), e.scrollTop(f.top + d.pageY - b.pageY), a.preventDefault();
-            }), a(document).on("touchend" + g, function () {
-              a(document).off(g);
-            });
-          });
-        }
-
-        a.isFunction(h.onInit) && h.onInit.apply(this, [e]);
+      9: {
+        pattern: /\d/,
+        optional: !0
+      },
+      "#": {
+        pattern: /\d/,
+        recursive: !0
+      },
+      A: {
+        pattern: /[a-zA-Z0-9]/
+      },
+      S: {
+        pattern: /[a-zA-Z]/
       }
-      a.each(i, function (b, f) {
-        var k = null,
-            l = 1,
-            m = "x" === b ? "scrollLeft" : "scrollTop",
-            n = h.scrollStep,
-            o = function o() {
-          var a = e[m]();
-          e[m](a + n), 1 == l && a + n >= p && (a = e[m]()), l == -1 && a + n <= p && (a = e[m]()), e[m]() == a && k && k();
-        },
-            p = 0;
-
-        f.scroll || (f.scroll = d._getScroll(h["scroll" + b]).addClass("scroll-" + b), h.showArrows && f.scroll.addClass("scroll-element_arrows_visible"), f.mousewheel = function (a) {
-          if (!f.isVisible || "x" === b && j(a)) return !0;
-          if ("y" === b && !j(a)) return i.x.mousewheel(a), !0;
-          var c = a.originalEvent.wheelDelta * -1 || a.originalEvent.detail,
-              g = f.size - f.visible - f.offset;
-          return c || ("x" === b && a.originalEvent.deltaX ? c = 40 * a.originalEvent.deltaX : "y" === b && a.originalEvent.deltaY && (c = 40 * a.originalEvent.deltaY)), (c > 0 && p < g || c < 0 && p > 0) && (p += c, p < 0 && (p = 0), p > g && (p = g), d.scrollTo = d.scrollTo || {}, d.scrollTo[m] = p, setTimeout(function () {
-            d.scrollTo && (e.stop().animate(d.scrollTo, 240, "linear", function () {
-              p = e[m]();
-            }), d.scrollTo = null);
-          }, 1)), a.preventDefault(), !1;
-        }, f.scroll.on("MozMousePixelScroll" + g, f.mousewheel).on("mousewheel" + g, f.mousewheel).on("mouseenter" + g, function () {
-          p = e[m]();
-        }), f.scroll.find(".scroll-arrow, .scroll-element_track").on("mousedown" + g, function (g) {
-          if (1 != g.which) return !0;
-          l = 1;
-          var i = {
-            eventOffset: g["x" === b ? "pageX" : "pageY"],
-            maxScrollValue: f.size - f.visible - f.offset,
-            scrollbarOffset: f.scroll.bar.offset()["x" === b ? "left" : "top"],
-            scrollbarSize: f.scroll.bar["x" === b ? "outerWidth" : "outerHeight"]()
-          },
-              j = 0,
-              q = 0;
-
-          if (a(this).hasClass("scroll-arrow")) {
-            if (l = a(this).hasClass("scroll-arrow_more") ? 1 : -1, n = h.scrollStep * l, p = l > 0 ? i.maxScrollValue : 0, h.isRtl) switch (!0) {
-              case c.firefox:
-                p = l > 0 ? 0 : i.maxScrollValue * -1;
-                break;
-
-              case c.msie || c.msedge:
-            }
-          } else l = i.eventOffset > i.scrollbarOffset + i.scrollbarSize ? 1 : i.eventOffset < i.scrollbarOffset ? -1 : 0, "x" === b && h.isRtl && (c.msie || c.msedge) && (l *= -1), n = Math.round(.75 * f.visible) * l, p = i.eventOffset - i.scrollbarOffset - (h.stepScrolling ? 1 == l ? i.scrollbarSize : 0 : Math.round(i.scrollbarSize / 2)), p = e[m]() + p / f.kx;
-
-          return d.scrollTo = d.scrollTo || {}, d.scrollTo[m] = h.stepScrolling ? e[m]() + n : p, h.stepScrolling && (k = function k() {
-            p = e[m](), clearInterval(q), clearTimeout(j), j = 0, q = 0;
-          }, j = setTimeout(function () {
-            q = setInterval(o, 40);
-          }, h.duration + 100)), setTimeout(function () {
-            d.scrollTo && (e.animate(d.scrollTo, h.duration), d.scrollTo = null);
-          }, 1), d._handleMouseDown(k, g);
-        }), f.scroll.bar.on("mousedown" + g, function (i) {
-          if (1 != i.which) return !0;
-          var j = i["x" === b ? "pageX" : "pageY"],
-              k = e[m]();
-          return f.scroll.addClass("scroll-draggable"), a(document).on("mousemove" + g, function (a) {
-            var d = parseInt((a["x" === b ? "pageX" : "pageY"] - j) / f.kx, 10);
-            "x" === b && h.isRtl && (c.msie || c.msedge) && (d *= -1), e[m](k + d);
-          }), d._handleMouseDown(function () {
-            f.scroll.removeClass("scroll-draggable"), p = e[m]();
-          }, i);
-        }));
-      }), a.each(i, function (a, b) {
-        var c = "scroll-scroll" + a + "_visible",
-            d = "x" == a ? i.y : i.x;
-        b.scroll.removeClass(c), d.scroll.removeClass(c), f.removeClass(c);
-      }), a.each(i, function (b, c) {
-        a.extend(c, "x" == b ? {
-          offset: parseInt(e.css("left"), 10) || 0,
-          size: e.prop("scrollWidth"),
-          visible: k.width()
-        } : {
-          offset: parseInt(e.css("top"), 10) || 0,
-          size: e.prop("scrollHeight"),
-          visible: k.height()
-        });
-      }), this._updateScroll("x", this.scrollx), this._updateScroll("y", this.scrolly), a.isFunction(h.onUpdate) && h.onUpdate.apply(this, [e]), a.each(i, function (a, b) {
-        var c = "x" === a ? "left" : "top",
-            d = "x" === a ? "outerWidth" : "outerHeight",
-            f = "x" === a ? "width" : "height",
-            g = parseInt(e.css(c), 10) || 0,
-            i = b.size,
-            j = b.visible + g,
-            k = b.scroll.size[d]() + (parseInt(b.scroll.size.css(c), 10) || 0);
-        h.autoScrollSize && (b.scrollbarSize = parseInt(k * j / i, 10), b.scroll.bar.css(f, b.scrollbarSize + "px")), b.scrollbarSize = b.scroll.bar[d](), b.kx = (k - b.scrollbarSize) / (i - j) || 1, b.maxScrollOffset = i - j;
-      }), e.scrollLeft(m.scrollLeft).scrollTop(m.scrollTop).trigger("scroll");
-    },
-    _getScroll: function _getScroll(b) {
-      var c = {
-        advanced: ['<div class="scroll-element">', '<div class="scroll-element_corner"></div>', '<div class="scroll-arrow scroll-arrow_less"></div>', '<div class="scroll-arrow scroll-arrow_more"></div>', '<div class="scroll-element_outer">', '<div class="scroll-element_size"></div>', '<div class="scroll-element_inner-wrapper">', '<div class="scroll-element_inner scroll-element_track">', '<div class="scroll-element_inner-bottom"></div>', "</div>", "</div>", '<div class="scroll-bar">', '<div class="scroll-bar_body">', '<div class="scroll-bar_body-inner"></div>', "</div>", '<div class="scroll-bar_bottom"></div>', '<div class="scroll-bar_center"></div>', "</div>", "</div>", "</div>"].join(""),
-        simple: ['<div class="scroll-element">', '<div class="scroll-element_outer">', '<div class="scroll-element_size"></div>', '<div class="scroll-element_track"></div>', '<div class="scroll-bar"></div>', "</div>", "</div>"].join("")
-      };
-      return c[b] && (b = c[b]), b || (b = c.simple), b = "string" == typeof b ? a(b).appendTo(this.wrapper) : a(b), a.extend(b, {
-        bar: b.find(".scroll-bar"),
-        size: b.find(".scroll-element_size"),
-        track: b.find(".scroll-element_track")
-      }), b;
-    },
-    _handleMouseDown: function _handleMouseDown(b, c) {
-      var d = this.namespace;
-      return a(document).on("blur" + d, function () {
-        a(document).add("body").off(d), b && b();
-      }), a(document).on("dragstart" + d, function (a) {
-        return a.preventDefault(), !1;
-      }), a(document).on("mouseup" + d, function () {
-        a(document).add("body").off(d), b && b();
-      }), a("body").on("selectstart" + d, function (a) {
-        return a.preventDefault(), !1;
-      }), c && c.preventDefault(), !1;
-    },
-    _updateScroll: function _updateScroll(b, d) {
-      var e = this.container,
-          f = this.containerWrapper || e,
-          g = "scroll-scroll" + b + "_visible",
-          h = "x" === b ? this.scrolly : this.scrollx,
-          i = parseInt(this.container.css("x" === b ? "left" : "top"), 10) || 0,
-          j = this.wrapper,
-          k = d.size,
-          l = d.visible + i;
-      d.isVisible = k - l > 1, d.isVisible ? (d.scroll.addClass(g), h.scroll.addClass(g), f.addClass(g)) : (d.scroll.removeClass(g), h.scroll.removeClass(g), f.removeClass(g)), "y" === b && (e.is("textarea") || k < l ? f.css({
-        height: l + c.scroll.height + "px",
-        "max-height": "none"
-      }) : f.css({
-        "max-height": l + c.scroll.height + "px"
-      })), d.size == e.prop("scrollWidth") && h.size == e.prop("scrollHeight") && d.visible == j.width() && h.visible == j.height() && d.offset == (parseInt(e.css("left"), 10) || 0) && h.offset == (parseInt(e.css("top"), 10) || 0) || (a.extend(this.scrollx, {
-        offset: parseInt(e.css("left"), 10) || 0,
-        size: e.prop("scrollWidth"),
-        visible: j.width()
-      }), a.extend(this.scrolly, {
-        offset: parseInt(e.css("top"), 10) || 0,
-        size: this.container.prop("scrollHeight"),
-        visible: j.height()
-      }), this._updateScroll("x" === b ? "y" : "x", h));
     }
   };
-  var f = e;
-  a.fn.scrollbar = function (b, d) {
-    return "string" != typeof b && (d = b, b = "init"), "undefined" == typeof d && (d = []), a.isArray(d) || (d = [d]), this.not("body, .scroll-wrapper").each(function () {
-      var e = a(this),
-          g = e.data(c.data.name);
-      (g || "init" === b) && (g || (g = new f(e)), g[b] && g[b].apply(g, d));
-    }), this;
-  }, a.fn.scrollbar.options = d;
-
-  var g = function () {
-    var a = 0,
-        d = 0;
-    return function (e) {
-      var f, h, i, j, k, l, m;
-
-      for (f = 0; f < c.scrolls.length; f++) {
-        j = c.scrolls[f], h = j.container, i = j.options, k = j.wrapper, l = j.scrollx, m = j.scrolly, (e || i.autoUpdate && k && k.is(":visible") && (h.prop("scrollWidth") != l.size || h.prop("scrollHeight") != m.size || k.width() != l.visible || k.height() != m.visible)) && (j.init(), i.debug && (window.console && console.log({
-          scrollHeight: h.prop("scrollHeight") + ":" + j.scrolly.size,
-          scrollWidth: h.prop("scrollWidth") + ":" + j.scrollx.size,
-          visibleHeight: k.height() + ":" + j.scrolly.visible,
-          visibleWidth: k.width() + ":" + j.scrollx.visible
-        }, !0), d++));
-      }
-
-      b && d > 10 ? (window.console && console.log("Scroll updates exceed 10"), g = function g() {}) : (clearTimeout(a), a = setTimeout(g, 300));
-    };
-  }();
-
-  window.angular && !function (a) {
-    a.module("jQueryScrollbar", []).provider("jQueryScrollbar", function () {
-      var b = d;
-      return {
-        setOptions: function setOptions(c) {
-          a.extend(b, c);
-        },
-        $get: function $get() {
-          return {
-            options: a.copy(b)
-          };
-        }
-      };
-    }).directive("jqueryScrollbar", ["jQueryScrollbar", "$parse", function (a, b) {
-      return {
-        restrict: "AC",
-        link: function link(c, d, e) {
-          var f = b(e.jqueryScrollbar),
-              g = f(c);
-          d.scrollbar(g || a.options).on("$destroy", function () {
-            d.scrollbar("destroy");
-          });
-        }
-      };
-    }]);
-  }(window.angular);
-});
+  a.jMaskGlobals = a.jMaskGlobals || {};
+  k = a.jMaskGlobals = a.extend(!0, {}, k, a.jMaskGlobals);
+  k.dataMask && a.applyDataMask();
+  setInterval(function () {
+    a.jMaskGlobals.watchDataMask && a.applyDataMask();
+  }, k.watchInterval);
+}, window.jQuery, window.Zepto);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11673,31 +11741,437 @@ return jQuery;
 
 
 /***/ }),
-/* 5 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * jQuery CSS Customizable Scrollbar
+ *
+ * Copyright 2015, Yuriy Khabarov
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * If you found bug, please contact me via email <13real008@gmail.com>
+ *
+ * Compressed by http://jscompress.com/
+ *
+ * @author Yuriy Khabarov aka Gromo
+ * @version 0.2.11
+ * @url https://github.com/gromo/jquery.scrollbar/
+ *
+ */
+!function (a, b) {
+   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5)], __WEBPACK_AMD_DEFINE_FACTORY__ = (b),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
+}(this, function (a) {
+  "use strict";
+
+  function h(b) {
+    if (c.webkit && !b) return {
+      height: 0,
+      width: 0
+    };
+
+    if (!c.data.outer) {
+      var d = {
+        border: "none",
+        "box-sizing": "content-box",
+        height: "200px",
+        margin: "0",
+        padding: "0",
+        width: "200px"
+      };
+      c.data.inner = a("<div>").css(a.extend({}, d)), c.data.outer = a("<div>").css(a.extend({
+        left: "-1000px",
+        overflow: "scroll",
+        position: "absolute",
+        top: "-1000px"
+      }, d)).append(c.data.inner).appendTo("body");
+    }
+
+    return c.data.outer.scrollLeft(1e3).scrollTop(1e3), {
+      height: Math.ceil(c.data.outer.offset().top - c.data.inner.offset().top || 0),
+      width: Math.ceil(c.data.outer.offset().left - c.data.inner.offset().left || 0)
+    };
+  }
+
+  function i() {
+    var a = h(!0);
+    return !(a.height || a.width);
+  }
+
+  function j(a) {
+    var b = a.originalEvent;
+    return (!b.axis || b.axis !== b.HORIZONTAL_AXIS) && !b.wheelDeltaX;
+  }
+
+  var b = !1,
+      c = {
+    data: {
+      index: 0,
+      name: "scrollbar"
+    },
+    firefox: /firefox/i.test(navigator.userAgent),
+    macosx: /mac/i.test(navigator.platform),
+    msedge: /edge\/\d+/i.test(navigator.userAgent),
+    msie: /(msie|trident)/i.test(navigator.userAgent),
+    mobile: /android|webos|iphone|ipad|ipod|blackberry/i.test(navigator.userAgent),
+    overlay: null,
+    scroll: null,
+    scrolls: [],
+    webkit: /webkit/i.test(navigator.userAgent) && !/edge\/\d+/i.test(navigator.userAgent)
+  };
+  c.scrolls.add = function (a) {
+    this.remove(a).push(a);
+  }, c.scrolls.remove = function (b) {
+    for (; a.inArray(b, this) >= 0;) {
+      this.splice(a.inArray(b, this), 1);
+    }
+
+    return this;
+  };
+
+  var d = {
+    autoScrollSize: !0,
+    autoUpdate: !0,
+    debug: !1,
+    disableBodyScroll: !1,
+    duration: 200,
+    ignoreMobile: !1,
+    ignoreOverlay: !1,
+    isRtl: !1,
+    scrollStep: 30,
+    showArrows: !1,
+    stepScrolling: !0,
+    scrollx: null,
+    scrolly: null,
+    onDestroy: null,
+    onFallback: null,
+    onInit: null,
+    onScroll: null,
+    onUpdate: null
+  },
+      e = function e(b) {
+    c.scroll || (c.overlay = i(), c.scroll = h(), g(), a(window).resize(function () {
+      var a = !1;
+
+      if (c.scroll && (c.scroll.height || c.scroll.width)) {
+        var b = h();
+        b.height === c.scroll.height && b.width === c.scroll.width || (c.scroll = b, a = !0);
+      }
+
+      g(a);
+    })), this.container = b, this.namespace = ".scrollbar_" + c.data.index++, this.options = a.extend({}, d, window.jQueryScrollbarOptions || {}), this.scrollTo = null, this.scrollx = {}, this.scrolly = {}, b.data(c.data.name, this), c.scrolls.add(this);
+  };
+
+  e.prototype = {
+    destroy: function destroy() {
+      if (this.wrapper) {
+        this.container.removeData(c.data.name), c.scrolls.remove(this);
+        var b = this.container.scrollLeft(),
+            d = this.container.scrollTop();
+        this.container.insertBefore(this.wrapper).css({
+          height: "",
+          margin: "",
+          "max-height": ""
+        }).removeClass("scroll-content scroll-scrollx_visible scroll-scrolly_visible").off(this.namespace).scrollLeft(b).scrollTop(d), this.scrollx.scroll.removeClass("scroll-scrollx_visible").find("div").addBack().off(this.namespace), this.scrolly.scroll.removeClass("scroll-scrolly_visible").find("div").addBack().off(this.namespace), this.wrapper.remove(), a(document).add("body").off(this.namespace), a.isFunction(this.options.onDestroy) && this.options.onDestroy.apply(this, [this.container]);
+      }
+    },
+    init: function init(b) {
+      var d = this,
+          e = this.container,
+          f = this.containerWrapper || e,
+          g = this.namespace,
+          h = a.extend(this.options, b || {}),
+          i = {
+        x: this.scrollx,
+        y: this.scrolly
+      },
+          k = this.wrapper,
+          l = {},
+          m = {
+        scrollLeft: e.scrollLeft(),
+        scrollTop: e.scrollTop()
+      };
+      if (c.mobile && h.ignoreMobile || c.overlay && h.ignoreOverlay || c.macosx && !c.webkit) return a.isFunction(h.onFallback) && h.onFallback.apply(this, [e]), !1;
+      if (k) l = {
+        height: "auto",
+        "margin-bottom": c.scroll.height * -1 + "px",
+        "max-height": ""
+      }, l[h.isRtl ? "margin-left" : "margin-right"] = c.scroll.width * -1 + "px", f.css(l);else {
+        if (this.wrapper = k = a("<div>").addClass("scroll-wrapper").addClass(e.attr("class")).css("position", "absolute" === e.css("position") ? "absolute" : "relative").insertBefore(e).append(e), h.isRtl && k.addClass("scroll--rtl"), e.is("textarea") && (this.containerWrapper = f = a("<div>").insertBefore(e).append(e), k.addClass("scroll-textarea")), l = {
+          height: "auto",
+          "margin-bottom": c.scroll.height * -1 + "px",
+          "max-height": ""
+        }, l[h.isRtl ? "margin-left" : "margin-right"] = c.scroll.width * -1 + "px", f.addClass("scroll-content").css(l), e.on("scroll" + g, function (b) {
+          var f = e.scrollLeft(),
+              g = e.scrollTop();
+          if (h.isRtl) switch (!0) {
+            case c.firefox:
+              f = Math.abs(f);
+
+            case c.msedge || c.msie:
+              f = e[0].scrollWidth - e[0].clientWidth - f;
+          }
+          a.isFunction(h.onScroll) && h.onScroll.call(d, {
+            maxScroll: i.y.maxScrollOffset,
+            scroll: g,
+            size: i.y.size,
+            visible: i.y.visible
+          }, {
+            maxScroll: i.x.maxScrollOffset,
+            scroll: f,
+            size: i.x.size,
+            visible: i.x.visible
+          }), i.x.isVisible && i.x.scroll.bar.css("left", f * i.x.kx + "px"), i.y.isVisible && i.y.scroll.bar.css("top", g * i.y.kx + "px");
+        }), k.on("scroll" + g, function () {
+          k.scrollTop(0).scrollLeft(0);
+        }), h.disableBodyScroll) {
+          var n = function n(a) {
+            j(a) ? i.y.isVisible && i.y.mousewheel(a) : i.x.isVisible && i.x.mousewheel(a);
+          };
+
+          k.on("MozMousePixelScroll" + g, n), k.on("mousewheel" + g, n), c.mobile && k.on("touchstart" + g, function (b) {
+            var c = b.originalEvent.touches && b.originalEvent.touches[0] || b,
+                d = {
+              pageX: c.pageX,
+              pageY: c.pageY
+            },
+                f = {
+              left: e.scrollLeft(),
+              top: e.scrollTop()
+            };
+            a(document).on("touchmove" + g, function (a) {
+              var b = a.originalEvent.targetTouches && a.originalEvent.targetTouches[0] || a;
+              e.scrollLeft(f.left + d.pageX - b.pageX), e.scrollTop(f.top + d.pageY - b.pageY), a.preventDefault();
+            }), a(document).on("touchend" + g, function () {
+              a(document).off(g);
+            });
+          });
+        }
+
+        a.isFunction(h.onInit) && h.onInit.apply(this, [e]);
+      }
+      a.each(i, function (b, f) {
+        var k = null,
+            l = 1,
+            m = "x" === b ? "scrollLeft" : "scrollTop",
+            n = h.scrollStep,
+            o = function o() {
+          var a = e[m]();
+          e[m](a + n), 1 == l && a + n >= p && (a = e[m]()), l == -1 && a + n <= p && (a = e[m]()), e[m]() == a && k && k();
+        },
+            p = 0;
+
+        f.scroll || (f.scroll = d._getScroll(h["scroll" + b]).addClass("scroll-" + b), h.showArrows && f.scroll.addClass("scroll-element_arrows_visible"), f.mousewheel = function (a) {
+          if (!f.isVisible || "x" === b && j(a)) return !0;
+          if ("y" === b && !j(a)) return i.x.mousewheel(a), !0;
+          var c = a.originalEvent.wheelDelta * -1 || a.originalEvent.detail,
+              g = f.size - f.visible - f.offset;
+          return c || ("x" === b && a.originalEvent.deltaX ? c = 40 * a.originalEvent.deltaX : "y" === b && a.originalEvent.deltaY && (c = 40 * a.originalEvent.deltaY)), (c > 0 && p < g || c < 0 && p > 0) && (p += c, p < 0 && (p = 0), p > g && (p = g), d.scrollTo = d.scrollTo || {}, d.scrollTo[m] = p, setTimeout(function () {
+            d.scrollTo && (e.stop().animate(d.scrollTo, 240, "linear", function () {
+              p = e[m]();
+            }), d.scrollTo = null);
+          }, 1)), a.preventDefault(), !1;
+        }, f.scroll.on("MozMousePixelScroll" + g, f.mousewheel).on("mousewheel" + g, f.mousewheel).on("mouseenter" + g, function () {
+          p = e[m]();
+        }), f.scroll.find(".scroll-arrow, .scroll-element_track").on("mousedown" + g, function (g) {
+          if (1 != g.which) return !0;
+          l = 1;
+          var i = {
+            eventOffset: g["x" === b ? "pageX" : "pageY"],
+            maxScrollValue: f.size - f.visible - f.offset,
+            scrollbarOffset: f.scroll.bar.offset()["x" === b ? "left" : "top"],
+            scrollbarSize: f.scroll.bar["x" === b ? "outerWidth" : "outerHeight"]()
+          },
+              j = 0,
+              q = 0;
+
+          if (a(this).hasClass("scroll-arrow")) {
+            if (l = a(this).hasClass("scroll-arrow_more") ? 1 : -1, n = h.scrollStep * l, p = l > 0 ? i.maxScrollValue : 0, h.isRtl) switch (!0) {
+              case c.firefox:
+                p = l > 0 ? 0 : i.maxScrollValue * -1;
+                break;
+
+              case c.msie || c.msedge:
+            }
+          } else l = i.eventOffset > i.scrollbarOffset + i.scrollbarSize ? 1 : i.eventOffset < i.scrollbarOffset ? -1 : 0, "x" === b && h.isRtl && (c.msie || c.msedge) && (l *= -1), n = Math.round(.75 * f.visible) * l, p = i.eventOffset - i.scrollbarOffset - (h.stepScrolling ? 1 == l ? i.scrollbarSize : 0 : Math.round(i.scrollbarSize / 2)), p = e[m]() + p / f.kx;
+
+          return d.scrollTo = d.scrollTo || {}, d.scrollTo[m] = h.stepScrolling ? e[m]() + n : p, h.stepScrolling && (k = function k() {
+            p = e[m](), clearInterval(q), clearTimeout(j), j = 0, q = 0;
+          }, j = setTimeout(function () {
+            q = setInterval(o, 40);
+          }, h.duration + 100)), setTimeout(function () {
+            d.scrollTo && (e.animate(d.scrollTo, h.duration), d.scrollTo = null);
+          }, 1), d._handleMouseDown(k, g);
+        }), f.scroll.bar.on("mousedown" + g, function (i) {
+          if (1 != i.which) return !0;
+          var j = i["x" === b ? "pageX" : "pageY"],
+              k = e[m]();
+          return f.scroll.addClass("scroll-draggable"), a(document).on("mousemove" + g, function (a) {
+            var d = parseInt((a["x" === b ? "pageX" : "pageY"] - j) / f.kx, 10);
+            "x" === b && h.isRtl && (c.msie || c.msedge) && (d *= -1), e[m](k + d);
+          }), d._handleMouseDown(function () {
+            f.scroll.removeClass("scroll-draggable"), p = e[m]();
+          }, i);
+        }));
+      }), a.each(i, function (a, b) {
+        var c = "scroll-scroll" + a + "_visible",
+            d = "x" == a ? i.y : i.x;
+        b.scroll.removeClass(c), d.scroll.removeClass(c), f.removeClass(c);
+      }), a.each(i, function (b, c) {
+        a.extend(c, "x" == b ? {
+          offset: parseInt(e.css("left"), 10) || 0,
+          size: e.prop("scrollWidth"),
+          visible: k.width()
+        } : {
+          offset: parseInt(e.css("top"), 10) || 0,
+          size: e.prop("scrollHeight"),
+          visible: k.height()
+        });
+      }), this._updateScroll("x", this.scrollx), this._updateScroll("y", this.scrolly), a.isFunction(h.onUpdate) && h.onUpdate.apply(this, [e]), a.each(i, function (a, b) {
+        var c = "x" === a ? "left" : "top",
+            d = "x" === a ? "outerWidth" : "outerHeight",
+            f = "x" === a ? "width" : "height",
+            g = parseInt(e.css(c), 10) || 0,
+            i = b.size,
+            j = b.visible + g,
+            k = b.scroll.size[d]() + (parseInt(b.scroll.size.css(c), 10) || 0);
+        h.autoScrollSize && (b.scrollbarSize = parseInt(k * j / i, 10), b.scroll.bar.css(f, b.scrollbarSize + "px")), b.scrollbarSize = b.scroll.bar[d](), b.kx = (k - b.scrollbarSize) / (i - j) || 1, b.maxScrollOffset = i - j;
+      }), e.scrollLeft(m.scrollLeft).scrollTop(m.scrollTop).trigger("scroll");
+    },
+    _getScroll: function _getScroll(b) {
+      var c = {
+        advanced: ['<div class="scroll-element">', '<div class="scroll-element_corner"></div>', '<div class="scroll-arrow scroll-arrow_less"></div>', '<div class="scroll-arrow scroll-arrow_more"></div>', '<div class="scroll-element_outer">', '<div class="scroll-element_size"></div>', '<div class="scroll-element_inner-wrapper">', '<div class="scroll-element_inner scroll-element_track">', '<div class="scroll-element_inner-bottom"></div>', "</div>", "</div>", '<div class="scroll-bar">', '<div class="scroll-bar_body">', '<div class="scroll-bar_body-inner"></div>', "</div>", '<div class="scroll-bar_bottom"></div>', '<div class="scroll-bar_center"></div>', "</div>", "</div>", "</div>"].join(""),
+        simple: ['<div class="scroll-element">', '<div class="scroll-element_outer">', '<div class="scroll-element_size"></div>', '<div class="scroll-element_track"></div>', '<div class="scroll-bar"></div>', "</div>", "</div>"].join("")
+      };
+      return c[b] && (b = c[b]), b || (b = c.simple), b = "string" == typeof b ? a(b).appendTo(this.wrapper) : a(b), a.extend(b, {
+        bar: b.find(".scroll-bar"),
+        size: b.find(".scroll-element_size"),
+        track: b.find(".scroll-element_track")
+      }), b;
+    },
+    _handleMouseDown: function _handleMouseDown(b, c) {
+      var d = this.namespace;
+      return a(document).on("blur" + d, function () {
+        a(document).add("body").off(d), b && b();
+      }), a(document).on("dragstart" + d, function (a) {
+        return a.preventDefault(), !1;
+      }), a(document).on("mouseup" + d, function () {
+        a(document).add("body").off(d), b && b();
+      }), a("body").on("selectstart" + d, function (a) {
+        return a.preventDefault(), !1;
+      }), c && c.preventDefault(), !1;
+    },
+    _updateScroll: function _updateScroll(b, d) {
+      var e = this.container,
+          f = this.containerWrapper || e,
+          g = "scroll-scroll" + b + "_visible",
+          h = "x" === b ? this.scrolly : this.scrollx,
+          i = parseInt(this.container.css("x" === b ? "left" : "top"), 10) || 0,
+          j = this.wrapper,
+          k = d.size,
+          l = d.visible + i;
+      d.isVisible = k - l > 1, d.isVisible ? (d.scroll.addClass(g), h.scroll.addClass(g), f.addClass(g)) : (d.scroll.removeClass(g), h.scroll.removeClass(g), f.removeClass(g)), "y" === b && (e.is("textarea") || k < l ? f.css({
+        height: l + c.scroll.height + "px",
+        "max-height": "none"
+      }) : f.css({
+        "max-height": l + c.scroll.height + "px"
+      })), d.size == e.prop("scrollWidth") && h.size == e.prop("scrollHeight") && d.visible == j.width() && h.visible == j.height() && d.offset == (parseInt(e.css("left"), 10) || 0) && h.offset == (parseInt(e.css("top"), 10) || 0) || (a.extend(this.scrollx, {
+        offset: parseInt(e.css("left"), 10) || 0,
+        size: e.prop("scrollWidth"),
+        visible: j.width()
+      }), a.extend(this.scrolly, {
+        offset: parseInt(e.css("top"), 10) || 0,
+        size: this.container.prop("scrollHeight"),
+        visible: j.height()
+      }), this._updateScroll("x" === b ? "y" : "x", h));
+    }
+  };
+  var f = e;
+  a.fn.scrollbar = function (b, d) {
+    return "string" != typeof b && (d = b, b = "init"), "undefined" == typeof d && (d = []), a.isArray(d) || (d = [d]), this.not("body, .scroll-wrapper").each(function () {
+      var e = a(this),
+          g = e.data(c.data.name);
+      (g || "init" === b) && (g || (g = new f(e)), g[b] && g[b].apply(g, d));
+    }), this;
+  }, a.fn.scrollbar.options = d;
+
+  var g = function () {
+    var a = 0,
+        d = 0;
+    return function (e) {
+      var f, h, i, j, k, l, m;
+
+      for (f = 0; f < c.scrolls.length; f++) {
+        j = c.scrolls[f], h = j.container, i = j.options, k = j.wrapper, l = j.scrollx, m = j.scrolly, (e || i.autoUpdate && k && k.is(":visible") && (h.prop("scrollWidth") != l.size || h.prop("scrollHeight") != m.size || k.width() != l.visible || k.height() != m.visible)) && (j.init(), i.debug && (window.console && console.log({
+          scrollHeight: h.prop("scrollHeight") + ":" + j.scrolly.size,
+          scrollWidth: h.prop("scrollWidth") + ":" + j.scrollx.size,
+          visibleHeight: k.height() + ":" + j.scrolly.visible,
+          visibleWidth: k.width() + ":" + j.scrollx.visible
+        }, !0), d++));
+      }
+
+      b && d > 10 ? (window.console && console.log("Scroll updates exceed 10"), g = function g() {}) : (clearTimeout(a), a = setTimeout(g, 300));
+    };
+  }();
+
+  window.angular && !function (a) {
+    a.module("jQueryScrollbar", []).provider("jQueryScrollbar", function () {
+      var b = d;
+      return {
+        setOptions: function setOptions(c) {
+          a.extend(b, c);
+        },
+        $get: function $get() {
+          return {
+            options: a.copy(b)
+          };
+        }
+      };
+    }).directive("jqueryScrollbar", ["jQueryScrollbar", "$parse", function (a, b) {
+      return {
+        restrict: "AC",
+        link: function link(c, d, e) {
+          var f = b(e.jqueryScrollbar),
+              g = f(c);
+          d.scrollbar(g || a.options).on("$destroy", function () {
+            d.scrollbar("destroy");
+          });
+        }
+      };
+    }]);
+  }(window.angular);
+});
+
+/***/ }),
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
-/* harmony import */ var _blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
-/* harmony import */ var _blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(11);
-/* harmony import */ var _blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(12);
-/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13);
-/* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(14);
-/* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(15);
-/* harmony import */ var _blocks_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16);
-/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(17);
-/* harmony import */ var _blocks_service_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(18);
-/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(19);
-/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(20);
-/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(21);
-/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(22);
+/* harmony import */ var _blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+/* harmony import */ var _blocks_pageLoad_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
+/* harmony import */ var _blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
+/* harmony import */ var _blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13);
+/* harmony import */ var _blocks_form_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(14);
+/* harmony import */ var _blocks_header_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(15);
+/* harmony import */ var _blocks_sliders_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(16);
+/* harmony import */ var _blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(17);
+/* harmony import */ var _blocks_index_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(18);
+/* harmony import */ var _blocks_services_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(19);
+/* harmony import */ var _blocks_service_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(20);
+/* harmony import */ var _blocks_specialist_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(21);
+/* harmony import */ var _blocks_team_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(22);
+/* harmony import */ var _blocks_price_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(23);
+/* harmony import */ var _blocks_map_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(24);
 //📁 /node_modules/  jquery 3.5.1
 
 global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁 /node_modules/  slick 1.8.1
@@ -11711,6 +12185,8 @@ global.jQuery = global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; //📁
  //📁 /assets/js/blocks  _animPageScroll.js
 
  //📁 /assets/js/blocks  _documentClick.js
+
+ //📁 /assets/js/blocks  form.js
 
  //📁 /assets/js/blocks  _header.js
 
@@ -11751,102 +12227,80 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_animPageScroll_js__WEBPACK_IMPORTED_MODULE_5__["usefulBlog"])(); // document onclick
 
-  Object(_blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__["documentClick"])(); // header services
+  Object(_blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__["documentClick"])(); // popup form recording
 
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_7__["headerServices"])(); // header open search input
+  Object(_blocks_form_js__WEBPACK_IMPORTED_MODULE_7__["popupFormRecording"])(); // header services
 
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_7__["headerSearch"])(); // header menu selection
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_8__["headerServices"])(); // header open search input
 
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_7__["menuSelection"])(); // btn scroll up
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_8__["headerSearch"])(); // header menu selection
 
-  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_7__["scrollUp"])(); // slider main page
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_8__["menuSelection"])(); // btn scroll up
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderMain"])(); // slider main page equipment
+  Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_8__["scrollUp"])(); // slider main page
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderEquipment"])(); // slider main page specialists
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_9__["sliderMain"])(); // slider main page equipment
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderSpecialists"])(); // slider portfolio specialist
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_9__["sliderEquipment"])(); // slider main page specialists
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderSpecialistsPortfolio"])(); // slider stage view
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_9__["sliderSpecialists"])(); // slider portfolio specialist
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["sliderstageView"])(); // slider service reviews
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_9__["sliderSpecialistsPortfolio"])(); // slider stage view
 
-  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_8__["slickServiceReviews"])(); // scrollbar
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_9__["sliderstageView"])(); // slider service reviews
 
-  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_9__["scrollbar"])(); // useful blog hover
+  Object(_blocks_sliders_js__WEBPACK_IMPORTED_MODULE_9__["slickServiceReviews"])(); // scrollbar
 
-  Object(_blocks_index_js__WEBPACK_IMPORTED_MODULE_10__["usefulBlogHover"])(); // popup close
+  Object(_blocks_scrollbar_js__WEBPACK_IMPORTED_MODULE_10__["scrollbar"])(); // useful blog hover
+
+  Object(_blocks_index_js__WEBPACK_IMPORTED_MODULE_11__["usefulBlogHover"])(); // popup close
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupClose"])(); // more stage
 
   Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["moreStage"])(); // popup image
 
-  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupImage"])(); // services selected drop
+  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupImage"])(); // popup form
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_11__["servicesSelectedDrop"])(); // popup more stage date
+  Object(_blocks_popups_js__WEBPACK_IMPORTED_MODULE_3__["popupForm"])(); // services selected drop
+
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_12__["servicesSelectedDrop"])(); // popup more stage date
   // services attendance all cards
   // services selected fetch
 
-  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_11__["servicesSelectedFetch"])(); // services stage show
+  Object(_blocks_services_js__WEBPACK_IMPORTED_MODULE_12__["servicesSelectedFetch"])(); // services stage show
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceStageShow"])(); // tabs service reviews
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["serviceStageShow"])(); // tabs service reviews
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["tabsServiceReviews"])(); // service anchor scroll
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["tabsServiceReviews"])(); // service anchor scroll
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceScrollTo"])(); // service price show all
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["serviceScrollTo"])(); // service price show all
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["servicePriceShowAll"])(); // service fixed aside bar
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["servicePriceShowAll"])(); // service fixed aside bar
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["serviceFixedAsideBar"])(); // items service testimony
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["serviceFixedAsideBar"])(); // items service testimony
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_12__["itemServiceTestimony"])(); // about specialist show all
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["itemServiceTestimony"])(); // about specialist show all
 
-  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__["aboutSpecialistShowAll"])(); // tabs specialist education
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_14__["aboutSpecialistShowAll"])(); // tabs specialist education
 
-  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_13__["tabsSpecialistEducation"])(); // tabs specificity of the doctor
+  Object(_blocks_specialist_js__WEBPACK_IMPORTED_MODULE_14__["tabsSpecialistEducation"])(); // tabs specificity of the doctor
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_14__["tabsSpecificityDoctor"])(); // aiming at the doctor
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_15__["tabsSpecificityDoctor"])(); // aiming at the doctor
 
-  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_14__["aimingAtTheDoctor"])(); // tabs price services
+  Object(_blocks_team_js__WEBPACK_IMPORTED_MODULE_15__["aimingAtTheDoctor"])(); // tabs price services
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_15__["tabsPriceServices"])(); // opening and closing cards
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_16__["tabsPriceServices"])(); // opening and closing cards
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_15__["interactionCards"])(); // show clear element and clear
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_16__["interactionCards"])(); // show clear element and clear
 
-  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_15__["clearInput"])(); // map
+  Object(_blocks_price_js__WEBPACK_IMPORTED_MODULE_16__["clearInput"])(); // map
 
-  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_16__["map"])();
+  Object(_blocks_map_js__WEBPACK_IMPORTED_MODULE_17__["map"])();
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11869,7 +12323,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 ;(function(factory) {
     'use strict';
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -14862,7 +15316,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Magnific Popup - v1.1.0 - 2016-02-20
@@ -14871,7 +15325,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 ;(function (factory) { 
 if (true) { 
  // AMD. Register as an anonymous module. 
- !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+ !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); 
@@ -16724,7 +17178,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
  _checkInstance(); }));
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16732,6 +17186,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupClose", function() { return popupClose; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moreStage", function() { return moreStage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupImage", function() { return popupImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupForm", function() { return popupForm; });
 // popup close
 function popupClose() {
   $('.popupClose_js').on("click", function () {
@@ -16758,10 +17213,21 @@ function popupImage() {
       mainClass: 'mfp-img'
     });
   }
+} // popup form
+
+function popupForm() {
+  if (document.querySelector('.popupForm_js')) {
+    $('.popupForm_js').magnificPopup({
+      type: 'inline',
+      tClose: 'Закрыть (Esc)',
+      tLoading: 'Загрузка...',
+      mainClass: 'mfp-form'
+    });
+  }
 }
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16831,7 +17297,7 @@ function headerGray() {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16948,7 +17414,7 @@ function usefulBlog() {
 }
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16990,7 +17456,81 @@ function documentClick() {
 }
 
 /***/ }),
-/* 13 */
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupFormRecording", function() { return popupFormRecording; });
+// popup form recording
+function popupFormRecording() {
+  if (document.querySelector('.popupFormRecording_js')) {
+    var valid = false;
+    var errors;
+    var recordingForm = document.querySelector('.popupFormRecording_js');
+    var fields = recordingForm.querySelectorAll('.requiredField_js');
+
+    var removeError = function removeError() {
+      errors = recordingForm.querySelectorAll('.error');
+
+      for (var i = 0; i < errors.length; i++) {
+        errors[i].classList.remove('error');
+      }
+    };
+
+    var checkFields = function checkFields() {
+      for (var i = 0; i < fields.length; i++) {
+        if (!fields[i].value) {
+          fields[i].parentNode.classList.add('error');
+        }
+      }
+    };
+
+    var validLenPhone = function validLenPhone() {
+      var inputPhone = recordingForm.querySelector('.maskPhone');
+      var inputPhoneVal = inputPhone.value;
+
+      if (inputPhoneVal.length < 16) {
+        inputPhone.parentNode.classList.add('error');
+      } else {
+        inputPhone.parentNode.classList.remove('error');
+      }
+    };
+
+    var validTotal = function validTotal() {
+      var fields = recordingForm.querySelectorAll('.envelopeInput');
+      fields.forEach(function (item) {
+        if (item.classList.contains('error')) {
+          valid = false;
+        } else {
+          valid = true;
+        }
+      });
+    };
+
+    $('.popupFormRecording_js .maskPhone').mask('+7 Z00 000-00-00', {
+      'translation': {
+        Z: {
+          pattern: /[0-69-9]/
+        }
+      }
+    });
+    recordingForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      removeError();
+      checkFields();
+      validLenPhone();
+      validTotal();
+
+      if (valid === true) {
+        console.log('.fetch');
+      }
+    });
+  }
+}
+
+/***/ }),
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17099,7 +17639,7 @@ function scrollUp() {
 }
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17124,7 +17664,6 @@ function sliderMain() {
       pauseOnHover: false,
       pauseOnDotsHover: false,
       slickPause: false,
-      //speed: 900,
       slidesToShow: 1,
       cssEase: 'ease',
       arrows: true,
@@ -17133,7 +17672,6 @@ function sliderMain() {
       nextArrow: '<div class="sliderMain__next"><svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.4287 1.35986L2.20014 10.2741L10.4287 19.1884" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>',
       dots: true,
       appendDots: '.sliderMain__dots',
-      // dotsClass: "sliderMain__dots",
       customPaging: function customPaging(slider, i) {
         return "<div class=\"sliderMain__svg\"><svg width=\"48\" height=\"48\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\"><path class=\"sliderMain__line\" d=\"M24,1c12.7,0,23,10.3,23,23S36.7,47,24,47S1,36.7,1,24S11.3,1,24,1\" fill=\"none\" stroke=\"#DBE9EF\" stroke-width=\"2\" stroke-miterlimit=\"10\"/></svg></div>";
       }
@@ -17202,6 +17740,7 @@ function sliderSpecialists() {
 
 function sliderSpecialistsPortfolio() {
   var slickSpecialistPortfolio = $(".portfolioSliderFor_js");
+  var slickSpecialistPortfolioNav = $(".portfolioSliderNav__list");
 
   if (slickSpecialistPortfolio.length) {
     slickSpecialistPortfolio.slick({
@@ -17220,24 +17759,40 @@ function sliderSpecialistsPortfolio() {
         }
       }]
     });
-    $('div[data-slide]').click(function (e) {
-      $('div[data-slide]').removeClass('active');
-      $(this).addClass('active');
-      var slideno = $(this).data('slide');
-      slickSpecialistPortfolio.slick('slickGoTo', slideno - 1);
-    });
+
+    if (window.screen.availWidth >= 1025) {
+      slickSpecialistPortfolioNav.slick({
+        slidesToShow: 4,
+        arrows: false,
+        draggable: true,
+        infinite: false,
+        responsive: [{
+          breakpoint: 1442,
+          settings: {
+            slidesToShow: 3
+          }
+        }]
+      });
+      $('.portfolioSliderNav_js .slick-slide').click(function (e) {
+        var slide = $(this).data('slick-index');
+        $('div[data-slide]').removeClass('active');
+        slickSpecialistPortfolio.slick('slickGoTo', slide);
+        $('.portfolioSliderNav_js').find("[data-slide='".concat(slide, "']")).addClass('active');
+      });
+    } else {
+      $('.portfolioSliderNav__item').click(function (e) {
+        var slide = $(this).data('slide');
+        $('div[data-slide]').removeClass('active');
+        slickSpecialistPortfolio.slick('slickGoTo', slide);
+        $('.portfolioSliderNav_js').find("[data-slide='".concat(slide, "']")).addClass('active');
+      });
+    }
+
     $('.slick-arrow').click(function (e) {
-      var slide = $('.portfolioSliderNav__item.active').data('slide');
-      slide = Number(slide);
+      var item = $('.portfolioSliderFor_js .slick-active').data('slick-index');
       $('div[data-slide]').removeClass('active');
-
-      if ($(this).hasClass('sliderArrow__next')) {
-        slide = slide + 1;
-      } else {
-        slide = slide - 1;
-      }
-
-      $('.portfolioSliderNav_js').find("[data-slide='".concat(slide, "']")).addClass('active');
+      slickSpecialistPortfolioNav.slick('slickGoTo', item);
+      $('.portfolioSliderNav_js').find("[data-slide='".concat(item, "']")).addClass('active');
     });
   }
 }
@@ -17281,7 +17836,7 @@ function slickServiceReviews() {
 ;
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17295,7 +17850,7 @@ function scrollbar() {
 }
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17322,7 +17877,7 @@ function usefulBlogHover() {
 }
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17523,7 +18078,7 @@ function servicesSelectedFetch() {
 }
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17677,7 +18232,7 @@ function serviceFixedAsideBar() {
 ;
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17688,6 +18243,11 @@ __webpack_require__.r(__webpack_exports__);
 function aboutSpecialistShowAll() {
   if (document.querySelector('.aboutSpecialist__list')) {
     var desktop = 268;
+
+    if (window.screen.availWidth <= 540) {
+      desktop = 388;
+    }
+
     var wrapper = document.querySelector('.aboutSpecialist__content');
     var btnsShow = wrapper.querySelectorAll('.aboutSpecialistShow_js');
     var btnsHide = wrapper.querySelectorAll('.aboutSpecialistHide_js');
@@ -17747,7 +18307,7 @@ function tabsSpecialistEducation() {
 ;
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17799,7 +18359,7 @@ function aimingAtTheDoctor() {
 ;
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17926,7 +18486,7 @@ function clearInput() {
 ;
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17954,7 +18514,7 @@ function map() {
 }
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -17968,7 +18528,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * http://aerolab.github.io/midnight.js/LICENSE.txt
  */
 !function (t) {
-   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5)], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : undefined;
@@ -18385,7 +18945,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 }(jQuery);
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports) {
 
 var lg = 1025; //1024

@@ -62,7 +62,7 @@
     }
     &__item {
         width: 281px;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &.hover {
                 .teamPeople__bg {
                     svg {

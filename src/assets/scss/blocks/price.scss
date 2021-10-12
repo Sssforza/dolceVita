@@ -193,7 +193,7 @@
         font-weight: 500;
         color: $blueDark;
         transition: $transition5;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $greenMedium;
                 &:after {
@@ -250,7 +250,7 @@
         top: calc(50% - 10px);
         right: 22px;
         cursor: pointer;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 svg {
                     circle,
@@ -334,7 +334,7 @@
         color: $blueDark;
         cursor: pointer;
         transition: $transition5;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $greenMedium;
                 &:after {
@@ -417,7 +417,7 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 .priceList__title {
                     color: $greenMedium;

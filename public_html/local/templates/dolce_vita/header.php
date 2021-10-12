@@ -100,7 +100,7 @@
                                 <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/headerSearch-i.svg';?>
                             </div>
                         </div>
-                        <a class="btnPurple header__signUp" href="">Записаться</a>
+                        <a class="btnPurple header__signUp popupForm_js" href="#popupFormRecording">Записаться</a>
                     </div>
                 </div>
             </div>

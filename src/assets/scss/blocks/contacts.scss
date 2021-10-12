@@ -166,7 +166,7 @@
         border: 2px solid rgba(141, 155, 178, .3);
         border-radius: 50%;
         transition: $transition;
-        @media (min-width:$lg) {
+        @media (min-width:$hover) {
             &:hover {
                 border: 2px solid rgba(#820062, .3);
                 svg {

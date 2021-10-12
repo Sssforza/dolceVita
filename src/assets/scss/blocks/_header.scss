@@ -47,7 +47,7 @@
     }
     &__logo {
         display: block;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 svg {
                     .color {
@@ -75,7 +75,7 @@
         font-weight: 500;
         letter-spacing: 0.01em;
         color: $white;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             pointer-events: none;
         }
     }
@@ -121,7 +121,7 @@
         z-index: 2;
         cursor: pointer;
         transition: $transition5;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 border: 2px solid $greenMedium;
                 svg {
@@ -191,7 +191,7 @@
                         fill:$greenDark;
                     }
                 }
-                @media (min-width:$xl) {
+                @media (min-width:$hover) {
                     &:hover {
                         svg {
                             .color {
@@ -206,7 +206,7 @@
             }
             &__quest {
                 border: 2px solid $greenMedium;
-                @media (min-width:$xl) {
+                @media (min-width:$hover) {
                     &:hover {
                         border: 2px solid $greenDark;
                         svg {
@@ -237,7 +237,7 @@
             }
         }
         .headerNavTop__link {
-            @media (min-width:$xl) {
+            @media (min-width:$hover) {
                 &:hover {
                     color: $blueDark;
                 }
@@ -248,7 +248,7 @@
                         stroke: $greenDark;
                     }
                 }
-                @media (min-width:$xl) {
+                @media (min-width:$hover) {
                     &:hover {
                         svg {
                             path {
@@ -262,7 +262,7 @@
         .headerNavBottom {
             &__link {
                 color: $greenDark;
-                @media (min-width:$xl) {
+                @media (min-width:$hover) {
                     &:hover {
                         color: $blueDark !important;
                     }
@@ -323,7 +323,7 @@
             opacity: 0;
             transition: $transition;
         }
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 &:after {
                     opacity: 1;
@@ -360,7 +360,7 @@
             opacity: 0;
             transition: $transition;
         }
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 &:after {
                     opacity: 1;
@@ -388,7 +388,7 @@
     &__close {
         display: inline-flex;
         align-items: center;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 .headerServices__cover  {
                     border-bottom: 1px solid $purple;
@@ -419,11 +419,6 @@
         cursor: pointer;
         border-bottom: 1px solid transparent;
         transition: $transition5;
-        // @media (min-width:$xl) {
-        //     &:hover {
-        //         border-bottom: 1px solid $purple;
-        //     }
-        // }
     }
     &__box {
         margin-top: 52px;
@@ -447,7 +442,7 @@
         color: $blueDark;
         cursor: pointer;
         transition: $transition;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $purple;
             }
@@ -505,7 +500,7 @@
         color: $blueDark;
         cursor: pointer;
         transition: $transition;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $purple;
             }
@@ -548,7 +543,7 @@
         line-height: 25px;
         color: $blueDark;
         transition: $transition;
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $purple;
             }
@@ -593,7 +588,7 @@
             transition: $transition;
             opacity: 0;
         }
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $blueDark;
                 &:after {
@@ -623,7 +618,7 @@
                     fill:$greenDark;
                 }
             }
-            @media (min-width:$xl) {
+            @media (min-width:$hover) {
                 &:hover {
                     svg {
                         .color {
@@ -638,7 +633,7 @@
         }
         &__quest {
             border: 2px solid $greenMedium;
-            @media (min-width:$xl) {
+            @media (min-width:$hover) {
                 &:hover {
                     border: 2px solid $greenDark;
                     svg {
@@ -669,7 +664,7 @@
         }
     }
     .headerNavTop__link {
-        @media (min-width:$xl) {
+        @media (min-width:$hover) {
             &:hover {
                 color: $blueDark;
             }
@@ -680,7 +675,7 @@
                     stroke: $greenDark;
                 }
             }
-            @media (min-width:$xl) {
+            @media (min-width:$hover) {
                 &:hover {
                     svg {
                         path {
@@ -694,7 +689,7 @@
     .headerNavBottom {
         &__link {
             color: $greenDark;
-            @media (min-width:$xl) {
+            @media (min-width:$hover) {
                 &:hover {
                     color: $blueDark !important;
                 }

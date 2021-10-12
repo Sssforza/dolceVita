@@ -25,3 +25,14 @@ export function popupImage () {
         });
     }
 }
+// popup form
+export function popupForm () {
+    if(document.querySelector('.popupForm_js')) {
+        $('.popupForm_js').magnificPopup({
+            type: 'inline',
+            tClose: 'Закрыть (Esc)',
+            tLoading: 'Загрузка...',
+            mainClass: 'mfp-form'
+        });
+    }
+}
