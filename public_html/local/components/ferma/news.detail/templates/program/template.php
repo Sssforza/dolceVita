@@ -12,9 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<pre>
-    <? print_r($arResult)?>
-</pre>
+<!-- <pre>
+    <? //print_r($arResult)?>
+</pre> -->
 <main class="main">
     <section class="page page_service">
         <section class="banerService" style="background-image:url(<?= $arResult['DETAIL_PICTURE']['SRC']?>)">
@@ -46,7 +46,7 @@ $this->setFrameMode(true);
                                     <? if ($arResult["PROPERTIES"]["STAGE"]["VALUE"]) { ?>
                                         <div class="teamList__item anchorScroll_js" data-anchor="program">Программа</div>
                                     <? } ?>
-                                    <? if ($arResult["PROPERTIES"]["REVIEWS"]["VALUE"]) { ?>
+                                    <? if ($arResult["REVIEWS"]) { ?>
                                         <div class="teamList__item anchorScroll_js" data-anchor="reviews">Отзывы</div>
                                     <? } ?>
                                     <? if ($arResult["PROPERTIES"]["PRICE"]["VALUE"]) {?>
@@ -250,96 +250,28 @@ $this->setFrameMode(true);
                                 </div>
                             </div>
                         <? } ?>
-                        <? if ($arResult["PROPERTIES"]["REVIEWS"]["VALUE"]) { ?>
+                        <? if ($arResult["REVIEWS"]) { ?>
                             <div class="contentService__reviews serviceStage serviceReviews serviceReviews_js" id="reviews">
-                                <div class="serviceReviews__svg serviceReviewsSvg_js">
-                                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesHeart.svg';?>
-                                </div>
                                 <div class="serviceStage__title">
                                     Отзывы о процедуре
                                 </div>
                                 <div class="serviceReviews__content">
                                     <div class="serviceReviews__list serviceReviewsSlider_js">
-                                        <div class="serviceReviews__item serviceReviewsItem_js active" data-people="1">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
-                                            <div class="serviceReviews__name">Константина</div>
-                                            <div class="serviceReviews__date">15.12.2020</div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="2">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
-                                            <div class="serviceReviews__name">Ксения</div>
-                                            <div class="serviceReviews__date">22.09.2020</div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="3">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
-                                            <div class="serviceReviews__name">Яна</div>
-                                            <div class="serviceReviews__date">14.05.2020</div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="2">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
-                                            <div class="serviceReviews__name">Ксения</div>
-                                            <div class="serviceReviews__date">22.09.2020</div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="3">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
-                                            <div class="serviceReviews__name">Яна</div>
-                                            <div class="serviceReviews__date">14.05.2020</div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="1">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
-                                            <div class="serviceReviews__name">Константина</div>
-                                            <div class="serviceReviews__date">15.12.2020</div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="2">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
-                                            <div class="serviceReviews__name">Ксения</div>
-                                            <div class="serviceReviews__date">22.09.2020</div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="3">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
-                                            <div class="serviceReviews__name">Яна</div>
-                                            <div class="serviceReviews__date">14.05.2020</div>
-                                        </div>
+                                        <? foreach ($arResult["REVIEWS"] as $key => $value) { ?>
+                                            <div class="serviceReviews__item serviceReviewsItem_js <?= $key == 0 ? 'active': '';?>" data-people="<?= $key?>">
+                                                 <? $reviews_pic = CFile::ResizeImageGet($value['PREVIEW_PICTURE'], array('width'=>80), BX_RESIZE_IMAGE_EXACT, true);?>
+                                                <div class="serviceReviews__img" style="background-image:url(<?= $reviews_pic['src'];?>)"></div>
+                                                <div class="serviceReviews__name"><?= $value["NAME"]?></div>
+                                                <div class="serviceReviews__date"><?= FormatDateFromDB($value["DATE_CREATE"], 'DD.MM.YYYY')?></div>
+                                            </div>
+                                        <? } ?>
                                     </div>
                                     <div class="serviceReviews__info">
-                                        <div class="serviceReviews__text serviceReviewsText_js show" data-review="1">
-                                            <p>
-                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                            </p>
-                                            <p>
-                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                                хочется вскочить и&nbsp;убежать.
-                                            </p>
-                                            <p>
-                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                            </p>
-                                        </div>
-                                        <div class="serviceReviews__text serviceReviewsText_js hide" data-review="2">
-                                            <p>
-                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                                хочется вскочить и&nbsp;убежать.
-                                            </p>
-                                            <p>
-                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                            </p>
-                                        </div>
-                                        <div class="serviceReviews__text serviceReviewsText_js hide" data-review="3">
-                                            <p>
-                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                            </p>
-                                        </div>
+                                        <? foreach ($arResult["REVIEWS"] as $key => $value) { ?>
+                                            <div class="serviceReviews__text serviceReviewsText_js <?= $key == 0 ? 'show' : 'hide'?>" data-review="<?= $key?>">
+                                                <?= $value["PREVIEW_TEXT"]?>
+                                            </div>
+                                        <? } ?>
                                     </div>
                                 </div>
                             </div>
@@ -630,20 +562,18 @@ $this->setFrameMode(true);
                                 </div>
                             <? } ?>
                             <div class="asideService__list">
-                                <div class="asideService__line">
-                                    <? if ($arResult["PROPERTIES"]["DURATION_PROCEDURE"]["VALUE"]) {?>
-                                        <div class="asideService__item">
-                                            <div class="asideService__what">Длительность</div>
-                                            <div class="asideService__answer"><?= $arResult["PROPERTIES"]["DURATION_PROCEDURE"]["VALUE"]?></div>
-                                        </div>
-                                    <? } ?>
-                                    <? if ($arResult["PROPERTIES"]["NUMBER_PROCEDURES"]["VALUE"]) {?>
-                                        <div class="asideService__item">
-                                            <div class="asideService__what">Процедуры</div>
-                                            <div class="asideService__answer"><?= $arResult["PROPERTIES"]["NUMBER_PROCEDURES"]["VALUE"]?></div>
-                                        </div>
-                                    <? } ?>
-                                </div>
+                                <? if ($arResult["PROPERTIES"]["DURATION_PROCEDURE"]["VALUE"]) {?>
+                                    <div class="asideService__item">
+                                        <div class="asideService__what">Длительность</div>
+                                        <div class="asideService__answer"><?= $arResult["PROPERTIES"]["DURATION_PROCEDURE"]["VALUE"]?></div>
+                                    </div>
+                                <? } ?>
+                                <? if ($arResult["PROPERTIES"]["NUMBER_PROCEDURES"]["VALUE"]) {?>
+                                    <div class="asideService__item">
+                                        <div class="asideService__what">Процедуры</div>
+                                        <div class="asideService__answer"><?= $arResult["PROPERTIES"]["NUMBER_PROCEDURES"]["VALUE"]?></div>
+                                    </div>
+                                <? } ?>
                                 <div class="asideService__item">
                                     <div class="asideService__what">Оборудование</div>
                                     <div class="asideService__answer">Coccon, Vela Shape II</div>
@@ -659,16 +589,19 @@ $this->setFrameMode(true);
                         <? if ($arResult["PROPERTIES"]["ADVANTAGE_ONE"]["VALUE"]) { ?>
                             <div class="asideService__above">
                                 <div class="asideService__more"><?= $arResult["PROPERTIES"]["ADVANTAGE_ONE"]["VALUE"]?></div>
+                                <span class="asideService__plus"><?= $arResult["PROPERTIES"]["ADVANTAGE_THREE"]["DESCRIPTION"]?></span>
                             </div>
                         <? } ?>
                         <? if ($arResult["PROPERTIES"]["ADVANTAGE_TWO"]["VALUE"]) { ?>
                             <div class="asideService__above">
                                 <div class="asideService__more"><?= $arResult["PROPERTIES"]["ADVANTAGE_TWO"]["VALUE"]?></div>
+                                <span class="asideService__plus"><?= $arResult["PROPERTIES"]["ADVANTAGE_THREE"]["DESCRIPTION"]?></span>
                             </div>
                         <? } ?>
                         <? if ($arResult["PROPERTIES"]["ADVANTAGE_THREE"]["VALUE"]) { ?>
                             <div class="asideService__above">
                                 <div class="asideService__more"><?= $arResult["PROPERTIES"]["ADVANTAGE_THREE"]["VALUE"]?></div>
+                                <span class="asideService__plus"><?= $arResult["PROPERTIES"]["ADVANTAGE_THREE"]["DESCRIPTION"]?></span>
                             </div>
                         <? } ?>
                     </aside>

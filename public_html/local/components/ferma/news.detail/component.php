@@ -418,6 +418,30 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 			}
 		}
 
+		if ($arResult["ID"]) {
+			$arBlockId = CIBlock::GetList(array(), array('=CODE' => 'reviews'), false);
+			while($blockId = $arBlockId->Fetch()) {
+				$iblock_id = $blockId["ID"];
+			}
+			$arSelect = Array("ID", "IBLOCK_ID", "NAME", "*", "PROPERTY_*");
+			$arFilter = Array(
+				"IBLOCK_ID" => $iblock_id,
+				"ACTIVE" => "Y",
+				array(
+					"LOGIC" => "OR",
+					array("PROPERTY_SERVICE_REVIEWS" => $arResult["ID"]),
+					array("PROPERTY_PORGRAM_REVIEWS" => $arResult["ID"])
+				)
+			);
+			$arElement = CIBlockElement::GetList(array(), $arFilter,false, false, $arSelect);
+			while($ob = $arElement->GetNextElement()) {
+				$arProps = $ob->GetProperties();
+				$arFields = $ob->GetFields();
+				$tmp[] = array_merge($arFields, $arProps);
+			}
+			$arResult["REVIEWS"] = $tmp;
+		}
+
 		$resultCacheKeys = array(
 			"ID",
 			"IBLOCK_ID",

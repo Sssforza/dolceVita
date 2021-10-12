@@ -258,6 +258,7 @@ if($arParams["SEF_MODE"] == "Y")
 	}
 	if($arParams["SET_TITLE"])
 		$APPLICATION->SetTitle($arResult["MENU_ITEMS"]["ROOT"][$arResult["VARIABLES"]["PARENT_SECTION_ID"]]["NAME"]);
+
 }
 else
 {

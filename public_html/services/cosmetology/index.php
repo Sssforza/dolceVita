@@ -189,7 +189,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"USE_CAPTCHA" => "Y",
 		"USE_CATEGORIES" => "Y",
 		"USE_FILTER" => "N",
-		"USE_PERMISSIONS" => "Y",
+		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
