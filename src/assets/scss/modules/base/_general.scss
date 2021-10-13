@@ -2206,6 +2206,9 @@ img.mfp-img {
     }
     &_service {
         margin-top: -205px;
+        @media (max-width:$xl) {
+            margin-top: -220px;
+        }
     }
     &__path {
         stroke-miterlimit:10;
@@ -2661,6 +2664,10 @@ img.mfp-img {
     &_service {
         padding-top: 0;
         margin-top: -314px;
+        @media (max-width:$xl) {
+            padding-top: 0;
+            margin-top: -410px;
+        }
     }
     &__content {
         padding-top: 60px;

@@ -16,7 +16,7 @@ export function animGradientBgHeader () {
 
 // anim main lines
 export function animMainLines () {
-    if(document.querySelector('.reviews_js')) {
+    if(document.querySelector('.mainLines')) {
         const mainLines = document.querySelector('.mainLines__svg');
         const headerHeight = document.querySelector('.header_js').offsetHeight;
         let clientHeight = document.documentElement.clientHeight/2 - headerHeight;

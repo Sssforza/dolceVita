@@ -96,8 +96,9 @@ export function serviceFixedAsideBar () {
 		let aside = document.querySelector('.asideService_js');
 		let asideHeight = aside.offsetHeight;
 		let scroll = aside.getBoundingClientRect().top+window.scrollY;
-		let mainBlock = document.querySelector('.contentService');
+		let mainBlock = document.querySelector('.contentService .containerMin');
 		let mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
+		let mainBlockPaddingR = getComputedStyle(mainBlock).paddingRight.replace(/[\D]+/g, '');
 		let mainBlockTop = mainBlock.getBoundingClientRect().top+window.scrollY;
 		let mainBlockHeight = document.querySelector('.contentService').offsetHeight;
 		let mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
@@ -107,7 +108,7 @@ export function serviceFixedAsideBar () {
 				$('aside').css({
 					position: 'fixed',
 					top: headerHeight,
-					right: 50,
+					right: mainBlockPaddingR + 'px',
 				});
 			} else {
 				$('aside').css({
