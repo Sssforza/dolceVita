@@ -17325,7 +17325,7 @@ function animGradientBgHeader() {
 } // anim main lines
 
 function animMainLines() {
-  if (document.querySelector('.reviews_js')) {
+  if (document.querySelector('.mainLines')) {
     var mainLines = document.querySelector('.mainLines__svg');
     var headerHeight = document.querySelector('.header_js').offsetHeight;
     var clientHeight = document.documentElement.clientHeight / 2 - headerHeight;
@@ -17741,6 +17741,12 @@ function sliderSpecialists() {
 function sliderSpecialistsPortfolio() {
   var slickSpecialistPortfolio = $(".portfolioSliderFor_js");
   var slickSpecialistPortfolioNav = $(".portfolioSliderNav__list");
+  var sh = 4;
+
+  if (window.innerWidth <= 1440) {
+    console.log(3);
+    sh = 3;
+  }
 
   if (slickSpecialistPortfolio.length) {
     slickSpecialistPortfolio.slick({
@@ -17761,26 +17767,24 @@ function sliderSpecialistsPortfolio() {
     });
 
     if (window.screen.availWidth >= 1025) {
-      slickSpecialistPortfolioNav.slick({
-        slidesToShow: 4,
-        arrows: false,
-        draggable: true,
-        infinite: false,
-        responsive: [{
-          breakpoint: 1442,
-          settings: {
-            slidesToShow: 3
-          }
-        }]
-      });
-      $('.portfolioSliderNav_js .slick-slide').click(function (e) {
-        var slide = $(this).data('slick-index');
+      console.log('>= 1025');
+      $('.portfolioSliderNav__item').click(function (e) {
+        console.log('click');
+        var slide = $(this).data('slide');
+        console.log('slide ' + slide);
         $('div[data-slide]').removeClass('active');
         slickSpecialistPortfolio.slick('slickGoTo', slide);
         $('.portfolioSliderNav_js').find("[data-slide='".concat(slide, "']")).addClass('active');
       });
+      slickSpecialistPortfolioNav.slick({
+        slidesToShow: sh,
+        arrows: false,
+        draggable: true,
+        infinite: false
+      });
     } else {
       $('.portfolioSliderNav__item').click(function (e) {
+        console.log('click2');
         var slide = $(this).data('slide');
         $('div[data-slide]').removeClass('active');
         slickSpecialistPortfolio.slick('slickGoTo', slide);
@@ -17819,10 +17823,16 @@ function sliderstageView() {
 
 function slickServiceReviews() {
   var slickServiceReviews = $(".serviceReviewsSlider_js");
+  var sh = 5;
+
+  if (window.innerWidth <= 1440) {
+    console.log(1440);
+    sh = 4;
+  }
 
   if (slickServiceReviews.length) {
     slickServiceReviews.slick({
-      slidesToShow: 5,
+      slidesToShow: sh,
       slidesToScroll: 1,
       speed: 900,
       variableWidth: true,
@@ -18196,8 +18206,9 @@ function serviceFixedAsideBar() {
     var aside = document.querySelector('.asideService_js');
     var asideHeight = aside.offsetHeight;
     var scroll = aside.getBoundingClientRect().top + window.scrollY;
-    var mainBlock = document.querySelector('.contentService');
+    var mainBlock = document.querySelector('.contentService .containerMin');
     var mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
+    var mainBlockPaddingR = getComputedStyle(mainBlock).paddingRight.replace(/[\D]+/g, '');
     var mainBlockTop = mainBlock.getBoundingClientRect().top + window.scrollY;
     var mainBlockHeight = document.querySelector('.contentService').offsetHeight;
     var mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
@@ -18207,7 +18218,7 @@ function serviceFixedAsideBar() {
         $('aside').css({
           position: 'fixed',
           top: headerHeight,
-          right: 50
+          right: mainBlockPaddingR + 'px'
         });
       } else {
         $('aside').css({

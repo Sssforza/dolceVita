@@ -12,6 +12,9 @@
         position: center;
         repeat: no-repeat;
     }
+    @media (max-width:$xl) {
+        height: 812px;
+    }
     &__content {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -28,6 +31,9 @@
     }
     .containerMin {
         height: 100%;
+        @media (max-width:$xl) {
+            padding: 0 60px;
+        }
     }
     .breadCrumbs {
         margin-top: 48px;
@@ -38,6 +44,9 @@
     padding-top: 96px;
     &__main {
         width: calc(100% - 456px);
+        @media (max-width:$xl) {
+            width: calc(100% - 340px);
+        }
     }
     &__content {
         display: flex;
@@ -50,6 +59,9 @@
     }
     &__anchors {
         margin-top: 96px;
+        @media (max-width:$xl) {
+            margin-top: 100px;
+        }
     }
     &__result {
         position: relative;
@@ -58,16 +70,59 @@
     }
     .containerMin {
         padding-right: 50px !important;
+        @media (max-width:$xl) {
+            padding: 0 60px !important;
+        }
+    }
+    .teamList {
+        &__item {
+            &:not(:first-child) {
+                @media (max-width:$xl) {
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+    .portfolioSliderFor {
+        &__description {
+            @media (max-width:$xl) {
+                margin-left: 60px;
+            }
+        }
+        .sliderArrow__next {
+            right: -130px;
+            @media (max-width:$xl) {
+                right: -28px;
+            }
+        }
+        .sliderArrow__prev {
+            left: -83px;
+            @media (max-width:$xl) {
+                left: -10px;
+            }
+        }
+    }
+    .portfolioSliderNav {
+        @media (max-width:$xl) {
+            left: 457px;
+            width: 490px;
+        }
     }
 }
 .asideService {
     margin-left: 60px;
     width: 267px;
     height: 100%;
+    @media (max-width:$xl) {
+        width: 280px;
+    }
     &__wrapper {
         padding: 30px 25px 25px 30px;
         background: rgba(219, 233, 239, 0.5);
         border-radius: 32px 32px 16px 16px;
+        @media (max-width:$xl) {
+            padding: 30px 30px 25px 30px;
+        }
     }
     &__title {
         font-size: 18px;
@@ -148,9 +203,20 @@
 }
 .serviceStage {
     margin-top: 196px;
+    @media (max-width:$xl) {
+        margin-top: 108px;
+    }
     &.services {
         margin-top: 0;
         padding-top: 238px;
+        @media (max-width:$xl) {
+            padding-top: 172px;
+        }
+        .containerMin {
+            @media (max-width:$xl) {
+                padding: 0 60px;
+            }
+        }
     }
     &.services_cosmetic {
         margin-top: 0;
@@ -175,12 +241,19 @@
     }
     &__items {
         margin-top: 29px;
+        @media (max-width:$xl) {
+            margin-top: 69px;
+        }
     }
     &__phase {
         &:not(:last-child) {
             padding-bottom: 29px;
             margin-bottom: 43px;
             border-bottom: 1px solid #3b5e8233;
+            @media (max-width:$xl) {
+                padding-bottom: 28px;
+                margin-bottom: 52px;
+            }
         }
         &.show {
             .serviceStage__contain {
@@ -258,6 +331,9 @@
         margin-top: 22px;
         display: flex;
         gap: 156px;
+        @media (max-width:$xl) {
+            gap: 120px;
+        }
     }
     &__top {
         font-size: 18px;
@@ -298,6 +374,9 @@
     }
     &__seo {
         margin-top: 40px;
+        @media (max-width:$xl) {
+            margin-top: 37px;
+        }
     }
     &__box {
         &:not(:first-child) {
@@ -331,6 +410,9 @@
                     }
                 }
             }
+        }
+        @media (max-width:$xl) {
+            margin-top: 18px;
         }
         &_collapse {
             display: none;
@@ -379,11 +461,17 @@
 }
 .stageView {
     margin-top: 36px;
+    @media (max-width:$xl) {
+        margin-top: 46px;
+    }
     &__list {
         position: relative;
         margin-left: -25px;
         display: flex;
         height: 500px;
+        @media (max-width:$xl) {
+            height: 440px;
+        }
         &::after {
             content:'';
             position: absolute;
@@ -393,6 +481,10 @@
             width: 1405px;
             background: $greenLight;
             z-index: -1;
+            @media (max-width:$xl) {
+                left: -18px;
+                width: 1027px;
+            }
         }
     }
     &__item {
@@ -401,6 +493,10 @@
         max-width: 333px;
         height: 100%;
         z-index: 1;
+        @media (max-width:$xl) {
+            width: 262px;
+            height: 262px;
+        }
     }
     &__number {
         position: absolute;
@@ -409,6 +505,10 @@
         font-size: 24px;
         line-height: 34px;
         color: $greenMedium;
+        @media (max-width:$xl) {
+            top: 5px;
+            left: 28px;
+        }
     }
     &__img {
         position: relative;
@@ -419,6 +519,10 @@
             image: url($imgUrl + "stageViewPolygon.png");
             size: contain;
             repeat: no-repeat;
+        }
+        @media (max-width:$xl) {
+            width: 270px;
+            height: 270px;
         }
     }
     &__image {
@@ -432,6 +536,15 @@
             size: cover;
             repeat: no-repeat;
             position: center;
+        }
+        @media (max-width:$xl) {
+            top: 14px;
+            left: 25px;
+        }
+        &_svg {
+            @media (max-width:$xl) {
+                zoom: 0.98;
+            }
         }
     }
     &__wrapper {
@@ -485,14 +598,23 @@
     }
     &__prev {
         left: -72px;
+        @media (max-width:$xl) {
+            left: -22px;
+        }
     }
     &__next {
         right: -130px;
+        @media (max-width:$xl) {
+            right: -40px;
+        }
     }
 }
 .serviceReviews {
     margin-top: 235px;
     position: relative;
+    @media (max-width:$xl) {
+        margin-top: 207px;
+    }
     &__svg {
         position: absolute;
         top: -230px;
@@ -533,6 +655,9 @@
         height: 202px;
         width: 1060px;
         display: flex;
+        @media (max-width:$xl) {
+            width: 870px;
+        }
     }
     &__item {
         position: relative;
@@ -613,6 +738,9 @@
         line-height: 34px;
         color: $greenDark;
         transition: $transition5;
+        @media (max-width:$xl) {
+            width: 90%;
+        }
         p {
             &:not(:first-child) {
                 margin-top: 18px;
@@ -635,8 +763,17 @@
     .stageView__prev {
         top: calc(50% - 25px);
     }
+    .stageView__next {
+        right: -76px;
+        @media (max-width:$xl) {
+            right: -28px;
+        }
+    }
 }
 .servicePrice {
+    @media (max-width:$xl) {
+        margin-top: 172px;
+    }
     &__content {
         margin-top: 24px;
     }
@@ -677,21 +814,37 @@
         margin-left: -18px;
         width: 267px;
         cursor: pointer;
+        @media (max-width:$xl) {
+            margin-top: 24px;
+        }
     }
 }
 .serviceEquipmenent {
     margin-top: 248px;
     &__content {
         display: flex;
+        @media (max-width:$xl) {
+            position: relative;
+            margin-top: 417px;
+            padding-left: 120px;
+        }
     }
     &__description {
         width: 496px;
+        @media (max-width:$xl) {
+            width: 620px;
+            margin-top: 147px;
+            margin-right: -154px;
+        }
     }
     &__text {
         margin-top: 48px;
         font-size: 24px;
         line-height: 34px;
         color: $greenDark;
+        @media (max-width:$xl) {
+            margin-top: 27px;
+        }
     }
     &__video {
         position: relative;
@@ -707,6 +860,14 @@
                     }
                 }
             }
+        }
+        @media (max-width:$xl) {
+            margin-top: 0;
+            width: 382px;
+            height: 382px;
+            position: absolute;
+            top: -220px;
+            left: 339px;
         }
     }
     &__img {
@@ -738,6 +899,10 @@
         top: calc(50% - 34px);
         left: calc(50% - 37px);
         pointer-events: none;
+        @media (max-width:$xl) {
+            top: calc(50% - 62px);
+            left: calc(50% - 38px);
+        }
         svg {
             display: block;
         }
@@ -745,6 +910,9 @@
     .sliderEquipWarranty {
         top: -40px;
         left: -15px;
+        @media (max-width:$xl) {
+            left: 70px;
+        }
         &__visible {
             transform: rotate(-30deg);
         }
@@ -753,6 +921,10 @@
 .serviceSpecialists {
     margin-top: 183px;
     position: relative;
+    @media (max-width:$xl) {
+        margin-top: 172px;
+        margin-left: 120px;
+    }
     &:after {
         content:'';
         position: absolute;
@@ -762,6 +934,10 @@
         height: 1166px;
         background: radial-gradient(50% 50% at 50% 50%, #E7F0FA 54.69%, rgba(255, 255, 255, 0) 100%);
         z-index: -1;
+        @media (max-width:$xl) {
+            left: -460px;
+            height: 1126px;
+        }
     }
     &__content {
         margin-top: 31px;
@@ -771,18 +947,31 @@
         margin-left: 0;
         width: 1187px;
         .sliderArrow__next {
-            right: -114px;
+            right: -127px;
+            @media (max-width:$xl) {
+                right: 333px;
+            }
         }
         .sliderArrow__prev {
             left: -114px;
+            @media (max-width:$xl) {
+                left: -73px;
+            }
         }
     }
 }
 .serviceTestimony {
     margin-top: 274px;
+    @media (max-width:$xl) {
+        margin-top: 172px;
+        margin-left: 71px;
+    }
     &__box {
         &:not(:first-child) {
             margin-top: 54px;
+            @media (max-width:$xl) {
+                margin-top: 60px;
+            }
         }
     }
     &__title {
@@ -795,6 +984,11 @@
             position: absolute;
             top: 2px;
             left: -102px;
+            @media (max-width:$xl) {
+                width: 42px;
+                height: 42px;
+                left: -73px;
+            }
         }
     }
     &__list {
@@ -840,7 +1034,7 @@
     &__text {
         display: none;
         margin-top: 24px;
-        font-size: 21px;
+        font-size: 22px;
         line-height: 29px;
         color: $gray;
     }

@@ -56,8 +56,82 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 <div class="portfolioSliderFor__item">
                                     <div class="portfolioSliderFor__wrapper">
                                         <div class="portfolioSliderFor__img twentytwenty_js">
-                                            <img src="/dist/img/portfolioSliderImg1-1.jpg">
                                             <img src="/dist/img/portfolioSliderImg1-2.jpg">
+                                            <img src="/dist/img/portfolioSliderImg1-1.jpg">
+                                        </div>
+                                        <div class="portfolioSliderFor__pseudoElements">
+                                            <span>До</span>
+                                            <span>После</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__description">
+                                        <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                        <div class="portfolioSliderFor__name">
+                                            Разглаживание мимических и&nbsp;носогубных морщин с&nbsp;помощью лазерного
+                                            аппарата Fotona&nbsp;4D
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolioSliderFor__item">
+                                    <div class="portfolioSliderFor__wrapper">
+                                        <div class="portfolioSliderFor__img twentytwenty_js">
+                                            <img src="/dist/img/portfolioSliderImg2-1.jpg">
+                                            <img src="/dist/img/portfolioSliderImg2-2.jpg">
+                                        </div>
+                                        <div class="portfolioSliderFor__pseudoElements">
+                                            <span>До</span>
+                                            <span>После</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__description">
+                                        <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                        <div class="portfolioSliderFor__name">
+                                            Программа &quot;Сладкая жизнь&quot;
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolioSliderFor__item">
+                                    <div class="portfolioSliderFor__wrapper">
+                                        <div class="portfolioSliderFor__img twentytwenty_js">
+                                            <img src="/dist/img/portfolioSliderImg1-2.jpg">
+                                            <img src="/dist/img/portfolioSliderImg1-1.jpg">
+                                        </div>
+                                        <div class="portfolioSliderFor__pseudoElements">
+                                            <span>До</span>
+                                            <span>После</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__description">
+                                        <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                        <div class="portfolioSliderFor__name">
+                                            Разглаживание мимических и&nbsp;носогубных морщин с&nbsp;помощью лазерного
+                                            аппарата Fotona&nbsp;4D
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolioSliderFor__item">
+                                    <div class="portfolioSliderFor__wrapper">
+                                        <div class="portfolioSliderFor__img twentytwenty_js">
+                                            <img src="/dist/img/portfolioSliderImg2-1.jpg">
+                                            <img src="/dist/img/portfolioSliderImg2-2.jpg">
+                                        </div>
+                                        <div class="portfolioSliderFor__pseudoElements">
+                                            <span>До</span>
+                                            <span>После</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolioSliderFor__description">
+                                        <div class="portfolioSliderFor__procedure">Была выполнена процедура</div>
+                                        <div class="portfolioSliderFor__name">
+                                            Программа &quot;Сладкая жизнь&quot;
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolioSliderFor__item">
+                                    <div class="portfolioSliderFor__wrapper">
+                                        <div class="portfolioSliderFor__img twentytwenty_js">
+                                            <img src="/dist/img/portfolioSliderImg1-2.jpg">
+                                            <img src="/dist/img/portfolioSliderImg1-1.jpg">
                                         </div>
                                         <div class="portfolioSliderFor__pseudoElements">
                                             <span>До</span>
@@ -92,11 +166,25 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                 </div>
                             </div>
                             <div class="portfolioSliderNav portfolioSliderNav_js">
-                                <div class="portfolioSliderNav__item active" data-slide="1">
-                                    <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
-                                </div>
-                                <div class="portfolioSliderNav__item" data-slide="2">
-                                    <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                <div class="portfolioSliderNav__list">
+                                    <div class="portfolioSliderNav__item active" data-slide="0">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="1">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="2">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="3">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="4">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg1-1.jpg)"></div>
+                                    </div>
+                                    <div class="portfolioSliderNav__item" data-slide="5">
+                                        <div class="portfolioSliderNav__bg" style="background-image:url(/dist/img/portfolioSliderImg2-2.jpg)"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1108,7 +1196,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
             </div>
         </section>
 	</section>
-    <svg class="clipPath" width="224" height="248" viewBox="0 0 224 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="clipPath stageView__image_svg" width="" height="" viewBox="" fill="none" xmlns="http://www.w3.org/2000/svg">
         <clipPath id="stageImg">
             <path d="M76.5 231.349L36.7827 208.419C27.9813 203.337 21.443 199.561 16.497 196.016C11.5689 192.484 8.28742 189.226 5.97184 185.215C3.65624 181.205 2.47556 176.734 1.88079 170.7C1.28384 164.644 1.28272 157.094 1.28272 146.931L1.28273 101.069C1.28273 90.9062 1.28384 83.3558 1.8808 77.3C2.47557 71.2662 3.65625 66.7953 5.97185 62.7846C8.28743 58.7739 11.5689 55.516 16.497 51.984C21.443 48.4391 27.9813 44.663 36.7827 39.5814L76.5 16.6507C85.3015 11.5692 91.8409 7.79491 97.3838 5.28401C102.907 2.78218 107.369 1.56926 112 1.56926C116.631 1.56926 121.093 2.78219 126.616 5.28402C132.159 7.79491 138.699 11.5692 147.5 16.6507L187.217 39.5815C196.019 44.663 202.557 48.4392 207.503 51.984C212.431 55.516 215.713 58.7739 218.028 62.7847C220.344 66.7954 221.524 71.2662 222.119 77.3C222.716 83.3558 222.717 90.9062 222.717 101.069L222.717 146.931C222.717 157.094 222.716 164.644 222.119 170.7C221.524 176.734 220.344 181.205 218.028 185.215C215.713 189.226 212.431 192.484 207.503 196.016C202.557 199.561 196.019 203.337 187.217 208.419L147.5 231.349C138.699 236.431 132.159 240.205 126.616 242.716C121.093 245.218 116.631 246.431 112 246.431C107.369 246.431 102.907 245.218 97.3838 242.716C91.8409 240.205 85.3015 236.431 76.5 231.349Z" fill="white" stroke="#DBE9EF" stroke-width="2"/>
         </clipPath>
