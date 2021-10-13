@@ -12,9 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<!-- <pre>
-    <? //print_r($arResult)?>
-</pre> -->
+<pre>
+    <? print_r($arResult)?>
+</pre>
 <main class="main">
     <section class="page page_service">
         <section class="banerService" style="background-image:url(<?= $arResult['DETAIL_PICTURE']['SRC']?>)">
@@ -115,10 +115,11 @@ $this->setFrameMode(true);
                                         <div class="serviceStage__view stageView">
                                             <div class="stageView__list stageViewSlider_js">
                                                 <? if ($arResult["PROPERTIES"]["STEP_ONE_HEADING"]["VALUE"]) {?>
+                                                    <? $oneFoto = CFile::ResizeImageGet($arResult["PROPERTIES"]['STEP_ONE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                     <div class="stageView__item">
                                                         <div class="stageView__number">1</div>
                                                         <div class="stageView__img">
-                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-2.jpg)"></div>
+                                                            <div class="stageView__image" style="background-image:url(<?= $oneFoto['src']?>)"></div>
                                                         </div>
                                                         <div class="stageView__wrapper">
                                                             <div class="stageView__name"><?= $arResult["PROPERTIES"]["STEP_ONE_HEADING"]["VALUE"]?></div>
@@ -129,10 +130,11 @@ $this->setFrameMode(true);
                                                     </div>
                                                 <? } ?>
                                                 <? if ($arResult["PROPERTIES"]["STEP_TWO_HEADING"]["VALUE"]) {?>
+                                                    <? $twoFoto = CFile::ResizeImageGet($arResult["PROPERTIES"]['STEP_TWO_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                     <div class="stageView__item">
                                                         <div class="stageView__number">2</div>
                                                         <div class="stageView__img">
-                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-3.jpg)"></div>
+                                                            <div class="stageView__image" style="background-image:url(<?= $twoFoto['src']?>)"></div>
                                                         </div>
                                                         <div class="stageView__wrapper">
                                                             <div class="stageView__name"><?= $arResult["PROPERTIES"]["STEP_TWO_HEADING"]["VALUE"]?></div>
@@ -143,10 +145,11 @@ $this->setFrameMode(true);
                                                     </div>
                                                 <? } ?>
                                                 <? if ($arResult["PROPERTIES"]["STEP_THREE_HEADING"]["VALUE"]) {?>
+                                                    <? $threeFoto = CFile::ResizeImageGet($arResult["PROPERTIES"]['STEP_THREE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                     <div class="stageView__item">
                                                         <div class="stageView__number">3</div>
                                                         <div class="stageView__img">
-                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-4.jpg)"></div>
+                                                            <div class="stageView__image" style="background-image:url(<?= $threeFoto['src']?>)"></div>
                                                         </div>
                                                         <div class="stageView__wrapper">
                                                             <div class="stageView__name"><?= $arResult["PROPERTIES"]["STEP_THREE_HEADING"]["VALUE"]?></div>
@@ -157,10 +160,11 @@ $this->setFrameMode(true);
                                                     </div>
                                                 <? } ?>
                                                 <? if ($arResult["PROPERTIES"]["STEP_FOUR_HEADING"]["VALUE"]) {?>
+                                                    <? $fourFoto = CFile::ResizeImageGet($arResult["PROPERTIES"]['STEP_FOUR_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                     <div class="stageView__item">
                                                         <div class="stageView__number">4</div>
                                                         <div class="stageView__img">
-                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-5.jpg)"></div>
+                                                            <div class="stageView__image" style="background-image:url(<?= $fourFoto['src']?>)"></div>
                                                         </div>
                                                         <div class="stageView__wrapper">
                                                             <div class="stageView__name"><?= $arResult["PROPERTIES"]["STEP_FOUR_HEADING"]["VALUE"]?></div>
@@ -171,10 +175,11 @@ $this->setFrameMode(true);
                                                     </div>
                                                 <? } ?>
                                                 <? if ($arResult["PROPERTIES"]["STEP_FIVE_HEADING"]["VALUE"]) {?>
+                                                    <? $fiveFoto = CFile::ResizeImageGet($arResult["PROPERTIES"]['STEP_FIVE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                     <div class="stageView__item">
                                                         <div class="stageView__number">5</div>
                                                         <div class="stageView__img">
-                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-6.jpg)"></div>
+                                                            <div class="stageView__image" style="background-image:url(<?= $fiveFoto['src']?>)"></div>
                                                         </div>
                                                         <div class="stageView__wrapper">
                                                             <div class="stageView__name"><?= $arResult["PROPERTIES"]["STEP_FIVE_HEADING"]["VALUE"]?></div>

@@ -177,7 +177,7 @@ $this->setFrameMode(true);
                                                             </div>
                                                         <? } ?>
                                                         <? if ($arResult["ELEMENTS"][$value]["STEP_TWO_HEADING"]["VALUE"]) { ?>
-                                                            <? $twoFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_ONE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
+                                                            <? $twoFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_TWO_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                             <div class="stageView__item">
                                                                 <div class="stageView__number">2</div>
                                                                 <div class="stageView__img">
@@ -192,7 +192,7 @@ $this->setFrameMode(true);
                                                             </div>
                                                         <? } ?>
                                                         <? if ($arResult["ELEMENTS"][$value]["STEP_THREE_HEADING"]["VALUE"]) { ?>
-                                                            <? $threeFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_ONE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
+                                                            <? $threeFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_THREE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                             <div class="stageView__item">
                                                                 <div class="stageView__number">3</div>
                                                                 <div class="stageView__img">
@@ -207,7 +207,7 @@ $this->setFrameMode(true);
                                                             </div>
                                                         <? } ?>
                                                         <? if ($arResult["ELEMENTS"][$value]["STEP_FOUR_HEADING"]["VALUE"]) { ?>
-                                                            <? $fourFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_ONE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
+                                                            <? $fourFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_FOUR_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                             <div class="stageView__item">
                                                                 <div class="stageView__number">4</div>
                                                                 <div class="stageView__img">
@@ -222,7 +222,7 @@ $this->setFrameMode(true);
                                                             </div>
                                                         <? } ?>
                                                         <? if ($arResult["ELEMENTS"][$value]["STEP_FIVE_HEADING"]["VALUE"]) { ?>
-                                                            <? $fiveFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_ONE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
+                                                            <? $fiveFoto = CFile::ResizeImageGet($arResult["ELEMENTS"][$value]['STEP_FIVE_PHOTO']['VALUE'], array('width'=>271), BX_RESIZE_IMAGE_EXACT, true);?>
                                                             <div class="stageView__item">
                                                                 <div class="stageView__number">5</div>
                                                                 <div class="stageView__img">

@@ -430,7 +430,7 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 				array(
 					"LOGIC" => "OR",
 					array("PROPERTY_SERVICE_REVIEWS" => $arResult["ID"]),
-					array("PROPERTY_PORGRAM_REVIEWS" => $arResult["ID"])
+					array("PROPERTY_COSMO_REVIEWS" => $arResult["ID"])
 				)
 			);
 			$arElement = CIBlockElement::GetList(array(), $arFilter,false, false, $arSelect);
