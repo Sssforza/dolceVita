@@ -222,6 +222,7 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 		"ACTIVE_FROM",
 		"LIST_PAGE_URL",
 		"DETAIL_PAGE_URL",
+		"PROPERTY_*",
 	));
 	$bGetProperty = count($arParams["PROPERTY_CODE"]) > 0
 			|| $arParams["BROWSER_TITLE"] != "-"
@@ -347,11 +348,21 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 				$arResult["SECTION_URL"] = $arPath["~SECTION_PAGE_URL"];
 			}
 		}
-		$arElementId = array_merge((array)$arResult["PROPERTIES"]["SERVICES"]["VALUE"], (array)$arResult["PROPERTIES"]["PROGRAMS"]["VALUE"], (array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"]);
+		$arElementId = array_merge(
+						(array)$arResult["PROPERTIES"]["SERVICES"]["VALUE"],
+						(array)$arResult["PROPERTIES"]["PROGRAMS"]["VALUE"],
+						(array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"],
+						(array)$arResult["PROPERTIES"]["STAGE"]["VALUE"]
+					);
+		$arElementId = array_diff($arElementId, array('', NULL, false));
 		$arResult["arElementId"] = $arElementId;
 		if (!empty($arElementId)) {
 			foreach ($arElementId as $key => $value) {
+				$res = CIBlockElement::GetByID($value);
+				if($ar_res = $res->GetNext())
+				  $arFilter["IBLOCK_ID"] = $ar_res["IBLOCK_ID"];
 				$arFilter["ID"] = $value;
+				unset($arFilter["SECTION_CODE"]);
 				$arsSelect = array_merge($arSelect, array(
 								"PROPERTIES_*",
 							));
@@ -363,6 +374,72 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 					$arResult["ELEMENTS"][$arFields["ID"]] = array_merge($arFields, $arProps);
 				}
 			}
+		}
+
+		if ((array)$arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"]) {
+			foreach ($arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"] as $key => $value) {
+				$res = CIBlockElement::GetByID($value);
+				if($ar_res = $res->GetNext())
+				  $arFilter["IBLOCK_ID"] = $ar_res["IBLOCK_ID"];
+				$arFilter["ID"] = $value;
+				unset($arFilter["SECTION_CODE"]);
+				$arsSelect = array_merge($arSelect, array(
+								"PROPERTIES_*",
+							));
+				$arElement = CIBlockElement::GetList(array(), $arFilter, false, false, $arsSelect);
+				while($obyElement = $arElement->GetNextElement())
+				{
+					$arFields = $obyElement->GetFields();
+					$arProps = $obyElement->GetProperties();
+					$arProps["AFTER"]["FILE"] = CFile::GetFileArray($arProps["AFTER"]["VALUE"]);
+					$arProps["BEFORE"]["FILE"] = CFile::GetFileArray($arProps["BEFORE"]["VALUE"]);
+					$arResult["BEFORE_AND_AFTER"][$arFields["ID"]] = array_merge($arFields, $arProps);
+				}
+			}
+		}
+
+		if ((array)$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"]) {
+			foreach ($arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"] as $key => $value) {
+				$res = CIBlockElement::GetByID($value);
+				if($ar_res = $res->GetNext())
+				  $arFilter["IBLOCK_ID"] = $ar_res["IBLOCK_ID"];
+				$arFilter["ID"] = $value;
+				unset($arFilter["SECTION_CODE"]);
+				$arsSelect = array_merge($arSelect, array(
+								"PROPERTIES_*",
+							));
+				$arElement = CIBlockElement::GetList(array(), $arFilter, false, false, $arsSelect);
+				while($obyElement = $arElement->GetNextElement())
+				{
+					$arFields = $obyElement->GetFields();
+					$arProps = $obyElement->GetProperties();
+					$arResult["EQUIPMENT"][$arFields["ID"]] = array_merge($arFields, $arProps);
+				}
+			}
+		}
+
+		if ($arResult["ID"]) {
+			$arBlockId = CIBlock::GetList(array(), array('=CODE' => 'reviews'), false);
+			while($blockId = $arBlockId->Fetch()) {
+				$iblock_id = $blockId["ID"];
+			}
+			$arSelect = Array("ID", "IBLOCK_ID", "NAME", "*", "PROPERTY_*");
+			$arFilter = Array(
+				"IBLOCK_ID" => $iblock_id,
+				"ACTIVE" => "Y",
+				array(
+					"LOGIC" => "OR",
+					array("PROPERTY_SERVICE_REVIEWS" => $arResult["ID"]),
+					array("PROPERTY_PORGRAM_REVIEWS" => $arResult["ID"])
+				)
+			);
+			$arElement = CIBlockElement::GetList(array(), $arFilter,false, false, $arSelect);
+			while($ob = $arElement->GetNextElement()) {
+				$arProps = $ob->GetProperties();
+				$arFields = $ob->GetFields();
+				$tmp[] = array_merge($arFields, $arProps);
+			}
+			$arResult["REVIEWS"] = $tmp;
 		}
 
 		$resultCacheKeys = array(

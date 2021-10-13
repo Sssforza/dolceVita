@@ -13,6 +13,8 @@ if(empty($arResult))
 
 $strReturn = '';
 
+$arResult = array_unique($arResult, SORT_REGULAR);
+
 //we can't use $APPLICATION->SetAdditionalCSS() here because we are inside the buffered function GetNavChain()
 
 $strReturn .= '<div class="breadCrumbs"><ul class="breadCrumbs__list">';

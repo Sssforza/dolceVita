@@ -18064,6 +18064,7 @@ function servicesSelectedFetch() {
     var btn = document.querySelector('.banerServicesBtn_js');
     var input = document.querySelector('.servicesSelectedSelected_js');
     var message = 'Произошла ошибка, пожалуйста обновите страницу';
+    var content = document.querySelector('.services__content');
     var id;
     btn.addEventListener("click", function (elem) {
       id = input.getAttribute('id');
@@ -18075,8 +18076,20 @@ function servicesSelectedFetch() {
       }).then(function (response) {
         response.text().then(function (data) {
           if (response.ok && data != null && data != "") {
-            console.log('insert html');
-            servicesCard();
+            content.innerHTML = data;
+
+            if (document.querySelector('.servicesCardBtn_js')) {
+              servicesCard();
+            }
+
+            if (document.querySelector('.popupMoreStage_js')) {
+              $('.popupMoreStage_js').magnificPopup({
+                type: 'inline',
+                tClose: 'Закрыть (Esc)',
+                tLoading: 'Загрузка...'
+              });
+            }
+
             popupMore();
           } else {
             alert(message);
