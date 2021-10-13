@@ -68,33 +68,33 @@ if($this->StartResultCache()) {
         }
         $arSectionId[] = $arSection['ID'];
     }
-        //Получим элементы
-        $arSelect = Array('ID', 'NAME','DETAIL_PAGE_URL', 'IBLOCK_SECTION_ID', 'CODE');
-        $arFilter = Array(
-            'IBLOCK_ID' => $arParams['IBLOCK_ID'],
-            'ACTIVE' => 'Y',
-            array(
-            'LOGIC' => 'OR',
-                array('SECTION_ID' => $arSectionId),
-                array('SECTION_ID' => false),
-            ),
-        );
-        $arOrder = Array('SORT' => 'ASC');
-        $res = CIBlockElement::GetList($arOrder, $arFilter, false, false, $arSelect);
-        while ($ob = $res->GetNextElement()){
-            $arFields = $ob->GetFields();
-            $arFields['IS_SECTION'] = 0;
-            $arFields['LINK'] = $arFields['DETAIL_PAGE_URL'];
-            if ($arFields['IBLOCK_SECTION_ID']){
-                $elem = CIBlockSection::GetByID($arFields["IBLOCK_SECTION_ID"]);
-                if($ar_elem = $elem->GetNext()) {
-                    $arFields['IBLOCK_SECTION_CODE'] = $ar_elem['CODE'];
-                }
-                $menuItems['ELEMENTS'][$arFields['IBLOCK_SECTION_ID']][] = $arFields;
-            } else {
-                $menuItems['ROOT'][] = $arFields;
+    //Получим элементы
+    $arSelect = Array('ID', 'NAME','DETAIL_PAGE_URL', 'IBLOCK_SECTION_ID', 'CODE');
+    $arFilter = Array(
+        'IBLOCK_ID' => $arParams['IBLOCK_ID'],
+        'ACTIVE' => 'Y',
+        array(
+        'LOGIC' => 'OR',
+            array('SECTION_ID' => $arSectionId),
+            array('SECTION_ID' => false),
+        ),
+    );
+    $arOrder = Array('SORT' => 'ASC');
+    $res = CIBlockElement::GetList($arOrder, $arFilter, false, false, $arSelect);
+    while ($ob = $res->GetNextElement()){
+        $arFields = $ob->GetFields();
+        $arFields['IS_SECTION'] = 0;
+        $arFields['LINK'] = $arFields['DETAIL_PAGE_URL'];
+        if ($arFields['IBLOCK_SECTION_ID']){
+            $elem = CIBlockSection::GetByID($arFields["IBLOCK_SECTION_ID"]);
+            if($ar_elem = $elem->GetNext()) {
+                $arFields['IBLOCK_SECTION_CODE'] = $ar_elem['CODE'];
             }
+            $menuItems['ELEMENTS'][$arFields['IBLOCK_SECTION_ID']][] = $arFields;
+        } else {
+            $menuItems['ROOT'][] = $arFields;
         }
+    }
     //}
     //Рекурсивно сформируем итоговый массив для меню
     $arResult = array();
