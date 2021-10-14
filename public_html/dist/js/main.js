@@ -17807,18 +17807,22 @@ function sliderSpecialistsPortfolio() {
 function sliderstageView() {
   var slickstageView = $(".stageViewSlider_js");
 
-  if (slickstageView.length) {
-    slickstageView.slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      speed: 900,
-      arrows: true,
-      fade: false,
-      draggable: false,
-      infinite: false,
-      prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-      nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
-    });
+  if (window.innerWidth > 540) {
+    console.log(540);
+
+    if (slickstageView.length) {
+      slickstageView.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        speed: 900,
+        arrows: true,
+        fade: false,
+        draggable: false,
+        infinite: false,
+        prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+        nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+      });
+    }
   }
 }
 ; // slider service reviews

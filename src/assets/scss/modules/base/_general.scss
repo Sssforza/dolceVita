@@ -1724,7 +1724,7 @@ img.mfp-img {
             background: linear-gradient(60deg,#fff 33.33%,rgba(237,244,247,0) 100%);
         }
         @media (max-width:$xs) {
-            left: -40px;
+            left: -53px;
         }
     }
     &:after {
@@ -1826,10 +1826,19 @@ img.mfp-img {
             @media (max-width:$lg) {
                 right: 15px;
             }
+            @media (max-width:$xs) {
+                right: -40px;
+                left: 0;
+            }
         }
         .teamList__content {
             @media (max-width:$lg) {
                 overflow-x: visible;
+            }
+            @media (max-width:$xs) {
+                margin: 0 -43px;
+                padding: 0 43px;
+                overflow-x: scroll;
             }
         }
     }
@@ -2225,6 +2234,9 @@ img.mfp-img {
             margin-top: -234px;
             margin-left: -47px;
         }
+        @media (max-width:$xs) {
+            display: none;
+        }
     }
     &__path {
         stroke-miterlimit:10;
@@ -2529,7 +2541,7 @@ img.mfp-img {
         }
         @media (max-width:$xs) {
             margin-top: 0;
-            font-size: 20px;
+            font-size: 21px;
             line-height: 24px;
         }
     }
@@ -2686,6 +2698,10 @@ img.mfp-img {
         }
         @media (max-width:$lg) {
             margin-top: -504px;
+        }
+        @media (max-width:$xs) {
+            margin-top: 0;
+            padding-top: 82px;
         }
     }
     &__content {
