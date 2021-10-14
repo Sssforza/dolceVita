@@ -1020,7 +1020,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 				<div class="bonusSystem__ground bonusSystem__ground_left">
 					<img src="/dist/img/formTrees01.png" alt="">
 				</div>
-				<form class="sectionConsult__form">
+				<form class="sectionConsult__form consultForm_js">
 					<div class="sectionConsult__title">Нужна консультация?</div>
 					<div class="sectionConsult__description">
 						Не&nbsp;знаете что выбрать, оставьте свой номер телефона: мы&nbsp;позвоним 
@@ -1028,13 +1028,13 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 					</div>
 					<div class="sectionConsult__input">
 						<div class="envelopeInput">
-							<input class="envelopeInput__field" placeholder="Имя" type="text">
+							<input class="envelopeInput__field requiredField_js" placeholder="Имя" type="text">
 							<span class="envelopeInput__error">
 								Введите Ваше имя
 							</span>
 						</div>
 						<div class="envelopeInput">
-							<input class="envelopeInput__field" placeholder="Телефон" type="text">
+							<input class="envelopeInput__field maskPhone requiredField_js" placeholder="Телефон" type="text">
 							<span class="envelopeInput__error">
 								Неверный формат телефона
 							</span>

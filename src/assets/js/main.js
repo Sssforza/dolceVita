@@ -21,7 +21,7 @@ import {animGradientBgHeader, animMainLines, animReviewsLines, sectionBonusSyste
 import {documentClick} from "./blocks/_documentClick.js";
 
 //📁 /assets/js/blocks  form.js
-import {popupFormRecording} from "./blocks/form.js";
+import {popupFormRecording, formConsult} from "./blocks/form.js";
 
 //📁 /assets/js/blocks  _header.js
 import {headerServices, headerSearch, menuSelection, scrollUp} from "./blocks/_header.js";
@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // popup form recording
     popupFormRecording();
+
+    // form consult
+    formConsult();
 
     // header services
     headerServices();

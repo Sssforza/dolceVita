@@ -12229,7 +12229,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__["documentClick"])(); // popup form recording
 
-  Object(_blocks_form_js__WEBPACK_IMPORTED_MODULE_7__["popupFormRecording"])(); // header services
+  Object(_blocks_form_js__WEBPACK_IMPORTED_MODULE_7__["popupFormRecording"])(); // form consult
+
+  Object(_blocks_form_js__WEBPACK_IMPORTED_MODULE_7__["formConsult"])(); // header services
 
   Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_8__["headerServices"])(); // header open search input
 
@@ -17464,6 +17466,7 @@ function documentClick() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupFormRecording", function() { return popupFormRecording; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formConsult", function() { return formConsult; });
 // popup form recording
 function popupFormRecording() {
   if (document.querySelector('.popupFormRecording_js')) {
@@ -17518,6 +17521,72 @@ function popupFormRecording() {
       }
     });
     recordingForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      removeError();
+      checkFields();
+      validLenPhone();
+      validTotal();
+
+      if (valid === true) {
+        console.log('.fetch');
+      }
+    });
+  }
+} // form consult
+
+function formConsult() {
+  if (document.querySelector('.sectionConsult__form')) {
+    var valid = false;
+    var errors;
+    var consultForm = document.querySelector('.sectionConsult__form');
+    var fields = consultForm.querySelectorAll('.requiredField_js');
+
+    var removeError = function removeError() {
+      errors = consultForm.querySelectorAll('.error');
+
+      for (var i = 0; i < errors.length; i++) {
+        errors[i].classList.remove('error');
+      }
+    };
+
+    var checkFields = function checkFields() {
+      for (var i = 0; i < fields.length; i++) {
+        if (!fields[i].value) {
+          fields[i].parentNode.classList.add('error');
+        }
+      }
+    };
+
+    var validLenPhone = function validLenPhone() {
+      var inputPhone = consultForm.querySelector('.maskPhone');
+      var inputPhoneVal = inputPhone.value;
+
+      if (inputPhoneVal.length < 16) {
+        inputPhone.parentNode.classList.add('error');
+      } else {
+        inputPhone.parentNode.classList.remove('error');
+      }
+    };
+
+    var validTotal = function validTotal() {
+      var fields = consultForm.querySelectorAll('.envelopeInput');
+      fields.forEach(function (item) {
+        if (item.classList.contains('error')) {
+          valid = false;
+        } else {
+          valid = true;
+        }
+      });
+    };
+
+    $('.sectionConsult__form .maskPhone').mask('+7 Z00 000-00-00', {
+      'translation': {
+        Z: {
+          pattern: /[0-69-9]/
+        }
+      }
+    });
+    consultForm.addEventListener('submit', function (event) {
       event.preventDefault();
       removeError();
       checkFields();
