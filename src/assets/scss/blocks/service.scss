@@ -15,6 +15,9 @@
     @media (max-width:$xl) {
         height: 812px;
     }
+    @media (max-width:$lg) {
+        height: 600px;
+    }
     &__content {
         padding-top: 80px;
         padding-bottom: 80px;
@@ -28,11 +31,18 @@
         font-size: 64px;
         line-height: 90px;
         color: $white;
+        @media (max-width:$lg) {
+            font-size: 42px;
+            line-height: 46px;
+        }
     }
     .containerMin {
         height: 100%;
         @media (max-width:$xl) {
             padding: 0 60px;
+        }
+        @media (max-width:$lg) {
+            padding: 0 40px;
         }
     }
     .breadCrumbs {
@@ -42,10 +52,16 @@
 }
 .contentService {
     padding-top: 96px;
+    @media (max-width:$lg) {
+        padding-top: 83px;
+    }
     &__main {
         width: calc(100% - 456px);
         @media (max-width:$xl) {
             width: calc(100% - 340px);
+        }
+        @media (max-width:$lg) {
+            width: 100%;
         }
     }
     &__content {
@@ -62,16 +78,25 @@
         @media (max-width:$xl) {
             margin-top: 100px;
         }
+        @media (max-width:$lg) {
+            margin-top: 109px;
+        }
     }
     &__result {
         position: relative;
         margin-top: 140px;
         margin-left: -32px;
+        @media (max-width:$lg) {
+            margin-top: 112px;
+        }
     }
     .containerMin {
         padding-right: 50px !important;
         @media (max-width:$xl) {
             padding: 0 60px !important;
+        }
+        @media (max-width:$lg) {
+            padding: 0 40px !important;
         }
     }
     .teamList {
@@ -87,6 +112,9 @@
         &__description {
             @media (max-width:$xl) {
                 margin-left: 60px;
+            }
+            @media (max-width:$lg) {
+                margin-left: 77px;
             }
         }
         .sliderArrow__next {
@@ -107,6 +135,10 @@
             left: 457px;
             width: 490px;
         }
+        @media (max-width:$lg) {
+            left: 391px;
+            width: 625px;
+        }
     }
 }
 .asideService {
@@ -116,12 +148,30 @@
     @media (max-width:$xl) {
         width: 280px;
     }
+    @media (max-width:$lg) {
+        margin-left: 0;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-height: 78px;
+        background: rgba(219, 233, 239, 0.4);
+        backdrop-filter: blur(10px);
+        border-radius: 32px 32px 0px 0px;
+        z-index: 2;
+    }
     &__wrapper {
         padding: 30px 25px 25px 30px;
         background: rgba(219, 233, 239, 0.5);
         border-radius: 32px 32px 16px 16px;
         @media (max-width:$xl) {
             padding: 30px 30px 25px 30px;
+        }
+        @media (max-width:$lg) {
+            display: none;
+            background: none;
         }
     }
     &__title {
@@ -191,14 +241,38 @@
         color: $white;
         z-index: 0;
     }
+    &__header {
+        display: none;
+        @media (max-width:$lg) {
+            display: flex;
+            align-items: center;
+            padding: 24px 40px;
+        }
+        span {
+            margin-left: 17px;
+            font-size: 24px;
+            line-height: 30px;
+            color: $blueDark;
+        }
+        svg {
+            display: block;
+            position: relative;
+            top: -2px;
+            transition: $transition5;
+        }
+    }
     &.fixed {
-        position: fixed;
-        top: 126px;
-        right: 50px;
-        z-index: 1;
+        @media (min-width:$hover) {
+            position: fixed;
+            top: 126px;
+            right: 50px;
+            z-index: 1;
+        }
     }
     &.relative {
-        position: relative;
+        @media (min-width:$hover) {
+            position: relative;
+        }
     }
 }
 .serviceStage {
@@ -206,15 +280,24 @@
     @media (max-width:$xl) {
         margin-top: 108px;
     }
+    @media (max-width:$lg) {
+        margin-top: 100px;
+    }
     &.services {
         margin-top: 0;
         padding-top: 238px;
         @media (max-width:$xl) {
             padding-top: 172px;
         }
+        @media (max-width:$lg) {
+            padding-top: 182px;
+        }
         .containerMin {
             @media (max-width:$xl) {
                 padding: 0 60px;
+            }
+            @media (max-width:$lg) {
+                padding: 0 40px;
             }
         }
     }
@@ -233,11 +316,23 @@
             background: radial-gradient(50% 50% at 50% 50%, #E7F0FA 54.69%, rgba(255, 255, 255, 0) 100%);
             z-index: -1;
         }
+        .services__content {
+            @media (max-width:$lg) {
+                margin: 54px -40px 0;
+                padding: 0 40px;
+                overflow-x: scroll;
+                flex-wrap: nowrap;
+            }
+        }
     }
     &__title {
         font-size: 48px;
         line-height: 67px;
         color: $blueDark;
+        @media (max-width:$lg) {
+            font-size: 42px;
+            line-height: 59px;
+        }
     }
     &__items {
         margin-top: 29px;
@@ -253,6 +348,9 @@
             @media (max-width:$xl) {
                 padding-bottom: 28px;
                 margin-bottom: 52px;
+            }
+            @media (max-width:$lg) {
+                margin-bottom: 42px;
             }
         }
         &.show {
@@ -333,6 +431,9 @@
         gap: 156px;
         @media (max-width:$xl) {
             gap: 120px;
+        }
+        @media (max-width:$lg) {
+            gap: 140px;
         }
     }
     &__top {
@@ -454,6 +555,20 @@
     }
     .servicesCard {
         background: $white;
+        @media (max-width:$lg) {
+            width: 583px;
+            height: 320px;
+        }
+        &__header {
+            @media (max-width:$lg) {
+                max-height: 153px;
+            }
+        }
+        &__bottom {
+            @media (max-width:$lg) {
+                left: 179px;
+            }
+        }
         &:after {
             background: linear-gradient(270deg, $white 33.33%, rgba(237, 244, 247, 0) 100%);
         }
@@ -484,6 +599,11 @@
             @media (max-width:$xl) {
                 left: -18px;
                 width: 1027px;
+            }
+            @media (max-width:$lg) {
+                top: 268px;
+                left: -10px;
+                width: 1000px;
             }
         }
     }
@@ -551,6 +671,9 @@
         margin-top: 19px;
         padding-right: 15px;
         padding-left: 25px;
+        @media (max-width:$lg) {
+            margin-top: 23px;
+        }
     }
     &__name {
         font-size: 24px;
@@ -580,6 +703,9 @@
                 }
             }
         }
+        @media (max-width:$lg) {
+            top: 244px;
+        }
         &.slick-disabled {
             pointer-events: none;
             opacity: 1;
@@ -601,11 +727,17 @@
         @media (max-width:$xl) {
             left: -22px;
         }
+        @media (max-width:$lg) {
+            left: -12px;
+        }
     }
     &__next {
         right: -130px;
         @media (max-width:$xl) {
             right: -40px;
+        }
+        @media (max-width:$lg) {
+            right: -22px;
         }
     }
 }
@@ -614,6 +746,9 @@
     position: relative;
     @media (max-width:$xl) {
         margin-top: 207px;
+    }
+    @media (max-width:$lg) {
+        margin-top: 185px;
     }
     &__svg {
         position: absolute;
@@ -650,13 +785,20 @@
         }
     }
     &__list {
-        margin-left: -18px;
         margin-top: 36px;
+        margin-left: -18px;
         height: 202px;
         width: 1060px;
         display: flex;
         @media (max-width:$xl) {
             width: 870px;
+        }
+        @media (max-width:$lg) {
+            margin: 34px -40px 0 -40px;
+            padding: 0 37px;
+            height: 204px;
+            width: 1024px;
+            overflow-x: scroll;
         }
     }
     &__item {
@@ -670,6 +812,13 @@
         cursor: pointer;
         border: 2px solid transparent;
         transition: $transition;
+        @media (max-width:$lg) {
+            flex: none;
+            width: 188px !important;
+            height: 204px;
+            padding: 24px;
+            margin: 0;
+        }
         @media (min-width:$hover) {
             &:hover {
                 border: 2px solid $greenMedium;
@@ -688,9 +837,16 @@
             border-radius: 16px;
             transition: $transition;
             z-index: -1;
+            @media (max-width:$lg) {
+                width: 176px;
+                height: 192px;
+            }
         }
         &:not(:first-child) {
             margin-left: 30px;
+            @media (max-width:$lg) {
+                margin-left: 24px;
+            }
         }
         &.active {
             pointer-events: none;
@@ -731,6 +887,9 @@
     &__info {
         position: relative;
         margin-top: 36px;
+        @media (max-width:$lg) {
+            margin-top: 30px;
+        }
     }
     &__text {
         max-width: 87%;
@@ -739,7 +898,11 @@
         color: $greenDark;
         transition: $transition5;
         @media (max-width:$xl) {
-            width: 90%;
+            max-width: 90%;
+        }
+        @media (max-width:$lg) {
+            max-width: 100%;
+            max-height: none;
         }
         p {
             &:not(:first-child) {
@@ -758,6 +921,43 @@
             opacity: 0;
             pointer-events: none;
         }
+        &.all {
+            .serviceReviews__wrapper {
+                @media (max-width:$lg) {
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+    &__wrapper {
+        @media (max-width:$lg) {
+            max-height: 222px;
+            overflow: hidden;
+            transition: $transition5;
+        }
+    }
+    &__all {
+        display: none;
+        margin-top: 20px;
+        align-items: center;
+        @media (max-width:$lg) {
+            display: inline-flex;
+        }
+        span {
+            font-size: 18px;
+            line-height: 23px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: $blueDark;
+        }
+        svg {
+            display: block;
+            margin-top: -1px;
+            margin-left: 16px;
+            transform: rotate(180deg);
+            zoom: .78;
+        }
     }
     .stageView__next,
     .stageView__prev {
@@ -774,14 +974,23 @@
     @media (max-width:$xl) {
         margin-top: 172px;
     }
+    @media (max-width:$lg) {
+        margin-top: 132px;
+    }
     &__content {
         margin-top: 24px;
+        @media (max-width:$lg) {
+            margin-top: 32px;
+        }
     }
     &__list {
         margin-left: -18px;
         max-height: 300px;
         overflow: hidden;
         transition: $transition5;
+        @media (max-width:$lg) {
+            margin: 0 -40px;
+        }
         &.show {
             max-height: 100%;
         }
@@ -805,6 +1014,10 @@
                 background: #8d528733;
             }
         }
+        @media (max-width:$lg) {
+            padding: 0 40px;
+            border-radius: 0;
+        }
     }
     &__cost {
         font-weight: 500;
@@ -817,16 +1030,25 @@
         @media (max-width:$xl) {
             margin-top: 24px;
         }
+        @media (max-width:$lg) {
+            width: 252px;
+        }
     }
 }
 .serviceEquipmenent {
     margin-top: 248px;
+    @media (max-width:$lg) {
+        margin-top: 378px;
+    }
     &__content {
         display: flex;
         @media (max-width:$xl) {
             position: relative;
             margin-top: 417px;
             padding-left: 120px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 0;
         }
     }
     &__description {
@@ -844,6 +1066,9 @@
         color: $greenDark;
         @media (max-width:$xl) {
             margin-top: 27px;
+        }
+        @media (max-width:$lg) {
+            margin-top: 25px;
         }
     }
     &__video {
@@ -868,6 +1093,10 @@
             position: absolute;
             top: -220px;
             left: 339px;
+        }
+        @media (max-width:$lg) {
+            top: -253px;
+            left: 228px;
         }
     }
     &__img {
@@ -907,11 +1136,20 @@
             display: block;
         }
     }
+    .serviceStage__title {
+        @media (max-width:$lg) {
+            max-width: 70%;
+        }
+    }
     .sliderEquipWarranty {
         top: -40px;
         left: -15px;
         @media (max-width:$xl) {
             left: 70px;
+        }
+        @media (max-width:$lg) {
+            top: -75px;
+            left: -42px;
         }
         &__visible {
             transform: rotate(-30deg);
@@ -924,6 +1162,10 @@
     @media (max-width:$xl) {
         margin-top: 172px;
         margin-left: 120px;
+    }
+    @media (max-width:$lg) {
+        margin-top: 192px;
+        margin-left: 0;
     }
     &:after {
         content:'';
@@ -941,6 +1183,9 @@
     }
     &__content {
         margin-top: 31px;
+        @media (max-width:$lg) {
+            margin-top: 11px;
+        }
     }
     .specialistsFor {
         height: 475px;
@@ -966,11 +1211,17 @@
         margin-top: 172px;
         margin-left: 71px;
     }
+    @media (max-width:$lg) {
+        margin-top: 113px;
+    }
     &__box {
         &:not(:first-child) {
             margin-top: 54px;
             @media (max-width:$xl) {
                 margin-top: 60px;
+            }
+            @media (max-width:$lg) {
+                margin-top: 51px;
             }
         }
     }
@@ -993,9 +1244,15 @@
     }
     &__list {
         margin-top: 16px;
+        @media (max-width:$lg) {
+            margin-left: -71px;
+        }
     }
     &__item {
         padding: 21px 0 28px;
+        @media (max-width:$lg) {
+            padding: 21px 0;
+        }
         &:not(:first-child) {
             border-top: 1px solid #8d9bb24d;
         }
@@ -1008,6 +1265,10 @@
         font-weight: 500;
         color: $blueDark;
         transition: $transition5;
+        @media (max-width:$lg) {
+            display: flex;
+            justify-content: space-between;
+        }
         &.hover {
             cursor: pointer;
             @media (min-width:$hover) {
@@ -1029,6 +1290,12 @@
             width: 18px;
             height: 10px;
             transition: $transition;
+            @media (max-width:$lg) {
+                margin-left: 0;
+                width: 21px;
+                height: 11px;
+                zoom: 1.5;
+            }
         }
     }
     &__text {

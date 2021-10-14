@@ -168,17 +168,18 @@ export function slickServiceReviews () {
 		console.log(1440)
 		sh = 4;
 	}
-
-	if (slickServiceReviews.length) {
-		slickServiceReviews.slick({
-			slidesToShow: sh,
-			slidesToScroll: 1,
-			speed: 900,
-			variableWidth: true,
-			infinite: false,
-			arrows: true,
-			prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-			nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-		});
+	if (window.innerWidth > 1024) {
+		if (slickServiceReviews.length) {
+			slickServiceReviews.slick({
+				slidesToShow: sh,
+				slidesToScroll: 1,
+				speed: 900,
+				variableWidth: true,
+				infinite: false,
+				arrows: true,
+				prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+				nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+			});
+		}
     }
 };

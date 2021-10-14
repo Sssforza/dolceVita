@@ -89,41 +89,59 @@ export function servicePriceShowAll () {
 		});
 	};
 };
+// service reviews show all
+export function serviceReviewsShowAll () {
+	if(document.querySelector('.serviceReviewsAll_js')) {
+        const wrapper = document.querySelector('.serviceReviews');
+        const btn = wrapper.querySelectorAll('.serviceReviewsAll_js');
+        let parent;
+
+		btn.forEach((item) => {
+			item.addEventListener('click', function (e) {
+				parent = item.closest('.serviceReviews__text');
+				parent.classList.add('all');
+				item.remove();
+			});
+		});
+	};
+};
 // service fixed aside bar
 export function serviceFixedAsideBar () {
-	if(document.querySelector('.asideService_js')) {
-		const headerHeight = document.querySelector('.header_js').offsetHeight;
-		let aside = document.querySelector('.asideService_js');
-		let asideHeight = aside.offsetHeight;
-		let scroll = aside.getBoundingClientRect().top+window.scrollY;
-		let mainBlock = document.querySelector('.contentService .containerMin');
-		let mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
-		let mainBlockPaddingR = getComputedStyle(mainBlock).paddingRight.replace(/[\D]+/g, '');
-		let mainBlockTop = mainBlock.getBoundingClientRect().top+window.scrollY;
-		let mainBlockHeight = document.querySelector('.contentService').offsetHeight;
-		let mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
-		let asideStop = mainBlockHeight - asideHeight - mainBlockPadding;
-        $(window).scroll(function() {
-			if ($(window).scrollTop() >= (scroll - headerHeight)) {
-				$('aside').css({
-					position: 'fixed',
-					top: headerHeight,
-					right: mainBlockPaddingR + 'px',
-				});
-			} else {
-				$('aside').css({
-					position: 'relative',
-					top: 0,
-					right: 0,
-				});
-			}
-			if ($(window).scrollTop() >= (mainBlockEnd)) {
-				$('aside').css({
-					position: 'relative',
-					top: asideStop,
-					right: 0,
-				});
-			}
-		});
+	if (window.innerWidth > 1024) {
+		if(document.querySelector('.asideService_js')) {
+			const headerHeight = document.querySelector('.header_js').offsetHeight;
+			let aside = document.querySelector('.asideService_js');
+			let asideHeight = aside.offsetHeight;
+			let scroll = aside.getBoundingClientRect().top+window.scrollY;
+			let mainBlock = document.querySelector('.contentService .containerMin');
+			let mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
+			let mainBlockPaddingR = getComputedStyle(mainBlock).paddingRight.replace(/[\D]+/g, '');
+			let mainBlockTop = mainBlock.getBoundingClientRect().top+window.scrollY;
+			let mainBlockHeight = document.querySelector('.contentService').offsetHeight;
+			let mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
+			let asideStop = mainBlockHeight - asideHeight - mainBlockPadding;
+			$(window).scroll(function() {
+				if ($(window).scrollTop() >= (scroll - headerHeight)) {
+					$('aside').css({
+						position: 'fixed',
+						top: headerHeight,
+						right: mainBlockPaddingR + 'px',
+					});
+				} else {
+					$('aside').css({
+						position: 'relative',
+						top: 0,
+						right: 0,
+					});
+				}
+				if ($(window).scrollTop() >= (mainBlockEnd)) {
+					$('aside').css({
+						position: 'relative',
+						top: asideStop,
+						right: 0,
+					});
+				}
+			});
+		}
 	};
 };

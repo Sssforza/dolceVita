@@ -1821,6 +1821,18 @@ img.mfp-img {
             }
         }
     }
+    &_service {
+        &:after {
+            @media (max-width:$lg) {
+                right: 15px;
+            }
+        }
+        .teamList__content {
+            @media (max-width:$lg) {
+                overflow-x: visible;
+            }
+        }
+    }
 }
 .portfolioSliderFor {
     &__item {
@@ -2208,6 +2220,10 @@ img.mfp-img {
         margin-top: -205px;
         @media (max-width:$xl) {
             margin-top: -220px;
+        }
+        @media (max-width:$lg) {
+            margin-top: -234px;
+            margin-left: -47px;
         }
     }
     &__path {
@@ -2667,6 +2683,9 @@ img.mfp-img {
         @media (max-width:$xl) {
             padding-top: 0;
             margin-top: -410px;
+        }
+        @media (max-width:$lg) {
+            margin-top: -504px;
         }
     }
     &__content {

@@ -44,7 +44,7 @@ export function animReviewsLines () {
             }
         });
     }
-    if(document.querySelector('.serviceReviews_js')) {
+    if(document.querySelector('.serviceReviewsSvg_js')) {
         const serviceReviewsLines = document.querySelector('.serviceReviewsSvg_js');
         const serviceReviewsLinesTop = document.querySelector('.serviceReviews_js').offsetTop;
         const serviceReviewsLinesHeight = document.querySelector('.serviceReviews_js').offsetHeight;

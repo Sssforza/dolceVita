@@ -39,7 +39,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             проблемных зон на&nbsp;30&ndash;35%. Первые результаты видны спустя уже 2&ndash;4 недели после первой процедуры.
                         </div>
                         <div class="contentService__anchors">
-                            <div class="teamList">
+                            <div class="teamList teamList_service">
                                 <div class="teamList__content">
                                     <div class="teamList__item anchorScroll_js active" data-anchor="result">Результат</div>
                                     <div class="teamList__item anchorScroll_js" data-anchor="program">Программа</div>
@@ -553,44 +553,58 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                         <div class="serviceReviews__date">14.05.2020</div>
                                     </div>
                                 </div>
-                                <div class="serviceReviews__info">
+                                <div class="serviceReviews__info serviceReviewsInfo_js">
                                     <div class="serviceReviews__text serviceReviewsText_js show" data-review="1">
-                                        <p>
-                                            На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                            эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                            не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                        </p>
-                                        <p>
-                                            Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                            выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                            удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                            хочется вскочить и&nbsp;убежать.
-                                        </p>
-                                        <p>
-                                            С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                            были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                            Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                        </p>
+                                        <div class="serviceReviews__wrapper">
+                                            <p>
+                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                            </p>
+                                            <p>
+                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                хочется вскочить и&nbsp;убежать.
+                                            </p>
+                                            <p>
+                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                            </p>
+                                        </div>
+                                        <div class="serviceReviews__all serviceReviewsAll_js">
+                                            <span class="serviceReviews__all_show">Читать полностью</span>
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/asideService.svg';?>
+                                        </div>
                                     </div>
                                     <div class="serviceReviews__text serviceReviewsText_js hide" data-review="2">
-                                        <p>
-                                            Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                            выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                            удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                            хочется вскочить и&nbsp;убежать.
-                                        </p>
-                                        <p>
-                                            С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                            были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                            Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                        </p>
+                                        <div class="serviceReviews__wrapper">
+                                            <p>
+                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                хочется вскочить и&nbsp;убежать.
+                                            </p>
+                                            <p>
+                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                            </p>
+                                        </div>
+                                        <div class="serviceReviews__all serviceReviewsAll_js">
+                                            <span class="serviceReviews__all_show">Читать полностью</span>
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/asideService.svg';?>
+                                        </div>
                                     </div>
                                     <div class="serviceReviews__text serviceReviewsText_js hide" data-review="3">
-                                        <p>
-                                            На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                            эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                            не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                        </p>
+                                        <div class="serviceReviews__wrapper">
+                                            <p>
+                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -951,6 +965,10 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                         </div>
                     </section>
                     <aside class="contentService__aside asideService asideService_js">
+                        <div class="asideService__header">
+                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/asideService.svg';?>
+                            <span>Кратко о процедуре</span>
+                        </div>
                         <div class="asideService__wrapper">
                             <div class="asideService__title">
                                 Стройное тело, упругая и&nbsp;гладкая кожа, улучшеное крово- и&nbsp;лимфообращение
