@@ -91,12 +91,14 @@ $this->setFrameMode(true);
                                     <? } ?>
                                 </div>
                                 <div class="portfolioSliderNav portfolioSliderNav_js">
-                                    <? foreach ($arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"] as $nav => $foto) { ?>
-                                        <? $renderPrewAfter = CFile::ResizeImageGet($arResult['BEFORE_AND_AFTER'][$foto]['AFTER']['FILE'], array('width'=>142), BX_RESIZE_IMAGE_EXACT, true);?>
-                                        <div class="portfolioSliderNav__item <?= $nav == 0 ? 'active' : ''?>" data-slide="<?= $nav+1?>">
-                                            <div class="portfolioSliderNav__bg" style="background-image:url(<?= $renderPrewAfter['src']?>)"></div>
-                                        </div>
-                                    <? } ?>
+                                    <div class="portfolioSliderNav__list">
+                                        <? foreach ($arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"] as $nav => $foto) { ?>
+                                            <? $renderPrewAfter = CFile::ResizeImageGet($arResult['BEFORE_AND_AFTER'][$foto]['AFTER']['FILE'], array('width'=>142), BX_RESIZE_IMAGE_EXACT, true);?>
+                                            <div class="portfolioSliderNav__item <?= $nav == 0 ? 'active' : ''?>" data-slide="<?= $nav?>">
+                                                <div class="portfolioSliderNav__bg" style="background-image:url(<?= $renderPrewAfter['src']?>)"></div>
+                                            </div>
+                                        <? } ?>
+                                    </div>
                                 </div>
                             </div>
                         <? } ?>
@@ -130,12 +132,14 @@ $this->setFrameMode(true);
                                                                         <div class="serviceStage__bottom"><?= $arResult["ELEMENTS"][$value]["NUMBER_PROCEDURES"]["VALUE"]?></div>
                                                                     </div>
                                                                 <? } ?>
-                                                                <div class="serviceStage__item">
-                                                                    <div class="serviceStage__top">Оборудование</div>
-                                                                    <div class="serviceStage__bottom">
-                                                                        <a href="#" class="serviceStage__link">Coccon</a>
+                                                                <? if ($arResult["ELEMENTS"][$value]["EQUIPMENT"]["VALUE"]) { ?>
+                                                                    <div class="serviceStage__item">
+                                                                        <div class="serviceStage__top">Оборудование</div>
+                                                                        <div class="serviceStage__bottom">
+                                                                            <a href="#" class="serviceStage__link"><?= $arResult["ELEMENTS"][$value]["EQUIPMENT"]["INFO"]["NAME"]?></a>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                <? } ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -576,7 +580,14 @@ $this->setFrameMode(true);
                                 <? } ?>
                                 <div class="asideService__item">
                                     <div class="asideService__what">Оборудование</div>
-                                    <div class="asideService__answer">Coccon, Vela Shape II</div>
+                                    <div class="asideService__answer">
+                                        <? $i =1;?>
+                                        <? foreach($arResult["ELEMENTS"] as $equipment) { ?>
+                                            <?= $equipment["EQUIPMENT"]["INFO"]["NAME"];?>
+                                            <?= count($arResult["EQUIPMENT"]) > $i ? ', ' : '';?>
+                                            <? $i++;?>
+                                        <? } ?>
+                                    </div>
                                 </div>
                                 <? if ($arResult["PROPERTIES"]["TOTAL_COST"]["VALUE"]) {?>
                                     <div class="asideService__item">

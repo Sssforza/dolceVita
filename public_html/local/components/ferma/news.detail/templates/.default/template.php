@@ -23,6 +23,9 @@ if (
 $prewPicture = CFile::ResizeImageGet($arResult['DETAIL_PICTURE'], array('width'=>124), BX_RESIZE_IMAGE_EXACT, true);
 $detailPicture = CFile::ResizeImageGet($arResult['DETAIL_PICTURE'], array('width'=>478), BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true);
 ?>
+<!-- <pre>
+    <? //print_r($arResult)?>
+</pre> -->
 <? if (!empty($arResult)) { ?>
     <div class="services__item servicesCard<?= $class_prog?>">
         <div class="servicesCard__header">
@@ -71,17 +74,19 @@ $detailPicture = CFile::ResizeImageGet($arResult['DETAIL_PICTURE'], array('width
                             <div class="servicesCard__how"><?= $arResult['PROPERTIES']['NUMBER_PROCEDURES']['VALUE']?></div>
                         </div>
                     <? } ?>
-                    <? if ($arResult['PROPERTIES']['COURSE_COST']['VALUE']) { ?>
+                    <? if ($arResult['PROPERTIES']['TOTAL_COST']['VALUE']) { ?>
                         <div class="servicesCard__box">
                             <div class="servicesCard__what">Стоимость</div>
-                            <div class="servicesCard__how">от <?= $arResult['PROPERTIES']['COURSE_COST']['VALUE']?> ₽</div>
+                            <div class="servicesCard__how">от <?= $arResult['PROPERTIES']['TOTAL_COST']['VALUE']?> ₽</div>
                         </div>
                     <? } ?>
                 </div>
-                <div class="servicesCard__equipment">
-                    <div class="servicesCard__facilities">Оборудование</div>
-                    <div class="servicesCard__name">Лазерный аппарат fotona 4d</div>
-                </div>
+                <? if($arResult['PROPERTIES']['EQUIPMENT']['VALUE']) { ?>
+                    <div class="servicesCard__equipment">
+                        <div class="servicesCard__facilities">Оборудование</div>
+                        <div class="servicesCard__name"><?= $arResult["ELEMENTS"][$arResult['PROPERTIES']['EQUIPMENT']['VALUE']]["NAME"];?></div>
+                    </div>
+                <? } ?>
             <? } ?>
         </div>
     </div>

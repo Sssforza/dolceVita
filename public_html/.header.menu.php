@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Услуги", 
+		"/services/", 
+		Array(), 
+		Array("class"=>"headerServices_js headerServicesClose_js"), 
+		"" 
+	),
+	Array(
+		"Магазин", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Акции", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Стоимость", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

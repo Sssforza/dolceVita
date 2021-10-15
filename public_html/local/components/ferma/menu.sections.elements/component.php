@@ -33,7 +33,13 @@ if($arParams['DEPTH_LEVEL']<=0)
 	$arParams['DEPTH_LEVEL']=1;
 
 if($this->StartResultCache()) {
+    $menuItems = array();
     CModule::IncludeModule('iblock');
+    foreach ($arParams['IBLOCK_ID'] as $value) {
+        $arIblock = CIBlock::GetByID($value);
+        $iblock = $arIblock->GetNext();
+        $menuItems['IBLOCK'][] = $iblock;
+    }
     $arSectionId = array();
     $arFilter = array(
             'IBLOCK_ID'=>$arParams['IBLOCK_ID'],
@@ -52,7 +58,7 @@ if($this->StartResultCache()) {
             'IBLOCK_SECTION_ID',
             'CODE'
     ));
-    $menuItems = array();
+
     while($arSection = $rsSections->GetNext()){
         $arSection['IS_SECTION'] = 1;
         $arSection['LINK'] = $arSection['SECTION_PAGE_URL'];
@@ -64,7 +70,7 @@ if($this->StartResultCache()) {
             }
             $menuItems['SECTION'][$arSection['IBLOCK_SECTION_ID']][] = $arSection;
         } else {
-            $menuItems['ROOT'][] = $arSection;
+            $menuItems['ROOT'][$arSection["IBLOCK_ID"]][] = $arSection;
         }
         $arSectionId[] = $arSection['ID'];
     }
@@ -92,7 +98,7 @@ if($this->StartResultCache()) {
             }
             $menuItems['ELEMENTS'][$arFields['IBLOCK_SECTION_ID']][] = $arFields;
         } else {
-            $menuItems['ROOT'][] = $arFields;
+            $menuItems['ELEMENTS'][$arFields['IBLOCK_ID']][] = $arFields;
         }
     }
     //}
@@ -101,7 +107,8 @@ if($this->StartResultCache()) {
     // echo '<pre>';
     // print_r($menuItems);
     // echo '</pre>';
-    createMenuArray($arResult,$menuItems,$menuItems['ROOT'],1);
+    $arResult = $menuItems;
+    //createMenuArray($arResult,$menuItems,$menuItems['ROOT'],1);
     $this->EndResultCache();
 }
 //return $arResult;

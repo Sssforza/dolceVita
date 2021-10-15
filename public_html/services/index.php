@@ -214,7 +214,7 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/services.css", true);
 		"CATEGORY_THEME_8" => "list",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "/services/",
-			"section" => "",
+			"section" => "/services/",
 			"detail" => "#ELEMENT_CODE#/",
 		)
 	),

@@ -17659,13 +17659,26 @@ function menuSelection() {
         middleSelected.forEach(function (i) {
           i.classList.remove('active');
         });
+        middleSelected.forEach(function (i) {
+          i.classList.remove('active');
+        });
         middleSelected[0].classList.add('active');
         var thisShowDetail = middleSelected[0].getAttribute('data-servicesMiddleDetail');
         elementsMiddle.forEach(function (elem) {
           elem.classList.add('hidden');
 
           if (elem.getAttribute('data-servicesMiddle') === thisShow) {
+            var activSelected = elem.querySelectorAll('.servicesMiddleLink_js');
+            activSelected[0].classList.add('active');
+            thisShowDetail = activSelected[0].getAttribute('data-servicesMiddleDetail');
             elem.classList.remove('hidden');
+            elementsDetail.forEach(function (elem) {
+              elem.classList.add('hidden');
+
+              if (elem.getAttribute('data-servicesDetail') === thisShowDetail) {
+                elem.classList.remove('hidden');
+              }
+            });
           }
         });
         elementsDetail.forEach(function (elem) {

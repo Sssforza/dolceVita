@@ -162,11 +162,10 @@ if($arParams["SEF_MODE"] == "Y")
 		$b404 = true;
 	}
 
-	// if ($arVariables["SECTION_CODE"] != "programmy" && $componentPage == "detail" && $arParams["IS_SERVICES"]) {
-	// 	$componentPage = "section";
-	// }
+	if ($arVariables["SECTION_CODE"] != "programmy" && $componentPage == "detail" && $block_type["CODE"] != 'services') {
+		$componentPage = "section";
+	}
 
-	//print_r($arVariables);
 	if($componentPage == "section")
 	{
 		if (isset($arVariables["SECTION_ID"]))
@@ -231,6 +230,22 @@ if($arParams["SEF_MODE"] == "Y")
 		foreach ($menuElements[$arVariables['SECTION_ID']] as $value) {
 			$arVariables['AR_ID_ELEMENTS'][] = $value['ID'];
 		}
+	}
+	if ($arVariables["ELEMENT_CODE"]) {
+		$objFindTools = new CIBlockFindTools();
+		$elementID = CIBlockFindTools::GetElementID(false, $arVariables["ELEMENT_CODE"], false, $arVariables["SECTION_CODE"], array("IBLOCK_ID" => $block_type["ID"]));
+		$arFilter["ID"] = $elementID;
+		$arFilter["IBLOCK_TYPE"] = "services";
+		$arsSelect = array("ID", "IBLOCK_ID", "PROPERTIES_*");
+		CModule::IncludeModule('iblock');
+		$arElement = CIBlockElement::GetList(array(), $arFilter, false, false, $arsSelect);
+		while($obyElement = $arElement->GetNextElement())
+		{
+		    $arProps = $obyElement->GetProperties();
+		    $arElementId = array_diff(array_merge((array)$arProps["SERVICES"]["VALUE"], (array)$arProps["PROGRAMS"]["VALUE"], (array)$arProps["EQUIPMENT"]["VALUE"]), array(''));
+		}
+		$arVariables["ELEMENT_ID"] = $elementID;
+		$arVariables["AR_ELEMENT"] = $arElementId;
 	}
 	$arResult = array(
 		"FOLDER" => $arParams["SEF_FOLDER"],

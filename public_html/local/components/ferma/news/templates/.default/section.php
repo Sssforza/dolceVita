@@ -16,11 +16,15 @@ $section_code = $arResult["VARIABLES"]["SECTION_CODE"];
 $section_id = $arResult["VARIABLES"]["SECTION_ID"];
 $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
 $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
+if ($arResult["VARIABLES"]["ELEMENT_ID"]) {
+    $input = $arResult['ELEMENT_AR'][$arResult["VARIABLES"]["ELEMENT_ID"]]["NAME"];
+}
+echo $input;
 $sec = true;
 ?>
 <main class="main">
     <!-- <pre>
-        <? //print_r($arResult)?>
+        <? print_r($arResult)?>
     </pre> -->
     <section class="page page_services">
         <section class="banerSection banerServices">
@@ -94,7 +98,13 @@ $sec = true;
         </section>
         <section class="services services_attendance container servicesAttendance_js" data-midnight="gray">
             <div class="services__content">
-                <? foreach ($arResult["VARIABLES"]["AR_ID_ELEMENTS"] as $keys => $element_id) { ?>
+                <? if ($arResult["VARIABLES"]["AR_ELEMENT"]) {
+                    $arElementId = $arResult["VARIABLES"]["AR_ELEMENT"];
+                } else {
+                    $arElementId = $arResult["VARIABLES"]["AR_ID_ELEMENTS"];
+                }
+                ?>
+                <? foreach ($arElementId as $keys => $element_id) { ?>
                     <? $APPLICATION->IncludeComponent(
                         "ferma:news.detail",
                         ".default",

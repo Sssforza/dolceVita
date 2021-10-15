@@ -44,13 +44,27 @@ export function menuSelection () {
                 item.classList.add('active');
                 middleSelected.forEach((i) => {
                     i.classList.remove('active');
+
+                });
+                middleSelected.forEach((i) => {
+                    i.classList.remove('active');
                 });
                 middleSelected[0].classList.add('active');
+
                 let thisShowDetail = middleSelected[0].getAttribute('data-servicesMiddleDetail');
                 elementsMiddle.forEach((elem) => {
                     elem.classList.add('hidden');
                     if (elem.getAttribute('data-servicesMiddle') === thisShow) {
+                        let activSelected = elem.querySelectorAll('.servicesMiddleLink_js');
+                        activSelected[0].classList.add('active');
+                        thisShowDetail = activSelected[0].getAttribute('data-servicesMiddleDetail');
                         elem.classList.remove('hidden');
+                        elementsDetail.forEach((elem) => {
+                            elem.classList.add('hidden');
+                            if (elem.getAttribute('data-servicesDetail') === thisShowDetail) {
+                                elem.classList.remove('hidden');
+                            }
+                        });
                     }
                 });
                 elementsDetail.forEach((elem) => {

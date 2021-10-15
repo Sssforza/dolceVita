@@ -371,6 +371,12 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 				{
 					$arFields = $obyElement->GetFields();
 					$arProps = $obyElement->GetProperties();
+					if ($arProps["EQUIPMENT"]["VALUE"]) {
+						$arEquipment = CIBlockElement::GetByID($arProps["EQUIPMENT"]["VALUE"]);
+						$equipment = $arEquipment->GetNext();
+						$arProps["EQUIPMENT"]["INFO"] = $equipment;
+
+					}
 					$arResult["ELEMENTS"][$arFields["ID"]] = array_merge($arFields, $arProps);
 				}
 			}

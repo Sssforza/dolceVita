@@ -25,7 +25,7 @@ $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
 $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
 $sec = true;
 ?>
-<main class="main">
+<main class="main">3
    <!--  <pre>
         <? //print_r($arResult)?>
     </pre> -->
@@ -104,7 +104,7 @@ $sec = true;
                 <? foreach ($arResult["VARIABLES"]["AR_ID_ELEMENTS"] as $keys => $element_id) { ?>
                     <? $APPLICATION->IncludeComponent(
                         "ferma:news.detail",
-                        ".default",
+                        "services",
                         Array("DISPLAY_DATE" => "Y",
                             "DISPLAY_NAME" => "Y",
                             "DISPLAY_PICTURE" => "Y",

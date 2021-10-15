@@ -12,9 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<pre>
-    <? print_r($arResult)?>
-</pre>
+<!-- <pre>
+    <? //print_r($arResult)?>
+</pre> -->
 <main class="main">
     <section class="page page_service">
         <section class="banerService" style="background-image:url(<?= $arResult['DETAIL_PICTURE']['SRC']?>)">
@@ -91,12 +91,14 @@ $this->setFrameMode(true);
                                     <? } ?>
                                 </div>
                                 <div class="portfolioSliderNav portfolioSliderNav_js">
-                                    <? foreach ($arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"] as $nav => $foto) { ?>
-                                        <? $renderPrewAfter = CFile::ResizeImageGet($arResult['BEFORE_AND_AFTER'][$foto]['AFTER']['FILE'], array('width'=>142), BX_RESIZE_IMAGE_EXACT, true);?>
-                                        <div class="portfolioSliderNav__item <?= $nav == 0 ? 'active' : ''?>" data-slide="<?= $nav+1?>">
-                                            <div class="portfolioSliderNav__bg" style="background-image:url(<?= $renderPrewAfter['src']?>)"></div>
-                                        </div>
-                                    <? } ?>
+                                    <div class="portfolioSliderNav__list">
+                                        <? foreach ($arResult["PROPERTIES"]["BEFORE_AND_AFTER"]["VALUE"] as $nav => $foto) { ?>
+                                            <? $renderPrewAfter = CFile::ResizeImageGet($arResult['BEFORE_AND_AFTER'][$foto]['AFTER']['FILE'], array('width'=>142), BX_RESIZE_IMAGE_EXACT, true);?>
+                                            <div class="portfolioSliderNav__item <?= $nav == 0 ? 'active' : ''?>" data-slide="<?= $nav?>">
+                                                <div class="portfolioSliderNav__bg" style="background-image:url(<?= $renderPrewAfter['src']?>)"></div>
+                                            </div>
+                                        <? } ?>
+                                    </div>
                                 </div>
                             </div>
                         <? } ?>
@@ -528,12 +530,7 @@ $this->setFrameMode(true);
                                     <div class="asideService__item">
                                         <div class="asideService__what">Оборудование</div>
                                         <div class="asideService__answer">
-                                            <? $i =1;?>
-                                            <? foreach($arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"] as $equipment) { ?>
-                                                <?= $arResult["EQUIPMENT"][$equipment]["NAME"];?>
-                                                <?= count($arResult["EQUIPMENT"]) > $i ? ', ' : '';?>
-                                                <? $i++;?>
-                                            <? } ?>
+                                            <?= $arResult["ELEMENTS"][$arResult["PROPERTIES"]["EQUIPMENT"]["VALUE"]]["NAME"];?>
                                         </div>
                                     </div>
                                 <? } ?>

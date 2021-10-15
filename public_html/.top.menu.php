@@ -1,31 +1,24 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Услуги", 
-		"/services/index.php", 
+		"Контакты", 
+		"/contacts/", 
 		Array(), 
-		Array(), 
+		Array("class"=>"headerNavTop__hover"), 
 		"" 
 	),
 	Array(
-		"Магазин", 
+		"Блог", 
 		"", 
 		Array(), 
-		Array(), 
+		Array("class"=>"headerNavTop__hover"), 
 		"" 
 	),
 	Array(
-		"Акции", 
+		"О нас", 
 		"", 
 		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Стоимость", 
-		"", 
-		Array(), 
-		Array(), 
+		Array("class"=>"about headerAboutPosition_js headerAboutHover_js"), 
 		"" 
 	)
 );
