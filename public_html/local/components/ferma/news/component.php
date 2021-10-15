@@ -164,14 +164,16 @@ if($arParams["SEF_MODE"] == "Y")
 
 	if ($arVariables["SECTION_CODE"] != "programmy" && $componentPage == "detail" && $block_type["CODE"] != 'services') {
 		$componentPage = "section";
+		$sectionID = CIBlockFindTools::GetSectionID($arVariables["SECTION_ID"], $arVariables["SECTION_CODE"], array());
+		$arResult["VARIABLES"] = $arVariables["SECTION_ID"] = $sectionID;
 	}
 
 	if($componentPage == "section")
 	{
-		if (isset($arVariables["SECTION_ID"]))
-			$b404 |= (intval($arVariables["SECTION_ID"])."" !== $arVariables["SECTION_ID"]);
-		else
-			$b404 |= !isset($arVariables["SECTION_CODE"]);
+		//if (isset($arVariables["SECTION_ID"]))
+			//$b404 |= (intval($arVariables["SECTION_ID"])."" !== $arVariables["SECTION_ID"]);
+		//else
+			//$b404 |= !isset($arVariables["SECTION_CODE"]);
 	}
 
 	if($b404 && CModule::IncludeModule('iblock'))
@@ -232,7 +234,6 @@ if($arParams["SEF_MODE"] == "Y")
 		}
 	}
 	if ($arVariables["ELEMENT_CODE"]) {
-		$objFindTools = new CIBlockFindTools();
 		$elementID = CIBlockFindTools::GetElementID(false, $arVariables["ELEMENT_CODE"], false, $arVariables["SECTION_CODE"], array("IBLOCK_ID" => $block_type["ID"]));
 		$arFilter["ID"] = $elementID;
 		$arFilter["IBLOCK_TYPE"] = "services";

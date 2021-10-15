@@ -32,6 +32,14 @@ $arUrlRewrite=array (
     'PATH' => '/services/cosmetology/index.php',
     'SORT' => 100,
   ),
+  16 => 
+  array (
+    'CONDITION' => '#^/services/beauty-saloon/#',
+    'RULE' => '',
+    'ID' => 'ferma:news',
+    'PATH' => '/services/beauty-saloon/index.php',
+    'SORT' => 100,
+  ),
   4 => 
   array (
     'CONDITION' => '#^/e-store/xml_catalog/#',

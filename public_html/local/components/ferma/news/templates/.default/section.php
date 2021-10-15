@@ -19,12 +19,11 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
 if ($arResult["VARIABLES"]["ELEMENT_ID"]) {
     $input = $arResult['ELEMENT_AR'][$arResult["VARIABLES"]["ELEMENT_ID"]]["NAME"];
 }
-echo $input;
 $sec = true;
 ?>
 <main class="main">
-    <!-- <pre>
-        <? print_r($arResult)?>
+    <!--  <pre>
+        <? //print_r($arResult)?>
     </pre> -->
     <section class="page page_services">
         <section class="banerSection banerServices">

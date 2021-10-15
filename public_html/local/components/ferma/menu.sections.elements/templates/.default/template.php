@@ -1,8 +1,8 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?if (!empty($arResult)):?>
-<!-- <pre>
+<pre>
 	<? //print_r($arResult)?>
-</pre> -->
+</pre>
 <div class="headerServices headerServicesMenu_js">
     <div class="headerServices__content container">
         <div class="headerServices__close">
@@ -52,7 +52,7 @@
 			                    	<div class="servicesMiddle__info"></div>
 			                    	<ul class="servicesMiddle__list">
 			                            <li class="servicesMiddle__li">
-			                                <span class="servicesMiddle__link servicesMiddleLink_js <?= ($tem) ? 'active': ''?>" data-servicesMiddleDetail="<?= $value['ID']?>"><?= $value['NAME']?></span>
+			                                <a href="<?= $value['SECTION_PAGE_URL']?>" class="servicesMiddle__link servicesMiddleLink_js <?= ($tem) ? 'active': ''?>" data-servicesMiddleDetail="<?= $value['ID']?>"><?= $value['NAME']?></a>
 			                            </li>
 			                        </ul>
 			                    <? } ?>

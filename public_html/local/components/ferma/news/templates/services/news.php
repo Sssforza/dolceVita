@@ -25,10 +25,10 @@ $parent_id = $arResult["VARIABLES"]["PARENT_SECTION_ID"];
 $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
 $sec = true;
 ?>
-<main class="main">3
-   <pre>
+<main class="main">
+   <!-- <pre>
         <? //print_r($arResult)?>
-    </pre>
+    </pre> -->
     <section class="page page_services">
         <section class="banerSection banerServices">
             <div class="banerServices__bg" style="background-image:url(<?= CFile::GetPath($arResult["IBLOCK_AR"]["PICTURE"]);?>)"></div>
