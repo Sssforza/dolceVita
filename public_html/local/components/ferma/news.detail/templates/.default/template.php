@@ -14,8 +14,8 @@ $this->setFrameMode(true);
 $programmy = false;
 $class_prog = '';
 if (
-    !empty($arResult["SECTION"]["PATH"][0]["CODE"]) == "programmy" ||
-    !empty($arParams["SECTIONS_CODE"]) == "programmy") 
+    $arResult["SECTION"]["PATH"][0]["CODE"] == "programmy" ||
+    $arParams["SECTIONS_CODE"] == "programmy") 
 {
 	$programmy = true;
 	$class_prog = " servicesCard_programm servicesCard_js";
