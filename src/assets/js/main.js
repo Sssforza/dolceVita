@@ -21,7 +21,7 @@ import {animGradientBgHeader, animMainLines, animReviewsLines, sectionBonusSyste
 import {documentClick} from "./blocks/_documentClick.js";
 
 //📁 /assets/js/blocks  form.js
-import {popupFormRecording} from "./blocks/form.js";
+import {popupFormRecording, formConsult} from "./blocks/form.js";
 
 //📁 /assets/js/blocks  _header.js
 import {headerServices, headerSearch, menuSelection, scrollUp} from "./blocks/_header.js";
@@ -39,7 +39,7 @@ import {usefulBlogHover} from "./blocks/index.js";
 import {servicesSelectedDrop, servicesSelectedFetch} from "./blocks/services.js";
 
 //📁 /assets/js/blocks  service.js
-import {serviceStageShow, tabsServiceReviews, itemServiceTestimony, serviceScrollTo, servicePriceShowAll, serviceFixedAsideBar} from "./blocks/service.js";
+import {serviceStageShow, tabsServiceReviews, itemServiceTestimony, serviceScrollTo, servicePriceShowAll, serviceFixedAsideBar, serviceReviewsShowAll} from "./blocks/service.js";
 
 //📁 /assets/js/blocks  specialist.js
 import {aboutSpecialistShowAll, tabsSpecialistEducation} from "./blocks/specialist.js";
@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // popup form recording
     popupFormRecording();
+
+    // form consult
+    formConsult();
 
     // header services
     headerServices();
@@ -155,6 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // service fixed aside bar
     serviceFixedAsideBar();
+
+    // service reviews show all
+    serviceReviewsShowAll();
 
     // items service testimony
     itemServiceTestimony();

@@ -5,6 +5,14 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.event.move.js");
 $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 ?>
 <main class="main">
+    <section class="comeBack comeBack_banerSection">
+        <div class="comeBack__content container">
+            <a href="/team/" class="comeBack__link">
+                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/comeBackArrow.svg';?>
+                <div class="comeBack__page">Косметология</div>
+            </a>
+        </div>
+    </section>
 	<section class="page page_service">
         <section class="banerService" style="background-image:url(/dist/img/trash/banerService-1.jpg)">
             <div class="containerMin">
@@ -39,7 +47,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                             проблемных зон на&nbsp;30&ndash;35%. Первые результаты видны спустя уже 2&ndash;4 недели после первой процедуры.
                         </div>
                         <div class="contentService__anchors">
-                            <div class="teamList">
+                            <div class="teamList teamList_service">
                                 <div class="teamList__content">
                                     <div class="teamList__item anchorScroll_js active" data-anchor="result">Результат</div>
                                     <div class="teamList__item anchorScroll_js" data-anchor="program">Программа</div>
@@ -553,44 +561,58 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                                         <div class="serviceReviews__date">14.05.2020</div>
                                     </div>
                                 </div>
-                                <div class="serviceReviews__info">
+                                <div class="serviceReviews__info serviceReviewsInfo_js">
                                     <div class="serviceReviews__text serviceReviewsText_js show" data-review="1">
-                                        <p>
-                                            На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                            эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                            не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                        </p>
-                                        <p>
-                                            Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                            выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                            удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                            хочется вскочить и&nbsp;убежать.
-                                        </p>
-                                        <p>
-                                            С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                            были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                            Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                        </p>
+                                        <div class="serviceReviews__wrapper">
+                                            <p>
+                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                            </p>
+                                            <p>
+                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                хочется вскочить и&nbsp;убежать.
+                                            </p>
+                                            <p>
+                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                            </p>
+                                        </div>
+                                        <div class="serviceReviews__all serviceReviewsAll_js">
+                                            <span class="serviceReviews__all_show">Читать полностью</span>
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/asideService.svg';?>
+                                        </div>
                                     </div>
                                     <div class="serviceReviews__text serviceReviewsText_js hide" data-review="2">
-                                        <p>
-                                            Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                            выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                            удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                            хочется вскочить и&nbsp;убежать.
-                                        </p>
-                                        <p>
-                                            С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                            были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                            Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                        </p>
+                                        <div class="serviceReviews__wrapper">
+                                            <p>
+                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                хочется вскочить и&nbsp;убежать.
+                                            </p>
+                                            <p>
+                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                            </p>
+                                        </div>
+                                        <div class="serviceReviews__all serviceReviewsAll_js">
+                                            <span class="serviceReviews__all_show">Читать полностью</span>
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/asideService.svg';?>
+                                        </div>
                                     </div>
                                     <div class="serviceReviews__text serviceReviewsText_js hide" data-review="3">
-                                        <p>
-                                            На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                            эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                            не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                        </p>
+                                        <div class="serviceReviews__wrapper">
+                                            <p>
+                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -951,6 +973,10 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
                         </div>
                     </section>
                     <aside class="contentService__aside asideService asideService_js">
+                        <div class="asideService__header">
+                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/asideService.svg';?>
+                            <span>Кратко о процедуре</span>
+                        </div>
                         <div class="asideService__wrapper">
                             <div class="asideService__title">
                                 Стройное тело, упругая и&nbsp;гладкая кожа, улучшеное крово- и&nbsp;лимфообращение
@@ -994,7 +1020,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 				<div class="bonusSystem__ground bonusSystem__ground_left">
 					<img src="/dist/img/formTrees01.png" alt="">
 				</div>
-				<form class="sectionConsult__form">
+				<form class="sectionConsult__form consultForm_js">
 					<div class="sectionConsult__title">Нужна консультация?</div>
 					<div class="sectionConsult__description">
 						Не&nbsp;знаете что выбрать, оставьте свой номер телефона: мы&nbsp;позвоним 
@@ -1002,13 +1028,13 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 					</div>
 					<div class="sectionConsult__input">
 						<div class="envelopeInput">
-							<input class="envelopeInput__field" placeholder="Имя" type="text">
+							<input class="envelopeInput__field requiredField_js" placeholder="Имя" type="text">
 							<span class="envelopeInput__error">
 								Введите Ваше имя
 							</span>
 						</div>
 						<div class="envelopeInput">
-							<input class="envelopeInput__field" placeholder="Телефон" type="text">
+							<input class="envelopeInput__field maskPhone requiredField_js" placeholder="Телефон" type="text">
 							<span class="envelopeInput__error">
 								Неверный формат телефона
 							</span>
@@ -1201,7 +1227,7 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
             <path d="M76.5 231.349L36.7827 208.419C27.9813 203.337 21.443 199.561 16.497 196.016C11.5689 192.484 8.28742 189.226 5.97184 185.215C3.65624 181.205 2.47556 176.734 1.88079 170.7C1.28384 164.644 1.28272 157.094 1.28272 146.931L1.28273 101.069C1.28273 90.9062 1.28384 83.3558 1.8808 77.3C2.47557 71.2662 3.65625 66.7953 5.97185 62.7846C8.28743 58.7739 11.5689 55.516 16.497 51.984C21.443 48.4391 27.9813 44.663 36.7827 39.5814L76.5 16.6507C85.3015 11.5692 91.8409 7.79491 97.3838 5.28401C102.907 2.78218 107.369 1.56926 112 1.56926C116.631 1.56926 121.093 2.78219 126.616 5.28402C132.159 7.79491 138.699 11.5692 147.5 16.6507L187.217 39.5815C196.019 44.663 202.557 48.4392 207.503 51.984C212.431 55.516 215.713 58.7739 218.028 62.7847C220.344 66.7954 221.524 71.2662 222.119 77.3C222.716 83.3558 222.717 90.9062 222.717 101.069L222.717 146.931C222.717 157.094 222.716 164.644 222.119 170.7C221.524 176.734 220.344 181.205 218.028 185.215C215.713 189.226 212.431 192.484 207.503 196.016C202.557 199.561 196.019 203.337 187.217 208.419L147.5 231.349C138.699 236.431 132.159 240.205 126.616 242.716C121.093 245.218 116.631 246.431 112 246.431C107.369 246.431 102.907 245.218 97.3838 242.716C91.8409 240.205 85.3015 236.431 76.5 231.349Z" fill="white" stroke="#DBE9EF" stroke-width="2"/>
         </clipPath>
     </svg>
-    <svg class="clipPath" width="364" height="332" viewBox="0 0 364 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="clipPath serviceEquipmenent__video_svg" width="364" height="332" viewBox="0 0 364 332" fill="none" xmlns="http://www.w3.org/2000/svg">
         <clipPath id="serviceEquipmenent">
             <path opacity="0.5" d="M26.074 106.25L52.292 60.8392C60.7498 46.1897 67.0758 35.234 73.025 26.9333C78.9678 18.6416 84.5126 13.0319 91.391 9.06066C98.2694 5.08938 105.9 3.09231 116.052 2.09158C126.215 1.08972 138.866 1.08917 155.782 1.08917L208.218 1.08916C225.134 1.08916 237.785 1.08971 247.948 2.09157C258.1 3.0923 265.731 5.08937 272.609 9.06066C279.487 13.0319 285.032 18.6416 290.975 26.9333C296.924 35.234 303.25 46.1897 311.708 60.8392L337.926 106.25C346.384 120.899 352.709 131.856 356.923 141.158C361.132 150.451 363.218 158.057 363.218 166C363.218 173.943 361.132 181.549 356.923 190.842C352.709 200.144 346.384 211.101 337.926 225.75L311.708 271.161C303.25 285.81 296.924 296.766 290.975 305.067C285.032 313.358 279.487 318.968 272.609 322.939C265.731 326.911 258.1 328.908 247.948 329.908C237.785 330.91 225.134 330.911 208.218 330.911L155.782 330.911C138.866 330.911 126.215 330.91 116.052 329.908C105.9 328.908 98.2694 326.911 91.391 322.939C84.5126 318.968 78.9678 313.358 73.025 305.067C67.0758 296.766 60.7499 285.81 52.292 271.161L26.074 225.75C17.6162 211.101 11.2912 200.144 7.07722 190.842C2.86776 181.549 0.782027 173.943 0.782027 166C0.782026 158.057 2.86776 150.451 7.07722 141.158C11.2912 131.856 17.6162 120.899 26.074 106.25Z" stroke="#8D9BB2"/>
         </clipPath>

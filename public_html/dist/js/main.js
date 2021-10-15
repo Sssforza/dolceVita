@@ -12229,7 +12229,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_documentClick_js__WEBPACK_IMPORTED_MODULE_6__["documentClick"])(); // popup form recording
 
-  Object(_blocks_form_js__WEBPACK_IMPORTED_MODULE_7__["popupFormRecording"])(); // header services
+  Object(_blocks_form_js__WEBPACK_IMPORTED_MODULE_7__["popupFormRecording"])(); // form consult
+
+  Object(_blocks_form_js__WEBPACK_IMPORTED_MODULE_7__["formConsult"])(); // header services
 
   Object(_blocks_header_js__WEBPACK_IMPORTED_MODULE_8__["headerServices"])(); // header open search input
 
@@ -12277,7 +12279,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["servicePriceShowAll"])(); // service fixed aside bar
 
-  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["serviceFixedAsideBar"])(); // items service testimony
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["serviceFixedAsideBar"])(); // service reviews show all
+
+  Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["serviceReviewsShowAll"])(); // items service testimony
 
   Object(_blocks_service_js__WEBPACK_IMPORTED_MODULE_13__["itemServiceTestimony"])(); // about specialist show all
 
@@ -17355,7 +17359,7 @@ function animReviewsLines() {
     });
   }
 
-  if (document.querySelector('.serviceReviews_js')) {
+  if (document.querySelector('.serviceReviewsSvg_js')) {
     var serviceReviewsLines = document.querySelector('.serviceReviewsSvg_js');
     var serviceReviewsLinesTop = document.querySelector('.serviceReviews_js').offsetTop;
     var serviceReviewsLinesHeight = document.querySelector('.serviceReviews_js').offsetHeight;
@@ -17462,6 +17466,7 @@ function documentClick() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popupFormRecording", function() { return popupFormRecording; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formConsult", function() { return formConsult; });
 // popup form recording
 function popupFormRecording() {
   if (document.querySelector('.popupFormRecording_js')) {
@@ -17516,6 +17521,72 @@ function popupFormRecording() {
       }
     });
     recordingForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      removeError();
+      checkFields();
+      validLenPhone();
+      validTotal();
+
+      if (valid === true) {
+        console.log('.fetch');
+      }
+    });
+  }
+} // form consult
+
+function formConsult() {
+  if (document.querySelector('.sectionConsult__form')) {
+    var valid = false;
+    var errors;
+    var consultForm = document.querySelector('.sectionConsult__form');
+    var fields = consultForm.querySelectorAll('.requiredField_js');
+
+    var removeError = function removeError() {
+      errors = consultForm.querySelectorAll('.error');
+
+      for (var i = 0; i < errors.length; i++) {
+        errors[i].classList.remove('error');
+      }
+    };
+
+    var checkFields = function checkFields() {
+      for (var i = 0; i < fields.length; i++) {
+        if (!fields[i].value) {
+          fields[i].parentNode.classList.add('error');
+        }
+      }
+    };
+
+    var validLenPhone = function validLenPhone() {
+      var inputPhone = consultForm.querySelector('.maskPhone');
+      var inputPhoneVal = inputPhone.value;
+
+      if (inputPhoneVal.length < 16) {
+        inputPhone.parentNode.classList.add('error');
+      } else {
+        inputPhone.parentNode.classList.remove('error');
+      }
+    };
+
+    var validTotal = function validTotal() {
+      var fields = consultForm.querySelectorAll('.envelopeInput');
+      fields.forEach(function (item) {
+        if (item.classList.contains('error')) {
+          valid = false;
+        } else {
+          valid = true;
+        }
+      });
+    };
+
+    $('.sectionConsult__form .maskPhone').mask('+7 Z00 000-00-00', {
+      'translation': {
+        Z: {
+          pattern: /[0-69-9]/
+        }
+      }
+    });
+    consultForm.addEventListener('submit', function (event) {
       event.preventDefault();
       removeError();
       checkFields();
@@ -17805,18 +17876,22 @@ function sliderSpecialistsPortfolio() {
 function sliderstageView() {
   var slickstageView = $(".stageViewSlider_js");
 
-  if (slickstageView.length) {
-    slickstageView.slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      speed: 900,
-      arrows: true,
-      fade: false,
-      draggable: false,
-      infinite: false,
-      prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-      nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
-    });
+  if (window.innerWidth > 540) {
+    console.log(540);
+
+    if (slickstageView.length) {
+      slickstageView.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        speed: 900,
+        arrows: true,
+        fade: false,
+        draggable: false,
+        infinite: false,
+        prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+        nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+      });
+    }
   }
 }
 ; // slider service reviews
@@ -17830,17 +17905,19 @@ function slickServiceReviews() {
     sh = 4;
   }
 
-  if (slickServiceReviews.length) {
-    slickServiceReviews.slick({
-      slidesToShow: sh,
-      slidesToScroll: 1,
-      speed: 900,
-      variableWidth: true,
-      infinite: false,
-      arrows: true,
-      prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
-      nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
-    });
+  if (window.innerWidth > 1024) {
+    if (slickServiceReviews.length) {
+      slickServiceReviews.slick({
+        slidesToShow: sh,
+        slidesToScroll: 1,
+        speed: 900,
+        variableWidth: true,
+        infinite: false,
+        arrows: true,
+        prevArrow: '<div class="stageView__prev"><svg width="27" height="50" viewBox="0 0 27 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.7988 1L1.79883 25L25.7988 49" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>',
+        nextArrow: '<div class="stageView__next"><svg width="28" height="50" viewBox="0 0 28 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.79883 49L25.7988 25L1.79883 1" stroke="#7C8F99" stroke-width="2" stroke-linecap="round"/></svg></div>'
+      });
+    }
   }
 }
 ;
@@ -18111,6 +18188,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itemServiceTestimony", function() { return itemServiceTestimony; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceScrollTo", function() { return serviceScrollTo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "servicePriceShowAll", function() { return servicePriceShowAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceReviewsShowAll", function() { return serviceReviewsShowAll; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serviceFixedAsideBar", function() { return serviceFixedAsideBar; });
 // services stage show
 function serviceStageShow() {
@@ -18211,44 +18289,64 @@ function servicePriceShowAll() {
 
   ;
 }
+; // service reviews show all
+
+function serviceReviewsShowAll() {
+  if (document.querySelector('.serviceReviewsAll_js')) {
+    var wrapper = document.querySelector('.serviceReviews');
+    var btn = wrapper.querySelectorAll('.serviceReviewsAll_js');
+    var parent;
+    btn.forEach(function (item) {
+      item.addEventListener('click', function (e) {
+        parent = item.closest('.serviceReviews__text');
+        parent.classList.add('all');
+        item.remove();
+      });
+    });
+  }
+
+  ;
+}
 ; // service fixed aside bar
 
 function serviceFixedAsideBar() {
-  if (document.querySelector('.asideService_js')) {
-    var headerHeight = document.querySelector('.header_js').offsetHeight;
-    var aside = document.querySelector('.asideService_js');
-    var asideHeight = aside.offsetHeight;
-    var scroll = aside.getBoundingClientRect().top + window.scrollY;
-    var mainBlock = document.querySelector('.contentService .containerMin');
-    var mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
-    var mainBlockPaddingR = getComputedStyle(mainBlock).paddingRight.replace(/[\D]+/g, '');
-    var mainBlockTop = mainBlock.getBoundingClientRect().top + window.scrollY;
-    var mainBlockHeight = document.querySelector('.contentService').offsetHeight;
-    var mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
-    var asideStop = mainBlockHeight - asideHeight - mainBlockPadding;
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= scroll - headerHeight) {
-        $('aside').css({
-          position: 'fixed',
-          top: headerHeight,
-          right: mainBlockPaddingR + 'px'
-        });
-      } else {
-        $('aside').css({
-          position: 'relative',
-          top: 0,
-          right: 0
-        });
-      }
+  if (window.innerWidth > 1024) {
+    if (document.querySelector('.asideService_js')) {
+      var headerHeight = document.querySelector('.header_js').offsetHeight;
+      var aside = document.querySelector('.asideService_js');
+      var asideHeight = aside.offsetHeight;
+      var scroll = aside.getBoundingClientRect().top + window.scrollY;
+      var mainBlock = document.querySelector('.contentService .containerMin');
+      var mainBlockPadding = getComputedStyle(mainBlock).paddingTop.replace(/[\D]+/g, '');
+      var mainBlockPaddingR = getComputedStyle(mainBlock).paddingRight.replace(/[\D]+/g, '');
+      var mainBlockTop = mainBlock.getBoundingClientRect().top + window.scrollY;
+      var mainBlockHeight = document.querySelector('.contentService').offsetHeight;
+      var mainBlockEnd = mainBlockTop + mainBlockHeight - asideHeight - headerHeight;
+      var asideStop = mainBlockHeight - asideHeight - mainBlockPadding;
+      $(window).scroll(function () {
+        if ($(window).scrollTop() >= scroll - headerHeight) {
+          $('aside').css({
+            position: 'fixed',
+            top: headerHeight,
+            right: mainBlockPaddingR + 'px'
+          });
+        } else {
+          $('aside').css({
+            position: 'relative',
+            top: 0,
+            right: 0
+          });
+        }
 
-      if ($(window).scrollTop() >= mainBlockEnd) {
-        $('aside').css({
-          position: 'relative',
-          top: asideStop,
-          right: 0
-        });
-      }
-    });
+        if ($(window).scrollTop() >= mainBlockEnd) {
+          $('aside').css({
+            position: 'relative',
+            top: asideStop,
+            right: 0
+          });
+        }
+      });
+    }
   }
 
   ;
