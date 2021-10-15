@@ -17663,6 +17663,7 @@ function menuSelection() {
           i.classList.remove('active');
         });
         middleSelected[0].classList.add('active');
+        var activItem = true;
         var thisShowDetail = middleSelected[0].getAttribute('data-servicesMiddleDetail');
         elementsMiddle.forEach(function (elem) {
           elem.classList.add('hidden');
@@ -17679,12 +17680,16 @@ function menuSelection() {
                 elem.classList.remove('hidden');
               }
             });
+            activItem = false;
           }
         });
         elementsDetail.forEach(function (elem) {
           elem.classList.add('hidden');
 
-          if (elem.getAttribute('data-servicesDetail') === thisShowDetail) {
+          if (elem.getAttribute('data-servicesDetail') === thisShowDetail && !activItem) {
+            elem.classList.remove('hidden');
+          } else if (elem.getAttribute('data-servicesDetail') === thisShow && activItem) {
+            console.log(1);
             elem.classList.remove('hidden');
           }
         });

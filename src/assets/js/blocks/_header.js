@@ -50,7 +50,7 @@ export function menuSelection () {
                     i.classList.remove('active');
                 });
                 middleSelected[0].classList.add('active');
-
+                let activItem = true;
                 let thisShowDetail = middleSelected[0].getAttribute('data-servicesMiddleDetail');
                 elementsMiddle.forEach((elem) => {
                     elem.classList.add('hidden');
@@ -65,11 +65,15 @@ export function menuSelection () {
                                 elem.classList.remove('hidden');
                             }
                         });
+                        activItem = false;
                     }
                 });
                 elementsDetail.forEach((elem) => {
                     elem.classList.add('hidden');
-                    if (elem.getAttribute('data-servicesDetail') === thisShowDetail) {
+                    if (elem.getAttribute('data-servicesDetail') === thisShowDetail && !activItem) {
+                        elem.classList.remove('hidden');
+                    } else if (elem.getAttribute('data-servicesDetail') === thisShow && activItem) {
+                        console.log(1);
                         elem.classList.remove('hidden');
                     }
                 });

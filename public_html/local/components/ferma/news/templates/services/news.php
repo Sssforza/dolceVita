@@ -26,9 +26,9 @@ $GLOBALS['arrFilter'] = array('ID' => $arResult["VARIABLES"]["UF_ELEMENT"]);
 $sec = true;
 ?>
 <main class="main">3
-   <!--  <pre>
+   <pre>
         <? //print_r($arResult)?>
-    </pre> -->
+    </pre>
     <section class="page page_services">
         <section class="banerSection banerServices">
             <div class="banerServices__bg" style="background-image:url(<?= CFile::GetPath($arResult["IBLOCK_AR"]["PICTURE"]);?>)"></div>
@@ -104,7 +104,7 @@ $sec = true;
                 <? foreach ($arResult["VARIABLES"]["AR_ID_ELEMENTS"] as $keys => $element_id) { ?>
                     <? $APPLICATION->IncludeComponent(
                         "ferma:news.detail",
-                        "services",
+                        ".default",
                         Array("DISPLAY_DATE" => "Y",
                             "DISPLAY_NAME" => "Y",
                             "DISPLAY_PICTURE" => "Y",
