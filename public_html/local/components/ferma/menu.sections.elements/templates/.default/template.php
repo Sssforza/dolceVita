@@ -52,7 +52,11 @@
 			                    	<div class="servicesMiddle__info"></div>
 			                    	<ul class="servicesMiddle__list">
 			                            <li class="servicesMiddle__li">
-			                                <a href="<?= $value['SECTION_PAGE_URL']?>" class="servicesMiddle__link servicesMiddleLink_js <?= ($tem) ? 'active': ''?>" data-servicesMiddleDetail="<?= $value['ID']?>"><?= $value['NAME']?></a>
+			                            	<? if (array_key_exists($value['ID'], $arResult["ELEMENTS"])) { ?>
+			                            		<span class="servicesMiddle__link servicesMiddleLink_js <?= ($tem) ? 'active': ''?>" data-servicesMiddleDetail="<?= $value['ID']?>"><?= $value['NAME']?></span>
+			                            	<? } else { ?>
+			                                	<a href="<?= $value['SECTION_PAGE_URL']?>" class="servicesMiddle__link servicesMiddleLink_js <?= ($tem) ? 'active': ''?>" data-servicesMiddleDetail="<?= $value['ID']?>"><?= $value['NAME']?></a>
+			                                <? } ?>
 			                            </li>
 			                        </ul>
 			                    <? } ?>

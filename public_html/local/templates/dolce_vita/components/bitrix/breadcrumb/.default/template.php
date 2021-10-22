@@ -10,7 +10,6 @@ global $APPLICATION;
 //delayed function must return a string
 if(empty($arResult))
 	return "";
-
 $strReturn = '';
 
 $arResult = array_unique($arResult, SORT_REGULAR);
@@ -27,8 +26,14 @@ for($index = 0; $index < $itemSize; $index++)
 
 	if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1)
 	{
+		$first = '';
+		if ($arResult[$index]["LINK"] == '/') {
+			$title = 'На главную';
+			$first = '<svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="color" d="M4.62 8.77L.336 4.486 4.62.202l.672.7-3.08 3.08h8.204V4.99H2.212l3.08 3.094-.672.686z" fill="#DBE9EF"></path></svg>';
+		}
 		$strReturn .= '
-			<li class="breadCrumbs__item">
+			<li class="breadCrumbs__item">'
+				.$first.'
 				<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="item" class="breadCrumbs__chit">
 					'.$title.'
 				</a>

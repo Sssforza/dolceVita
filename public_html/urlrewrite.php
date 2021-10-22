@@ -16,6 +16,14 @@ $arUrlRewrite=array (
     'PATH' => '/services/quality-of-life/index.php',
     'SORT' => 100,
   ),
+  16 => 
+  array (
+    'CONDITION' => '#^/services/beauty-saloon/#',
+    'RULE' => '',
+    'ID' => 'ferma:news',
+    'PATH' => '/services/beauty-saloon/index.php',
+    'SORT' => 100,
+  ),
   11 => 
   array (
     'CONDITION' => '#^/services/body-shaping/#',
@@ -30,14 +38,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'ferma:news',
     'PATH' => '/services/cosmetology/index.php',
-    'SORT' => 100,
-  ),
-  16 => 
-  array (
-    'CONDITION' => '#^/services/beauty-saloon/#',
-    'RULE' => '',
-    'ID' => 'ferma:news',
-    'PATH' => '/services/beauty-saloon/index.php',
     'SORT' => 100,
   ),
   4 => 
@@ -62,6 +62,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:blog',
     'PATH' => '/communication/blog/index.php',
+    'SORT' => 100,
+  ),
+  17 => 
+  array (
+    'CONDITION' => '#^/about/specialists/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/about/specialists/index.php',
     'SORT' => 100,
   ),
   2 => 

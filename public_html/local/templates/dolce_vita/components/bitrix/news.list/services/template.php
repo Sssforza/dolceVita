@@ -12,9 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<pre>
-    <? print_r($arResult)?>
-</pre>
+<!-- <pre>
+    <? //print_r($arResult)?>
+</pre> -->
 <section class="services services_attendance">
     <div class="services__content container">
         <? foreach ($arResult["ITEMS"] as $key => $value) { ?>

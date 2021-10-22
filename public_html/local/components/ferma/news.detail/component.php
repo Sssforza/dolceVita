@@ -328,7 +328,7 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 
 		$arResult["SECTION"] = array("PATH" => array());
 		$arResult["SECTION_URL"] = "";
-		if($arParams["ADD_SECTIONS_CHAIN"] && $arResult["IBLOCK_SECTION_ID"] > 0)
+		if($arResult["IBLOCK_SECTION_ID"] > 0)
 		{
 			$rsPath = CIBlockSection::GetNavChain(
 				$arResult["IBLOCK_ID"],
@@ -424,6 +424,28 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 			}
 		}
 
+		if ((array)$arResult["PROPERTIES"]["SPECIALISTS"]["VALUE"]) {
+			foreach ($arResult["PROPERTIES"]["SPECIALISTS"]["VALUE"] as $key => $value) {
+				$res = CIBlockElement::GetByID($value);
+				if($ar_res = $res->GetNext())
+				  $arFilter["IBLOCK_ID"] = $ar_res["IBLOCK_ID"];
+				$arFilter["ID"] = $value;
+				unset($arFilter["SECTION_CODE"]);
+				$arsSelect = array_merge($arSelect, array(
+								"PREVIEW_PICTURE",
+								"PROPERTIES_SPECIALIZATION",
+								"PROPERTIES_EXPERIENCE",
+							));
+				$arElement = CIBlockElement::GetList(array(), $arFilter, false, false, $arsSelect);
+				while($obyElement = $arElement->GetNextElement())
+				{
+					$arFields = $obyElement->GetFields();
+					$arProps = $obyElement->GetProperties();
+					$arResult["SPECIALISTS"][$arFields["ID"]] = array_merge($arFields, $arProps);
+				}
+			}
+		}
+
 		if ($arResult["ID"]) {
 			$arBlockId = CIBlock::GetList(array(), array('=CODE' => 'reviews'), false);
 			while($blockId = $arBlockId->Fetch()) {
@@ -436,7 +458,8 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 				array(
 					"LOGIC" => "OR",
 					array("PROPERTY_SERVICE_REVIEWS" => $arResult["ID"]),
-					array("PROPERTY_COSMO_REVIEWS" => $arResult["ID"])
+					array("PROPERTY_COSMO_REVIEWS" => $arResult["ID"]),
+					array("PROPERTY_BODY_REVIEWS") => $arResult["ID"]
 				)
 			);
 			$arElement = CIBlockElement::GetList(array(), $arFilter,false, false, $arSelect);

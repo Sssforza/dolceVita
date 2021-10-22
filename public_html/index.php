@@ -3,59 +3,101 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 ?>
 <main class="main">
-	<section class="page">
-		<section class="sliderMain">
-			<div class="sliderMain__content sliderMain_js">
-				<div class="sliderMain__item first">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/mainSlierItem1.jpg)"></div>
-					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner gradientHeader_js">
-							<div class="sliderMain__title">Инновационная косметология</div>
-							<div class="sliderMain__description">
-								Уже 15&nbsp;лет мы&nbsp;выбираем и&nbsp;привозим в&nbsp;Омск всё самое лучшее в&nbsp;области косметологии
-								и&nbsp;красоты: инновационные решения, передовые технологии
-							</div>
-							<a href="#" class="btnWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
-						</div>
-					</div>
-				</div>
-				<div class="sliderMain__item">
-					<div class="sliderMain__bg" style="background-image:url(/dist/img/mainSlierItem2.jpg)"></div>
-					<div class="sliderMain__wrapper">
-						<div class="sliderMain__inner gradientHeader_js">
-							<div class="sliderMain__title">Косметика <br>мировых брендов</div>
-							<div class="sliderMain__description">
-								Работаем с&nbsp;профессиональной косметикой
-								премиум-сегмента (Biologique Recherche, Babor),
-								производящаяся в&nbsp;соответствии со&nbsp;строгим
-								соблюдением всех фармацевтических стандартов.
-							</div>
-							<a href="#" class="btnWhiteBorder sliderMain__btn">УЗНАТЬ БОЛЬШЕ</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="sliderMain__nav">
-				<div class="sliderMain__dots stop"></div>
-				<div class="sliderMain__arrows"></div>
-			</div>
-			<div class="sliderMain__waves">
-				<div class="sliderMain__waves_1"></div>
-				<div class="sliderMain__waves_2"></div>
-				<div class="sliderMain__waves_3"></div>
-				<div class="sliderMain__waves_4"></div>
-				<div class="sliderMain__waves_5"></div>
-			</div>
-		</section>
+	
+		<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"banner_home", 
+	array(
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"AJAX_MODE" => "N",
+		"IBLOCK_TYPE" => "content",
+		"IBLOCK_ID" => "18",
+		"NEWS_COUNT" => "20",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER2" => "ASC",
+		"FILTER_NAME" => "",
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "DETAIL_TEXT",
+			2 => "DETAIL_PICTURE",
+			3 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "LINK",
+			1 => "DESCRIPTION",
+			2 => "",
+		),
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"SET_TITLE" => "N",
+		"SET_BROWSER_TITLE" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"CACHE_FILTER" => "Y",
+		"CACHE_GROUPS" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"PAGER_TITLE" => "Новости",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => "",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SET_STATUS_404" => "N",
+		"SHOW_404" => "N",
+		"MESSAGE_404" => "",
+		"PAGER_BASE_LINK" => "",
+		"PAGER_PARAMS_NAME" => "arrPager",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "N",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"COMPONENT_TEMPLATE" => "banner_home",
+		"STRICT_SECTION_CHECK" => "N"
+	),
+	false
+);?>
 		<section class="originalEquipment" data-midnight="gray">
 			<div class="originalEquipment__content">
 				<div class="originalEquipment__texts">
 					<div class="originalEquipment__title">
-						Работаем только <br>на оригинальном оборудовании
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							Array(
+								"AREA_FILE_SHOW" => "file", 
+								"PATH" => SITE_TEMPLATE_PATH."/include/home/original-equipment__title.php",
+								"EDIT_TEMPLATE" => ""
+							)
+						);?>
 					</div>
 					<div class="originalEquipment__description">
-						В&nbsp;Dolce Vita все процедуры проводятся на&nbsp;оригинальном оборудовании. Наши специалисты прошли обучение 
-						на&nbsp;аппаратах и&nbsp;имеют самый большой опыт в&nbsp;городе работы с&nbsp;методиками.
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							Array(
+								"AREA_FILE_SHOW" => "file", 
+								"PATH" => SITE_TEMPLATE_PATH."/include/home/original-equipment__description.php",
+								"EDIT_TEMPLATE" => ""
+							)
+						);?>
 					</div>
 				</div>
 				<div class="sliderEquipment sliderArrow">
@@ -157,246 +199,82 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 		<section class="mainLines mainLines_js" data-midnight="gray">
 			<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/linesMain.svg';?>
 		</section>
-		<section class="specialists specialists_js" data-midnight="gray">
-			<div class="specialists__bg"></div>
-			<div class="specialists__content container">
-				<div class="specialists__container">
-					<div class="specialists__header">
-						<div class="specialists__title">Наши специалисты</div>
-						<div class="specialists__link">
-							<a href="#" class="specialists__all">Все специалисты</a>
-						</div>
-						<div class="specialists__state">
-							<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsHexagon.svg';?>
-							<div class="specialists__number">20</div>
-							<div class="specialists__text">
-								профессиональных косметологов в&nbsp;штате компании
-							</div>
-						</div>
-					</div>
-					<div class="specialists__box">
-						<div class="specialists__nav specialistsNav scrollbar">
-							<div class="specialistsNav__content specialistsNavScroll_js scrollbarCustom">
-								<div class="specialistsNav__item active" data-slide="1">
-									<div class="specialistsNav__img">
-										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav1.png)"></div>
-									</div>
-									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Галина Лагутова</div>
-										<div class="specialistsNav__hakeem">Врач-косметолог, дерматолог</div>
-									</div>
-								</div>
-								<div class="specialistsNav__item" data-slide="2">
-									<div class="specialistsNav__img">
-										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
-									</div>
-									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Светлана Зуева</div>
-										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
-									</div>
-								</div>
-								<div class="specialistsNav__item" data-slide="3">
-									<div class="specialistsNav__img">
-										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
-									</div>
-									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Татьяна Малицкая</div>
-										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
-									</div>
-								</div>
-								<div class="specialistsNav__item" data-slide="4">
-									<div class="specialistsNav__img">
-										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav4.png)"></div>
-									</div>
-									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Елена Пономарева</div>
-										<div class="specialistsNav__hakeem">Специалист по коррекции фигуры и массажу</div>
-									</div>
-								</div>
-								<div class="specialistsNav__item" data-slide="5">
-									<div class="specialistsNav__img">
-										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav2.png)"></div>
-									</div>
-									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Кристина Барабина</div>
-										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
-									</div>
-								</div>
-								<div class="specialistsNav__item" data-slide="6">
-									<div class="specialistsNav__img">
-										<div class="specialistsNav__bg" style="background-image:url(/dist/img/specialistsNav3.png)"></div>
-									</div>
-									<div class="specialistsNav__wrapper">
-										<div class="specialistsNav__name">Ангелина Линова</div>
-										<div class="specialistsNav__hakeem">Косметолог-эстетист</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="specialists__for specialistsFor">
-							<div class="specialistsFor__content specialistsFor_js">
-								<div class="specialistsFor__item">
-									<div class="specialistsFor__description">
-										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">Галина Лагутова</div>
-											<div class="specialistsFor__block">
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Специализация</li>
-													<li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-												</ul>
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Профессиональный опыт</li>
-													<li class="specialistsFor__medic">7 лет</li>
-												</ul>
-											</div>
-										</div>
-										<div class="specialistsFor__link">
-											<a href="#" class="specialistsFor__a">
-												<span>Подробнее</span>
-												<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-											</a>
-										</div>
-									</div>
-									<div class="specialistsFor__img">
-										<img src="/dist/img/specialistsForImg1.png">
-									</div>
-								</div>
-								<div class="specialistsFor__item">
-									<div class="specialistsFor__description">
-										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">Светлана Зуева</div>
-											<div class="specialistsFor__block">
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Специализация</li>
-													<li class="specialistsFor__medic">Косметолог-эстетист</li>
-												</ul>
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Профессиональный опыт</li>
-													<li class="specialistsFor__medic">5 лет</li>
-												</ul>
-											</div>
-										</div>
-										<div class="specialistsFor__link">
-											<a href="#" class="specialistsFor__a">
-												<span>Подробнее</span>
-												<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-											</a>
-										</div>
-									</div>
-									<div class="specialistsFor__img">
-										<img src="/dist/img/specialistsForImg1.png">
-									</div>
-								</div>
-								<div class="specialistsFor__item">
-									<div class="specialistsFor__description">
-										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">Татьяна Малицкая</div>
-											<div class="specialistsFor__block">
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Специализация</li>
-													<li class="specialistsFor__medic">Косметолог-эстетист</li>
-												</ul>
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Профессиональный опыт</li>
-													<li class="specialistsFor__medic">7 лет</li>
-												</ul>
-											</div>
-										</div>
-										<div class="specialistsFor__link">
-											<a href="#" class="specialistsFor__a">
-												<span>Подробнее</span>
-												<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-											</a>
-										</div>
-									</div>
-									<div class="specialistsFor__img">
-										<img src="/dist/img/specialistsForImg1.png">
-									</div>
-								</div>
-								<div class="specialistsFor__item">
-									<div class="specialistsFor__description">
-										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">Елена Пономарева</div>
-											<div class="specialistsFor__block">
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Специализация</li>
-													<li class="specialistsFor__medic">Специалист по коррекции фигуры и массажу</li>
-												</ul>
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Профессиональный опыт</li>
-													<li class="specialistsFor__medic">10 лет</li>
-												</ul>
-											</div>
-										</div>
-										<div class="specialistsFor__link">
-											<a href="#" class="specialistsFor__a">
-												<span>Подробнее</span>
-												<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-											</a>
-										</div>
-									</div>
-									<div class="specialistsFor__img">
-										<img src="/dist/img/specialistsForImg1.png">
-									</div>
-								</div>
-								<div class="specialistsFor__item">
-									<div class="specialistsFor__description">
-										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">Кристина Барабина</div>
-											<div class="specialistsFor__block">
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Специализация</li>
-													<li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-												</ul>
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Профессиональный опыт</li>
-													<li class="specialistsFor__medic">7 лет</li>
-												</ul>
-											</div>
-										</div>
-										<div class="specialistsFor__link">
-											<a href="#" class="specialistsFor__a">
-												<span>Подробнее</span>
-												<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-											</a>
-										</div>
-									</div>
-									<div class="specialistsFor__img">
-										<img src="/dist/img/specialistsForImg1.png">
-									</div>
-								</div>
-								<div class="specialistsFor__item">
-									<div class="specialistsFor__description">
-										<div class="specialistsFor__wrapper">
-											<div class="specialistsFor__name">Ангелина Линова</div>
-											<div class="specialistsFor__block">
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Специализация</li>
-													<li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-												</ul>
-												<ul class="specialistsFor__ul">
-													<li class="specialistsFor__specialization">Профессиональный опыт</li>
-													<li class="specialistsFor__medic">7 лет</li>
-												</ul>
-											</div>
-										</div>
-										<div class="specialistsFor__link">
-											<a href="#" class="specialistsFor__a">
-												<span>Подробнее</span>
-												<?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-											</a>
-										</div>
-									</div>
-									<div class="specialistsFor__img">
-										<img src="/dist/img/specialistsForImg1.png">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:news.list", 
+			"specialists_home", 
+			array(
+				"DISPLAY_DATE" => "N",
+				"DISPLAY_NAME" => "Y",
+				"DISPLAY_PICTURE" => "Y",
+				"DISPLAY_PREVIEW_TEXT" => "Y",
+				"AJAX_MODE" => "N",
+				"IBLOCK_TYPE" => "specialists",
+				"IBLOCK_ID" => "16",
+				"NEWS_COUNT" => "",
+				"SORT_BY1" => "ACTIVE_FROM",
+				"SORT_ORDER1" => "DESC",
+				"SORT_BY2" => "SORT",
+				"SORT_ORDER2" => "ASC",
+				"FILTER_NAME" => "",
+				"FIELD_CODE" => array(
+					0 => "NAME",
+					1 => "PREVIEW_TEXT",
+					2 => "PREVIEW_PICTURE",
+					3 => "DETAIL_TEXT",
+					4 => "DETAIL_PICTURE",
+					5 => "",
+				),
+				"PROPERTY_CODE" => array(
+					0 => "EDUCATION",
+					1 => "EXPERIENCE",
+					2 => "QUALIFICATION",
+					3 => "SPECIALIZATION",
+					4 => "DESCRIPTION",
+					5 => "",
+				),
+				"CHECK_DATES" => "Y",
+				"DETAIL_URL" => "/about/#IBLOCK_CODE#/#ELEMENT_CODE#/",
+				"PREVIEW_TRUNCATE_LEN" => "",
+				"ACTIVE_DATE_FORMAT" => "d.m.Y",
+				"SET_TITLE" => "N",
+				"SET_BROWSER_TITLE" => "N",
+				"SET_META_KEYWORDS" => "N",
+				"SET_META_DESCRIPTION" => "N",
+				"SET_LAST_MODIFIED" => "N",
+				"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+				"ADD_SECTIONS_CHAIN" => "N",
+				"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+				"PARENT_SECTION" => "",
+				"PARENT_SECTION_CODE" => "",
+				"INCLUDE_SUBSECTIONS" => "N",
+				"CACHE_TYPE" => "A",
+				"CACHE_TIME" => "3600",
+				"CACHE_FILTER" => "Y",
+				"CACHE_GROUPS" => "Y",
+				"DISPLAY_TOP_PAGER" => "N",
+				"DISPLAY_BOTTOM_PAGER" => "N",
+				"PAGER_TITLE" => "Новости",
+				"PAGER_SHOW_ALWAYS" => "N",
+				"PAGER_TEMPLATE" => "",
+				"PAGER_DESC_NUMBERING" => "N",
+				"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+				"PAGER_SHOW_ALL" => "N",
+				"PAGER_BASE_LINK_ENABLE" => "N",
+				"SET_STATUS_404" => "Y",
+				"SHOW_404" => "Y",
+				"MESSAGE_404" => "",
+				"PAGER_BASE_LINK" => "",
+				"PAGER_PARAMS_NAME" => "arrPager",
+				"AJAX_OPTION_JUMP" => "N",
+				"AJAX_OPTION_STYLE" => "N",
+				"AJAX_OPTION_HISTORY" => "N",
+				"AJAX_OPTION_ADDITIONAL" => "",
+				"COMPONENT_TEMPLATE" => "specialists_home",
+				"STRICT_SECTION_CHECK" => "N",
+				"FILE_404" => ""
+			),
+			false
+		);?>
 		<section class="bonusCard bonusCard_js" data-midnight="gray">
 			<div class="bonusCard__content">
 				<div class="container">
@@ -406,12 +284,27 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 						</div>
 						<div class="bonusSystem__content">
 							<div class="bonusSystem__box">
-								<div class="bonusSystem__title">Бонусная система</div>
+								<div class="bonusSystem__title">
+									<? $APPLICATION->IncludeComponent(
+										"bitrix:main.include",
+										"",
+										Array(
+											"AREA_FILE_SHOW" => "file", 
+											"PATH" => SITE_TEMPLATE_PATH."/include/home/bonus-system__title.php",
+											"EDIT_TEMPLATE" => ""
+										)
+									);?>
+								</div>
 								<div class="bonusSystem__description">
-									Мы&nbsp;очень дорожим каждым клиентом и&nbsp;специально 
-									для вас разработали нашу бонусную систему. 
-									Теперь быть клиентом DolceVita не&nbsp;только приятно, 
-									но&nbsp;и&nbsp;очень выгодно
+									<? $APPLICATION->IncludeComponent(
+										"bitrix:main.include",
+										"",
+										Array(
+											"AREA_FILE_SHOW" => "file", 
+											"PATH" => SITE_TEMPLATE_PATH."/include/home/bonus-system__description.php",
+											"EDIT_TEMPLATE" => ""
+										)
+									);?>
 								</div>
 							</div>
 						</div>
@@ -428,88 +321,24 @@ $APPLICATION->SetAdditionalCSS("/dist/css/blocks/index.css");
 				</div>
 				<div class="typesCards">
 					<div class="typesCards__content containerMin">
-						<div class="typesCards__box guest">
-							<div class="typesCards__title">Гостевая карта</div>
-							<ul class="typesCards__description">
-								<li class="typesCards__li">
-									&mdash;&nbsp;Гостевую карту можно оформить у&nbsp;администратора в&nbsp;салоне Dolce Vita.
-								</li>
-								<li class="typesCards__li">
-									&mdash;&nbsp;Указанные скидки действительны только на&nbsp;одну процедуру.
-								</li>
-								<li class="typesCards__li">
-									&mdash;&nbsp;Гостевой картой можно воспользоваться со&nbsp;второго посещения.
-								</li>
-								<li class="typesCards__li">
-									&mdash;&nbsp;Карта действительна в&nbsp;течение месяца.
-								</li>
-							</ul>
-							<div class="typesCards__numbers">
-								<div class="typesCards__item">
-									<div class="typesCards__percent">
-										&#8211;20<span class="typesCards__percentage">%</span>
-									</div>
-									<div class="typesCards__wrapper">
-										<span>На&nbsp;первую процедуру по&nbsp;уходу&nbsp;за:</span>
-										<ul class="typesCards__description">
-											<li class="typesCards__li">
-												&mdash;&nbsp;лицом
-											</li>
-											<li class="typesCards__li">
-												&mdash;&nbsp;телом и волосами
-											</li>
-											<li class="typesCards__li">
-												&mdash;&nbsp;руками и ногами
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="typesCards__item">
-									<div class="typesCards__percent">
-										&#8211;10<span class="typesCards__percentage">%</span>
-									</div>
-									<div class="typesCards__wrapper">
-										<span>Лечебная и&nbsp;декоративная <br>косметика</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="typesCards__box regular">
-							<div class="typesCards__title">Карта постоянного клиента</div>
-							<div class="typesCards__description">
-								Накопительная бонусная карта, выдаётся постоянным клиентам, 
-								дает право на&nbsp;бонус от&nbsp;3<span class="typesCards__percentage">%</span> 
-								до&nbsp;10<span class="typesCards__percentage">%</span> в&nbsp;зависимости от&nbsp;накопленной суммы. 
-								Карта является именной, однако бонусы распространяются на&nbsp;всех членов Вашей семьи и&nbsp;близких 
-								родственников.
-							</div>
-							<div class="typesCards__numbers">
-								<div class="typesCards__item">
-									<div class="typesCards__percent">
-										3<span class="typesCards__percentage">%</span>
-									</div>
-									<div class="typesCards__description">
-										от 30 000 <span class="typesCards__rub">руб</span><span class="typesCards__symbol">₽</span>
-									</div>
-								</div>
-								<div class="typesCards__item">
-									<div class="typesCards__percent">
-										5<span class="typesCards__percentage">%</span>
-									</div>
-									<div class="typesCards__description">
-										от 50 000 <span class="typesCards__rub">руб</span><span class="typesCards__symbol">₽</span>
-									</div>
-								</div>
-								<div class="typesCards__item">
-									<div class="typesCards__percent">
-										10<span class="typesCards__percentage">%</span>
-									</div>
-									<div class="typesCards__description">
-										от 100 000 <span class="typesCards__rub">руб</span><span class="typesCards__symbol">₽</span>
-									</div>
-								</div>
-							</div>
-						</div>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							Array(
+								"AREA_FILE_SHOW" => "file", 
+								"PATH" => SITE_TEMPLATE_PATH."/include/home/cards-guest.php",
+								"EDIT_TEMPLATE" => ""
+							)
+						);?>
+						<? $APPLICATION->IncludeComponent(
+							"bitrix:main.include",
+							"",
+							Array(
+								"AREA_FILE_SHOW" => "file", 
+								"PATH" => SITE_TEMPLATE_PATH."/include/home/cards-regular.php",
+								"EDIT_TEMPLATE" => ""
+							)
+						);?>
 					</div>
 				</div>
 			</div>

@@ -43,9 +43,15 @@
             <div class="header__content container">
                 <div class="header__left">
                     <div class="header__dolce">
-                        <a class="header__logo" href="/">
-                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/dolceLogo.svg';?>
-                        </a>
+                        <? if ($APPLICATION->GetCurPage(false) === '/') { ?>
+                            <span class="header__logo">
+                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/dolceLogo.svg';?>
+                            </span>
+                        <? } else { ?>
+                            <a class="header__logo" href="/">
+                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/dolceLogo.svg';?>
+                            </a>
+                        <? } ?>
                     </div>
                     <nav class="header__nav">
                         <div class="headerNavTop">
@@ -94,8 +100,8 @@
                 </div>
                 <div class="header__right">
                     <div class="header__phone">
-                        <a class="header__tel" href="tel:+73812790058">
-                            <span>+7 3812</span> 79-00-58
+                        <a class="header__tel" href="tel:+73812<?= Options::get('PHONE')?>">
+                            <span>+7 3812</span> <?= Options::get('PHONE')?>
                         </a>
                     </div>
                     <div class="header__btns">

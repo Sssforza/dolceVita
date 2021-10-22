@@ -23,7 +23,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Стоимость", 
-		"", 
+		"/price/", 
 		Array(), 
 		Array(), 
 		"" 

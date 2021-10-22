@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Услуги", 
+		"/services/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Магазин", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Цены", 
+		"/price/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"О нас", 
+		"/about/", 
+		Array(), 
+		Array("class"=>"about headerAboutPosition_js headerAboutHover_js"), 
+		"" 
+	),
+	Array(
+		"Специалисты", 
+		"/about/specialists/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array("class"=>"headerNavTop__hover"), 
+		"" 
+	),
+	Array(
+		"Блог", 
+		"", 
+		Array(), 
+		Array("class"=>"headerNavTop__hover"), 
+		"" 
+	)
+);
+?>

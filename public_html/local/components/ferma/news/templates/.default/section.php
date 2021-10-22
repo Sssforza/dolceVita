@@ -22,9 +22,9 @@ if ($arResult["VARIABLES"]["ELEMENT_ID"]) {
 $sec = true;
 ?>
 <main class="main">
-    <!--  <pre>
-        <? //print_r($arResult)?>
-    </pre> -->
+    <pre>
+        <? print_r($arResult)?>
+    </pre>
     <section class="page page_services">
         <section class="banerSection banerServices">
             <div class="banerServices__bg" style="background-image:url(<?= CFile::GetPath($arResult["IBLOCK_AR"]["PICTURE"]);?>)"></div>
@@ -71,7 +71,7 @@ $sec = true;
                 	<div class="banerServices__selected">
 	                    <div class="servicesSelected servicesSelected_js">
                             <div class="servicesSelected__input servicesSelectedInput_js" data-select="<?= $data_select?>">
-                                <input class="servicesSelectedSelected_js" id="" type="text" placeholder="Выберите желаемый результат" readonly>
+                                <input class="servicesSelectedSelected_js" id="<?= $arResult['VARIABLES']['ELEMENT_ID'] ?? ''?>" type="text" placeholder="Выберите желаемый результат" readonly <?= $arResult['ELEMENT_NAME'] ? 'value="'.$arResult['ELEMENT_NAME'].'"': ''?>>
                             </div>
                             <div class="servicesSelected__wrapper">
                                 <? foreach ($ar_section as $arElement) { ?>

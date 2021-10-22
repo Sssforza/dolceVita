@@ -276,173 +276,48 @@ $this->setFrameMode(true);
                                 </div>
                             </div>
                         <? } ?>
-                        <div class="contentService__specialists serviceStage serviceSpecialists specialists specialists_js" id="specialists">
-                            <div class="serviceStage__title">
-                                Специалисты
-                            </div>
-                            <div class="serviceSpecialists__content">
-                                <div class="specialists__for specialistsFor">
-                                    <div class="specialistsFor__content specialistsFor_js">
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Галина Лагутова</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
+                        <? if ($arResult["PROPERTIES"]["SPECIALISTS"]["VALUE"]) { ?>
+                            <div class="contentService__specialists serviceStage serviceSpecialists specialists specialists_js" id="specialists">
+                                <div class="serviceStage__title">
+                                    Специалисты
+                                </div>
+                                <div class="serviceSpecialists__content">
+                                    <div class="specialists__for specialistsFor">
+                                        <div class="specialistsFor__content specialistsFor_js">
+                                            <? foreach ($arResult["SPECIALISTS"] as $key => $value) { ?>
+                                                 <div class="specialistsFor__item">
+                                                    <div class="specialistsFor__description">
+                                                        <div class="specialistsFor__wrapper">
+                                                            <div class="specialistsFor__name"><?= $value["NAME"]?></div>
+                                                            <div class="specialistsFor__block">
+                                                                <ul class="specialistsFor__ul">
+                                                                    <li class="specialistsFor__specialization">Специализация</li>
+                                                                    <li class="specialistsFor__medic"><?= implode(", ", $value["SPECIALIZATION"]["VALUE"])?></li>
+                                                                </ul>
+                                                                <ul class="specialistsFor__ul">
+                                                                    <li class="specialistsFor__specialization">Профессиональный опыт</li>
+                                                                    <li class="specialistsFor__medic"><?= $value["EXPERIENCE"]["VALUE"]?></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="specialistsFor__link">
+                                                            <a href="<?= $value['DETAIL_PAGE_URL']?>" class="specialistsFor__a">
+                                                                <span>Подробнее</span>
+                                                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="specialistsFor__img">
+                                                        <? $special_pic = CFile::ResizeImageGet($value['PREVIEW_PICTURE'], array('width'=> 423, 'height' => 585), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>
+                                                        <img src="<?= $special_pic['src']?>">
                                                     </div>
                                                 </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Светлана Зуева</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Косметолог-эстетист</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">5 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Татьяна Малицкая</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Косметолог-эстетист</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Елена Пономарева</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Специалист по коррекции фигуры и массажу</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">10 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Кристина Барабина</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Ангелина Линова</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
+                                            <? } ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <? } ?>
                         <? if ($arResult["PROPERTIES"]["INDICATIONS"]["VALUE"] || $arResult["PROPERTIES"]["CONTRAINDICATIONS"]["VALUE"]) { ?>
                             <div class="contentService__testimony serviceTestimony serviceTestimony_js" id="indications">
                                 <div class="serviceTestimony__content">

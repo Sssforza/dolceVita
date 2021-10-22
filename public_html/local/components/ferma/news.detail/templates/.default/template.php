@@ -22,8 +22,7 @@ if (
 }
 $prewPicture = CFile::ResizeImageGet($arResult['DETAIL_PICTURE'], array('width'=>124), BX_RESIZE_IMAGE_EXACT, true);
 $detailPicture = CFile::ResizeImageGet($arResult['DETAIL_PICTURE'], array('width'=>478), BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true);
-?>
-<!-- <pre>
+?><!-- <pre>
     <? //print_r($arResult)?>
 </pre> -->
 <? if (!empty($arResult)) { ?>

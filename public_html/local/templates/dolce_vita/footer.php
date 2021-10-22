@@ -50,16 +50,16 @@
             <div class="footer__content containerMin">
                 <div class="footer__top">
                     <div class="footer__left">
-                        <div class="footer__address">Омск, ул. Волочаевская, 15/1</div>
+                        <div class="footer__address"><?= Options::get('ADDRESS')?></div>
                         <a class="footer__yandex" href="https://yandex.ru/maps/66/omsk/house/volochayevskaya_ulitsa_15k1/Y0oYdQJjQEIDQFtufXV4dHtiYQ==/?ll=73.353973%2C54.995715&z=17" target="_blank">Смотреть в Яндекс.Картах</a>
                         <div class="footer__mode footerMode">
                             <div class="footerMode__item">
                                 <span class="footerMode__day">Пн — сб</span>
-                                <span class="footerMode__time">09:00—21:00</span>
+                                <span class="footerMode__time"><?= Options::get('TIME_MONDAY')?></span>
                             </div>
                             <div class="footerMode__item">
                                 <span class="footerMode__day">Вс</span>
-                                <span class="footerMode__time">10:00—20:00</span>
+                                <span class="footerMode__time"><?= Options::get('TIME_SATURNDAY')?></span>
                             </div>
                         </div>
                     </div>
@@ -77,48 +77,48 @@
                         </div>
                     </div>
                     <div class="footer__right">
-                        <nav class="footer__nav footerNav">
-                            <ul class="footerNav__list">
-                                <li class="footerNav__li">
-                                    <a href="/services/" class="footerNav__link">Услуги</a>
-                                </li>
-                                <li class="footerNav__li">
-                                    <a href="#" class="footerNav__link">Магазин</a>
-                                </li>
-                                <li class="footerNav__li">
-                                    <a href="/price/" class="footerNav__link">Цены</a>
-                                </li>
-                                <li class="footerNav__li">
-                                    <a href="#" class="footerNav__link">О нас</a>
-                                </li>
-                                <li class="footerNav__li">
-                                    <a href="/team/" class="footerNav__link">Специалисты</a>
-                                </li>
-                                <li class="footerNav__li">
-                                    <a href="/contacts/" class="footerNav__link">Контакты</a>
-                                </li>
-                                <li class="footerNav__li">
-                                    <a href="#" class="footerNav__link">Блог</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <?$APPLICATION->IncludeComponent(
+                        	"bitrix:menu", 
+                        	"bottom", 
+                        	array(
+                        		"ROOT_MENU_TYPE" => "bottom",
+                        		"MAX_LEVEL" => "1",
+                        		"CHILD_MENU_TYPE" => "left",
+                        		"USE_EXT" => "N",
+                        		"DELAY" => "N",
+                        		"ALLOW_MULTI_SELECT" => "N",
+                        		"MENU_CACHE_TYPE" => "N",
+                        		"MENU_CACHE_TIME" => "3600",
+                        		"MENU_CACHE_USE_GROUPS" => "Y",
+                        		"MENU_CACHE_GET_VARS" => array(
+                        		),
+                        		"COMPONENT_TEMPLATE" => "bottom"
+                        	),
+                        	false
+                        );?>
                         <div class="footer__social footerSocial">
                             <ul class="footerSocial__list">
-                                <li class="footerSocial__item">
-                                    <a href="https://www.instagram.com/dolcevita_omsk/" class="footerSocial__link" target="_blank">
-                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-inst.svg';?>
-                                    </a>
-                                </li>
-                                <li class="footerSocial__item">
-                                    <a href="https://www.facebook.com/dolcevita.omsk/" class="footerSocial__link" target="_blank">
-                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-fb.svg';?>
-                                    </a>
-                                </li>
-                                <li class="footerSocial__item">
-                                    <a href="https://vk.com/dolcevita55" class="footerSocial__link" target="_blank">
-                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-vk.svg';?>
-                                    </a>
-                                </li>
+                                <? if (Options::get('SOCIAL_INST') != '') { ?>
+                                    <li class="footerSocial__item">
+                                        <a href="<?= Options::get('SOCIAL_INST')?>" class="footerSocial__link" target="_blank">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-inst.svg';?>
+                                        </a>
+                                    </li>
+                                <? } ?>
+                                <? if (Options::get('SOCIAL_FACEBOOK') != '') { ?>
+                                    <li class="footerSocial__item">
+                                        <a href="<?= Options::get('SOCIAL_FACEBOOK')?>" class="footerSocial__link" target="_blank">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-fb.svg';?>
+                                        </a>
+                                    </li>
+                                <? } ?>
+                                <? if (Options::get('SOCIAL_VK') != '') { ?>
+                                    <li class="footerSocial__item">
+                                        <a href="<?= Options::get('SOCIAL_VK')?>" class="footerSocial__link" target="_blank">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/footerSocial-vk.svg';?>
+                                        </a>
+                                    </li>
+                                <? } ?>
                             </ul>
                         </div>
                     </div>

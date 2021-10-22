@@ -235,6 +235,10 @@ if($arParams["SEF_MODE"] == "Y")
 	}
 	if ($arVariables["ELEMENT_CODE"]) {
 		$elementID = CIBlockFindTools::GetElementID(false, $arVariables["ELEMENT_CODE"], false, $arVariables["SECTION_CODE"], array("IBLOCK_ID" => $block_type["ID"]));
+		$arElementName = CIBlockElement::GetByID($elementID);
+		if($ar_element = $arElementName->GetNext()) {
+  			$elementName =  $ar_element['NAME'];
+		}
 		$arFilter["ID"] = $elementID;
 		$arFilter["IBLOCK_TYPE"] = "services";
 		$arsSelect = array("ID", "IBLOCK_ID", "PROPERTIES_*");
@@ -255,7 +259,8 @@ if($arParams["SEF_MODE"] == "Y")
 		"ALIASES" => $arVariableAliases,
 		"MENU_ITEMS" => $menuItems,
 		"IBLOCK_AR" => $block_type,
-		"ELEMENT_AR" => $menuElements
+		"ELEMENT_AR" => $menuElements,
+		"ELEMENT_NAME" => $elementName
 	);
 	// if ($arParams["ELEMENT_CODE"] || $arParams["ELEMENT_ID"]) {
 	// 	$arResult["ELEMENT_1"] = 1;
