@@ -1,9 +1,7 @@
 {
     "name": "ferma/dolche-vita",
     "type": "project",
-    "require": {
-        "php": "^7.3"
-    },
+    "require": {},
      "autoload": {
         "psr-4": { "": "classes" }
     }
