@@ -14,7 +14,6 @@ class Options {
 		self::$iblockElement = ElementOptionsTable::query()
 			->setSelect([
 				'ADDRESS_VALUE' => 'ADDRESS.VALUE',
-				'COORDS_VALUE'=> 'YMAP.VALUE',
 				'EMAIL_VALUE' => 'EMAIL.VALUE',
 				'TIME_MONDAY_VALUE' => 'TIME_MONDAY.VALUE',
 				'TIME_SATURNDAY_VALUE' => 'TIME_SATURNDAY.VALUE',
