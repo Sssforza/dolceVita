@@ -37,11 +37,11 @@ export function windowOnload () {
                 slideDots.classList.remove('stop');
             }, 5500);
         }
-        //page specialist twentytwenty
-        if (document.querySelector('.twentytwenty_js')) {
-            $(".twentytwenty_js").twentytwenty({
-                default_offset_pct: 0.2,
-            });
+        // anim service lines
+        if(document.querySelector('.serviceLines')) {
+            console.log(1)
+            const serviceLines = document.querySelector('.serviceLines');
+            serviceLines.classList.add('show');
         }
         // midnight
         $('.header_js').midnight();

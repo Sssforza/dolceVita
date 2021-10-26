@@ -70,9 +70,6 @@ input[type="number"]::-webkit-outer-spin-button {
         transform: rotate(15deg) translateX(80px);
     }
 }
-@keyframes mainLinesDraw{
-    to {stroke-dashoffset: 0;}
-}
 .tablebodytext {
     display: none !important;
 }
@@ -352,9 +349,10 @@ textarea {
     }
     &__chit {
         margin-left: 8px;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
         color: $greenLight;
+        font-family: 'Lora';
         @media (max-width:$lg) {
             margin-left: 5px;
         }
@@ -767,26 +765,27 @@ img.mfp-img {
         background: transparent;
         border: 1px solid $white;
         border-radius: 4px;
-        @include placeholder(24px, $greenLight, 'cmun');
+        @include placeholder(24px, $greenLight, 'Lora');
         transition: $transition;
+        font-family: 'Lora';
         &:focus {
             border: 2px solid $white !important;
         }
         @media (max-width:$xl) {
             font-size: 22px;
             line-height: 24px;
-            @include placeholder(22px, $greenLight, 'cmun');
+            @include placeholder(22px, $greenLight, 'Lora');
         }
         @media (max-width:$lg) {
             font-size: 18px;
             line-height: 22px;
-            @include placeholder(18px, $greenLight, 'cmun');
+            @include placeholder(18px, $greenLight, 'Lora');
         }
         @media (max-width:$xs) {
             padding: 0 20px;
             font-size: 23px;
             line-height: 28px;
-            @include placeholder(23px, $greenLight, 'cmun');
+            @include placeholder(23px, $greenLight, 'Lora');
         }
     }
     &__error {
@@ -942,8 +941,8 @@ img.mfp-img {
         }
         pointer-events: none;
         &_left {
-            top: -550px;
-            left: -440px;
+            top: -340px;
+            left: -490px;
             width: 1336px;
             height: 1353px;
             background-image: url($imgUrl + "banerSectionSheet-left.png");
@@ -1261,6 +1260,7 @@ img.mfp-img {
         font-size: 17px;
         line-height: 20px;
         color: $gray;
+        font-family: 'Lora';
         @media (max-width:$xl) {
             max-width: 80%;
         }
@@ -1300,24 +1300,26 @@ img.mfp-img {
         }
     }
     &__what {
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
         font-weight: 500;
         color: $gray;
         opacity: 0.6;
+        font-family: 'Lora';
         @media (max-width:$lg) {
             font-size: 18px;
             line-height: 20px;
         }
     }
     &__how {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 20px;
         font-weight: 500;
         color: $gray;
         white-space: nowrap;
         border-bottom: 1px solid transparent;
         transition: $transition;
+        font-family: 'Lora';
         @media (max-width:$xs) {
             font-size: 19px;
             line-height: 23px;
@@ -1330,11 +1332,12 @@ img.mfp-img {
         }
     }
     &__facilities {
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
         font-weight: 500;
         color: $gray;
         opacity: 0.6;
+        font-family: 'Lora';
         @media (max-width:$lg) {
             font-size: 17px;
             line-height: 20px;
@@ -1344,10 +1347,11 @@ img.mfp-img {
         }
     }
     &__name {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 20px;
         font-weight: 500;
         color: $blueDark;
+        font-family: 'Lora';
         @media (max-width:$lg) {
             font-size: 18px;
             line-height: 23px;
@@ -1530,9 +1534,10 @@ img.mfp-img {
         }
     }
     &__effect {
-        font-size: 15px;
+        font-size: 14px;
         line-height: 22px;
         color: $gray;
+        font-family: 'Lora';
         @media (max-width:$xs) {
             font-size: 18px;
             line-height: 22px;
@@ -1855,9 +1860,10 @@ img.mfp-img {
     &__item {
         flex: none;
         position: relative;
-        font-size: 22px;
-        line-height: 27px;
+        font-size: 19px;
+        line-height: 24px;
         color: $greenDark;
+        font-family: 'Lora';
         opacity: 0.6;
         cursor: pointer;
         transition: $transition;
@@ -2251,6 +2257,16 @@ img.mfp-img {
         width: 4px;
     }
 }
+.scrollbarCustomBlue {
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+        background-color: #DFE9F9;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #3B5E82;
+        border-radius: 10px;
+    }
+}
 .scrollbar {
     .scrollbar-inner>.scroll-element.scroll-y {
         width: 7px;
@@ -2365,75 +2381,36 @@ img.mfp-img {
 }
 //equip warranty
 .sliderEquipWarranty {
+    margin-top: 42px;
     position: relative;
-    width: 312px;
-    height: 335px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex: none;
-    left: -127px;
-    @media (min-width:$hover) {
-        &:hover {
-            svg {
-                .sliderEquipWarranty__path {
-                    &_1 {
-                        opacity: .6;
-                        transform: rotate(15deg);
-                    }
-                    &_2 {
-                        opacity: .5;
-                        transform: rotate(25deg) scale(.95);
-                    }
-                    &_3 {
-                        opacity: .4;
-                        transform: rotate(25deg);
-                    }
-                    &_4 {
-                        opacity: .3;
-                        transform: rotate(15deg);
-                    }
-                    &_5 {
-                        opacity: .2;
-                        transform: rotate(15deg);
-                    }
-                }
-            }
-        }
-    }
-    @media (max-width:$xl) {
-        left: 0;
-        margin-left: 0;
-        top: 40px;
-    }
-    @media (max-width:$lg) {
-        top: 20px;
-    }
-    @media (max-width:$xs) {
-        width: 263px;
-        height: 263px;
-        top: -39px;
-        left: -48px;
+    &__wrapper {
+        margin-left: 27px;
     }
     &__title {
-        margin-top: 20px;
         font-size: 28px;
-        line-height: 30px;
+        line-height: 28px;
         color: $blueDark;
         @media (max-width:$xs) {
-            margin-top: 12px;
             font-size: 23px;
             line-height: 26px;
         }
     }
     &__link {
         display: inline-block;
-        margin-top: 19px;
-        font-size: 18px;
-        line-height: 18px;
-        color: $purple;
+        margin-top: 7px;
+        font-size: 17px;
+        line-height: 14px;
+        color: $blueDark;
+        border-bottom: 1px solid $blueDark;
+        transition: $transition;
+        @media (min-width:$hover) {
+            &:hover {
+                color: $greenMedium;
+                border-bottom: 1px solid $greenMedium;
+            }
+        }
         @media (max-width:$xs) {
             margin-top: 16px;
             font-size: 18px;
@@ -2442,46 +2419,14 @@ img.mfp-img {
     }
     svg {
         display: block;
+        width: 56px;
+        height: 72px;
         @media (max-width:$xs) {
             width: 43px;
             height: 55px;
         }
         path {
             transform-origin: center center;
-        }
-    }
-    &__svg {
-        position: absolute;
-        top: -55px;
-        left: -67px;
-        pointer-events: none;
-        @media (max-width:$xs) {
-            top: -26px;
-            left: -32px;
-            width: 100%;
-            height: 100%;
-        }
-        svg {
-            @media (max-width:$xs) {
-                width: 325px;
-                height: 332px;
-            }
-        }
-    }
-    &__path {
-        opacity: 0;
-        transition: $transition5;
-        &_2 {
-            transition-delay: .1s;
-        }
-        &_3 {
-            transition-delay: .3s;
-        }
-        &_4 {
-            transition-delay: .5s;
-        }
-        &_5 {
-            transition-delay: .7s;
         }
     }
 }
@@ -2601,6 +2546,7 @@ img.mfp-img {
         font-size: 18px;
         line-height: 24px;
         color: $greenMedium;
+        font-family: 'Lora';
         @media (max-width:$xl) {
             font-size: 16px;
         }
@@ -2616,6 +2562,7 @@ img.mfp-img {
         font-size: 20px;
         line-height: 24px;
         color: $blueDark;
+        font-family: 'Lora';
         @media (max-width:$xl) {
             margin-top: 4px;
             font-size: 18px;
@@ -2645,6 +2592,7 @@ img.mfp-img {
             line-height: 30px;
             color: $purple;
             opacity: 0.8;
+            font-family: 'Lora';
             transition: $transition;
             @media (max-width:$xl) {
                 font-size: 20px;
@@ -2772,8 +2720,8 @@ img.mfp-img {
 		width: 460px;
 	}
     &_service {
-        padding-top: 0;
-        margin-top: -314px;
+        padding-top: 64px;
+        margin-top: 128px;
         @media (max-width:$xl) {
             padding-top: 0;
             margin-top: -410px;
@@ -2842,6 +2790,7 @@ img.mfp-img {
         font-size: 18px;
         line-height: 26px;
         color: $greenLight;
+        font-family: 'Lora';
         @media (max-width:$xl) {
             margin-top: 15px;
             font-size: 15px;
@@ -2933,6 +2882,7 @@ img.mfp-img {
         font-size: 15px;
         line-height: 18px;
         color: $greenLight;
+        font-family: 'Lora';
         @media (max-width:$xl) {
             margin-left: 24px;
             font-size: 13px;
@@ -2992,8 +2942,8 @@ img.mfp-img {
             color: $white;
             font-weight: 500;
             text-align: center;
+            font-family: 'Lora';
             @media (max-width:$xl) {
-                //margin-top: -31px;
                 font-size: 18px;
                 line-height: 28px;
             }
@@ -3137,6 +3087,117 @@ img.mfp-img {
             top: -160px;
             right: -130px;
             animation: moveGroundRight 4s infinite 1s linear;
+        }
+    }
+}
+.resultsProcedure {
+    &__content {
+        display: flex;
+    }
+    &__title {
+        padding-top: 106px;
+        font-size: 64px;
+        line-height: 64px;
+        color: $blueDark;
+    }
+    &__slider {
+        position: relative;
+        width: 679px;
+        margin-left: 128px;
+        &:after {
+            content:'';
+            position: absolute;
+            top: 328px;
+            right: 0;
+            left: -575px;
+            width: 1410px;
+            height: 1px;
+            background: $greenLight;
+            z-index: -1;
+        }
+    }
+    &__item {
+        position: relative;
+        padding-left: 30px;
+        width: 679px !important;
+        height: 642px;
+        display: flex !important;
+        &:after {
+            content:'';
+            position: absolute;
+            top: 50px;
+            right: 5px;
+            bottom: 0;
+            left: 80px;
+            background: $greenLight
+        }
+        span {
+            font-size: 72px;
+            line-height: 94px;
+            color: $greenMedium;
+            transform: rotate(-90deg);
+            position: absolute;
+            z-index: 1;
+        }
+    }
+    &__img {
+        position: relative;
+        width: 296px;
+        height: 592px;
+        background: {
+            size: cover;
+            repeat: no-repeat;
+        }
+        z-index: 1;
+    }
+    &__before {
+        span {
+            bottom: 28px;
+            left: -16px;
+        }
+    }
+    &__after {
+        span {
+            right: -40px;
+            bottom: 74px;
+        }
+        .resultsProcedure__img {
+            border-left: 5px solid #fff;
+        }
+    }
+    .sliderArrow {
+        &__prev {
+            top: 328px;
+            left: -577px;
+        }
+        &__next {
+            top: 328px;
+            right: -158px;
+        }
+    }
+    .slick-dots {
+        display: flex;
+        position: absolute;
+        bottom: 208px;
+        left: -475px;
+        button {
+            flex: none;
+            width: 12px;
+            height: 12px;
+            color: transparent;
+            background: $greenLight;
+            border-radius: 50%;
+        }
+        .slick-active {
+            button {
+                width: 12px;
+                height: 12px;
+                background: $blueDark
+            }
+        }
+        li {
+            display: block;
+            margin: 0 12px;
         }
     }
 }
