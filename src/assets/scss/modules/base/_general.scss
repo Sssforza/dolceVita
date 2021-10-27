@@ -1009,7 +1009,7 @@ img.mfp-img {
     &__title {
         margin-left: -154px;
         font-size: 72px;
-        line-height: 101px;
+        line-height: 100px;
         color: $white;
         @media (max-width:$xl) {
             margin-left: -116px;
@@ -1026,10 +1026,11 @@ img.mfp-img {
         }
     }
     &__description {
-        margin-top: 48px;
-        font-size: 24px;
-        line-height: 34px;
+        margin-top: 24px;
+        font-size: 18px;
+        line-height: 25px;
         color: $greenLight;
+        font-family: 'Lora';
         @media (max-width:$xl) {
             margin-top: 28px;
         }
@@ -2381,44 +2382,77 @@ img.mfp-img {
     }
 }
 //equip warranty
+//equip warranty
 .sliderEquipWarranty {
-    margin-top: 42px;
     position: relative;
+    width: 312px;
+    height: 335px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    &__wrapper {
-        margin-left: 27px;
-        @media (max-width:$xl) {
-            margin-left: 20px;
+    justify-content: center;
+    text-align: center;
+    flex: none;
+    left: -127px;
+    @media (min-width:$hover) {
+        &:hover {
+            svg {
+                .sliderEquipWarranty__path {
+                    &_1 {
+                        opacity: .6;
+                        transform: rotate(15deg);
+                    }
+                    &_2 {
+                        opacity: .5;
+                        transform: rotate(25deg) scale(.95);
+                    }
+                    &_3 {
+                        opacity: .4;
+                        transform: rotate(25deg);
+                    }
+                    &_4 {
+                        opacity: .3;
+                        transform: rotate(15deg);
+                    }
+                    &_5 {
+                        opacity: .2;
+                        transform: rotate(15deg);
+                    }
+                }
+            }
         }
     }
+    @media (max-width:$xl) {
+        left: 0;
+        margin-left: 0;
+        top: 40px;
+    }
+    @media (max-width:$lg) {
+        top: 20px;
+    }
+    @media (max-width:$xs) {
+        width: 263px;
+        height: 263px;
+        top: -39px;
+        left: -48px;
+    }
     &__title {
+        margin-top: 20px;
         font-size: 28px;
-        line-height: 28px;
+        line-height: 30px;
         color: $blueDark;
-        @media (max-width:$xl) {
-            font-size: 24px;
-            line-height: 24px;
-        }
         @media (max-width:$xs) {
+            margin-top: 12px;
             font-size: 23px;
             line-height: 26px;
         }
     }
     &__link {
         display: inline-block;
-        margin-top: 7px;
-        font-size: 17px;
-        line-height: 14px;
-        color: $blueDark;
-        border-bottom: 1px solid $blueDark;
-        transition: $transition;
-        @media (min-width:$hover) {
-            &:hover {
-                color: $greenMedium;
-                border-bottom: 1px solid $greenMedium;
-            }
-        }
+        margin-top: 19px;
+        font-size: 18px;
+        line-height: 18px;
+        color: $purple;
         @media (max-width:$xs) {
             margin-top: 16px;
             font-size: 18px;
@@ -2427,17 +2461,46 @@ img.mfp-img {
     }
     svg {
         display: block;
-        width: 56px;
-        height: 72px;
-        @media (max-width:$xl) {
-            zoom: .88;
-        }
         @media (max-width:$xs) {
             width: 43px;
             height: 55px;
         }
         path {
             transform-origin: center center;
+        }
+    }
+    &__svg {
+        position: absolute;
+        top: -55px;
+        left: -67px;
+        pointer-events: none;
+        @media (max-width:$xs) {
+            top: -26px;
+            left: -32px;
+            width: 100%;
+            height: 100%;
+        }
+        svg {
+            @media (max-width:$xs) {
+                width: 325px;
+                height: 332px;
+            }
+        }
+    }
+    &__path {
+        opacity: 0;
+        transition: $transition5;
+        &_2 {
+            transition-delay: .1s;
+        }
+        &_3 {
+            transition-delay: .3s;
+        }
+        &_4 {
+            transition-delay: .5s;
+        }
+        &_5 {
+            transition-delay: .7s;
         }
     }
 }

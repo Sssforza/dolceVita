@@ -5,6 +5,9 @@
 @import "../blocks/_jquery.scrollbar.scss";
 .page_specialist {
     .banerSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         @media (max-width:$xs) {
             height: 980px;
         }
@@ -20,6 +23,7 @@
             }
         }
         &__content {
+            margin-top: 100px;
             @media (max-width:$xs) {
                 margin-top: 489px;
                 height: 411px;
@@ -88,8 +92,15 @@
             }
         }
     }
+    &__portfolio {
+        margin-top: 175px;
+        .resultsProcedure {
+            margin-top: 0;
+            max-width: 1143px;
+        }
+    }
     .services {
-        margin-top: 196px;
+        margin-top: 93px;
         padding-top: 0;
         @media (max-width:$xl) {
             margin-top: 185px;
@@ -119,6 +130,10 @@
                 overflow-x: visible;
                 flex-wrap: wrap;
             }
+        }
+        &__title {
+            font-size: 48px;
+            line-height: 67px;
         }
         .servicesCard {
             @media (max-width:$xl) {
@@ -179,6 +194,7 @@
         font-size: 18px;
         line-height: 23px;
         color: rgba(124, 143, 153, .6);
+        font-family: 'Lora';
         cursor: pointer;
         transition: $transition;
         @media (min-width:$hover) {
@@ -241,8 +257,8 @@
     &__year {
         flex:none;
         width: 154px;
-        font-size: 26px;
-        line-height: 34px;
+        font-size: 32px;
+        line-height: 42px;
         color: $greenDark;
         @media (max-width:$xl) {
             width: 114px;
@@ -257,6 +273,7 @@
             font-size: 18px;
             line-height: 25px;
             color: $greenDark;
+            font-family: 'Lora';
             @media (max-width:$xs) {
                 font-size: 21px;
                 line-height: 30px;
@@ -334,6 +351,7 @@
         line-height: 28px;
         font-weight: 500;
         color: $greenDark;
+        font-family: 'Lora';
         opacity: 0.5;
     }
     &__bottom {
@@ -341,6 +359,7 @@
         font-size: 24px;
         line-height: 28px;
         color: $greenDark;
+        font-family: 'Lora';
     }
     &__show,
     &__hide {
@@ -372,6 +391,7 @@
             line-height: 23px;
             font-weight: 500;
             color: $blueDark;
+            font-family: 'Lora';
             letter-spacing: 0.05em;
             text-transform: uppercase;
             transition: $transition;
