@@ -9,6 +9,9 @@
         .banerSection__content {
             margin-top: 113px;
             max-width: 46%;
+            @media (max-width:$xl) {
+                margin-top: 90px;
+            }
         }
     }
 }
@@ -24,6 +27,9 @@
         font-size: 72px;
         line-height: 72px;
         color: $white;
+        @media (max-width:$xl) {
+            margin-left: -150px;
+        }
         @media (max-width:$lg) {
             font-size: 42px;
             line-height: 46px;
@@ -45,6 +51,11 @@
         color: $greenDark;
         font-family: 'Lora';
         z-index: 2;
+        @media (max-width:$xl) {
+            margin-top: 60px;
+            padding-left: 61px;
+            width: 44%;
+        }
         @media (max-width:$xs) {
             font-size: 23px;
             line-height: 31px;
@@ -54,6 +65,10 @@
         position: absolute;
         top: 154px;
         right: 260px;
+        @media (max-width:$xl) {
+            top: 204px;
+            right: 240px;
+        }
         &_bg {
             width: 100%;
             height: 100%;
@@ -68,6 +83,10 @@
         &-big {
             width: 603px;
             height: 698px;
+            @media (max-width:$xl) {
+                width: 488px;
+                height: 565px;
+            }
         }
         &-small {
             position: absolute;
@@ -75,6 +94,12 @@
             right: -176px;
             width: 218px;
             height: 304px;
+            @media (max-width:$xl) {
+                top: 205px;
+                right: -176px;
+                width: 208px;
+                height: 276px;
+            }
             &:after {
                 content:'';
                 position: absolute;
@@ -95,6 +120,10 @@
         position: absolute;
         top: 525px;
         z-index: 1;
+        pointer-events: none;
+        @media (max-width:$xl) {
+            top: 490px;
+        }
     }
 }
 .serviceLines {
@@ -174,6 +203,10 @@
                 left: -153px;
                 right: auto;
                 width: 1493px;
+                @media (max-width:$xl) {
+                    left: -45px;
+                    width: 1030px;
+                }
             }
         }
         &__item {
@@ -359,9 +392,9 @@
     }
 }
 .serviceStage {
-    margin-top: 66px;
+    margin-top: 108px;
     @media (max-width:$xl) {
-        margin-top: 108px;
+        margin-top: 120px;
     }
     @media (max-width:$lg) {
         margin-top: 100px;
@@ -428,6 +461,10 @@
         font-size: 64px;
         line-height: 90px;
         color: $blueDark;
+        @media (max-width:$xl) {
+            font-size: 58px;
+            line-height: 60px;
+        }
         @media (max-width:$lg) {
             font-size: 42px;
             line-height: 59px;
@@ -746,6 +783,7 @@
     margin-top: 36px;
     @media (max-width:$xl) {
         margin-top: 46px;
+        width: 900px;
     }
     @media (max-width:$xs) {
         margin-top: 53px;
@@ -754,9 +792,7 @@
         position: relative;
         margin-left: -25px;
         display: flex;
-        @media (max-width:$xl) {
-            height: 440px;
-        }
+        flex-wrap: nowrap;
         @media (max-width:$xs) {
             margin: 0 -40px;
             padding: 0 27px;
@@ -788,13 +824,7 @@
         flex: none;
         position: relative;
         width: 282px !important;
-        // max-width: 333px;
-        //height: 100%;
         z-index: 1;
-        @media (max-width:$xl) {
-            width: 262px;
-            height: 262px;
-        }
         @media (max-width:$xs) {
             width: 100% !important;
             max-width: none;
@@ -963,7 +993,7 @@
     &__next {
         right: -117px;
         @media (max-width:$xl) {
-            right: -40px;
+            right: -87px;
         }
         @media (max-width:$lg) {
             right: -22px;
@@ -980,7 +1010,9 @@
     border-radius: 80px;
     overflow: hidden;
     @media (max-width:$xl) {
-        margin-top: 207px;
+        margin-left: 0;
+        padding: 38px 50px 80px 50px;
+        width: 985px;
     }
     @media (max-width:$lg) {
         margin-top: 185px;
@@ -995,11 +1027,18 @@
         line-height: 90px;
         color: $white;
         z-index: 1;
+        @media (max-width:$xl) {
+            padding-left: 0;
+            font-size: 58px;
+        }
     }
     &__content {
         display: flex;
         position: relative;
         z-index: 1;
+        @media (max-width:$xl) {
+            flex-direction: column;
+        }
     }
     &__svg {
         position: absolute;
@@ -1039,6 +1078,11 @@
         position: relative;
         margin-left: 20px;
         height: 418px;
+        @media (max-width:$xl) {
+            margin-left: 0;
+            height: auto;
+            order: 1;
+        }
         &:after {
             content:'';
             position: absolute;
@@ -1047,22 +1091,27 @@
             left: 0;
             height: 48px;
             background: linear-gradient(180deg, rgba(125, 168, 179, 0) 0%, #7DA8B3 100%);
-        }
-        @media (max-width:$xl) {
-            width: 870px;
+            z-index: 1;
+            @media (max-width:$xl) {
+                top: 0;
+                right: 0;
+                bottom: 10px;
+                left: auto;
+                width: 20px;
+                height: auto;
+                background: linear-gradient(90deg, rgba(125, 168, 179, 0) 0%, #7DA8B3 100%);
+            }
         }
         @media (max-width:$lg) {
             margin: 34px -40px 0 -40px;
             padding: 0 37px;
             height: 204px;
-            width: 1024px;
             overflow-x: scroll;
         }
         @media (max-width:$xs) {
             margin: 65px -40px 0;
             padding: 0 40px;
             height: 187px;
-            width: 540px;
         }
     }
     &__item {
@@ -1070,6 +1119,7 @@
         padding: 20px;
         width: 280px;
         height: 127px;
+        flex: none;
         display: flex;
         align-items: center;
         border-radius: 20px;
@@ -1080,6 +1130,9 @@
             &:hover {
                 border: 2px solid $greenMedium;
             }
+        }
+        @media (max-width:$xl) {
+            zoom: .9;
         }
         @media (max-width:$lg) {
             flex: none;
@@ -1117,15 +1170,16 @@
         }
         &:not(:first-child) {
             margin-top: 5px;
-            @media (max-width:$lg) {
-                margin-top: 16px;
-            }
-            @media (max-width:$xs) {
-                margin-top: 22px;
+            @media (max-width:$xl) {
+                margin-top: 0;
             }
         }
         &:last-child {
             margin-bottom: 20px;
+            @media (max-width:$xl) {
+                margin-bottom: 0;
+                margin-right: 20px;
+            }
         }
         &.active {
             pointer-events: none;
@@ -1180,11 +1234,15 @@
     &__info {
         position: relative;
         padding: 57px 50px 50px 56px;
-        width: 992px;
         background: #fff;
         overflow: hidden;
         box-shadow: 0px 20px 40px rgba(69, 83, 98, 0.5);
         border-radius: 16px;
+        @media (max-width:$xl) {
+            margin-top: 25px;
+            padding: 46px 30px;
+            order: 2;
+        }
         .serviceReviews {
             &__item {
                 display: block;
@@ -1195,6 +1253,13 @@
                 backdrop-filter: blur(40px);
                 border-radius: 16px;
                 pointer-events: none;
+                @media (max-width:$xl) {
+                    margin: 0 auto;
+                    display: flex;
+                    width: 280px;
+                    height: 120px;
+                    text-align: left;
+                }
                 &:after {
                     background: transparent;
                     backdrop-filter: none;
@@ -1202,19 +1267,31 @@
             }
             &__img {
                 margin: 0 auto;
+                @media (max-width:$xl) {
+                    margin: 0;
+                }
             }
             &__wrapper {
                 margin-top: 23px;
                 margin-left: 0;
+                @media (max-width:$xl) {
+                    margin: 0;
+                }
             }
         }
     }
     &__text {
         display: flex;
         transition: $transition;
+        @media (max-width:$xl) {
+            display: block;
+        }
         p {
             &:not(:first-child) {
                 margin-top: 18px;
+                @media (max-width:$xl) {
+                    margin-top: 10px;
+                }
             }
         }
         &.show {
@@ -1238,12 +1315,16 @@
     }
     &__p {
         margin-left: 36px;
-        width: 674px;
+        //width: 674px;
         font-size: 18px;
         line-height: 25px;
         color: $greenDark;
         font-family: 'Lora';
         transition: $transition5;
+        @media (max-width:$xl) {
+            margin-left: 0;
+            margin-top: 20px;
+        }
     }
     &__wrapper {
         margin-left: 14px;
@@ -1276,6 +1357,14 @@
     .scrollbarCustomBlue {
         height: 100%;
         padding-right: 20px;
+        @media (max-width:$xl) {
+            overflow-y: hidden;
+            overflow-x: scroll;
+            display: flex;
+            width: 885px;
+            padding-right: 0;
+            padding-bottom: 10px;
+        }
     }
     .stageView__next,
     .stageView__prev {
@@ -1299,6 +1388,9 @@
         width: 4px;
         background-color: #DFE9F9;
         border-radius: 10px;
+        @media (max-width:$xl) {
+            height: 4px;
+        }
     }
     ::-webkit-scrollbar-thumb {
         background-color: #3B5E82;
@@ -1306,15 +1398,6 @@
     }
 }
 .servicePrice {
-    @media (max-width:$xl) {
-        margin-top: 172px;
-    }
-    @media (max-width:$lg) {
-        margin-top: 132px;
-    }
-    @media (max-width:$xs) {
-        margin-top: 121px;
-    }
     &__content {
         margin-top: 24px;
         @media (max-width:$lg) {
@@ -1380,39 +1463,16 @@
 }
 .serviceEquipmenent {
     margin-top: 96px;
-    @media (max-width:$lg) {
-        margin-top: 378px;
-    }
-    @media (max-width:$xs) {
-        margin-top: 330px;
-    }
     &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @media (max-width:$xl) {
-            position: relative;
-            margin-top: 417px;
-            padding-left: 120px;
-        }
-        @media (max-width:$lg) {
-            margin-top: 0;
-        }
-        @media (max-width:$xs) {
-            padding-left: 0;
-        }
     }
     &__description {
         flex: none;
         width: 834px;
         @media (max-width:$xl) {
-            width: 620px;
-            margin-top: 147px;
-            margin-right: -154px;
-        }
-        @media (max-width:$xs) {
-            width: 540px;
-            margin-right: -264px;
+            width: 634px;
         }
     }
     &__text {
@@ -1437,23 +1497,43 @@
         position: relative;
         width: 328px;
         height: 298px;
+        @media (max-width:$xl) {
+            width: 248px;
+            height: 228px;
+            top: 25px;
+        }
         @media (min-width:$hover) {
             &:hover {
-                .serviceEquipmenent__img {
-                    &:after {
-                        opacity: 0.7;
-                    }
+                &:after {
+                    opacity: 0.7;
                 }
             }
-        }
-        @media (max-width:$xl) {
-            margin-top: 0;
-            width: 382px;
-            height: 382px;
         }
         @media (max-width:$xs) {
             width: 263px;
             height: 263px;
+        }
+        &:after {
+            content:'';
+            position: absolute;
+            top: -22px;
+            right: -7px;
+            bottom: -20px;
+            left: -7px;
+            opacity: 0;
+            pointer-events: none;
+            transition: $transition5;
+            background: {
+                image: url($imgUrl + "serviceEquipmenentA.png");
+                size: cover;
+                repeat: no-repeat;
+            }
+            @media (max-width:$xl) {
+                top: -16px;
+                right: -1px;
+                bottom: -16px;
+                left: -5px;
+            }
         }
     }
     &__img {
@@ -1468,18 +1548,6 @@
             repeat: no-repeat;
             size: 105%;
         }
-        &:after {
-            content:'';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: $greenDark;
-            opacity: 0;
-            pointer-events: none;
-            transition: $transition5;
-        }
     }
     &__play {
         position: absolute;
@@ -1487,9 +1555,11 @@
         left: calc(50% - 37px);
         pointer-events: none;
         zoom: .85;
+        z-index: 1;
         @media (max-width:$xl) {
-            top: calc(50% - 62px);
-            left: calc(50% - 38px);
+            top: calc(50% - 37px);
+            left: calc(50% - 34px);
+            zoom: .75;
         }
         @media (max-width:$xs) {
             top: calc(50% - 46px);
@@ -1503,13 +1573,15 @@
             }
         }
     }
+    .serviceStage__title {
+        white-space: nowrap;
+    }
 }
 .serviceSpecialists {
     margin-top: 112px;
     position: relative;
     @media (max-width:$xl) {
         margin-top: 172px;
-        margin-left: 120px;
     }
     @media (max-width:$lg) {
         margin-top: 192px;
@@ -1553,6 +1625,11 @@
         @media (max-width:$xs) {
             height: 303px;
         }
+        &__item {
+            @media (max-width:$xl) {
+                width: 703px !important;
+            }
+        }
         .sliderArrow__next {
             right: -127px;
             @media (max-width:$xl) {
@@ -1562,19 +1639,19 @@
         .sliderArrow__prev {
             left: -114px;
             @media (max-width:$xl) {
-                left: -73px;
+                left: -44px;
             }
         }
     }
 }
 .serviceTestimony {
-    margin-top: 109px;
+    margin-top: 110px;
     @media (max-width:$xl) {
-        margin-top: 172px;
-        margin-left: 71px;
+        margin-right: -36px;
     }
     @media (max-width:$lg) {
         margin-top: 113px;
+        margin-right: 0;
     }
     @media (max-width:$xs) {
         margin-top: 123px;
@@ -1582,13 +1659,19 @@
     }
     &__content {
         display: flex;
+        @media (max-width:$xl) {
+            justify-content: space-between;
+        }
     }
     &__box {
         width: 574px;
+        @media (max-width:$xl) {
+            width: 460px;
+        }
         &:not(:first-child) {
             margin-left: 43px;
             @media (max-width:$xl) {
-                margin-left: 60px;
+                margin-left: 40px;
             }
             @media (max-width:$lg) {
                 margin-left: 51px;
@@ -1603,6 +1686,10 @@
         font-size: 48px;
         line-height: 67px;
         color: $blueDark;
+        @media (max-width:$xl) {
+            font-size: 40px;
+            line-height: 40px;
+        }
         @media (max-width:$xs) {
             font-size: 34px;
             line-height: 40px;
@@ -1611,6 +1698,7 @@
             display: block;
             margin-bottom: 25px;
             @media (max-width:$xl) {
+                margin-bottom: 15px;
                 width: 42px;
                 height: 42px;
             }
@@ -1631,6 +1719,9 @@
     }
     &__item {
         padding: 21px 0 28px;
+        @media (max-width:$xl) {
+            padding: 18px 0 20px;
+        }
         @media (max-width:$lg) {
             padding: 21px 0;
         }
@@ -1646,6 +1737,9 @@
         font-weight: 500;
         color: $blueDark;
         transition: $transition5;
+        @media (max-width:$xl) {
+            font-size: 22px;
+        }
         @media (max-width:$lg) {
             display: flex;
             justify-content: space-between;
@@ -1700,4 +1794,13 @@
 }
 #serviceEquipmenent {
     zoom: .9;
+    @media (max-width:$xl) {
+        zoom: .7;
+    }
+}
+#serviceEquipmenentA {
+    zoom: .9;
+    @media (max-width:$xl) {
+        zoom: .7;
+    }
 }

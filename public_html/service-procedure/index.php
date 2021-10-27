@@ -6,679 +6,681 @@ $APPLICATION->AddHeadScript("/dist/js/modules/jquery.twentytwenty.js");
 ?>
 <main class="main">
 	<section class="page page_service">
-        <section class="banerSection banerService">
-            <div class="banerService__box">
-                <div class="banerSection__sheet banerSection__sheet_left"></div>
-                <div class="breadCrumbs gradientHeader_js">
-                    <ul class="breadCrumbs__list">
-                        <li class="breadCrumbs__item">
-                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
-                            <a href="/" class="breadCrumbs__chit">На главную</a>
-                        </li>
-                        <li class="breadCrumbs__item">
-                            <a href="#" class="breadCrumbs__chit">Услуги</a>
-                        </li>
-                        <li class="breadCrumbs__item">
-                            <a href="/team/" class="breadCrumbs__chit">Косметология</a>
-                        </li>
-                        <li class="breadCrumbs__item">
-                            <span class="breadCrumbs__chit">Омоложение 4D на аппарате Fotona</span>
-                        </li>
-                    </ul>
+        <section class="asideSection_js">
+            <section class="banerSection banerService">
+                <div class="banerService__box">
+                    <div class="banerSection__sheet banerSection__sheet_left"></div>
+                    <div class="breadCrumbs gradientHeader_js">
+                        <ul class="breadCrumbs__list">
+                            <li class="breadCrumbs__item">
+                                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/breadCrumbsChit-first.svg';?>
+                                <a href="/" class="breadCrumbs__chit">На главную</a>
+                            </li>
+                            <li class="breadCrumbs__item">
+                                <a href="#" class="breadCrumbs__chit">Услуги</a>
+                            </li>
+                            <li class="breadCrumbs__item">
+                                <a href="/team/" class="breadCrumbs__chit">Косметология</a>
+                            </li>
+                            <li class="breadCrumbs__item">
+                                <span class="breadCrumbs__chit">Омоложение 4D на аппарате Fotona</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="banerSection__content">
+                        <div class="banerService__title">Криолиполиз</div>
+                    </div>
+                    <div class="banerSection__sheet banerSection__sheet_right"></div>
                 </div>
-                <div class="banerSection__content">
-                    <div class="banerService__title">Криолиполиз</div>
+                <div class="banerService__description">
+                    Удаление локальных жировых отложений безоперационным путём при помощи воздействия холода.
                 </div>
-                <div class="banerSection__sheet banerSection__sheet_right"></div>
-            </div>
-            <div class="banerService__description">
-                Удаление локальных жировых отложений безоперационным путём при помощи воздействия холода.
-            </div>
-            <div class="banerService__picture">
-                <div class="banerService__picture-big">
-                    <div class="banerService__picture_bg" style="background-image:url(/dist/img/trash/banerService__picture-big.jpg)"></div>
+                <div class="banerService__picture">
+                    <div class="banerService__picture-big">
+                        <div class="banerService__picture_bg" style="background-image:url(/dist/img/trash/banerService__picture-big.jpg)"></div>
+                    </div>
+                    <div class="banerService__picture-small">
+                        <div class="banerService__picture_bg" style="background-image:url(/dist/img/trash/banerService__picture-small.jpg)"></div>
+                    </div>
                 </div>
-                <div class="banerService__picture-small">
-                    <div class="banerService__picture_bg" style="background-image:url(/dist/img/trash/banerService__picture-small.jpg)"></div>
+                <div class="banerService__svg">
+                    <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/serviceLines.svg';?>
                 </div>
-            </div>
-            <div class="banerService__svg">
-                <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/serviceLines.svg';?>
-            </div>
-        </section>
-        <section class="contentService" data-midnight="gray">
-            <div class="containerMin">
-                <div class="contentService__content">
-                    <section class="contentService__main">
-                        <div class="contentService__anchors">
-                            <div class="teamList">
-                                <div class="teamList__content">
-                                    <div class="teamList__item anchorScroll_js active" data-anchor="procedure">Процедура</div>
-                                    <div class="teamList__item anchorScroll_js" data-anchor="indications">Показания</div>
-                                    <div class="teamList__item anchorScroll_js" data-anchor="result">Результат</div>
-                                    <div class="teamList__item anchorScroll_js" data-anchor="reviews">Отзывы</div>
-                                    <div class="teamList__item anchorScroll_js" data-anchor="equipment">Оборудование</div>
-                                    <div class="teamList__item anchorScroll_js" data-anchor="price">Стоимость</div>
-                                    <div class="teamList__item anchorScroll_js" data-anchor="specialists">Специалисты</div>
+            </section>
+            <section class="contentService" data-midnight="gray">
+                <div class="containerMin">
+                    <div class="contentService__content">
+                        <section class="contentService__main">
+                            <div class="contentService__anchors">
+                                <div class="teamList">
+                                    <div class="teamList__content">
+                                        <div class="teamList__item anchorScroll_js active" data-anchor="procedure">Процедура</div>
+                                        <div class="teamList__item anchorScroll_js" data-anchor="indications">Показания</div>
+                                        <div class="teamList__item anchorScroll_js" data-anchor="result">Результат</div>
+                                        <div class="teamList__item anchorScroll_js" data-anchor="reviews">Отзывы</div>
+                                        <div class="teamList__item anchorScroll_js" data-anchor="equipment">Оборудование</div>
+                                        <div class="teamList__item anchorScroll_js" data-anchor="price">Стоимость</div>
+                                        <div class="teamList__item anchorScroll_js" data-anchor="specialists">Специалисты</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="contentService__stage serviceStage" id="procedure">
-                            <div class="serviceStage__title">
-                                Как проходит процедура
-                            </div>
-                            <div class="serviceStage__procedure">
-                                Криолиполиз&nbsp;&mdash; методика коррекции локальных жировых отложений без травм
-                                и&nbsp;хирургического вмешательства.
-                                Благодаря использованию низких температур происходит запуск естественных процессов сжигания
-                                подкожно-жировой клетчатки, что дает возможность сделать фигуру более гармоничной. За&nbsp;один сеанс
-                                можно уменьшить складку на&nbsp;30%.
-                            </div>
-                            <div class="serviceStage__items">
-                                <div class="serviceStage__phase serviceStageItem_js show">
-                                    <div class="serviceStage__contain">
-                                        <div class="serviceStage__view stageView">
-                                            <div class="stageView__list stageViewSlider_js">
-                                                <div class="stageView__item">
-                                                    <div class="stageView__number">01</div>
-                                                    <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-2.jpg)"></div>
+                            <div class="contentService__stage serviceStage" id="procedure">
+                                <div class="serviceStage__title">
+                                    Как проходит процедура
+                                </div>
+                                <div class="serviceStage__procedure">
+                                    Криолиполиз&nbsp;&mdash; методика коррекции локальных жировых отложений без травм
+                                    и&nbsp;хирургического вмешательства.
+                                    Благодаря использованию низких температур происходит запуск естественных процессов сжигания
+                                    подкожно-жировой клетчатки, что дает возможность сделать фигуру более гармоничной. За&nbsp;один сеанс
+                                    можно уменьшить складку на&nbsp;30%.
+                                </div>
+                                <div class="serviceStage__items">
+                                    <div class="serviceStage__phase serviceStageItem_js show">
+                                        <div class="serviceStage__contain">
+                                            <div class="serviceStage__view stageView">
+                                                <div class="stageView__list stageViewSlider_js">
+                                                    <div class="stageView__item">
+                                                        <div class="stageView__number">01</div>
+                                                        <div class="stageView__img">
+                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-2.jpg)"></div>
+                                                        </div>
+                                                        <div class="stageView__wrapper">
+                                                            <div class="stageView__name">Измеряем исходные параметры</div>
+                                                            <div class="stageView__description">
+                                                                Измеряем толщину жировой складки. Фиксируем показатель &laquo;до&raquo; в&nbsp;карту клиента.
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Измеряем исходные параметры</div>
-                                                        <div class="stageView__description">
-                                                            Измеряем толщину жировой складки. Фиксируем показатель &laquo;до&raquo; в&nbsp;карту клиента.
+                                                    <div class="stageView__item">
+                                                        <div class="stageView__number">02</div>
+                                                        <div class="stageView__img">
+                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-3.jpg)"></div>
+                                                        </div>
+                                                        <div class="stageView__wrapper">
+                                                            <div class="stageView__name">Подготовливаем зону</div>
+                                                            <div class="stageView__description">
+                                                                Маркером обозначаем зону воздействия. Обрабатываем выбранный участок специальным составом
+                                                                и&nbsp;накрываем гелевой салфеткой для равномерного охлаждения тканей
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stageView__item">
+                                                        <div class="stageView__number">03</div>
+                                                        <div class="stageView__img">
+                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-4.jpg)"></div>
+                                                        </div>
+                                                        <div class="stageView__wrapper">
+                                                            <div class="stageView__name">Воздействие на&nbsp;жировые отложения холодом</div>
+                                                            <div class="stageView__description">
+                                                                Устанавливаем вакуумную насадку с&nbsp;охлаждающими панелями. Запускается процесс разрушения жировых клеток.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stageView__item">
+                                                        <div class="stageView__number">04</div>
+                                                        <div class="stageView__img">
+                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-5.jpg)"></div>
+                                                        </div>
+                                                        <div class="stageView__wrapper">
+                                                            <div class="stageView__name">Усиление эффекта</div>
+                                                            <div class="stageView__description">
+                                                                После процедуры врач делает легкий массаж зоны, на&nbsp;которой была выполнена процедура.
+                                                                Это усилит эффект от&nbsp;процедуры.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stageView__item">
+                                                        <div class="stageView__number">05</div>
+                                                        <div class="stageView__img">
+                                                            <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-6.jpg)"></div>
+                                                        </div>
+                                                        <div class="stageView__wrapper">
+                                                            <div class="stageView__name">Наступление окончательного результата</div>
+                                                            <div class="stageView__description">
+                                                                Спустя три месяца измеряем толщину жировой складки
+                                                                и&nbsp;фиксируем показатель &laquo;после&raquo;. Сравниваем результаты.
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="stageView__item">
-                                                    <div class="stageView__number">02</div>
-                                                    <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-3.jpg)"></div>
-                                                    </div>
-                                                    <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Подготовливаем зону</div>
-                                                        <div class="stageView__description">
-                                                            Маркером обозначаем зону воздействия. Обрабатываем выбранный участок специальным составом
-                                                            и&nbsp;накрываем гелевой салфеткой для равномерного охлаждения тканей
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentService__testimony serviceTestimony serviceTestimony_js" id="indications">
+                                <div class="serviceTestimony__content">
+                                    <div class="serviceTestimony__box">
+                                        <div class="serviceTestimony__title">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/serviceTestimonyPossible.svg';?>
+                                            <span>Показания к процедуре</span>
+                                        </div>
+                                        <div class="serviceTestimony__list">
+                                            <div class="serviceTestimony__item">
+                                                <div class="serviceTestimony__about">
+                                                    <span>
+                                                        Наличие локальных жировых отложений, которые не&nbsp;поддаются традиционным способам
+                                                        похудения&nbsp;&mdash; спорту, диетам и&nbsp;массажу
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="serviceTestimony__item">
+                                                <div class="serviceTestimony__about">
+                                                    <span>
+                                                        Уменьшение объемов тела
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="serviceTestimony__box">
+                                        <div class="serviceTestimony__title">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/serviceTestimonyForbidden.svg';?>
+                                            <span>Противопоказания</span>
+                                        </div>
+                                        <div class="serviceTestimony__list">
+                                            <div class="serviceTestimony__item">
+                                                <div class="serviceTestimony__about">
+                                                    <span>
+                                                        Аллергия на&nbsp;холод
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="serviceTestimony__item">
+                                                <div class="serviceTestimony__about">
+                                                    <span>
+                                                        Тяжелая степень ожирения
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentService__result resultsProcedure" id="result">
+                                <div class="resultsProcedure__content">
+                                    <div class="resultsProcedure__title">
+                                        Результаты <br>процедуры
+                                    </div>
+                                    <div class="resultsProcedure__slider resultsProcedureSlider_js">
+                                        <div class="resultsProcedure__item">
+                                            <div class="resultsProcedure__before">
+                                                <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-1.jpg)"></div>
+                                                <span>До</span>
+                                            </div>
+                                            <div class="resultsProcedure__after">
+                                            <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-2.jpg)"></div>
+                                                <span>После</span>
+                                            </div>
+                                        </div>
+                                        <div class="resultsProcedure__item">
+                                            <div class="resultsProcedure__before">
+                                                <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-1.jpg)"></div>
+                                                <span>До</span>
+                                            </div>
+                                            <div class="resultsProcedure__after">
+                                            <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-2.jpg)"></div>
+                                                <span>После</span>
+                                            </div>
+                                        </div>
+                                        <div class="resultsProcedure__item">
+                                            <div class="resultsProcedure__before">
+                                                <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-1.jpg)"></div>
+                                                <span>До</span>
+                                            </div>
+                                            <div class="resultsProcedure__after">
+                                            <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-2.jpg)"></div>
+                                                <span>После</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentService__reviews serviceStage serviceReviews serviceReviews_js" id="reviews">
+                                <div class="bonusSystem__ground bonusSystem__ground_left">
+                                    <img src="/dist/img/serviceReviewsSheet-left.png" alt="">
+                                </div>
+                                <div class="serviceReviews__title">
+                                    Отзывы
+                                </div>
+                                <div class="serviceReviews__content">
+                                    <div class="serviceReviews__info">
+                                        <div class="serviceReviews__text serviceReviewsText_js show" data-review="1">
+                                            <div class="serviceReviews__item">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Константина</div>
+                                                    <div class="serviceReviews__date">15.12.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__p">
+                                                <p>
+                                                    На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                    эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                    не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                                </p>
+                                                <p>
+                                                    Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                    выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                    удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                    хочется вскочить и&nbsp;убежать.
+                                                </p>
+                                                <p>
+                                                    С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                    были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                    Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="serviceReviews__text serviceReviewsText_js hide" data-review="2">
+                                            <div class="serviceReviews__item">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Ксения</div>
+                                                    <div class="serviceReviews__date">22.09.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__p">
+                                                <p>
+                                                    Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                    выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                    удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                    хочется вскочить и&nbsp;убежать.
+                                                </p>
+                                                <p>
+                                                    С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                    были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                    Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="serviceReviews__text serviceReviewsText_js hide" data-review="3">
+                                            <div class="serviceReviews__item">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Яна</div>
+                                                    <div class="serviceReviews__date">14.05.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__p">
+                                                <p>
+                                                    На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                    эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                    не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="serviceReviews__text serviceReviewsText_js hide" data-review="4">
+                                            <div class="serviceReviews__item">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Константина</div>
+                                                    <div class="serviceReviews__date">15.12.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__p">
+                                                <p>
+                                                    На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                    эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                    не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                                </p>
+                                                <p>
+                                                    Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                    выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                    удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                    хочется вскочить и&nbsp;убежать.
+                                                </p>
+                                                <p>
+                                                    С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                    были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                    Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="serviceReviews__text serviceReviewsText_js hide" data-review="5">
+                                            <div class="serviceReviews__item">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Ксения</div>
+                                                    <div class="serviceReviews__date">22.09.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__p">
+                                                <p>
+                                                    Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
+                                                    выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
+                                                    удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
+                                                    хочется вскочить и&nbsp;убежать.
+                                                </p>
+                                                <p>
+                                                    С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
+                                                    были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
+                                                    Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="serviceReviews__text serviceReviewsText_js hide" data-review="6">
+                                            <div class="serviceReviews__item">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Яна</div>
+                                                    <div class="serviceReviews__date">14.05.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__p">
+                                                <p>
+                                                    На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
+                                                    эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
+                                                    не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="serviceReviews__list">
+                                        <div class="scrollbarCustomBlue">
+                                            <div class="serviceReviews__item serviceReviewsItem_js active" data-people="1">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Константина</div>
+                                                    <div class="serviceReviews__date">15.12.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__item serviceReviewsItem_js" data-people="2">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Ксения</div>
+                                                    <div class="serviceReviews__date">22.09.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__item serviceReviewsItem_js" data-people="3">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Яна</div>
+                                                    <div class="serviceReviews__date">14.05.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__item serviceReviewsItem_js" data-people="4">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Константина</div>
+                                                    <div class="serviceReviews__date">15.12.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__item serviceReviewsItem_js" data-people="5">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Ксения</div>
+                                                    <div class="serviceReviews__date">22.09.2020</div>
+                                                </div>
+                                            </div>
+                                            <div class="serviceReviews__item serviceReviewsItem_js" data-people="6">
+                                                <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
+                                                <div class="serviceReviews__wrapper">
+                                                    <div class="serviceReviews__name">Яна</div>
+                                                    <div class="serviceReviews__date">14.05.2020</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bonusSystem__ground bonusSystem__ground_right">
+                                    <img src="/dist/img/formTrees02.png" alt="">
+                                </div>
+                            </div>
+                            <div class="contentService__price serviceStage servicePrice" id="price">
+                                <div class="serviceStage__title">
+                                    Стоимость
+                                </div>
+                                <div class="servicePrice__content">
+                                    <div class="servicePrice__list">
+                                        <a href="#" class="servicePrice__item">
+                                            <div class="servicePrice__equipmenent">1 насадка</div>
+                                            <div class="servicePrice__cost">12 000 ₽</div>
+                                        </a>
+                                        <a href="#" class="servicePrice__item">
+                                            <div class="servicePrice__equipmenent">2 насадки</div>
+                                            <div class="servicePrice__cost">18 000 ₽</div>
+                                        </a>
+                                        <a href="#" class="servicePrice__item">
+                                            <div class="servicePrice__equipmenent">4 насадки</div>
+                                            <div class="servicePrice__cost">36 000 ₽</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentService__equipmenent serviceStage serviceEquipmenent" id="equipment">
+                                <div class="serviceEquipmenent__content">
+                                    <div class="serviceEquipmenent__description">
+                                        <div class="serviceStage__title">
+                                            Оригинальное оборудование
+                                        </div>
+                                        <div class="serviceEquipmenent__text">
+                                            COCOON&nbsp;&mdash; аппарат для криолиполиза на&nbsp;базе использования контролируемого
+                                            холода для избавления от&nbsp;нежелательных отложений жировой ткани, коррекции
+                                            контуров тела и&nbsp;фигуры в&nbsp;целом.
+                                        </div>
+                                        <div class="serviceEquipmenent__warranty sliderEquipWarranty">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentWarranty-i.svg';?>
+                                            <div class="sliderEquipWarranty__wrapper">
+                                                <div class="sliderEquipWarranty__title">Гарантия подлинности</div>
+                                                <a href="/dist/img/trash/certificate.png" class="sliderEquipWarranty__link popupImage_js">Посмотреть сертификат</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="serviceEquipmenent__video">
+                                        <a href="#" class="serviceEquipmenent__img" style="background-image:url(/dist/img/trash/serviceEquipmenentImg1.png)"></a>
+                                        <span class="serviceEquipmenent__play">
+                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/playIcon.svg';?>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentService__specialists serviceStage serviceSpecialists specialists specialists_js" id="specialists">
+                                <div class="serviceStage__title">
+                                    Специалисты
+                                </div>
+                                <div class="serviceSpecialists__content">
+                                    <div class="specialists__for specialistsFor">
+                                        <div class="specialistsFor__content specialistsFor_js">
+                                            <div class="specialistsFor__item">
+                                                <div class="specialistsFor__description">
+                                                    <div class="specialistsFor__wrapper">
+                                                        <div class="specialistsFor__name">Галина Лагутова</div>
+                                                        <div class="specialistsFor__block">
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Специализация</li>
+                                                                <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
+                                                            </ul>
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Профессиональный опыт</li>
+                                                                <li class="specialistsFor__medic">7 лет</li>
+                                                            </ul>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="stageView__item">
-                                                    <div class="stageView__number">03</div>
-                                                    <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-4.jpg)"></div>
+                                                    <div class="specialistsFor__link">
+                                                        <a href="#" class="specialistsFor__a">
+                                                            <span>Подробнее</span>
+                                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+                                                        </a>
                                                     </div>
-                                                    <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Воздействие на&nbsp;жировые отложения холодом</div>
-                                                        <div class="stageView__description">
-                                                            Устанавливаем вакуумную насадку с&nbsp;охлаждающими панелями. Запускается процесс разрушения жировых клеток.
+                                                </div>
+                                                <div class="specialistsFor__img">
+                                                    <img src="/dist/img/specialistsForImg1.png">
+                                                </div>
+                                            </div>
+                                            <div class="specialistsFor__item">
+                                                <div class="specialistsFor__description">
+                                                    <div class="specialistsFor__wrapper">
+                                                        <div class="specialistsFor__name">Светлана Зуева</div>
+                                                        <div class="specialistsFor__block">
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Специализация</li>
+                                                                <li class="specialistsFor__medic">Косметолог-эстетист</li>
+                                                            </ul>
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Профессиональный опыт</li>
+                                                                <li class="specialistsFor__medic">5 лет</li>
+                                                            </ul>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="stageView__item">
-                                                    <div class="stageView__number">04</div>
-                                                    <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-5.jpg)"></div>
+                                                    <div class="specialistsFor__link">
+                                                        <a href="#" class="specialistsFor__a">
+                                                            <span>Подробнее</span>
+                                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+                                                        </a>
                                                     </div>
-                                                    <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Усиление эффекта</div>
-                                                        <div class="stageView__description">
-                                                            После процедуры врач делает легкий массаж зоны, на&nbsp;которой была выполнена процедура.
-                                                            Это усилит эффект от&nbsp;процедуры.
+                                                </div>
+                                                <div class="specialistsFor__img">
+                                                    <img src="/dist/img/specialistsForImg1.png">
+                                                </div>
+                                            </div>
+                                            <div class="specialistsFor__item">
+                                                <div class="specialistsFor__description">
+                                                    <div class="specialistsFor__wrapper">
+                                                        <div class="specialistsFor__name">Татьяна Малицкая</div>
+                                                        <div class="specialistsFor__block">
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Специализация</li>
+                                                                <li class="specialistsFor__medic">Косметолог-эстетист</li>
+                                                            </ul>
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Профессиональный опыт</li>
+                                                                <li class="specialistsFor__medic">7 лет</li>
+                                                            </ul>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="stageView__item">
-                                                    <div class="stageView__number">05</div>
-                                                    <div class="stageView__img">
-                                                        <div class="stageView__image" style="background-image:url(/dist/img/trash/stageViewImgProcedure-6.jpg)"></div>
+                                                    <div class="specialistsFor__link">
+                                                        <a href="#" class="specialistsFor__a">
+                                                            <span>Подробнее</span>
+                                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+                                                        </a>
                                                     </div>
-                                                    <div class="stageView__wrapper">
-                                                        <div class="stageView__name">Наступление окончательного результата</div>
-                                                        <div class="stageView__description">
-                                                            Спустя три месяца измеряем толщину жировой складки
-                                                            и&nbsp;фиксируем показатель &laquo;после&raquo;. Сравниваем результаты.
+                                                </div>
+                                                <div class="specialistsFor__img">
+                                                    <img src="/dist/img/specialistsForImg1.png">
+                                                </div>
+                                            </div>
+                                            <div class="specialistsFor__item">
+                                                <div class="specialistsFor__description">
+                                                    <div class="specialistsFor__wrapper">
+                                                        <div class="specialistsFor__name">Елена Пономарева</div>
+                                                        <div class="specialistsFor__block">
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Специализация</li>
+                                                                <li class="specialistsFor__medic">Специалист по коррекции фигуры и массажу</li>
+                                                            </ul>
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Профессиональный опыт</li>
+                                                                <li class="specialistsFor__medic">10 лет</li>
+                                                            </ul>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contentService__testimony serviceTestimony serviceTestimony_js" id="indications">
-                            <div class="serviceTestimony__content">
-                                <div class="serviceTestimony__box">
-                                    <div class="serviceTestimony__title">
-                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/serviceTestimonyPossible.svg';?>
-                                        <span>Показания к процедуре</span>
-                                    </div>
-                                    <div class="serviceTestimony__list">
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Наличие локальных жировых отложений, которые не&nbsp;поддаются традиционным способам
-                                                    похудения&nbsp;&mdash; спорту, диетам и&nbsp;массажу
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Уменьшение объемов тела
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="serviceTestimony__box">
-                                    <div class="serviceTestimony__title">
-                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/serviceTestimonyForbidden.svg';?>
-                                        <span>Противопоказания</span>
-                                    </div>
-                                    <div class="serviceTestimony__list">
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Аллергия на&nbsp;холод
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="serviceTestimony__item">
-                                            <div class="serviceTestimony__about">
-                                                <span>
-                                                    Тяжелая степень ожирения
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contentService__result resultsProcedure" id="result">
-                            <div class="resultsProcedure__content">
-                                <div class="resultsProcedure__title">
-                                    Результаты <br>процедуры
-                                </div>
-                                <div class="resultsProcedure__slider resultsProcedureSlider_js">
-                                    <div class="resultsProcedure__item">
-                                        <div class="resultsProcedure__before">
-                                            <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-1.jpg)"></div>
-                                            <span>До</span>
-                                        </div>
-                                        <div class="resultsProcedure__after">
-                                        <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-2.jpg)"></div>
-                                            <span>После</span>
-                                        </div>
-                                    </div>
-                                    <div class="resultsProcedure__item">
-                                        <div class="resultsProcedure__before">
-                                            <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-1.jpg)"></div>
-                                            <span>До</span>
-                                        </div>
-                                        <div class="resultsProcedure__after">
-                                        <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-2.jpg)"></div>
-                                            <span>После</span>
-                                        </div>
-                                    </div>
-                                    <div class="resultsProcedure__item">
-                                        <div class="resultsProcedure__before">
-                                            <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-1.jpg)"></div>
-                                            <span>До</span>
-                                        </div>
-                                        <div class="resultsProcedure__after">
-                                        <div class="resultsProcedure__img" style="background-image:url(/dist/img/trash/portfolioSliderImgProcedure1-2.jpg)"></div>
-                                            <span>После</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contentService__reviews serviceStage serviceReviews serviceReviews_js" id="reviews">
-                            <div class="bonusSystem__ground bonusSystem__ground_left">
-                                <img src="/dist/img/serviceReviewsSheet-left.png" alt="">
-                            </div>
-                            <div class="serviceReviews__title">
-                                Отзывы
-                            </div>
-                            <div class="serviceReviews__content">
-                                <div class="serviceReviews__info">
-                                    <div class="serviceReviews__text serviceReviewsText_js show" data-review="1">
-                                        <div class="serviceReviews__item">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Константина</div>
-                                                <div class="serviceReviews__date">15.12.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__p">
-                                            <p>
-                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                            </p>
-                                            <p>
-                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                                хочется вскочить и&nbsp;убежать.
-                                            </p>
-                                            <p>
-                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="serviceReviews__text serviceReviewsText_js hide" data-review="2">
-                                        <div class="serviceReviews__item">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Ксения</div>
-                                                <div class="serviceReviews__date">22.09.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__p">
-                                            <p>
-                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                                хочется вскочить и&nbsp;убежать.
-                                            </p>
-                                            <p>
-                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="serviceReviews__text serviceReviewsText_js hide" data-review="3">
-                                        <div class="serviceReviews__item">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Яна</div>
-                                                <div class="serviceReviews__date">14.05.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__p">
-                                            <p>
-                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="serviceReviews__text serviceReviewsText_js hide" data-review="4">
-                                        <div class="serviceReviews__item">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Константина</div>
-                                                <div class="serviceReviews__date">15.12.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__p">
-                                            <p>
-                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                            </p>
-                                            <p>
-                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                                хочется вскочить и&nbsp;убежать.
-                                            </p>
-                                            <p>
-                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="serviceReviews__text serviceReviewsText_js hide" data-review="5">
-                                        <div class="serviceReviews__item">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Ксения</div>
-                                                <div class="serviceReviews__date">22.09.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__p">
-                                            <p>
-                                                Для начала я&nbsp;выбрала две зоны, подмышки и&nbsp;бикини. Перед первой процедурой со&nbsp;страху
-                                                выпила таблетку обезболивающего. И&nbsp;зря! Не&nbsp;сказать, что вспышки лазера доставляли
-                                                удовольствие, но&nbsp;тепло и&nbsp;легкое покалывание&nbsp;&mdash; это не&nbsp;то, от&nbsp;чего
-                                                хочется вскочить и&nbsp;убежать.
-                                            </p>
-                                            <p>
-                                                С&nbsp;каждой процедурой волосков становилось все меньше, а&nbsp;те, что оставались,
-                                                были светлыми и&nbsp;тонкими. Теперь думаю сделать ноги полностью.
-                                                Как&nbsp;же приятно ехать на&nbsp;отдых и&nbsp;не&nbsp;думать про бритвы и&nbsp;кремы!
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="serviceReviews__text serviceReviewsText_js hide" data-review="6">
-                                        <div class="serviceReviews__item">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Яна</div>
-                                                <div class="serviceReviews__date">14.05.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__p">
-                                            <p>
-                                                На&nbsp;лазерную эпиляцию я&nbsp;решалась долго, но&nbsp;для меня она оказалась во&nbsp;много раз
-                                                эффективнее, чем все остальные способы, вместе взятые. Бритья хватало часов на&nbsp;10, крема
-                                                не&nbsp;брали жесткие волосы, от&nbsp;воска волосы врастали и&nbsp;появлялось раздражение.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="serviceReviews__list">
-                                    <div class="scrollbarCustomBlue">
-                                        <div class="serviceReviews__item serviceReviewsItem_js active" data-people="1">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Константина</div>
-                                                <div class="serviceReviews__date">15.12.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="2">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Ксения</div>
-                                                <div class="serviceReviews__date">22.09.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="3">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Яна</div>
-                                                <div class="serviceReviews__date">14.05.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="4">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem10.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Константина</div>
-                                                <div class="serviceReviews__date">15.12.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="5">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem12.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Ксения</div>
-                                                <div class="serviceReviews__date">22.09.2020</div>
-                                            </div>
-                                        </div>
-                                        <div class="serviceReviews__item serviceReviewsItem_js" data-people="6">
-                                            <div class="serviceReviews__img" style="background-image:url(/dist/img/reviewsItem2.png)"></div>
-                                            <div class="serviceReviews__wrapper">
-                                                <div class="serviceReviews__name">Яна</div>
-                                                <div class="serviceReviews__date">14.05.2020</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bonusSystem__ground bonusSystem__ground_right">
-                                <img src="/dist/img/formTrees02.png" alt="">
-                            </div>
-                        </div>
-                        <div class="contentService__price serviceStage servicePrice" id="price">
-                            <div class="serviceStage__title">
-                                Стоимость
-                            </div>
-                            <div class="servicePrice__content">
-                                <div class="servicePrice__list">
-                                    <a href="#" class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">1 насадка</div>
-                                        <div class="servicePrice__cost">12 000 ₽</div>
-                                    </a>
-                                    <a href="#" class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">2 насадки</div>
-                                        <div class="servicePrice__cost">18 000 ₽</div>
-                                    </a>
-                                    <a href="#" class="servicePrice__item">
-                                        <div class="servicePrice__equipmenent">4 насадки</div>
-                                        <div class="servicePrice__cost">36 000 ₽</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contentService__equipmenent serviceStage serviceEquipmenent" id="equipment">
-                            <div class="serviceEquipmenent__content">
-                                <div class="serviceEquipmenent__description">
-                                    <div class="serviceStage__title">
-                                        Оригинальное оборудование
-                                    </div>
-                                    <div class="serviceEquipmenent__text">
-                                        COCOON&nbsp;&mdash; аппарат для криолиполиза на&nbsp;базе использования контролируемого
-                                        холода для избавления от&nbsp;нежелательных отложений жировой ткани, коррекции
-                                        контуров тела и&nbsp;фигуры в&nbsp;целом.
-                                    </div>
-                                    <div class="serviceEquipmenent__warranty sliderEquipWarranty">
-                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/sliderEquipmentWarranty-i.svg';?>
-                                        <div class="sliderEquipWarranty__wrapper">
-                                            <div class="sliderEquipWarranty__title">Гарантия подлинности</div>
-                                            <a href="/dist/img/trash/certificate.png" class="sliderEquipWarranty__link popupImage_js">Посмотреть сертификат</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="serviceEquipmenent__video">
-                                    <a href="#" class="serviceEquipmenent__img" style="background-image:url(/dist/img/trash/serviceEquipmenentImg1.png)"></a>
-                                    <span class="serviceEquipmenent__play">
-                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/playIcon.svg';?>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contentService__specialists serviceStage serviceSpecialists specialists specialists_js" id="specialists">
-                            <div class="serviceStage__title">
-                                Специалисты
-                            </div>
-                            <div class="serviceSpecialists__content">
-                                <div class="specialists__for specialistsFor">
-                                    <div class="specialistsFor__content specialistsFor_js">
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Галина Лагутова</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
+                                                    <div class="specialistsFor__link">
+                                                        <a href="#" class="specialistsFor__a">
+                                                            <span>Подробнее</span>
+                                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+                                                        </a>
                                                     </div>
                                                 </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
+                                                <div class="specialistsFor__img">
+                                                    <img src="/dist/img/specialistsForImg1.png">
                                                 </div>
                                             </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Светлана Зуева</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Косметолог-эстетист</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">5 лет</li>
-                                                        </ul>
+                                            <div class="specialistsFor__item">
+                                                <div class="specialistsFor__description">
+                                                    <div class="specialistsFor__wrapper">
+                                                        <div class="specialistsFor__name">Кристина Барабина</div>
+                                                        <div class="specialistsFor__block">
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Специализация</li>
+                                                                <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
+                                                            </ul>
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Профессиональный опыт</li>
+                                                                <li class="specialistsFor__medic">7 лет</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="specialistsFor__link">
+                                                        <a href="#" class="specialistsFor__a">
+                                                            <span>Подробнее</span>
+                                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+                                                        </a>
                                                     </div>
                                                 </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
+                                                <div class="specialistsFor__img">
+                                                    <img src="/dist/img/specialistsForImg1.png">
                                                 </div>
                                             </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Татьяна Малицкая</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Косметолог-эстетист</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
+                                            <div class="specialistsFor__item">
+                                                <div class="specialistsFor__description">
+                                                    <div class="specialistsFor__wrapper">
+                                                        <div class="specialistsFor__name">Ангелина Линова</div>
+                                                        <div class="specialistsFor__block">
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Специализация</li>
+                                                                <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
+                                                            </ul>
+                                                            <ul class="specialistsFor__ul">
+                                                                <li class="specialistsFor__specialization">Профессиональный опыт</li>
+                                                                <li class="specialistsFor__medic">7 лет</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="specialistsFor__link">
+                                                        <a href="#" class="specialistsFor__a">
+                                                            <span>Подробнее</span>
+                                                            <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
+                                                        </a>
                                                     </div>
                                                 </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
+                                                <div class="specialistsFor__img">
+                                                    <img src="/dist/img/specialistsForImg1.png">
                                                 </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Елена Пономарева</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Специалист по коррекции фигуры и массажу</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">10 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Кристина Барабина</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
-                                            </div>
-                                        </div>
-                                        <div class="specialistsFor__item">
-                                            <div class="specialistsFor__description">
-                                                <div class="specialistsFor__wrapper">
-                                                    <div class="specialistsFor__name">Ангелина Линова</div>
-                                                    <div class="specialistsFor__block">
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Специализация</li>
-                                                            <li class="specialistsFor__medic">Врач-косметолог, дерматолог</li>
-                                                        </ul>
-                                                        <ul class="specialistsFor__ul">
-                                                            <li class="specialistsFor__specialization">Профессиональный опыт</li>
-                                                            <li class="specialistsFor__medic">7 лет</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="specialistsFor__link">
-                                                    <a href="#" class="specialistsFor__a">
-                                                        <span>Подробнее</span>
-                                                        <?include $_SERVER['DOCUMENT_ROOT'] . '/dist/img/svg/specialistsForLink-array.svg';?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="specialistsFor__img">
-                                                <img src="/dist/img/specialistsForImg1.png">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                    <aside class="contentService__aside asideService asideService_js">
-                        <div class="asideService__wrapper">
-                            <div class="asideService__title">
-                                Уменьшение объема жировых складок до &minus;30%
+                        </section>
+                        <aside class="contentService__aside asideService asideService_js">
+                            <div class="asideService__wrapper">
+                                <div class="asideService__title">
+                                    Уменьшение объема жировых складок до &minus;30%
+                                </div>
+                                <div class="asideService__list">
+                                    <div class="asideService__item">
+                                        <div class="asideService__what">Длительность</div>
+                                        <div class="asideService__answer">90 мин</div>
+                                    </div>
+                                    <div class="asideService__item">
+                                        <div class="asideService__what">Процедуры</div>
+                                        <div class="asideService__answer">Определяется индивидуально</div>
+                                    </div>
+                                    <div class="asideService__item">
+                                        <div class="asideService__what">Оборудование</div>
+                                        <div class="asideService__answer">Coccon</div>
+                                    </div>
+                                    <div class="asideService__item">
+                                        <div class="asideService__what">Стоимость</div>
+                                        <div class="asideService__answer">От 18 000 ₽</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="asideService__list">
-                                <div class="asideService__item">
-                                    <div class="asideService__what">Длительность</div>
-                                    <div class="asideService__answer">90 мин</div>
-                                </div>
-                                <div class="asideService__item">
-                                    <div class="asideService__what">Процедуры</div>
-                                    <div class="asideService__answer">Определяется индивидуально</div>
-                                </div>
-                                <div class="asideService__item">
-                                    <div class="asideService__what">Оборудование</div>
-                                    <div class="asideService__answer">Coccon</div>
-                                </div>
-                                <div class="asideService__item">
-                                    <div class="asideService__what">Стоимость</div>
-                                    <div class="asideService__answer">От 18 000 ₽</div>
-                                </div>
+                            <div class="asideService__above">
+                                <div class="asideService__more">-30% объема жировой складки за&nbsp;одну процедуру</div>
                             </div>
-                        </div>
-                        <div class="asideService__above">
-                            <div class="asideService__more">-30% объема жировой складки за&nbsp;одну процедуру</div>
-                        </div>
-                        <div class="asideService__above">
-                            <div class="asideService__more">1&nbsp;процедура для достижения результата</div>
-                        </div>
-                        <div class="asideService__above">
-                            <div class="asideService__more">3&nbsp;года опыта работы с&nbsp;методикой</div>
-                        </div>
-                    </aside>
+                            <div class="asideService__above">
+                                <div class="asideService__more">1&nbsp;процедура для достижения результата</div>
+                            </div>
+                            <div class="asideService__above">
+                                <div class="asideService__more">3&nbsp;года опыта работы с&nbsp;методикой</div>
+                            </div>
+                        </aside>
+                    </div>
                 </div>
-            </div>
+            </section>
         </section>
         <section class="sectionConsult sectionConsult_service sectionConsult_js" data-midnight="gray">
 			<div class="sectionConsult__content container">

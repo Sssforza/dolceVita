@@ -39,7 +39,6 @@ export function windowOnload () {
         }
         // anim service lines
         if(document.querySelector('.serviceLines')) {
-            console.log(1)
             const serviceLines = document.querySelector('.serviceLines');
             serviceLines.classList.add('show');
         }

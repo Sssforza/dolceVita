@@ -73,7 +73,6 @@ export function menuSelection () {
                     if (elem.getAttribute('data-servicesDetail') === thisShowDetail && !activItem) {
                         elem.classList.remove('hidden');
                     } else if (elem.getAttribute('data-servicesDetail') === thisShow && activItem) {
-                        console.log(1);
                         elem.classList.remove('hidden');
                     }
                 });

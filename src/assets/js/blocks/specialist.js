@@ -20,7 +20,6 @@ export function aboutSpecialistShowAll() {
                 heightparent.classList.add('show');
                 item.classList.add('hide');
                 list.style.maxHeight = heightList + "px";
-                console.log(heightList)
             });
         });
         btnsHide.forEach((item) => {
@@ -32,7 +31,6 @@ export function aboutSpecialistShowAll() {
                 heightparent.classList.add('show');
                 item.classList.add('hide');
                 list.style.maxHeight = heightList + "px";
-                console.log(heightList)
             });
         });
     }

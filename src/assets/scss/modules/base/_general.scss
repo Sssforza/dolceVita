@@ -793,9 +793,10 @@ img.mfp-img {
         position: absolute;
         bottom: -18px;
         left: 0;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 18px;
         color: $error;
+        font-family: 'Lora';
         opacity: 0;
         pointer-events: none;
         transition: $transition;
@@ -818,7 +819,7 @@ img.mfp-img {
             border: 1px solid $error !important;
         }
         .envelopeInput__error {
-            bottom: -24px;
+            bottom: -22px;
             opacity: 1;
             pointer-events: auto;
             @media (max-width:$lg) {
@@ -2387,11 +2388,18 @@ img.mfp-img {
     align-items: center;
     &__wrapper {
         margin-left: 27px;
+        @media (max-width:$xl) {
+            margin-left: 20px;
+        }
     }
     &__title {
         font-size: 28px;
         line-height: 28px;
         color: $blueDark;
+        @media (max-width:$xl) {
+            font-size: 24px;
+            line-height: 24px;
+        }
         @media (max-width:$xs) {
             font-size: 23px;
             line-height: 26px;
@@ -2421,6 +2429,9 @@ img.mfp-img {
         display: block;
         width: 56px;
         height: 72px;
+        @media (max-width:$xl) {
+            zoom: .88;
+        }
         @media (max-width:$xs) {
             width: 43px;
             height: 55px;
@@ -2722,17 +2733,6 @@ img.mfp-img {
     &_service {
         padding-top: 64px;
         margin-top: 128px;
-        @media (max-width:$xl) {
-            padding-top: 0;
-            margin-top: -410px;
-        }
-        @media (max-width:$lg) {
-            margin-top: -504px;
-        }
-        @media (max-width:$xs) {
-            margin-top: 0;
-            padding-top: 82px;
-        }
     }
     &__content {
         padding-top: 60px;
@@ -2867,7 +2867,7 @@ img.mfp-img {
     &__button {
         width: 196px;
         @media (max-width:$xl) {
-            width: 144px;
+            width: 155px;
         }
         @media (max-width:$lg) {
             width: 298px;
@@ -2879,13 +2879,13 @@ img.mfp-img {
     }
     &__privacy {
         margin-left: 32px;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 18px;
         color: $greenLight;
         font-family: 'Lora';
         @media (max-width:$xl) {
-            margin-left: 24px;
-            font-size: 13px;
+            margin-left: 20px;
+            font-size: 12px;
             line-height: 15px;
         }
         @media (max-width:$lg) {
@@ -3099,11 +3099,19 @@ img.mfp-img {
         font-size: 64px;
         line-height: 64px;
         color: $blueDark;
+        @media (max-width:$xl) {
+            padding-top: 100px;
+            font-size: 58px;
+            line-height: 60px;
+        }
     }
     &__slider {
         position: relative;
         width: 679px;
         margin-left: 128px;
+        @media (max-width:$xl) {
+            margin-left: 50px;
+        }
         &:after {
             content:'';
             position: absolute;
@@ -3114,6 +3122,11 @@ img.mfp-img {
             height: 1px;
             background: $greenLight;
             z-index: -1;
+            @media (max-width:$xl) {
+                top: 270px;
+                left: -398px;
+                width: 1027px;
+            }
         }
     }
     &__item {
@@ -3122,6 +3135,9 @@ img.mfp-img {
         width: 679px !important;
         height: 642px;
         display: flex !important;
+        @media (max-width:$xl) {
+            zoom: .8;
+        }
         &:after {
             content:'';
             position: absolute;
@@ -3169,10 +3185,18 @@ img.mfp-img {
         &__prev {
             top: 328px;
             left: -577px;
+            @media (max-width:$xl) {
+                top: 271px;
+                left: -398px;
+            }
         }
         &__next {
             top: 328px;
             right: -158px;
+            @media (max-width:$xl) {
+                top: 271px;
+                right: 45px;
+            }
         }
     }
     .slick-dots {
@@ -3180,6 +3204,10 @@ img.mfp-img {
         position: absolute;
         bottom: 208px;
         left: -475px;
+        @media (max-width:$xl) {
+            bottom: 178px;
+            left: -363px;
+        }
         button {
             flex: none;
             width: 12px;
